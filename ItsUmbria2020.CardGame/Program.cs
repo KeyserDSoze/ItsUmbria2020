@@ -7,7 +7,7 @@ namespace ItsUmbria2020.CardGame
         static void Main(string[] args)
         {
             Console.WriteLine("Inserisci la tipologia di carta: 1) Magic 2) Hearthstone");
-            int value = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int value);
             Console.WriteLine("Inserisci il nome");
             string name = Console.ReadLine();
             Console.WriteLine("Inserisci la descrizione");
