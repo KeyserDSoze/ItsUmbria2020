@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.CardGame", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Geometry", "ItsUmbria2020.Geometry\ItsUmbria2020.Geometry.csproj", "{6EB27D28-DA3F-4AB5-AB6D-2B62235CC32E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Language", "ItsUmbria2020.Language\ItsUmbria2020.Language.csproj", "{8650197B-1439-4FEE-83D0-ED77A800405C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6EB27D28-DA3F-4AB5-AB6D-2B62235CC32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB27D28-DA3F-4AB5-AB6D-2B62235CC32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB27D28-DA3F-4AB5-AB6D-2B62235CC32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8650197B-1439-4FEE-83D0-ED77A800405C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8650197B-1439-4FEE-83D0-ED77A800405C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8650197B-1439-4FEE-83D0-ED77A800405C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8650197B-1439-4FEE-83D0-ED77A800405C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
