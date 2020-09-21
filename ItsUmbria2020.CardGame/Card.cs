@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ItsUmbria2020.CardGame
 {
-    abstract class Card
+    abstract class Card : object
     {
         public override string ToString()
         {

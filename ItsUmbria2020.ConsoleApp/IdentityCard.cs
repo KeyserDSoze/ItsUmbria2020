@@ -12,7 +12,7 @@ namespace ItsUmbria2020.ConsoleApp
         public IdentityCard(string municipality, string name, string surname, string sex)
         {
             this.Municipality = municipality;
-            this.Identity = new Identity()
+            this.Identity = new Identity
             {
                 Name = name,
                 Surname = surname
