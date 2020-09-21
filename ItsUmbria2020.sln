@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.ConsoleApp", "ItsUmbria2020.ConsoleApp\ItsUmbria2020.ConsoleApp.csproj", "{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36CCCE18-5D15-4595-95CB-7894A5F9FF5B}
+	EndGlobalSection
+EndGlobal
