@@ -14,11 +14,16 @@ namespace ItsUmbria.MultiWebPage
             Console.WriteLine("Inserisci la frase che andrà nel div");
             string input = Console.ReadLine();
             //warm up instances
-            Styling.Instance(Test[0]);
-            Styling.Instance(Test[1]);
-            Styling.Instance(Test[2]);
-            Styling.Instance(Test[3]);
-
+            //Styling.Instance(Test[0]);
+            //Styling.Instance(Test[1]);
+            //Styling.Instance(Test[2]);
+            //Styling.Instance(Test[3]);
+            //for (int i = 0; i< 100; i++)
+            //{
+            //    Console.BackgroundColor = Styling.Instance(Test[i % 4]).BackgroundColor;
+            //    Console.ForegroundColor = Styling.Instance(Test[i % 4]).ConsoleColor;
+            //    Console.WriteLine(string.Format(Styling.Instance(Test[i % 4]).Html, input, i.ToString()));
+            //}
             Parallel.For(0, 100, i =>
             {
                 lock (Semaphore)
@@ -27,8 +32,7 @@ namespace ItsUmbria.MultiWebPage
                     Console.ForegroundColor = Styling.Instance(Test[i % 4]).ConsoleColor;
                     Console.WriteLine(string.Format(Styling.Instance(Test[i % 4]).Html, input, i.ToString()));
                 }
-            }
-            );
+            });
             Console.WriteLine(Styling.Counter);
         }
     }
@@ -36,11 +40,11 @@ namespace ItsUmbria.MultiWebPage
     {
         public static Styling FirstPage { get; } = new Styling(ConsoleColor.Black, ConsoleColor.White, "<div>{0}</div><div>{1}<div><div>{0}<div>");
         public static Styling SecondPage { get; } = new Styling(ConsoleColor.Blue, ConsoleColor.Red, "<h1>{0}</h1><div>{1}<div>");
-        public static Styling ThirdPage { get; } = new Styling(ConsoleColor.Cyan, ConsoleColor.Green, "<h2>{0}</h2><div>{0}<div>");
-        public static Styling FourthPage { get; } = new Styling(ConsoleColor.Yellow, ConsoleColor.DarkMagenta, "<h2>{0}</h2>");
+        public static Styling ThirdPage { get; } = new Styling(ConsoleColor.Cyan, ConsoleColor.Green, "<h2>{0}</h2><div>{1}<div>");
+        public static Styling FourthPage { get; } = new Styling(ConsoleColor.Yellow, ConsoleColor.DarkMagenta, "<h2>{1}</h2>");
         public static Styling GetStyling(string key)
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             if (key == "FirstPage")
                 return StylingDatabase.FirstPage;
             else if (key == "SecondPage")
