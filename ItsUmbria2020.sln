@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Language", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Singleton", "ItsUmbria2020.Singleton\ItsUmbria2020.Singleton.csproj", "{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria.WebPage", "ItsUmbria.WebPage\ItsUmbria.WebPage.csproj", "{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

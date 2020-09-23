@@ -10,7 +10,7 @@ namespace ItsUmbria2020.Singleton
             {
                 Console.BackgroundColor = Styling.Instance().BackgroundColor;
                 Console.ForegroundColor = Styling.Instance().ConsoleColor;
-                
+
                 Console.WriteLine("Hello World!");
             }
         }
@@ -20,10 +20,19 @@ namespace ItsUmbria2020.Singleton
         public ConsoleColor ConsoleColor { get; }
         public ConsoleColor BackgroundColor { get; }
         private static Styling styling;
+        private readonly static object TrafficLight = new object();
         public static Styling Instance()
         {
             if (styling == null)
-                styling = new Styling(ConsoleColor.Red, ConsoleColor.Blue);
+            {
+                lock (TrafficLight)
+                {
+                    if (styling == null)
+                    {
+                        styling = new Styling(ConsoleColor.Red, ConsoleColor.Blue);
+                    }
+                }
+            }
             return styling;
         }
         private Styling() { }
