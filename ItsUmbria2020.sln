@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.ConsoleApp", "ItsUmbria2020.ConsoleApp\ItsUmbria2020.ConsoleApp.csproj", "{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.ConsoleApp", "ItsUmbria2020.ConsoleApp\ItsUmbria2020.ConsoleApp.csproj", "{4CB3D12A-C829-4D4D-96A6-8CD92D94C12F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.CardGame", "ItsUmbria2020.CardGame\ItsUmbria2020.CardGame.csproj", "{27CFF486-CB70-4EC3-95AF-7941F585E04C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.CardGame", "ItsUmbria2020.CardGame\ItsUmbria2020.CardGame.csproj", "{27CFF486-CB70-4EC3-95AF-7941F585E04C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Geometry", "ItsUmbria2020.Geometry\ItsUmbria2020.Geometry.csproj", "{6EB27D28-DA3F-4AB5-AB6D-2B62235CC32E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Geometry", "ItsUmbria2020.Geometry\ItsUmbria2020.Geometry.csproj", "{6EB27D28-DA3F-4AB5-AB6D-2B62235CC32E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Language", "ItsUmbria2020.Language\ItsUmbria2020.Language.csproj", "{8650197B-1439-4FEE-83D0-ED77A800405C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Language", "ItsUmbria2020.Language\ItsUmbria2020.Language.csproj", "{8650197B-1439-4FEE-83D0-ED77A800405C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Singleton", "ItsUmbria2020.Singleton\ItsUmbria2020.Singleton.csproj", "{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8650197B-1439-4FEE-83D0-ED77A800405C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8650197B-1439-4FEE-83D0-ED77A800405C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8650197B-1439-4FEE-83D0-ED77A800405C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
