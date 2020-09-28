@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Geometry", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Language", "ItsUmbria2020.Language\ItsUmbria2020.Language.csproj", "{8650197B-1439-4FEE-83D0-ED77A800405C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Singleton", "ItsUmbria2020.Singleton\ItsUmbria2020.Singleton.csproj", "{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Singleton", "ItsUmbria2020.Singleton\ItsUmbria2020.Singleton.csproj", "{8EC82384-9DDF-491A-B95F-AD1AF0D1B0CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria.WebPage", "ItsUmbria.WebPage\ItsUmbria.WebPage.csproj", "{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria.WebPage", "ItsUmbria.WebPage\ItsUmbria.WebPage.csproj", "{3EC89851-7EDD-4510-B2C3-A95CC52F90B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria.MultiWebPage", "ItsUmbria.MultiWebPage\ItsUmbria.MultiWebPage.csproj", "{3344F5E8-9B0D-4166-85C0-B4AAA7D4AEA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria.MultiWebPage", "ItsUmbria.MultiWebPage\ItsUmbria.MultiWebPage.csproj", "{3344F5E8-9B0D-4166-85C0-B4AAA7D4AEA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.Garbaging", "ItsUmbria2020.Garbaging\ItsUmbria2020.Garbaging.csproj", "{ABB27842-69AE-49F9-8A7B-07978589B898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Garbaging", "ItsUmbria2020.Garbaging\ItsUmbria2020.Garbaging.csproj", "{ABB27842-69AE-49F9-8A7B-07978589B898}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.CarFactory", "ItsUmbria2020.CarFactory\ItsUmbria2020.CarFactory.csproj", "{A2A1ED03-F182-4B62-A17D-53BC02BAAEC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{ABB27842-69AE-49F9-8A7B-07978589B898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB27842-69AE-49F9-8A7B-07978589B898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB27842-69AE-49F9-8A7B-07978589B898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2A1ED03-F182-4B62-A17D-53BC02BAAEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A1ED03-F182-4B62-A17D-53BC02BAAEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A1ED03-F182-4B62-A17D-53BC02BAAEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A1ED03-F182-4B62-A17D-53BC02BAAEC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
