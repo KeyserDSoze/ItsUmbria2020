@@ -59,10 +59,11 @@ namespace ItsUmbria2020.CarFactory
     {
         int Cilinder { get; set; }
     }
-    class Suv : Car, ICilindrable
+    class Suv : Car, ICilindrable, IColorable
     {
         public int Cilinder { get; set; }
-        private protected override string Addon => $"cc{Cilinder}";
+        public string Color { get; set; }
+        private protected override string Addon => $"color:{Color} cc{Cilinder}";
     }
     class Coupe : Car, IColorable
     {
