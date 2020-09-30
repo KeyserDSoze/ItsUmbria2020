@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Test.ConsoleApp.Obsolete</RootNamespace>
     <AssemblyName>Test.ConsoleApp.Obsolete</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ItsUmbria2020.OnlineGame.Library.Models\ItsUmbria2020.OnlineGame.Library.Models.csproj">
+      <Project>{f148947f-a320-4001-971a-c9ebed9a1484}</Project>
+      <Name>ItsUmbria2020.OnlineGame.Library.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

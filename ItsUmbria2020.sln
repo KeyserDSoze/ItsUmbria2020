@@ -31,8 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.ConsoleApp", "Test.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.OnlineGame.Library.Models", "ItsUmbria2020.OnlineGame.Library.Models\ItsUmbria2020.OnlineGame.Library.Models.csproj", "{F148947F-A320-4001-971A-C9EBED9A1484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.ConsoleApp.Obsolete", "Test.ConsoleApp.Obsolete\Test.ConsoleApp.Obsolete.csproj", "{107E1E55-E7B9-42DC-A255-E93D340075B7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,10 +85,6 @@ Global
 		{F148947F-A320-4001-971A-C9EBED9A1484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F148947F-A320-4001-971A-C9EBED9A1484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F148947F-A320-4001-971A-C9EBED9A1484}.Release|Any CPU.Build.0 = Release|Any CPU
-		{107E1E55-E7B9-42DC-A255-E93D340075B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{107E1E55-E7B9-42DC-A255-E93D340075B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{107E1E55-E7B9-42DC-A255-E93D340075B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{107E1E55-E7B9-42DC-A255-E93D340075B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,7 +101,7 @@ Global
 		{A2A1ED03-F182-4B62-A17D-53BC02BAAEC4} = {EC2FD4F8-B4D6-4581-9A61-F2D551ADC8D5}
 		{8E39438E-E6F4-4911-AB51-49779E63C0EC} = {EC2FD4F8-B4D6-4581-9A61-F2D551ADC8D5}
 		{57EFA3E3-37FD-42C3-BB35-49D816D525B5} = {44649699-507C-48BA-B0D7-0A55C66BE0EC}
-		{107E1E55-E7B9-42DC-A255-E93D340075B7} = {44649699-507C-48BA-B0D7-0A55C66BE0EC}
+		{F148947F-A320-4001-971A-C9EBED9A1484} = {44649699-507C-48BA-B0D7-0A55C66BE0EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {36CCCE18-5D15-4595-95CB-7894A5F9FF5B}

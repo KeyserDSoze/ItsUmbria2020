@@ -10,6 +10,7 @@ namespace Test.ConsoleApp.Obsolete
     {
         static void Main(string[] args)
         {
+            Character
         }
     }
 }

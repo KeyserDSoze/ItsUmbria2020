@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using ITSGame2020.OnlineGame.Library.Models;
+
+using System;
 
 namespace Test.ConsoleApp
 {
@@ -6,7 +9,15 @@ namespace Test.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Character character = new Wizard();
+            PrintCharacter(new Wizard());
+        }
+
+        private static void PrintCharacter(Character character) 
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(character.Name);
+            Console.ResetColor();
         }
     }
 }
