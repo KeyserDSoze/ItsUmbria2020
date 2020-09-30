@@ -1,33 +1,24 @@
 ﻿
-using ITSGame2020.OnlineGame.Library.Models;
-
 using ItsUmbria2020.OnlineGame.Library.Models.Characters;
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Test.ConsoleApp
 {
     class Program
     {
+        public static CharacterFactory characterFactory = new CharacterFactory();
         static void Main(string[] args)
         {
-            List<Character> characters = new List<Character>();
-            Warrior warrior = new Warrior();
-            Wizard wizard = new Wizard();
-            Rogue rogue = new Rogue();
-            Paladin paladin = new Paladin();
-            characters.Add(warrior);
-            characters.Add(wizard);
-            characters.Add(rogue);
-            characters.Add(paladin);
-
-            //wizard.ThrowFireBall(warrior);
-
-            foreach (Character character in characters)
-            {
-                character.PrintInfo();
-            }
+            GameManager.Instance().AddPlayers
+            (
+                characterFactory.Create(CharacterClass.Warrior, "MyName"),
+                characterFactory.Create(CharacterClass.Wizard),
+                characterFactory.Create()
+            );
+            GameManager.Instance().PrintPlayers();
         }
     }
 }

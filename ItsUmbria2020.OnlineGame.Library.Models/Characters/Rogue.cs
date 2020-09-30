@@ -1,6 +1,4 @@
-﻿using ItsUmbria2020.OnlineGame.Library.Models.Characters;
-
-namespace ITSGame2020.OnlineGame.Library.Models
+﻿namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
     public class Rogue : Character
     {
