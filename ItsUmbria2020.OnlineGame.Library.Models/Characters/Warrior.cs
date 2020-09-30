@@ -1,4 +1,4 @@
-﻿namespace ITSGame2020.OnlineGame.Library.Models
+﻿namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
     public class Warrior : Character
     {
@@ -9,7 +9,7 @@
         {
         }
 
-        public override int MaxHealth => 130;
-        public override int MaxMana => 20;
+        protected override int BaseHealth => 130;
+        protected override int BaseMana => 20;
     }
 }

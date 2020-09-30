@@ -1,6 +1,7 @@
-﻿using System;
+﻿
+using System;
 
-namespace ITSGame2020.OnlineGame.Library.Models
+namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
     public class Wizard : Character
     {
@@ -9,15 +10,22 @@ namespace ITSGame2020.OnlineGame.Library.Models
         }
         public Wizard(string name) : base(name)
         {
-            this.HealthPoints = MaxHealth;
-            this.ManaPoints = MaxMana;
+            HealthPoints = MaxHealth;
+            ManaPoints = MaxMana;
         }
-        public override int MaxHealth => 100;
-        public override int MaxMana => 150;
+        protected override int BaseHealth => 100;
+        protected override int BaseMana => 150;
 
-        public void ThrowFireBall(Character target) 
+        public override void PrintInfo()
         {
-            Console.WriteLine($"{this.Name} throws a fireball to {target.Name}");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            base.PrintInfo();
+            Console.ResetColor();
+        }
+
+        public void ThrowFireBall(Character target)
+        {
+            Console.WriteLine($"{Name} throws a fireball to {target.Name}");
         }
     }
 }
