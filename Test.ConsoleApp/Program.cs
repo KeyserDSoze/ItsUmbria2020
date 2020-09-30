@@ -18,12 +18,14 @@ namespace Test.ConsoleApp
             characters.Add(wizard);
             characters.Add(rogue);
 
+            //wizard.ThrowFireBall(warrior);
+
             foreach (Character character in characters)
             {
-                Console.WriteLine($"{character.GetType().Name} Heath = {character.HealthPoints}");
+                Console.WriteLine($"{character.Name} = {character.HealthPoints}");
                 character.Heal(100);
-                Console.WriteLine($"{character.GetType().Name} Heath = {character.HealthPoints}");
-
+                Console.WriteLine($"{character.Name} = {character.HealthPoints}");
+                
             }
         }
     }

@@ -5,10 +5,32 @@ namespace ITSGame2020.OnlineGame.Library.Models
 
     public abstract class Character
     {
-        public string Name { get; set; } = "Player";
+        private readonly string name = null;
+        public Character()
+        {
+            this.HealthPoints = this.MaxHealth;
+            this.ManaPoints = this.MaxMana;
+        }
+        public Character(string name) : this()
+        {
+            this.name = name;
+        }
+
+        protected virtual string DefaultName => this.GetType().Name;
+        public virtual string Name 
+        {
+            get 
+            {
+                if (this.name != null)
+                    return name;
+                else
+                    return DefaultName;
+            }
+        }
         public Gender Gender { get; set; }
 
         public abstract int MaxHealth { get; }
+        public abstract int MaxMana { get; }
         public int HealthPoints { get; set; } = 100;
         public int ManaPoints { get; set; }
         public int Level { get; } = 1;
@@ -21,35 +43,5 @@ namespace ITSGame2020.OnlineGame.Library.Models
                 HealthPoints = MaxHealth;
         }
         public CharacterType Type { get; set; }
-    }
-
-    public enum CharacterType
-    {
-
-        Human,
-        Elf,
-        Orc
-    }
-
-    public enum Gender
-    {
-        Male,
-        Female,
-        Unknown
-    }
-
-    public class Wizard : Character
-    {
-        public override int MaxHealth => 100;
-    }
-
-    public class Rogue : Character
-    {
-        public override int MaxHealth => 110;
-    }
-
-    public class Warrior : Character
-    {
-        public override int MaxHealth => 130;
     }
 }
