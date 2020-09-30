@@ -2,6 +2,7 @@
 using ITSGame2020.OnlineGame.Library.Models;
 
 using System;
+using System.Collections.Generic;
 
 namespace Test.ConsoleApp
 {
@@ -9,15 +10,22 @@ namespace Test.ConsoleApp
     {
         static void Main(string[] args)
         {
-            Character character = new Wizard();
-            PrintCharacter(new Wizard());
-        }
+            List<Character> characters = new List<Character>();
+            Warrior warrior = new Warrior();
+            Wizard wizard = new Wizard();
+            Rogue rogue = new Rogue();
+            characters.Add(warrior);
+            characters.Add(wizard);
+            characters.Add(rogue);
 
-        private static void PrintCharacter(Character character) 
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(character.Name);
-            Console.ResetColor();
+            foreach (Character character in characters)
+            {
+                Console.WriteLine($"{character.GetType().Name} Heath = {character.HealthPoints}");
+                character.Heal(100);
+                Console.WriteLine($"{character.GetType().Name} Heath = {character.HealthPoints}");
+
+            }
         }
     }
 }
+
