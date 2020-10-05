@@ -7,11 +7,11 @@ using System.Linq;
 
 namespace ItsUmbria2020.OnlineGame.Library.Orchestration
 {
-    public class GameManager
+    public class Controller
     {
         private static readonly object trafficLight = new object(); 
-        private static GameManager gameManager = null;
-        public static GameManager Instance()
+        private static Controller gameManager = null;
+        public static Controller Instance()
         {
             if (gameManager == null)
             {
@@ -19,7 +19,7 @@ namespace ItsUmbria2020.OnlineGame.Library.Orchestration
                 { 
                     if (gameManager == null) 
                     { 
-                        gameManager = new GameManager();
+                        gameManager = new Controller();
                     }
                 }
             }

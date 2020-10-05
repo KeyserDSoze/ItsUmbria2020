@@ -22,8 +22,8 @@ namespace Test.ConsoleApp
         }
         private static string CallServerAndCreateLobby(string lobbyName)
         {
-            GameManager.Instance().CreateLobby(lobbyName);
-            Lobby lobby = GameManager.Instance().GetLobbyInstance(Guid.NewGuid().ToString(), lobbyName);
+            Controller.Instance().CreateLobby(lobbyName);
+            Lobby lobby = Controller.Instance().GetLobbyInstance(Guid.NewGuid().ToString(), lobbyName);
             lobby.AddPlayers
             (
                 characterFactory.Create(CharacterClass.BattleMage),
@@ -32,8 +32,8 @@ namespace Test.ConsoleApp
                 characterFactory.Create(CharacterClass.Paladin)
             );
 
-            GameManager.Instance().PrintAllPlayers();
-            Character target = GameManager.Instance().GetLobbyInstance(lobby.Id, lobby.Name).GetFirstPlayer();
+            Controller.Instance().PrintAllPlayers();
+            Character target = Controller.Instance().GetLobbyInstance(lobby.Id, lobby.Name).GetFirstPlayer();
 
 
             foreach (Character player in lobby.Characters)
@@ -61,7 +61,7 @@ namespace Test.ConsoleApp
         }
         private static void CallServerAndremoveLobby(string lobbyName) 
         {
-            GameManager.Instance().RemoveLobby(lobbyName);
+            Controller.Instance().RemoveLobby(lobbyName);
         }
     }
 }
