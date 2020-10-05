@@ -8,7 +8,8 @@
         public Warrior(string name) : base(name)
         {
         }
-
+        public override int BaseDamage => 11;
+        public override int BaseDefense => 3;
         protected override int BaseHealth => 130;
         protected override int BaseMana => 20;
     }

@@ -13,15 +13,10 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
             HealthPoints = MaxHealth;
             ManaPoints = MaxMana;
         }
+        public override int BaseDamage => 5;
+        public override int BaseDefense => 0;
         protected override int BaseHealth => 100;
         protected override int BaseMana => 150;
-
-        public override void PrintInfo()
-        {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            base.PrintInfo();
-            Console.ResetColor();
-        }
 
         public void ThrowFireBall(Character target)
         {
