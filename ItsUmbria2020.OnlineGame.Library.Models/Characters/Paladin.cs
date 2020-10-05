@@ -14,7 +14,7 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
         {
         }
 
-        protected override int BaseHealth => 120;
+        protected override int BaseHealth => 110;
         protected override int BaseMana => 80;
     }
 }
