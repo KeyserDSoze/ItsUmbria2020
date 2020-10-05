@@ -25,7 +25,7 @@ namespace Test.ConsoleApp
             if (player1 != null && player2 != null)
             {
                 player1.Attack(player2);
-                player1.Heal(player2, 10);
+                //player1.Heal(player2, 10);
             }
             else 
             {
