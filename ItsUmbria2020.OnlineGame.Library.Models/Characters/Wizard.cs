@@ -13,7 +13,7 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
             HealthPoints = MaxHealth;
             ManaPoints = MaxMana;
         }
-        protected override int BaseHealth => 100;
+        protected override int BaseHealthV2 => 100;
         protected override int BaseMana => 150;
 
         public override void PrintInfo()

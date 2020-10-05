@@ -30,8 +30,8 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
         }
         public Gender Gender { get; set; }
 
-        protected abstract int BaseHealth { get; }
-        public int MaxHealth => BaseHealth * LevelWheigth();
+        protected abstract int BaseHealthV2 { get; }
+        public int MaxHealth => BaseHealthV2 * LevelWheigth();
         protected abstract int BaseMana { get; }
         public int MaxMana => BaseMana * LevelWheigth();
         public int HealthPoints { get; set; } = 100;
