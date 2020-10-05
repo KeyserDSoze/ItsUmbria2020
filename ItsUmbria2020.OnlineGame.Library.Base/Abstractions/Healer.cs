@@ -1,10 +1,8 @@
-﻿using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
+namespace ItsUmbria2020.OnlineGame.Library.Base.Abstractions
 {
     public abstract class Healer : Character
     {

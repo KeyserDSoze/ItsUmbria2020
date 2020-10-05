@@ -1,4 +1,4 @@
-﻿using ItsUmbria2020.OnlineGame.Library.Models.Characters;
+﻿using ItsUmbria2020.OnlineGame.Library.Base.Abstractions;
 
 using System;
 using System.Collections.Generic;

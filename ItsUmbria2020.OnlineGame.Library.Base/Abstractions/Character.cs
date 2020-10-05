@@ -1,9 +1,9 @@
-﻿
-using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
+﻿using ItsUmbria2020.OnlineGame.Library.Base.Enumerator;
+using ItsUmbria2020.OnlineGame.Library.Base.Interfaces;
 
 using System;
 
-namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
+namespace ItsUmbria2020.OnlineGame.Library.Base.Abstractions
 {
 
     public abstract class Character : IAttacker, IDamageable
@@ -49,23 +49,23 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 
         public void Attack(Character target)
         {
-            Console.WriteLine($"{this.Name} attacking {target.Name}");
-            target.GetDamage(this.BaseDamage);
+            Console.WriteLine($"{Name} attacking {target.Name}");
+            target.GetDamage(BaseDamage);
         }
         public int GetDamage(int amount)
         {
-            int wheightedDamage = amount - this.BaseDefense;
-            if (wheightedDamage < 0) 
+            int wheightedDamage = amount - BaseDefense;
+            if (wheightedDamage < 0)
             {
                 wheightedDamage = 0;
             }
-            this.HealthPoints -= wheightedDamage;
+            HealthPoints -= wheightedDamage;
 
-            if (this.HealthPoints < 0)
+            if (HealthPoints < 0)
             {
-                this.HealthPoints = 0;
+                HealthPoints = 0;
             }
-            Console.WriteLine($"{this.Name} gets {amount} damages. HP = {this.HealthPoints}");
+            Console.WriteLine($"{Name} gets {amount} damages. HP = {HealthPoints}");
             return amount;
         }
     }

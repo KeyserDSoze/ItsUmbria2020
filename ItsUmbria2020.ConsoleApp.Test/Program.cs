@@ -1,6 +1,8 @@
 ﻿
+using ItsUmbria2020.OnlineGame.Library.Base.Abstractions;
+using ItsUmbria2020.OnlineGame.Library.Base.Enumerator;
+using ItsUmbria2020.OnlineGame.Library.Base.Interfaces;
 using ItsUmbria2020.OnlineGame.Library.Models.Characters;
-using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
 
 using System;
 using System.Collections.Generic;

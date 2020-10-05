@@ -1,4 +1,4 @@
-﻿namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
+﻿namespace ItsUmbria2020.OnlineGame.Library.Base.Enumerator
 {
     public enum CharacterType
     {

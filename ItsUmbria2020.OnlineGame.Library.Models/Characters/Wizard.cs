@@ -1,5 +1,6 @@
 ﻿
-using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
+using ItsUmbria2020.OnlineGame.Library.Base.Abstractions;
+using ItsUmbria2020.OnlineGame.Library.Base.Interfaces;
 
 using System;
 
