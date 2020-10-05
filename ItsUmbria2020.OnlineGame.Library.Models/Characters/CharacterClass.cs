@@ -6,6 +6,7 @@
         Wizard,
         Rogue,
         Paladin,
-        Necromancer
+        Necromancer,
+        BattleMage
     }
 }

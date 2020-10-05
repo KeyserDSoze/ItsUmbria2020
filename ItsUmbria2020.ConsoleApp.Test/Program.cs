@@ -1,5 +1,6 @@
 ﻿
 using ItsUmbria2020.OnlineGame.Library.Models.Characters;
+using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
 
 using System;
 using System.Collections.Generic;
@@ -15,21 +16,37 @@ namespace Test.ConsoleApp
         {
             GameManager.Instance().AddPlayers
             (
-                characterFactory.Create(CharacterClass.Necromancer, "Player 1"),
-                characterFactory.Create(CharacterClass.Wizard, "Player 2")
+                characterFactory.Create(CharacterClass.BattleMage),
+                characterFactory.Create(CharacterClass.Necromancer),
+                characterFactory.Create(CharacterClass.Wizard),
+                characterFactory.Create(CharacterClass.Paladin)
             );
             
             GameManager.Instance().PrintPlayers();
-            Character player1 = GameManager.GetFirstPlayer();
             Character player2 = GameManager.GetFirstPlayer();
-            if (player1 is Necromancer necromancer)
+
+            foreach (Character player in GameManager.Instance().Characters)
             {
-                necromancer.ThrowSpell(player2);
-                necromancer.ThrowSpell(player2);
-                necromancer.Attack(player2);
-                necromancer.Resurrect(player2);
+                Console.WriteLine($"Actions of {player.Name}");
+                
+                if (player is INecromancer necromancer)
+                {
+                    necromancer.Resurrect(player2);
+                }
+                if (player is IAttacker attacker) 
+                {
+                    attacker.Attack(player2);
+                }
+                if (player is IMagician magician)
+                {
+                    magician.ThrowSpell(player2);
+                }
+                if (player is IStunner stunner)
+                {
+                    stunner.Stun(player2);
+                }
+                Console.WriteLine();
             }
-            
         }
     }
 }
