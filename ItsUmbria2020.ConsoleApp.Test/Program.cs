@@ -20,11 +20,16 @@ namespace Test.ConsoleApp
             );
             
             GameManager.Instance().PrintPlayers();
-            var player1 = GameManager.Instance().Characters.FirstOrDefault();
-            var player2 = GameManager.Instance().Characters.Skip(1).FirstOrDefault();
-            if (player1 != null && player2 != null) 
+            Character player1 = GameManager.GetFirstPlayer();
+            Character player2 = GameManager.GetSecondPlayer();
+            if (player1 != null && player2 != null)
             {
-                //player1.Heal(player2, 10);
+                player1.Attack(player2);
+                player1.Heal(player2, 10);
+            }
+            else 
+            {
+                Console.WriteLine("Empty player list");
             }
         }
     }

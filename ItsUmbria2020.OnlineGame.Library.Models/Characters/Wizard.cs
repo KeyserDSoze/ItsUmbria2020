@@ -15,17 +15,10 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
             HealthPoints = MaxHealth;
             ManaPoints = MaxMana;
         }
-
+        public override int BaseDamage => 5;
+        public override int BaseDefense => 0;
         protected override int BaseHealth => 100;
         protected override int BaseMana => 150;
-
-        public int Heal(Character target, int amount)
-        {
-            HealthPoints += amount;
-            if (HealthPoints > MaxHealth)
-                HealthPoints = MaxHealth;
-            return amount;
-        }
         public override void PrintInfo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -34,7 +27,7 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
         }
         public void ThrowSpell(Character target)
         {
-            Console.WriteLine($"{Name} throws a fireball to {target.Name}");
+            Console.WriteLine($"{Name} throws a spell to {target.Name}");
         }
     }
 }
