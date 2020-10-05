@@ -9,7 +9,7 @@
         {
         }
 
-        protected override int BaseHealthV2 => 110;
+        protected override int BaseHealth => 110;
         protected override int BaseMana => 50;
     }
 }
