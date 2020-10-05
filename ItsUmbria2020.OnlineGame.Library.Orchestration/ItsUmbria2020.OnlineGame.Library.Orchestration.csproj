@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ItsUmbria2020.OnlineGame.Library.Base\ItsUmbria2020.OnlineGame.Library.Base.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Room\" />
+    <ProjectReference Include="..\ItsUmbria2020.OnlineGame.Library.Models\ItsUmbria2020.OnlineGame.Library.Models.csproj" />
   </ItemGroup>
 
 </Project>

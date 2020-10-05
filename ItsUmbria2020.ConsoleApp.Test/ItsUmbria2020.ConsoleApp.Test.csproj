@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ItsUmbria2020.OnlineGame.Library.Models\ItsUmbria2020.OnlineGame.Library.Models.csproj" />
+    <ProjectReference Include="..\ItsUmbria2020.OnlineGame.Library.Orchestration\ItsUmbria2020.OnlineGame.Library.Orchestration.csproj" />
   </ItemGroup>
 
 </Project>

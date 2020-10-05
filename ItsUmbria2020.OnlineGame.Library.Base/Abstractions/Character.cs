@@ -6,7 +6,7 @@ using System;
 namespace ItsUmbria2020.OnlineGame.Library.Base.Abstractions
 {
 
-    public abstract class Character : IAttacker, IDamageable
+    public abstract class Character : GameObject, IAttacker, IDamageable
     {
         private readonly string name = null;
         public Character()
