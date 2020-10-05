@@ -24,9 +24,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Noe", "ItsUmbria2020.Noe\ItsUmbria2020.Noe.csproj", "{8E39438E-E6F4-4911-AB51-49779E63C0EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ItsUmbria2020.OnlineGame", "ItsUmbria2020.OnlineGame", "{44649699-507C-48BA-B0D7-0A55C66BE0EC}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Desktop\inheritance.png = ..\..\..\Desktop\inheritance.png
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ItsUmbria2020.Theory", "ItsUmbria2020.Theory", "{EC2FD4F8-B4D6-4581-9A61-F2D551ADC8D5}"
 EndProject
