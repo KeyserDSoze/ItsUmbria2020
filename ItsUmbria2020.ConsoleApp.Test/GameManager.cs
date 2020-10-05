@@ -10,7 +10,7 @@ namespace Test.ConsoleApp
     public class GameManager 
     {
         private static GameManager gameManager = null;
-        public static GameManager Instance() //=> gameManager ??= new GameManager();
+        public static GameManager Instance()
         {
             if (gameManager == null)
             {
