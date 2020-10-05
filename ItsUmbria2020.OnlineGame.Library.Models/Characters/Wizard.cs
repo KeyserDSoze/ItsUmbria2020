@@ -5,7 +5,7 @@ using System;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
-    public class Wizard : Healer
+    public class Wizard : Healer, IMagician
     {
         public Wizard() : base()
         {

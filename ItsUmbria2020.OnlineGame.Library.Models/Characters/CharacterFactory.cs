@@ -24,6 +24,8 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
                     return new Rogue(name);
                 case CharacterClass.Paladin:
                     return new Paladin(name);
+                case CharacterClass.Necromancer:
+                    return new Necromancer(name);
             }
         }
     }

@@ -24,12 +24,15 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.Noe", "ItsUmbria2020.Noe\ItsUmbria2020.Noe.csproj", "{8E39438E-E6F4-4911-AB51-49779E63C0EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ItsUmbria2020.OnlineGame", "ItsUmbria2020.OnlineGame", "{44649699-507C-48BA-B0D7-0A55C66BE0EC}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\inheritance.png = ..\..\..\Desktop\inheritance.png
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ItsUmbria2020.Theory", "ItsUmbria2020.Theory", "{EC2FD4F8-B4D6-4581-9A61-F2D551ADC8D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.OnlineGame.Library.Models", "ItsUmbria2020.OnlineGame.Library.Models\ItsUmbria2020.OnlineGame.Library.Models.csproj", "{F148947F-A320-4001-971A-C9EBED9A1484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.OnlineGame.Library.Models", "ItsUmbria2020.OnlineGame.Library.Models\ItsUmbria2020.OnlineGame.Library.Models.csproj", "{F148947F-A320-4001-971A-C9EBED9A1484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItsUmbria2020.ConsoleApp.Test", "ItsUmbria2020.ConsoleApp.Test\ItsUmbria2020.ConsoleApp.Test.csproj", "{9ADD1E32-6617-4CE7-A020-798869C1C174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItsUmbria2020.ConsoleApp.Test", "ItsUmbria2020.ConsoleApp.Test\ItsUmbria2020.ConsoleApp.Test.csproj", "{9ADD1E32-6617-4CE7-A020-798869C1C174}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,22 +15,21 @@ namespace Test.ConsoleApp
         {
             GameManager.Instance().AddPlayers
             (
-                characterFactory.Create(CharacterClass.Warrior, "Player 1"),
+                characterFactory.Create(CharacterClass.Necromancer, "Player 1"),
                 characterFactory.Create(CharacterClass.Wizard, "Player 2")
             );
             
             GameManager.Instance().PrintPlayers();
             Character player1 = GameManager.GetFirstPlayer();
-            Character player2 = GameManager.GetSecondPlayer();
-            if (player1 != null && player2 != null)
+            Character player2 = GameManager.GetFirstPlayer();
+            if (player1 is Necromancer necromancer)
             {
-                player1.Attack(player2);
-                //player1.Heal(player2, 10);
+                necromancer.ThrowSpell(player2);
+                necromancer.ThrowSpell(player2);
+                necromancer.Attack(player2);
+                necromancer.Resurrect(player2);
             }
-            else 
-            {
-                Console.WriteLine("Empty player list");
-            }
+            
         }
     }
 }

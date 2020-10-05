@@ -5,6 +5,7 @@
         Warrior,
         Wizard,
         Rogue,
-        Paladin
+        Paladin,
+        Necromancer
     }
 }
