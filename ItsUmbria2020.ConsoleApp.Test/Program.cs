@@ -28,7 +28,6 @@ namespace Test.ConsoleApp
             foreach (Character player in GameManager.Instance().Characters)
             {
                 Console.WriteLine($"Actions of {player.Name}");
-                
                 if (player is INecromancer necromancer)
                 {
                     necromancer.Resurrect(player2);
