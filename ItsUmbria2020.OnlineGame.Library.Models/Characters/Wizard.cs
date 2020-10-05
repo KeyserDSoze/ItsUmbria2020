@@ -1,9 +1,11 @@
 ﻿
+using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
+
 using System;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
-    public class Wizard : Character
+    public class Wizard : Character, IHealer
     {
         public Wizard() : base()
         {
@@ -15,6 +17,14 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
         }
         protected override int BaseHealth => 100;
         protected override int BaseMana => 150;
+
+        public int Heal(Character target, int amount)
+        {
+            HealthPoints += amount;
+            if (HealthPoints > MaxHealth)
+                HealthPoints = MaxHealth;
+            return amount;
+        }
 
         public override void PrintInfo()
         {

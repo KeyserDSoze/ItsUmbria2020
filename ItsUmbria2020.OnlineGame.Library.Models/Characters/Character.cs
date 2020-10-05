@@ -38,13 +38,6 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
         public int ManaPoints { get; set; }
         public int Level { get; } = 1;
         public int ExpLevelUp { get; set; }
-
-        public void Heal(int amount)
-        {
-            HealthPoints += amount;
-            if (HealthPoints > MaxHealth)
-                HealthPoints = MaxHealth;
-        }
         public CharacterType Type { get; set; }
 
         private int LevelWheigth() => 1 + (int)((Level - 1) * 0.2);
