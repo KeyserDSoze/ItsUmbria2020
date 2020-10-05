@@ -5,7 +5,7 @@ using System;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
-    public class Wizard : Character, IHealer
+    public class Wizard : Healer
     {
         public Wizard() : base()
         {
@@ -15,6 +15,7 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
             HealthPoints = MaxHealth;
             ManaPoints = MaxMana;
         }
+
         protected override int BaseHealth => 100;
         protected override int BaseMana => 150;
 
@@ -25,15 +26,13 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
                 HealthPoints = MaxHealth;
             return amount;
         }
-
         public override void PrintInfo()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             base.PrintInfo();
             Console.ResetColor();
         }
-
-        public void ThrowFireBall(Character target)
+        public void ThrowSpell(Character target)
         {
             Console.WriteLine($"{Name} throws a fireball to {target.Name}");
         }

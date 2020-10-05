@@ -7,21 +7,15 @@ using System.Text;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
-    public class Paladin : Character, IHealer
+    public class Paladin : Healer
     {
-        public Paladin()
+        public Paladin() : base()
         {
         }
         public Paladin(string name) : base(name)
         {
         }
-        public int Heal(Character target, int amount)
-        {
-            HealthPoints += amount;
-            if (HealthPoints > MaxHealth)
-                HealthPoints = MaxHealth;
-            return amount;
-        }
+
         protected override int BaseHealth => 125;
         protected override int BaseMana => 80;
     }

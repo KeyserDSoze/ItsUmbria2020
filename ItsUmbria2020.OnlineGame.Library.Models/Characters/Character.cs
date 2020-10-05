@@ -1,4 +1,6 @@
 ﻿
+using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
+
 using System;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
