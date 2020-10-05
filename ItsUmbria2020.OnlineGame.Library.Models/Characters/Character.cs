@@ -1,10 +1,12 @@
 ﻿
+using ItsUmbria2020.OnlineGame.Library.Models.Interfaces;
+
 using System;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
 
-    public abstract class Character
+    public abstract class Character : IAttacker
     {
         private readonly string name = null;
         public Character()
@@ -49,5 +51,10 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 
         private int LevelWheigth() => 1 + (int)((Level - 1) * 0.2);
         public virtual void PrintInfo() => Console.WriteLine($"{Name} --> Health {HealthPoints}, Mana {ManaPoints}");
+
+        public void Attack(Character target)
+        {
+            Console.WriteLine($"{this.Name} attacking {target.Name}");
+        }
     }
 }

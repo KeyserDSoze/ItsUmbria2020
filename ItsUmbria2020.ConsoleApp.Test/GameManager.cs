@@ -3,6 +3,7 @@ using ItsUmbria2020.OnlineGame.Library.Models.Characters;
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Test.ConsoleApp
 {
@@ -35,6 +36,9 @@ namespace Test.ConsoleApp
         {
             Characters.AddRange(character);
         }
+        public static List<Character> GetPlayers() => GameManager.Instance().Characters;
+        public static Character GetFirstPlayer() => GameManager.Instance().Characters.FirstOrDefault();
+        public static Character GetSecondPlayer() => GameManager.Instance().Characters.Skip(1).FirstOrDefault();
 
     }
 }
