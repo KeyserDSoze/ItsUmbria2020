@@ -6,7 +6,8 @@ using System.Text;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
 {
-    public class BattleMage : IMagicFighter
+    public class BattleMage : Wizard, IMagicFighter
     {
+        public void Stun(Character target) => Actions.Stun.Do(this, target);
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ItsUmbria2020.OnlineGame.Library.Models.Interfaces
 {
-    interface IMagician
+    public interface IMagician
     {
         void ThrowSpell(Character target);
     }

@@ -10,10 +10,7 @@ namespace ItsUmbria2020.OnlineGame.Library.Models.Characters
         public Warrior(string name) : base(name)
         {
         }
-        public void Stun(Character target)
-        {
-            Console.WriteLine($"{this.Name} stunning {target.Name}");
-        }
+        public void Stun(Character target) => Actions.Stun.Do(this, target);
         public override int BaseDamage => 11;
         public override int BaseDefense => 3;
         protected override int BaseHealth => 130;
