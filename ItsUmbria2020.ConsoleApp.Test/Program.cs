@@ -16,7 +16,8 @@ namespace Test.ConsoleApp
             (
                 characterFactory.Create(CharacterClass.Warrior, "MyName"),
                 characterFactory.Create(CharacterClass.Wizard),
-                characterFactory.Create()
+                characterFactory.Create(),
+                characterFactory.Create(CharacterClass.Paladin, "Pippo")
             );
             GameManager.Instance().PrintPlayers();
         }
