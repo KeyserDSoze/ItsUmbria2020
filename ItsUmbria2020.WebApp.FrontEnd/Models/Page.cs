@@ -6,5 +6,6 @@ namespace ItsUmbria2020.WebApp.FrontEnd.Models
     {
         public string Name { get; set; }
         public string Menu { get; set; }
+        public string Src { get; set; }
     }
 }

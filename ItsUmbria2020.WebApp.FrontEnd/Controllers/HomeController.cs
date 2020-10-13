@@ -15,10 +15,10 @@ namespace ItsUmbria2020.WebApp.FrontEnd.Controllers
         private readonly string path = @"C:\Users\a.albini\Documents\Github\ItsUmbria2020\ItsUmbria2020.WebApp.FrontEnd\Articles\";
         private static List<Page> pages = new List<Page>()
         {
-            new Page(){ Name="Html", Menu="HtmlMenu" },
-            new Page(){ Name="Css", Menu="CssMenu" },
-            new Page(){ Name="Javascript", Menu="JavascriptMenu" },
-            new Page(){ Name="JQuery", Menu="JQueryMenu" }
+            new Page(){ Name="Html", Menu="HtmlMenu", Src="../img/html.jpeg" },
+            new Page(){ Name="Css", Menu="CssMenu", Src="../img/css.jpg" },
+            new Page(){ Name="Javascript", Menu="JavascriptMenu", Src="../img/javascript.jpeg" },
+            new Page(){ Name="JQuery", Menu="JQueryMenu", Src="../img/jquery.jpg" }
         };
 
         public HomeController(ILogger<HomeController> logger)
@@ -30,6 +30,11 @@ namespace ItsUmbria2020.WebApp.FrontEnd.Controllers
         {
             return View();
         }
+        public IActionResult Thatsme()
+        {
+            return View();
+        }
+        
         public IActionResult Html()
         {
             return View("_Page", pages.FirstOrDefault(x => x.Name == "Html"));
@@ -46,7 +51,11 @@ namespace ItsUmbria2020.WebApp.FrontEnd.Controllers
         {
             return View("_Page", pages.FirstOrDefault(x => x.Name == "JQuery"));
         }
-
+        public IActionResult Exercise()
+        {
+            return View();
+        }
+        
         [HttpGet]
         public IActionResult GetPage(string name)
         {

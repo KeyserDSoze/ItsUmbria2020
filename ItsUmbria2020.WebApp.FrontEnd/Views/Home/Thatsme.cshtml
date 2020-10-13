@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "That's me";
+}
+
+<div class="col-12 mt-2 mb-2">
+    <div class="col-2 float-left text-center line2"><img id="img5" class="fixedHeight" src="~/img/team.jpg" /></div>
+    <div class="col-2 float-left text-center">
+        <div class="col-12 float-left text-center line1"><img id="img0" class="fixedHeight" src="~/img/teach.jpg" /></div>
+        <div class="col-12 float-left text-center line3"><img id="img4" class="fixedHeight" src="~/img/cycle.jpg" /></div>
+    </div>
+    <div class="col-4 float-left text-center middle"><img src="~/img/chisono.jpg" /></div>
+    <div class="col-2 float-left text-center">
+        <div class="col-12 float-left text-center line1"><img id="img1" class="fixedHeight" src="~/img/studio.jpg" /></div>
+        <div class="col-12 float-left text-center line3"><img id="img3" class="fixedHeight" src="~/img/durolavoro.jpg" /></div>
+    </div>
+    <div class="col-2 float-left text-center line2"><img id="img2" class="fixedHeight" src="~/img/libri.jpg" /></div>
+</div>
+
+<style>
+    .fixedHeight {
+        height: 150px;
+    }
+
+    .middle {
+        margin-top: 20%;
+    }
+
+    .line1 {
+        margin-top: 45%;
+    }
+
+    .line2 {
+        margin-top: 30%;
+    }
+
+    .line3 {
+        margin-top: 250%;
+        margin-bottom: 40%;
+    }
+
+    .rotateX {
+        animation: rotationX 3s infinite linear;
+    }
+
+    .rotateY {
+        animation: rotationY 3s infinite linear;
+    }
+
+    .scalate {
+        animation: scalation 3s infinite linear;
+    }
+
+    .skewableX {
+        animation: skewX 3s infinite;
+        transform: skew(20deg);
+        animation-direction: alternate;
+    }
+
+    .skewableY {
+        animation: skewY 3s infinite;
+        transform: skew(20deg);
+        animation-direction: alternate;
+    }
+
+    @@keyframes scalation {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(2);
+        }
+    }
+
+    @@keyframes rotationX {
+        from {
+            transform: rotateX(0deg);
+        }
+
+        to {
+            transform: rotateX(359deg);
+        }
+    }
+
+    @@keyframes rotationY {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(359deg);
+        }
+    }
+
+    @@keyframes skewX {
+        0% {
+            transform: skewX(20deg);
+        }
+
+        100% {
+            transform: skewX(-20deg);
+        }
+    }
+
+    @@keyframes skewY {
+        0% {
+            transform: skewY(20deg);
+        }
+
+        100% {
+            transform: skewY(-20deg);
+        }
+    }
+</style>
+
+<script>
+    let cont = 1;
+    $(function () {
+        setInterval(function () {
+            var element = (cont > 6) ? Math.floor(Math.random() * 6) + 1 : cont % 6;
+            var randomAnimation = Math.floor(Math.random() * 5) + 1;
+            switch (randomAnimation) {
+                case 1:
+                    var animationClass = "scalate";
+                    break;
+                case 2:
+                    var animationClass = "rotateX";
+                    break;
+                case 3:
+                    var animationClass = "skewableX";
+                    break;
+                case 4:
+                    var animationClass = "rotateY";
+                    break;
+                case 5:
+                    var animationClass = "skewableY";
+                    break;
+            }
+            //$("img").removeClass(animationClass);
+            $("#img" + element).addClass(animationClass);
+            cont = cont + 1;
+        }, 3000);
+    });
+</script>

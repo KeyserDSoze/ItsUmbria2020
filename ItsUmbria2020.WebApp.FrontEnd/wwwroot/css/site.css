@@ -86,9 +86,14 @@ body {
 	width: 100%;
 }
 
-#menu ul li {
-	cursor: pointer;
+#menu, #content {
+	position: relative;
+	margin-top: 4%;
 }
+
+	#menu ul li {
+		cursor: pointer;
+	}
 
 .code {
 	background: #dddddd;
