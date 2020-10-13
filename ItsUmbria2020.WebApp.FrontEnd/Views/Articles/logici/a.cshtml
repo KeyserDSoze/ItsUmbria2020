@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Link &lt;a&gt; </div>
+	
+	<br>
+	
+	 
+	 <table border="1" width="100%">
+       <tbody>
+         <tr>
+           <td><strong>Descrizione</strong></td>
+           <td>identifica collegamento (link) fra la pagina corrente e altre pagine </td>
+         </tr>
+         <tr>
+           <td><strong>Tipo</strong></td>
+           <td>elemento contenitore inline </td>
+         </tr>
+         <tr>
+           <td><strong>Attributi</strong></td>
+           <td>href, target </td>
+         </tr>
+       </tbody>
+     </table>
+     
+     <p>L'elemento &lt;a&gt; (anchor) consente di collegare fra loro diverse pagine html, creando in tal modo una struttura ipertestuale. Il collegamento viene applicato a una porzione di testo, che diviene in tal modo &quot;cliccabile&quot;. Per esempio</p>
+     <div class="code">
+       &lt;a href=&quot;http://www.programmiamo.altervista.org/index.html&quot; &gt; Pagina principale &lt;/a&gt; di Programmiamo 
+    </div>
+     <p>viene visualizzato dal browser nel seguente modo:</p>
+     <p><a href="http://www.programmiamo.altervista.org/index.html" > Pagina principale </a> di Programmiamo </p>
+     <p>Facendo clic col mouse sul testo sottolineato e in colore blu, viene aperta la pagina indicata nell'attributo <em>href</em>. </p>
+     <p>Il link pu&ograve; essere anche  fatto su un'immagine (in questo caso cliccando sull'immagine si viene  indirizzati alla pagina). Esempio:</p>
+     <p align="center">       <em>&lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;foto.jpg&quot;  width=&quot;640&quot; height=&quot;467&quot; border=&quot;0&quot;&gt;&lt;/a&gt;</em><em>&nbsp;</em></p>
+     <p>L'attributo border=&quot;0&quot; serve per evitare che venga messo un bordo  intorno all'immagine linkata.</p>
+	<p><span class="style1">ATTENZIONE</span>: essendo un elemento inline, il 
+	tag &lt;a&gt; deve sempre essere racchiuso all'interno di un elemento di blocco 
+	(come &lt;p&gt; o &lt;div&gt;) e non deve mai essere scritto direttamente nel body.</p>
+     <div class="titolo">Attributo href </div>
+     <p>L'attributo <strong>href</strong> (hypertext reference o riferimento ipertestuale) specifica l'indirizzo della pagina destinazione e deve essere indicato obbligatoriamente. L'indirizzo pu&ograve; essere costituito da un URL, cio&egrave; da un indirizzo internet completo, come nel caso considerato prima:</p>
+     <div class="code">
+       &lt;a href=&quot;http://www.programmiamo.altervista.org/index.html&quot; &gt; Pagina principale &lt;/a&gt; di Programmiamo 
+     </div>
+     <p>Se per&ograve; la pagina linkata si trova nella stessa cartella in cui &egrave; situata la pagina html che contiene il link, &egrave; sufficiente indicare semplicemente il nome del file:</p>
+     <div class="code">
+       &lt;a href=&quot;index.html&quot; &gt; Pagina principale &lt;/a&gt; di Programmiamo 
+     </div>
+     <p>Questo modo di fornire l'indirizzo si dice <em>relativo</em> (in contrapposizione al precedente, che viene detto <em>assoluto</em>).  In generale &egrave; preferibile usare indirizzi relativi. Se la pagina linkata si trova in una cartella diversa rispetto a quella della pagina corrente, si usa il simbolo di <strong>..</strong> (doppio punto) per indicare la cartella <em>parent</em> (cio&egrave; &quot;genitore&quot;) di quella corrente, cio&egrave; la cartella che contiene la cartella corrente. Si considerino gli esempi seguenti:</p>
+     <table border="1" cellpadding="0" cellspacing="0">
+       <tr>
+         <th>esempio indirizzo relativo</th>
+         <th>nota</th>
+       </tr>
+       <tr>
+         <td>href=&quot;pagina.html&quot;</td>
+         <td>&quot;pagina.html&quot; si          trova nella cartella corrente.</td>
+       </tr>
+       <tr>
+         <td>href=&quot;schede/pagina.htm&quot;</td>
+         <td>&quot;pagina.html&quot; si          trova nella cartella 'schede' che &egrave; una sottocartella della          cartella corrente.</td>
+       </tr>
+       <tr>
+         <td>href=&quot;../schede/pagina.html&quot;</td>
+         <td>&quot;pagina.html&quot;  si          trova nella cartella 'schede' che a sua volta si trova nella cartella          di livello superiore (parent) della cartella corrente </td>
+       </tr>
+       <tr>
+         <td>href=&quot;../../schede/pagina.html&quot;</td>
+         <td>&quot;pagina.html&quot; si trova nella cartella schede, la quale a sua volta si trova &quot;due livelli sopra&quot; alla cartella corrente </td>
+       </tr>
+    </table>
+     <p>&nbsp;</p>
+     <div class="titolo">Attributo target e codice alternativo per HTML 5 </div>
+     <p>L'attributo <strong>target</strong> permette di specificare in quale finestra la pagina linkata deve essere aperta: di default infatti la pagina viene aperta all'interno del documento stesso, ma &egrave; possibile specificare che la pagina sia aperta in una nuova finestra indicando target=&quot;_blank&quot;:</p>
+     <div class="code">
+       &lt;a href=&quot;index.html&quot; target=&quot;_blank&quot;&gt; Pagina principale &lt;/a&gt; di Programmiamo 
+    </div>
+     <p>Purtroppo l'uso di questo attributo (utile in molti casi) &eacute; deprecato in 
+		HTML 5 e produce 
+		errori di validazione. Per sostituirlo mantenendo la correttezza del 
+		codice, occorre usare un semplice codice 
+		javascript, come nell'esempio qui sotto:</p>
+     <div class="code">
+       &lt;a href=&quot;index.html&quot; onclick=&quot;window.open(this.href); return 
+		false;&quot;&gt; Pagina principale &lt;/a&gt; di Programmiamo 
+    </div>
+     <p>Per maggiori dettagli sull'uso di onclick vedi la sezione dedicata al
+		<a href=" ../js/js.html">linguaggio javascript</a>.</p>
+	<p>&nbsp;</p>
+     <div class="titolo">Segnalibri</div>
+     <p>Un <strong>segnalibro</strong> (in inglese <em>bookmark</em>) &eacute; un riferimento interno a una 
+		pagina sul quale &eacute; possibile indirizzare un link. Per creare un 
+		segnalibro in qualsiasi punto di una pagina, si usa l'attributo <strong>id</strong> sull'elemento destinazione del segnalibro,<strong></strong> come mostra l'esempio seguente:</p>
+     <div class="code">
+       &lt;p id=&quot;favola&quot; &gt;In un Paese lontano lontano, viveva una principessa&lt;/p&gt;</div>
+     <p>L'attributo id &egrave; un attributo universale, che cio&egrave; pu&ograve; essere applicato a qualsiasi elemento del body di una pagina (es. a un paragrafo, a un header, a una immagine). </p>
+	 <p>Il suo scopo, come si &eacute; detto, &eacute; quello di creare un segnalibro, cio&eacute; un 
+	punto di riferimento per un altro link. Se per esempio, in un altro punto 
+	della pagina, vogliamo richiamare il segnalibro precedente, dovremo 
+	scrivere:</p>
+     <div class="code">
+       &lt;p&gt;Per leggere la favola della Principessa sul Pisello &lt;a href=&quot;#favola&quot;&gt;clicca 
+		qui&lt;/a&gt;&lt;/p&gt;</div>
+     <p>Questo link viene visualizzato con la normale sottolineatura e, 
+		cliccandoci sopra, si viene indirizzati al punto nella pagina dove 
+		abbiamo messo il segnalibro. Si noti il cancelletto # davanti al nome 
+		del segnalibro.</p>
+	<p>L'uso di segnalibri &eacute; particolarmente utile nel caso di pagine lunghe, 
+	contenenti molti argomenti. In questi casi &eacute; consigliato mettere all'inizio 
+	della pagina un menu (per esempio una lista) con una serie di link interni 
+	che permettono di &quot;saltare&quot; direttamente ai diversi segnalibri.</p>
+	<p>Notiamo che &eacute; possibile linkare un segnalibro anche da un'altra pagina 
+	(diversa da quella che lo contiene). In questo caso bisogna premettere il 
+	nome (o il percorso) della pagina linkata, come nell'esempio qui sotto:</p>
+     <div class="code">
+       &lt;p&gt;Per leggere la favola della Principessa sul Pisello <br />
+		&lt;a href=&quot;/favole/principessa.html#favola&quot;&gt;clicca qui&lt;/a&gt;&lt;/p&gt;</div>
+     <p>Vale la pena infine di notare che talvolta si incontrano pagine 
+		contenenti riferimenti vuoti, come in questo esempio:</p>
+     <div class="code">
+       &lt;p&gt;&lt;a href=&quot;#&quot;&gt;Clicca qui&lt;/a&gt; per tornare all'inizio della 
+		pagina&lt;/p&gt;</div>
+     <p>Cliccando sul link, si viene reindirizzati all'inizio della pagina 
+		stessa.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<style
+type="text/css"> 
+
+.menucontainer
+{ 
+    width: 180px;  
+    
+border-color: #94AA74; 
+   
+border-width: 1px;
+   
+border-style: solid;
+}    
+
+.menucontainer
+a { 
+       
+width: 175px; 
+       
+height: 25px; 
+       
+padding-left: 5px; 
+       
+display: block;
+       
+margin: 0;      
+       
+background-color: rgb(201, 213, 179); 
+       
+color: rgb(101, 113, 79); 
+       
+border: 1px;
+       
+text-decoration: none; 
+       
+font-weight: bold; 
+}
+
+.menucontainer
+a:hover { 
+       
+background-color: rgb(180, 190, 160); 
+}
+
+</style>
+           
+         <!-- FINE
+DEL CODICE CSS!! -->
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Menu dinamici e pseudoclasse hover</p>
+	</div>
+        <p>Per affrontare la realizzazione di pagine dinamiche con i fogli 
+		stile, partiamo da un semplice esempio, particolarmente utile.</p>
+	<p>L'uso dei fogli stile CSS consente infatti di realizzare facilmente
+	<strong>menu dinamici</strong>, cio&eacute; menu il cui aspetto cambia al passaggio del mouse 
+		sulle diverse voci. Qui sotto &eacute; mostrato un esempio di menu dinamico:</p>
+<div
+class="menucontainer"> <!-- DIV CONTENITORE
+PRINCIPALE MENU -->
+
+<a
+href="#">Home</a>  <!--
+lista dei LINKS modificabile a piacimento! -->
+<a
+href="#">Sezione uno</a>
+<a
+href="#">Sezione due</a>
+<a
+href="#">Sezione tre</a>
+<a
+href="#">Sezione quattro</a>
+<a
+href="#">Sezione cinque</a>
+
+</div>     
+	<p>La tecnica per realizzare questi menu consiste nel definire un 
+	contenitore (tag &lt;div&gt;) con una classe o un id associato, dove viene specificato il 
+	comportamento del menu stesso. Nel dettaglio, il codice HTML del menu 
+	precedente &eacute; questo:</p>
+        <div class="code">
+          &lt;div class=&quot;menucontainer&quot;&gt; <br />
+			<br />
+			&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt; <br />
+			&lt;a href=&quot;#&quot;&gt;Sezione uno&lt;/a&gt;<br />
+			&lt;a href=&quot;#&quot;&gt;Sezione due&lt;/a&gt;<br />
+			&lt;a href=&quot;#&quot;&gt;Sezione tre&lt;/a&gt;<br />
+			&lt;a href=&quot;#&quot;&gt;Sezione quattro&lt;/a&gt;<br />
+			&lt;a href=&quot;#&quot;&gt;Sezione cinque&lt;/a&gt;<br />
+			<br />
+			&lt;/div&gt;
+        </div>
+        <p>Il comportamento &eacute; specificato dalla classe <em>menucontainer</em>, 
+		cos&eacute; definita:</p>
+        <div class="code">
+          .menucontainer<br />
+			{ <br />
+			width: 180px; <br />
+			border-color: #94AA74; <br />
+			border-width: 1px;<br />
+			border-style: solid;<br />
+			} <br />
+			<br />
+			.menucontainer a { <br />
+			width: 175px; <br />
+			height: 25px; <br />
+			padding-left: 5px; <br />
+			display: block;<br />
+			margin: 0; <br />
+			background-color: rgb(201, 213, 179); <br />
+			color: rgb(101, 113, 79); <br />
+			border: 1px;<br />
+			text-decoration: none; <br />
+			font-weight: bold; <br />
+			}<br />
+			<br />
+			.menucontainer a:hover { <br />
+			background-color: rgb(180, 190, 160); <br />
+			}<br />
+        </div>
+        <p>In breve <em>.menucontainer</em> specifica dimensioni, colori e bordi 
+		del menu.</p>
+	<p><em>.menucontainer a</em> specifica invece un cosiddetto <strong>
+	selettore di discendente</strong> (<em>descendant selector</em>): in poche 
+	parole, specifica lo stile dei tag &lt;a&gt; che si trovano all'interno di una 
+	classe .menucontainer</p>
+	<p>L'aspetto pi&eacute; importante per la realizzazione del menu dinamico &eacute; la
+	<a href=" css/css7.html">pseudoclasse</a> <em>hover</em>. 
+	Essa indica il comportamento associato a un link (l'elemento a) quando il mouse passa 
+	sopra il link stesso (<em>hover</em>).</p>
+	<p>In questo modo la pagina &eacute; in grado di rispondere a un'azione dell'utente 
+	(il passaggio del mouse sopra a un elemento) modificando il proprio aspetto. 
+	Abbiamo dunque realizzato in questo modo una semplice pagina dinamica!</p>
+
+	<div class="titolo">
+
+	  <p>Realizzare menu dinamici con servizi web based</p>
+	</div>
+        <p>Vi sono numerosi siti che consentono di creare in modo automatico il 
+		codice per la realizzazione di menu dinamici.</p>
+	<p>Uno dei migliori &eacute; senz'altro
+	<a target="_blank" href="http://www.cssmenubuilder.com/home">CSS Menu 
+	Builder</a>: come suggerisce il nome, si tratta di un sito che consente di 
+	costruire menu dinamici orizzontali e verticali, specificandone tutte le 
+	caratteristiche.</p>
+	<p>Un'altra possibilit&eacute; &eacute;
+	<a target="_blank" href="http://www.cssportal.com/css3-menu-generator/">CSS3 Menu Generator</a>, 
+	mediante il quale &eacute; possibile anche realizzare menu a drop down, cio&eacute; con 
+	sottomenu a discesa.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

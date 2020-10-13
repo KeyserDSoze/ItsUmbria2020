@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Ancora un confronto fra vettori e variabili </p>
+	</div>
+        <p>Se consideriamo di nuovo gli esempi forniti nelle lezioni precedenti, non sembra che i vettori siano molto utili. Infatti, negli esempi proposti, &egrave; possibile sostituirli con un gruppo di normali variabili, senza che sostanzialmente cambi nulla. Si consideri ad esempio: </p>
+        <div class="code">
+      var vettore = []; <br />
+      vettore[0] = 15; <br />
+      vettore[1] = -23;<br />
+      vettore[2] = -78.09;<br />
+      vettore[3] = 5;</div>
+        <p>che potrebbe essere tranquillamente sostituito con</p>
+        <div class="code">
+          variabile0 = 15; <br />
+            variabile1 = -23;<br />
+            variabile2 = -78.09;<br />
+          variabile3 = 5;</div>
+        <p>Si presti attenzione al fatto che variabile0, variabile1... sono normali variabili. Il numero progressivo 0, 1... fa parte del nome della variabile. In pratica il nostro vettore di 4 elementi pu&ograve; essere sostituito da 4 variabili singole e, a quanto pare, non cambierebbe nulla. </p>
+        <p>&nbsp; </p>
+        <div class="titolo">Vettori con indici variabili </div>
+        <p>C'&egrave; tuttavia una cosa importantissima che &egrave; possibile fare con i vettori ma non con le variabili. Si osservi il seguente esempio:  </p>
+
+        <div class="code">
+      var numeri = [];<br />
+        for (i=0;i&lt;10;i++)<br />
+        {<br />
+        numeri[i] = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+        }</div>
+        <p>In questo caso l'indice del vettore non &egrave; realizzato per mezzo di una costante numerica fissa (cio&egrave; un valore 0, 1...), ma con la variabile i. In pratica l'indice del vettore viene incrementato automaticamente dal ciclo for, partendo dal valore 0 fino ad arrivare al valore finale 9 (in corrispondenza di i=10 il ciclo termina).</p>
+        <p>Se avessimo voluto scrivere la stessa cosa con le variabili, avremmo dovuto fare:</p>
+        <div class="code">
+          numero0 = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+            numero1 = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+            numero2 = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+          numero3 = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+            ...<br />
+            numero9 = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+    </div>
+        <p>Se avessimo dovuto acquisire 100 valori diversi, la convenienza dell'uso dei vettori sarebbe risultata ancora pi&ugrave; evidente. </p>
+        <p>&nbsp;</p>
+        <div class="titolo"> Ancora un esempio di cosa si pu&ograve; fare con un indice variabile </div>
+        <p>Dunque l'uso dei vettori &egrave; particolarmente comodo quando &egrave; abbinato a un indice variabile, cio&egrave;, in altre parole, all'uso di una variabile per fare da indice al vettore. Qualsiasi variabile va bene per indicizzare un vettore, purch&eacute; contenga solo valori interi (indici decimali non hanno senso) e maggiori di zero (non esistono elementi di indice negativo in un vettore).</p>
+        <p>Usando gli indici variabili &egrave; possibile fare con i vettori cose che sarebbero molto difficili o persino impossibili con le variabili singole. Si consideri per esempio il seguente programma che acquisisce 10 elementi di un vettore e quindi li visualizza in ordine inverso, a partire dall'ultimo elemento acquisito fino al primo (l'elemento zero): </p>
+        <div class="code">
+          var numeri = [];<br />
+            for (i=0;i&lt;10;i++)<br />
+            {<br />
+            numeri[i] = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+          }<p align="left"> for (k=9;k&gt;=0;k--)<br />
+            {<br />
+            alert(numeri[k]);<br />
+            }</p>
+    </div>
+        <p>&nbsp;</p>
+        <div class="titolo"> Altri cicli su tutti gli elementi di un vettore </div>
+        <p>Non sempre si conosce la lunghezza di un vettore. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          var numeri = [];<br />
+            for (i=0; ;i++)<br />
+            {<p align="left"> numeri[i] = window.prompt(&quot;Inserisci un nuovo valore&quot;);<br />
+          if (numeri[i]&lt;0)<br />
+{<br />
+break;<br />
+}<br />
+            <br />
+            }</p>
+    </div>
+        <p>Il ciclo prosegue finch&eacute; l'utente non inserisce un valore negativo. Dunque alla fine del ciclo il vettore numeri pu&ograve; contenere un numero qualsiasi di elementi. Supponiamo ora ad esempio di voler sommare uno a tutti gli elementi del vettore. Possiamo farlo in questo modo: </p>
+        <div class="code">
+          for (k=0;k&lt;numeri.length;k++)<br />
+{<br /> 
+numeri[k] = Number(numeri[k]) + 1;
+<br />
+}</div>
+        <p>L'operatore <a href=" istruzioni/istru6.html">Number</a> serve per 
+		convertire ogni valore in numero ed evitare che i valori vengano 
+		trattati come stringhe e concatenati.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

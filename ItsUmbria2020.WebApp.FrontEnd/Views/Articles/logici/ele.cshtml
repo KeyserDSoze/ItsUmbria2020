@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Elementi logici </div>
+     <p>Si dicono <strong>logici</strong> (o semantici) quegli elementi del linguaggio HTML il cui scopo &egrave; quello di individuare blocchi di testo che rappresentano  parti aventi funzioni logiche distinte. Per esempio &lt;p&gt; &egrave; un tag logico, in quanto individua una porzione di testo che ha il significato di un paragrafo.</p>
+     <p>E' importante osservare che gli elementi logici non specificano in quale modo il browser dovr&agrave; visualizzare quel certo elemento. Per esempio il fatto di identificare una porzione di testo come &quot;paragrafo&quot; non implica il tipo di carattere, il colore del testo o le sue dimensioni. Tutte queste informazioni non sono fornite e pertanto, in linea di principio, ogni browser potrebbe visualizzare i paragrafi in modo diverso.</p>
+     <p>L'idea centrale &egrave; che gli elementi logici specificano la semantica, cio&egrave; il significato del testo, non la sua visualizzazione. </p>
+     <p>I principali elementi logici sono:</p>
+     <table width="100%" border="1">
+       <tr>
+         <td><strong>Elemento</strong></td>
+         <td><strong>Descrizione</strong></td>
+       </tr>
+       <tr>
+         <td><a href="p.html">&lt;p&gt;</a></td>
+         <td>Paragrafo</td>
+       </tr>
+       <tr>
+         <td><a href="h.html">&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; </a></td>
+         <td>Intestazioni di diverso livello </td>
+       </tr>
+       <tr>
+         <td><a href="img.html">&lt;img&gt; </a></td>
+         <td>Inserisce un'immagine </td>
+       </tr>
+       <tr>
+         <td><a href="liste.html">&lt;li&gt;</a></td>
+         <td>Lista</td>
+       </tr>
+       <tr>
+         <td><a href="a.html">&lt;a&gt;</a></td>
+         <td>Ancora o link </td>
+       </tr>
+       <tr>
+         <td><a href="strong.html">&lt;strong&gt;</a></td>
+         <td>Testo in forte evidenza (normalmente in grassetto) </td>
+       </tr>
+       <tr>
+         <td><a href="strong.html">&lt;em&gt;</a></td>
+         <td>Testo in evidenza (normalmente in corsivo) </td>
+       </tr>
+     </table>
+     <p>Per fare ancora qualche esempio, h1 indica che quella porzione di testa 
+		va considerata come un titolo primario, cio&eacute; che ha una certa rilevanza 
+		all'interno della pagina. Ci&eacute; non implica per&eacute; che quel titolo debba 
+		essere visualizzato in grassetto e con un certo tipo di carattere.</p>
+	<p>Allo stesso modo strong indica una porzione di testo che deve essere 
+	messa in evidenza. In linea di principio, esso non fornisce per&eacute; indicazioni 
+	su come il browser lo dovr&eacute; visualizzare. Anche se in pratica tutti i 
+	browser visivi usano il grassetto, per un utente ipovedente che navighi con 
+	un browser vocale, il grassetto non avrebbe nessun significato, mentre 
+	strong fornisce invece una indicazione utile (il browser potrebbe leggere 
+	per esempio il testo corrispondente a voce pi&eacute; alta).</p>
+     <p>&nbsp;</p>
+     <div class="titolo">Elementi di visualizzazione (deprecati) </div>
+     <p>Si dicono di <strong>visualizzazione</strong> (o di formattazione), quegli elementi del linguaggio HTML il cui scopo &egrave; quello di specificare in quale modo deve essere visualizzata una porzione di testo. Un semplice esempio di elemento di visualizzazione &egrave; il tag &lt;center&gt;. Il suo uso &egrave;</p>
+     <p><em>&lt;center&gt; Questa &egrave; una frase che si vuole allineare al centro &lt;/center&gt;</em></p>
+     <p>e l'effetto &egrave; quello di centrare nella pagina una porzione di testo.  </p>
+     <p>Si noti la differenza fra i tag logici (che indicano il significato del testo, ma non la sua visualizzazione) e i tag di visualizzazione, i quali invece indicano al browser in quale modo visualizzare un testo. Ecco qui un elenco di alcuni tag di visualizzazione:</p>
+     <table border="1" width="100%" summary="Deprecated HTML tags and replacements">
+       <tbody>
+         <tr>
+           <th>Elemento</th>
+           <th>Descrizione</th>
+         </tr>
+         <tr>
+           <td>&lt;center&gt;</td>
+           <td>centra un testo </td>
+         </tr>
+         <tr>
+           <td>&lt;font&gt;</td>
+           <td>permette di decidere il tipo di carattere usato </td>
+         </tr>
+         <tr>
+           <td>&lt;strike&gt;</td>
+           <td>barrato</td>
+         </tr>
+         <tr>
+           <td>&lt;u&gt;</td>
+           <td>sottolineatura</td>
+         </tr>
+         <tr>
+           <td>&lt;b&gt;</td>
+           <td>grassetto (bold) </td>
+         </tr>
+         <tr>
+           <td>&lt;i&gt;</td>
+           <td>corsivo (italic) </td>
+         </tr>
+       </tbody>
+     </table>
+     <p>Si osservi che &lt;b&gt; e &lt;i&gt; sono deprecati mentre &lt;strong&gt; e &lt;em&gt; non lo sono, sebbene l'effetto visivo, sui browser attuali, sia esattamente uguale: rispettivamente grassetto e corsivo. La differenza &egrave; che &lt;strong&gt; e &lt;em&gt; non specificano direttamente il formato del testo, ma solo la sua importanza, mentre &lt;b&gt; e &lt;i&gt; sono tag di visualizzazione veri e propri. </p>
+     <p>In origine l'HTML non conteneva tag di visualizzazione: questi sono stati aggiunti in seguito, quando internet &egrave; diventata (negli anni 90) un fenomeno di massa e quando &egrave; nata di conseguenza la necessit&agrave; di creare siti che assomigliassero graficamente a &quot;pagine stampate&quot;, cio&egrave; con colori, effetti grafici, tipi di caratteri diversi eccetera. L'introduzione di questi elementi ha portato a siti a volte piacevoli a vedersi, ma spesso non visualizzabili in modo corretto su computer diversi o su browser differenti. Inoltre, con l'introduzione degli elementi di visualizzazione, il numero di tag del linguaggio HTML &egrave; cresciuto esponenzialmente, portando a una notevole confusione.</p>
+     <p>Questa situazione &egrave; stata sanata con la versione 4.01 del linguaggio HTML, la quale stabilisce che tutti gli elementi di visualizzazione sono <strong>deprecati</strong>, ovvero il loro uso &egrave; fortemente sconsigliato e probabilmente in futuro verr&agrave; abolito totalmente. In sostituzione, il controllo della visualizzazione di una pagina deve essere effettuata con i fogli di stile, di cui 
+		<a href=" stili/stili1.html">parleremo in seguito</a>. </p>
+     <p>&nbsp;</p>
+     <div class="titolo">
+
+Elementi di visualizzazione non deprecati </div>
+    <p>Vi sono tuttavia alcuni elementi di visualizzazione che non sono deprecati nello standard 4.01. Si tratta di </p>
+    <table width="100%" border="1">
+      <tr>
+        <td><strong>Elemento</strong></td>
+        <td><strong>Descrizione</strong></td>
+      </tr>
+      <tr>
+        <td><a href="br.html">&lt;br&gt; </a></td>
+        <td>Introduce un'andata a capo in un testo </td>
+      </tr>
+      <tr>
+        <td><a href="br.html">&lt;hr&gt;</a></td>
+        <td>Introduce una linea di separazione orizzontale </td>
+      </tr>
+    </table>
+    <p>Inoltre non &egrave; deprecato l'elemento &lt;table&gt; per la realizzazione di tabelle, ma il suo uso &egrave; raccomandato solo per tabulare dati e non per ordinare gli elementi su una pagina html. </p>
+    <p>&nbsp;</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+<div class="titolo">Background-image</div>
+<p> <strong>sintassi:</strong>&nbsp;background-image: url(&lt;file immagine&gt;) </p>
+<p>Permette di selezionare un'immagine di sfondo. Esempio: </p>
+<div class="code">
+  &lt;body style=&quot;background-image: url(immagine.gif)&quot;&gt;</div>
+<p><span class="style2">ATTENZIONE</span>: se l'immagine � stata caricata sul 
+server che ospita il sito e si trova nella stessa cartella della pagina html, 
+non � necessario indicare nessun percorso. Se l'immagine si trova su un diverso 
+sito in rete, bisogna indicare l'url completa:</p>
+<div class="code">
+  &lt;body style=&quot;background-image: url(www.programmiamo.altervista.org/immagini/foto.jpg)&quot;&gt;</div>
+	<p>Bisogna usare con molta cautela le immagini di sfondo, perch� spesso 
+rischiano di essere una fonte di distrazione e di confusione. In genere � meglio 
+usare un'immagine piccola e semplice (per esempio una texture) ripetuta (vedi 
+qui sotto), piuttosto che un'unica grande immagine (che oltretutto non 
+produrrebbe lo stesso effetto con schermi di dimensioni differenti). </p>
+<div class="titolo">Background-repeat e background-position</div>
+<p> <strong>sintassi:</strong>&nbsp;background-repeat: repeat | no-repeat | 
+repeat-x | repeat-y</p>
+	<p>Siccome non � detto che l'immagine di sfondo sia abbastanza grande da 
+	coprire l'intero schermo, la propriet� background-repeat serve per 
+	specificare se l'immagine di sfondo dev'essere ripetuta e in che modo. Il 
+	valore repeat � quello di default (usato automaticamente in assenza di 
+	indicazioni): l'immagine viene ripetuta fino a coprire l'intero schermo:</p>
+	<p class="style1">
+	<img src="../img/repeat.png" alt="la propri�t� CSS background-image avec la constante repeat" /></p>
+	<p>Se viene specificato il valore no-repeat, l'immagine di sfondo viene 
+	visualizzata una sola volta nell'angolo superiore sinistro:</p>
+	<p class="style1">
+	<img src="../img/no-repeat.png" alt="la propri�t� CSS background-image avec la constante no-repeat" /></p>
+	<p>Con repeat-x l'immagine viene ripetuta lungo l'asse x (orizzontalmente):</p>
+	<p class="style1">
+	<img src="../img/repeat-x.png" alt="la propri�t� CSS background-image avec la constante x-repeat" /></p>
+	<p>Con repeat-y la ripetizione avviene in verticale:</p>
+	<p class="style1">
+	<img src="../img/repeat-y.png" alt="la propri�t� CSS  background-image avec la constante y-repeat" /></p>
+	<p>&nbsp;</p>
+<div class="titolo">Altre propriet� per lo sfondo</div>
+	<p>E' anche possibile specificare esattamente a partire da quale punto deve 
+	essere visualizzata l'immagine di sfondo, usando <strong>background-position</strong>. 
+	Infine la propriet� <strong>background-attachment</strong> indica se 
+	l'immagine � fissa o deve scorrere (scrolling) con il resto della pagina. Un 
+	semplice esempio di queste propriet� � mostrato qui sotto:</p>
+<div class="code">
+  &lt;body style=&quot;background-image: url(immagine.gif); 
+	background-repeat: no-repeat; background-attachment: fixed; 
+	background-position: 30% 20%;&quot;&gt;
+</div>
+	<p>Spesso &egrave; utile avere un'immagine di sfondo che si adatti esattamente alle dimensioni del contenitore, in modo da coprirlo completamente. Per ottenere questo bisogna usare la propriet&agrave; <strong>background-size</strong> col valore <strong>cover</strong> come in questo esempio:</p>
+	<div class="code"> &lt;body style=&quot;background-image: url(foto.jpg); 
+	  background-size: cover&quot;&gt; </div>
+	<p>&nbsp; </p>
+	<div class="titolo">Shorthand (abbreviazioni) </div>
+	<p>E' possibile specificare diversi stili di tipo font con un'unica istruzione (si parla in questo caso di <strong>shorthand</strong> o abbreviazione). Per esempio:</p>
+	<div class="code">
+      <p>background:#f00 url(background.gif) no-repeat fixed 0 0;</p>
+    </div>
+	<p>equivale a:</p>
+	<div class="code">
+      <p>background-color:#f00; <br />
+      background-image:url(background.gif);<br />
+      background-repeat:no-repeat;<br />
+      background-attachment:fixed; <br />
+      background-position:0 0;</p>
+    </div>
+	<p>Per quanto riguarda l'ordine con cui devono essere specificati i diversi stili, il W3C raccomanda di seguire l'ordine precedente. E' possibile omettere qualsiasi valore. Se un valore viene omesso, viene utilizzato il corrispondente valore di default. </p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

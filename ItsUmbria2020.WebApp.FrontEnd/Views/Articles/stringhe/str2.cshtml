@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+
+<script type="text/JavaScript"> 
+
+
+function conta()
+{
+frase = document.getElementById("frase").value;
+// Elimina dalla frase tutti i caratteri non validi e li sostituisce con blank
+frase = elimina(frase);
+
+// Conta il numero di spazi nella frase
+document.getElementById("parole").value = WordCount(frase);
+}
+
+
+function WordCount(str) 
+{ 
+return str.split(" ").length;
+}
+
+function elimina(str)
+{
+// Converte in minuscolo
+str = str.toLowerCase();
+
+// Sostituisce lettere accentate
+str = rimpiazza(str);
+
+// Sostituisce caratteri non alfabetici con blank
+str = str.replace(/\W+/g,' ');
+                           
+// Sostituisce doppio blank con singolo
+str = str.replace( /\s\s+/g, ' ' );
+                                     
+// Elimina blank iniziali e finali
+return str.trim();
+
+}
+
+function rimpiazza(miaStringa) {
+
+miaStringa = miaStringa.replace(/�/g, "a");
+miaStringa = miaStringa.replace(/�/g, "e");
+miaStringa = miaStringa.replace(/�/g, "e");
+miaStringa = miaStringa.replace(/�/g, "i");
+miaStringa = miaStringa.replace(/�/g, "o");
+miaStringa = miaStringa.replace(/�/g, "o");
+miaStringa = miaStringa.replace(/�/g, "u");
+miaStringa = miaStringa.replace(/�/g, "u");
+
+return miaStringa;
+}
+
+</script>
+
+
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-align: center;
+				font-family: Verdana;
+				font-size: 15px;
+}
+.style3 {
+				background-color: #FFFF00;
+}
+</style>
+
+
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Il metodo slice</div>
+					<p>Gli oggetti, come sappiamo, sono dotati di propriet� (es. la propriet� length di cui abbiamo gi� parlato) e di metodi. Un <strong>metodo</strong> rappresenta 
+					un'azione che � possibile compiere su un certo oggetto. 
+					In pratica i metodi sono delle funzioni strettamente legate 
+					all'oggetto a cui appartengono (infatti per essi si usa la 
+					notazione col punto, esattamente come nel caso delle 
+					propriet�).</p>
+	<p>Consideriamo il metodo <em>slice</em> che consente di 
+					&quot;affettare&quot; un pezzo della stringa. Riscriviamo a tale scopo 
+					la funzione visualizza() nel modo seguente:</p>
+	<div class="code">
+          <pre>&lt;head&gt;
+
+&lt;meta charset=&quot;utf-8&quot;&gt;
+
+&lt;title&gt; Semplice esempio in Javascript&lt;/title&gt;
+
+&lt;script&gt; 
+
+function visualizza()
+{
+    var contenuto =  document.getElementById('testo').value;
+    pezzo = contenuto.slice(4,12);
+    window.alert(pezzo);
+}
+&lt;/script&gt;
+ 
+
+&lt;/head&gt;
+
+</pre>
+	</div>
+        <p>Ora si provi a scrivere nella seguente text area la frase &quot;infuso di 
+		te al limone&quot; e si osservi il risultato che si ottiene premendo sul 
+		pulsante Mostra:</p>
+<form action="">
+<p>
+  <textarea id="testo3" rows="10" cols="30" name="S1"></textarea><br />
+  <input type="button" value="Mostra" onClick="alert(document.getElementById('testo3').value.slice(4,12))" />
+</p>
+</form>	
+
+	<p>Si ottiene la seguente finestra di alert:</p>
+	<p><img alt="Alert" src="../img/img1B.jpg" /></p>
+	<p>La ragione � che il metodo slice ha tagliato la stringa &quot;infuso di te al 
+	limone&quot; cominciando dopo il quarto carattere e terminando col dodicesimo 
+	carattere:</p>
+	<p class="style2">infu<span class="style3">so di te</span> al limone</p>
+	<p>Si osservi che anche gli spazi vuoti (blank) vengono contati come normali 
+	caratteri.</p>
+
+					<p>Osserviamo, come gi� detto, che i metodi sono delle funzioni. 
+					L'unica differenza rispetto alle funzioni normali � che i 
+					metodi appartengono a un particolare oggetto e il nome 
+					dell'oggetto va indicato per chiamare il metodo.</p>
+	<p>Torniamo al nostro esempio del metodo slice ed esaminiamo la chiamata al 
+	metodo:</p>
+	<p class="style1">pezzo = contenuto.slice(4,12);</p>
+	<p>Ovviamente i valori 4 e 12 sono gli argomenti della chiamata. Il valore 
+	di ritorno � la porzione di stringa (che viene assegnata alla variabile <em>
+	pezzo</em>). Si osservi che non occorre inserire fra gli argomenti la 
+	stringa su cui viene effettuato il taglio (<em>contenuto</em>), poich� 
+	questa � l'oggetto a cui appartiene il metodo.</p>
+<p>&nbsp;</p>
+        <div class="titolo"> Gli altri metodi di String</div>
+        <p>La tabella seguente elenca i metodi delle stringhe in JS:</p>
+
+<table border="1">
+  <tbody><tr>
+    <th style="width:24%">Metodo</th>
+    <th>Descrizione</th>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_charat.asp">charAt()</a></td>
+    <td>Ritorna il carattere alla posizione indicata</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_charcodeat.asp">charCodeAt()</a></td>
+    <td>Ritorna il codice Unicode del carattere alla posizione indicata</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_concat_string.asp">concat()</a></td>
+    <td>Unisce due o pi� stringhe</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_fromcharcode.asp">fromCharCode()</a></td>
+    <td>Converte in caratteri un codice UNICODE</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_indexof.asp">indexOf()</a></td>
+    <td>Torna la posizione della prima occorrenza trovata in una stringa</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_lastindexof.asp">lastIndexOf()</a></td>
+    <td>Torna la posizione dell'ultima occorrenza trovata 
+	in una stringa</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_localecompare.asp">localeCompare()</a></td>
+    <td>Confronta due stringhe</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_match.asp">match()</a></td>
+    <td>Verifica se una stringa corrisponde a una espressione regolare</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_replace.asp">replace()</a></td>
+    <td>Effettua una sostituzione in una stringa</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_search.asp">search()</a></td>
+    <td>Effettua una ricerca in una stringa e torna la posizione (se trovato)</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_slice_string.asp">slice()</a></td>
+    <td>Estrae una parte di stringa</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_split.asp">split()</a></td>
+    <td>Divide una stringa in un vettore di sottostringhe</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_substr.asp">substr()</a></td>
+    <td>Estrae un certo numero di caratteri da una stringa</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_substring.asp">substring()</a></td>
+    <td>Estrae caratteri da una stringa fra due indici</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_tolocalelowercase.asp">toLocaleLowerCase()</a></td>
+    <td>Converte una stringa in minuscolo</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_tolocaleuppercase.asp">toLocaleUpperCase()</a></td>
+    <td>Converte una stringa in maiuscolo</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_tolowercase.asp">toLowerCase()</a></td>
+    <td>Converte una stringa in minuscolo</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_tostring_string.asp">toString()</a></td>
+    <td>Torna il valore di un oggetto String</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_touppercase.asp">toUpperCase()</a></td>
+    <td>Converte una stringa in maiuscolo</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a></td>
+    <td>Rimuove gli spazi vuoti all'inizio e alla fine di una stringa</td>
+  </tr>
+  <tr>
+    <td>
+	<a target="_blank" href="http://www.w3schools.com/jsref/jsref_valueof_string.asp">valueOf()</a></td>
+    <td>Ritorna il valore primitivo di una stringa</td>
+  </tr>
+  </tbody></table>
+
+
+	<p>I link conducono alle rispettive pagine del sito
+	<a target="_blank" href="http://www.w3schools.com/">W3C Schools</a>, dove i 
+	metodi sono spiegati nel dettaglio con esempi.</p>
+
+        <div class="titolo"> Esempio finale</div>
+	<p>Come esempio finale di elaborazione delle stringhe e di uso dei metodi, 
+	consideriamo il seguente script che conta il numero di parole contenute in 
+	una frase:</p>
+	<div class="code">
+          <pre>function conta()
+{
+frase = document.getElementById(&quot;frase&quot;).value;
+// Elimina dalla frase tutti i caratteri non validi e li sostituisce con blank
+frase = elimina(frase);</pre>
+			<pre>// Conta il numero di spazi nella frase
+document.getElementById(&quot;parole&quot;).value = WordCount(frase);
+}
+</pre>
+			<pre>function WordCount(str) 
+{ 
+return str.split(&quot; &quot;).length;
+}</pre>
+			<pre>function elimina(str)
+{
+// Converte in minuscolo
+str = str.toLowerCase();</pre>
+			<pre>// Sostituisce lettere accentate
+str = rimpiazza(str);</pre>
+			<pre>// Sostituisce caratteri non alfabetici con blank
+str = str.replace(/\W+/g,' ');
+                           </pre>
+			<pre>// Sostituisce doppio blank con singolo
+str = str.replace( /\s\s+/g, ' ' );
+                                     </pre>
+			<pre>// Elimina blank iniziali e finali
+return str.trim();</pre>
+			<pre>}</pre>
+			<pre></pre>
+			<pre>// Sostituisce lettere accentate con gli equivalenti non accentati
+function rimpiazza(miaStringa) {</pre>
+			<pre>miaStringa = miaStringa.replace(/�/g, &quot;a&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;e&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;e&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;i&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;o&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;o&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;u&quot;);
+miaStringa = miaStringa.replace(/�/g, &quot;u&quot;);</pre>
+			<pre>return miaStringa;
+}</pre>
+	</div>
+        <p>Il codice � stato costruito utilizzando funzioni trovate in Internet 
+		da diverse fonti: questo � in effetti il modo con cui la maggior parte 
+		dei programmatori lavora in JS. Il lettore non deve preoccuparsi troppo 
+		di comprendere tutti i dettagli dello script.</p>
+	<p>In particolare il metodo replace fa largo uso delle cosiddette <strong>
+	espressioni regolari</strong>, sequenze di simboli mediante i quali � 
+	possibile descrivere sinteticamente un insieme di stringhe (per esempio 
+	tutte le stringhe che contengono determinati caratteri) e di operare su di 
+	esse. L'argomento espressioni regolari � troppo complesso per essere 
+	trattato in questa sede e rimandiamo il lettore interessato a una
+	<a target="_blank" href="http://www.html.it/articoli/javascript-ed-espressioni-regolari-1/">
+	trattazione approfondita su HTML.it</a>.</p>
+	<p>Il funzionamento dello script pu� essere testato qui sotto:</p>
+<form action="" style="border: thin solid red">
+<p class="style1">
+    <strong>Frase</strong> <input type="text" id="frase" size="40" />
+    </p>
+<p class="style1">
+    <input type="button" value="CONTA" onClick="conta()" /></p>
+<p class="style1">
+    <strong>Numero parole</strong>  <input type="text" id="parole" />
+</p>    
+</form>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

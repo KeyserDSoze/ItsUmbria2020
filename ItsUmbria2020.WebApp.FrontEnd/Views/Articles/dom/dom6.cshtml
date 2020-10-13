@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Accedere al nodo parent con parentNode </div>
+
+<p>Oltre che <a href="dom4.html">accedendo direttamente agli elementi</a> 
+(usando <em>document.getElementById</em>, <em>document.getElementsByTagName</em>, 
+<em>document.getElementsByClassName</em>, <em>document.querySelectorAll</em> o 
+<em>document.querySelector</em>) &eacute; anche possibile muoversi attraverso gli 
+elementi dell'albero del DOM.</p>
+	<p>Per esempio &eacute; possibile accedere al nodo genitore (<em>parent</em>) di un 
+	dato nodo usando la propriet&agrave; <em>parentNode</em> come mostra l'esempio 
+	seguente. Sia data la seguente lista:</p>
+        <div class="code">
+          &lt;ul id=&quot;monete&quot;&gt;<br />
+			&lt;li id=&quot;euro&quot;&gt;Euro&lt;/li&gt;<br />
+			&lt;li id=&quot;dollaro&quot;&gt;Dollaro&lt;/li&gt;<br />
+			&lt;li id=&quot;sterlina&quot;&gt;Sterlina&lt;/li&gt;<br />
+			&lt;/ul&gt; </div>
+        <p>Le seguenti istruzioni visualizzano &quot;monete&quot;, cio&eacute; l'id del nodo ul 
+		parent di sterlina:</p>
+        <div class="code">
+          var sterlina = document.getElementById(&quot;sterlina&quot;);<br />
+			var genitore = sterlina.parentNode;<br />
+			alert (genitore.id);</div>
+        <p>&nbsp;</p>
+
+<div class="titolo">Accedere al primo e all'ultimo child con firstChild e 
+				lastChild</div>
+
+	<p>La propriet&agrave;  firstChild consente l'accesso al primo child di un dato noto 
+	parent. Con riferimento alla seguente lista:</p>
+	<div class="code">
+          &lt;ul id=&quot;monete&quot;&gt;&lt;li id=&quot;euro&quot;&gt;Euro&lt;/li&gt;&lt;li id=&quot;dollaro&quot;&gt;Dollaro&lt;/li&gt;&lt;li id=&quot;sterlina&quot;&gt;Sterlina&lt;/li&gt;&lt;/ul&gt; </div>
+        <p>il codice seguente visualizza &quot;euro&quot; (cio&eacute; l'id del primo child di 
+		&quot;monete&quot;):</p>
+        <div class="code">
+          var monete = document.getElementById(&quot;monete&quot;);<br />
+			var primoF = monete.firstChild;<br />
+			alert (primoF.id); //visualizza &quot;euro&quot;</div>
+        <p><strong>ATTENZIONE</strong>: spazi bianchi o andate a capo 
+		all'interno di un elemento sono considerati come nodi di testo. Per 
+		questo se la lista fosse stata scritta in questo modo (con un'andata a 
+		capo dopo ogni elemento interno):</p>
+        <div class="code">
+          &lt;ul id=&quot;monete&quot;&gt;<br />
+			&lt;li id=&quot;euro&quot;&gt;Euro&lt;/li&gt;<br />
+			&lt;li id=&quot;dollaro&quot;&gt;Dollaro&lt;/li&gt;<br />
+			&lt;li id=&quot;sterlina&quot;&gt;Sterlina&lt;/li&gt;<br />
+			&lt;/ul&gt; </div>
+        <p>alert(primoF.id) avrebbe visualizzato <em>undefined</em> (perch&eacute; non 
+		esiste un id dello spazio vuoto).</p>
+	<p>In modo perfettamente analogo si pu&eacute; usare la propriet&agrave; lastChild per 
+	accedere all'ultimo child di un dato nodo parent:</p>
+        <div class="code">
+          var monete = document.getElementById(&quot;monete&quot;);<br />
+			var ultimoF = monete.lastChild;<br />
+			alert (ultimoF.id); //visualizza &quot;sterlina&quot;</div>
+        <p>&nbsp;</p>
+
+<div class="titolo">Accedere ai sibling con nextSibling e previousSibling</div>
+
+	<p>Due nodi sibling (fratelli) condividono lo stesso genitore. Le propriet&agrave;
+	nextSibling e previousSibling consentono di accedere al precedente e al 
+	successivo sibling.</p>
+	<p>Sempre con riferimento alla solita lista di monete (senza spazi e andate 
+	a capo!), il codice seguente visualizza &quot;euro&quot; e &quot;sterlina&quot;:</p>
+        <div class="code">
+          &nbsp;var dollaro = document.getElementById(&quot;dollaro&quot;);<br />
+			var prev = dollaro.previousSibling.innerHTML;<br />
+			var next = dollaro.nextSibling.innerHTML;<br />
+			alert(prev); //visualizza &quot;euro&quot;<br />
+			alert(next); // visualizza &quot;sterlina&quot;</div>
+        <p>&nbsp;</p>
+
+<div class="titolo">Accedere a tutti i nodi child di un dato nodo con childNodes </div>
+
+	<p>La propriet&agrave;  childNodes fornisce un array con tutti i nodi figli (child) di 
+	un dato nodo. Sempre con riferimento alla lista delle monete, il codice 
+	seguente visualizza l'elenco di tutte le monete:</p>
+        <div class="code">
+          &nbsp;var monete = document.getElementById(&quot;monete&quot;);<br />
+			<br />
+			for (i=0;i&lt;monete.childNodes.length; i++)<br />
+&nbsp;&nbsp;&nbsp; alert(monete.childNodes[i].innerHTML); </div>
+        <p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

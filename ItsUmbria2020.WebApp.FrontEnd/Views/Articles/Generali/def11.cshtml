@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+<div class="titolo">Risalire all'elemento che ha scatenato un evento: 
+				event.target</div>
+<p>Senza voler entrare troppo nei dettagli di un argomento certo molto 
+complesso, vogliamo introdurre rapidamente qui l'uso di un'istruzione (in realt&eacute; 
+tecnicamente si tratta della propriet&eacute; di un oggetto, ma lasciamo per adesso 
+stare questi tecnicismi) che in molti casi consente di semplificare e di rendere 
+pi&eacute; generale il codice scritto.</p>
+	<p>Consideriamo ancora una volta l'esempio dell'immagine sulla quale bisogna 
+	cliccare per cambiare l'immagine stessa. Nelle lezioni precedenti abbiamo 
+	affrontato il problema con la seguente funzione:</p>
+        <div class="code">
+			var ind=1;<br />
+			function muovi()<br />
+			&nbsp;&nbsp;&nbsp;
+			{ <br />
+			&nbsp;&nbsp;&nbsp;
+			if (ind%2)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino2.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			else<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino1.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			ind= ind + 1;<br />
+			&nbsp;&nbsp;&nbsp;
+			} </div>
+        <p>In realt&eacute; &eacute; possibile semplificare il codice precedente in questo 
+		modo:</p>
+        <div class="code">
+			var ind=1;<br />
+			function muovi()<br />
+			&nbsp;&nbsp;&nbsp;
+			{ <br />
+			&nbsp;&nbsp;&nbsp;
+			if (ind%2)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			event.target.src='../img/omino2.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			else<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			event.target.src='../img/omino1.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			ind= ind + 1;<br />
+			&nbsp;&nbsp;&nbsp;
+			} </div>
+        <p>L'espressione event.target equivale all'elemento (nel nostro caso 
+		l'elemento <em>img</em>) che ha dato origine all'evento cui &eacute; associata 
+		la funzione <em>muovi()</em>. Per dirla in modo ancora pi&eacute; semplice, 
+		possiamo usare</p>
+	<p class="style1">event.target.src='../img/omino2.jpg' </p>
+	<p>al posto di</p>
+	<p class="style1">document.getElementById('omino').src='../img/omino2.jpg'</p>
+	<p>e il codice funziona allo stesso modo e risulta indubbiamente 
+	semplificato.</p>
+	<p>C'&eacute; anche per&eacute; un altro grande vantaggio nell'usare <em>event.target</em> 
+	per fare riferimento all'elemento su cui &eacute; stato fatto clic: in questo modo 
+	la stessa funzione pu&eacute; essere applicata a immagini diverse, senza che ci sia 
+	bisogno di riscrivere il codice. Se per esempio nella nostra pagina html ci 
+	fossero due immagini, ciascuna col proprio evento <em>onclick</em> associato 
+	alla stessa funzione <em>muovi()</em>, l'uso di <em>event.target</em> 
+	permetterebbe all'interno della funzione di risalire a quale delle due 
+	immagini a dato origine all'evento.</p>
+	<p><strong>ATTENZIONE</strong>: purtroppo <em>event.target</em> non &egrave; standard su tutti i browser. Funziona correttamente su Chrome e Internet Explorer, ma non su Firefox Mozilla.</p>
+	<p>Molta confusione viene fatta talvolta dai programmatori fra <em>
+	event.target</em> e la parola chiave <em>this</em>, di cui
+	<a href=" funz/funz4.html">faremo cenno pi&eacute; avanti</a>. Entrambi fanno 
+	riferimento in forma abbreviata a un oggetto (senza doverlo scrivere per 
+	esteso), ma con una differenza fondamentale:</p>
+	<ul>
+					<li><em>event.target </em>rappresenta l'oggetto su cui &eacute; 
+					stato scatenato l'evento (il target dell'evento);</li>
+					<li><em>this</em> rappresenta l'oggetto proprietario di un 
+					certo metodo o di una certa funzione.</li>
+	</ul>
+	<p>Per adesso ci limitiamo ad accennare a questa problematica e ci torneremo 
+	ancora pi&eacute; avanti.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

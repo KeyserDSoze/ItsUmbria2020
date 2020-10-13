@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-align: center;
+				font-size: x-small;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Suddivisione di una pagina in frame</div>
+	 <p>I <strong>frame</strong> (in italiano <em>riquadri</em>) sono una 
+		tecnica di costruzione del layout di una pagine html, mediante la quale 
+		la pagina stessa viene composta (come una specie di puzzle) mettendo 
+		insieme pi&eacute; pagine diverse. </p>
+	<p>Attualmente l'uso dei frame &eacute; deprecato in HTML 5 e dunque essi non 
+	dovrebbero pi&eacute; essere usati. Per poter correttamente usare i frame in una 
+	pagina occorre usare l'apposito DOCTYPE:</p>
+	<p class="style2">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; 
+	&quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt; </p>
+	<p>La costruzione di una pagina con i frame inizia da un <strong>frameset</strong>. 
+	Si tratta di una particolare pagina html, priva di body, nella quale vengono 
+	semplicemente richiamate le diverse sottopagine che andranno a comporre la 
+	pagina totale. Si tratta in sostanza di una sorta di cornice vuota. Si 
+	consideri a titolo di esempio la pagina seguente che definisce un frameset:</p>
+	 <div class="code">
+       <pre>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; &quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt; 
+
+&lt;html&gt;
+&lt;head&gt;
+ &lt;meta http-equiv=&#8221;Content-Type&#8221; content=&#8221;text/html; charset=iso-8859-1&#8243;&gt;
+ &lt;title&gt;Pagina composta da frame/title&gt;
+&lt;/head&gt;
+
+
+&lt;frameset rows=&#8221;50%,50%&#8221; cols=&#8221;50%, 50%&#8221;&gt;</pre>
+		<pre> &lt;frame src=&#8221;prima.html&#8221;&gt;
+ &lt;frame src=&#8221;seconda.html&#8221;&gt;
+ &lt;frame src=&#8221;terza.html&#8221;&gt;
+ &lt;frame src=&#8221;quarta.html&#8221;&gt;
+ 
+&lt;/frameset&gt;</pre>
+		<pre>&lt;/html&gt;</pre>
+       <p> <br />
+       </p>
+    </div>
+	 <p>Si osservino le numerose particolarit&eacute; della pagina, a cominciare dalla 
+		dichiarazione DOCTYPE che usa la specifica Frameset per indicare appunto 
+		che si tratta, non di una normale pagina html, ma di un frameset. 
+		Infatti, come gi&eacute; detto prima, questa pagina manca di body e al suo 
+		posto troviamo invece l'elemento &lt;frameset&gt;.</p>
+	<p>Nel caso dell'esempio &lt;frameset rows=&#8221;50%,50%&#8221; cols=&#8221;50%, 50%&#8221;&gt; suddivide 
+	la pagina in due righe e in due colonne di uguale ampiezza, in pratica una 
+	sorta di quadrato. All'interno di tale cornice, vengono visualizzate le 
+	pagine prima.html, seconda.html eccetera. Queste ultime sono normali pagine 
+	html, ciascuna col proprio body.</p>
+	 <div class="titolo">Scopi e problemi dei frame</div>
+	 <p>I frame venivano largamente usati fino a non molto tempo fa per 
+		costruire layout complessi di pagine web (si tenga conto che i frame 
+		possono anche essere annidati uno dentro l'altro, come le tabelle). Per 
+		esempio si consideri il frameset seguente:</p>
+	<p class="style1">
+	<img src="../img/frameset.png" alt="frameset-nested" /></p>
+	<p>Ogni parte indicata &eacute; una pagina separata. Questo permette, per esempio, 
+	di mettere nell'<em>Header page</em> il logo e il menu di navigazione 
+	principale del sito, nel <em>Sub frame 1</em> il menu di navigazione 
+	secondario eccetera. Il vantaggio principale &eacute; che &eacute; possibile, per esempio, 
+	usare un'unica pagina Header per tutto il sito (da includere nel frameset di 
+	tutte le pagine): in questo modo, per modificare per esempio il menu di 
+	navigazione del sito, non &eacute; necessario riscrivere e ricaricare sul server 
+	web tutte le pagine, poich&eacute; basta cambiare solo la pagina Header.</p>
+	<p>Un ulteriore vantaggio, per altro ormai superato dalle tecniche di 
+	posizionamento con i fogli stile, &eacute; quando si vuole che una parte della 
+	pagina rimanga caricata permanentemente, mentre sia possibile effettuare lo 
+	scrolling separato su un'altra parte.</p>
+	<p>D'altra parte i frame comportano numerosi problemi, tanto che non sono 
+	pi&eacute; consentiti nel nuovo standard html 5 e il loro uso &eacute; attualmente 
+	deprecato. Per esempio i frame creano problemi quando si cerca di aggiungere 
+	una pagina nei segnalibri del browser (bookmarks), perch&eacute; spesso il browser 
+	non sa a quale pagina (fra quelle che compongono il frameset) fare 
+	riferimento. Anche il pulsante per tornare indietro di una pagina del 
+	browser spesso non funziona correttamente con i frame. Anche i motori di 
+	ricerca sono messi in difficolt&eacute; dai frame, perch&eacute; non sanno quale pagina 
+	indicizzare. I frame infine presentano problemi per quanto riguarda 
+	l'accessibilit&eacute; della pagina.</p>
+	<p>Per tutte queste ragioni, come abbiamo gi&eacute; detto, i frame sono generalmente sostituiti dal
+	<a href=" position/pos1.html">posizionamento con i fogli stile</a>. 
+	Un'alternativa moderna e non deprecata ai frame &eacute; costituita dai cosiddetti 
+	frame inline, di cui parleremo nella prossima lezione.</p>
+	 <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

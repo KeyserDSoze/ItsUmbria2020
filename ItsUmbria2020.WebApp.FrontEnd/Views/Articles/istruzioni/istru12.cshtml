@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Cicli</div>
+        <p>Un <strong>ciclo</strong> &eacute; una sequenza di istruzioni ripetuta pi&eacute; 
+		volte in dipendenza da una <strong>condizione</strong>. I cicli in JS 
+		seguono la stessa sintassi dei <a href=" ../C/cicli/cicli1.html">cicli 
+		in linguaggio C</a>, ragione per cui ci limitiamo qui a un rapido 
+		richiamo dei concetti fondamentali.</p>
+	<p>&nbsp;</p>
+
+	<div class="titolo">
+
+	  While</div>
+        <p>Il ciclo <strong>while</strong> contiene all'inizio la <em>condizione di ripetizione</em> del ciclo (il ciclo viene eseguito se la condizione &egrave; vera) seguita dalle istruzioni del ciclo fra parentesi graffe. Per esempio il ciclo seguente calcola la somma di tutti i numeri fra 1 e N: </p>
+        <div class="code">
+      cont = 1;<br />
+      somma = 0; 
+      <p align="left">while (cont &lt;= N)<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;somma = somma + cont;<br />
+        &nbsp;&nbsp;&nbsp;cont = cont + 1;<br />
+        &nbsp;&nbsp;&nbsp;}
+</p>
+    </div>
+        <p>&nbsp;</p>
+        <div class="titolo"> For </div>
+        <p>Nel ciclo <strong>for</strong> l'incremento (o il decremento del contatore) viene effettuato automaticamente. Per esempio il ciclo precedente, realizzato con un 
+		<em>for</em> sarebbe: </p>
+
+    <div class="code">
+      somma = 0;<p align="left">for (cont = 1; cont &lt;=N  ; cont++)<br />
+        &nbsp;&nbsp;&nbsp;{<br />
+        &nbsp;&nbsp;&nbsp;somma = somma + cont;<br />
+        &nbsp;&nbsp;&nbsp;}
+</p>
+    </div>
+        <p>Dal momento che il ciclo <em>for</em> precedente contiene una sola istruzione, sarebbe possibile, volendo, omettere la coppia di parentesi graffe. Si osservi la condizione del ciclo che &egrave; sempre una condizione di ripetizione e non di termine del ciclo stesso (prosegui 
+		finch&eacute; cont <em>rimane</em> minore o uguale a N). </p>
+        <p>L'esempio seguente mostra invece un ciclo <em>for</em> a decremento (o all'indietro; il contatore viene decrementato a ogni ripetizione del ciclo):</p>
+        <div class="code">
+          for (i = 100; i &gt;= 0; i--)<br />
+            &nbsp;&nbsp;&nbsp;{<br />
+            &nbsp;&nbsp;&nbsp;somma = somma + i;<br />
+            &nbsp;&nbsp;&nbsp;} 
+    </div>
+        <p>Le notazione cont++ e i-- sono notazioni abbreviate che possono essere sostituite con la notazione estesa (rispettivamente <em>cont = cont + 1</em> e<em> i = i - 1</em>).</p>
+        <p>&nbsp;    </p>
+        <div class="titolo"> Do... while </div>
+        <p>Il ciclo <strong>Do.. while</strong> effettua il controllo della condizione di ripetizione in fondo al ciclo. A differenza del while normale, il do..while esegue sempre almeno una volta le istruzioni interne al ciclo (anche nel caso in cui la condizione di ripetizione &egrave; subito falsa): </p>
+        <div class="code">
+          k = 0; <br />
+            do<br />
+            &nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;alert(&quot;Ripetizione: &quot; + k);<br />
+          &nbsp;&nbsp;&nbsp;k = k + 1;<br />
+          &nbsp;&nbsp;&nbsp;}<br />
+          while (k&lt;10); 
+    </div>
+        <p>&nbsp;</p>
+        <div class="titolo"> Istruzione break</div>
+        <p>Spesso &eacute; comodo costruire cicli che &eacute; possibile interrompere in 
+		qualsiasi momento, senza attendere che venga meno la condizione di 
+		ripetizione. Molte volte anzi, in questi cicli, la condizione di 
+		ripetizione viene eliminata realizzando quello che si dice ciclo 
+		infinito e usando un'istruzione break per interrompere il ciclo. L'<a href=" ../C/cicli/cicli4.html">uso 
+		dell'istruzione break e i cicli infiniti </a>&eacute; stato gi&eacute; ampiamente 
+		trattato nella sezione dedicata al linguaggio C, per cui ci limiteremo 
+		qui a un rapido esempio:</p>
+        <div class="code">
+          divisore=2;<br />
+            <br />
+            while (divisore&lt;numero) <br />
+            &nbsp;&nbsp;&nbsp; { <br />
+            &nbsp;&nbsp;&nbsp;resto = numero%divisore; <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;if (resto==0)<br />
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+            &nbsp;<br />
+            &nbsp;&nbsp;&nbsp;divisore = divisore+1; <br />
+          &nbsp;&nbsp;&nbsp; }<br />
+          <br />
+    </div>
+        <p>Questo ciclo si interrompe o quando divisore non &eacute; pi&eacute; minore di 
+		numero (condizione del ciclo) oppure quando la variabile resto vale 
+		zero.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

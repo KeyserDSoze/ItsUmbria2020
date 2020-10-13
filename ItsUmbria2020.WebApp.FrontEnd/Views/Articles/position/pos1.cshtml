@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				border-style: solid;
+				border-width: 1px;
+				padding: 1px 4px;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Posizionamento degli elementi con tabelle nascoste</div>
+	 <p>Parlando di tabelle e in particolare di <a href=" tabelle/tab.html">
+		tabelle nascoste</a>, abbiamo visto come sia possibile utilizzarle per 
+		posizionare gli elementi di una pagina html. In pratica si crea una 
+		specie di &quot;griglia&quot; formata da tabelle nascoste (e perci&eacute; invisibili) 
+		magari annidate una dentro l'altra e la si usa per ordinare la struttura 
+		della pagina:</p>
+	<p class="style1"><img src="../img/HTML-2-Column-Layout1.gif" /></p>
+	<p>Questo metodo di posizionamento, sebbene ancora largamente diffuso, &eacute; 
+	attualmente sconsigliato in quanto fa un uso improprio dell'elemento TABLE. 
+	Inoltre la sua utilit&eacute; &eacute; stata superata dall'avvento dei fogli stile CSS, i 
+	quali consentono un posizionamento molto pi&eacute; preciso e raffinato di quello 
+	offerto dalle semplici tabelle nascoste.</p>
+	 <div class="titolo">Elementi inline ed elementi di blocco</div>
+	 <p>Abbiamo gi&eacute; accennato alla distinzione esistente fra
+		<a href=" pagina/class.html">elementi di blocco ed elementi inline</a>. 
+		In quella sede abbiamo detto che gli elementi di blocco sono quelli che 
+		creano un blocco separato dal resto del documento (es. paragrafi, liste, 
+		tabelle), mentre gli elementi inline si inseriscono all'interno della 
+		pagina senza separazioni (es. link, immagini, grassetti etc.).</p>
+	<p>Approfondendo ora ulteriormente l'argomento, possiamo dire che gli
+	<strong>elementi di blocco</strong> (<em>block level element</em>) hanno le 
+	seguenti propriet&eacute;:</p>
+	<ul>
+					<li>Un elemento di blocco pu&eacute; contenere altri elementi 
+					block-level e elementi inline</li>
+					<li>Ad un elemento di blocco si possono attribuire delle 
+					dimensioni. </li>
+					<li>Un elemento di blocco di dimensioni non specificate 
+					occupa tutta la larghezza messa a disposizione del suo box 
+					contenitore. In verticale occuper&eacute; l&#8217;altezza necessaria al 
+					suo contenuto </li>
+	</ul>
+	<p>Per quanto riguarda invece gli <strong>elementi inline</strong> abbiamo:</p>
+	<ul>
+					<li>Un elemento inline pu&eacute; contenere solo altri elementi 
+					inline, ma non elementi di blocco.</li>
+					<li>Ad un elemento inline non si possono attribuire delle 
+					dimensioni. </li>
+					<li>Un elemento inline occuper&eacute; sia in orizzontale che in 
+					verticale l&#8217;altezza necessaria al suo contenuto </li>
+	</ul>
+	<p>Facciamo un semplice esempio per capire la differenza di comportamento 
+	fra i due tipi di elementi. Si consideri il codice seguente:</p>
+     <div class="code">
+       &lt;table border=&quot;1&quot; width=&quot;80%&quot; align=&quot;center&quot;&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;<br />
+		&lt;p&gt;Primo paragrafo: bla bla bla bla bla bla bla bla bla bla bla bla bla 
+		bla bla bla bla bla bla bla&lt;/p&gt;<br />
+		&lt;p style=&quot;width:30%&quot;&gt;Secondo paragrafo: bla bla bla bla bla bla bla bla 
+		bla bla bla bla bla bla bla bla bla bla bla bla&lt;/p&gt;<br />
+		&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;<br />
+		&lt;p&gt;Paragrafo contenente al proprio interno un'immagine<br />
+		&lt;img alt=&quot;&quot; src=&quot;../../img/indice.gif&quot; width=&quot;42&quot; height=&quot;36&quot; /&gt;. 
+		Si osservi come l'immagine si inserisca all'interno del paragrafo senza 
+		interruzioni (elemento inline)&lt;/p&gt;<br />
+		&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/table&gt;</div>
+     <p>che produce la seguente visualizzazione:</p>
+	<table border="1" width="80%" align="center">
+	<tr>
+	<td>
+	<p>Primo paragrafo: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+	<p style="width:30%">Secondo paragrafo: bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<p>Paragrafo contenente al proprio interno un'immagine
+	<img alt="" src="../img/indice.gif" width="42" height="36" />. Si osservi come l'immagine si inserisca all'interno del paragrafo senza interruzioni (elemento inline)</p>
+</td>
+	</tr>
+	</table>
+	<p>Si noti come il primo paragrafo (elemento di blocco) utilizzi in 
+	orizzontale tutto lo spazio della tabella. Il secondo paragrafo invece ha 
+	delle dimensioni specificate e dunque occupa in orizzontale solo il 30% 
+	della tabella. Si osservi anche come l'immagine (elemento inline) si 
+	inserisce all'interno di un paragrafo.</p>
+	 <div class="titolo">L'elemento di blocco &lt;div&gt;</div>
+	<p>Un elemento di blocco molto importante &eacute; l'elemento &lt;div&gt;. Lo abbiamo gi&eacute; 
+	incontrato <a href=" stili/stili2.html">in precedenza</a>, ma ora vogliamo 
+	approfondirne l'uso. Diciamo che &lt;div&gt; consente di creare un blocco 
+	&quot;neutro&quot;, senza nessuna altra particolare funzione a parte quella, appunto, 
+	di creare un blocco. Per essere pi&eacute; chiari, un blocco si pu&eacute; creare con un 
+	paragrafo &lt;p&gt;, con un header &lt;h1&gt;, con una lista &lt;ol&gt; etc etc, ma tutti 
+	questi blocchi sono connotati da una particolare funzione logica all'interno 
+	di una pagina (oltre che, in molti casi, da una particolare visualizzazione.</p>
+	<p>Invece &lt;div&gt; crea un blocco e basta, senza nessun altro significato. In 
+	pratica, dal punto della visualizzazione, un elemento &lt;div&gt; senza ulteriori 
+	specifiche viene visualizzato come un normale paragrafo. Si consideri a 
+	questo proposito il codice seguente:</p>
+     <div class="code">
+       &lt;p&gt; Questo &eacute; un normale paragrafo realizzato con un elemento p. &lt;/p&gt;<br />
+		&lt;p&gt; Questo &eacute; un altro paragrafo&lt;/p&gt;<br />
+		&lt;div&gt; Questo invece &eacute; un blocco realizzato con un elemento div &lt;/div&gt;<br />
+		&lt;div&gt; Questo &eacute; un altro blocco realizzato con un elemento div &lt;/div&gt;<br />
+		&lt;p&gt; Questo &eacute; ancora un paragrafo&lt;/p&gt;</div>
+     <p>che produce questa visualizzazione:</p>
+<div class="style2"> 
+<p> Questo &eacute; un normale paragrafo realizzato con un elemento p. </p>
+<p> Questo &eacute; un altro paragrafo</p>
+<div> Questo invece &eacute; un blocco realizzato con un elemento div </div>
+<div> Questo &eacute; un altro blocco realizzato con un elemento div </div>
+<p> Questo &eacute; ancora un paragrafo</p>
+
+</div>
+
+	<p>A differenza per&eacute; dei paragrafi, &lt;div&gt; non introduce una separazione 
+	(andata a capo) fra un &lt;div&gt; e quello successivo (come si vede dall'esempio 
+	qui sopra). Inoltre mentre non &eacute; corretto annidare un paragrafo &lt;p&gt; dentro 
+	un altro &lt;p&gt;, un blocco &lt;div&gt; pu&eacute; benissimo contenere altri blocchi &lt;p&gt; al 
+	suo interno.</p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Il box model</div>
+	<p>Usando l'elemento &lt;div&gt; e gli altri elementi di blocco, la struttura di 
+	una pagina pu&eacute; essere pensata come suddivisa in una serie di blocchi uno 
+	dentro l'altro.</p>
+	<p>Si consideri per esempio la pagina seguente, dove i singoli blocchi sono 
+	messi in evidenza con riquadri rossi:</p>
+	<p class="style1"><img src="../img/all-is-a-box.jpg" /></p>
+	<p>In pratica abbiamo un blocco esterno (che contiene tutti gli altri) che 
+	corrisponde al &lt;body&gt; della pagina. All'interno di questo super blocco si 
+	dispongono tutti gli altri blocchi. Questa suddivisione in blocchi di una 
+	pagina viene detta <strong>modello a blocchi o a scatole</strong> (<em>box model</em>) 
+	della pagina.</p>
+	<p>Si osservi la figura seguente che mostra una pagina suddivisa in blocchi 
+	e sottoblocchi:</p>
+	<p><img alt="" src="../img/img2C.jpg" /></p>
+	<p>L'idea &eacute; quella di usare 4 blocchi principali (due DIV, un TABLE e un P), 
+	un blocco DIV annidato dentro un altro e due immagini IMG (elementi inline) 
+	racchiuse dentro altri elementi di blocco, allo scopo di organizzare in modo 
+	ordinato la struttura e la visualizzazione della pagina.</p>
+	<p>Il problema &eacute; che, se proviamo a realizzare una pagina html fatta cos&eacute;, 
+	probabilmente otterremo una visualizzazione di questo tipo:</p>
+	<p class="style1"><img alt="" src="../img/img30.jpg" /></p>
+	<p>La figura seguente mostra pi&eacute; chiaramente la struttura della pagina 
+	mediante l'aggiunta di margini colorati e di etichette che identificano i 
+	singoli blocchi:</p>
+	<p><img alt="" src="../img/img2F.jpg" />Il risultato ottenuto mostra i 
+	blocchi disposti semplicemente uno sotto l'altro e gli elementi inline 
+	posizionati all'interno dei blocchi. Questo tipo di posizionamento, che 
+	segue la naturale distribuzione degli elementi nella pagina, &eacute; detto <strong>statico</strong> 
+	(<em>static</em>) ed &eacute; quello che viene usato per default, cio&eacute; in automatico. 
+	Ovvero: per disporre i blocchi all'interno di una pagina in modo un po' pi&eacute; 
+	creativo bisogna utilizzare in modo pi&eacute; sofisticato le funzioni di 
+	posizionamento offerte dagli stili. E questo &eacute; appunto l'argomento che 
+	affronteremo nelle prossime lezioni.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

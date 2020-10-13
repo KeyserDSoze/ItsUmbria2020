@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Header, body e footer di una tabella</div>
+	 <p>Tabelle molto lunghe possono comportare problemi in fase di 
+		visualizzazione o di stampa, poich� la riga che contiene l'intestazione 
+		pu� non risultare visibile quando si effettua lo scrolling della pagina, 
+		oppure perch� si vuole che tale intestazione venga stampata all'inizio 
+		di ogni pagina di stampa.</p>
+	<p>Per risolvere questo problema si possono usare gli elementi thead, tbody 
+	e tfoot che definiscono rispettivamente l'intestazione (<strong>thead</strong>), 
+	il corpo (<strong>tbody</strong>) e l'eventuale pi� di pagina (<strong>tfoot</strong>) 
+	di una tabella. L'esempio che segue dovrebbe chiarire l'uso:</p>
+	 <div class="code">
+       &lt;table width=&quot;50%&quot; border=&quot;1&quot;&gt;<br />
+		&lt;thead&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;COLORE&lt;/td&gt;&lt;td&gt;NOME&lt;/td&gt;&lt;td&gt;CODICE&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/thead&gt;<br />
+		&lt;tfoot&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;In italiano&lt;/td&gt;&lt;td&gt;Short name in html&lt;/td&gt;&lt;td&gt;Hex code&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/tfoot&gt;<br />
+		&lt;tbody&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;BIANCO&lt;/td&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;td&gt;#FFFFFF&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;NERO&lt;/td&gt;&lt;td&gt;BLACK&lt;/td&gt;&lt;td&gt;#000000&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;BLU&lt;/td&gt;&lt;td&gt;BLUE&lt;/td&gt;&lt;td&gt;#0000FF&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/tbody&gt;<br />
+		&lt;/table&gt;</div>
+	 <p>che viene visualizzato cos�:</p>
+<table width="50%" border="1" align="center">
+<thead>
+<tr>
+<td>COLORE</td><td>NOME</td><td>CODICE</td>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td>In italiano</td><td>Short name in html</td><td>Hex code</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td>BIANCO</td><td>WHITE</td><td>#FFFFFF</td>
+</tr>
+<tr>
+<td>NERO</td><td>BLACK</td><td>#000000</td>
+</tr>
+<tr>
+<td>BLU</td><td>BLUE</td><td>#0000FF</td>
+</tr>
+</tbody>
+</table>
+	<p>Si noti che tfoot deve essere scritto prima di tbody, anche se viene 
+	visualizzato in fondo alla tabella. Inoltre thead, tfoot e tbody devono 
+	contenere ciascuno lo stesso numero di colonne.</p>
+	 <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

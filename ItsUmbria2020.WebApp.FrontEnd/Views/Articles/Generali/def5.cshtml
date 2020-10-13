@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	        <div class="titolo">
+
+	  Apici singoli o apici doppi?</div>
+        <p>Una nota veloce sull'uso degli apici singoli (') o doppi (&quot;) in JS. 
+		Come si pu&eacute; notare, negli esempi precedenti abbiamo utilizzato 
+		indifferentemente entrambe le notazioni (es. document.getElementById('<em>nomeoggetto</em>').<em>attributo</em> 
+		oppure document.getElementById(&quot;<em>nomeoggetto&quot;</em>).<em>attributo</em> 
+		e in effetti l'uso &eacute; indifferente. In entrambi i casi gli apici (singoli 
+		o doppi) servono per racchiudere una stringa di caratteri ovvero, per 
+		essere pi&eacute; semplici, un nome che non fa parte della sintassi del JS ma 
+		che &eacute; stato attribuito liberamente dall'utente.</p>
+	<p>Per esempio in <em>document.getElementById(&quot;fahreneit&quot;).value</em> oppure
+			<em>document.getElementById('fahreneit').value</em> gli apici 
+	(singoli o doppi) sono usati intorno al nome fahreneit che non fa parte 
+	della sintassi del JS.</p>
+	<p> Ci sono alcuni casi tuttavia in cui l'uso degli apici singoli oppure 
+	doppi fa differenza. Si consideri per esempio questo caso:</p>
+        <div class="code">
+&lt;a href=&quot;pagina.html&quot; onclick=&quot;window.open('popup.html')&quot;&gt;clicca qui &lt;/a&gt; 
+        </div>
+        <p> Non ci si preoccupi troppo di comprendere adesso il significato 
+		preciso di ogni singola istruzione. Il senso generale &eacute; abbastanza 
+		semplice: quando si fa click sul link deve aprirsi una finestra 
+		secondaria (di pop up) con la pagina di nome <em>popup.html</em>. In questo caso 
+		abbiamo degli apici che devono stare all'interno di altri apici. Infatti 
+		<em>onclick</em> richiede gli apici e cos&eacute; pure <em>window.open</em>. In questo caso &eacute; 
+		essenziale usare due tipi di apici diversi, per distinguere quelli 
+		esterni da quelli interni. Non fa perci&eacute; differenza scrivere</p>
+	<p class="style1"> onclick=&quot;window.open('popup.html')&quot; oppure onclick='window.open(&quot;popup.html&quot;)'</p>
+	<p> ma sarebbe sbagliato scrivere (usando un solo tipo di apici):</p>
+	<p class="style1"> onclick=&quot;window.open(&quot;popup.html&quot;)&quot;</p>
+	<p> In quest'ultimo esempio (sbagliato!) il JS non &eacute; in grado di sapere 
+	quali sono gli apici di apertura e di chiusura di ogni singola stringa (dal 
+	momento che tutti gli apici usati sono uguali!).</p>
+	<p>&nbsp; </p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Apertura di una finestra secondaria </div>
+        <p>Abbiamo gi&agrave; accennato a come &egrave; possibile<a href=" Generali/def4.html"> usare il metodo open
+		</a>dell'oggetto <em>window</em> per aprire una finestra secondaria (finestra di pop-up): </p>
+        <div class="code">
+          &lt;a href=&quot;pagina.html&quot; onclick=&quot;window.open('popup.html')&quot;&gt;clicca qui &lt;/a&gt; 
+        </div>
+        <p>In realt&agrave; il metodo <em>open</em> offre la possibilit&agrave; di controllare in modo dettagliato le propriet&agrave; della nuova pagina. Consideriamo il seguente esempio pi&ugrave; completo: </p>
+        <div class="code">
+          window.open('Sample.htm','Nuova pagina','height=200,width=400,status=yes,toolbar=no,
+            menubar=no,location=no');</div>
+        <p>In questo caso la finestra secondaria verr&agrave; aperta con:</p>
+        <p> - titolo: Nuova pagina<br />
+          - larghezza (<em>width</em>): 400 pixel<br />
+          - altezza (<em>height</em>): 200 pixel<br />
+          - barra dei bottoni standard del browser non attiva (<em>toolbar</em>) <br /> 
+          - senza la casella del browser dove si digita la url (<em>location</em>) <br />
+    - barra del menu non attiva (<em>menubar</em>) </p>
+        <p> La seguente tabella contiene un riassunto dei parametri principali e dei loro valori:</p>
+        <table border="2" cellpadding="5" cellspacing="0">
+          <tr>
+            <th width="119" bgcolor="#f4f4f4">caratteristica</th>
+            <th width="94" bgcolor="#f4f4f4">valore</th>
+            <th width="334" bgcolor="#f4f4f4">spiegazione</th>
+            <th width="111" bgcolor="#f4f4f4">esempio</th>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">width</td>
+            <td bgcolor="#ffffff">numerico</td>
+            <td bgcolor="#ffffff">la larghezza della finestra in pixel</td>
+            <td bgcolor="#ffffff">width=400</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">height</td>
+            <td bgcolor="#ffffff">numerico</td>
+            <td bgcolor="#ffffff">l'altezza della finestra in pixel</td>
+            <td bgcolor="#ffffff">height=200</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">left</td>
+            <td bgcolor="#ffffff">numerico</td>
+            <td bgcolor="#ffffff">la distanza dalla sinistra del monitor</td>
+            <td bgcolor="#ffffff">left=300</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">top</td>
+            <td bgcolor="#ffffff">numerico</td>
+            <td bgcolor="#ffffff">la distanza dal lato superiore del monitor</td>
+            <td bgcolor="#ffffff">top=350</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">resizable</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">indica se la finestra pu&ograve; essere ridimensionata o no</td>
+            <td bgcolor="#ffffff">resizable=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">fullscreen</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">indica se la finestra va aperta a tutto schermo</td>
+            <td bgcolor="#ffffff">fullscreen=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">channelmode</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">indica se la finestra deve essere aperta &quot;in modalit&agrave; canale&quot; (solo per ie)</td>
+            <td bgcolor="#ffffff">channelmode=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">menubar</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">la barra del menu (quella con scritto &quot;file&quot;, &quot;modifica&quot;, ecc.)</td>
+            <td bgcolor="#ffffff">menubar=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">toolbar </td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">la barra degli strumenti del browser (con i pulsanti &quot;indietro&quot;, &quot;avanti&quot;)</td>
+            <td bgcolor="#ffffff">toolbar=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">location</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">la barra degli indirizzi del browser</td>
+            <td bgcolor="#ffffff">location=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">scrollbars</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">le barre di scorrimento laterali</td>
+            <td bgcolor="#ffffff">scrollbars=no</td>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">status</td>
+            <td bgcolor="#ffffff">yes / no</td>
+            <td bgcolor="#ffffff">la barra di stato (quella in basso)</td>
+            <td bgcolor="#ffffff">status=no</td>
+          </tr>
+    </table>
+        <p>I parametri possono essere omessi e in questo caso assumono valori di default. Occorre inoltre osservare che alcuni parametri impongono obbligatoriamente il valore ad altri. Inoltre il comportamento non &egrave; sempre lo stesso in tutti i browser (vedi <a href="http://msdn.microsoft.com/en-us/library/ms536651(VS.85).aspx" target="_blank">per esempio qui </a>per una discussione dettagliata riferita a Internet Explorer). </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Form</p>
+	</div>
+        <p>Un <strong>form</strong> (o modulo) &egrave; una serie di campi mediante il quale l'utente pu&ograve; inserire  informazioni. In una pagina HTML i form possono essere utilizzati per:</p>
+        <ol>
+          <li>raccogliere dati dall'utente</li>
+          <li>fungere da interfaccia grafica per l'input-output  di programmi (script) integrati nella pagina stessa o eseguiti su computer remoti </li>
+        </ol>
+        <p>&nbsp;</p>
+        <div class="titolo"> Form per l'input-output di script </div>
+		<p>Vedremo <a href=" ../js/funz/funz4.html">pi&ugrave; avanti </a>nel dettaglio questo utilizzo del form. Per adesso si consideri il seguente semplice esempio di form usato per interfacciare la pagina html con uno script che esegue la somma fra due numeri:</p>
+		<form action="" name="modulo">
+		  primo numero
+		  <input type="text" name="x" />
+    <br />
+		  secondo numero
+  <input type="text" name="y" />
+  <input name="button" type="button" onclick="window.document.modulo.ris.value=parseFloat(window.document.modulo.x.value)+parseFloat(window.document.modulo.y.value)" value="SOMMA" />
+  <br />
+		  risultato:
+  <input type="text" name="ris" />
+        </form>
+		<p>Provando a inserire due numeri nelle due caselle di testo e cliccando sul bottone SOMMA, appare il risultato della somma. </p>
+		<p>&nbsp;</p>
+		<div class="titolo"> Form per la raccolta dati dell'utente </div>
+		<p>Vediamo adesso un esempio di form usato per raccogliere dati dall'utente:</p>
+		<form id="form1" method="post" action="">
+		  <table width="100%" border="0">
+            <tr>
+              <td><strong>Nome:</strong></td>
+              <td><input type="text" name="textfield" /></td>
+            </tr>
+            <tr>
+              <td><strong>Cognome:</strong></td>
+              <td><input type="text" name="textfield2" /></td>
+            </tr>
+            <tr>
+              <td><strong>Indirizzo mail:</strong></td>
+              <td><input type="text" name="textfield3" /></td>
+            </tr>
+            <tr>
+              <td><strong>Sesso: </strong></td>
+              <td><label>
+                <input type="radio" name="Gruppo pulsanti di scelta1" value="pulsante di scelta" />
+Maschio</label>
+                <label>
+                <input type="radio" name="Gruppo pulsanti di scelta1" value="pulsante di scelta" />
+Femmina</label></td>
+            </tr>
+            <tr>
+              <td><strong>Nazionalit&agrave;:</strong></td>
+              <td><select name="menu">
+                <option selected="selected">Italiana</option>
+                <option>Francese</option>
+                <option>Tedesca</option>
+                <option>Inglese</option>
+                <option>Spagnola</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td><strong>Messaggio:</strong></td>
+              <td><textarea name="textarea"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input name="submit" type="submit" value="Invia" />
+              <input name="reset" type="reset" value="Azzera" /></td>
+            </tr>
+          </table>
+		 
+    </form>
+		<p>Nelle prossime lezioni ci occuperemo di come realizzare un form per la raccolta dati dall'utente.  </p>
+		<p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

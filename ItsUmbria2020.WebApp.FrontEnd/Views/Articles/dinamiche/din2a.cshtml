@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<style type="text/css"> 
+.quadrato {
+width: 100px;
+height: 100px;
+background-color: #98d925;
+border: 2px solid #009F16;
+}
+
+.quadrato:hover {
+width: 70%;
+opacity: 0.4;
+margin-left: 0.6in;
+border-width: 10px;
+}
+
+.quadrato2 {
+width: 100px;
+height: 100px;
+background-color: #98d925;
+border: 2px solid #009F16;
+transition-property: width, opacity, margin-left, border-width;
+transition-duration: 2s;
+}
+
+.quadrato2:hover {
+width: 70%;
+opacity: 0.4;
+margin-left: 0.6in;
+border-width: 10px;
+}
+
+.quadrato3 {
+width: 100px;
+height: 100px;
+background-color: #98d925;
+border: 2px solid #009F16;
+
+transition-property: width, opacity, margin-left, border-width; 
+transition-duration: 2s, 3s, 1s, 1s; 
+transition-delay: 2s, 1s, 0s, 0s; 
+}
+
+.quadrato3:hover {
+width: 70%;
+opacity: 0.4;
+margin-left: 0.6in;
+border-width: 10px;
+}
+
+</style>
+           
+         <!-- FINE
+DEL CODICE CSS!! -->
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Le transizioni</p>
+	</div>
+        <p>L'uso della <a href=" css/css7.html">pseudoclasse</a> <em>hover</em> 
+		consente di cambiare lo stile di un elemento quando il mouse vi passa 
+		sopra. Si consideri l'esempio qui sotto:</p>
+		
+	
+        <div class="code">
+          div {<br />
+			width: 100px;<br />
+			height: 100px;<br />
+			background-color: #98d925;<br />
+			border: 2px solid #009F16;<br />
+			}<br />
+			<br />
+			div:hover {<br />
+			width: 70%;<br />
+			opacity: 0.4;<br />
+			margin-left: 0.6in;<br />
+			border-width: 10px;<br />
+			}<br />
+        </div>
+        <p>In questo caso nella pagina &eacute; presente un quadrato colorato 
+		(realizzato con un div). Passando col mouse su di esso, le sue 
+		dimensioni cambiano, come si pu&eacute; vedere dall'esempio qui sotto:</p>
+		<div class="quadrato"></div>
+	<p>Con i fogli stile CSS3 &eacute; possibile temporizzare le transizioni, cio&eacute; 
+	assegnare loro una durata. Si osservi l'esempio seguente, leggermente 
+	modificato rispetto a prima:</p>
+		
+	
+        <div class="code">
+          div {<br />
+			width: 100px;<br />
+			height: 100px;<br />
+			background-color: #98d925;<br />
+			border: 2px solid #009F16;<br />
+			<br />
+			transition-property: width, opacity, margin-left, border-width;
+			<br />
+			transition-duration: 2s; <br />
+			}<br />
+			<br />
+			div:hover {<br />
+			width: 70%;<br />
+			opacity: 0.4;<br />
+			margin-left: 0.6in;<br />
+			border-width: 10px;<br />
+			}<br />
+        </div>
+	<p>L'effetto prodotto &eacute; mostrato qui sotto:</p>
+	<div class="quadrato2"></div>
+	<p>Come si pu&eacute; osservare ora, quando si passa col mouse sul quadrato viene 
+	avviata una transizione graduale della durata di 2 secondi. </p>
+	<p><strong>ATTENZIONE</strong>: le propriet&eacute; di transizione, trasformazione 
+	e animazione non sono supportate da tutti i browser nello stesso modo. In 
+	alcuni casi occorre modificare la sintassi standard per adattarla al 
+	particolare browser. La situazione &eacute; in continua evoluzione, con un numero 
+	sempre maggiore di browser che adottano la sintassi CSS3 standard. Non si 
+	ritiene opportuno in questa sede approfondire ulteriormente l'argomento. 
+	Tutti gli esempi forniti funzionano correttamente con l'ultima versione di 
+	Chrome.</p>
+	<p>La sintassi delle transizioni &eacute; abbastanza semplice:</p>
+		
+	
+        <div class="code">
+			transition-property: <em>elenco propriet&eacute;</em>;<br />
+			transition-duration: <em>durata</em>;
+        </div>
+	<p>L'<em>elenco delle propriet&eacute;</em> indica quali propriet&eacute; dell'oggetto devono 
+	essere soggette a transizione e la <em>durata</em> (espressa in secondi o in 
+	millisecondi) indica la durata della transizione stessa.</p>
+	<p><strong>ATTENZIONE</strong>: si osservi che le propriet&eacute; della 
+	transizione devono essere specificate sul selettore dell'elemento (nel 
+	nostro caso DIV) e NON sul selettore della pseudoclasse <em>hover</em>.</p>
+	<p>E' inoltre possibile specificare un tempo di ritardo sull'avvio della 
+	transizione (dal momento in cui il mouse passa sull'elemento) e anche 
+	fornire tempi diversi per le diverse propriet&eacute; su cui applicare la 
+	transizione, come nel seguente esempio:</p>
+		
+	
+        <div class="code">
+          div {<br />
+			width: 100px;<br />
+			height: 100px;<br />
+			background-color: #98d925;<br />
+			border: 2px solid #009F16;<br />
+			<br />
+			transition-property: width, opacity, margin-left, border-width;
+			<br />
+			transition-duration: 2s, 3s, 2s, 2s; <br />
+			transition-delay: 4s, 1s, 0s, 0s; <br />
+			}<br />
+			<br />
+			div:hover {<br />
+			width: 70%;<br />
+			opacity: 0.4;<br />
+			margin-left: 0.6in;<br />
+			border-width: 10px;<br />
+			}<br />
+        </div>
+	<p>che produce questo effetto:</p>
+	<div class="quadrato3"></div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

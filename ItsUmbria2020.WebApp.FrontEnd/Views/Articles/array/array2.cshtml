@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Lunghezza di un vettore </div>
+        <p>L'oggetto array &eacute; dotato di un'unica propriet&eacute; significativa: la 
+		propriet&eacute; <em>length</em>, che permette di determinare la lunghezza, 
+		cio&eacute; il numero di elementi, di un array. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          var vettore = []; <br />
+            vettore[0] = 100; <br />
+            vettore[1] = 23;<br />
+            vettore[2] = -78.09;<br />
+            vettore[3] = 87; <br />
+          alert(vettore.length);</div>
+        <p>L'istruzione <em>alert</em> visualizza il valore 4. Infatti gli elementi del vettore sono numerati a partire da 0. Dunque, nell'esempio precedente, 4 &egrave; il numero di elementi (lunghezza) del vettore. Si noti che la lunghezza del vettore coincide con l'indice dell'ultimo elemento pi&ugrave; uno. </p>
+        <p>Se tuttavia non tutti gli elementi vengono usati, <em>length</em> fornisce sempre il valore dell'indice dell'ultimo elemento  pi&ugrave; uno. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          var valori = []; <br />
+            valori[0] = 120; <br />
+            valori[4] = 25;<br />
+            valori[3] = 8.2;<br />
+            valori[7] = 17; <br />
+            alert(valori.length);</div>
+        <p>In questo caso l'<em>alert</em> fornisce il  valore 8, anche se i valori effettivamente assegnati sono soltanto 4. </p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

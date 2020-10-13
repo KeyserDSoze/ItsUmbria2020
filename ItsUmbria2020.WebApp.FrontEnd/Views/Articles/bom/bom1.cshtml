@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">API (Application Programming Interface)</div>
+        <p>Una <strong>API</strong> (<strong>Application 
+		Programming Interface</strong>, cio&eacute; in italiano <em>interfaccia di 
+		programmazione di un'applicazione</em>) &eacute; un 
+		insieme di procedure (in pratica di funzioni) che un'applicazione (es. 
+		un browser o lo stesso sistema operativo) mettono a disposizione del 
+		programmatore per interagire con l'applicazione stessa.</p>
+	<p>Facciamo un esempio che pu&eacute; forse aiutare a chiarire il concetto. 
+	Pensiamo a un piccolo programma che deve scrivere la frase &quot;Ciao a tutti&quot; su 
+	una finestra nello schermo. Si tratta in effetti di un programma molto semplice, ma se 
+	andiamo a vedere nel dettaglio ci&eacute; che il programma deve realmente fare, ci 
+	accorgiamo che in effetti le cose non sono cos&eacute; semplici come possono 
+	sembrare.</p>
+	<p>Infatti i caratteri che compongono la frase ('C', 'i', 'a', 'o', ' ' - 
+	spazio bianco: &eacute; anch'esso un carattere -, 'a', ' ', 't', 'u', 't', 't', 
+	'i') devono essere visualizzati sullo schermo del computer mediante 
+	l'accensione di puntini, detti pixel. In pratica ad ogni carattere 
+	corrisponde una matrice (cio&eacute; una &quot;scacchiera&quot;) di pixel che lo 
+	rappresentano sullo schermo. Tale matrice dipende anche dal tipo di font 
+	(es. Arial, Times new roman, etc.) che si vuole usare per rappresentare il 
+	carattere. La figura 
+	seguente mostra una possibile matrice di pixel per rappresentare le prime 
+	lettere dell'alfabeto:</p>
+	<p class="style1"><img src="../img/dotmatrix.gif" alt="" width="508" height="83" /></p>
+	<p>La corretta visualizzazione a schermo di ogni carattere richiede una 
+	complessa gestione della CPU, della memoria e della scheda video. Inoltre anche 
+	l'apertura di una finestra a video (su cui visualizzare la scritta) &eacute; 
+	un'operazione tutt'altro che banale a livello pi&eacute; basso del funzionamento 
+	del computer.</p>
+	<p>Non &eacute; difficile rendersi conto che, anche per questo semplicissimo 
+	esempio, i compiti da svolgere sono davvero molti e complessi. Inoltre se il 
+	programmatore potesse accedere e manipolare direttamente l'hardware della 
+	macchina a basso livello, si creerebbero problemi di integrit&eacute; del sistema e 
+	di sicurezza (per esempio chi potrebbe impedirgli di cancellare la memoria 
+	destinata a un altro programma?).</p>
+	<p>Per fortuna tutti i computer moderni sono dotati di un Sistema Operativo, 
+	cio&eacute; di un insieme di programmi e di procedure che gestiscono direttamente 
+	l'hardware e il funzionamento del dispositivo. In pratica il Sistema 
+	Operativo frappone uno strato software (layer) fra i programmi utente e il 
+	computer: qualsiasi azione sull'hardware deve passare attraverso il Sistema 
+	Operativo stesso.</p>
+	<p>Usando il Sistema Operativo per fare le stesse 
+	cose il nostro programma potrebbe:</p>
+	<ol>
+					<li>caricare in memoria una struttura dati chiamata &quot;font&quot; 
+					fornita dal sistema operativo</li>
+					<li>far visualizzare al sistema operativo una finestra vuota</li>
+					<li>far disegnare al sistema operativo il testo &quot;Ciao a 
+					tutti&quot; sulla finestra utilizzando il font caricato</li>
+	</ol>
+	<p>Ognuna delle operazioni precedenti viene portata a termine usando una o 
+	pi&eacute; API del sistema operativo (es. Windows). In pratica una API &eacute; una 
+	funzione predefinita che il 
+	programmatore pu&eacute; usare per svolgere in modo pi&eacute; semplice una grande 
+	quantit&eacute; di compiti (es. gestire lo schermo, la tastiera, le stampanti, i 
+	menu nelle finestre, le icone dei programmi etc.).</p>
+	<p>Ma non &eacute; solo il sistema operativo Windows a usare delle API. Molte 
+	applicazioni mettono a disposizione le proprie API agli utenti, in modo da 
+	semplificare la scrittura di codice. Per esempio, tornando al problema di 
+	visualizzare la scritta &quot;Ciao a tutti&quot; sullo schermo, esso potrebbe anche 
+	essere risolto nel seguente modo, mediante codice Javascript incorporato in 
+	una pagina HTML:</p>
+        <div class="code">
+          xx = window.open(&quot;&quot;,&quot;&quot;,&quot;width=300,height=250&quot;);<br />
+			xx.document.open();<br />
+			xx.document.write(&quot;&lt;html&gt;&lt;body&gt;&lt;p&gt;Ciao a tutti&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;);
+			<br />
+			xx.document.close();</div>
+	<p>Quest'ultima soluzione &eacute; ovviamente la pi&eacute; semplice per il programmatore. 
+	Si noti che qui si stanno usando le API del browser di cui parleremo fra 
+	poco (window.open, 
+	document.open, document.write, document.close) per aprire una finestra 
+	secondaria e scriverci dentro in html. Tale API del browser a loro volta si 
+	appoggiano sulle API del sistema operativo per portare a termine il compito.</p>
+	<p>L'uso di API predefinite, rispetto alla soluzione &quot;fai da te&quot;, ha anche 
+	il grande vantaggio di garantire una migliore standardizzazione degli 
+	applicativi. Per esempio se uso le API standard di Windows, il mio programma 
+	potr&eacute; funzionare con diverse CPU, diverse configurazioni hardware e, con 
+	certi limiti, anche con diverse versioni dello stesso Windows. Allo stesso 
+	modo i browser, sempre entro certi limiti, mettono a disposizione un set 
+	abbastanza standardizzato di API che garantiscono che la stessa pagina possa 
+	essere resa nello stesso modo in browser diversi su qualunque sistema 
+	operativo.</p>
+	<p>Le API sono essenziali per il computer come gli standard elettrici lo 
+	sono per una casa. Chiunque pu&eacute; inserire la spina del tostapane nella presa 
+	a muro della sua casa o dal vicino perch&eacute; entrambe le case sono conformi ad 
+	uno standard. Se non ci fosse una interfaccia standard, occorrerebbe avere 
+	una centrale elettrica per fare un toast. Niente vieta che esistano pi&eacute; tipi 
+	di interfacce diverse, per esempio un tostapane europeo non pu&eacute; funzionare 
+	negli Stati Uniti senza un trasformatore; in modo simile, un programma 
+	scritto per Microsoft Windows non pu&eacute; essere eseguito direttamente su un 
+	sistema UNIX senza un API adapter come WINE. </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

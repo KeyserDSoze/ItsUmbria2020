@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+Controllare se una casella di testo &egrave; stata riempita
+	</div>
+        <p>Abbiamo gi&eacute; brevemente affrontato il
+		problema di convalidare i campi di 
+		un form usando il JS quando abbiamo parlato di form in html.</p>
+	<p>Convalidare un form significa verificare che il contenuto dei campi sia valido, prima dell'invio del form stesso. I campi presenti in un form possono contenere valori numerici (p.es. l'et&agrave; di una persona) oppure stringhe (es. il codice fiscale o l'indirizzo).</p>
+        <p>I campi che di solito &egrave; necessario convalidare sono le caselle di testo. Infatti gli altri campi (check box, radio button e caselle di riepilogo) possiedono gi&agrave; dei valori predefiniti dal programmatore, che si suppongono pertanto validi. </p>
+        <p>La pi&ugrave; semplice verifica che pu&ograve; essere fatta su una casella di testo riguarda il fatto che sia stata riempita oppure no. A tale scopo possiamo scrivere una semplice funzione, valida in generale per qualsiasi casella di testo: </p>
+        <div class="code">
+          function riempita(box)<br />
+          {<p>if (box.value.length &lt; 1)<br />
+          {<br />
+          alert (&quot;Errore! La casella di testo &egrave; vuota!&quot;);<br />
+          return false;<br />
+          }<br />
+          return true;</p>
+          <p>}</p>
+        </div>
+        <p>La funzione torna il valore boolean false se la casella &egrave; vuota, mentre torna true se la casella contiene dei dati. Si noti l'istruzione return, che interrompe l'esecuzione della funzione e torna un valore al chiamante; <em>box</em> (parametro della funzione) &egrave; il nome della casella di testo da convalidare.</p>
+        <p>&nbsp; </p>
+        <div class="titolo">
+
+Controllare se una casella di testo contiene un valore numerico valido
+	</div>
+        <p>Se la casella di testo deve contenere valori numerici, &egrave; possibile verificare se tali valori sono compresi fra un massimo e un minimo usando la seguente funzione:</p>
+        <div class="code">
+          function numero(box,min,max)<br />
+            {<p>var valore, minimo, massimo;<br />
+            valore = parseFloat(box.value);<br />
+            minimo = parseFloat(min);<br />
+          massimo = parseFloat(max);</p>
+          <p>if (valore&gt;massimo || valore&lt;minimo || box.value!=valore)<br />
+            {<br />
+            alert(&quot;Errore! La casella di testo non contiene un valore numerico valido!&quot;);<br />
+            return false;<br />
+            }</p>
+          <p>return true;<br />
+          }</p>
+    </div>
+        <p>Si osservi il confronto <em>box.value!=valore</em> mediante il quale si verifica se la casella di testo contiene un valore numerico (si controlla se il suo contenuto &egrave; uguale al suo contenuto convertito in valore numerico: l'uguaglianza &egrave; possibile solo se il contenuto era gi&agrave; numerico in partenza).</p>
+        <p>L'operatore || &egrave; l'<em>OR logico</em> (fornisce un risultato <em>true</em> se almeno una delle condizioni &egrave; <em>true</em>) e serve per concatenare fra loro pi&ugrave; condizioni logiche in un if o in un ciclo. </p>
+        <p>Volendo verificare se il contenuto numerico &egrave; di tipo intero, si pu&ograve; fare cos&igrave;:</p>
+        <div class="code">
+          valintero = parseInt(box.value);<br />
+            if (box.value != valintero)<br />
+            {<br />
+            ...<br />
+            }</div>
+	<p>&nbsp;</p>
+	<div class="titolo">
+
+Controllare se una casella di testo contiene un indirizzo mail valido </div>
+        <p>Per verificare se una casella di testo contiene un indirizzo mail valido, la funzione &egrave; la seguente:</p>
+        <div class="code">
+          function mail(box)<br />
+          {<p>var apos, dotpos, lastpos; <br />
+            apos = box.value.indexOf(&quot;@@&quot;);<br />
+            dotpos = box.value.lastIndexOf(&quot;.&quot;);<br />
+            lastpos = box.value.lenght-1;</p>
+          <p>if (apos&lt;1 || dotpos-apos&lt;2 || lastpos-dotpos&gt;3)<br />
+            {<br />
+            alert(&quot;Errore! La casella di testo non contiene un indirizzo mail valido!&quot;);<br />
+            return false;<br />
+            }</p>
+          <p>return true;<br />
+            }</p>
+        </div>
+        <p>La variabile <em>apos</em> contiene la posizione del carattere @@ all'interno della stringa; <em>dotpos</em> contiene l'ultima posizione del carattere punto (.); <em>lastpos</em> contiene la posizione dell'ultimo carattere nella stringa. La mail &egrave; valida se c'&egrave; un carattere @@ e non in prima posizione, se ci sono almeno due caratteri fra il punto e il carattere @@, se ci sono almeno tre caratteri dopo l'ultimo punto.</p>
+        <p>Per esempio la seguente stringa contiene un indirizzo mail correttamente formato: </p>
+        <p><img src="../img/email.jpg" alt="" width="376" height="208" />  </p>
+        <div class="titolo"> Chiamata delle funzioni per la convalida del form </div>
+        <p>La convalida del form avviene chiamando le funzioni di convalida quando l'utente preme sul bottone <em>submit</em> del form stesso (bottone che provoca l'invio dei dati contenuti nel form). L'evento &egrave; associato al gestore di evento onsubmit applicato al tag form. Si consideri come semplice esempio il seguente form in cui bisogna inserire il proprio cognome, l'et&agrave; e l'indirizzo mail:</p>
+        <form action = "mailto:webmaster@sito.com" onsubmit = "return mail(indirizzo) && numero(anni) && riempita(cognome)">
+  Inserisci il tuo cognome: 
+  <input type="text" name="cognome" />
+
+  <br />
+Inserisci la tua et&agrave;: 
+<input type="text" name="anni" />
+<br />
+Inserisci il tuo indirizzo mail: 
+<input type="text" name="indirizzo" />
+<br />
+<input type="submit" name="Submit" value="Invia" />
+</form>
+<p> Il codice associato &egrave; il seguente:
+</p>
+        <div class="code">
+          &lt;form action = &quot;mailto:webmaster@sito.com&quot; <br />
+onsubmit = &quot;return riempita(document.getElementById(&#39;cognome&#39;)) <br />
+&amp;&amp; mail(document.getElementById(&#39;indirizzo&#39;)) <br />
+&amp;&amp; numero(document.getElementById(&#39;anni&#39;),1,99)&quot; <br />
+enctype=&quot;text/plain&quot;&gt;<p><br />
+            Inserisci il tuo cognome: <br />
+&lt;input type=&quot;text&quot; id=&quot;cognome&quot;&gt;<br />
+&lt;br&gt;<br />
+            Inserisci la tua et&amp;agrave;: <br />
+            &lt;input type=&quot;text&quot; id=&quot;anni&quot;&gt;<br />
+            &lt;br&gt;<br />
+            Inserisci il tuo indirizzo mail: <br />
+            &lt;input type=&quot;text&quot; id=&quot;indirizzo&quot;&gt;<br />
+            &lt;br /&gt;<br />
+            &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;Invia&quot;&gt;</p>
+          <p>&lt;/form&gt;</p>
+    </div>
+        <p>Solo se tutte e tre le funzioni (<em>mail</em>, <em>numero</em> e <em>riempita</em>) tornano il valore true, il form viene inviato all'indirizzo <em>webmaster@sito.com</em>. Si osservi l'operatore logico and (&amp;&amp;) usato per concatenare la chiamata alle tre funzioni di verifica: basta che una sola delle tre funzioni torni il valore false e automaticamente l'invio viene abortito.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

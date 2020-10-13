@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	
+
+	<div class="titolo"> Convalida dei dati inseriti nel form</div>
+	<p>Prima di inviare i dati utente presenti in un form &eacute; buona norma 
+	controllare che questi dati siano validi. Ad esempio si potr&eacute; controllare 
+	che i campi non siano stati lasciati vuoti, che l'indirizzo mail indicato 
+	sia scritto correttamente eccetera. Queste operazioni preliminari vengono 
+	dette <strong>convalida dei dati</strong>.</p>
+	<p>Senza voler approfondire troppo per ora il problema della convalida dei 
+	dati, osserviamo per&eacute; che, a differenza dell'elaborazione del form e 
+	dell'invio di una mail, questa parte pu&eacute; essere eseguita sul computer client 
+	dell'utente (cio&eacute; prima dell'invio dei dati al server remoto).</p>
+	<p>In pratica bisogna usare un altro linguaggio di programmazione (il 
+	termine tecnico &eacute; linguaggio di scripting), questa volta per&eacute; non lato 
+	server (come il php), ma lato utente. Il linguaggio che utilizzeremo noi per 
+	la convalida &eacute; il javascript. Si osservi la pagina seguente che contiene il 
+	form:</p>
+        <div class="code">
+          <pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;!DOCTYPE html&gt; </pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;html lang=&quot;it&quot;&gt; </pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;head&gt; </pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;meta charset=&quot;utf-8&quot;&gt; </pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;title&gt; Un semplice form &lt;/title&gt;</pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;link rel=&quot;stylesheet&quot; href=&quot;stili.css&quot;&gt;</pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;script&gt; 
+
+function riempita(box)
+{
+if (box.value.length &lt; 1)
+  {
+  alert (&quot;Errore! La casella di testo &eacute; vuota!&quot;);
+  return false;
+  }
+return true;
+}
+</pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">function email(box)
+{
+var apos, dotpos, lastpos; 
+apos = box.value.indexOf(&quot;@@&quot;);
+dotpos = box.value.lastIndexOf(&quot;.&quot;);
+lastpos = box.value.lenght-1;
+if (apos&lt;1 || dotpos-apos&lt;2 || lastpos-dotpos&gt;3)
+  {
+  alert(&quot;Errore! La casella di testo non contiene un indirizzo mail valido!&quot;);
+  return false;
+  }
+return true;
+}
+
+&lt;/script&gt;</pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;/head&gt;</pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;body&gt;
+&lt;form action=&quot;elabora.php&quot; method=&quot;post&quot; name = &quot;utente&quot; enctype=&quot;multipart/form-data&quot; 
+onsubmit = &quot;return email(mail) &amp;&amp; riempita(nome) &amp;&amp; riempita(commento)&quot;&gt; 
+&lt;p&gt; 
+&lt;strong&gt;Nome:&lt;/strong&gt;&lt;br&gt; 
+&lt;input type=&quot;text&quot; name=&quot;nome&quot;&gt; 
+&lt;/p&gt; 
+&lt;p&gt; 
+&lt;strong&gt;Mail:&lt;/strong&gt;&lt;br&gt; 
+&lt;input type=&quot;text&quot; name=&quot;mail&quot;&gt; 
+&lt;/p&gt; 
+&lt;p&gt; 
+&lt;strong&gt;Commento:&lt;/strong&gt;&lt;br&gt; 
+&lt;input type=&quot;text&quot; name=&quot;commento&quot;&gt; 
+&lt;/p&gt; 
+&lt;p&gt; 
+&lt;input type=&quot;submit&quot; value=&quot;Invia&quot;&gt; 
+&lt;input type=&quot;reset&quot; value=&quot;Annulla&quot;&gt; 
+&lt;/p&gt; 
+&lt;/form&gt; </pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;/body&gt;</pre>
+			<pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;/html&gt;</pre>
+    </div>
+        <p>Le due funzioni scritte all'inizio (<em>riempita</em> e <em>email</em>) 
+		servono per verificare rispettivamente che una casella di input non sia 
+		vuota e che un campo mail contenga un indirizzo scritto in modo 
+		corretto.</p>
+	<p>Si osservi in particolare l'intestazione del form:</p>
+	<div class="code">
+          <pre style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">&lt;form action=&quot;elabora.php&quot; method=&quot;post&quot; name = &quot;utente&quot; enctype=&quot;multipart/form-data&quot; 
+onsubmit = &quot;return email(mail) &amp;&amp; riempita(nome) &amp;&amp; riempita(commento)&quot;&gt;</pre>
+    </div>
+	<p>L'attributo onsubmit significa che al momento dell'invio vengono 
+	verificate le tre caselle di testo contenute nel form. Solo se tutte e tre le 
+	chiamate a funzione tornano il valore true (vero), il form viene inviato a
+	<em>elabora.php</em>. Si osservi l'operatore logico and (&amp;&amp;) usato per concatenare la chiamata alle tre funzioni di verifica: basta che una sola delle tre funzioni torni il valore false e automaticamente l'invio viene abortito.</p>
+	<p>Per approfondire il problema della convalida di un form (e in particolare 
+	della convalida di altri campi, come radio, option etc.) vedi questo
+	<a target="_blank" href="http://www.html.it/articoli/validare-e-inviare-un-form-con-javascript-1/">
+	articolo su HTML.IT</a>.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Lo stile position</div>
+	 <p>Con il metodo dei blocchi float, visto nella lezione precedente, &eacute; 
+		possibile un controllo approssimativo della posizione dei blocchi 
+		stessi, poich&eacute; questi possono solo essere spostati a sinistra o a 
+		destra. Tale controllo &eacute; sufficiente per la maggior parte delle pagine 
+		web, ma gli stili forniscono anche altri metodi per specificare in modo 
+		estremamente preciso la posizione di ogni blocco.</p>
+	<p>Per modificare con esattezza la posizione di un blocco su una pagina bisogna 
+		utilizzare lo stile <strong>position</strong>. Esso pu&eacute; assumere tre 
+		valori:</p>
+	<ul>
+					<li>static</li>
+					<li>relative</li>
+					<li>absolute</li>
+					<li>fixed</li>
+	</ul>
+	<p>Se position viene dichiarato <strong>static</strong>, il blocco si 
+	posiziona nel modo automatico, cio&eacute; seguendo il normale flusso di 
+	visualizzazione della pagina. In pratica la dichiarazione static non 
+	modifica il posizionamento del blocco, che viene visualizzato al di sotto di 
+	quello precedente e al di sopra di quello successivo (come avviene 
+	normalmente in assenza di posizionamento).</p>
+	<p>Il posizionamento <strong>fixed</strong> &eacute; un po' particolare e non viene 
+	visualizzato correttamente da tutti i browser, perci&eacute; non lo tratteremo qui 
+	ulteriormente. Basti sapere che consente di posizionare un elemento in modo 
+	che non scorra col resto della pagina (qui &eacute; possibile
+	<a target="_blank" href="http://www.yorku.ca/nmw/facs1939f13/week02/css_relVSabsVSfixed.html">
+	vedere un esempio</a> con relative spiegazioni).</p>
+	 <div class="titolo">Position relative</div>
+	 <p>
+	 Usando il posizionamento relative, il blocco viene spostato rispetto 
+		alla sua &quot;normale&quot; posizione nel flusso della pagina di una quantit&eacute; a 
+		piacere. </p>
+	<p>
+	 Consideriamo di nuovo i tre blocchi visti nella lezione precedente:</p>
+<div class="code">
+  &lt;div id=&quot;blocco1&quot; style=&quot;background-color:LightYellow&quot;&gt;blocco 1 inserito nel 
+	normale flusso &lt;/div&gt; <br />
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan&quot;&gt;blocco 2 inserito 
+	subito dopo l'istruzione per il blocco 1&lt;/div&gt; <br />
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose&quot;&gt;blocco 3 inserito 
+	subito dopo l'istruzione per il blocco 2&lt;/div&gt; </div>
+	<p>
+	 che vengono visualizzati in questo modo:</p>
+<div style="background-color:LightYellow">blocco 1 inserito nel normale flusso </div> 
+<div style="background-color:LightCyan">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div style="background-color:MistyRose">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>   	
+<p>	Si consideri la seguente dichiarazione di stile applicata al blocco 2 del precedente esempio:
+		</p>
+		<div class="code">
+  #blocco2<br />
+	{<br />
+	position: relative; <br />
+	top:5px; <br />
+	left:20px;<br />
+	}</div>
+	<p>Il risultato che si ottiene &eacute; il seguente:</p>
+<div id="blocco1" style="background-color:LightYellow">blocco 1 inserito nel normale flusso </div> 
+<div id="blocco2" style="background-color:LightCyan; position: relative; top:5px; left:20px">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div id="blocco3" style="background-color:MistyRose">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>     
+
+	<p>Si osservi con attenzione quello che &eacute; successo. Il blocco2 &eacute; stato 
+	spostato di 5 pixel verso il basso e di 20 pixel verso sinistra. Tuttavia al 
+	suo posto &eacute; rimasto uno spazio vuoto. In pratica il blocco ha lasciato una 
+	specie di segnaposto nel luogo dove si sarebbe dovuto trovare in base al 
+	normale flusso di visualizzazione della pagina.</p>
+	<p>Detto in altro modo: lo spostamento del blocco 2 non ha modificato la 
+	posizione degli altri due blocchi, perch&eacute; il suo posto &eacute; rimasto 
+	&quot;virtualmente&quot; occupato. Se cos&eacute; non fosse, gli altri due blocchi avrebbero 
+	dovuto avvicinarsi uno all'altro, ma questo col posizionamento relative non 
+	accade.</p>
+	<p>Un'altra osservazione importante riguarda il significato dei valori top e 
+	left utilizzati per il posizionamento. Abbiamo detto che essi specificano 
+	uno spostamento relativo rispetto alla posizione normale del blocco 
+	all'interno della pagina. Cio&eacute; relativo in questo caso significa 
+	&quot;relativamente a se stesso, alla propria posizione normale&quot;. Conviene a 
+	questo proposito pensare al blocco come fosse dotato di quattro maniglie: 
+	top, bottom, left e right.</p>
+	<p class="style1">
+	<img src="../img/maniglie-posizonamento.png" alt="screenshot" /></p>
+	<p>Indicando il valore <em>top: 5px</em> vogliamo dire che il lato superiore 
+	(top) dev'essere spinto in avanti (verso il basso) di 5 pixel. Allo stesso 
+	modo <em>left: 20 px</em> significa che il lato sinistro (left) deve essere 
+	spinto in avanti (verso destra) di 20 pixel. Si faccia attenzione al fatto, 
+	forse un po' contro intuitivo, che spostando con left si sposta a destra e 
+	con top verso il basso.</p>
+	<p>I valori possono essere anche negativi. Cos&eacute; per esempio <em>bottom: 
+	-10px</em> significa tirare il lato inferiore di 10 pixel verso il basso. 
+	Ci&eacute; equivale esattamente a indicare top: 10px, poich&eacute; produce lo stesso 
+	spostamento del blocco. Naturalmente non ha senso specificare sia top che 
+	bottom oppure contemporaneamente left e right.</p>
+	<div class="titolo">Position absolute</div>
+	 <p>Quando si usa il posizionamento assoluto (<em>absolute</em>) il blocco 
+		viene rimosso dal flusso del documento e posizionato in base ai valori 
+		forniti con le propriet&eacute; top, left, bottom o right. La posizione &eacute; 
+		espressa rispetto al primo blocco contenitore (elemento antenato o 
+		ancestor) che abbia un posizionamento diverso da static (cio&eacute; in pratica 
+		che abbia un posizionamento relative o absolute). Se tale elemento non 
+		esiste il posizionamento assoluto avviene in base all&#8217;elemento radice 
+		html, che in condizioni standard coincide con l&#8217;area del browser che 
+		contiene il documento e che ha inizio dall&#8217;angolo superiore sinistro di 
+		tale area. Un elemento posizionato in modo assoluto scorre insieme al 
+		resto del documento. </p>
+	<p>Consideriamo il codice seguente:</p>
+<div class="code">
+  #blocco2<br />
+	{<br />
+	position: absolute; <br />
+	top:100px; <br />
+	left:200px;<br />
+	}</div>
+	<p>e l'effetto che ha sulla posizione del blocco 2:</p>
+	<p><img alt="" src="../img/img16.jpg" /></p>
+	<p>Osserviamo che il blocco 2 si &eacute; spostato senza lasciare alcun segnaposto 
+	(i blocchi 1 e 2 sono ora a contatto). La sua posizione &eacute; spostata di 100px 
+	verso il basso e di 200px a destra rispetto al margine superiore sinistro 
+	della finestra del browser.</p>
+	<p>Nella figura seguente viene mostrato il significato delle coordinate top, 
+	left, bottom e right rispetto ai margini del blocco contenitore nel 
+	posizionamento assoluto:</p>
+	<p class="style1">
+	<img src="../img/schema-absolute.png" alt="screenshot" /></p>
+	<p>Naturalmente, come gi&eacute; osservato a proposito del posizionamento relativo, 
+	non ha senso specificare contemporaneamente top e bottom oppure left e right 
+	(si avrebbe un conflitto di valori). Si noti che il nome <em>absolute</em> 
+	possa trarre in confusione, in quanto in realt&eacute; si tratta di un 
+	posizionamento relativo al blocco contenitore.</p>
+	<p>&nbsp;</p>
+
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

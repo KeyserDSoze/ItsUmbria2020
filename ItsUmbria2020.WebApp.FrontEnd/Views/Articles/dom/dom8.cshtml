@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Creare un nuovo elemento</div>
+	<p>Attraverso il DOM &eacute; possibile creare dinamicamente nuovi elementi da 
+	aggiungere alla pagina. Per creare un nuovo elemento bisogna usare il metodo
+	<em>createElement </em>con la seguente sintassi:</p>
+	<p class="style1">var <em>variabile</em> = document.createElement(&quot;<em>elemento</em>&quot;); </p>
+	<p>dove <em>variabile</em> &eacute; una qualsiasi variabile valida e <em>elemento</em> 
+	&eacute; il nome di un elemento html chiuso fra doppi o singoli apici.</p>
+	<p>Per esempio, come abbiamo visto nella lezione precedente, per creare un 
+	elemento img possiamo scrivere:</p>
+	<p class="style1">var immagine = document.createElement(&quot;img&quot;);</p>
+	<p>E' importante osservare fin da subito che l'elemento viene creato 
+	virtualmente, in quanto esso non viene automaticamente inserito nel DOM. In 
+	altre parole, <em>createElement</em> si limita a definire il tipo e le 
+	caratteristiche dell'elemento da creare senza per&eacute; aggiungerlo alla pagina. 
+	Volendo fare un paragone poco informatico, <em>createElement</em> si 
+	comporta come un cuoco che prepara prima la crema di farcitura e solo in un 
+	secondo momento l'aggiunge alla sua torta.</p>
+	<p>Notiamo anche che l'elemento creato &eacute; completamente vuoto, nel senso che 
+	non contiene attributi, stili o contenuto interno.</p>
+	<p>&nbsp;</p>
+
+<div class="titolo">Aggiungere attributi</div>
+
+	<p>Per aggiungere attributi a un elemento appena creato, dobbiamo usare due 
+	metodi. Con <em>createAttribute</em> creiamo un attributo con nome qualsiasi 
+	e con <em>setAttributeNode</em> lo assegniamo a un elemento (nodo) creato 
+	precedentemente. Si consideri l'esempio seguente:</p>
+        <div class="code">
+			var immagine = document.createElement(&quot;img&quot;);<br />
+			var srcAttr = document.createAttribute(&quot;src&quot;);<br />
+			srcAttr.value = &quot;next.gif&quot;;<br />
+			immagine.setAttributeNode(srcAttr);</div>
+        <p>Consideriamo passo passo la sequenza di istruzioni necessaria per 
+		creare un elemento e assegnargli un attributo:</p>
+	<ol>
+					<li>La prima istruzione, come gi&eacute; visto, crea un elemento 
+					virtuale di tipo <em>img</em> e lo memorizza nella variabile 
+					di nome <em>immagine</em>.</li>
+					<li>La&nbsp;seconda istruzione, usando il metodo <em>createAttribute</em>, crea un attributo di nome 
+					<em>src</em> e lo 
+					memorizza nella variabile <em>srcAttr</em>.
+					</li>
+					<li>La terza istruzione assegna alla propriet&eacute; <em>value</em> di 
+					<em>srcAttr</em> un valore: in 
+	pratica fornisce il valore dell'attributo, cio&eacute; l'immagine da visualizzare.
+					</li>
+					<li>La quarta istruzione infine assegna l'attributo (col suo valore) 
+	all'elemento <em>img</em> creato all'inizio, usando il metodo <em>setAttributeNode</em> 
+					dell'oggetto <em>immagine</em>.
+					</li>
+	</ol>
+	<p></p>
+	<p></p>
+	<p>La precedente sequenza all'inizio sembrer&eacute; inevitabilmente macchinosa, ma 
+	va seguita scrupolosamente ogni volta che si desidera aggiungere un 
+	attributo a un elemento. Notiamo anche che, sebbene <em>src</em> sia un 
+	attributo standard di <em>img</em>, quando si crea un nuovo elemento <em>img</em> 
+	esso non viene dotato automaticamente di nessun attributo, nemmeno di quelli 
+	standard e l'unico modo per dare un valore a un attributo &eacute; quello mostrato 
+	qui sopra.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

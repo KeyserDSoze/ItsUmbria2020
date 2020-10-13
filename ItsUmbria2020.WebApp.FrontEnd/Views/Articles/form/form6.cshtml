@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	
+
+        <div class="titolo"> Form e accessibilit&eacute;</div>
+        <p>I form sono un elemento critico per quanto riguarda l'<a href=" access/access1.html">accessibilit&eacute; 
+		di un sito</a>, in particolare per quanto riguarda persone ipovedenti che si 
+		affidano a browser uditivi per navigare in rete. La ragione di questo 
+		fatto &eacute; che il form, per sua natura, richiede un'elevata interazione con 
+		l'utente, il quale deve identificare correttamente il significato dei 
+		diversi elementi (ad esempio &lt;input&gt;) e sapere che tipo di dati deve 
+		fornire.</p>
+	<p>Occorre anche tener presente che ci sono utenti che, per varie ragioni, 
+	navigano senza utilizzare il&nbsp; mouse. Bisogna dunque anche prevedere un 
+	modo semplice per spostarsi da un campo dati al successivo per esempio 
+	usando il tasto tab della tastiera.</p>
+
+	
+
+        <div class="titolo"> Fieldset e legend</div>
+        <p>Abbiamo detto precedentemente che gli elementi interni a un form (es. 
+		&lt;input&gt;) devono essere racchiusi in un contenitore e non possono essere 
+		messi direttamente nel form (altrimenti la validazione fornisce errori nella sintassi HTML). Negli esempi fatti finora abbiamo sempre 
+		usato un paragrafo &lt;p&gt; generico come contenitore (o, in alternativa, un elemento &lt;div&gt;).</p>
+	    <p>Esiste tuttavia un elemento contenitore espressamente creato per i &lt;form&gt;. 
+	Si tratta dell'elemento &lt;fieldset&gt; che, insieme all'elemento &lt;legend&gt;, 
+	permette di creare form ad elevata accessibilit&eacute;. Si consideri l'esempio 
+	seguente:</p>
+        <div class="code">
+          &lt;form action=&quot;mailto:pinco.pallino@libero.it&quot; method=&quot;post&quot; name = 
+			&quot;utente&quot; enctype=&quot;text/plain&quot;&gt;<br />
+			<br />
+			&lt;fieldset&gt; <br />
+			&lt;legend&gt;Dati anagrafici&lt;/legend&gt; <br />
+			<br />
+			.... campi in cui inserire i dati anagrafici <br />
+			&lt;/fieldset&gt; <br />
+			<br />
+			&lt;fieldset&gt; <br />
+			&lt;legend&gt;Informazioni sulla privacy&lt;/legend&gt; <br />
+			<br />
+			....campi in cui inserire le info sulla privacy <br />
+			&lt;/fieldset&gt; <br />
+			<br />
+			&lt;fieldset&gt; <br />
+			&lt;legend&gt;Procedura di acquisto&lt;/legend&gt; <br />
+			<br />
+			....campi in cui inserire i dati per l'acquisto <br />
+			&lt;/fieldset&gt; <br />
+			<br />
+			&lt;/form&gt;</div>
+        <p>Si osservi che l'elemento &lt;fieldset&gt; serve per raggruppare insieme 
+		gruppi omogenei di campi (cio&eacute; per esempio le caselle di input per 
+		inserire nome e cognome, raggruppate insieme nel primo fieldset). 
+		L'elemento &lt;fieldset&gt; viene visualizzato con una cornice che racchiude i 
+		campi di input, come nell'esempio qui sotto:</p>
+<form action="mailto:pinco.pallino@libero.it" method="post" name = "utente" enctype="text/plain" style="border: solid 1px">
+<fieldset> 
+<legend>Dati anagrafici</legend> 
+<label  for="nome"> Nome:
+<input type="text" name="nome" id="nome" tabindex="10"></label> <br> <br>
+<label  for="nome"> Cognome:
+<input type="text" name="cognome" id="cognome"  tabindex="20"></label> 
+</fieldset> 
+</form>
+	<p>Il tag &lt;legend&gt; serve invece per specificare una legenda, cio&eacute; una 
+	spiegazione testuale del contenuto del &lt;fieldset&gt; (particolarmente utile per 
+	chi non pu&eacute; vedere lo schermo).</p>
+
+	
+
+        <div class="titolo"> Label</div>
+        <p>Per coloro che non possono vedere pu&eacute; essere difficile capire quale 
+		tipo di dato bisogna inserire all'interno di un determinato campo.</p>
+	<p>L'elemento &lt;label&gt; permette di associare strettamente un dato campo con 
+	il testo che lo accompagna. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          &lt;label&nbsp; for=&quot;nomeutente&quot;&gt; Nome e cognome:&lt;/label&gt;<br />
+&lt;input type=&quot;text&quot; name=&quot;nome&quot; id=&quot;nomeutente&quot;&gt; <br />
+    </div>
+        <p>Si osservi che &eacute; stato aggiunto un id alla casella di input. Il nome 
+		dell'id coincide con quello indicato nella &lt;label&gt; e serve per 
+		specificare che il contenuto della label (cio&eacute; Nome e cognome) si 
+		riferisce proprio a quell'elemento &lt;input&gt;. Si osservi che per 
+		identificare l'elemento &lt;input&gt; bisogna usare un attributo id, non 
+		l'attributo name (che serve per altri scopi).</p>
+	<p>Un modo alternativo per usare label &eacute; il seguente:</p>
+        <div class="code">
+          &lt;label&nbsp; for=&quot;nomeutente&quot;&gt; Nome e cognome:<br />
+&lt;input type=&quot;text&quot; name=&quot;nome&quot; id=&quot;nomeutente&quot;&gt; &lt;/label&gt;</div>
+        <p>In questo secondo caso &lt;label&gt; racchiude al proprio interno l'intero 
+		elemento &lt;input&gt;</p>
+        <p>L'elemento label pu&ograve; anche essere usato in associazione con un elemento select, come mostrato nell'esempio qui sotto:</p>
+        <div class="code">&lt;label for=&quot;preferito&quot;&gt;Il tuo cibo preferito&lt;/label&gt;   <br />
+        &lt;select name=&quot;cibi&quot; id=&quot;preferito&quot;&gt;     <br />
+        &lt;option value=&quot;formaggio&quot;&gt;Formaggio&lt;/option&gt;<br />
+        &lt;option value=&quot;uova&quot;&gt;Uova&lt;/option&gt;<br />
+        &lt;option value=&quot;cavoli&quot;&gt;Cavoli&lt;/option&gt;<br />
+        &lt;/select&gt;</div>
+        <p>&nbsp; </p>
+        <div class="titolo"> Tabindex</div>
+        <p>Con l'attributo tabindex &eacute; possibile specificare l'ordine (la 
+		sequenza) con cui le successive pressioni del tasto tab selezionano i 
+		diversi campi di un form. La sequenza viene indicata con numeri interi 
+		crescenti (dal primo elemento all'ultimo che viene selezionato). Di 
+		solito si usano valori che aumentano di 10 in 10 in modo da non dover 
+		ricreare daccapo tutta la numerazione nel caso si vogliano aggiungere 
+		altri campi al form. Si osservi l'esempio seguente:</p>
+        <div class="code">
+          &lt;fieldset&gt; <br />
+			&lt;legend&gt;Dati anagrafici&lt;/legend&gt; <br />
+			&lt;label for=&quot;nome&quot;&gt; Nome:<br />
+			&lt;input type=&quot;text&quot; name=&quot;nome&quot; id=&quot;nome&quot; tabindex=&quot;10&quot;&gt;&lt;/label&gt; &lt;br&gt; 
+			&lt;br&gt;<br />
+			&lt;label for=&quot;cognome&quot;&gt; Cognome:<br />
+			&lt;input type=&quot;text&quot; name=&quot;cognome&quot; id=&quot;cognome&quot; tabindex=&quot;20&quot;&gt;&lt;/label&gt;
+			<br />
+			&lt;/fieldset&gt;
+    </div>
+	<p>I valori di tabindex indicano che il campo cognome viene selezionato dopo 
+	il campo nome, premendo il tasto tab.</p>
+<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#avviso").html("fadeOut iniziato, velocit&eacute; 2000 ms");
+        $("#gioco").fadeOut(2000, function(){$("#avviso").html("fadeOut terminato");} );
+    });
+    $("#btn2").click(function(){
+        $("#avviso").html("fadeOut iniziato, velocit&eacute; 4000 ms");
+        $("#gioco").fadeIn(4000, function(){$("#avviso").html("fadeIn terminato");} );
+    });
+    $("#btn3").click(function(){
+        $("#avviso").html("fadeToggle iniziato, parametri di default");
+        $("#gioco").fadeToggle(function(){$("#avviso").html("fadeToggle terminato");} );
+    });
+});
+</script>
+
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">fadeIn, fadeOut e fadeToggle</div>
+
+	<p><strong>fadeOut,</strong> <strong>fadeIn</strong> e <strong>fadeToggle</strong> 
+	sono tre metodi abbastanza simili a <em>hide</em> e <em>show </em>e <em>
+	toggle</em>. Il primo infatti (<em>fadeOut</em>) fa gradualmente scomparire un 
+	elemento, mentre il secondo (<em>fadeIn</em>) lo fa ricomparire. Infine <em>fadeToggle</em> 
+	serve per alternare <em>fadeOut</em> e <em>fadeIn</em>.</p>
+	<p>La sintassi &eacute; la seguente:</p>
+        <div class="code">
+          $(<em>selettore</em>).fadeOut(<em>speed,callback</em>); <br />
+			$(<em>selettore</em>).fadeIn(<em>speed,callback</em>); <br />
+			$(<em>selettore</em>).fadeToggle(<em>speed,callback</em>); </div>
+	<p>Come si pu&eacute; osservare, rispetto ai metodi <em>hide</em>, <em>show</em> e
+	<em>toggle</em> qui manca 
+	il parametro per la <em>easing</em> dell'animazione.</p>
+	<p>La differenza fondamentale rispetto a <em>hide</em>, <em>show</em> e <em>toggle</em> &eacute; che questi 
+	tre nuovi metodi si limitano a variare gradualmente l'opacit&eacute; (fino a zero) 
+	dell'elemento a cui sono applicati, mentre <em>hide</em>, <em>show</em> e
+	<em>toggle</em> ne variano 
+	anche gradualmente le dimensioni.</p>
+	<p>In particolare il metodo <em>fadeIn</em> ha un effetto pi&eacute; &quot;brusco&quot; rispetto a 
+	<em>show</em>, in quanto prima l'oggetto viene istantaneamente mostrato a dimensioni 
+	piene (quindi occupa lo spazio a lui destinato sulla pagina) e poi 
+	gradualmente la sua opacit&eacute; aumenta sino a renderlo visibile.</p>
+	<p>Si consideri per esempio il codice 
+	seguente:</p>
+        <div class="code">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $(&quot;#btn1&quot;).click(function(){
+        $(&quot;#avviso&quot;).html(&quot;fadeOut iniziato, velocit&eacute; 2000 ms&quot;);
+        $(&quot;h1&quot;).fadeOut(2000, function(){$(&quot;#avviso&quot;).html(&quot;Hide terminato&quot;);} );
+    });
+    $(&quot;#btn2&quot;).click(function(){
+        $(&quot;#avviso&quot;).html(&quot;fadeOut iniziato, velocit&eacute; 4000 ms&quot;);
+        $(&quot;h1&quot;).fadeIn(4000, function(){$(&quot;#avviso&quot;).html(&quot;Show terminato&quot;);} );
+    });
+    $(&quot;#btn3&quot;).click(function(){
+        $(&quot;#avviso&quot;).html(&quot;fadeToggle iniziato, parametri di default&quot;);
+        $(&quot;h1&quot;).fadeToggle(function(){$(&quot;#avviso&quot;).html(&quot;Toggle terminato&quot;);} );
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;</pre>
+			<pre>&lt;h1&gt;Mostra e nascondi&lt;/h1&gt;
+&lt;p&gt;Clicca su uno dei bottoni qui sotto:&lt;/p&gt;
+&lt;p id=&quot;avviso&quot;&gt;&lt;/p&gt;</pre>
+			<pre>&lt;button id=&quot;btn1&quot;&gt;fadeOut&lt;/button&gt;
+&lt;button id=&quot;btn2&quot;&gt;fadeIN&lt;/button&gt;
+&lt;button id=&quot;btn3&quot;&gt;fadeToggle&lt;/button&gt;</pre>
+			<pre>&lt;/body&gt;
+&lt;/html&gt;</pre>
+	</div>
+	<p>L'animazione prodotta &eacute; la seguente:</p>
+
+<div style="border: solid thin black">
+<h1 id="gioco">fadeIn e fadeOut</h1>
+<p>Clicca su uno dei bottoni qui sotto:</p>
+<p id="avviso"></p>
+
+<button id="btn1">fadeOut</button>
+<button id="btn2">fadeIn</button>
+<button id="btn3">fadeToggle</button>
+</div>
+
+	<p>E' anche interessante notare come &eacute; possibile far &quot;lampeggiare&quot; un 
+	oggetto, concatenando insieme pi&eacute; metodi <em>fadeOut</em> e <em>fadeIn</em> come mostrato qui 
+	sotto:</p>
+        <div class="code">
+          $(&quot;div&quot;).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200); </div>
+	<p>In questo caso l'elemento (o gli elementi) div viene dapprima cancellato, 
+	quindi ridisegnato, poi ricancellato e cos&eacute; via, per il numero di volte che 
+	si desidera.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

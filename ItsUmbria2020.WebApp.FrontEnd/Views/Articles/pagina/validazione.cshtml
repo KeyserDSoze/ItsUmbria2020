@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+          Dichiarazione DOCTYPE </div>
+        <p>Detta anche &quot;prologo&quot; o <strong>DTD</strong> (<em>Document Type Definition</em>), 
+		si trova sempre in testa al documento HTML, prima di tutto il resto. Non 
+		si tratta di un'istruzione HTML, nel senso che non fa parte del 
+		linguaggio. Essa ha il compito di informare il browser in quale versione 
+		del linguaggio HTML e con quali specifiche &eacute; stato scritta la pagina. Di fatto, questa informazione serve al browser per identificare le regole di interpretazione e visualizzazione appropriate per lo specifico documento.</p>
+	<p>Per specificare che la versione di HTML utilizzata &eacute; la 5 basta scrivere 
+	in testa alla pagina:</p>
+        <div class="code">
+          &lt;!doctype html&gt;
+    </div>
+	<p>La dichiarazione pu&eacute; essere scritta indifferentemente usando le minuscole 
+	oppure in maiuscole (come alcuni programmatori preferiscono):</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;
+    </div>
+	<p>E' importante osservare che la dichiarazione DTD non ha 
+	nessuna influenza sul modo con cui il browser visualizza la pagina e nella 
+	stragrande maggioranza dei casi un DTD &quot;sbagliato&quot; non produce nessun errore 
+	nella visualizzazione stessa. Tuttavia il DTD &eacute; importante quando si vuole 
+	validare un documento, cio&eacute; verificarne la correttezza sintattica: in questo 
+	caso il validatore HTML si basa sul DTD presente nel documento per decidere 
+	quali regole di validazione (pi&eacute; o meno stringenti) usare.</p>
+	<p>Nel caso si volesse utilizzare la versione precedente (4.01)i tipi principali di dichiarazione DTD sono tre:</p>
+	<ul>
+					<li><strong>transitional</strong>:<br />
+					&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; 
+					&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;<br />
+					<br />
+					</li>
+					<li><strong>strict</strong>:<br />
+					&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;<br />
+					&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;<br /><br />
+					</li>
+					<li><strong>frameset</strong><br />
+					&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot; 
+					&quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt; </li>
+	</ul>
+	<p>La dichiarazione frameset viene usata per <a href=" Frame/frame1.html">
+	costruire pagine con i frame</a>.</p>
+	<p>La principale differenza fra gli altri due tipi &eacute; che con la dichiarazione
+	<strong>strict</strong> non &eacute; consentito l'uso di tutti i tag cosiddetti
+	<a href=" stili/stili1.html">deprecati</a>, cio&eacute; di quelli, introdotti 
+	nei primi anni dell'HTML, che hanno a che fare con la visualizzazione di una 
+	pagina e non con la sua struttura. Attualmente tutti i documenti dovrebbero 
+	fare a meno di questi tag deprecati, per cui, a meno di particolari ragioni 
+	di retrocompatibilit&eacute;, si dovrebbe sempre usare il DTD strict.</p>
+	<p>Il DTD <strong>transitional</strong> &eacute; stato invece inventato, come 
+	suggerisce il nome, per gestire la fase di transizione ad HTML 4.01 e dunque 
+	consente ancora l'utilizzo dei tag deprecati.</p>
+        <p>&nbsp;</p>
+        <div class="titolo">Validatori online</div>
+        <p>Nel gergo usato dagli informatici, per <em>validare una pagina HTML</em> 
+		si intende controllare la presenza di eventuali errori nel codice. 
+		Abbiamo gi&eacute; detto che il browser non effettua nessun controllo sulla 
+		validit&eacute; di una pagina da visualizzare e che anche in presenza di errori 
+		di sintassi la pagina viene in qualche modo visualizzata ugualmente 
+		(magari in modo sbagliato!). Non accade in HTML cio&eacute; quello che succede 
+		quando si usa un linguaggio di programmazione (come es. il C o il 
+		Pascal) dove la presenza di un eventuale errore sintattico impedisce 
+		l'esecuzione del codice.</p>
+	<p>Inoltre l'HTML &eacute; progettato in modo da essere compatibile con versioni 
+	precedenti del linguaggio. Ci&eacute; significa che nuovi tag o attributi, aggiunti 
+	alle nuove versioni, saranno semplicemente ignorati da browser che 
+	implementano le versioni precedenti. Questo implica che se l'HTML non 
+	riconosce qualcosa, spesso lo ignora semplicemente.</p>
+	<p>Nondimeno scrivere pagine HTML in modo corretto &eacute; essenziale per 
+	garantire la corretta visualizzazione presente e futura in tutti i browser. 
+	A tali scopo esistono numerosi programmi detti <strong>validatori</strong> 
+	che appunto si occupano di controllare la correttezza del codice HTML. In 
+	molti casi non occorre neppure installare un programma sul proprio computer 
+	perch&eacute; si possono usare i validatori online.</p>
+	<p>Fra i validatori online pi&eacute; usati per l'HTML 5 consigliamo
+	<a target="_blank" href="https://html5.validator.nu/">HTML 5 Validator</a> e
+	<a target="_blank" href="http://app.validator.pro/">HTML Validator Pro</a> 
+	(quest'ultimo &eacute; in grado anche di validare un intero sito).</p>
+	<p>Consigliamo di validare ogni pagina HTML col precedente validatore (o con 
+	un altro) e di correggere sempre tutte le eventuali segnalazioni di errore (<em>errors</em>).</p>
+	<p>Segnaliamo anche il
+	<a target="_blank" href="https://jigsaw.w3.org/css-validator/#validate_by_uri">
+	validatore di fogli stile CSS</a>, molto utile per controllare gli errori 
+	presenti nei fogli stile.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

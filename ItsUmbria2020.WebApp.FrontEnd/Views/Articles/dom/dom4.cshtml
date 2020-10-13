@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+<div class="titolo">Accedere direttamente agli elementi</div>
+
+<p>Nella precedente lezione abbiamo visto come il legacy DOM fornisse un certo 
+numero di propriet&eacute; dell'oggetto document, le quali (sotto forma di array) 
+permettevano di accedere ad alcuni (ma non a tutti) gli elementi della pagina.</p>
+	<p>Tutto questo &eacute; stato superato con l'uso moderno del DOM, il quale 
+	contiene metodi per l'accesso diretto a tutti i nodi del DOM, cio&eacute; a tutti 
+	gli elementi della pagina html.</p>
+        <div class="titolo">document.getElementById</div>
+        <p>Conosciamo gi&eacute; da molto tempo questo metodo dell'oggetto <em>document</em>. 
+		Come abbiamo gi&eacute; detto document rappresenta la radice del DOM, cio&eacute; in 
+		pratica l'elemento html che racchiude l'intera pagina.</p>
+	<p>Col metodo getElementById possiamo accedere a qualsiasi elemento dotato 
+	di un identificatore id. Per esempio:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Uso di getElementById &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function cambia()<br />
+&nbsp;&nbsp;&nbsp; {<br />
+			&nbsp;&nbsp;&nbsp; document.getElementById('foto').src='foto2.jpg';<br />
+			&nbsp;&nbsp;&nbsp;
+			} <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			<br />
+			&lt;p&gt;<br />
+			&lt;img alt=&quot;cambia immagine&quot; id=&quot;foto&quot; src=&quot;foto1.jpg&quot; onclick=&quot;cambia()&quot;&gt;<br />
+			&lt;/p&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>&nbsp;</p>
+
+        <div class="titolo">document.getElementsByTagName </div>
+        <p>Questo metodo fornisce un array contenente tutti gli elementi che 
+		corrispondono a un dato tag. Facciamo subito un esempio:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Uso di getElementsByTagName &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function elenco()<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; lista = document.getElementsByTagName(&quot;li&quot;);<br />
+			<br />
+&nbsp;&nbsp;&nbsp; for (i=0;i&lt;lista.length;i++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(lista[i].innerHTML)<br />
+			<br />
+			&nbsp;&nbsp;&nbsp; } <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;h1 onclick=&quot;elenco()&quot;&gt;Tipi di dessert&lt;/h1&gt;<br />
+			<br />
+			&lt;ol&gt;<br />
+			&lt;li&gt;Budino&lt;/li&gt;<br />
+			&lt;li&gt;Gelato&lt;/li&gt;<br />
+			&lt;li&gt;Torta&lt;/li&gt;<br />
+			&lt;/ol&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>Viene visualizzata una lista non ordinata con un elenco di dessert. 
+		Cliccando sul titolo H1 i nomi dei dessert vengono visualizzati usando 
+		il metodo alert.</p>
+	<p>Si noti che lista si comporta esattamente come un array in JS. La sua 
+	propriet&eacute; length contiene il numero di elementi (in questo caso 3). Per 
+	accedere ai singoli elementi del vettore, bisogna usare un ciclo e le 
+	parentesi quadre.</p>
+	<p>Abbiamo inoltre usato la propriet&eacute; innerHTML per accedere al contenuto 
+	testuale dei diversi elementi &lt;li&gt;.</p>
+	<p>&nbsp;</p>
+
+        <div class="titolo">document.getElementsByClassName&nbsp; </div>
+        <p>Questo metodo &eacute; simile al precedente, ma fornisce un vettore di tutti 
+		gli elementi che appartengono a una medesima classe:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Uso di getElementsByClassName &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function elenco()<br />
+			{<br />
+			lista = document.getElementsByClassName(&quot;prova&quot;);<br />
+			<br />
+			for (i=0;i&lt;lista.length;i++)<br />
+			alert(lista[i].innerHTML)<br />
+			<br />
+			<br />
+			&nbsp;&nbsp;&nbsp; } <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;h1 onclick=&quot;elenco()&quot;&gt;Clicca qui per vedere un elenco!&lt;/h1&gt;<br />
+			&lt;h2 class=&quot;prova&quot;&gt;Ciao a tutti!&lt;/h2&gt;<br />
+			&lt;p class=&quot;prova&quot;&gt;Benvenuti in questa pagina&lt;/p&gt;<br />
+			&lt;p&gt;Questo paragrafo non viene elencato&lt;/p&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>&nbsp;</p>
+
+        <div class="titolo">document.querySelectorAll e document.querySelector </div>
+        <p>Si tratta di due metodi che consentono di selezionare gli elementi in 
+		base a un selettore CSS. La differenza fra i due &eacute; che 
+		document.querySelector torna solo il primo elemento corrispondente 
+		all'interno del documento, mentre document.querySelectorAll torna una 
+		lista con tutti gli elementi corrispondenti.</p>
+	<p>Si consideri l'esempio seguente:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Uso di document.querySelector &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function elimina()<br />
+			{<br />
+			document.querySelector(&quot;.nounderscore 
+			a&quot;).style.textDecoration=&quot;none&quot;;<br />
+			}<br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;h1 onclick=&quot;elimina()&quot;&gt;Clicca qui per eliminare la sottolineatura 
+			del primo link&lt;/h1&gt;<br />
+			&lt;p class=&quot;nounderscore&quot;&gt;Clicca &lt;a href=&quot;pag1.html&quot;&gt;qui&lt;/a&gt;&lt;/p&gt;<br />
+			&lt;p &gt;Clicca &lt;a href=&quot;pag2.html&quot;&gt;qui&lt;/a&gt;&lt;/p&gt;<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>Il selettore <em>.nounderscore a</em> seleziona gli elementi &lt;a&gt; 
+		contenuti in un elemento di classe &quot;nounderscore&quot;. Perci&eacute; la funzione 
+		elimina() cancella la decorazione del primo link, ma non del secondo.</p>
+	<p>A differenza di <em>document.getElementsByClassName</em>, che pu&eacute; usare 
+	solo nomi di classi, <em>document.querySelectorAll </em>e <em>
+	document.querySelector</em> possono usare selettori complessi, prodotti in 
+	base alle regole dei CSS (come si vede anche dal nostro semplice esempio:
+	<em>.nounderscore a</em> &eacute; un selettore, ma non un nome di classe).</p>
+	<p>Un'altra importante differenza &eacute; che <em>document.querySelectorAll </em>e
+	<em>document.querySelector</em> tornano un risultato che non &eacute; &quot;vivo&quot;, nel 
+	senso che se la pagina viene modificata attraverso uno script (per esempio 
+	eliminando o aggiungendo degli elementi), il risultato di questi due metodi 
+	non cambia. Invece <em>document.getElementsByClassName </em>cambia 
+	attivamente ogni volta che la pagina viene modificata.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

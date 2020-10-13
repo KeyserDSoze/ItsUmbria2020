@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">
+					Audio</div>
+
+	<p>La versione 5.0 di Html comprende un elemento apposito per includere file 
+	audio nella propria pagina. La sintassi &eacute; molto semplice:</p>
+	<div class="code">
+										&lt;audio controls&gt;
+  <br />
+  &lt;source src=&quot;musica.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+<br />
+&lt;/audio&gt; 
+	</div>
+	<p>Si noti che si tratta in realt&eacute; di due elementi: un elemento contenitore 
+	&lt;audio&gt; e uno o pi&eacute; elementi vuoti &lt;source&gt; in esso contenuti.</p>
+	<p>L'attributo <em>controls</em> (che non ha valore) fa comparire i 
+	controlli utente per la riproduzione della traccia audio (avvio, stop, etc). 
+	In assenza di questo attributo, l'audio viene avviato comunque in 
+	background.</p>
+	<p>All&#8217;interno di &lt;audio&gt; vi &eacute; poi un elemento di tipo &lt;source&gt;, mediante il 
+	quale possiamo specificare il file che ci interessa riprodurre. Poich&eacute; 
+	alcuni tipi di file non sono supportati da tutti i browser, &eacute; possibile 
+	specificare diversi tag &lt;source&gt;. Ad esempio: </p>
+	<div class="code">
+					&lt;audio controls&gt; <br />
+					&lt;source src=&quot;musica.mp3&quot; type=&quot;audio/mp3&quot;&gt; <br />
+					&lt;source src=&quot;musica2.ogg&quot; type=&quot;audio/ogg&quot;&gt;<br />
+					Il browser non supporta il tag audio <br />
+					&lt;/audio&gt;
+	</div>
+	<p>In questo caso, il browser tenter&eacute; per prima cosa di riprodurre il file 
+	specificato nel primo tag &lt;source&gt;. Se (e solo se), per qualche motivo, il 
+	file non potesse essere riprodotto, il browser prover&eacute; a riprodurre il 
+	secondo file, e cos&eacute; via per tutti i tag &lt;source&gt; presenti. Per garantire, 
+	infine, la retro compatibilit&eacute; con le precedenti versioni di HTML, &eacute; 
+	possibile utilizzare una stringa (o dell&#8217;altro codice HTML) che verr&eacute; 
+	visualizzata nel caso in cui il browser non supporti il tag &lt;audio&gt;.</p>
+	<p>Qui sotto &eacute; mostrato un esempio di come viene visualizzato l'elemento 
+	audio su una pagina:</p>
+	<audio controls> 
+      <source src="http://www.animal-sounds.org/Air/Bird%20songs%20animals141.wav" type="audio/wav">
+    </audio> 
+	<div class="titolo">
+					Video </div>
+	<p>Altrettanto semplice (e sostanzialmente identico al tag audio) &eacute; 
+	l'elemento video, che permette di includere un video nella pagina:</p>
+	<div class="code">
+       &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt; <br>
+		&lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt; <br>
+		&lt;source src=&quot;video.ogg&quot; type=&quot;video/ogg&quot;&gt; <br>
+		Il browser non supporta il tag video <br>
+		&lt;/video&gt; </div>
+	<p>Il risultato &eacute; il seguente:</p>
+	<video width="320" height="240" controls> 
+<source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4"> 
+Il browser non supporta il tag video 
+</video> 
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

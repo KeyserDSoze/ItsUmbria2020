@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+  <style>
+  #block {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+  }
+  </style>
+  
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ 
+  <script>
+
+  $(document).ready(
+
+&eacute;&eacute;&eacute; function() {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; 
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; // Qui bisogna scrivere il codice da eseguire all'avvio
+
+              $( "#go" ).click(function() {
+                              $( "#block" ).animate({
+                                              width: "70%",
+                                              opacity: 0.4,
+                                              marginLeft: "0.6in",
+                                              fontSize: "3em",
+                                              borderWidth: "10px"
+                                                  }, 1500 );
+                                        });
+  &eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+  );
+ 
+
+</script>
+
+
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Il metodo animate: qualche esempio</div>
+
+	<p>I metodi <em>hide, show, toggle, fadeIn, fadeOut e fadeToggle</em> consentono di 
+	realizzare semplici animazioni, ma la vera potenza di jQuery si manifesta 
+	con il metodo <strong>animate</strong>. Prima di vedere nei dettagli il suo 
+	funzionamento, consideriamo un semplice esempio:</p>
+        <div class="code">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $(&quot;#btn&quot;).click(function(){
+        $(&quot;h1&quot;).animate({fontSize: &quot;50px&quot;});
+    });
+});
+
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Titolo che si ingrandisce&lt;/h1&gt;
+&lt;p&gt;Clicca sul bottone qui sotto:&lt;/p&gt;
+&lt;p id=&quot;avviso&quot;&gt;&lt;/p&gt;
+
+&lt;button id=&quot;btn&quot;&gt;Animate&lt;/button&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+	</div>
+	<p>Facendo clic sul pulsante #brn viene invocato il metodo animate 
+	sull'elemento h1:</p>
+        <div class="code">
+          $(&quot;h1&quot;).animate({fontSize: &quot;50px&quot;});</div>
+	<p>Il risultato &eacute; che la propriet&eacute; <em>fontSize</em> (dimensione dei font) di 
+	<em>h1</em> 
+	viene variata dal valore corrente iniziale (qualunque esso sia) fino al 
+	valore specificato (nel nostro caso 50px). In pratica se le dimensioni 
+	iniziali dei caratteri di h1 sono inferiori ai 50px, si osserver&eacute; il testo 
+	che si ingrandisce fino a raggiungere i 50px (viceversa il testo si ridurr&eacute; 
+	fino a 50px).</p>
+	<p><img alt="" src="../img/animate25.jpg" /></p>
+	<p>Il bello di <em>animate</em> &eacute; che si possono far variare nello stesso 
+	modo tutte gli stili <em>css</em> di qualsiasi oggetto. L'unico vincolo &eacute; che si tratti di 
+	stili che hanno un valore numerico, come dimensioni, bordi, margini, 
+	posizione etc. Per esempio non si pu&eacute; usare animate per far variare i colori 
+	di un oggetto (per&eacute; esistono opportuni plugin nel
+	<a target="_blank" href="https://plugins.jquery.com/">repository di jQuery</a> 
+	che consentono di ottenere anche questi effetti).</p>
+	<p>Facciamo ancora un altro esempio per comprendere la potenza di <em>animate</em>, 
+	prima di passare a discutere nel dettaglio la sua sintassi (invero leggermente complessa):</p>
+        <div class="code">
+          <pre>&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Animate&lt;/title&gt;
+  
+  &lt;style&gt;
+  #block {
+    background-color: #bca;
+    width: 100px;
+    border: 1px solid green;
+  }
+  &lt;/style&gt;
+  
+  &lt;script src=&quot;https://code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
+ 
+  &lt;script&gt;
+
+  $(document).ready(
+
+    function() {
+                
+                // Qui bisogna scrivere il codice da eseguire all'avvio
+
+              $( &quot;#go&quot; ).click(function() {
+                              $( &quot;#block&quot; ).animate({
+                                              width: &quot;70%&quot;,
+                                              opacity: 0.4,
+                                              marginLeft: &quot;0.6in&quot;,
+                                              fontSize: &quot;3em&quot;,
+                                              borderWidth: &quot;10px&quot;
+                                                  }, 1500 );
+                                        });
+                  }
+  );
+ 
+
+&lt;/script&gt;
+  
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;button id=&quot;go&quot;&gt;&amp;raquo; Run&lt;/button&gt;
+&lt;div id=&quot;block&quot;&gt;Ciao mondo!&lt;/div&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+	</div>
+	<p>In questo caso vengono animate contemporaneamente molte propriet&eacute; del div 
+	#block e viene inoltre indicato un valore di velocit&eacute; di 1500 millisecondi 
+	(la durata dell'animazione).</p>
+	<p>Il lettore pu&eacute; verificare per proprio conto il risultato qui sotto:</p>
+	
+	<div style="border: solid red"> 
+<button id="go">&raquo; Run</button>
+<div id="block">Ciao mondo!</div>
+</div>
+	
+	
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

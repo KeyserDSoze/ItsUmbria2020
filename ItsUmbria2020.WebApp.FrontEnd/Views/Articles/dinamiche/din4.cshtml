@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+    <title>Programmiamo</title>
+    <meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic" />
+    <meta name="description" content="linguaggi di programmazione" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href=" ../css/principale.css" rel="stylesheet" type="text/css" />
+    <link href=" ../css/classi.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="contenitore2">
+        <!-- Contneuti -->
+
+
+
+        <div class="titolo"> Definire i breakpoints</div>
+        <p>
+            La necessit&eacute; di adattare l'impaginazione alle diverse dimensioni e
+            risoluzioni degli schermi, ha introdotto il concetto di <strong>
+                resolution breakpoint
+            </strong> (<em>
+                punti di interruzione della
+                risoluzione
+            </em>), in modo da stabilire delle soglie (espresse in pixel)
+            superate le quali modificare la presentazione grafica in funzione della
+            larghezza del dispositivo.
+        </p>
+        <p>
+            Per esempio potremmo identificare quattro tipi di dispositivi con i
+            corrispondenti resolution breakpoint:
+        </p>
+        <ul>
+            <li>smartphone con risoluzione fino a 768 pixel </li>
+            <li>tablet con risoluzione inferiore a 1024 pixel </li>
+            <li>
+                desktop con risoluzione superiore a 1024 pixel&nbsp;
+            </li>
+        </ul>
+        <p>
+            L'elenco fornito non &eacute; certamente l'unico possibile, ma serve solo per
+            dare un'idea di come funziona il metodo.
+        </p>
+        <p><img alt="" src="../img/img1C3.jpg" /></p>
+        <p>
+            Come si pu&eacute; osservare dalla figura qui sopra, ad ogni breakpoint
+            corrisponde una riorganizzazione del layout della pagina in modo da
+            adattarsi alle dimensioni dello schermo.
+        </p>
+
+
+
+        <div class="titolo"> Media query</div>
+        <p>
+            Lo strumento principale per gestire i breakpoint &eacute; l'utilizzo delle
+            cosiddette <strong>media query</strong> (o <em>media rule</em>). Si
+            tratta di regole da inserire nel foglio stile in base alle quali &eacute;
+            possibile cambiare gli stili applicati al documento in base alle
+            caratteristiche del dispositivo (<em>media</em>) su cui viene
+            visualizzato.
+        </p>
+        <p>
+            L'argomento generale delle media query &eacute; piuttosto complesso e non pu&eacute;
+            essere affrontato completamente in questa sede. Ci limiteremo qui a fornire
+            qualche semplice esempio per spiegare come funziona il meccanismo.
+        </p>
+        <p>
+            Un primo esempio di media query (da inserire fra gli stili del documento)
+            &eacute; il seguente:
+        </p>
+        <div class="code">
+            @@media screen and (min-width: 1024px) <br />
+            &nbsp;&nbsp;&nbsp; { <br />
+            &nbsp;&nbsp;&nbsp; body { background-color: lightgreen; } <br />
+            &nbsp;&nbsp;&nbsp; }
+        </div>
+        <p>
+            Si presti attenzione alle parentesi graffe che delimitano la regola
+            (ci sono due coppie di parentesi graffe, una esterna e l'altra pi&eacute;
+            interna).
+        </p>
+        <p>
+            Il significato di questa regola &eacute; abbastanza semplice. Anzitutto la
+            regola si riferisce alle caratteristiche dello schermo (<em>screen</em>) del
+            dispositivo su cui viene visualizzata la pagina. Nei nostri esempi il
+            dispositivo a cui si applica la regola sar&eacute; sempre screen, ma altri valori
+            possibili sono print (stampante), speech (lettore vocale), all (tutti i tipi
+            di media).
+        </p>
+        <p>
+            Inoltre la regola precedente si applica solo se la larghezza dello
+            schermo &eacute; maggiore o uguale a 1024px. In tale caso il colore dello sfondo
+            del body viene impostato su lightgreen. Per schermi con dimensioni inferiori
+            non si applica.
+        </p>
+        <p>Vediamo un altro esempio:</p>
+        <div class="code">
+            @@media screen and (max-width: 1024px) and (min-width: 769px) <br />
+            &nbsp;&nbsp;&nbsp; {<br />
+            &nbsp;&nbsp;&nbsp; #container { width: 1020px; } <br />
+            &nbsp;&nbsp;&nbsp; }
+        </div>
+        <p>
+            In questo caso la regola si applica per schermi con dimensioni comprese
+            fra 769 e 1024px e si riferisce all'elemento con id container nella pagina.
+        </p>
+        <p>
+            Usando nel foglio stile pi&eacute; media query in cascata (una dietro l'altra) &eacute;
+            possibile cambiare la formattazione del documento a seconda del valore dei
+            breakpoints. Si consideri per esempio:
+        </p>
+        <div class="code">
+            <pre>body {
+ background: red;
+}
+ 
+@@media screen and (min-width: 768px) {
+ body {
+  background: green;
+ }
+}
+ 
+@@media screen and (min-width: 1024px) {
+ body {
+  background: blue;
+ }
+}</pre>
+        </div>
+        <p>
+            L'interpretazione &eacute; abbastanza semplice tenendo conto che le regole
+            vengono applicate in ordine dall'alto verso il basso (secondo la sequenza
+            con cui compaiono nel foglio stile).
+        </p>
+        <p>
+            Per prima cosa viene applicata la regola generale (valida per tutti gli
+            schermi):
+        </p>
+        <div class="code">
+            body {<br />
+            &nbsp;background: red;<br />
+            }
+        </div>
+        <p>
+            Dunque il colore di sfondo viene impostato a rosso (red). Per gli schermi
+            con larghezze superiori a 480 px il colore di sfondo &eacute; verde (green), per
+            quelli con larghezze superiori a 1024 &eacute; blu (blue).
+        </p>
+        <p>
+            Si osservi come non sia necessario in questo caso verificare se le
+            dimensioni dello schermo sono comprese fra due valori (es. fra 768 e 1023)
+            poich&eacute; le regole vengono applicate una dopo l'altra. Quindi per esempio con
+            uno schermo di larghezza 1200 verr&eacute; applicata prima la regola generale
+            (sfondo rosso), poi la regola per gli schermi superiori ai 768 px (schermo
+            verde) e infine quella per gli schermi superiori ai 1024 px (sfondo blu).
+            Alla fine solo l'ultima regola ha effetto sulla visualizzazione della
+            pagina.
+        </p>
+        <p>&nbsp;</p>
+    </div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

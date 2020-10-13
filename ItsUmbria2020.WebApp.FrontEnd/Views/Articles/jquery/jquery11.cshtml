@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Modificare il contenuto: html e text</div>
+
+	<p>jQuery fornisce strumenti molto semplici per modificare il testo 
+	contenuto all'interno di un elemento di blocco, come per esempio un p, un 
+	h1, un div.</p>
+	<p>Il metodo <strong>html</strong>, come suggerisce il nome, consente di modificare il 
+	contenuto html di un blocco. Per esempio:</p>
+        <div class="code">
+          $(&quot;p&quot;).html(&quot;Ciao &lt;strong&gt;Mondo!&lt;/strong&gt;&quot;); </div>
+	<p>In questo caso il testo contenuto nel paragrafo p (o in tutti i paragrafi 
+	p, se il documento ne contiene pi&eacute; di uno) verr&eacute; modificato e l'effetto 
+	finale sar&eacute; questo:</p>
+	<p class="style1">Ciao <strong>Mondo!</strong></p>
+	<p>Usando invece il metodo <strong>text</strong>, il contenuto non viene interpretato come 
+	codice html, ma come semplice testo, come mostra l'esempio che segue:</p>
+        <div class="code">
+          $(&quot;p&quot;).text(&quot;Ciao &lt;strong&gt;Mondo!&lt;/strong&gt;&quot;); </div>
+	<p>il quale produce la seguente visualizzazione:</p>
+	<p class="style1">Ciao &lt;strong&gt;Mondo!&lt;/strong&gt; </p>
+	<p>Entrambi i metodi possono essere usati senza parametri: in questo caso 
+	essi ritornano il contenuto dell'elemento selezionato, come nell'esempio che 
+	segue:</p>
+        <div class="code">
+          alert($(&quot;#pippo&quot;).html()); // visualizza il contenuto dell'elemento di 
+			id #pippo</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

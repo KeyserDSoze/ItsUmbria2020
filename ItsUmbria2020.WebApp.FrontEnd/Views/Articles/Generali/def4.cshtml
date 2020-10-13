@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Oggetti, elementi e attributi</div>
+        <p>Il JS &egrave; un <em>linguaggio orientato agli oggetti</em> (Object Oriented Language), come il Visual Basic e il C++. 
+		Affronteremo pi&eacute; avanti in modo un po' pi&eacute; approfondito l'argomento
+		<a href=" obj/obj0.html">programmazione ad oggetti</a>. Per 
+		adesso ci basti sapere che un <strong>oggetto</strong> 
+		in generale pu&eacute; essere approssimativamente definito come qualcosa su cui 
+		&eacute; possibile eseguire delle azioni (si chiamano propriamente <em>metodi</em>) o di cui si possono modificare le caratteristiche (in 
+		termine tecnico propriet&eacute;).</p>
+	<p>Per fare un semplice esempio, un elemento immagine (tag &lt;img&gt;) su una 
+	pagina html &eacute; un oggetto. Le sue <strong>propriet&eacute;</strong> sono gli 
+	attributi (es. src, alt etc) che &eacute; possibile modificare tramite uno script 
+	in JS. Abbiamo gi&eacute; visto all'opera questo sistema introducendo
+	<a href="def1.html">un semplice script</a> per animare un'immagine. In 
+	quell'esempio l'oggetto preso in considerazione era l'immagine img:</p>
+        <div class="code">
+			&lt;img id=&quot;omino&quot;&nbsp; alt=&quot;animazione&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;</div>
+	<p>L'attributo id (lo stesso usato per il posizionamento degli elemento con 
+	i fogli stile) fornisce un nome univoco all'oggetto (nel nostro caso <em>
+	omino</em>). Tale nome &eacute; scelto a piacere, con l'unica regola che dev'essere 
+	unico all'interno della pagina html.</p>
+	<p>A questo punto il JS pu&eacute; accedere all'oggetto attraverso la seguente 
+	sintassi generale:</p>
+        <div class="code">
+			&nbsp;document.getElementById('<em>nomeoggetto</em>').<em>attributo</em></div>
+	<p>Per esempio:</p>
+        <div class="code">
+			&nbsp;document.getElementById('omino').src = 
+			'../img/omino2.jpg' ;</div>
+	<p>L'istruzione precedente modifica l'attributo <em>src</em> dell'oggetto
+	<em>omino</em> cambiandone il valore.</p>
+	<p>In modo perfettamente simile, considerando ora l'esempio dello
+	<a href="def3.html">script per convertire le temperature</a>, troviamo 
+	l'istruzione:</p>
+        <div class="code">
+			document.getElementById(&quot;fahreneit&quot;).value = Math.round(((document.getElementById(&quot;celsius&quot;).value) 
+			* 9/5 + 32) * 10) / 10;
+	</div>
+	<p>Senza preoccuparci per ora delle formule e della sintassi del linguaggio, 
+	notiamo che l'oggetto <em>fahreneit</em> ha un attributo <em>value</em> 
+	modificato usando l'attributo <em>value</em> di un altro oggetto di nome <em>
+	celsius</em>.</p>
+	<p>In pratica l'istruzione document.getElementById('<em>nomeoggetto</em>').<em>attributo
+	</em>permette facilmente sia di modificare sia di utilizzare i valori degli 
+	attributi di un certo oggetto.</p>
+        <p>Riassumendo:</p>
+	<ol>
+					<li>tutti gli elementi html presenti su una pagina sono
+					<strong>oggetti</strong> per il JS;</li>
+					<li>gli attributi di ciascun elemento per il JS si chiamano
+					<strong>propriet&eacute;</strong>;</li>
+					<li>per modificare le propriet&eacute; (=attributi) di un oggetto (=elemento) 
+					bisogna dargli un nome univoco attraverso l'attributo 
+					universale <strong>id</strong>;</li>
+					<li>una volta che l'oggetto (=elemento) ha un nome, &eacute; 
+					possibile accedere ai suoi attributi attraverso l'istruzione document.getElementById('<em>nomeoggetto</em>').<em>attributo</em></li>
+	</ol>
+	<p>Non &eacute; troppo difficile, vero? In realt&eacute; il JS &eacute; un linguaggio molto pi&eacute; 
+	potente e flessibile di quanto mostrato da questi primi semplici esempi ed 
+	esistono molti altri sistemi per accedere e per modificare le propriet&eacute; 
+	degli oggetti. Per affrontare questi argomenti per&eacute; dovremmo introdurre 
+	concetti per il momento troppo complessi (il BOM e il DOM). Rimandiamo gli 
+	approfondimenti a una lezione futura e per adesso concentriamoci 
+	nell'imparare bene questo metodo semplice. </p>
+
+	<p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

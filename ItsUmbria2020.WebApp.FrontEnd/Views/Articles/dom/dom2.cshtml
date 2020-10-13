@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">L'oggetto document</div>
+        <p>L'oggetto <em>document</em> costituisce la radice dell'albero del DOM. 
+		Esso rappresenta l'intero documento html: in pratica corrisponde 
+		all'elemento &lt;html&gt; che racchiude tutto il codice della pagina.</p>
+	<p>L'oggetto document &eacute; comune sia al <strong>BOM</strong> (Browser Object 
+	Module) che al <strong>DOM</strong> (Document Object Module), in quanto 
+	fornisce il raccordo fra la rappresentazione del browser e la 
+	rappresentazione del documento caricato nel browser stesso:</p>
+	<p class="style1"><img alt="Dom e Bom" src="../img/dombomimg5.jpg" /></p>
+	<p>Qui di seguito forniamo un elenco delle principali propret&eacute; dell'oggetto document:</p>
+	
+	<table border="1">
+<tbody><tr>
+    <th style="width:35%">Propriet&eacute;</th>
+    <th>Descrizione</th>
+</tr>
+<tr>
+    <td>activeElement</td>
+    <td>Torna l'elemento che ha correntemente il focus, cio&eacute; quello che riceve 
+	l'input da tastiera</td>
+</tr>
+<tr>
+    <td>anchors</td>
+    <td>Torna un array di tutti gli elementi &lt;a&gt; nel documento dotati di un 
+	attributo name</td>
+</tr>
+<tr>
+    <td>body</td>
+    <td>Permette di accedere all'elemento &lt;body&gt; del documento</td>
+</tr>
+<tr>
+	<td>doctype</td>
+	<td>Torna la dichiarazione Document Type associata col documento</td>
+</tr>
+<tr>
+    <td>domain</td>
+    <td>Torna il nome del server su cui &eacute; caricato il documento</td>
+</tr>
+<tr>
+    <td>forms</td>
+    <td>Torna un array di tutti gli elementi &lt;form&gt; del documento</td>
+</tr>
+<tr>
+    <td>head</td>
+    <td>Permette di accedere all'elemento &lt;head&gt; del documento</td>
+</tr>
+<tr>
+    <td>images</td>
+    <td>Torna un array di tutti gli elementi &lt;img&gt; del documento</td>
+</tr>
+<tr>
+	<td>inputEncoding</td>
+	<td>Torna l'encoding cio&eacute; il set di caratteri usati nel documento</td>
+</tr>
+<tr>
+    <td>lastModified</td>
+    <td>Torna la data e l'ora dell'ultima modifica al documento</td>
+</tr>
+<tr>
+    <td>links</td>
+    <td>Torna un array di tutti gli elementi &lt;a&gt; e &lt;area&gt; nel 
+	documento dotati di un attributo href</td>
+</tr>
+<tr>
+    <td>scripts</td>
+    <td>Torna un array di tutti gli elementi &lt;script&gt; nel documento</td>
+</tr>
+<tr>
+    <td>title</td>
+    <td>Permette di accedere all'elemento &lt;title&gt; del documento</td>
+</tr>
+<tr>
+    <td>URL</td>
+    <td>Torna l'URL del documento</td>
+</tr>
+</tbody>
+	</table>
+	
+	
+	
+	
+	<p>Ed ecco invece i principali metodi dell'oggetto document:</p>
+	
+	<table border="1">
+<tbody><tr>
+    <th style="width:35%">Metodo</th>
+    <th>Descrizione</th>
+</tr>
+<tr>
+	<td>createAttribute()</td>
+	<td>Crea un attributo (da associare a un elemento con setAttributeNode)</td>
+</tr>
+<tr>
+	<td>createComment()</td>
+	<td>Crea ed aggiunge un commento</td>
+</tr>
+<tr>
+	<td style="height: 22px">createElement()</td>
+	<td style="height: 22px">Crea ed aggiunge un elemento al documento</td>
+</tr>
+<tr>
+	<td>createTextNode()</td>
+	<td>Crea un nodo di testo</td>
+</tr>
+<tr>
+	<td>getElementById()</td>
+	<td>Torna l'elemento con l'id specificato</td>
+</tr>
+<tr>
+    <td>getElementsByClassName()</td>
+    <td>Torna una lista di elementi appartenenti alla classe specificata</td>
+</tr>
+<tr>
+    <td>getElementsByName()</td>
+    <td>Torna una lista di tutti gli elementi con l'attributo name specificato 
+	(attualmente l'attributo name &eacute; usato solo per gli elementi dei form, mentre 
+	in tutti gli altri casi &eacute; deprecato e si suggerisce l'uso di id)</td>
+</tr>
+<tr>
+	<td>getElementsByTagName()</td>
+	<td>Torna una lista di tutti gli elementi col nome di tag specificato</td>
+</tr>
+<tr>
+    <td>hasFocus()</td>
+    <td>Torna un risultato true o false a seconda che il documento abbia o no il 
+	focus</td>
+</tr>
+<tr>
+    <td>querySelector()</td>
+    <td>Torna il primo elemento del documento che corrisponde a un dato 
+	selettore CSS</td>
+</tr>
+<tr>
+    <td>querySelectorAll()</td>
+    <td>Torna una lista con tutti gli elementi che corrispondono a un selettore 
+	CSS</td>
+</tr>
+<tr>
+    <td style="height: 20px">write()</td>
+    <td style="height: 20px">Scrive su una finestra aperta o un documento</td>
+</tr>
+<tr>
+    <td>writeln()</td>
+    <td>Come write() ma aggiunge una andata a capo (new line) dopo ogni chiamata</td>
+</tr>
+</tbody></table>
+	
+	
+	
+	
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

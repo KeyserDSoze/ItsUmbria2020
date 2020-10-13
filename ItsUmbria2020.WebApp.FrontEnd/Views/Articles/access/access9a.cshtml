@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Gli header (H1, H2...)</div>
+	 <p>Gli <strong>header</strong> (detti anche talvolta titoli) sono quegli 
+		elementi che permettono di strutturare il contenuto della pagina in base 
+		alla rilevanza delle sue diverse parti. Cos&eacute; h1 dovrebbe essere 
+		riservato per il titolo principale della pagina, h2 per i titoli 
+		secondari, h3 per eventuali sottotitoli e cos&eacute; via. Si osservi l'esempio 
+		seguente:</p>
+        <div class="code">
+          <p>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</p>
+			<p>&lt;html lang=&quot;it&quot;&gt;</p>
+			<p>&lt;head&gt;</p>
+			<p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;</p>
+			<p>&lt;title&gt;&nbsp; Accessibilt&eacute; &lt;/title&gt; </p>
+			<p>&lt;/head&gt; </p>
+			<p>&lt;body&gt; </p>
+			<p>&lt;h1&gt; Accessibilit&eacute; e pagine web &lt;/h1&gt;</p>
+			<p>&lt;h2&gt; Problemi visivi &lt;/h2&gt;</p>
+			<p>&lt;h3&gt; Ipovisione &lt;/h3&gt;</p>
+			<p>....</p>
+			<p>&lt;h3&gt; Daltonismo &lt;/h3&gt;</p>
+			<p>...</p>
+			<p>&lt;h2&gt; Problemi uditivi &lt;/h2&gt;</p>
+			<p>...</p>
+			<p>&lt;/body&gt; </p>
+			<p>&lt;/html&gt; </p>
+        </div>
+	<p>Occorre ribadire che h1, h2 etc. non servono per formattare 
+	(visualizzare) in un certo modo le scritte presenti sulla pagina (questo &eacute; 
+	lo scopo invece degli stili), ma per fornire invece una struttura logica al 
+	contenuto della pagina stessa. Per chi non pu&eacute; vedere, la struttura della 
+	pagina non pu&eacute; essere indicata con la formattazione (cio&eacute; con il diverso 
+	colore, font o dimensioni dei titoli) ma bisogna invece usare correttamente 
+	gli header. I lettori vocali sono in grado di scansionare una pagina alla 
+	ricerca degli header e di fornire all'utente una specie di &quot;indice&quot; vocale 
+	del contenuto della pagina stessa.</p>
+	 <div class="titolo">I link</div>
+	 <p>I link (elemento &lt;a&gt;) sono fondamentali per la navigazione in un sito e 
+		dunque devono essere accessibili anche a persone con diverse disabilit&eacute;. 
+		A tale scopo &eacute; bene anzitutto che il significato di un link sia 
+		correttamente esplicitato. Per esempio un link tipo
+		<a href=" tabelle/tab6.html">clicca qui</a> non va bene, poich&eacute; non fornisce 
+		nessuna informazione. Viceversa il link <a href=" tabelle/tab6.html">pagina 
+		principale</a> &eacute; correttamente formulato.</p>
+	<p>Sarebbe anche opportuno, per quanto possibile, evitare di cambiare il 
+	colore o eliminare la sottolineatura dai link, poich&eacute; tali informazioni sono 
+	utili agli utenti per riconoscere un link.</p>
+	<p>Nel caso che venga usata un'immagine come link, &eacute; opportuno usare un 
+	attributo alt per specificare chiaramente il target del link stesso.</p>
+	 <div class="titolo">Salta al contenuto principale</div>
+	 <p>Per un utente con problemi visivi pu&eacute; essere molto difficile orientarsi 
+		nella struttura di una pagina. Si consideri l'esempio seguente:</p>
+	<p class="style1">
+	<img src="../img/0-skip-treas.jpg" alt="Screen hot of Treasury Department home page" /></p>
+	<p>Questa pagina contiene molte sezioni con link e approfondimenti vari e 
+	l'articolo principale &eacute; visualizzato sulla colonna centrale. Questa 
+	struttura pu&eacute; essere abbastanza chiara per chi non ha problemi di vista, ma &eacute; 
+	molto difficile da navigare per gli utenti con handicap visivo.</p>
+	<p>Allo scopo di rendere pi&eacute; accessibile la pagina, &eacute; una buona regola 
+	mettere sempre in cima alla pagina un link interno che permetta di saltare 
+	direttamente al contenuto principale. Ecco un esempio di link di questo 
+	tipo:</p>
+        <div class="code">
+          &lt;a href=&quot;#content&quot; class=&quot;skip&quot; accesskey=&quot;h&quot;&gt;Salta al contenuto principale&lt;/a&gt;        </div>
+	    <p>Si noti il link interno <em>href=&quot;#content&quot;</em>, dove <em>content</em> &eacute; 
+	il nome di un <em>id</em> all'interno della pagina (quello che contiene il 
+	testo principale). Cliccando sul link, l'utente viene indirizzato 
+	direttamente alla parte della pagina che contiene l'articolo.</p>
+	    <p>Si osservi anche l'attributo <em>accesskey</em> assegnato col valore di una lettera (in questo caso h, ma &egrave; solo un esempio). Lo scopo &egrave; offrire una scorciatoia da tastiera per accedere alla destinazione del link. A seconda del browser la combinazione dei tasti da usare &egrave; leggermente diversa, come mostra la tabella seguente: </p>
+		
+		<table border="1">
+<tbody><tr>
+<th style="width:19%">Browser</th>
+<th style="width:27%">Windows</th>
+<th style="width:27%">Linux</th>
+<th style="width:27%">Mac</th>
+</tr>
+<tr>
+<td>Internet Explorer</td>
+<td>[Alt] + <em>accesskey</em></td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>[Alt] + <em>accesskey</em></td>
+<td>[Alt] + <em>accesskey</em></td>
+<td>[Control] [Alt] + <em>accesskey</em></td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>[Alt] [Shift] + <em>accesskey</em></td>
+<td>[Alt] [Shift] + <em>accesskey</em></td>
+<td>[Control] [Alt] + <em>accesskey</em></td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>[Alt] + <em>accesskey</em></td>
+<td>N/A</td>
+<td>[Control] [Alt] + <em>accesskey</em></td>
+</tr>
+<tr>
+<td>Opera</td>
+<td colspan="3">Opera 15 or newer: [Alt] + <em>accesskey<br></em>Opera 12.1 or older: [Shift] [Esc] + <em>accesskey</em></td>
+</tr>
+</tbody></table>
+		
+		
+	    <p>Perch&eacute; sia immediatamente individuabile da chi usa browser uditivi, 
+	questo link deve essere messo direttamente all'inizio della pagina, subito 
+	dopo l'apertura dell'elemento body.</p>
+	<p>Per evitare che il link sia visibile agli altri utenti, &eacute; possibile 
+	ricorrere a varie soluzioni che fanno uso dei fogli stile. Per esempio:</p>
+        <div class="code">
+          .skip { <br />
+			position: absolute; <br />
+			top: -1000px; <br />
+			left: -1000px; <br />
+			height: 1px; <br />
+			width: 1px; <br />
+			text-align: left; <br />
+			overflow: hidden; <br />
+			} <br />
+			<br />
+			a.skip:active, <br />
+			a.skip:focus, <br />
+			a.skip:hover { <br />
+			left: 0; <br />
+			top: 0; <br />
+			width: auto; <br />
+			height: auto; <br />
+			overflow: visible; <br />
+			}
+        </div>
+	<p>La classe <em>skip</em> usa un trucco per rendere invisibile ai browser visivi un elemento: lo posiziona al di fuori dell'area visiva, con coordinate top e left uguali -1000px. Si noti che non sarebbe possibile usare allo stesso scopo l'attributo <em>display:none</em> poich&eacute; gli elementi con tale indicazione vengono ignorati sia dai browser visuali che da quelli uditivi. </p>
+	<p>In questo modo il link risulta visibile solo quando si preme da tastiera TAB e 
+	premendo subito dopo ENTER (INVIO), senza bisogno di usare il mouse, si 
+	viene portati subito al contenuto principale della pagina.</p>
+	<p><a target="_blank" href="http://webaim.org/">Qui &eacute; possibile vedere un 
+	esempio</a> di pagina realizzata con questa tecnica.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

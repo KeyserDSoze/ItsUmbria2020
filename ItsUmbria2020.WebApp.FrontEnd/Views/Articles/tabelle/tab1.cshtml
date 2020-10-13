@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">L'attributo border e i bordi in HTML 5</div>
+     <p>Nei primi esempi di tabelle abbiamo usato l'attributo border=&quot;1&quot; con lo 
+		scopo di visualizzare il bordo di una tabella.</p>
+	<p>Il problema dell'attributo border � che � deprecato in HTML 5, cio� se 
+		ne sconsiglia l'uso ed esso produce messaggi di errore nei validatori di 
+		codice. Infatti border specifica informazioni di tipo non logico, ma 
+		relative alla visualizzazione che devono essere affrontate con gli stili 
+		e i fogli stile CSS.</p>
+	<p>Una soluzione per realizzare una tabella con bordo compatibile con le 
+	specifiche HTML 5 � la seguente:</p>
+	 <div class="code">
+       <pre>&lt;table style=&quot;border-collapse: collapse&quot;&gt;</pre>
+		<pre>&lt;tr&gt; &lt;!-- INIZIO PRIMA RIGA --&gt; 
+&lt;td style=&quot;border: 1px solid&quot;&gt; Prima cella della prima riga &lt;/td&gt;
+&lt;td style=&quot;border: 1px solid&quot;&gt; Seconda cella della prima riga &lt;/td&gt;
+&lt;td style=&quot;border: 1px solid&quot;&gt; Terza cella della prima riga &lt;/td&gt;
+&lt;/tr&gt; &lt;!-- FINE PRIMA RIGA --&gt; </pre>
+		<pre>
+&lt;tr&gt; &lt;!-- INIZIO SECONDA RIGA --&gt; 
+&lt;td style=&quot;border: 1px solid&quot;&gt; Prima cella della seconda riga &lt;/td&gt;
+&lt;td style=&quot;border: 1px solid&quot;&gt; Seconda cella della seconda riga &lt;/td&gt;
+&lt;td style=&quot;border: 1px solid&quot;&gt; Terza cella della terza riga &lt;/td&gt;
+&lt;/tr&gt; &lt;!-- FINE SECONDA RIGA --&gt; </pre>
+		<pre>
+&lt;/table&gt;</pre>
+	 </div>
+	 <p>La visualizzazione della precedente tabella � la seguente:</p>
+
+<table style="border-collapse: collapse" align="center">
+<tr> <!-- INIZIO PRIMA RIGA --> 
+<td style="border: 1px solid"> Prima cella della prima riga </td>
+<td style="border: 1px solid"> Seconda cella della prima riga </td>
+<td style="border: 1px solid"> Terza cella della prima riga </td>
+</tr> <!-- FINE PRIMA RIGA --> 
+<tr> <!-- INIZIO SECONDA RIGA --> 
+<td style="border: 1px solid"> Prima cella della seconda riga </td>
+<td style="border: 1px solid"> Seconda cella della seconda riga </td>
+<td style="border: 1px solid"> Terza cella della terza riga </td>
+</tr> <!-- FINE SECONDA RIGA --> 
+</table>
+
+
+	<p>Si noti la maggiore complessit� del codice necessario per gestire i bordi 
+	in HTML 5, compensato per� da una maggiore flessibilit� nell'indicare tutte 
+	le caratteristiche del bordo (spessore, colore etc).</p>
+	<p>In particolare osserviamo l'uso dell'attributo style applicato a tutte le 
+	celle della tabella allo scopo di definire il bordo di ogni cella:</p>
+	<p class="style1">&lt;td style=&quot;border: 1px solid&quot;&gt;</p>
+	<p>Il valore 1px indica lo spessore desiderato per il bordo (un pixel), 
+	mentre solid indica come deve essere visualizzato il bordo (in questo caso 
+	con una linea continua - per altre possibilit� di bordo vedi la
+	<a href=" stili/stili8.html">lezione sugli stili per i bordi</a>). E' anche 
+	possibile indicare un colore per bordo, in questo modo:</p>
+	<p class="style1">&lt;td style=&quot;border: 1px solid red&quot;&gt;</p>
+	<p>E' anche possibile specificare un bordo diverso per ogni cella della 
+	tabella.</p>
+	<p>Si osservi infine lo stile applicato sull'elemento table:</p>
+	<p class="style1">&lt;table style=&quot;border-collapse: collapse&quot;&gt;</p>
+	<p>Lo scopo � quello di eliminare lo spazio presente fra i bordi di due 
+	celle adiacenti.</p>
+	 <div class="titolo">Tabelle nascoste</div>
+	<p>Se in una tabella non viene specificato il bordo, la tabella non viene visualizzata (tabella nascosta). Questo artificio serve per creare tabelle il cui scopo &egrave; ordinare testo e immagini su una pagina, senza che i bordi della tabella stessa siano visibili. Si consideri l'esempio seguente: </p>
+     <table width="80%" border="0" align="center">
+       <tr>
+         <td width="50%"><img src="../img/problema.gif" alt="" width="38" height="54" /></td>
+         <td>Esempio di testo inserito in una cella di una tabella nascosta </td>
+       </tr>
+       <tr>
+         <td><ul>
+           <li> uno </li>
+           <li>due</li>
+           <li>tre  </li>
+         </ul></td>
+         <td><img src="../img/soluzione.gif" alt="" width="40" height="61" /></td>
+       </tr>
+     </table>
+     <p>Ci sono due immagini, un testo e una lista non numerata. Per disporre i 4 elementi &egrave; stata utilizzata una tabella nascosta di 2 righe e due colonne. La struttura della tabella &egrave; la seguente:</p>
+     <div class="code">
+       <pre>     &lt;table width=&quot;80%&quot; border=&quot;0&quot; align=&quot;center&quot;&gt;<br />       &lt;tr&gt;<br />         &lt;td width=&quot;50%&quot;&gt;&lt;img src=&quot;../../img/problema.gif&quot; alt=&quot;&quot; width=&quot;38&quot; height=&quot;54&quot; /&gt;&lt;/td&gt;<br />         &lt;td&gt;Esempio di testo inserito in una cella di una tabella nascosta &lt;/td&gt;<br />       &lt;/tr&gt;<br />       &lt;tr&gt;<br />         &lt;td&gt;&lt;ul&gt;<br />           &lt;li&gt; uno &lt;/li&gt;<br />           &lt;li&gt;due&lt;/li&gt;<br />           &lt;li&gt;tre  &lt;/li&gt;<br />         &lt;/ul&gt;&lt;/td&gt;<br />         &lt;td&gt;&lt;img src=&quot;../../img/soluzione.gif&quot; alt=&quot;&quot; width=&quot;40&quot; height=&quot;61&quot; /&gt;&lt;/td&gt;<br />       &lt;/tr&gt;<br />     &lt;/table&gt;</pre>
+    </div>
+     <p>Attualmente l'uso di tabelle viene raccomandato solo per presentare i 
+		dati in forma tabellare. L'uso di tabelle nascoste per realizzare il 
+		layout di una pagina � deprecato e deve essere sostituito col
+		<a href=" position/pos1.html">posizionamento con i fogli stile</a>.</p>
+     <p>L'uso degli <a href=" stili/stili8.html">stili per i bordi</a> infine consente 
+		anche un controllo 
+	molto pi� fine e preciso dei bordi di una tabella, permettendo di definirne 
+	spessore, colore e altre propriet�.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

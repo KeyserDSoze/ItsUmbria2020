@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Codice JavaScript nel gestore di eventi
+	</div>
+        <p>Nelle pagine precedenti abbiamo considerato il caso prevalentemente 
+		il caso in cui il codice JS venga scritto all'interno di una funzione (<em>function</em>) 
+		chiamata attraverso un gestore di eventi, come in:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			&lt;title&gt; Semplice esempio in Javascript&lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			var ind=1;<br />
+			function muovi()<br />
+			&nbsp;&nbsp;&nbsp;
+			{ <br />
+			&nbsp;&nbsp;&nbsp;
+			if (ind%2)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino2.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			else<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino1.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			ind= ind + 1;<br />
+			&nbsp;&nbsp;&nbsp;
+			} <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			<br />
+			&lt;p&gt;<br />
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;<br />
+			&lt;/p&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>In realt&eacute;, quando il codice da scrivere &eacute; breve (contiene poche 
+		istruzioni), &eacute; possibile anche scrivere il codice direttamente nel 
+		gestore di eventi, senza passare attraverso la funzione. Si consideri 
+		l'esempio seguente:</p>
+	<div class="code">
+			&lt;p&gt;<br />
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;document.getElementById('omino').src='../img/omino2.jpg'&quot;&gt;<br />
+			&lt;/p&gt;<br />
+	</div>
+        <p>Osserviamo appunto come in questo caso abbiamo scritto il codice JS 
+		direttamente nel gestore di eventi onclick. Si noti l'alternarsi degli 
+		apici (doppi esterni e singoli interni) indispensabile in questo caso.</p>
+	<div class="titolo">
+
+	  Codice JavaScript direttamente all'interno di una pagina 
+	</div>
+	<p>Oltre che in risposta a un evento, il codice JS pu&ograve; anche essere inserito <em>direttamente nel body</em> di una pagina. In questo caso lo script viene eseguito nel punto in cui &egrave; stato inserito (cio&egrave; il browser lo esegue quando arriva a interpretare la riga in cui lo script si trova). </p>
+        <p>Vediamo subito un semplice esempio:</p>
+        <div class="code">
+          &lt;html&gt;<br />
+          &lt;body&gt;<p>&lt;script&gt; <br />
+          window.alert(&quot;Benvenuto in questa meravigliosa pagina!&quot;) <br />
+          &lt;/script&gt;</p>
+          <p>&lt;/body&gt;<br />
+          &lt;/html&gt; </p>
+    </div>
+        <p>Si osservi il tag <em>script</em> che racchiude al proprio interno il codice js. L'attributo <em>type</em> 
+		serve per specificare che il codice inserito appartiene al linguaggio 
+		javascript.</p>
+        <p>Il risultato di questo script &egrave; che viene visualizzata una finestra di messaggio al momento del caricamento della pagina. Si noti che lo stesso risultato avrebbe potuto essere ottenuto usando l'evento <em>onLoad</em> associato al body nel seguente modo:</p>
+        <div class="code">
+          &lt;html&gt;<br />
+            &lt;body onload=&quot;window.alert('Benvenuto in questa meravigliosa pagina!')&quot; &gt;<br />
+            &lt;/body&gt;<br />
+&lt;/html&gt; 
+    </div>
+        <p>Si osservi che i doppi apici sono stati qui sostituiti con apici singoli (in quanto non &egrave; possibile usare apici doppi all'interno di altri apici doppi); invece nell'esempio precedente questo problema non esisteva, in quanto il codice 
+		JS non era eseguito dentro un gestore di eventi. </p>
+        <p>&nbsp;</p>
+        <div class="titolo">Codice Javascript in un link (tag &lt;a&gt;) </div>
+        <p>Il codice JS pu&ograve; anche essere inserito anche all'interno di link (tag <em>&lt;a&gt;</em>) o di altri elementi che prevedano l'uso dell'attributo href. Il metodo &egrave; particolare e non molto elegante, comunque vale la pena di darci un'occhiata: </p>
+        
+          <div class="code">
+          &lt;a href=&quot;javascript: window.alert('Ciao a tutti')&quot;&gt; Clicca qui &lt;/a&gt; 
+    </div>
+        <p>In questo caso, facendo clic su<em> Clicca qui</em> viene aperta una finestra col messaggio <em>Ciao a tutti</em>. Si osservi la parola chiave <em>javascript</em> inserita dentro l'attributo <em>href</em> e seguita dai due punti.</p>
+        <p>Non &egrave; particolarmente bello, ma ogni tanto pu&ograve; essere comodo da usare (in pratica consente di sfruttare un tag <em>a</em> per fargli eseguire delle istruzioni in js).  </p>
+        <p>&nbsp;</p>
+        <div class="titolo">Codice JavaScript in un file esterno </div>
+        <p>E' anche possibile inserire il codice JS in un file esterno alla pagina html. Il file deve avere estensione .js ed essere linkato alla pagina web nell'head. La sintassi &egrave; la seguente:</p>
+        <div class="code">
+          &lt;head&gt;<br />
+            &lt;script type=&quot;text/JavaScript&quot; src=&quot;file.js&quot;&gt;&lt;/script&gt;<br />
+&lt;/head&gt;</div>
+        <p>Nell'esempio precedente il nome del file (scelto arbitrariamente) &egrave; <em>file.js</em>. Si tratta di un file di testo che conterr&agrave; il codice delle funzioni javascript utilizzate dalla pagina. Si noti che il file dovr&agrave; contenere <em>esclusivamente codice javascript</em> e non html (dunque, per esempio, il codice js nel file non dovr&agrave; essere racchiuso nei tag &lt;scritp&gt; e &lt;/script&gt;). </p>
+    <p>I principali vantaggi di usare un file esterno per contenere il codice JS sono:</p>
+        <p> &bull; peso: la singola pagina html pesa di meno (&egrave; pi&ugrave; piccola, in Byte) <br />
+  &bull; portabilit&agrave;: un file esterno pu&ograve; essere facilmente riutilizzato per altri progetti <br />
+  &bull; condivisione: pi&ugrave; pagine possono condividere le stesse funzioni attraverso un unico file esterno </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

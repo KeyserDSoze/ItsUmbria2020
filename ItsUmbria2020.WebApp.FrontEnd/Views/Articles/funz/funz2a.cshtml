@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/JavaScript"> 
+
+var ind=1;
+function cambia()
+&eacute;&eacute;&eacute; { 
+&eacute;&eacute;&eacute; if (ind%2)
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; document.getElementById("corpo").style.backgroundColor= "beige"  ;
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+&eacute;&eacute;&eacute; else
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; document.getElementById("corpo").style.backgroundColor= "white";
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+&eacute;&eacute;&eacute; ind= ind + 1;
+&eacute;&eacute;&eacute; } 
+
+</script>
+
+<style type="text/css">
+.style1 {
+				background-color: #FFFF00;
+}
+</style>
+
+</head>
+<body id="corpo">
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+
+
+	<div class="titolo">
+
+	  Chiamata di una funzione</div>
+
+
+
+<p>Quando in un programma si usa una funzione, si parla di <em>chiamare</em> una 
+funzione e <strong>chiamata</strong> di una funzione &eacute; il nome dell'istruzione 
+corrispondente. Vediamo subito un esempio usando la funzione per determinare se 
+un numero &eacute; primo vista nella precedente lezione:</p>
+        <div class="code">
+          <pre>&lt;head&gt;
+
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;
+
+&lt;title&gt; Numeri primi &lt;/title&gt;
+
+&lt;script type=&quot;text/JavaScript&quot;&gt; 
+
+function isPrime(n) {
+  if (n == 2) {
+    return true;
+  } else if ((n &lt; 2) || (n % 2 == 0)) {
+    return false;
+  } else {
+    for (var i = 3; i &lt;= Math.sqrt(n); i += 2) {
+      if (n % i == 0)
+        return false;
+    }
+    return true;
+  }
+}
+
+function verifica()
+{
+var num = document.getElementById('numero').value ;
+
+if (<span class="style1">isPrime(num)</span>)
+  alert(&quot;Numero primo!&quot;);
+else
+  alert(&quot;Numero non primo!&quot;)
+}
+&lt;/script&gt;
+ 
+
+&lt;/head&gt;
+
+&lt;body&gt; 
+ 
+&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;
+    &lt;input type=&quot;text&quot; id=&quot;numero&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;VERIFICA&quot; onClick=&quot;verifica()&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+
+
+&lt;/body&gt;</pre>
+	</div>
+        <p>Si osservi che ci sono due funzioni nel nostro programma:</p>
+	<ul>
+					<li>la funzione verifica(), attivata dall'evento onClick</li>
+					<li>la funzione isPrime(), chiamata dalla funzione 
+					verifica()</li>
+	</ul>
+	<p>La chiamata di isPrime() &eacute; evidenziata in colore giallo nel codice 
+	precedente. La variabile num, scritta fra le parentesi della funzione nella 
+	chiamata, si dice <strong>argomento della chiamata</strong>.</p>
+	<p>Al momento della chiamata il parametri <em>n</em> (interno alla 
+	funzione), assume il valore dell'argomento <em>num</em> (esterno alla 
+	funzione). In questo modo una stessa funzione pu&eacute; essere usata, cambiando 
+	l'argomento della chiamata, per verificare se numeri diversi sono primi.</p>
+
+
+
+	<div class="titolo">
+
+	  Passaggio per valore</div>
+
+
+
+	<p>In JS gli argomenti della funzione vengono passati alla funzione stessa 
+	per valore. Ci&eacute; significa che la funzione riceve una copia dei valori 
+	passati e che non pu&eacute; modificare le variabili originali.</p>
+	<p>Per esempio una funzione come la seguente, che scambia il contenuto di 
+	due variabili, non produrrebbe nessun risultato in JS:</p>
+        <div class="code">
+      function scambia(a,b)<br />
+		{<br />
+		var tmp;<br />
+		tmp = a;<br />
+		a = b;<br />
+		b = tmp;<br />
+		}</div>
+	<p>Infatti la funzione scambia solo i valori le proprie copie 'a' e 'b', ma 
+	questo scambio non ha alcun effetto sulle variabili usate al momento della 
+	chiamata alla funzione.</p>
+	<p>Come ulteriore esempio di chiamata di una funzione con parametri e valore 
+	di ritorno, usiamo la funzione per il calcolo del coefficiente binomiale di 
+	due numeri, vista brevemente nella precedente lezione:</p>
+        <div class="code">
+          <pre>&lt;head&gt;
+
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;
+
+&lt;title&gt; Coefficiente binomiale &lt;/title&gt;
+
+&lt;script type=&quot;text/JavaScript&quot;&gt; 
+
+function binom(n, k) {
+    var coeff = 1;
+    for (var i = n-k+1; i &lt;= n; i++) coeff *= i;
+    for (var i = 1;     i &lt;= k; i++) coeff /= i;
+    return coeff;
+}
+
+
+function calcola()
+{
+var n1 = document.getElementById('n').value ;
+var n2 = document.getElementById('k').value ;
+
+var <span class="style1">risultato = binom(n1,n2)</span>;
+
+
+document.getElementById('risultato').value = risultato; 
+}
+&lt;/script&gt;
+ 
+
+&lt;/head&gt;
+
+&lt;body&gt;
+ 
+ 
+ 
+&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;
+    n: &lt;input type=&quot;text&quot; id=&quot;n&quot;&gt; k: &lt;input type=&quot;text&quot; id=&quot;k&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;CALCOLA&quot; onClick=&quot;calcola()&quot;&gt;
+    Risultato:  &lt;input type=&quot;text&quot; id=&quot;risultato&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+
+
+&lt;/body&gt;</pre>
+	</div>
+        <p>Anche in questo caso la chiamata &eacute; indicata in colore giallo. Si 
+		osservi di nuovo che gli argomenti n1 e n2 non sono la stessa cosa dei 
+		parametri n e k: solo al momento della chiamata i valori degli argomenti 
+		sono copiati nei corrispondenti parametri (secondo l'ordine in cui 
+		compaiono nella chiamata: il primo argomento &eacute; copiato nel primo 
+		parametro, il secondo argomento nel secondo e cos&eacute; via).</p>
+	<p>Il risultato del calcolo della funzione viene copiato nella variabile di 
+	nome risultato.</p>
+        <p><span class="style1"><strong>ATTENZIONE</strong></span>:</p>
+	<p>JS non verifica che il numero degli argomenti sia uguale a quello dei 
+	parametri: se ci sono pi&eacute; argomenti, quelli in eccesso sono ignorati, se ce 
+	ne sono di meno, i parametri mancanti assumono il valore undefined.</p>
+	<p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

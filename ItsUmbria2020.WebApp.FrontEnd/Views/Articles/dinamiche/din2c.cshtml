@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<style type="text/css"> 
+@@keyframes animazione {
+from {
+background-color: red;
+opacity: 1.0;
+transform: rotate(0deg);
+}
+
+33% {
+background-color: blue;
+opacity: 0.75;
+transform: rotate(-20deg);
+}
+
+67% {
+background-color: green;
+opacity: 0.5;
+transform: rotate(20deg);
+}
+
+to {
+background-color: red;
+opacity: 1.0;
+transform: rotate(0deg);
+}
+
+}
+
+.quadrato {
+width: 100px;
+height: 100px;
+
+
+animation-name: animazione;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+}
+</style>
+           
+         <!-- FINE
+DEL CODICE CSS!! -->
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Le animazioni</p>
+	</div>
+        <p>Le animazioni consentono di realizzare una sequenza di azioni 
+		temporizzate su un certo elemento. Vediamo subito un esempio:</p>
+		
+	
+        <div class="code">
+          @@keyframes animazione {<br />
+			from {<br />
+			background-color: red;<br />
+			opacity: 1.0;<br />
+			transform: rotate(0deg);<br />
+			}<br />
+			<br />
+			33% {<br />
+			background-color: blue;<br />
+			opacity: 0.75;<br />
+			transform: rotate(-20deg);<br />
+			}<br />
+			<br />
+			67% {<br />
+			background-color: green;<br />
+			opacity: 0.5;<br />
+			transform: rotate(20deg);<br />
+			}<br />
+			<br />
+			to {<br />
+			background-color: red;<br />
+			opacity: 1.0;<br />
+			transform: rotate(0deg);<br />
+			}<br />
+			<br />
+			}<br />
+			<br />
+			div {<br />
+			width: 100px;<br />
+			height: 100px;<br />
+			<br />
+			<br />
+			animation-name: animazione;<br />
+			animation-duration: 4s;<br />
+			animation-iteration-count: infinite;<br />
+			animation-timing-function: ease-in-out;<br />
+			}<br />
+        </div>
+	<p>L'effetto prodotto &eacute; mostrato qui sotto sul solito quadrato:</p>
+	<div class="quadrato"></div>
+	<p>Per poter creare un'animazione bisogna per prima cosa definirla, 
+	assegnandole un nome (a piacere) e specificando gli stili che devono essere 
+	modificati ad ogni &quot;fotogramma&quot; dell'animazione:</p>
+		
+	
+        <div class="code">
+          @@keyframes <em>nome dell'animazione</em> {<br />
+			<br />
+			from {<br />
+			<em>stili applicati inizialmente (primo fotogramma)</em><br />
+			}<br />
+			<br />
+			33% {<br />
+			<em>fotogrammi intermedi</em><br />
+			}<br />
+			<br />
+			...<br />
+			<br />
+			to {<br />
+			<em>fotogramma finale</em><br />
+			}<br />
+			<br />
+			}<br />
+        </div>
+	<p>A parte il fotogramma iniziale (<em>from</em>) e quello finale (<em>to</em>) che sono 
+	obbligatori e devono essere sempre presenti, &eacute; possibile suddividere 
+	l'animazione nel numero desiderato di fotogrammi, specificando il tempo in 
+	percentuale. Ad esempio from (0%), 20%, 40%, 60%, 80%, to (100%), se si 
+	vogliono realizzare 10 fotogrammi alla stessa distanza temporale uno 
+	dall'altro.</p>
+	<p>Una volta che l'animazione &eacute; stata definita e ha un nome, essa pu&eacute; essere 
+	applicata a un selettore (elemento, classe, id) del foglio stile in questo 
+	modo:</p>
+		
+	
+        <div class="code">
+          <em>selettore</em> {<br />
+			animation-name: <em>nome dell'animazione</em>;<br />
+			animation-duration: <em>durata</em>;<br />
+			animation-iteration-count: <em>iterazione</em>;<br />
+			animation-timing-function: <em>timing</em>;<br />
+			}<br />
+        </div>
+	<p>La <em>durata</em> &eacute; ovviamente la durata totale dell'animazione in 
+	secondi. L'<em>iterazione</em> 
+	indica il numero di volte in cui l'animazione deve essere ripetuta (il 
+	valore di default &eacute; 1; <em>infinite</em> indica una ripetizione 
+	all'infinito).</p>
+	<p>Infine <em>timing</em> descrive come i valori intermedi usati durante 
+	l&#8217;animazione vengono calcolati. Senza voler qui approfondire l'argomento, il 
+	lettore pu&eacute; provare per proprio conto l'effetto dei diversi possibili valori 
+	di timing che sono: <em>ease, linear, ease-in, ease-out, ease-in-out, 
+	cubic-bezier</em>. </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

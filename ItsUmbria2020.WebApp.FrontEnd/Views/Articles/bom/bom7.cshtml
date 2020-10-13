@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">Impossibilit&eacute; di scrivere sulla pagina corrente </div>
+        <p>Uno dei limiti del metodo <em>write</em> &egrave; che non &egrave; possibile generare codice al volo sulla stessa pagina in risposta a un'azione dell'utente. Si supponga per esempio di eseguire il seguente codice: </p>
+        <div class="code">
+          &lt;html&gt;<br />
+            &lt;head&gt;<br />
+            &lt;/head&gt;<br />
+            &lt;body&gt;<br />
+            &lt;form&gt;<br />
+          &lt;input type=&quot;button&quot; value=&quot;premi qui&quot; onclick=&quot;document.write('ciao!')&quot; /&gt;<br />
+          &lt;/form&gt;<br />
+  &lt;/body&gt;<br />
+  &lt;/html&gt;</div>
+        <p>L'effetto prodotto sulla pagina &egrave;:</p>
+<form>
+<input type="button" value="premi qui" onclick="document.write('ciao!')" />
+</form>
+        <p >Premendo il pulsante, la pagina viene cancellata. Al suo posto compare una pagina bianca con la scritta <em>Ciao</em>. In sostanza l'esecuzione di <em>document.write</em> ha generato un nuovo documento che viene a sostituirsi al documento corrente nella finestra del browser.</p>
+        <p >&nbsp; </p>
+        <div class="titolo">
+
+	  Scrittura su una pagina secondaria </div>
+        <p>La limitazione precedente pu&ograve; essere aggirata aprendo una pagina secondaria e scrivendo su quest'ultima. Consideriamo il codice seguente: </p>
+    <div class="code">
+      &lt;html&gt;<p>&lt;head&gt;<br />
+  &lt;script&gt; <br />
+		<br />
+            function funzione()<br />
+            {<br />
+            xx = window.open(&quot;&quot;,&quot;&quot;,&quot;width=300,height=250&quot;);<br />
+            xx.document.open();<br />
+            xx.document.write(&quot;&lt;html&gt;&lt;body&gt;&quot;+window.document.prova.testo.value+&quot;&lt;/body&gt;&lt;/html&gt;&quot;);
+            xx.document.close();<br />
+            }<br />
+		<br />
+  &lt;/script&gt;<br />
+  &lt;/head&gt;</p>
+          <p> &lt;body&gt;<br />
+  &lt;form&nbsp; action=&quot;&quot; name=&quot;prova&quot;&gt;<br />
+  &lt;input type=&quot;text&quot; name=&quot;testo&quot;&gt;<br />
+  &lt;input type=&quot;button&quot; value=&quot;premi qui&quot; onclick=&quot;funzione()&quot; 
+			&gt;<br />
+  &lt;/form&gt;<br />
+  &lt;/body&gt;<br />
+  </p>
+          <p>&lt;/html&gt;</p>
+    </div>
+        <p>L'istruzione</p>
+        <div class="code">
+          xx = window.open(&quot;&quot;,&quot;&quot;,&quot;width=300,height=250&quot;);</div>
+        <p>apre una finestra secondaria di pop-up con dimensioni 300x250 e la assegna all'oggetto xx (nome scelto liberamente). A questo punto con </p>
+        <div class="code">
+          xx.document.open();</div>
+        <p>viene aperto un nuovo documento vuoto nella nuova finestra secondaria. L'istruzione</p>
+        <div class="code">
+          xx.document.write(&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Pagina popup&lt;/title&gt;&lt;body&gt;&quot;<br />
+          + window.document.prova.testo.value + &quot;&lt;/body&gt;&lt;/html&gt;&quot;);</div>
+        <p>scrive codice html nel nuovo documento aperto. Si noti che il codice html scritto sulla nuova pagina comprende anche i tag <em>&lt;html&gt;, &lt;head&gt;</em>  e <em>&lt;body&gt;</em> (si tratta in sostanza di una pagina html completa e ben formata).</p>
+        <p>Infine l'istruzione</p>
+        <div class="code">
+          xx.document.close();</div>
+        <p>termina la scrittura sulla finestra <em>xx</em> (attenzione: la finestra non viene chiusa! viene solo chiuso il flusso di scrittura).   </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

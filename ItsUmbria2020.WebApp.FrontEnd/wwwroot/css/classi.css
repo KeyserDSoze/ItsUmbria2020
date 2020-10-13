@@ -1,0 +1,78 @@
+﻿/* CSS Document */
+
+.ttesto {
+	font-size: 1em;
+	color: #000;
+}
+
+	.ttesto a:link {
+		color: #6699ff;
+		text-decoration: none;
+	}
+
+	.ttesto a:visited {
+		text-decoration: none;
+		color: #6699ff;
+	}
+
+	.ttesto a:hover {
+		text-decoration: none;
+		color: #00cc00;
+	}
+
+	.ttesto a:active {
+		text-decoration: none;
+	}
+
+.tmenu {
+	font-size: 0.7em;
+	color: #333;
+}
+
+	.tmenu a:link {
+		color: #339900;
+		text-decoration: none;
+	}
+
+	.tmenu a:visited {
+		text-decoration: none;
+		color: #339900;
+	}
+
+	.tmenu a:hover {
+		text-decoration: none;
+		color: #FF9600;
+	}
+
+	.tmenu a:active {
+		text-decoration: none;
+	}
+
+.indicatore {
+	position: relative;
+	font-weight: bold;
+	font-size: 1.2em;
+	height: 20px;
+	padding-left: 12px;
+	left: 0px;
+	background: url(../interfaccia/indicatore.gif) no-repeat top left;
+}
+
+.titolo {
+	color: #FF6600;
+	font-weight: bold;
+	font-size: 1.15em;
+	height: 30px;
+}
+
+.code {
+	background: #dddddd;
+	border-top-color: #C8CDDE;
+	border-top-style: solid;
+	border-top-width: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	margin: 0 0 10px 0;
+	font: "Courier New", Courier, monospace;
+}

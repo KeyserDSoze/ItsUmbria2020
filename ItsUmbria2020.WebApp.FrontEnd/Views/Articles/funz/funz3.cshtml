@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style2 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+
+
+	<div class="titolo">
+
+	  Funzioni senza parametri e senza valore di ritorno</div>
+
+
+
+<p>Riepilogando quanto visto nelle precedenti lezioni, possiamo suddividere le 
+funzioni in alcune grandi categorie. Le funzioni pi&eacute; semplici sono quelle senza 
+parametri e senza valore di ritorno. Queste sono le funzioni che abbiamo di 
+solito usato all'interno del gestore di eventi per rispondere a un'azione 
+dell'utente sulla pagina, per esempio:</p>
+        <div class="code">
+			function muovi()<br />
+			&nbsp;&nbsp;&nbsp;
+			{ <br />
+			&nbsp;&nbsp;&nbsp;
+			if (ind%2)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino2.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			else<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino1.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			ind= ind + 1;<br />
+			&nbsp;&nbsp;&nbsp;
+			} </div>
+        <p>La chiamata di queste funzioni &eacute; molto semplice. Non avendo parametri 
+		n&eacute; valore di ritorno, esse vanno chiamate semplicemente col nome seguito 
+		dalle parentesi tonde aperte e chiuse (senza nulla in mezzo):</p>
+	<p class="style2">muovi();</p>
+	<p>Questo tipo di funzioni &eacute; poco flessibile, in quanto la 
+		funzione esegue sempre le stesse operazioni sugli stessi dati di 
+		ingresso. </p>
+	<div class="titolo">
+
+	  Funzioni con parametri 
+	</div>
+        <p>Le funzioni con parametri possono operare su dati diversi a 
+		seconda di come vengono chiamate. Per comprendere meglio si consideri il 
+		concetto di funzione in matematica. Per esempio la radice quadrata di un 
+		numero si calcola con la funzione radice quadrata:</p>
+	<p class="style2">
+	<img alt="radice quadrata esempio" src="../img/img4.gif" /></p>
+	<p>Tuttavia la funzione radice quadrata pu&eacute; essere applicata ovviamente 
+	anche a un numero diverso, ottenendo in tal modo un altro risultato:</p>
+	<p class="style2">
+	<img alt="secondo esempio radice quadrata" src="../img/img6.gif" /></p>
+	<p>In modo analogo anche le funzioni in JS possono operare su valori diversi 
+	a ogni chiamata.</p>
+        <p>Una <strong>funzione con parametri</strong> riceve uno o pi&ugrave; valori di ingresso al momento della chiamata. Si consideri il seguente esempio: </p>
+        <div class="code">
+          <p>function moltiplica(num1,num2)<br />
+          {<br />
+          var ris;<br />
+          ris = num1 * num2;<br />
+          window.alert(&quot;Il risultato &egrave; &quot;, ris);<br />
+          } </p>
+    </div>
+        <p>I <strong>parametri</strong> della funzione sono <em>num1</em> e <em>num2</em>. Si tratta di due variabili il cui valore viene inizializzato al momento della chiamata alla funzione. Per esempio, supponendo di chiamare la precedente funzione in questo modo:</p>
+        <div class="code">
+          &lt;img src=&quot;foto.jpg&quot; onclick=&quot;moltiplica(4,6)&quot;&gt; 
+        </div>
+        <p><em>num1</em> assumer&agrave; il valore 4 e <em>num2</em> il valore 6. 
+		I valori 4 e 6 si dicono <strong>argomenti</strong> della chiamata alla 
+		funzione. Al momento della chiamata, i parametri ricopiano i valori 
+		degli argomenti.</p>
+	<p>Naturalmente l'uso dei parametri ha senso se al momento della chiamata non vengono passati alla funzione dei <em>
+	argomenti fissi e sempre uguali</em>, ma <em>valori variabili</em> (come per esempio il contenuto di una casella di testo in un form). 
+	In questo modo la stessa funzione pu&eacute; essere usata per effettuare la 
+	moltiplicazione fra numeri diversi.</p>
+        <div class="titolo"> Funzioni con valore di ritorno </div>
+        <p>Oltre ad avere ingressi (parametri), le funzioni possono avere anche un valore (unico) di uscita. Tale valore in JS viene detto 
+		<strong>valore di ritorno</strong> della funzione. Si consideri la precedente funzione moltiplica scritta in modo da usare il valore di ritorno:</p>
+        <div class="code">
+          function moltiplica(num1,num2)<br />
+{<br />
+var ris;<br />
+ris = num1 * num2;<br /> 
+return ris;
+<br />
+} 
+    </div>
+        <p>L'istruzione <em>return</em> prende il contenuto della variabile <em>ris</em> e lo restituisce al chiamante. In questo caso la chiamata della funzione pu&ograve; essere fatta in questo modo:</p>
+        <div class="code">
+          &lt;img src=&quot;foto.jpg&quot; onclick=&quot;x=moltiplica(4,6); alert(x)&quot; 
+&gt; 
+        </div>
+        <p>La variabile x conterr&agrave;, al termine dell'esecuzione della funzione moltiplica, il risultato della moltiplicazione di a e b.  La sintassi completa della chiamata di una funzione con parametri e valore di ritorno &egrave; dunque:</p>
+        <div class="code">
+          <em>variabile = funzione(par1, par2, par3...) ; </em>
+        </div>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

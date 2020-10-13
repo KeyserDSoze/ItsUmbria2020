@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo"> Espressioni </div>
+        <p>Il significato del termine espressione in programmazione &egrave; simile a quello della matematica. Una <strong>espressione</strong> &egrave; un particolare tipo di assegnazione. In parole semplici si tratta di una formula in cui il risultato di un certo calcolo viene assegnato ad una variabile. Per esempio:</p>
+        <div class="code">
+          area_trapezio = (base_maggior+base_minore)*altezza/2;</div>
+        <p>Gi&agrave; dall'espressione precedente &egrave; possibile osservare che la notazione usata in 
+		JS &egrave; leggermente diversa da quella usata in algebra. Un'espressione in generale contiene variabili, costanti numeriche e operatori aritmetici. </p>
+        <div class="titolo">
+						Operatori aritmetici (binari)
+	</div>
+        <p>Gli operatori aritmetici in JS sono i seguenti:</p>
+		<table border="1" align="center">
+<tbody><tr><td>+</td>
+<td>addizione</td>
+</tr>
+<tr><td>-</td>
+<td>sottrazione</td>
+</tr>
+<tr><td>*</td>
+<td>moltiplicazione</td>
+</tr>
+<tr><td>/</td>
+<td>divisione</td>
+</tr>
+<tr><td>%</td><td>modulo</td></tr>
+</tbody></table>
+        <p>Fra gli operatori valgono le regole di precedenza dell'algebra e precisamente: moltiplicazione, divisione e modulo hanno la precedenza su addizione e sottrazione.</p>
+        <p>Per modificare l'ordine di precedenza si usano le parentesi tonde, come nell'esempio dell'area del trapezio. Non si possono usare parentesi quadre o graffe. Se &egrave; necessario si possono usare pi&ugrave; parentesi tonde annidate, come in questo esempio:</p>
+        <div class="code">
+          num = ((a+b)*5 + ris)/2;
+        </div>
+        <p>&nbsp;</p>
+        <div class="titolo">
+						Operatori unari</div>
+        <p>Oltre agli operatori precedenti (detti <em>operatori binari </em>in 
+		quanto si applicano sempre a una coppia di elementi) il JS prevede anche 
+		i seguenti <strong>operatori unari </strong>(cio&eacute; che si applicano a un 
+		elemento solo):</p>
+		<table border="1" align="center">
+<tbody><tr><td>-</td>
+<td>negazione (cambia il segno)</td>
+</tr>
+<tr><td>++</td>
+<td>incremento</td>
+</tr>
+<tr><td>--</td>
+<td>decremento</td>
+</tr>
+</tbody></table>
+<p>La negazione consente di ottenere un valore negativo di un numero. Ad 
+esempio, -x &eacute; il valore negativo del valore numerico rappresentato dalla 
+variabile x. </p>
+	<p>Gli operatori di incremento e decremento sono applicabili soltanto 
+a variabili e consentono di ottenere un valore rispettivamente aumentato o 
+diminuito di uno. &eacute; molto importante la posizione dell&#8217;operatore. Infatti, se 
+l&#8217;operatore si trova a sinistra dell&#8217;operando, l&#8217;operazione di incremento o 
+decremento viene eseguita prima della valutazione dell&#8217;espressione (<em>preincrement</em>), mentre se si 
+trova a destra l&#8217;operazione viene eseguita dopo (<em>postincrement</em>). Chiariamo il concetto con un 
+esempio: </p>
+        <div class="code">
+          x = 3;<br />
+            y = ++x;
+        </div>
+        <p>In questo caso la variabile x viene prima incrementata di uno e 
+		quindi il suo valore (4) viene assegnato a y. In questo caso alla fine 
+		sia x che y valgono 4.</p>
+	<p>Si consideri invece questo esempio:</p>
+        <div class="code">
+          x = 3;<br />
+            y = x++;
+        </div>
+        <p>In questo caso l'assegnazione viene eseguita prima dell'incremento e 
+		dunque alla fine x vale 4 e y vale 3.</p>
+        <p>&nbsp;</p>
+        <div class="titolo">
+						Operatori di assegnazione composti</div>
+        <p>Un caso che si incontra molto frequentemente programmando &eacute; 
+		l'assegnazione di una variabile a se stessa, dopo averne modificato il 
+		valore. Abbiamo gi&eacute; affrontato l'argomento parlando di
+		<a href=" ../Algoritmi/algo8.html">variabili di accumulo</a> nella 
+		sezione dedicata agli algoritmi. Rivediamo qui rapidamente qualche 
+		esempio di questo tipo:</p>
+        <div class="code">
+          somma = somma + incremento;<br />
+			diff = diff - num;<br />
+            prodotto = prodotto * fattore;<br />
+			ris = ris/10;
+        </div>
+        <p>Il JS (come tutti i linguaggi derivati dal C) consente di abbreviare 
+		la scrittura di queste assegnazioni nel seguente modo:</p>
+        <div class="code">
+          somma += incremento;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// equivale a somma = somma + incremento<br />
+			diff -= num;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// equivale a diff = diff - num<br />
+            prodotto *= fattore;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// equivale a prodotto = prodotto * fattore<br />
+			ris /= 10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// equivale a ris = ris/10</div>
+        <p>Si tratta come si &eacute; detto di una notazione abbreviata: il suo uso, 
+		sebbene piuttosto frequente, non &eacute; in nessun caso obbligatorio n&eacute; rende 
+		pi&eacute; veloce l'esecuzione del programma.</p>
+	<p>&nbsp;</p>
+        <div class="titolo">
+						Modulo</div>
+        <p>L'operatore modulo (%) non &eacute; comunemente usato in algebra e perci&eacute; 
+		agli inizi presenta qualche difficolt&eacute; in pi&eacute;. Il modulo calcola il resto della divisione intera fra due numeri interi. Si consideri il seguente esempio:</p>
+        <div class="code">
+          int gatti:<br />
+          int gatti_per_fila;<br />
+          int resto;
+          <br />
+          gatti = 44:<br />
+gatti_per_fila = 6;<br />
+resto = gatti%gatti_per_fila <br />
+    </div>
+        <p>Al termine dell'esecuzione la variabile resto contiene il valore 2, in quanto 44 diviso 6 d&agrave; come risultato 7 col resto di 2. Si osservi che l'operatore % fornisce solo il resto della divisione e non il quoziente della divisione stessa (se si volesse anche il quoziente della divisione, bisognerebbe usare il /).  </p>
+        <p>L'operatore % &egrave; molto pi&ugrave; utile di quanto forse potrebbe sembrare. Per esempio viene usato per determinare se un numero &egrave; divisibile oppure no per un altro. Infatti se due numeri sono divisibili fra loro il resto della loro divisione &egrave; zero. </p>
+	<p>In JS l'operatore modulo pu&eacute; essere usato anche con numeri decimali (floating 
+	point), sebbene non sia particolarmente utile in questo caso.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

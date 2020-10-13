@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Colspan</div>
+	 <p>In condizioni normali in una tabella il numero di celle su ogni riga &egrave; sempre lo stesso. Sarebbe perci&ograve; sbagliato definire per esempio una riga con 4 celle e un'altra con 3 sole celle nella stessa tabella. Questo perch&egrave; le celle sono incolonnate automaticamente una sotto l'altra su tutte le righe e condividono gli stessi margini. </p>
+	 <p>Si consideri per&ograve; la seguente tabella</p>
+	 <div class="code">
+       <p>&lt;table style=&quot;width: 60%&quot; border=&quot;1&quot;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td colspan =&quot;2&quot;&gt;prima e seconda cella &lt;/td&gt;<br />
+&lt;td&gt;terza cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;quarta cella &lt;/td&gt;<br />
+&lt;td&gt;quinta cella &lt;/td&gt;<br />
+&lt;td&gt;sesta cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;settima cella &lt;/td&gt;<br />
+&lt;td&gt;ottava cella &lt;/td&gt;<br />
+&lt;td&gt;nona cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+       </p>
+    </div>
+	 <p>che viene visualizzata nel seguente modo: </p>
+	 <table width="60%" border="1" align="center">
+       <tr>
+         <td colspan ="2">prima e seconda cella </td>
+         <td>terza cella </td>
+       </tr>
+       <tr>
+         <td>quarta cella </td>
+         <td>quinta cella </td>
+         <td>sesta cella </td>
+       </tr>
+       <tr>
+         <td>settima cella </td>
+         <td>ottava cella </td>
+         <td>nona cella </td>
+       </tr>
+     </table>
+	 <p>L'attributo <strong>colspan</strong>, applicato alla prima cella, indica che la prima cella deve &quot;allargarsi&quot; su due colonne. In pratica il risultato &egrave; come se venissero fuse insieme due celle adiacenti della prima riga. In altre parole: la prima cella della prima riga occupa lo spazio di due celle e conta per due.</p>
+	 <p>Si consideri ancora l'esempio seguente, in cui l'attributo colspan &egrave; usato sulla stessa tabella di prima allo scopo di fondere insieme le ultime tre celle:  </p>
+	 <div class="code">
+       <p>&lt;table style=&quot;width: 60%&quot;&nbsp; border=&quot;1&quot;&gt;<br />
+         &lt;tr&gt;<br />
+         &lt;td colspan =&quot;2&quot;&gt;prima e seconda cella &lt;/td&gt;<br />
+         &lt;td&gt;terza cella &lt;/td&gt;<br />
+         &lt;/tr&gt;<br />
+         &lt;tr&gt;<br />
+         &lt;td&gt;quarta cella &lt;/td&gt;<br />
+         &lt;td&gt;quinta cella &lt;/td&gt;<br />
+         &lt;td&gt;sesta cella &lt;/td&gt;<br />
+         &lt;/tr&gt;<br />
+         &lt;tr&gt;<br />
+         &lt;td colspan = &quot;3&quot; &gt;settima, ottava e nona cella &lt;/td&gt;<br />
+         &lt;/tr&gt;<br />
+         &lt;/table&gt;<br />
+       </p>
+    </div>
+	 <p>il cui effetto nel browser &egrave; il seguente:</p>
+<table width="60%" border="1" align="center">
+<tr>
+<td colspan ="2">prima e seconda cella </td>
+<td>terza cella </td>
+</tr>
+<tr>
+<td>quarta cella </td>
+<td>quinta cella </td>
+<td>sesta cella </td>
+</tr>
+<tr>
+<td colspan = "3" >settima, ottava e nona cella </td>
+</tr>
+</table>
+	 <p>&nbsp;</p>
+	 <div class="titolo">Rowspan</div>
+	 <p>Mediante l'attributo <strong>rowspan</strong> &egrave; invece possibile fondere insieme due o pi&ugrave; celle situate sulla stessa colonna. Si consideri a tale proposito l'esempio seguente: </p>
+	 <div class="code">
+       &lt;table style=&quot;width: 60%&quot; border=&quot;1&quot;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td rowspan=&quot;2&quot;&gt;prima e quarta cella &lt;/td&gt;<br />
+&lt;td&gt;seconda cella &lt;/td&gt;<br />
+&lt;td rowspan=&quot;3&quot;&gt;terza, sesta e nona cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;quinta cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;settima cella &lt;/td&gt;<br />
+&lt;td&gt;ottava cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;</div>
+	 <p>che produce la seguente visualizzazione nel browser</p>
+     <table width="60%" border="1" align="center">
+       <tr>
+         <td rowspan="2">prima e quarta cella </td>
+         <td>seconda cella </td>
+         <td rowspan="3">terza, sesta e nona cella </td>
+       </tr>
+       <tr>
+         <td>quinta cella </td>
+       </tr>
+       <tr>
+         <td>settima cella </td>
+         <td>ottava cella </td>
+       </tr>
+     </table>
+     <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

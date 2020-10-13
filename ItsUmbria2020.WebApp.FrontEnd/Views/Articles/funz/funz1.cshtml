@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/JavaScript"> 
+
+var ind=1;
+function cambia()
+&eacute;&eacute;&eacute; { 
+&eacute;&eacute;&eacute; if (ind%2)
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; document.getElementById("corpo").style.backgroundColor= "beige"  ;
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+&eacute;&eacute;&eacute; else
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; document.getElementById("corpo").style.backgroundColor= "white";
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+&eacute;&eacute;&eacute; ind= ind + 1;
+&eacute;&eacute;&eacute; } 
+
+</script>
+
+</head>
+<body id="corpo">
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+
+
+	<div class="titolo">
+
+	  Uso delle funzioni e &quot;riciclaggio&quot; del codice</div>
+
+
+
+<p>Abbiamo gi&eacute; utilizzato il concetto di <a href=" Generali/def1.html">
+funzione (function)</a> in JS come contenitore di codice che deve essere 
+eseguito in risposta a un evento.</p>
+	<p>In realt&eacute; le funzioni hanno usi e scopi ben pi&eacute; vasti all'interno dei 
+	linguaggi di programmazione. Le <strong>funzioni</strong> (dette talvolta 
+	anche <em>subroutine</em> o <em>sottoprogrammi</em>) sono in sostanza 
+	porzioni di codice (piccoli programmi) dotate di un nome. Disponendo di una 
+	funzione per svolgere un determinato compito &eacute; possibile, ogni volta che &eacute; 
+	richiesta quella azione, semplicemente richiamare la funzione, senza dover 
+	riscrivere daccapo tutto il codice.</p>
+	<p>Consideriamo per esempio il seguente programma in cui, facendo click sul 
+	pulsante SFONDO viene cambiato il colore dello sfondo della pagina:</p>
+        <div class="code">
+          <pre>&lt;head&gt;
+
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;
+
+&lt;title&gt; Funzione che cambia lo sfondo del body&lt;/title&gt;
+
+&lt;script type=&quot;text/JavaScript&quot;&gt; 
+
+var ind=1;
+function cambia()
+    { 
+    if (ind%2)
+        {
+        document.getElementById(&quot;corpo&quot;).style.backgroundColor= &quot;beige&quot;  ;
+        }
+    else
+        {
+        document.getElementById(&quot;corpo&quot;).style.backgroundColor= &quot;white&quot;;
+        }
+    ind= ind + 1;
+    } 
+
+&lt;/script&gt;
+ 
+
+&lt;/head&gt;
+
+&lt;body id=&quot;corpo&quot;&gt;
+</pre>
+			<pre>&lt;h1&gt; SEMPLICE ESEMPIO DI PULSANTE CHE CAMBIA IL COLORE DELLO SFONDO &lt;/h1&gt;</pre>
+			<pre>&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;
+    &lt;input type=&quot;button&quot; value=&quot;CAMBIA&quot; onClick=&quot;cambia()&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+
+
+&lt;/body&gt;</pre>
+	</div>
+        <p>Il lettore pu&eacute; verificare da solo il funzionamento del codice 
+		precedente cliccando sul bottone qui sotto:</p>
+<form action="">
+<p>
+    <input type="button" value="CAMBIA" onClick="cambia()" />
+</p>
+<p>
+    Si osservi l'uso della variabile <em>ind</em> (che all'inizio vale 1) e 
+	della condizione <em>ind%2</em>, che verifica se il resto della divisione 
+	per due &eacute; diverso da zero, cio&eacute; in pratica verifica se ind &eacute; dispari 
+	(avremmo potuto scrivere anche <em>ind%2==1</em> oppure <em>ind%2!=0</em>: 
+	abbiamo qui usato la notazione abbreviata per cui
+	<a href=" istruzioni/istru7.html">qualsiasi valore diverso da zero in JS 
+	viene interpretato come true</a>). In sostanza se ind &eacute; dispari il colore 
+	dello sfondo diventa <em>beige</em>, se ind &eacute; pari diventa bianco (<em>white</em>). 
+	Siccome cliccando sul bottone ogni volta viene incrementato il valore di <em>
+	ind</em>, di conseguenza il colore di sfondo cambia ad ogni click 
+	alternativamente da bianco a beige.</p>
+<p>
+    Supponiamo ora di voler cambiare il colore dello sfondo anche quando il 
+	mouse passa sopra l'intestazione h1. Ovviamente non abbiamo bisogno di 
+	scrivere un'altra funzione, ma basta semplicemente aggiungere un nuovo 
+	evento <em>onmouseover</em> sul tag h1 usando sempre la funzione <em>
+	cambia()</em>:</p>
+        <div class="code">
+          &lt;h1 onmouseover=&quot;cambia()&quot;&gt; SEMPLICE ESEMPIO DI PULSANTE CHE CAMBIA IL COLORE DELLO SFONDO &lt;/h1&gt;</div>
+        <p>
+    Questo semplicissimo esempio illustra lo scopo principale delle funzioni 
+	nella scrittura di programmi: esse consentono di evitare di riscrivere pi&eacute; 
+	volte lo stesso codice, permettendoci, in sostanza, di &quot;riciclare&quot; il codice 
+	gi&eacute; scritto. Questo &eacute; particolarmente importante in programmi lunghi e 
+	complessi.</p>
+</form>
+        <p>In realt&eacute; le funzioni consentono di fare molto di pi&eacute;, poich&eacute; una 
+		funzione pu&eacute; essere usata non solo all'interno di un gestore di eventi 
+		(come onclick o onmouseover, come negli esempi precedenti), ma anche 
+		dentro il codice di un'altra funzione (o all'interno di qualsiasi script 
+		presente nella pagina).</p>
+	<p>Facciamo un altro semplice esempio. Supponiamo di voler cambiare il 
+	colore dello sfondo anche durante il fine settimana (sabato e domenica). A 
+	tale scopo aggiungiamo alla nostra pagina una nuova funzione settimana(), 
+	chiamata dall'evento onLoad sull'elemento body, come mostrato qui sotto:</p>
+        <div class="code">
+          <pre>&lt;head&gt;</pre>
+			<pre>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;</pre>
+			<pre>&lt;title&gt; Funzione che cambia lo sfondo del body&lt;/title&gt;</pre>
+			<pre>&lt;script type=&quot;text/JavaScript&quot;&gt; </pre>
+			<pre>var ind=1;
+function cambia()
+    { 
+    if (ind%2)
+        {
+        document.getElementById(&quot;corpo&quot;).style.backgroundColor= &quot;beige&quot;  ;
+        }
+    else
+        {
+        document.getElementById(&quot;corpo&quot;).style.backgroundColor= &quot;white&quot;;
+        }
+    ind= ind + 1;
+    } 
+</pre>
+			<pre>function settimana()
+{
+var giorno = new Date;</pre>
+			<pre>if (giorno.getDay()==0 || giorno.getDay()==6)
+  cambia();</pre>
+			<pre>}
+&lt;/script&gt;
+ 
+&lt;/head&gt;</pre>
+			<pre>&lt;body id=&quot;corpo&quot; onload=&quot;settimana()&quot;&gt;
+
+&lt;h1 onmouseover=&quot;cambia()&quot;&gt; SEMPLICE ESEMPIO DI PULSANTE CHE CAMBIA IL COLORE DELLO SFONDO &lt;/h1&gt;
+
+&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;
+    &lt;input type=&quot;button&quot; value=&quot;CAMBIA&quot; onClick=&quot;cambia()&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+</pre>
+			<pre>&lt;/body&gt;</pre>
+	</div>
+        <p>Non ci si preoccupi al momento dei dettagli del funzionamento. Il 
+		valore di giorno.getDay() &eacute; 0 per la domenica, 1 per il luned&eacute; e cos&eacute; 
+		via fino a 6 per il sabato (secondo la numerazione anglosassone dei 
+		giorni della settimana).</p>
+	<p>Ci&eacute; che interessa qui osservare &eacute; che la funzione cambia() viene usata 
+	anche all'interno della funzione settimana(), per evitare di dover 
+	riscrivere il codice del cambiamento di colore. Tutto questo &eacute; 
+	particolarmente comodo quando si vuole riutilizzare codice scritto da altri, 
+	ma per vedere tutto questo dobbiamo affrontare prima l'argomento parametri e 
+	valore di ritorno di una funzione. </p>
+	<p>Notiamo di passaggio che per i nomi delle funzioni valgono
+	<a href=" istruzioni/istru2.html">le stesse regole </a>viste a suo tempo 
+	per i nomi delle variabili.</p>
+	<p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

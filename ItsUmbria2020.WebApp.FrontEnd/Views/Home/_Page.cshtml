@@ -1,0 +1,32 @@
+﻿@model Page
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div id="title">
+    <h1>@Model.Name</h1>
+</div>
+
+<div id="module" class="bg-white border-bottom box-shadow mb-3">
+    <div id="menu" class="col-xl-4 col-lg-12 col-md-12 col-sm-12 float-left">
+        <partial name="Menu/_@Model.Menu" />
+    </div>
+    <div id="content" class="col-xl-8 col-lg-12 col-md-12 col-sm-12 float-left"></div>
+</div>
+
+<script>
+    function getPage(name) {
+        $.get("GetPage?name=" + name, function (data, status) {
+            if (status === "success") {
+                $("#content").html(data);
+            }
+            else {
+                $("#content").html("An error was occurred !");
+            }
+        });
+    }
+    function underline(elem) {
+        $(elem).addClass("clicked");
+    }
+</script>

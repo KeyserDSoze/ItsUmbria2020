@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style2 {
+				border-style: solid;
+				border-width: 1px;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Somma di due numeri: interfaccia</p>
+	</div>
+        <p>Consideriamo come ulteriore semplice esempio una pagina per effettuare la somma di due numeri inseriti dall'utente. A tale scopo possiamo creare un form di questo tipo:</p>
+<form id="modulo" action="" enctype="text/plain" class="style2"> 
+<p>primo numero <input type="text" name="x"></p> 
+<p> secondo numero <input type="text" name="y"></p> 
+<p><input type="button" value="SOMMA" onclick="somma()"> </p> 
+<p> risultato: <input type="text" name="ris"></p> 
+</form> <p> Il codice HTML associato &egrave; il seguente: </p>
+    <div class="code">
+      &lt;form action=&quot;&quot; enctype=&quot;text/plain&quot;&gt; <br />
+&lt;p&gt;primo numero &lt;input type=&quot;text&quot; id=&quot;x&quot;&gt;&lt;/p&gt; <br />
+&lt;p&gt; secondo numero &lt;input type=&quot;text&quot; id=&quot;y&quot;&gt;&lt;/p&gt; <br />
+&lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;SOMMA&quot; onclick=&quot;somma()&quot;&gt; &lt;/p&gt; <br />
+&lt;p&gt; risultato: &lt;input type=&quot;text&quot; id=&quot;ris&quot;&gt;&lt;/p&gt; <br />
+&lt;/form&gt; 
+    </div>
+        <p>&nbsp;</p>
+        <div class="titolo"> Somma di due numeri: codice con funzione senza 
+						parametri n&eacute; valore di ritorno</div>
+        <p>Continuando l'esempio precedente, vediamo adesso come potrebbe essere scritta la funzione <em>somma</em>. Tale funzione dev'essere inserita nell'<em>head</em> del programma nel seguente modo:</p>
+        <div class="code">
+          &lt;head&gt;<p>&lt;script type=&quot;text/JavaScript&quot;&gt; <br />
+			<br />
+            function somma()<br />
+            {</p>
+          <p>var a, b, c;</p>
+          <p>a = Number(document.getElementById('x').value);<br />
+          b = Number(document.getElementById('y').value);</p>
+          <p>c = a + b;       </p>
+          <p>document.getElementById('ris').value= c; </p>
+          <p>}<br />
+			<br />
+&lt;/script&gt;</p>
+          <p>&lt;/head&gt; </p>
+        </div>
+        <p>Come abbiamo gi&eacute; visto, la <a href=" istruzioni/istru6.html">funzione Number</a> 
+		(&eacute; importante stare attenti alla maiuscole e alle minuscole: il JS &eacute; 
+		case sensitive!) serve per convertire il contenuto della casella di 
+		testo in un valore numerico. </p>
+        <p>Questa funzione &egrave; necessaria perch&eacute; le variabili in JS non hanno tipo e dunque l'operatore + sarebbe altrimenti interpretato erroneamente come <em>concatenazione di stringhe</em> e non come somma di numeri. In altre parole, inserendo in ingresso per esempio i valori numerici '2' e '3', senza l'uso di 
+		Number lo script avrebbe prodotto come risultato '23' invece di '5', cio&egrave; avrebbe concatenato le due stringhe di ingresso, senza eseguire la somma. </p>
+        <div class="titolo"> Somma di due numeri: funzione con parametri e 
+						valore di ritorno</div>
+        <p>Consideriamo ora una versione alternativa del programma precedente, 
+		che fa uso di una funzione con parametri e con valore di ritorno. </p>
+        <div class="code">
+          &lt;head&gt;<br />
+			&lt;script type=&quot;text/JavaScript&quot;&gt;
+			<p> function somma(a,b)<br />
+            {</p>
+          <p>var c;</p>
+          <p>c = Number(a) + Number(b); </p>
+          <p>return c; </p>
+          <p>}<br />
+			<br />
+            &lt;/script&gt;</p>
+          <p>&lt;/head&gt; </p>
+          <p>&lt;body&gt;</p>
+			<p>&lt;form action=&quot;&quot;&gt;<br />
+            primo numero <br />
+            &lt;input type=&quot;text&quot; id=&quot;x&quot; &gt; &lt;br &gt;<br />
+            secondo numero<br />
+            &lt;input type=&quot;text&quot; id=&quot;y&quot; &gt;<br />
+            &lt;input type=&quot;button&quot; value=&quot;SOMMA&quot;<br />
+            onclick=&quot;document.getElementById('ris').value = <br />
+			somma(document.getElementById('x').value, document.getElementById('y').value)&quot; 
+			&gt;<br />
+  			&lt;br &gt;<br />
+            risultato:<br />
+  			&lt;input type=&quot;text&quot; id=&quot;ris&quot;&gt;<br />
+  			&lt;/form&gt;</p>
+          <p>&lt;/body&gt;</p>
+        </div>
+        <p>I parametri della funzione sono <em>a</em> e <em>b</em> e i loro rispettivi valori vengono inizializzati, al momento della chiamata, col contenuto delle caselle di testo <em>x</em> e <em>y</em>. Il valore di ritorno serve per restituire il risultato del calcolo, che viene quindi visualizzato nella casella di testo<em> ris</em>. </p>
+<div class="titolo">La parola chiave 'this' </div>
+<p>L'uso della parola chiave <strong>this</strong> &eacute; utile quando la funzione deve agire sullo stesso elemento 
+	a cui &eacute; applicato il gestore di eventi. Si consideri l'esempio che segue:</p>
+        <div class="code">
+          &lt;head&gt;<br />
+			&lt;script type=&quot;text/JavaScript&quot;&gt; <br />
+			function quadrato(a)<br />
+			{<br />
+			var ris;<br />
+			ris = Number(a) * Number(a); <br />
+			return ris; <br />
+			}<br />
+			<br />
+			&lt;/script&gt;<br />
+			&lt;/head&gt; <br />
+			&lt;body&gt;<br />
+			&lt;form action=&quot;&quot;&gt;<br />
+			numero: <br />
+			&lt;input type=&quot;text&quot; id=&quot;x&quot; onchange=&quot;this.value = quadrato(this.value)&quot;&gt; 
+			&lt;br &gt;<br />
+			&lt;/form&gt;<br />
+			&lt;/body&gt;</div>
+        <p>In questo caso la funzione quadrato prende come valore di ingresso 
+		(argomento) il contenuto della stessa casella di testo su cui &eacute; 
+		applicata. Inoltre l'uscita (valore di ritorno) viene copiata sempre 
+		nella stessa casella di testo. Scrivendo <em>this</em> possiamo evitarci di 
+		scrivere ogni volta document.getElementById. </p>
+	<p><strong>ATTENZIONE</strong>: la parola chiave <em>this</em> funziona 
+	all'interno del gestore di eventi applicato all'elemento (nel nostro caso, 
+	per esempio, all'interno di <em>onchange</em>), ma non pu&eacute; essere usata 
+	all'interno del codice della funzione (nel nostro caso la funzione <em>
+	quadrato</em>). Per fare riferimento all'elemento su cui &eacute; stato scatenato 
+	l'evento all'interno della funzione <em>quadrato</em>, bisogna usare <em>
+	event.target</em>, come <a href=" Generali/def11.html">spiegato in una 
+	precedente lezione</a>.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

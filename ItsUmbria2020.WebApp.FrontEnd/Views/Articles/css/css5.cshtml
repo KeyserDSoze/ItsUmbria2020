@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Selettore id</div>
+	 <p> Il selettore di classe, di cui abbiamo parlato nella precedente 
+		lezione, consente di selezionare un gruppo di elementi.</p>
+	<p> Vi sono per&eacute; dei casi in cui si vuole selezionare solo un elemento 
+	all'interno della pagina, per esempio solo un paragrafo o solo una tabella o 
+	solo una particolare immagine. In questi casi si utilizza il selettore id, 
+	di cui vediamo subito un esempio qui sotto (nel foglio stile):</p>
+<div class="code">
+  #scritta<br />
+	{<br />
+	background: #ccc;<br />
+	text-align: right;<br />
+	}</div>
+	<p> Si noti il simbolo del cancelletto # prima del nome dell'id, scelto 
+	liberamente. La sintassi generale per definire un id &eacute; molto semplice:</p>
+<div class="code">
+  #<em>nome_id</em>
+    <em>{ propriet&agrave;:valore; propriet&agrave;:valore; ... }</em></div>
+	<p> Una volta che l'id &eacute; stato definito all'interno del foglio stile (come 
+	sopra), &eacute; possibile usarlo nella pagina in questo modo:</p>
+<div class="code">
+  &lt;p id=&quot;scritta&quot;&gt; Ciao a tutti &lt;/p&gt;</div>
+	<p> La sintassi, come si pu&eacute; vedere, &eacute; sostanzialmente molto simile a quella 
+	usata per definire e utilizzare le classi (salvo che qui bisogna usare il # 
+	nella definizione e l'attributo id nell'utilizzo).</p>
+	<p> Tuttavia, come si &eacute; detto, c'&eacute; una differenza fondamentale fra id e 
+	classe: l'id &eacute; per definizione unico all'interno di una certa pagina 
+	(sarebbe un errore definire due paragrafi con lo stesso id), mentre la 
+	classe pu&eacute; essere utilizzata per molti elementi.</p>
+	<p> L'esempio che segue (che per comodit&eacute; fa uso degli stili incorporati) 
+	dovrebbe chiarire meglio il concetto:</p>
+	 <div class="code">
+       <p> &lt;!DOCTYPE html&gt;</p>
+       <p>&lt;html&gt;<br />
+  &lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt; </p>
+		<p>&lt;title&gt;Differenza fra id e class&lt;/title&gt;<br />
+         <br />
+  &lt;style&gt;<br />
+         <br />
+         .rosso { <br />
+&nbsp;&nbsp; color: red;<br />
+&nbsp;&nbsp; }</p>
+		<p>#scritta<br />
+	{<br />
+	background: #ccc;<br />
+	text-align: right;<br />
+	}<br />
+         <br />
+  &lt;/style&gt;<br />
+         <br />
+  &lt;/head&gt;<br />
+  &lt;body&gt;<br />
+         <br />
+  &lt;h1&gt;ESEMPIO DI USO DI ID E DI CLASS &lt;/h1&gt;</p>
+		<p>&lt;p id=&quot;scritta&quot;&gt; Questo &eacute; l'unico elemento della pagina con id 
+		uguale a scritta&lt;/p&gt;<br />
+		&lt;p class=&quot;rosso&quot;&gt; Ci possono invece essere molti elementi con la stessa 
+		classe&lt;/p&gt;<br />
+		&lt;p class=&quot;rosso&quot;&gt; Questo per esempio &eacute; un altro paragrafo con classe 
+		rosso&lt;/p&gt;<br />
+		&lt;p class=&quot;rosso&quot;&gt; E questo &eacute; un altro ancora&lt;/p&gt;</p>
+       <p>&lt;/body&gt;<br />
+         <br />
+  &lt;/html&gt; </p>
+    </div>
+	 <p> E' anche possibile applicare id e class allo stesso elemento, come 
+		mostra l'esempio seguente:</p>
+<div class="code">
+  &lt;p id=&quot;scritta&quot; class=&quot;rosso&quot;&gt; Ciao a tutti &lt;/p&gt;</div>
+	<p> L'uso dell'id sar&eacute; pi&eacute; chiaro quando pi&eacute; avanti tratteremo di
+	<a href=" position/pos2.html">posizionamento con i fogli stile</a>.</p>
+	<p>&nbsp; </p>
+	<p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

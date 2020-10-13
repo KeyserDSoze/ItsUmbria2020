@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Gestori di eventi in jQuery</div>
+
+	<p>Conosciamo gi&eacute; da molto tempo il <a href=" Generali/def3.html">concetto 
+	di evento e di gestore di evento</a> in javascript. Per esempio:</p>
+        <div class="code">
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;</div>
+	<p>In questo caso l'<strong>evento</strong> &eacute; il clic sull'elemento 
+	(l'immagine) col tasto sinistro del mouse. L'evento &eacute; legato alla funzione
+	<em>muovi()</em> dal <strong>gestore di eventi</strong> <em>onclick</em>.</p>
+	<p>Si dice che l'evento <em>scatena</em> (in inglese si usa il verbo <em>to 
+	fire</em>) il codice della funzione, la quale a sua volta <em>cattura</em> (<em>to 
+	catch</em> in inglese) l'evento.</p>
+	<p>In jQuery la gestione degli eventi avviene (come praticamente tutto il 
+	resto) all'interno della funzione chiamata al caricamento della pagina: <em>
+	$(document).ready</em>. All'interno di questa funzione il programmatore 
+	scrive gli eventi da associare ai diversi elementi della pagina.</p>
+	<p>Si consideri l'esempio seguente in cui, cliccando sul primo paragrafo, 
+	questo viene nascosto dalla pagina:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Semplice esempio di gestore di eventi con jQuery&lt;/title&gt;<br />
+			<br />
+			&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			$(document).ready(<br />
+			<br />
+			&nbsp;&nbsp;&nbsp; function() {<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			$('#nascondi').click(function() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			$(this).hide();<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			});<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+			);<br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			<br />
+			&lt;p id=&quot;nascondi&quot;&gt;Se qui sopra cliccherai, questo paragrafo 
+			nasconderai&lt;/p&gt;<br />
+			&lt;p&gt;Bla bla bla...&lt;/p&gt;<br />
+			&lt;p&gt;Bla bla bla...&lt;/p&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+	<p>Questo codice pu&eacute; apparire terribilmente complesso per il programmatore 
+	agli inizi, perci&eacute; conviene scomporlo in parti:</p>
+	<p class="style1"><img alt="" src="../img/jQimg13.gif" /></p>
+	<p>Il blocco esterno in rosso rappresenta <em>$(document).ready </em>con le 
+	sue parentesi tonde di apertura e chiusura e il punto e virgola finale.</p>
+	<p>All'interno si trova la funzione anonima racchiusa nel blocco con bordo 
+	azzurro.</p>
+	<p>Infine, ancora all'interno si trova il gestore di eventi vero e proprio 
+	(blocco in verde), la cui sintassi &eacute; la seguente:</p>
+        <div class="code">
+          &nbsp;$(<em>selettore</em>).<em>evento</em>( function() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// codice della funzione anonima<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			);</div>
+	<p>Come si vede l'evento (<em>click</em> nel nostro caso) &eacute; associato a una 
+	funzione anonima, il cui codice viene scritto subito dopo.</p>
+	<p>Si noti l'uso della parola chiave <em>this</em> per indicare il 
+	proprietario (<em>parent</em>) dell'evento, cio&eacute; nel nostro caso l'oggetto #nascondi.</p>
+	<p>Per un
+	<a target="_blank" href="http://www.w3schools.com/jquery/jquery_ref_events.asp">
+	elenco completo degli eventi in jQuery</a> rimandiamo a W3C Schools (dove ci 
+	sono anche numerosi esempi di uso). Qui ci limitiamo a notare che gli eventi 
+	in jQuery sono sostanzialmente gli stessi usati in javascript (d'altra parte 
+	si basano su questi ultimi!), salvo che nel nome non &eacute; presente la parola
+	<em>on</em> (per esempio <em>onclick</em> in js diventa <em>click</em> in 
+	jQuery, <em>onmouseover</em> diventa semplicemente <em>mouseover</em> e cos&eacute; 
+	via).</p>
+	<p>Osserviamo infine che, usando i gestori di eventi in jQuery, nella pagina 
+	html non c'&eacute; pi&eacute; alcuna traccia del codice di programma (non c'&eacute; pi&eacute; neppure 
+	il gestore di eventi stile js, <em>onclick</em>). Questa separazione fra codice e 
+	html &eacute; una buona pratica di programmazione e 
+	conduce a pagine pulite e funzionali.</p>
+	<p><span class="style2"><strong>ATTENZIONE</strong></span>: programmando in 
+	jQuery &eacute; bene non mescolare gestori di eventi javascript con gestori di 
+	eventi jQuery. In realt&eacute; sarebbe perfettamente possibile usare gestori di 
+	eventi javascript (tipo <em>onclick</em>) per scatenare funzioni contenenti codice 
+	jQuery, ma questa pratica di programmazione &eacute; sconsigliata e produce 
+	confusione. </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

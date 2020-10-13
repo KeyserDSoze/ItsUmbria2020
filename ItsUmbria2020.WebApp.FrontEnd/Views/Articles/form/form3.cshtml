@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Parte superiore -->
+    <div id="toppage">
+	    <div id="topp">
+		<div id="titolo">
+		  <div style=" font-size:2.5em; color:#FFFFFF; font-weight:bold;">PROGRAMMIAMO</div>
+		  <div style=" font-size:1.5em; color:#FFFFFF; font-weight:bold; text-align:right">Html - Input per inserimento dati </div>
+		</div>
+	    </div>
+	    <div id="barra">
+	    	<div style="position:absolute; left:40px; top:2px; width:580px; text-align:right;" class="tmenu">
+				<a href=" html.html" title="link">Html</a> |<a href=" ../index.html" title="link">Home</a> |<a href=" ../contatto.php" title="link">Contatti</a>	    	</div>
+	    </div>
+    </div>
+    <!-- Fine parte superiore -->
+  
+    <!-- Contneuti -->
+
+	
+
+        <div class="titolo"> Il tag input per l'inserimento dati nel form </div>
+        <p>Si tratta dell'elemento essenziale del form, per mezzo del quale &egrave; possibile acquisire dati dall'utente. Si tratta di un tag vuoto (non contenitore) che pu&ograve; stare solo dentro un form.</p>
+        <p>L'attributo pi&ugrave; importante dell'elemento input &egrave; <em>type</em>. Mediante questo attributo si specifica che tipo di elemento dev'essere effettivamente visualizzato sul form. Vediamo pi&ugrave; nel dettaglio i valori possibili.</p>
+        <div class="titolo">Text</div>
+        <p>In questo modo viene realizzata una casella di testo semplice, per l'inserimento di testo o valori numerici nel form. Esempio:</p>
+        <div class="code">
+          &lt;input type=&quot;text&quot; name=&quot;utente&quot; size=&quot;40&quot; maxlength=&quot;50&quot;&gt;    </div>
+        <p>visualizzata nel seguente modo:</p>
+        <form><input type="text" name="utente" size="40" maxlenght="50"> </form>
+
+Gli attributi <strong>size</strong> e <strong>maxlength</strong> (opzionali) permettono di indicare rispettivamente la dimensione (in numero di caratteri) della casella di testo e il massimo numero di caratteri che possono essere inseriti nella stessa. 
+
+
+        <p>L'attributo <strong>name</strong> (opzionale) identifica univocamente la casella di testo attribuendole un nome. </p>
+        <p>&nbsp;</p>
+        <div class="titolo">Password</div>
+        <p>E' molto simile al tipo text, ma viene usata per l'inserimento di password. I dati inseriti non vengono visualizzati, ma al loro posto appaiono degli asterischi. Esempio:</p>
+        <div class="code"> &lt;input type=&quot;password&quot; name=&quot;pass&quot; size=&quot;40&quot; maxlength=&quot;50&quot;&gt; </div>
+        <p>visualizzata nel seguente modo:</p>
+        <form>
+<input type="password" name="pass" size="40" maxlenght="50">         </form>
+        <p>&nbsp;</p>
+        <div class="titolo">Checkbox</div>
+        <p>Permette di realizzare scelte multiple. Esempio:</p>
+    <div class="code"> &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;                     value=&quot;sport&quot; checked=&quot;checked&quot;&gt; Fare sport         &lt;br&gt;        <br />
+        &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;                     value=&quot;cinema&quot;&gt; Andare al cinema         &lt;br&gt;        <br />
+    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot;                    value=&quot;gioco&quot;&gt; Giocare         &lt;br&gt;</div>
+        <p>visualizzata nel seguente modo:</p>
+        <form>
+<input type="checkbox" name="hobby" value="sport" checked="checked"> Fare sport <br /> 
+<input type="checkbox" name="hobby" value="cinema"> Andare al cinema <br / > 
+<input type="checkbox" name="hobby" value="gioco"> Giocare <br / >        </form>
+        <p>Si osservi che le scelte non sono mutuamente esclusive, nel senso che &egrave; possibile cliccare su pi&ugrave; caselle.</p>
+        <p>Il nome <strong>name</strong> &egrave; unico e uguale per tutte le checkbox. L'attributo <strong>value</strong> invece &egrave; specifico di ogni checkbox all'interno dello stesso gruppo.  </p>
+        <p>L'attributo <strong>checked</strong> (opzionale) permette di selezionare in automatico una o pi&ugrave; scelte. </p>
+        <p>&nbsp;</p>
+        <div class="titolo">Radio</div>
+        <p>Permette di realizzare scelte mutuamente esclusive. Esempio:</p>
+    <div class="code"> &lt;input type=&quot;radio&quot; name=&quot;sesso&quot;                     value=&quot;M&quot;  checked=&quot;checked&quot;&gt; Maschio         &lt;br&gt; <br />
+  &lt;input type=&quot;radio&quot; name=&quot;sesso&quot;                     value=&quot;F&quot;&gt; Femmina    </div>
+        <p>visualizzata nel seguente modo:</p>
+        <form>
+
+<input type="radio" name="sesso" value="M" checked="checked"> Maschio <br /> 
+<input type="radio" name="sesso" value="F">
+ Femmina
+        </form>
+        <p>Si osservi che le scelte in questo caso sono mutuamente esclusive, nel senso che non &egrave; possibile cliccare su pi&ugrave; caselle.</p>
+        <p>Il nome <strong>name</strong> &egrave; unico e uguale per tutte le radio. L'attributo <strong>value</strong> invece &egrave; specifico di ogni radio all'interno dello stesso gruppo. </p>
+        <p>L'attributo <strong>checked</strong> (opzionale) permette di selezionare in automatico una (sola) fra le scelte alternative. </p>
+        <p></p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Le mappe immagine</div>
+	 <p>Il tag &lt;a&gt; permette facilmente di creare delle immagini cliccabili, cio&eacute; 
+		di assegnare un link a un'intera immagine come nel seguente esempio:</p>
+	 <div class="code">
+       &lt;a href=&quot;pippo.html&quot;&gt;&lt;img src=&quot;pippo.gif&quot;&gt;&lt;/a&gt;</div>
+	 <p>Vi sono per&eacute; dei casi in cui si vuole linkare parti diverse di una 
+		stessa immagine a pagine diverse. Si pensi per esempio al caso di una 
+		cartina dell'Italia, nella quale, facendo clic sulle diverse regioni, si 
+		aprono delle altre pagine. In questi casi bisogna creare una <strong>
+		mappa immagine</strong>.</p>
+	<p>La prima cosa da fare &eacute; inserire un'immagine nella nostra pagina html e 
+	assegnare ad essa un nome a piacere mediante l'attributo usemap (si faccia 
+	attenzione al cancelletto # davanti al nome). Si consideri l'esempio 
+	seguente:</p>
+	 <div class="code">
+       &lt;img src=&#8221;immagine.jpg&#8221; usemap=&#8221;#nomeMappa&#8221;&gt;
+    </div>
+	 <p>A questo punto, per mezzo di un elemento <strong>map</strong> collegato 
+		all'immagine precedente attraverso lo stesso nome, si crea una mappa 
+		immagine:</p>
+	 <div class="code">
+       &lt;map name=&#8221;nomeMappa&#8221;&gt; <br />
+		&#8230; <br />
+		&lt;/map&gt;
+    </div>
+	 <p>Come si vede map &eacute; un elemento contenitore. Al suo interno vanno 
+		specificate le coordinate delle diverse zone dell'immagine linkate. Si 
+		consideri l'esempio qui sotto:</p>
+	 <div class="code">
+       <pre>&lt;img src=&quot;italia_0.gif&quot; border=&quot;0&quot; usemap=&quot;#italia&quot; alt=&quot;Italia&quot; width=&quot;259&quot; height=&quot;280&quot;&gt; 
+</pre>
+		<pre>&lt;map name=&quot;italia&quot;&gt; </pre>
+		<pre>&lt;area shape=&quot;poly&quot; coords=&quot;29,34,49,32,51,41,33,45&quot;  alt=&quot;Valle Aosta&quot; 
+href=&quot;valleaosta.html&quot;&gt;
+
+&lt;area shape=&quot;poly&quot; coords=&quot;59,21,66,31,64,55,75,22&quot; alt=&quot;Piemonte&quot; href=&quot;piemonte.html&quot;&gt;</pre>
+		<pre>....</pre>
+		<pre>&lt;/map&gt;</pre>
+    </div>
+	 <p>Si noti che dentro il contenitore &lt;map&gt; si trovano una serie di elementi 
+		vuoti &lt;area&gt; ciascuno dei quali definisce le coordinate delle aree 
+		cliccabili sulla immagine. Le coordinate fanno riferimento all&#8217;immagine 
+		stessa e il vertice in alto a sinistra ha coordinate 0,0. Le coordinate 
+		dei punti che descrivono le varie forme si riferiscono alla distanza in 
+		pixel da quel punto (si tratta di coppie di coordinate x e y). </p>
+	<p>Per quanto riguarda la forma delle aree cliccabili, questa viene definita 
+	dall'attributo <strong>shape</strong> che pu&eacute; assumere i valori seguenti:</p>
+	<ul>
+					<li>rect: forma rettangolare (bisogna specificare le 
+					coordinate x e y rispettivamente del vertice in alto a 
+					sinistra e del vertice in basso a destra)<br />
+					</li>
+					<li>circle: forma circolare (bisogna specificare in ordine 
+					le coordinate x e y del centro e la lunghezza del raggio)<br />
+					</li>
+					<li>poly: forma poligonare (si tratta della forma pi&eacute; 
+					flessibile, in quanto bisogna specificare tutte le 
+					coordinate x e y dei vertici di un poligono che racchiude 
+					l'area cliccabile).</li>
+	</ul>
+	<p>&nbsp;</p>
+	 <div class="titolo">Strumenti per costruire mappe immagine</div>
+	 <p>Costruire mappe immagine specificando tutte le coordinate &eacute; uno dei 
+		lavori pi&eacute; difficili e noiosi per il web designer. Per fortuna ci sono 
+		molti programmi e strumenti online che svolgono tutti i calcoli in modo 
+		automatico.</p>
+	<p>A titolo di esempio (una ricerca su Google permetter&eacute; di trovare molti 
+	siti simili) consigliamo
+	<a target="_blank" href="http://www.maschek.hu/imagemap/imgmap">Online Image 
+	Map Editor</a>. Si tratta di un sito sul quale &eacute; possibile caricare la 
+	propria immagine e costruirne la mappa cliccando semplicemente sui diversi 
+	punti delle aree cliccabili.</p>
+	<p>La figura seguente mostra l'uso dell'editor e la generazione automatica 
+	del codice html della mappa immagine:</p>
+	<p><img alt="" src="../img/img28.jpg" /></p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

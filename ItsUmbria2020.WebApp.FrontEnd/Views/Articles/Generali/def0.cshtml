@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Un po' di storia</p>
+	</div>
+        <p>L'HTML non &egrave; un vero linguaggio di programmazione, in quanto non &egrave; in grado di elaborare dati n&eacute; di eseguire vere e proprie istruzioni (non contiene selezioni, cicli, variabili eccetera). Le pagine scritte in HTML puro vengono dette <strong>statiche</strong> dal momento che il loro contenuto non cambia e vengono visualizzate sempre allo stesso modo sul browser dell'utente.  </p>
+        <p>Con la crescita esponenziale di Internet e l'aumento delle pagine in rete, gi&agrave; nei primi anni novanta si avvert&igrave; la necessit&agrave; di potenziare il linguaggio HTML per realizzare <strong>pagine dinamiche</strong>, cio&egrave; in grado di modificarsi, interagendo con l'utente (<em>DHTML</em>=Dynamic HTML). </p>
+        <p>A tale scopo Netscape introdusse nel 1995 sulla versione 2.0 del proprio browser un linguaggio di programmazione denominato inizialmente LiveScript e quindi 
+		<strong>JavaScript </strong>(nel seguito <strong>JS</strong> per 
+		brevit&eacute;). Il nome  fa pensare che JavaScript sia in qualche modo parente o addirittura uguale al linguaggio Java. Non &egrave; vero! 
+		Entrambi i linguaggi sono derivati in qualche modo dal linguaggio C, ma 
+		si tratta di due cose diverse: Java &egrave; un altro linguaggio di programmazione sviluppato da
+		<em>Sun Microsystems</em> in grado di sviluppare programmi eseguibili da 
+		una pagina web (cd &quot;applet&quot;). Decisamente, in questo caso, la scelta dei 
+		nomi non &eacute; stata particolarmente azzeccata!</p>
+<div class="titolo"> <br />
+				Iniziare a programmare in JavaScript: lo scopo del nostro corso</div>
+        <p>Alcuni fra gli scopi pi&eacute; comuni del JS sono realizzare pagine con menu 
+		dinamici (es. menu a tendina), implementare form in grado di verificare 
+		i dati inseriti dall'utente o realizzare vari tipi di pagine web 
+		dinamiche. Inoltre il JS consente di gestire i <em>cookies</em>, cio&eacute; brevi file 
+		di testo utilizzati per memorizzare dati di sessione dell'utente.</p>
+	<p>Di solito chi programma in JS ha gi&eacute; precedenti esperienze con altri 
+	linguaggi di programmazione oppure al contrario si limita a copiare e 
+	incollare nelle proprie pagine codice creato da altri sviluppatori, 
+	aggiungendo poche modifiche e personalizzazioni. Assai raramente il JS viene 
+	utilizzato come linguaggio didattico per imparare a programmare (da zero o 
+	quasi...). Eppure il JS ha diversi vantaggi rispetto ad altri linguaggi di 
+	programmazione pi&eacute; &quot;blasonati&quot; (come il C per esempio), che lo rendono 
+	particolarmente attraente per chi si avvicina la prima volta al mondo della 
+	programmazione.</p>
+	<p>Uno dei vantaggi principali di JS&nbsp; &eacute; che per scrivere ed eseguire 
+		programmi occorrono pochissimi strumenti, in genere gratuiti e 
+		disponibili per tutti e su qualsiasi sistema operativo. La dotazione 
+		minima &eacute; data semplicemente da:</p>
+	<ol>
+					<li>un editor di testi (come il Blocco Note di Windows)</li>
+					<li>un browser (Chrome, Firefox, Internet Explorer, Opera, 
+					Safari...)</li>
+	</ol>
+	<p>In pratica si tratta della stessa dotazione minima necessaria per 
+	scrivere pagine in HTML. Come le pagine html, anche i programmi JS possono 
+	essere eseguiti su qualsiasi computer (o smartphone) con qualsiasi sistema 
+	operativo (a condizione che abbia un browser che supporti JS, come ormai 
+	accade con tutti i browser moderni).</p>
+	<p>Inoltre, rispetto al C classico, presenta anche il vantaggio di 
+	appoggiarsi all'HTML per la realizzazione dell'interfaccia utente del 
+	programma, cio&eacute; della parte del programma che comunica con l'utente. 
+	Rispetto alle schermate nere stile DOS del C questo &eacute; un piacevole vantaggio 
+	per il programmatore, perch&eacute; consente con poca fatica di realizzare 
+	interfacce gradevoli e attraenti.</p>
+	<p>Naturalmente ci sono anche degli svantaggi. Uno dei principali &eacute; il fatto 
+	che il JS (almeno nella sua versione classica, che andremo qui a studiare) 
+	non consente di realizzare programmi autonomi (eseguibili &quot;standalone&quot;), 
+	cio&eacute; che possano essere eseguiti con un doppio click, come i normali 
+	programmi di Windows. Al contrario i programmi in JS devono sempre 
+	appoggiarsi a un browser e a una pagina html, per poter essere eseguiti.</p>
+	<p>Un altro svantaggio &eacute; con JS non si possono fare tutte quelle cose che 
+	sono possibili con i normali linguaggi di programmazione (per esempio, per 
+	ragioni di sicurezza, non si possono salvare file).</p>
+	<p>Anche il debugging (cio&eacute; la ricerca e la correzione degli errori) in JS 
+	pu&eacute; essere particolarmente complessa e a volte frustrante, per il fatto che 
+	l'esecutore (il browser) non segnala in alcun modo gli errori sintattici 
+	(come d'altra parte accade anche per gli errori in HTML). Tale problema &eacute; 
+	stato tuttavia in gran parte superato dagli strumenti di debugging integrati 
+	o disponibili come estensioni della maggior parte dei browser moderni.</p>
+	<p>Infine, per chi inizia a programmare, il JS sembra talvolta un linguaggio 
+	un po' troppo complesso, per via di una sintassi piuttosto varia e 
+	flessibile e di un sistema di oggetti di riferimento (il BOM e il DOM) assai 
+	complicato. La ragione di questo fatto &eacute; che il JS non &eacute; nato e non si &eacute; 
+	sviluppato per essere un linguaggio di programmazione generico n&eacute; tantomeno un 
+	linguaggio di programmazione didattico: le sue potenzialit&eacute; sono rivolte 
+	principalmente a un target di programmatori esperti o,al contrario, di 
+	&quot;smanettoni&quot;, i quali vogliono semplicemente ottenere un certo risultato, 
+	senza preoccuparsi troppo della eleganza, leggibilit&eacute; o anche congruenza 
+	logica del codice prodotto. Ci&eacute; indubbiamente potrebbe spaventare il 
+	programmatore alle prime armi.</p>
+	<p>Per queste ragioni, essendo il presente corso rivolto a chi inizia a 
+	programmare da zero in JS, l'approccio da noi seguito non sar&eacute; quello 
+	classico di molti altri corsi presenti in rete. Non inizieremo cio&eacute; a 
+	disquisire sulla programmazione ad oggetti o sui vantaggi e gli svantaggi 
+	del DOM rispetto al BOM (tutti argomenti davvero troppo criptici e 
+	iniziatici per chi &eacute; alle prime armi!). Adotteremo invece un approccio 
+	semplificato al linguaggio, riservandoci solo in un secondo tempo di 
+	affrontare in maggiore dettagli gli aspetti pi&eacute; tecnici e di 
+	approfondimento.</p>
+	<p>&nbsp;</p>
+<div class="titolo"> JavaScript e gli script</div>
+        <p>Occorre subito dissipare una possibile fonte di ambiguit&eacute;: di solito, 
+		parlando di linguaggi di programmazione come il C, il Basic, il Pascal etc. si fa 
+		riferimento alla scrittura di <em>programmi</em>. Un <strong>programma</strong> &eacute;, in parole 
+		povere, una sequenza di istruzioni scritte in un certo linguaggio di 
+		programmazione per far eseguire a un computer un determinato compito. 
+		Per esempio Chrome &eacute; un programma, come pure Word, Excel o un qualsiasi 
+		videogioco.</p>
+	<p>In JavaScript si parla invece tecnicamente di <em>script</em> e il JS viene detto 
+	un <em>linguaggio di scripting</em> (per distinguerlo dai linguaggi di 
+	programmazione propriamente detti). A voler semplificare un po', uno <strong>
+	script</strong> non &eacute; altro che un programma scritto per un linguaggio di 
+	scripting, come appunto il JS. Il lettore non potr&eacute; certo fare a meno di 
+	notare la ricorsivit&eacute; di questa definizione!</p>
+	<p>In realt&eacute; uno script assomiglia molto a un programma: come quest'ultimo, 
+	&eacute; composto da istruzioni scritte in un certo linguaggio (nel nostro caso il JavaScript). Tuttavia, mentre normalmente i linguaggi di programmazione 
+	consentono di produrre programmi autonomi (<em>standalone</em>, come detto 
+	precedentemente), il JS produce invece degli script che hanno bisogno di un 
+	browser per poter essere eseguiti. Dunque una prima definizione di script 
+	potrebbe essere: si tratta di un programma che viene eseguito all'interno di 
+	un browser o di altro ambiente esterno di appoggio.</p>
+	<p>Inoltre il JS &egrave; un linguaggio <strong>interpretato</strong>, nel senso che le sue istruzioni vengono eseguite una alla volta dal browser dell'utente (a differenza dei linguaggi <strong>compilati</strong>, 
+		come il C e anche il Java, in cui il programma viene prima interamente 
+	tradotto e quindi eseguito). Questa &eacute; un'altra importante differenza fra gli 
+	script e i normali programmi compilati.</p>
+        <p>Tuttavia, per chi inizia a programmare, queste differenza sono poco 
+		significative e rischiano di creare solo confusione. Per queste ragioni 
+		nel seguito considereremo a tutti gli effetti come sinonimi i due 
+		termini, programma e script. Qualche informatico magari si arrabbier&eacute;, 
+		ma pazienza!</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

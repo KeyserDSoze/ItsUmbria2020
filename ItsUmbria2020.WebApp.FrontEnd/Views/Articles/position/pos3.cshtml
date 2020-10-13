@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				margin-left: 40px;
+}
+.style3 {
+				letter-spacing: normal;
+				background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Stili dei blocchi</div>
+	 <p>Abbiamo visto come il layout di una pagina possa essere convenientemente 
+		suddiviso in blocchi (o boxes, scatole), ciascuna delle quali definita 
+		mediante un elemento &lt;div&gt; o un altro elemento di blocco.</p>
+	<p>Vediamo ora brevemente quali stili possono essere usati per definire le 
+	caratteristiche di ogni singolo blocco: alcuni di questi stili sono stati 
+	gi&eacute; trattati pi&eacute; diffusamente in altre lezioni e verranno perci&eacute; richiamati 
+	brevemente; altri invece meritano qualche spiegazione in pi&eacute;.</p>
+	<p>Osserviamo la figura seguente:</p>
+	<p class="style1"><img src="../img/thebox.png" alt="" width="498" height="319" /></p>
+	<p>Qui sono rappresentati due elementi: il contenitore (all'esterno, in rosso) e il contenuto (all'interno, in giallo). Il codice HTML corrispondente potrebbe essere 
+	questo (chiamando &quot;contenitore&quot; il blocco esterno e &quot;theBox&quot; quello interno): </p>
+	<div class="code">
+       <p> &lt;div id=&quot;contenitore&quot;&gt;</p>
+		<p class="style2"> &lt;div id=&quot;theBox&quot;&gt;</p>
+		<p class="style2"> ...</p>
+		<p class="style2"> &lt;/div&gt;</p>
+		<p> &lt;div&gt;</p>
+</div>
+	<p>Vediamo ora le propriet&eacute; del blocco interno (theBox). </p>
+	 <div class="titolo">Bordi</div>
+	 <p>Abbiamo gi&eacute; parlato in altra sede degli <a href=" stili/stili8.html">
+		stili per definire i bordi </a>di un elemento. Per esempio volendo 
+		definire un bordo tratteggiato sottile potremmo fare cos&eacute;:</p>
+<div class="code">
+  #theBox<br />
+	{<br />
+	border-style:dotted;<br />
+	border-width: thin;<br />
+	}</div>
+	<p>Ricordiamo che in assenza di dichiarazione border-style, i bordi dei 
+	blocchi sono sempre assenti.</p>
+	 <div class="titolo">Width, height e overflow</div>
+	 <p>Abbiamo gi&eacute; visto che stili <a href=" stili/stili7.html">width e height</a> 
+		permettono di definire le dimensioni del blocco (rispettivamente la 
+		larghezza e l'altezza). Per esempio in questo modo:</p>
+<div class="code">
+  #theBox<br />
+	{<br />
+	width:100px;<br />
+	height: 200px;<br />
+	}</div>
+	<p>Le unit&eacute; di misura possono essere espresse in pixel (px) come 
+	nell'esempio, oppure in percentuale (%), oppure ancora in em
+	<span style="color: rgb(0, 0, 0); font-family: verdana, helvetica, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+	<span class="Apple-converted-space">&nbsp;</span>(multipli dell'attuale 
+	dimensione dei font).</span><span class="style3"> Osserviamo a questo 
+	proposito come la percentuale sia riferita alle dimensioni del blocco 
+	contenitore.</span></p>
+	<p>Se il contenuto del blocco &eacute; maggiore delle dimensioni del blocco stesso, 
+	il contenuto &quot;esce&quot; dai margini del blocco. Si osservi l'esempio seguente, 
+	che mostra un testo che non pu&eacute; essere contenuto in un blocco e dunque 
+	fuoriesce:</p>
+	<div style="width: 500px; height: 250px;">
+<div style="width: 300px; height: 200px; border-style:solid; border-color:red">Testo di prova per riempire il box. Testo di prova per riempire il box. Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+</div>
+</div>
+	<p>Il codice corrispondente &eacute; il seguente:</p>
+<div class="code">
+  &lt;div style=&quot;width: 300px; height: 200px; border-style:solid; border-color:red&quot;&gt;Testo 
+	di prova per riempire il box. Testo di prova per riempire il box. Testo di 
+	prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.Testo di prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.Testo di prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.Testo di prova per riempire il box.<br />
+	&lt;/div&gt;</div>
+	<p>Per modificare questo comportamento bisogna utilizzare la propriet&eacute;
+	<strong>overflow</strong> che ha i seguenti possibili valori:</p>
+	<ul>
+					<li>visible: &eacute; il valore di default; il contenuto fuoriesce 
+					dal blocco se questo &eacute; troppo piccolo.</li>
+					<li>hidden: il contenuto che fuoriesce dal bordo viene 
+					nascosto.</li>
+					<li>scroll: una barra di scorrimento laterale permette di 
+					mostrare il contenuto nascosto.</li>
+					<li>auto: come il precedente, ma la barra di scorrimento 
+					viene mostrata solo se il contenuto fuoriesce dal blocco.</li>
+	</ul>
+	<p>Si consideri per esempio il codice seguente:</p>
+<div class="code">
+  &lt;div style=&quot;width: 300px; height: 200px; border-style:solid; border-color:red; 
+	overflow:auto&quot;&gt;Testo 
+	di prova per riempire il box. Testo di prova per riempire il box. Testo di 
+	prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.Testo di prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.Testo di prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.<br />
+	Testo di prova per riempire il box.Testo di prova per riempire il box.Testo 
+	di prova per riempire il box.Testo di prova per riempire il box.<br />
+	&lt;/div&gt;</div>
+	<p>che viene visualizzato nel seguente modo:</p>
+<div style="width: 300px; height: 200px; border-style:solid; border-color:red; overflow:auto">Testo di prova per riempire il box. Testo di prova per riempire il box. Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.Testo di prova per riempire il box.
+</div>
+	<p>&nbsp;</p>
+	 <div class="titolo">Padding</div>
+	 <p>Lo stile <strong>padding</strong> (letteralmente &quot;imbottitura&quot;) 
+		specifica lo spazio che deve rimanere fra il contenuto (es. il testo) e 
+		i bordi del box. Si osservi l'esempio seguente:</p>
+	<p class="style1"><img src="../img/boxmodel.gif" alt="box model" /></p>
+	<p>Per esempio un blocco con gli stili dell'esempio in figura potrebbe 
+	essere definito in questo modo:</p>
+<div class="code">
+  #theBox<br />
+	{<br />
+	padding: 20px; <br />
+	border: solid 5px; <br />
+	}</div>
+	<p>Lo stile padding pu&eacute; essere definito con diversi valori per i diversi 
+	lati della scatola, come nel seguente esempio:</p>
+<div class="code">
+  #theBox<br />
+	{<br />
+	padding-top: 25px; <br />
+	padding-right: 50px; <br />
+	padding-bottom: 25px; <br />
+	padding-left: 50px; <br />
+	}</div>
+	<p>&nbsp;</p>
+	 <div class="titolo">Margin</div>
+	 <p>Lo stile <strong>margin</strong> (margine) come mostrato nella figura 
+		precedente definisce un'area trasparente che circonda il blocco e lo 
+		separa da qualsiasi cosa che si trovi al suo esterno. Il margine diventa 
+		particolarmente importante se c'&eacute; pi&eacute; di un blocco all'interno di un 
+		unico contenitore, in quanto fornisce una distanza di separazione fra un 
+		blocco e l'altro.</p>
+	<p>Si consideri il seguente esempio:</p>
+<div class="code">
+  &lt;div style=&quot;width: 300px; height: 200px; margin:10px; border-style:solid; 
+	border-color:red&quot;&gt;<br />
+	Testo di prova per riempire il box1. Testo di prova per riempire il box1. 
+	Testo di prova per riempire il box1. Testo di prova per riempire il box1.<br />
+	Testo di prova per riempire il box1. Testo di prova per riempire il box1. 
+	Testo di prova per riempire il box1. Testo di prova per riempire il box1.
+	<br />
+	&lt;/div&gt;<br />
+	<br />
+	&lt;div style=&quot;width: 300px; height: 200px; margin:30px; border-style:solid; 
+	border-color:blue&quot;&gt;<br />
+	Testo di prova per riempire il box2. Testo di prova per riempire il box2. 
+	Testo di prova per riempire il box2. Testo di prova per riempire il box2.<br />
+	Testo di prova per riempire il box2. Testo di prova per riempire il box2. 
+	Testo di prova per riempire il box2. Testo di prova per riempire il box2.
+	<br />
+	&lt;/div&gt;</div>
+	<p>che produce questa visualizzazione:</p>
+	<p class="style1"><img alt="" src="../img/img19.jpg" /></p>
+	<p>Si osservi che se due elementi hanno margini adiacenti con valori diversi 
+	(per esempio 10px e 30px come in figura) la distanza verticale di 
+	separazione fra gli elementi &eacute; pari al margine maggiore (30 px nel nostro 
+	caso).</p>
+	<p>Anche margin, come padding, pu&eacute; assumere valori diversi per i diversi 
+	lati del box.</p>
+	<p>Usando per margin il valore auto (margin: auto) il browser calcola 
+	esattamente il valore dei margini in modo da centrare la box all'interno del 
+	contenitore.</p>
+	 <div class="titolo">Dimensioni totali di un elemento</div>
+	<p>Si consideri come esempio l'elemento seguente:</p>
+<div class="code">
+  <pre>#box {
+background: silver;
+width: 200px;
+border: 25px solid black;
+padding: 20px;
+margin: 5px;
+}</pre>
+	</div>
+	<p>Qual &eacute; lo spazio orizzontale occupato da tale box? Occorre fare la somma 
+	seguente:</p>
+	<p class="style1">Amp. = width + left padding + right padding + left border 
+	+ right border + left margin + right margin</p>
+	<p>cio&eacute; nel nostro caso:</p>
+	<p class="style1">Ampiezza = 200 + 20 + 20 + 25 + 25 + 5 + 5 = 300 px</p>
+	<p>Si osservi che width non &eacute; la dimensione totale del box, ma solo la 
+	dimensione del suo contenuto interno. Per sapere lo spazio occupato 
+	realmente occorre sommare lo spessore dei bordi, il margine e il padding, 
+	come mostrato nel calcolo precedente.</p>
+	<p>La figura seguente dovrebbe chiarire il concetto:</p>
+	<p class="style1"><img src="../img/standard.gif" /></p>
+	<div class="titolo">Dimensioni percentuali riferite alla larghezza (width) </div>
+	<p>Le dimensioni di padding, margin e border possono essere anche specificate in modo percentuale, come nell'esempio seguente:</p>
+	<div class="code">
+      <pre>#box {
+
+width: 200px;
+height 400px;
+padding: 2%;
+margin: 5%;
+}</pre>
+    </div>
+	<p>Occore per&ograve; qui evidenziare una stranezza nel calcolo percentuale, che &egrave; fonte di molti errori nel posizionamento con gli stili. Quando si indicano le misure in percentuale, queste si riferiscono sempre alla dimensione orizzontale (width), anche quando il padding o il margin sono verticali.</p>
+	<p>Per essere ancora pi&ugrave; chiari, nell'esempio precedente abbiamo </p>
+	<p>padding-left = padding-right = 0.02 * 200px = 4px<br />
+    padding-top = padding-bottom = 0.02 * 200px = 4px</p>
+	<p>Sarebbe sbagliato pensare che</p>
+	<p align="center">padding-top = padding-bottom = 0.02 * 400px = 8px  </p>
+	<p>La scelta di riferire tutte le percentuali alle dimensioni orizzontali del blocco pu&ograve; apparire bizzarra, ma ha senso poich&eacute; in questo modo, a parit&agrave; di percentuale indicata, le dimensioni sono le stesse in tutte le direzioni. </p>
+	<p>&nbsp;</p>
+	<div class="titolo">Shorthand (abbreviazioni) </div>
+	<p>E' possibile specificare diversi stili di tipo font con un'unica istruzione (si parla in questo caso di <strong>shorthand</strong> o abbreviazione). Per quanto riguarda i bordi, rimandiamo all'<a href=" stili/stili8.html">apposita pagina</a>. </p>
+	<p>Per <em>margin</em> possiamo scrivere: </p>
+	<div class="code">
+      <p>margin:1em 0 2em 0.5em;</p>
+    </div>
+	<p>che equivale a:</p>
+	<div class="code">
+      <p>margin-top:1em; <br />
+      margin-right:0; <br />
+      margin-bottom:2em; <br />
+      margin-left:0.5em;</p>
+    </div>
+	<p>La stessa abbreviazione con il medesimo ordine pu&ograve; essere usata per il <em>padding</em>. </p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				border-left-style: solid;
+				border-left-color: #FF0000;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">La sintassi di animate</div>
+
+	<p>Il metodo <em>animate</em> &eacute; molto potente e consente di realizzare 
+	animazioni molto complesse con poco sforzo, ma la sua sintassi non &eacute; forse 
+	delle pi&eacute; semplici:</p>
+        <div class="code">
+          $(<em>selettore</em>).animate({<em>stili</em>},<em>speed</em>,<em>easing</em>,<em>callback</em>) 
+			;</div>
+	<p>I parametri indicati fra parentesi tonde sono:</p>
+	<ul>
+					<li><em>stili</em>: l'elenco degli stili da animare col relativo 
+					valore finale a termine animazione;</li>
+					<li><em>speed</em>: la velocit&eacute; dell'animazione ovvero la sua durata;</li>
+					<li><em>easing</em>: il modo in cui viene realizzata l'animazione, 
+					cio&eacute; il tipo di accelerazione e decelerazione usati;</li>
+					<li><em>callback</em>: una funzione da chiamare al termine 
+					dell'animazione.</li>
+	</ul>
+	<p>Occorre subito dire che, a parte <em>stili</em> che &eacute; obbligatorio, tutti 
+	gli altri parametri sono opzionali, cio&eacute; possono essere omessi.</p>
+	<p>Bisogna poi notare che esiste anche una sintassi alternativa e 
+	perfettamente equivalente, che fa uso delle parole chiave <em>duration, 
+	easing e complete</em>:</p>
+        <div class="code">
+          $(<em>selettore</em>).animate({<em>stili</em>},<em>{duration: speed</em>,<em>easing: easing</em>,<em>complete: callback}</em>) 
+			;</div>
+	<p>In pratica la stessa istruzione pu&eacute; essere scritta in due modi diversi, 
+	come mostra meglio l'esempio qui sotto:</p>
+        <div class="code">
+          <pre>// SINTASSI DI ANIMATE: PRIMA VERSIONE
+$('#myDiv').animate(
+    { opacity: 0 }, 	// quello che vogliamo animare
+    'fast', 		// la velocit&eacute; dell'animazione
+    'swing', 		// il tipo di easing
+    function() { 	// la funzione di callback
+        alert('done');
+    });</pre>
+			<pre>// SINTASSI DI ANIMATE: SECONDA VERSIONE
+$('#myDiv').animate(
+    { opacity: 0 }, 	  	// quello che vogliamo animare
+    {
+        duration: 'fast',  	// la velocit&eacute; dell'animazione
+        easing: 'swing',  	// il tipo di easing
+        complete: function() { 	// la funzione di callback
+            alert('done');
+        }
+    });</pre>
+	</div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Gli stili: una sintassi che sembra inventata apposta per confondere le 
+				idee</div>
+
+	<p>Si &eacute; gi&eacute; detto che <em>animate</em> consente di animare tutti gli stili 
+	css che hanno un valore numerico. Oltre ai valori numerici &eacute; possibile 
+	utilizzare come valori anche le stringhe &quot;show&quot;, &quot;hide&quot; e &quot;toggle&quot;: in 
+	questo caso l'animazione mostrer&eacute; o nasconder&eacute; l'elemento che viene animato.</p>
+	<p class="style1">Non si possono invece animare gli stili che non hanno un 
+	valore numerico progressivo, come per esempio i colori. Esistono per&eacute; 
+	opportuni plugin di jQuery che consentono di estendere la animazione anche 
+	ai colori.</p>
+	<p>L'elenco degli stili da animare va obbligatoriamente chiuso fra una 
+	coppia di parentesi graffe (anche se si intende animare un solo stile) e il 
+	nome dello stile dev'essere separato dal suo valore dai due punti. Si 
+	considerino gli esempi seguenti:</p>
+        <div class="code">
+          $('div').animate({height: '300px'});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// varia l'altezza fino a 300px<br />
+			$('p').animate({top: '100px', left: '50px'});&nbsp;&nbsp;&nbsp;&nbsp; 
+			// sposta p nella posizione indicata</div>
+	<p>Si osservi come i valori vadano (prudenzialmente) racchiusi fra apici 
+	(singoli o doppi) e ogni coppia di propriet&eacute; e valore vada separata con una 
+	virgola dalla successiva. Il nome dello stile da animare invece non deve 
+	essere messo fra apici.</p>
+	<p>E' anche possibile indicare un valore incrementale o decrementale, in 
+	questo modo:</p>
+        <div class="code">
+          $('div').animate({height: '-=30px'});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// varia l'altezza diminuendola di 30px<br />
+			$('p').animate({top: '+=100px', left: '+=50px'});// sposta p 
+			rispetto alla posizione corrente</div>
+	<p>Per quanto riguarda i <strong>nomi degli stili</strong>, occorre notare che non sempre 
+	coincidono esattamente con i corrispondenti nomi usati nei fogli stile css. 
+	In particolare jQuery usa qui la notazione cosiddetta <strong>camel-case</strong> 
+	(a gobba di cammello) di modo tale che, per esempio, lo stile  
+	border-width diventa borderWidth, margin-bottom diventa marginBottom e cos&eacute; 
+	via.</p>
+	<p>Questa distinzione pu&eacute; certamente essere fonte di confusione per il 
+	programmatore in jQuery, poich&eacute; la convenzione sui nomi degli stili non &eacute; 
+	usata in modo conforme in tutto il codice. Per esempio, per modificare lo 
+	stile font-size usando il metodo css bisogna scrivere:</p>
+        <div class="code">
+          $(&quot;p&quot;).css(&quot;font-size&quot;,&quot;50px&quot;); </div>
+	<p>Per animare lo stesso stile con <em>animate</em> invece si deve scrivere:</p>
+        <div class="code">
+          $(&quot;p&quot;).animate({fontSize: &quot;50px&quot;});&nbsp; </div>
+	<p>Notate la differenza? Oltre tutto anche la sintassi &eacute; completamente 
+	diversa: in <em>animate</em> si usano le graffe e i due punti, invece della virgola 
+	di css e non bisogna mettere gli apici intorno al nome dello stile. Pura 
+	sadismo di chi ha inventato jQuery!</p>
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

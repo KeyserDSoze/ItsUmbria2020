@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">  
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  L&#39;oggetto math 
+	</div>
+        <p>A differenza degli altri oggetti visti nelle lezioni precedenti 
+		(stringhe, date, array), l'oggetto Math non deve essere creato e non ha 
+		bisogno di un costruttore. Esso &eacute; preesistente, predefinito e non pu&eacute; 
+		essere istanziato, cio&eacute; non &eacute; possibile creare delle istanze singole di 
+		tale oggetto. In questo assomiglia agli oggetti <em>window</em> e <em>
+		document</em> che descrivono rispettivamente la finestra del browser e 
+		il documento correntemente aperto.</p>
+	<p>L'oggetto Math viene usato per effettuare operazioni di tipo matematico. 
+	Esso &eacute; dotato di propret&eacute; e di metodi che andremo rapidamente ad esaminare 
+	qui nel seguito.</p>
+	<p>La principale ragione per cui le funzioni e le costanti matematiche sono 
+	state raggruppate sotto un unico oggetto Math (per la verit&eacute; un oggetto 
+	abbastanza anomalo!) &eacute; quella di evitare la creazione di troppe parole 
+	chiave riservate. Per fare un semplice esempio, Math.E &eacute; la costante di 
+	Eulero (vedi sotto). Se E non fosse una propriet&eacute; di un oggetto Math, 
+	dovrebbe esistere una costante E riservata (cio&eacute;, in pratica, il 
+	programmatore non potrebbe creare una variabile di nome E perch&eacute; questa 
+	andrebbe in conflitto con la E costante di Eulero).</p>
+	<p>In pratica l'oggetto Math &eacute; un trucco escogitato dagli inventori di JS (e 
+	non &eacute; neppure un trucco molto elegante...).</p>
+
+	<div class="titolo">
+
+	  Propriet&eacute;</div>
+        <p>Le propriet&eacute; dell'oggetto Math rappresentano le principali costanti 
+		numeriche e sono elencate qui nel seguito:</p>
+
+<table border="1">
+<tbody><tr><th>Propriet&eacute;</th><th>Descrizione</th></tr>
+<tr><td><code>E</code></td><td>La costante di Eulero, base dei logaritmi naturali, con un valore approssimativo di <code>2.718</code></td></tr>
+<tr><td><code>LN2</code></td><td>Il logarimto di 2, con un valore approssimativo di <code>0,693</code></td></tr>
+<tr><td><code>LN10</code></td><td>Il logaritmo di 10, con un valore approssimativo di <code>2,303</code></td></tr>
+<tr><td><code>LOG2E</code></td><td>Il logaritmo in base 2 della costante di Eulero, circa <code>1,443</code></td></tr>
+<tr><td><code>LOG10E</code></td><td>Il logaritmo in base 10 della costante di Eulero, circa <code>0,434</code></td></tr>
+<tr><td><code>PI</code></td><td>Il valore di pi greco, approssimativamente <code>3,14</code></td></tr>
+<tr><td><code>SQRT1_2</code></td><td>La radice quadrata di 1/2, circa <code>0,707</code></td></tr>
+<tr><td><code>SQRT2</code></td><td>La radice quadrata di 2, con un valore approssimativo di <code>1,414</code></td></tr>
+</tbody></table>
+	<p>L'esempio seguente mostra come si usano:</p>
+        <div class="code">
+          var raggio, circonferenza;<br />
+			raggio = prompt(&quot;Raggio del cerchio: &quot;);<br />
+			circonferenza = 2 * Math.PI* raggio;<br />
+			alert(&quot;Circonferenza = &quot; + circonferenza);</div>
+        <p>&nbsp;</p>
+
+	<div class="titolo">
+
+	  Metodi</div>
+        <p>I metodi consentono di eseguire molte operazioni matematiche 
+		fondamentali:</p>
+
+<table border="1">
+  <tbody><tr>
+    <th style="width:20%">Metodo</th>
+    <th>Descrizione</th>
+  </tr>
+  <tr>
+    <td>abs(x)</td>
+    <td>Torna il valore assoluto x</td>
+  </tr>
+  <tr>
+    <td>acos(x)</td>
+    <td>Torna l'arcocoseno di x in radianti</td>
+  </tr>
+  <tr>
+    <td>asin(x)</td>
+    <td>Torna l'arcoseno di x in radianti</td>
+  </tr>
+  <tr>
+    <td>atan(x)</td>
+    <td>Torna l'arcotangente di x come un valore in radianti compreso fra 
+	-PI/2 e PI/2</td>
+  </tr>
+  <tr>
+    <td>atan2(y,x)</td>
+    <td>Torna l'arcotangente in radianti del quoziente di y diviso x</td>
+  </tr>
+  <tr>
+    <td>ceil(x)</td>
+    <td>Torna l'arrotondamento per eccesso di x all'intero successivo</td>
+  </tr>
+  <tr>
+    <td>cos(x)</td>
+    <td>Torna il coseno di x (x in radianti)</td>
+  </tr>
+  <tr>
+    <td>exp(x)</td>
+    <td>Torna il valore dell'esponenziale e<sup>x</sup></td>
+  </tr>
+  <tr>
+    <td>floor(x)</td>
+    <td>Torna l'arrotondamento per difetto di x all'intero precedente</td>
+  </tr>
+  <tr>
+    <td>log(x)</td>
+    <td>Torna il logaritmo naturale (in base e) di x</td>
+  </tr>
+  <tr>
+    <td>max(x,y,z,...,n)</td>
+    <td>Torna il massimo fra x, y, z...</td>
+  </tr>
+  <tr>
+    <td>min(x,y,z,...,n)</td>
+    <td>Torna il minimo fra x, y, z...</td>
+  </tr>
+  <tr>
+    <td>pow(x,y)</td>
+    <td>Torna l'elevamento a potenza di x elevato a y</td>
+  </tr>
+  <tr>
+    <td>random()</td>
+    <td>Torna un numero casuale decimale compreso fra 0 e 1</td>
+  </tr>
+  <tr>
+    <td>round(x)</td>
+    <td>Arrotonda x all'intero pi&eacute; vicino</td>
+  </tr>
+  <tr>
+    <td>sin(x)</td>
+    <td>Torna il seno di x (x in radianti)</td>
+  </tr>
+  <tr>
+    <td>sqrt(x)</td>
+    <td>Torna la radice quadrata di x</td>
+  </tr>
+  <tr>
+    <td>tan(x)</td>
+    <td>Torna la tangente di x (x in radianti)</td>
+  </tr>
+</tbody></table>
+
+	<p>Vediamo un esempio di uso di alcuni di questi metodi considerando uno 
+	script che acquisisce un numero, lo rende positivo e ne calcola la radice 
+	quadrata:</p>
+        <div class="code">
+          var numero;<br />
+			numero = prompt(&quot;Numero: &quot;);<br />
+			numero = Math.abs(numero);<br />
+			alert(&quot;Radice quadrata = &quot; + Math.sqrt(numero));</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

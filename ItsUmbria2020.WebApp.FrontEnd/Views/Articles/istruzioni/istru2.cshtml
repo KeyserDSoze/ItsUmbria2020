@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Costanti e variabili 
+	</div>
+        <p>Abbiamo detto precedentemente che un programma &eacute; in sostanza una 
+		sequenza di istruzioni. Tali istruzioni operano su dei valori (numerici 
+		o stringhe di caratteri) che possono <strong>costanti</strong> oppure
+		<strong>variabili</strong>.</p>
+	<p>Una <strong>costante</strong> &eacute; semplicemente un numero (esempio -67 
+	oppure 3.14 - si presti attenzione all'uso del punto decimale invece della 
+	virgola per separare parte intera e parte decimale) oppure una stringa di 
+	caratteri (es. &quot;ciao a tutti&quot;) o ancora un valore booleano (true oppure 
+	false).</p>
+	<p>Una <strong>variabile</strong> &eacute; invece un contenitore dotato di un nome, dentro il quale 
+	&eacute; possibile memorizzare un singolo valore. Sul significato e il ruolo delle variabili nella scrittura di un algoritmo in generale <a href=" ../Algoritmi/algo8.html">abbiamo gi&agrave; parlato</a>. Per quanto riguarda un programma, le variabili corrispondono ad aree riservate nella memoria RAM del computer. </p>
+	<p>Per esempio:</p>
+        <div class="code">
+          numero = 123;<br />
+parola = &quot;ciao&quot;; 
+    </div>
+        <p>sono semplici istruzioni dette assegnazioni, le quali attribuiscono 
+		un valore ad una variabile (123 alla variabile <em>numero</em> e &quot;ciao&quot; 
+		alla variabile <em>parola</em>.</p>
+	<div class="titolo">Nomi delle variabili </div>
+        <p>Gli <strong>identificatori</strong> (nomi)  delle variabili possono essere scelti liberamente, seguendo alcune poche regole:</p>
+        <ul>
+          <li>i nomi possono contenere solo le lettere dell'alfabeto inglese (per esempio non la <em>&eacute;</em> accentata), le cifre numeriche (0...9) e il carattere di sottolineatura (<em>underscore</em>);<br />
+			<br />
+			</li>
+          <li>il primo carattere del nome deve sempre essere un carattere 
+			alfabetico oppure i simboli _ (underscore) e $ (dollaro);<br />
+			<br />
+			</li>
+          <li>per i nomi delle variabili non si possono usare le parole chiave del linguaggio&nbsp; (una variabile non si pu&ograve; chiamare <em>while</em> per esempio);<br />
+			<br />
+			</li>
+          <li>due variabili diverse non possono avere lo stesso nome;<br />
+			<br />
+			</li>
+          <li>il JS &egrave; un linguaggio <em>case-sensitive</em>, cio&egrave; discrimina fra lettere maiuscole e minuscole: perci&ograve; <em>trapani</em> e <em>Trapani</em> in 
+			JS non sono la stessa variabile! </li>
+        </ul>
+        <p>E' anche importante notare che i nomi delle variabili non possono contenere blank, cio&egrave; spazi. 
+		In altre parole, una variabile non pu&eacute; chiamarsi per esempio <em>massimo 
+		comune divisore</em>. Quando si vuole mettere in evidenza le singole 
+		parole che compongono il nome di una variabile &eacute; possibile separarle col 
+		simbolo della sottolineatura (<em>underscore</em>), in questo modo: <em>
+		massimo_comune_divisore</em>. Un'altra tecnica molto usata (detta <em>
+		CamelCase notation</em>, cio&eacute; notazione a gobba di cammello) consiste 
+		nell'iniziare ogni singola parola (tranne eventualmente la prima) con la 
+		maiuscola, come per esempio in <em>massimoComuneDivisore</em>.</p>
+	<p>&nbsp;(a tale proposito si usa appunto l'underscore: cos&igrave; ad esempio <em>base maggiore</em> non &egrave; un nome valido, mentre &egrave; valido <em>base_maggiore</em>); 
+			</p>
+        <p><a target="_blank" href="https://mothereff.in/js-variables">
+		JavaScript variable name validator</a> &eacute; un utile strumento online che 
+		consente di verificare se il nome scelto per una variabile &eacute; valido 
+		oppure no.</p>
+	<p>&nbsp;</p>
+	<div class="titolo">Variabili contenenti oggetti</div>
+	<p>In JS una variabile pu&eacute; fare riferimento a un oggetto, per esempio un 
+	elemento html di una pagina come un'immagine, un paragrafo, una tabella etc.</p>
+	<p>Si consideri il seguente esempio:</p>
+        <div class="code">
+          immagine = document.getElementById(&quot;foto&quot;);<br />
+			immagine.src = &quot;foto2.jpg&quot;</div>
+        <p>La variabile <em>immagine</em> viene inizialmente posta uguale 
+		all'elemento con id uguale a <em>foto</em>. Si tratta di un elemento &lt;img&gt; 
+		che ha un attributo src. Si noti l'istruzione<em> immagine.src = 
+		&quot;foto2.jpg&quot; </em>che modifica il valore dell'attributo passando 
+		attraverso l'uso della variabile immagine.</p>
+	<p>Naturalmente avremmo anche potuto scrivere (senza usare la variabile 
+	immagine):</p>
+        <div class="code">
+          document.getElementById(&quot;foto&quot;).src = &quot;foto2.jpg&quot;</div>
+        <p>In molti casi risulta comodo e pi&eacute; chiaro per la comprensione del 
+		programma usare delle variabili alle quali assegnare gli oggetti e poi 
+		accedere agli oggetti attraverso le corrispondenti variabili.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

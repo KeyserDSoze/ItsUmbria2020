@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Istruzione if </p>
+	</div>
+        <p>L'istruzione <strong>if</strong> serve per introdurre in un programma la selezione fra due diversi percorsi. La sintassi &egrave; la seguente:</p>
+                <div class="code">
+                  if (<em>condizione</em>) <br />
+                 &nbsp;&nbsp;&nbsp; {   <br />
+                  &nbsp;&nbsp;&nbsp;<em>istruzione1</em>;<br />
+                  &nbsp;&nbsp;&nbsp;<em>istruzione2</em>;<br />
+                  &nbsp;&nbsp;&nbsp;...<br />
+                 &nbsp;&nbsp;&nbsp; }</div>
+				<p>La <em>sequenza di istruzioni</em> (istruzione1, istruzione2...) racchiusa fra graffe viene eseguita solo se la <em>condizione</em> &egrave; vera. Se la condizione &egrave; falsa non viene eseguito nulla.  </p>
+				<p>L'istruzione <strong>if</strong> corrisponde in un diagramma di flusso a un blocco di test con due uscite (indicate in figura con <strong>SI</strong> e <strong>NO</strong>): </p>
+				<p class="style1"><img src="../img/selezione.jpg" alt="" width="368" height="330" /></p>
+				<div class="titolo">
+                  </div>
+        <p>Un esempio di selezione in JS &eacute; il seguente</p>
+        <div class="code">
+          if (nome == &quot;&quot;)<br />
+            &nbsp;&nbsp;&nbsp;{<br />
+          &nbsp;&nbsp;&nbsp;alert(&quot;Inserire un nome!&quot;);<br />
+          &nbsp;&nbsp;&nbsp;}</div>
+        <p>Si notino le graffe aperte e chiuse per racchiudere le istruzioni che dipendono dall'if. In realt&agrave; e parentesi graffe sono necessarie soltanto nel caso in cui le  istruzioni da eseguire siano pi&ugrave; di una, altrimenti possono essere  anche omesse. Infatti le parentesi graffe indicano sempre l'esistenza  di un blocco di istruzioni. Pertanto l'istruzione dell'esempio precedente potrebbe essere anche scritta pi&ugrave; semplicemente cos&igrave;:</p>
+        <div class="code">
+          if (numero == 0)<br />
+            &nbsp;&nbsp;&nbsp;alert(&quot;Valore uguale a zero!&quot;);
+         
+        </div>
+
+<p>&nbsp;</p>
+	<p><span class="style2"><strong>ATTENZIONE</strong></span>:</p>
+	<p>Come nel linguaggio C (e linguaggi da esso derivati), il valore 0 viene 
+	considerato come falso (false), mentre qualsiasi valore diverso da 0 viene 
+	considerato come vero (true). Per esempio si potrebbe anche scrivere:</p>
+        <div class="code">
+          if (numero)<br />
+            &nbsp;&nbsp;&nbsp;alert(&quot;Valore diverso da zero!&quot;);
+         
+        </div>
+
+	<p>risparmiando l'uguaglianza. Questa equivalenza fra 0 e false e not-zero e 
+	true viene usata spesso dai programmatori esperti e anche noi ci torneremo 
+	nel seguito.</p>
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

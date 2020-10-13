@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				font-size: large;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	 <div class="titolo">HTML 4.01 e tag deprecati </div>
+	 <p>Per quanto riguarda il linguaggio HTML il processo di standardizzazione viene portato avanti da un ampio consorzio di aziende, universit&agrave; e istituti di ricerca noto come <strong>World Wide Web Consortium</strong> (spesso abbreviato in W3C). Per rispondere alla situazione di anarchia descritta nel paragrafo precedente, alla fine del 1999 
+		venne pubblicata la versione 4.01 del linguaggio HTML. </p>
+	<p>La versione 4 di HTML e la successiva versione 5 prevedono la progressiva eliminazione di tutti quei tag e attributi introdotti per specificare la visualizzazione di una pagina. Tali tag e attributi vengono detti <strong>deprecati</strong>, cio&egrave; il loro uso &egrave; fortemente sconsigliato e se ne prevede in futuro l'abolizione completa. </p>
+	 <p>Al posto dei tag e attributi deprecati viene introdotto il concetto di stile. Mediante gli stili &egrave; possibile controllare ugualmente (e in modo persino pi&ugrave; fine) tutti gli aspetti della visualizzazione di una pagina, senza dover ricorrere a tag appositi 
+		di visualizzazione.</p>
+	 <p>Consideriamo due esempi. Nell'HTML precedente all'introduzione degli stili, per centrare il testo di un paragrafo si poteva usare un tag apposito <em>&lt;center&gt;</em> nel seguente modo:</p>
+	 <div class="code">
+       &lt;center&gt;&lt;p&gt; Paragrafo da centrare &lt;/p&gt; &lt;/center&gt; 
+    </div>
+	 <p>oppure in alternativa si poteva usare l'attributo <em>align</em> specifico del tag &lt;p&gt;:</p>
+	 <div class="code">
+       &lt;p align=&quot;center&quot;&gt; Paragrafo da centrare &lt;/p&gt;</div>
+	 <p>In HTML 4.01 entrambi questi modi sono deprecati. In alternativa bisogna usare il tag universale <em>style</em>, il quale permette di specificare, fra le altre cose, l'allineamento di un testo:</p>
+	 <div class="code">
+       &lt;p style=&quot;text-align:center&quot;&gt; Paragrafo da centrare &lt;/p&gt;</div>
+	 <p>&nbsp;</p>
+	 <div class="titolo">L'attributo universale style </div>
+	 <p>HTML 4.01 introduce un attributo <strong>style</strong> che pu&ograve; essere applicato universalmente a tutti gli elementi. Questo significa, a titolo di esempio iniziale, che se per colorare di rosso il testo di un paragrafo si usa:</p>
+	 <div class="code">
+       &lt;p style=&quot;color:red&quot;&gt; Paragrafo rosso &lt;/p&gt;</div>
+	 <p>per colorare di rosso un titolo h1 si usa:</p>
+	 <div class="code">
+       &lt;h1 style=&quot;color:red&quot;&gt; Titolo rosso &lt;/h1&gt;</div>
+	 <p>per colorare di rosso il contenuto di una tabella si usa:</p>
+	 <div class="code">
+       &lt;table style=&quot;color:red&quot;&gt; ... 
+    </div>
+	 <p>e per colorare di rosso il testo contenuto in un'intera pagina si usa:</p>
+	 <div class="code">
+       &lt;body style=&quot;color:red&quot;&gt;...</div>
+	 <p>Come si vede dagli esempi precedenti, lo stesso attributo style con la stessa sintassi pu&ograve; essere applicato ad elementi diversi per ottenere lo stesso risultato (il testo in colore rosso).  </p>
+	 <p>&nbsp;</p>
+	 <div class="titolo">Sintassi dell'attributo style </div>
+	 <p><strong>style</strong> &egrave; un attributo di tag, esattamente come <em>src, href, width</em> o altri. Ci&ograve; significa che non pu&ograve; essere applicato da solo, ma deve sempre &quot;appoggiarsi&quot; a un tag, di cui costituisce una specifica. La differenza &egrave;, come visto, che style pu&ograve; essere applicato indifferentemente a qualunque tag.</p>
+	 <p>La sintassi di uso di style &egrave; leggermente complessa, per cui conviene esaminare subito un esempio concreto:</p>
+	 <div class="code">
+       &lt;p style=&quot;color:red; text-align:center;font-family:Arial&quot;&gt; Paragrafo rosso, centrato e in Arial &lt;/p&gt;</div>
+	 <p>che produce la seguente visualizzazione: </p>
+     <p style="color:red; text-align:center;font-family:Arial"> Paragrafo rosso centrato e in Arial </p>
+	 <p>La sintassi &egrave; la seguente:</p>
+	 <p><img src="../img/style.jpg" alt="" width="787" height="204" /> Nell'esempio fornito abbiamo:</p>
+	 <ul>
+	   <li>propriet&agrave; <em>color</em> con valore <em>red</em></li>
+       <li>propriet&agrave; <em>text-align</em> con valore <em>center</em></li>
+       <li>propriet&agrave; <em>font-family</em> con valore <em>Arial</em></li>
+    </ul>
+	 <p>Le diverse propriet&agrave; sono separate dai relativi valori da due punti e una dall'altra da un punto e virgola, nel seguente modo generale: </p>
+	 <p align="center"><em> style=&quot;propriet&agrave;1:valore1; propriet&agrave;2:valore2; propriet&agrave;3:valore3; ...&quot;</em></p>
+	 <p>Prima della chiusura dei doppi apici finali non &egrave; necessario mettere un punto e virgola, ma alcuni lo fanno, perch&eacute; in tal modo non si rischia di dimenticarsene nel caso si volesse aggiungere alla lista altre propriet&agrave;. Per maggiore chiarezza:</p>
+	 <div class="code">
+       &lt;p style=&quot;color:red; text-align:center;font-family:Arial&quot;&gt; Paragrafo rosso, centrato e in Arial &lt;/p&gt;</div>
+	 <p>oppure (col punto e virgola finale):</p>
+	 <div class="code">
+       &lt;p style=&quot;color:red; text-align:center;font-family:Arial<span style="font-weight:bolder" class="style2">;</span>&quot;&gt; Paragrafo rosso, centrato e in Arial &lt;/p&gt;</div>
+	 <p>sono equivalenti.</p>
+	 <p>&nbsp;</p>
+	 <div class="titolo">Tag span e div </div>
+	 <p>L'attributo style, come detto, deve sempre appoggiarsi a un tag al quale dev'essere applicato. In certi casi per&ograve; non si ha un tag a disposizione. Supponiamo per esempio di voler colorare in rosso solo la prima parola del seguente paragrafo:</p>
+	 <div class="code">
+       &lt;p&gt; Ciao a tutti &lt;/p&gt;</div>
+	 <p>Applicando style al tag &lt;p&gt; l'intero paragrafo verrebbe in rosso e non solo la prima parola!</p>
+	 <p>In questi casi &egrave; utile usare il tag <strong>&lt;span&gt;</strong> che costituisce un elemento inline neutro, ovvero un tag che di per s&eacute; non fornisce nessuna informazione. Esso &egrave; utile perch&eacute; permette l'applicazione di uno stile nel modo seguente:</p>
+	 <div class="code">
+       &lt;p&gt; &lt;span style=&quot;color:red&quot;&gt;Ciao&lt;/span&gt; a tutti &lt;/p&gt;</div>
+	 <p>il cui risultato &egrave;</p>
+<p class="style1"> <span style="color:red">Ciao</span> a tutti </p>
+	 <p>Un tag simile a &lt;span&gt; &egrave; <strong>&lt;div&gt;</strong>. Si tratta sempre di un tag neutro, senza particolare significato. &lt;div&gt; &egrave; per&ograve; un elemento di blocco, cio&egrave; introduce una separazione nel testo visualizzato. In pratica &lt;div&gt; da solo viene visualizzato come un semplice paragrafo &lt;p&gt;:</p>
+	 <div class="code">
+       &lt;div&gt; Questo &egrave; un blocco di testo senza nessun particolare attributo o stile &lt;/div&gt;</div>
+	 <p>Spesso &lt;div&gt; viene usato per appoggiare ad esso uno stile, nel caso in cui si voglia applicare lo stile stesso a un intero blocco. Si consideri l'esempio seguente:</p>
+	 <div class="code">
+       &lt;div style=&quot;border-style:solid&quot;&gt; Blocco con bordo &lt;/div&gt;</div>
+	 <p>che viene visualizzato nel seguente modo: </p>
+	 <div style="border-style:solid"> Blocco con bordo </div>
+	 <p>Nelle prossime lezioni esamineremo le diverse propriet&eacute; del tag style 
+		per formattare il tipo di caratteri, i colori, lo sfondo e il testo.</p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Ordinamento gerarchico ed ereditariet&eacute; </div>
+	 <p>In generale lo stile di un elemento si applica anche a tutti gli 
+		elementi in esso contenuti. Questo principio viene definito <strong>ereditariet&eacute;</strong> 
+		e pu&eacute; essere facilmente mostrato con un esempio. Si consideri la 
+		seguente tabella:</p>
+	 <div class="code">
+       &lt;table style=&quot;color:red&quot; border=&quot;1&quot;&gt;<br />
+		&lt;tr&gt;&lt;td&gt;uno&lt;/td&gt;&lt;td&gt;due&lt;/td&gt;&lt;/tr&gt;<br />
+		&lt;tr&gt;&lt;td&gt;tre&lt;/td&gt;&lt;td&gt;quattro&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/table&gt;</div>
+	 <p>essa viene visualizzata nel seguente modo:</p>
+	 <table style="color:red" border="1">
+	 <tr><td>uno</td><td>due</td></tr>
+	 <tr><td>tre</td><td>quattro</td>
+	</tr>
+	 </table>
+	<p>Come si pu&eacute; osservare l'attributo <em>style=&quot;color:red&quot;</em> &eacute; stato 
+	automaticamente applicato ad ogni cella contenuta nella tabella.</p>
+	<p>Se per&eacute; un elemento interno ridefinisce il valore di uno stile, allora 
+	questa ridefinizione ha la prevalenza su quella esterna. Si consideri il 
+	seguente esempio:</p>
+	 <div class="code">
+       &lt;table style=&quot;color:red&quot; border=&quot;1&quot;&gt;<br />
+		&lt;tr&gt;&lt;td&gt;uno&lt;/td&gt;&lt;td&gt;due&lt;/td&gt;&lt;/tr&gt;<br />
+		&lt;tr style=&quot;color:green&quot;&gt;&lt;td&gt;tre&lt;/td&gt;&lt;td&gt;quattro&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/table&gt;</div>
+	 <p>che produce la seguente visualizzazione:</p>
+	<table style="color:red" border="1">
+<tr><td>uno</td><td>due</td></tr>
+<tr style="color:green"><td>tre</td><td>quattro</td>
+</tr>
+</table>
+	<p>Si noti che lo <em>style=&quot;color:green&quot;</em> applicato alla seconda riga 
+	ha la precedenza sullo <em>style=&quot;color:red&quot;</em> applicato all'intera 
+	tabella.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

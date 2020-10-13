@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				background-color: #DDDDDD;
+}
+.style2 {
+				border-collapse: collapse;
+				border: 1px solid #000000;
+}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $("#btn1").click(function(){
+        $("#prova").append("<li>Elemento aggiunto</li>");
+    });
+
+
+    $("#btn2").click(function(){
+        $("#prova li").filter(":last-child").remove();
+    });
+
+
+});
+</script>
+
+
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Aggiungere nodi al DOM</div>
+
+	<p>jQuery consente di aggiungere dinamicamente nuovi elementi alla pagina in 
+	modo molto pi&eacute; potente e semplice rispetto a javascript. Il problema semmai 
+	in questo caso &eacute; l'abbondanza di metodi diversi che fanno sostanzialmente la 
+	stessa cosa, abbondanza che pu&eacute; facilmente confondere il programmatore.</p>
+	<p>Per cercare di semplificare un po' le cose, diciamo che ci sono due 
+	possibili strade alternative:</p>
+	<ol>
+					<li>append, prepend, after, before</li>
+					<li>appendTo, prependTo, insertAfter, insertBefore</li>
+	</ol>
+	<p>Per capire meglio la differenza fra i due gruppi di metodi (i quali, come 
+	detto, fanno la stessa cosa) si consideri l'esempio seguente:</p>
+        <div class="code">
+          <pre>$(&quot;button&quot;).click(function(){
+    $(&quot;#pippo&quot;).after(&quot;&lt;p&gt;Ciao mondo&lt;/p&gt;&quot;);
+});</pre>
+			<pre>$(&quot;button&quot;).click(function(){
+    $(&quot;&lt;p&gt;Ciao mondo!&lt;/p&gt;&quot;).insertAfter(&quot;#pippo&quot;);
+});</pre>
+	</div>
+	<p>In entrambi i casi un paragrafo contenente la scritta &quot;Ciao mondo!&quot; viene 
+	inserito dopo l'elemento #pippo. In pratica il DOM viene modificato nel 
+	seguente modo:</p>
+        <div class="code">
+          &lt;!-- Struttura del DOM prima dell'esecuzione del codice jQuery --&gt;<br />
+			&lt;div id='pippo'&gt;<br />
+			...<br />
+			&lt;/div&gt;<br />
+        <div class="code">
+          &lt;!-- Struttura del DOM d<span class="style1">opo l'</span>esecuzione 
+			del codice jQuery --&gt;<br />
+			&lt;div id='pippo'&gt;<br />
+			...<br />
+			&lt;/div&gt;<br />
+			&lt;p&gt; Ciao mondo &lt;/p&gt;</div>
+	</div>
+	<p>Come si vede il paragrafo p viene aggiunto dopo l'elemento #<em>pippo</em> e ne 
+	diventa un <em>sibling</em> (fratello) nell'albero del DOM.</p>
+	<p>Si consideri anche l'esempio seguente:</p>
+        <div class="code">
+          <pre>$(&quot;button&quot;).click(function(){
+    $(&quot;#pippo&quot;).append(&quot;&lt;p&gt;Ciao mondo&lt;/p&gt;&quot;);
+});</pre>
+			<pre>$(&quot;button&quot;).click(function(){
+    $(&quot;&lt;p&gt;Ciao mondo!&lt;/p&gt;&quot;).appendTo(&quot;#pippo&quot;);
+});</pre>
+	</div>
+	<p>In entrambi i casi il paragrafo viene inserito dentro (come <em>child</em>) 
+	nell'elemento #pippo. Il DOM viene modificato nel seguente modo:</p>
+        <div class="code">
+          &lt;!-- Struttura del DOM prima dell'esecuzione del codice jQuery --&gt;<br />
+			&lt;div id='pippo'&gt;<br />
+			...<br />
+			&lt;/div&gt;<br />
+        <div class="code">
+          &lt;!-- Struttura del DOM d<span class="style1">opo l'</span>esecuzione 
+			del codice jQuery --&gt;<br />
+			&lt;div id='pippo'&gt;<br />
+			...<br />
+			&lt;p&gt; Ciao mondo &lt;/p&gt;<br />
+			&lt;/div&gt;<br />
+			</div>
+	</div>
+	<p>In pratica la differenza fra <em>after</em> e <em>insertAfter</em> e <em>append</em> e 
+	<em>appendTo</em> &eacute; di 
+	tipo sintattico: i metodi <em>after/append</em> vengono applicati al nodo dopo il 
+	quale si vuole inserire il nuovo elemento; invece <em>insertAfter/appendTo</em> 
+	ricevono come parametro il nodo su cui effettuare l'inserimento. Se la cosa 
+	risulta un po' confusa, non ci si preoccupi troppo. In pratica conviene 
+	scegliere (&eacute; una questione di gusto) quale tipo di istruzioni di modifica 
+	del DOM si preferisce usare e poi utilizzare sempre quello (evitando, 
+	soprattutto agli inizi, di mescolare le due tipologie, col rischio di 
+	confondersi). </p>
+	<p>La tabella seguente cerca di fare un po' di chiarezza, nei limiti del 
+	possibile:</p>
+	<table style="width: 100%" class="style2">
+					<tr>
+									<td class="style1"><strong>Scopo</strong></td>
+									<td class="style1"><strong>Metodo gruppo 1</strong></td>
+									<td class="style1"><strong>Metodo gruppo 1</strong></td>
+					</tr>
+					<tr>
+									<td>Inserire un sibling dopo il nodo</td>
+									<td>after</td>
+									<td>insertAfter</td>
+					</tr>
+					<tr>
+									<td>Inserire un sibling prima del nodo</td>
+									<td>before</td>
+									<td>insertBefore</td>
+					</tr>
+					<tr>
+									<td>Inserire un child del nodo alla fine dei 
+									child esistenti</td>
+									<td>append</td>
+									<td>appendTo</td>
+					</tr>
+					<tr>
+									<td>Inserire un child del nodo all'inizio 
+									dei child esistenti</td>
+									<td>prepend</td>
+									<td>prependTo</td>
+					</tr>
+	</table>
+	<p>&nbsp;</p>
+
+<div class="titolo">Eliminare nodi dal DOM</div>
+
+	<p>Per quanto riguarda la cancellazione dinamica di nodi dal DOM, jQuery 
+	offre due metodi principali:</p>
+	<ul>
+					<li>remove()</li>
+					<li>empty()</li>
+	</ul>
+	<p>La differenza fra i due &eacute; che <em>remove</em> elimina il nodo (o i nodi) 
+	selezionato dal DOM; invece <em>empty</em> elimina tutti i nodi <em>child</em> del nodo 
+	selezionato.</p>
+	<p>Si consideri l'esempio seguente:</p>
+        <div class="code">
+          <pre>&lt;!-- Struttura iniziale dell'elemento --&gt;
+&lt;div&gt;
+    &lt;p&gt;&lt;strong&gt;foo&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+// Codice jQuery e corrispondente effetto
+$('p').empty();  // --&gt; &quot;&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+$('p').remove(); // --&gt; &quot;&lt;div&gt;&lt;/div&gt;&quot;</pre>
+	</div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Esempio riassuntivo</div>
+
+	<p>In conclusione si consideri l'esempio che segue:</p>
+        <div class="code">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+
+    $(&quot;#btn1&quot;).click(function(){
+        $(&quot;ol&quot;).append(&quot;&lt;li&gt;Elemento aggiunto&lt;/li&gt;&quot;);
+    });
+
+
+    $(&quot;#btn2&quot;).click(function(){
+        $(&quot;ol li&quot;).filter(&quot;:last-child&quot;).remove();
+    });
+
+
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;button id=&quot;btn1&quot;&gt;Aggiunge un elemento alla lista&lt;/button&gt;
+&lt;button id=&quot;btn2&quot;&gt;Rimuove l'ultimo elemento dalla lista&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+	</div>
+	<p>Si noti l'uso del metodo filter per ottenere l'ultimo nodo li, cio&eacute; 
+	l'ultimo elemento inserito. Il lettore pu&eacute; provare qui sotto il 
+	funzionamento dello script:</p>
+	
+	
+	<div style="border: solid red">
+	<ol id="prova">
+  <li>Elemento 1</li>
+  <li>Elemento 2</li>
+  <li>Elemento 3</li>
+</ol>
+
+<button id="btn1">Aggiunge un elemento alla lista</button>
+<button id="btn2">Rimuove l'ultimo elemento dalla lista</button>
+	
+	</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

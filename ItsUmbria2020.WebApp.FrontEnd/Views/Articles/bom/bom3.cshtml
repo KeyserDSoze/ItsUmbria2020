@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">L'oggetto window</div>
+        <p>L'oggetto window costituisce la radice dell'albero del BOM e rappresenta una 
+		finestra di navigazione aperta nel browser, completa di barra dei menu, 
+		barra degli strumenti, barra di stato e pagina caricata nella finestra. 
+		Si tratta dell'oggetto principale del BOM a cui fanno capo tutti gli 
+		altri.</p>
+	<p>In pratica possiamo pensare a window come la cornice (= la 
+	finestra) dentro cui viene caricata la pagina stessa (documento). Un nuovo oggetto window 
+	viene creato automaticamente quando si apre una nuova finestra o una nuova scheda 
+	in un browser. Come si vede la creazione di window non avviene tramite JS ma 
+	attraverso i comandi del browser. Si tratta infatti di un API esterna al 
+	linguaggio JS e fornita dal browser stesso.</p>
+	<p>Le tabelle seguenti elencano le principali propriet&eacute; e metodi 
+	dell'oggetto window (per un elenco completo
+	<a target="_blank" href="http://www.w3schools.com/jsref/obj_window.asp">vedi 
+	qui</a>).</p>
+
+        <div class="titolo">Principali propriet&eacute; dell'oggetto window</div>
+        <p>Le propriet&eacute; sono variabili i cui valori rappresentano diverse 
+	caratteristiche della finestra window: </p>
+	<table class="titoloInterno" border="0" cellpadding="8" cellspacing="0" style="border: 1px solid rgb(140, 200, 199); border-collapse: collapse; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 2px; margin-right: 8px; width: 570px; color: rgb(9, 44, 44); font-size: 10px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<th scope="col" style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-right: 8px; width: 142px; background-color: rgb(140, 200, 199);">
+									Propriet&eacute;</th>
+									<th scope="col" style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-right: 8px; width: 237px; background-color: rgb(140, 200, 199);">
+									Descrizione</th>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									closed</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce un valore booleano che indica se 
+									una finestra &eacute; stata chiusa</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									defaultStatus</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Definisce il testo di default nella 
+									statusbar di Windows</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									document</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									<span class="style1">Rappresenta l'</span>oggetto 
+									document contenuto nella finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									history</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce gli url visitati nella finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									location</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									<span class="style1">R</span>estituisce 
+									l&#8217;url del documento aperto nella finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									name</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce o imposta il nome della finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									navigator</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce informazioni sul browser 
+									utilizzato</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									innerHeight </td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce l'altezza interna in pixel della 
+									finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									innerWidth </td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce <span class="style1">la 
+									larghezza</span> interna in pixel della 
+									finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									outerHeight </td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce l'altezza <span class="style1">
+									esterna</span> in pixel della finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									outerWidth </td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Restituisce <span class="style1">la 
+									larghezza</span> <span class="style1">
+									esterna</span> in pixel della finestra</td>
+					</tr>
+	</table>
+	<p>Come <a href="bom2.html">abbiamo gi&eacute; osservato</a>, le propriet&eacute; di 
+	window sono (per la maggior parte) a loro volta degli oggetti, dotati dunque 
+	di altre propriet&eacute; e metodi.</p>
+	<br />
+
+        <div class="titolo">Principali metodi dell'oggetto window</div>
+<p>I metodi sono funzioni che &eacute; possibile applicare all'oggetto window:</p>        
+
+	<table class="titoloInterno" border="0" cellpadding="8" cellspacing="0" style="border: 1px solid rgb(140, 200, 199); border-collapse: collapse; font-family: Verdana, Arial, Helvetica, sans-serif; padding: 2px; margin-right: 8px; width: 570px; color: rgb(9, 44, 44); font-size: 10px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<th scope="col" style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-right: 8px; width: 142px; background-color: rgb(140, 200, 199);">
+									Metodo</th>
+									<th scope="col" style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-right: 8px; width: 237px; background-color: rgb(140, 200, 199);">
+									Descrizione</th>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									alert(&quot;msg&quot;)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Mostra un messaggio di avviso</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									blur()</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Rimuove il focus dalla finestra corrente</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									clearInterval(ID)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Cancella un timeout impostato con 
+									setInterval()</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									clearTimeout(ID)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Cancella un timeout impostato con setTimeout()</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									close()</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Chiude la finestra corrente</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									confirm(&quot;msg&quot;)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Mostra una finestra di dialogo con un 
+									messaggio e i bottoni Cancel e OK</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									focus()</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Da il focus alla finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									moveBy(x,y)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Sposta la finestra di un certo numero di 
+									pixel in relazione alle coodinate correnti</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									moveTo(x,y)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Sposta la finestra in un punto specifico 
+									dello schermo (x e y danno la opsizione del 
+									vertice in alto a sinistra)</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									open(URL,&quot;name&quot;,&quot;specs&quot;)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Apre una nuova finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									print()</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Stampa il contenuto di una finestra</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									prompt(&quot;msg&quot;,&quot;reply&quot;)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Mostra un prompt in cui l&#8217;utente pu&eacute; 
+									scrivere</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									scrollBy(x,y)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Scrolla il contenuto di una finestra di un 
+									certo numero di pixel</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									scrollTo(x,y)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Scrolla il contenuto di una finestra in un 
+									punto specifico</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									setInterval(func,millisec)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Richiama una funzione o valuta un 
+									espressione ad ogni certo nmero di 
+									millisecondi specificato</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									setTimeout(func,millisec)</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Richiama una funzione o valuta un 
+									espressione dopo un certo nmero di 
+									millisecondi specificato</td>
+					</tr>
+					<tr style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(191, 234, 233);">
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									stop()</td>
+									<td style="border: 1px solid rgb(140, 200, 199); font-family: Verdana, Arial, Helvetica, sans-serif; color: rgb(9, 44, 44); font-size: 10px; font-weight: bold; padding: 2px; margin-left: 6px; vertical-align: top; background-color: rgb(255, 255, 250);">
+									Interrompe il caricamento di una pagina 
+									(come premere il pulsante stop della pagina</td>
+					</tr>
+	</table>
+	<p>
+	Il codice seguente fa uso dei vari metodi, propriet&eacute; e oggetti del BOM per 
+	visualizzare il nome del browser in cui &eacute; stata aperta la finestra corrente 
+	(vedremo nel seguito in maggiore dettaglio alcuni dei metodi e delle 
+	propriet&eacute; qui usate):</p>
+        <div class="code">
+          xx = window.open(&quot;&quot;,&quot;&quot;,&quot;width=300,height=250&quot;);<br />
+			xx.document.open();<br />
+			xx.document.write(&quot;&lt;html&gt;&lt;body&gt;&lt;p&gt;&quot;+window.navigator.appName+&quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;);
+			<br />
+			xx.document.close();</div>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

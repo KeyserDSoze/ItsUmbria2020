@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Aggiungere un nodo child: appendChild</div>
+
+	<p>Abbiamo gi&eacute; detto che gli elementi creati con <em>document.createElement</em> 
+	non immediatamente visualizzati nella pagina. Infatti essi devono essere 
+	prima inseriti in un punto preciso della pagina stessa, cio&eacute; in 
+	corrispondenza di un nodo dell'albero del DOM.</p>
+	<p>Torniamo rapidamente all'esempio relativo alla creazione di un elemento 
+	img e concentriamoci sulle istruzioni mostrate qui sotto:</p>
+        <div class="code">
+			var immagine = document.createElement(&quot;img&quot;);<br />
+			<br />
+			var corpo = document.body;<br />
+			corpo.appendChild(immagine); </div>
+        <p>La prima istruzione crea un oggetto di nome <em>immagine</em> 
+		contenente l'elemento <em>img</em>.</p>
+	<p>L'istruzione</p>
+	<p class="style1"><em>var corpo = document.body;</em></p>
+	<p>seleziona il nodo <em>body</em> e lo assegna alla variabile <em>corpo</em>.</p>
+	<p>La terza istruzione infine</p>
+	<p class="style1">corpo.appendChild(immagine); </p>
+	<p>appende l'oggetto <em>immagine</em> come nodo child dell'oggetto (nodo)
+	<em>corpo</em> (che corrisponde al body della pagina).</p>
+	<p>La figura seguente mostra la struttura del DOM prima e dopo l'esecuzione 
+	di <em>appendChild</em>:</p>
+	<p class="style1"><img alt="" src="../img/img12.jpg" /></p>
+	<p>Si noti che img viene aggiunto (appeso) come ultimo elemento child di 
+	body: in presenza di pi&eacute; nodi figli <em>appendChild</em> aggiunge sempre 
+	dopo l'ultimo nodo gi&eacute; presente.</p>
+	<p>Nell'esempio mostrato il nuovo nodo &eacute; stato aggiunto al body, dopo averlo 
+	selezionato con</p>
+	<p class="style1"><em>var corpo = document.body;</em></p>
+	<p>E' possibile naturalmente aggiungere un nodo a qualsiasi elemento 
+	contenitore della pagina (cio&eacute; a qualunque elemento che possa contenerne un 
+	altro, cio&eacute; possa essere parent di un nodo child).</p>
+	<p>Si consideri l'esempio seguente:</p>
+        <div class="code">
+          var immagine = document.createElement(&quot;img&quot;);<br />
+			document.getElementById(&quot;myDIV&quot;).appendChild(immagine); </div>
+        <p>In questo caso l'immagine viene appesa a un elemento con id = myDiv 
+		selezionato usando document.getElementById. Naturalmente avremmo potuto 
+		fare la stessa cosa anche in questo modo:</p>
+        <div class="code">
+          var immagine = document.createElement(&quot;img&quot;);<br />
+			var div = document.getElementById(&quot;myDIV&quot;);<br />
+			div.appendChild(immagine); </div>
+        <p>&nbsp;</p>
+
+<div class="titolo">Aggiungere un nodo sibling: insertBefore</div>
+
+	<p>Si chiamano <em>sibling</em> (o in italiano <em>fratelli</em>) i nodi che 
+	condividono uno stesso genitore. Per esempio nella seguente lista gli 
+	elementi &lt;li&gt; sono tutti <em>sibling</em> in quanto sono tutti child dello 
+	stesso &lt;ul&gt;:</p>
+        <div class="code">
+          &lt;ul id=&quot;monete&quot;&gt;<br />
+			&lt;li id=&quot;euro&quot;&gt;Euro&lt;/li&gt;<br />
+			&lt;li id=&quot;dollaro&quot;&gt;Dollaro&lt;/li&gt; <br />
+			&lt;li id=&quot;sterlina&quot;&gt;Sterlina&lt;/li&gt;<br />
+			&lt;/ul&gt; </div>
+        <p>Il metodo <em>insertBefore</em> permette di inserire un nodo <em>
+		sibilng</em> prima di un qualsiasi nodo selezionato. Si considerino le 
+		seguenti istruzioni:</p>
+        <div class="code">
+          var newLi = document.createElement(&quot;li&quot;);<br />
+			<br />
+			var lista = document.getElementById(&quot;monete&quot;);<br />
+			var sterlina = document.getElementById(&quot;sterlina&quot;);<br />
+			<br />
+			lista.insertBefore(newLi,sterlina);</div>
+        <p>Esaminiamole una per una:</p>
+	<ol>
+					<li>La prima istruzione <em>var newLi = 
+					document.createElement(&quot;li&quot;)</em> crea un nuovo elemento di 
+					tipo <em>LI</em> e lo assegna alla variabile <em>newLI</em>. 
+					L'elemento viene creato ma non viene aggiunto al DOM.</li>
+					<li>Le istruzioni <em>var lista = document.getElementById(&quot;monete&quot;)</em> 
+					e <em>var sterlina = document.getElementById(&quot;sterlina&quot;)</em> 
+					selezionano la lista monete e l'elemento sterline 
+					all'interno della lista stessa. </li>
+					<li>Infine <em>lista.insertBefore(newLi,sterlina)</em> 
+					inserisce come child di lista il nuovo nodo <em>newLI</em> 
+					prima del nodo <em>sterlina</em>.</li>
+	</ol>
+	<p>In pratica il DOM viene modificato come mostrato in figura (il nodo <em>
+	li</em> in rosso rappresenta il nuovo nodo aggiunto prima di sterlina):</p>
+	<p class="style1"><img alt="" src="../img/img12.gif" /></p>
+	<p>Notiamo che il nodo li aggiunto non ha id (infatti &eacute; stato creato senza 
+	nessun attributo) e non ha neppure contenuto testuale (il contenuto testuale 
+	&eacute; esso stesso un nodo - come vedremo meglio fra breve - rappresentato in 
+	colore giallo in figura).</p>
+	<p>In pratica la nuova struttura della lista &eacute; la seguente:</p>
+        <div class="code">
+          &lt;ul id=&quot;monete&quot;&gt;<br />
+			&lt;li id=&quot;euro&quot;&gt;Euro&lt;/li&gt;<br />
+			&lt;li id=&quot;dollaro&quot;&gt;Dollaro&lt;/li&gt; <br />
+			&lt;li&gt;&lt;/li&gt;<br />
+			&lt;li id=&quot;sterlina&quot;&gt;Sterlina&lt;/li&gt;<br />
+			&lt;/ul&gt; </div>
+        <p>&nbsp;</p>
+	    <div class="titolo">Eliminare un nodo: removeChild</div>
+    <p>Per eliminare un nodo occorre:</p>
+    <ol>
+      <li>individuare il nodo parent del nodo stesso</li>
+      <li>individuare il nodo child che si vuole eliminare</li>
+      <li>applicare il metodo removeChild al nodo parent</li>
+    </ol>
+    <p>Per esempio sempre con riferimento alla lista delle valute dell'esempio precedente, la procedura da seguire &egrave; questa:</p>
+    <div class="code">      var lista = document.getElementById(&quot;monete&quot;);<br />
+      var sterlina = document.getElementById(&quot;sterlina&quot;);<br />
+  <br />
+    lista.removeChild(sterlina);</div>
+    <p>&nbsp; </p>
+    <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

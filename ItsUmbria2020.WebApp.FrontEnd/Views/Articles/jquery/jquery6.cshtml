@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Selettori di base con $()</div>
+
+	<p>Come abbiamo gi&eacute; accennato, l'oggetto <em>$()</em> costituisce in un certo senso 
+	il cuore e la parte pi&eacute; importante di <em>jQuery</em>.</p>
+	<p>Fra le parentesi di <em>$()</em> dobbiamo indicare il <em>selettore</em>, 
+	ovvero la regola in base alla quale selezionare l'oggetto della pagina sul 
+	quale vogliamo operare. Per esempio:</p>
+        <div class="code">
+          var paragrafi;<br />
+			ele = $('p').length;<br />
+			alert(ele);</div>
+	<p>Questo codice:</p>
+	<ul>
+					<li>seleziona in un colpo solo tutti i paragrafi p;</li>
+					<li>ne visualizza con l'istruzione <em>alert</em> la propriet&eacute; <em>length</em> 
+	che corrisponde al numero di elementi selezionati (cio&eacute; nel nostro caso di 
+	paragrafi) presenti nel documento.</li>
+	</ul>
+	<p>La propriet&eacute; <em>length</em> ci fornisce un esempio semplice che ci 
+	permette di concentrarci qui sul processo di selezione (tratteremo poi pi&eacute; 
+	diffusamente delle azioni che si possono eseguire sugli elementi 
+	selezionati). Fra l'altro questo spezzone di codice &eacute; utile per verificare 
+	rapidamente se il selettore funziona correttamente (se il numero 
+	visualizzato dall'istruzione <em>alert</em> &eacute; uguale al numero di paragrafi effettivamente presenti nella 
+	pagina).</p>
+	<p>Possiamo usare molti selettori di base, alcuni dei 
+	quali sono mostrati negli esempi seguenti:</p>
+        <div class="code">
+          ele =
+          $(&quot;a&quot;).length;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			//tutti i link nel documento <br />
+			ele =
+			$(&quot;#blocco&quot;).length;&nbsp;&nbsp;&nbsp;&nbsp; //seleziona un singolo 
+			elemento con id &quot;blocco&quot; <br />
+			ele =
+			$(&quot;a.external&quot;).length;&nbsp; //solo i link con classe &quot;external&quot; <br />
+			ele =
+			$(&quot;.external&quot;).length;&nbsp;&nbsp; //tutti gli elementi appartenenti alla 
+			classe &quot;external&quot;<br />
+			ele = $(&quot;h1,div,p&quot;).length;&nbsp;&nbsp;&nbsp; // tutti gli h1, i div 
+			e i p</div>
+        <p>Si osservi che alcune delle selezioni precedenti, selezionano in 
+		generale pi&eacute; elementi, mentre altre ne selezionano uno solo: per es. <em>$(&quot;#blocco&quot;)</em> 
+		fornisce un unico elemento, dal momento che l'identificatore id dev'essere 
+		unico in un documento.</p>
+	<p>Tuttavia parte della potenza di jQuery &eacute;, come gi&eacute; detto, il fatto che pu&eacute; operare allo 
+	stesso modo su un unico elemento come su un gruppo di elementi. Per esempio:</p>
+        <div class="code">
+          $(&quot;div&quot;).hide();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+			nasconde tutti i div nel documento <br />
+          $(&quot;#blocco&quot;).hide();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+			nasconde solo l'elemento con id #blocco </div>
+	<p>In generale &eacute; possibile comporre i selettori, secondo regole pressoch&eacute; 
+		identiche a quelle usate nei fogli stile per creare
+		<a href=" ../HTML/css/css2.html">selettori contestuali</a>. Per 
+		esempio:</p>
+        <div class="code">
+          ele =
+          $(&quot;#blocco a&quot;).length;&nbsp;&nbsp;&nbsp;&nbsp; // seleziona tutti i link 
+			interni a un elemento con id &quot;blocco&quot;</div>
+        <p>Un altro selettore usato molto spesso, cui abbiamo gi&eacute; accennato, &eacute; la parola 
+		chiave <em>this</em>, che seleziona l'oggetto corrente (per esempio quello su cui 
+		abbiamo cliccato):</p>
+        <div class="code">
+          $(this).hide();&nbsp;&nbsp;&nbsp;&nbsp; // nasconde l'oggetto corrente</div>
+        <p>Questi esempi non esauriscono tutte le possibilit&eacute; di selezione 
+		offerte da $(). Per avere un quadro pi&eacute; esaustivo, raccomandiamo di 
+		leggere la
+		<a target="_blank" href="http://www.html.it/guide/guida-jquery/">Guida a 
+		jQuery</a> su HTML.it o il
+		<a target="_blank" href="http://www.w3schools.com/jquery/default.asp">
+		jQuery Tutorial</a> su w3schools.com.</p>
+	<p>Gi&eacute; da questo breve introduzione &eacute; possibile rendersi conto di come 
+	jQuery semplifichi il lavoro di selezione degli elementi del DOM. A 
+	differenza dei molti metodi diversi esistenti in jS (document.getElementById, 
+	document.getElementsByTagName, document.getElementsByClassName etc.), jQuery 
+	utilizza una sola funzione per tutti i possibili tipi di selezione. E, 
+	soprattutto, abbina questa funzione $() a tutta la potenza e versatilit&eacute; dei 
+	metodi di selezione offerti dai fogli stile.</p>
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

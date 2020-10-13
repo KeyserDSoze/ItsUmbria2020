@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<style type="text/css"> 
+.quadrato {
+width: 100px;
+height: 100px;
+background-color: #98d925;
+border: 2px solid #009F16;
+
+transition-property: transform; 
+transition-duration: 2s; 
+}
+
+.quadrato:hover {
+transform: rotate(20deg);
+}
+.quadrato2 {
+width: 100px;
+height: 100px;
+background-color: #98d925;
+border: 2px solid #009F16;
+
+transition-property: transform; 
+transition-duration: 2s; 
+}
+
+.quadrato2:hover {
+transform: translate(50px, 100px); 
+}
+
+</style>
+           
+         <!-- FINE
+DEL CODICE CSS!! -->
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Le trasformazioni 2D</p>
+	</div>
+        <p>Usando le <strong>trasformazioni</strong> &eacute; possibile traslare, ruotare, 
+		ridimensionare e applicare altri effetti dinamici su un oggetto. Vediamo 
+		subito un semplice esempio col nostro solito quadrato</p>
+		
+	
+        <div class="code">
+          div {<br />
+			width: 100px;<br />
+			height: 100px;<br />
+			background-color: #98d925;<br />
+			border: 2px solid #009F16;<br />
+			<br />
+			transition-property: transform;
+			<br />
+			transition-duration: 2s; <br />
+			}<br />
+			<br />
+			div:hover {<br />
+			transform: rotate(20deg);<br />
+			}<br />
+        </div>
+	<p>L'effetto prodotto &eacute; mostrato qui sotto:</p>
+	<div class="quadrato"></div>
+	<p>Come si pu&eacute; osservare ora, quando si passa col mouse sul quadrato, esso 
+	viene ruotato di 20 gradi.</p>
+	<p>Qui invece abbiamo un esempio di trasformazione per <strong>traslazione</strong>:</p>
+		
+	
+        <div class="code">
+          div {<br />
+			width: 100px;<br />
+			height: 100px;<br />
+			background-color: #98d925;<br />
+			border: 2px solid #009F16;<br />
+			<br />
+			transition-property: transform;
+			<br />
+			transition-duration: 2s; <br />
+			}<br />
+			<br />
+			div:hover {<br />
+			transform: translate(50px, 100px); <br />
+			}<br />
+        </div>
+	<p>Ed ecco l'effetto prodotto:</p>
+	<div class="quadrato2"></div>
+	<p>In questo caso passando col mouse sul quadrato, questo si sposta di 50px 
+	a destra e di 100px verso il basso rispetto alla sua posizione iniziale.</p>
+	<p>E' anche possibile applicare pi&ugrave; trasformazioni in sequenza, in questo modo:</p>
+	<div class="code">	  transform: translate(50px, 100px) rotate(20deg); 
+	  <br />
+    </div>
+	<p>Oltre a translate e rotate, le altre trasformazioni 2D sono:</p>
+	<ul>
+	  <li><strong>scale</strong>: cambia le dimensioni di un elemento;</li>
+      <li><strong>skew</strong>, <strong>skewX</strong> e <strong>skewY</strong>: permettono di deformare un elemento;</li>
+	  <li><strong>matrix</strong>: combina tutti i metodi di trasformazione 2D insieme.</li>
+    </ul>
+	<p>Per approfondire l'argomento, invitiamo il lettore a consultare la pagina di <a href="https://www.w3schools.com/css/css3_2dtransforms.asp" target="_blank">W3 Schoo</a>l. </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

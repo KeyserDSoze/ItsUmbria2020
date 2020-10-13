@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Aggiungere un event listener (addEventListener)</div>
+
+	<p>Come abbiamo visto da molto tempo, il codice JS pu&eacute; interfacciarsi con 
+	gli elementi di una pagina HTML attraverso gli
+	<a href=" Generali/def3.html">eventi</a>, cio&eacute; un'azione compiuta 
+	dall'utente su un elemento di una pagina. Per esempio:</p>
+        <div class="code">
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;</div>
+	<p>In questo caso cliccando sull'immagine viene scatenato l'evento <em>
+	onclick</em>, il quale chiama la funzione <em>muovi()</em>.</p>
+	<p>Un modo alternativo per ottenere la stessa cosa &eacute; utilizzare un <strong>
+	event listener</strong> (letteralmente &quot;ascoltatore di eventi&quot;). E' pi&eacute; 
+	facile vedere come si fa che spiegarlo a parole. Basta infatti inserire 
+	nella parte dedicata al codice JS la seguente istruzione:</p>
+        <div class="code">
+			&lt;script&gt; <br />
+			<br />
+			document.getElementById('omino').addEventListener(&quot;click&quot;, muovi); <br />
+			<br />
+			&lt;/script&gt;</div>
+	<p style="border-left: solid red 2px"><strong>ATTENZIONE</strong>: In questo caso lo script non deve essere 
+	incluso nell'head del documento html poich&eacute; fa riferimento a un elemento 
+	della pagina (l'immagine con id='omino') che ancora non esiste al momento 
+	del caricamento dell'head. Perch&eacute; tutto funzioni correttamente lo script 
+	deve essere inserito nel body dopo la dichiarazione dell'elemento img 
+	(preferibilmente alla fine della pagina, vedi anche l'esempio in fondo). Questa restrizione non si applica 
+	se addEventListener &eacute; applicato direttamente all'oggetto document, poich&eacute; 
+	questo esiste da subito, dal momento in cui viene caricata la pagina.</p>
+	<p>Il metodo <strong>addEventListener</strong> pu&eacute; essere applicato a 
+	qualsiasi elemento della pagina (e anche all'intera finestra window) e 
+	associa all'elemento una funzione da chiamarsi in corrispondenza di un 
+	evento. La sintassi &eacute; abbastanza semplice:</p>
+	<p class="style1"><em>elemento</em>.addEventListener(&quot;<em>evento</em>&quot;, <em>
+	funzione</em>)</p>
+	<p>Si osservi solo che il nome dell'evento non &eacute; preceduto da &quot;on&quot; (bisogna 
+	scrivere &quot;click&quot; invece di &quot;onclick&quot;, &quot;mouseover&quot; invece di &quot;onmouseover&quot; 
+	etc.) e che il nome della funzione non &eacute; accompagnato dalle parentesi tonde.</p>
+	<p>Per il resto <em>addEventListener</em> funziona esattamente come il 
+	gestore di eventi (onclick, nel nostro esempio) applicato direttamente 
+	all'elemento.</p>
+	<p>Quali sono dunque i vantaggi di usare un event listener, invece che il 
+	metodo che abbiamo fin qui utilizzato? Un primo vantaggio &eacute; che in questo 
+	modo il codice JS risulta completamente separato dal codice html della 
+	pagina. Infatti, rimuovendo i gestori di eventi dalla pagina (togliendo per 
+	esempio onclick nel nostro caso) l'html risulta completamente &quot;ripulito&quot; da 
+	ogni riferimento al codice JS e questo migliora la chiarezza del codice.</p>
+	<p>Inoltre l'event listener pu&eacute; essere modificato e aggiunto dinamicamente 
+	dal codice JS. Per esempio il codice seguente visualizza un form con due 
+	pulsanti (button1 e <em>button2</em>). Per poter visualizzare l'alert con il 
+	messaggio &quot;Sequenza corretta!&quot; occorre cliccare prima su <em>button1</em>, 
+	in modo da aggiungere l'event listener a <em>button2</em>, e quindi su <em>
+	button2</em> per visualizzare il messaggio:</p>
+        <div class="code">
+			&lt;body&gt;<br />
+			<br />
+			&lt;form&gt;<br />
+			&lt;input type=&quot;button&quot; id=&quot;button1&quot; value=&quot;Clicca prima qui&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; id=&quot;button2&quot; value=&quot;E poi qui&quot;&gt;<br />
+			&lt;/form&gt;<br />
+			<br />
+			&lt;script&gt;<br />
+			document.getElementById(&quot;button1&quot;).addEventListener(&quot;click&quot;, 
+			attiva);<br />
+			<br />
+			function attiva()<br />
+			{<br />
+			document.getElementById(&quot;button2&quot;).addEventListener(&quot;click&quot;, 
+			messaggio);<br />
+			}<br />
+			<br />
+			function messaggio()<br />
+			{<br />
+			alert(&quot;Sequenza corretta!&quot;);<br />
+			}<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/body&gt;</div>
+	<p>Si noti la posizione di &lt;script&gt; in fondo al body, affinch&eacute; si possa 
+	usare l'istruzione</p>
+	<p class="style1">document.getElementById(&quot;button1&quot;).addEventListener(&quot;click&quot;, 
+	attiva);</p>
+	<p>(l'istruzione viene eseguita dopo la creazione di button1).</p>
+
+<div class="titolo">Rimuovere un event listener (removeEventListener)</div>
+
+	<p>Il metodo removeEventListener consente di rimuovere un event listener da 
+	un elemento. Per esempio:</p>
+        <div class="code">
+			document.getElementById('omino').removeEventListener(&quot;click&quot;, muovi); </div>
+	<p>In questo caso viene rimossa l'associazione fra l'evento <em>click</em> 
+	sull'oggetto e la funzione <em>muovi</em>.</p>
+	<p>&nbsp;</p>
+        <p align="right">&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

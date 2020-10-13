@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Dati in forma tabellare</div>
+	 <p>Le tabelle possono presentare numerosi problemi di interpretazione per 
+		gli utenti con deficit visivi. Anzitutto � bene evitare di utilizzare le 
+		tabelle per creare il layout di una pagina (tabelle nascoste): per 
+		questo scopo il posizionamento con gli stili offre senz'altro lo 
+		strumento migliore. Le tabelle dunque dovrebbero essere usate solo 
+		quando c'� la necessit� di presentare un certo contenuto in forma 
+		tabellare. Si consideri l'esempio seguente:</p>
+	 <div class="code">
+       <pre>&lt;table width=&quot;50%&quot; border=&quot;1&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;COLORE&lt;/td&gt;&lt;td&gt;NOME&lt;/td&gt;&lt;td&gt;CODICE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BIANCO&lt;/td&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;td&gt;#FFFFFF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NERO&lt;/td&gt;&lt;td&gt;BLACK&lt;/td&gt;&lt;td&gt;#000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BLU&lt;/td&gt;&lt;td&gt;BLUE&lt;/td&gt;&lt;td&gt;#0000FF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre>
+	</div>
+	<p>che produce la seguente visualizzazione:</p>
+<table width="50%" border="1" align="center">
+<tr>
+<td>COLORE</td><td>NOME</td><td>CODICE</td>
+</tr>
+<tr>
+<td>BIANCO</td><td>WHITE</td><td>#FFFFFF</td>
+</tr>
+<tr>
+<td>NERO</td><td>BLACK</td><td>#000000</td>
+</tr>
+<tr>
+<td>BLU</td><td>BLUE</td><td>#0000FF</td>
+</tr>
+</table>
+	<br />
+	In questo esempio la tabella serve per visualizzare rapidamente i colori in 
+	HTML e i rispettivi codici.<p>&nbsp;</p>
+	 <div class="titolo">L'elemento caption</div>
+	 <p>L'elemento <strong>caption</strong> (elemento contenitore che deve 
+		sempre comparire per primo, subito dopo l'apertura del tag <em>table</em>) fornisce una didascalia alla tabella che viene 
+		visualizzata sopra la tabella stessa. Tale didascalia pu� essere utile 
+		sia per gli utenti con vista normale che per gli utenti con deficit 
+		visivi in quanto chiarisce ed esplica il contenuto della tabella stessa. 
+		Si consideri l'esempio seguente:</p>
+	 <div class="code">
+       <pre>&lt;table width=&quot;50%&quot; border=&quot;1&quot;&gt;
+&lt;caption&gt;Colori in HTML con relativi nomi e codici&lt;/caption&gt;
+&lt;tr&gt;
+&lt;td&gt;COLORE&lt;/td&gt;&lt;td&gt;NOME&lt;/td&gt;&lt;td&gt;CODICE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BIANCO&lt;/td&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;td&gt;#FFFFFF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NERO&lt;/td&gt;&lt;td&gt;BLACK&lt;/td&gt;&lt;td&gt;#000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BLU&lt;/td&gt;&lt;td&gt;BLUE&lt;/td&gt;&lt;td&gt;#0000FF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre>
+	</div>
+	<p>che viene visualizzato cos�:</p>
+<table width="50%" border="1" align="center">
+<caption>Colori in HTML con relativi nomi e codici </caption>
+<tr>
+<td>COLORE</td><td>NOME</td><td>CODICE</td>
+</tr>
+<tr>
+<td>BIANCO</td><td>WHITE</td><td>#FFFFFF</td>
+</tr>
+<tr>
+<td>NERO</td><td>BLACK</td><td>#000000</td>
+</tr>
+<tr>
+<td>BLU</td><td>BLUE</td><td>#0000FF</td>
+</tr>
+</table>	<p>Per default la didascalia viene visualizzata sopra la tabella, ma 
+	� possibile modificarne il posizionamento con lo stile caption-side: bottom 
+	come nell'esempio seguente:</p>
+	 <div class="code">
+       <pre>&lt;table width=&quot;50%&quot; border=&quot;1&quot;&gt;
+&lt;caption style=&quot;caption-side: bottom&quot;&gt;Colori in HTML con relativi nomi e codici&lt;/caption&gt;
+&lt;tr&gt;
+&lt;td&gt;COLORE&lt;/td&gt;&lt;td&gt;NOME&lt;/td&gt;&lt;td&gt;CODICE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BIANCO&lt;/td&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;td&gt;#FFFFFF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;NERO&lt;/td&gt;&lt;td&gt;BLACK&lt;/td&gt;&lt;td&gt;#000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BLU&lt;/td&gt;&lt;td&gt;BLUE&lt;/td&gt;&lt;td&gt;#0000FF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre>
+	</div>
+	<p>che viene visualizzato cos�: </p>
+<table width="50%" border="1" align="center">
+<caption style="caption-side: bottom">Colori in HTML con relativi nomi e codici</caption>
+<tr>
+<td>COLORE</td><td>NOME</td><td>CODICE</td>
+</tr>
+<tr>
+<td>BIANCO</td><td>WHITE</td><td>#FFFFFF</td>
+</tr>
+<tr>
+<td>NERO</td><td>BLACK</td><td>#000000</td>
+</tr>
+<tr>
+<td>BLU</td><td>BLUE</td><td>#0000FF</td>
+</tr>
+</table>
+	<p>&nbsp;</p>
+	 <div class="titolo">TH, scope e abbr</div>
+	 <p>Una delle principali difficolt� nell'interpretare una tabella per chi 
+		non pu� vedere consiste nell'identificare correttamente a quale riga e a 
+		quale colonna appartiene una data cella. Consideriamo di nuovo la 
+		tabella del nostro semplice esempio:</p>
+<table width="50%" border="1" align="center">
+<caption style="caption-side: bottom">Colori in HTML con relativi nomi e codici</caption>
+<tr>
+<td>COLORE</td><td>NOME</td><td>CODICE</td>
+</tr>
+<tr>
+<td>BIANCO</td><td>WHITE</td><td>#FFFFFF</td>
+</tr>
+<tr>
+<td>NERO</td><td>BLACK</td><td>#000000</td>
+</tr>
+<tr>
+<td>BLU</td><td>BLUE</td><td>#0000FF</td>
+</tr>
+</table>
+	<p>Qui per esempio l'ultima cella in basso a destra contiene il valore #0000FF. 
+	Tale valore rappresenta il codice esadecimale del colore blu. Queste ultime 
+	informazioni sono desunte dal fatto che la cella si trova nella colonna con 
+	intestazione CODICE e nella riga con intestazione BLU. Tuttavia un utente 
+	con deficit visivo o che usa browser vocali pu� incontrare grosse difficolt� 
+	nell'attribuire una cella a una data colonna e a una data riga: di 
+	conseguenza il contenuto della cella stessa potrebbe risultare di difficile 
+	interpretazione.</p>
+	<p>Allo scopo di migliorare l'accessibilit� di una tabella, � stato 
+	introdotto l'elemento <strong>th</strong>. Questo elemento serve per 
+	identificare una data cella come intestazione di riga o di colonna. Si 
+	consideri l'esempio seguente, sempre riferito alla solita tabella dei 
+	colori:</p>
+	 <div class="code">
+       <pre>&lt;table width=&quot;50%&quot; border=&quot;1&quot;&gt;
+&lt;caption style=&quot;caption-side: bottom&quot;&gt;Colori in HTML con relativi nomi e codici&lt;/caption&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;col&quot;&gt;COLORE&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;NOME&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;CODICE&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;row&quot;&gt;BIANCO&lt;/th&gt;&lt;td&gt;WHITE&lt;/td&gt;&lt;td&gt;#FFFFFF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;row&quot;&gt;NERO&lt;/th&gt;&lt;td&gt;BLACK&lt;/td&gt;&lt;td&gt;#000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th scope=&quot;row&quot;&gt;BLU&lt;/th&gt;&lt;td&gt;BLUE&lt;/td&gt;&lt;td&gt;#0000FF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre>
+	</div>
+	<p>che viene visualizzato cos�:</p>
+<table width="50%" border="1" align="center">
+<caption style="caption-side: bottom">Colori in HTML con relativi nomi e codici</caption>
+<tr>
+<th scope="col">COLORE</th><th scope="col">NOME</th><th scope="col">CODICE</th>
+</tr>
+<tr>
+<th scope="row">BIANCO</th><td>WHITE</td><td>#FFFFFF</td>
+</tr>
+<tr>
+<th scope="row">NERO</th><td>BLACK</td><td>#000000</td>
+</tr>
+<tr>
+<th scope="row">BLU</th><td>BLUE</td><td>#0000FF</td>
+</tr>
+</table>
+	<p>Osserviamo anzitutto che l'elemento th deve essere usato al posto del 
+	normale elemento td. Esso sta a indicare che una data cella contiene 
+	l'intestazione di una colonna (scope=&quot;col&quot;) o di una riga (scope=&quot;row&quot;). 
+	Questa informazione pu� essere utilizzata da uno screen reader per essere 
+	letta insieme al contenuto di una data cella. Per esempio, leggendo il 
+	codice #0000FF uno screen reader potrebbe anche leggere CODICE e BLU, 
+	identificando cos� in modo corretto il significato della cella stessa.</p>
+	<p>Osserviamo che, normalmente, nei browser visivi th viene visualizzato in 
+	grassetto. Tale formattazione pu� tuttavia essere facilmente modificata con 
+	gli stili.</p>
+	<p>Se l'intestazione th � lunga, ci� pu� risultare noioso per chi dispone di 
+	uno screen reader che la rilegge ripetendola pi� volte. A questo scopo 
+	l'attributo <strong>abbr</strong> consente di fornire una abbreviazione, 
+	come mostra il seguente esempio:</p>
+	 <div class="code">
+       <pre>&lt;table summary=&quot;Il numero di dipendenti e l'anno di fondazione di alcune compagnie immaginarie.&quot;&gt;
+&lt;caption&gt;Dati compagnia&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot; abbr=&quot;Compagnia&quot;&gt;Nome della Compagnia&lt;/th&gt;
+    &lt;th scope=&quot;col&quot; abbr=&quot;Impiegati&quot;&gt;Numero di Impiegati&lt;/th&gt;
+    &lt;th scope=&quot;col&quot; abbr=&quot;Fondazione&quot;&gt;Anno di fondazione&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td scope=&quot;row&quot;&gt;ACME Inc&lt;/td&gt;
+    &lt;td&gt;1000&lt;/td&gt;
+    &lt;td&gt;1947&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td scope=&quot;row&quot;&gt;XYZ Corp&lt;/td&gt;
+    &lt;td&gt;2000&lt;/td&gt;
+    &lt;td&gt;1973&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+	</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

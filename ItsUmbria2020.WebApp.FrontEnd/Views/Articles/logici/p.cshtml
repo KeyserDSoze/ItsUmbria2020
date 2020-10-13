@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				border-top: 1px solid #C8CDDE;
+				background: #dddddd;
+				padding-left: 5px;
+				padding-right: 5px;
+				padding-top: 5px;
+				margin: 0 0 10px 0;
+				font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Paragrafo &lt;p&gt; </div>
+	 <p>
+	 <table border="1" width="100%">
+       <tbody>
+         <tr>
+           <td><strong>Descrizione</strong></td>
+           <td>identifica un paragrafo (logico)</td>
+         </tr>
+         <tr>
+           <td><strong>Tipo</strong></td>
+           <td>elemento contenitore di blocco </td>
+         </tr>
+       </tbody>
+     </table></p>
+     
+     <p>Un paragrafo &egrave; una porzione di testo delimitata dai tag &lt;p&gt; e &lt;/p&gt;. Esempio:</p>
+     <p align="center">&lt;p&gt; Questo &egrave; un paragrafo &lt;/p&gt;</p>
+     <p>Il tag  &lt;p&gt;, oltre ad individuare logicamente un paragrafo, indica al browser la necessit&agrave; di rendere visibile e separato questo blocco logico. Solitamente i browser realizzano questa suddivisione inserendo una linea vuota prima e dopo il paragrafo. </p>
+     <p>Per esempio il testo seguente:</p>
+     <div class="code">
+       &lt;p&gt; Questo &egrave; il primo paragrafo: si osservi come tutto il testo viene visualizzato in un blocco compatto e senza interruzioni. &lt;/p&gt;<br />
+&lt;p&gt; Questo &egrave; il secondo paragrafo: osservate l'interruzione (linea vuota) che separa i due paragrafi. &lt;/p&gt;</div>
+     <p>Viene visualizzato nel browser nel seguente modo:</p>
+<p style="border-style:inset"> Questo &eacute; il primo paragrafo: si osservi come tutto il testo viene visualizzato in un blocco compatto e senza interruzioni. 
+<br />
+<br />
+Questo &eacute; il secondo paragrafo: osservate l'interruzione (linea vuota) che separa i due paragrafi. </p>
+	 <div class="titolo">Allineare il testo nei paragrafi</div>
+     <p>Il testo in un paragrafo pu&eacute; essere allineato in tre modi:</p>
+	<ul>
+					<li>a sinistra (<strong>left</strong>: questo &eacute; il modo predefinito, se non viene 
+					indicato nulla);</li>
+					<li>al centro (<strong>center</strong>);</li>
+					<li>a destra (<strong>right</strong>);</li>
+					<li>giustificato (<strong>justify</strong>: il testo riempie 
+					interamente il paragrafo, dal margine sinistro al bordo 
+					destro della pagina).</li>
+	</ul>
+	<p>Qui sotto &eacute; mostrato l'effetto dei tre diversi tipi di allineamento:</p>
+     <div class="style1">
+       <p>Questo testo &eacute; allineato a sinistra. Questo testo &eacute; allineato a sinistra. 
+	Questo testo &eacute; allineato a sinistra. Questo testo &eacute; allineato a sinistra. </p>
+	<p align="right">Questo testo &eacute; allineato a destra. Questo testo &eacute; allineato a 
+	destra. 
+	Questo testo &eacute; allineato a destra. Questo testo &eacute; allineato a destra. </p>
+	<p align="center">Questo testo &eacute; allineato al centro. Questo testo &eacute; allineato al 
+	centro. 
+	Questo testo &eacute; allineato al centro. Questo testo &eacute; allineato al centro. </p>
+		<p align="justify">Questo testo &eacute; giustificato. Questo testo &eacute; giustificato. 
+	Questo testo &eacute; giustificato. Questo testo &eacute; giustificato. </p>
+	</div>
+     <p>Nelle vecchie versioni di html esisteva un attributo align, attualmente 
+		deprecato. In html 5 (e in html 4.01 con DTD di tipo strict)&nbsp; per allineare il testo 
+		di un paragrafo bisogna usare l'attributo <em>style=&quot;text-align:center</em> in 
+		questo modo (per esempio per centrare):</p>
+	<div class="code">
+       &lt;p style=&quot;text-align:right&quot;&gt; Testo centrato &lt;/p&gt;</div>
+     <p>Il metodo mostrato qui sopra &eacute; quello attualmente preferito e fa
+		<a href=" stili/stili6.html">uso degli stili</a> di cui parleremo pi&eacute; 
+		avanti dettagliatamente.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

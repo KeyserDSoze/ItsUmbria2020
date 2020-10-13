@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/JavaScript"> 
+function celsconv() 
+{                                                                                            
+document.getElementById("fahreneit").value = Math.round(((document.getElementById("celsius").value) * 9/5 + 32) * 10) / 10; 
+}
+
+function fahrconv() 
+{
+document.getElementById("celsius").value = Math.round(((((document.getElementById("fahreneit").value)- 32) * 5)/9) * 10) / 10; 
+}
+</script>
+
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Eventi</div>
+        <p>Nella lezione precedente abbiamo visto come ogni programma sia 
+		costituito da un'interfaccia e da un codice. L'utente agisce 
+		sull'interfaccia (per esempio cliccando sul mouse) e in questo modo 
+		attiva il codice nascosto. A sua volta il codice nascosto agisce 
+		sull'interfaccia per rispondere alle azioni dell'utente (per esempio per 
+		modificare il valore visualizzato in una casella di testo).</p>
+	<p>Ci&eacute; che lega l'azione dell'utente sull'interfaccia all'esecuzione del 
+	codice prende il nome di <strong>evento</strong>. In generale un evento &eacute; 
+	qualsiasi operazione che l'utente pu&eacute; compiere su una pagina (cio&eacute; sull'interfaccia): 
+	fare click col mouse, modificare il contenuto di una casella di testo, 
+	passare col mouse sopra a una immagine, eccetera.</p>
+	<p>Consideriamo di nuovo l'esempio dell'immagine animata visto nelle lezioni 
+	precedenti:</p>
+        <div class="code">
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;</div>
+	<p>In questo caso l'evento che fa eseguire la funzione muovi &eacute; il click col 
+	mouse dell'utente sull'immagine. Si noti la sintassi:</p>
+	<p class="style1">onclick = &quot;nomefunzione()&quot;</p>
+	<p>L'attributo <em>onclick</em> si chiama tecnicamente <strong>gestore di eventi
+	</strong>(<em>event handler</em>). 
+	Si tratta di un <a href=" ../HTML/pagina/struttura.html">attributo</a> che pu&eacute; essere applicato a qualsiasi elemento di 
+	una pagina (paragrafi, immagini, tabelle etc.) e il suo significato &eacute;: 
+	quando l'utente fa click col mouse sull'elemento, viene eseguito il codice 
+	javascript della funzione scritta fra doppi apici.</p>
+	<p>Si noti che il gestore di eventi <em>onclick</em> non fa parte del 
+	linguaggio JS, ma dell'html. Si tratta infatti di un <em>attributo 
+	universale</em>, cio&eacute; applicabile come si &eacute; detto a 
+	qualsiasi elemento (come per esempio gli attributi <em>class</em> e <em>id</em>). 
+	Infatti, mentre il JS &eacute; case sensitive (cio&eacute; sensibile alla differenza 
+	fra maiuscole e minuscole), l'HTML non lo &eacute;: dunque i gestori di eventi 
+	possono essere scritti indifferentemente in maiuscolo o in minuscolo. Spesso 
+	infatti <em>onclick</em> viene indifferentemente scritto come <em>onClick</em> 
+	per separare visivamente meglio le due parti del nome.</p>
+	<p>Consideriamo adesso quest'altro esempio:</p>
+
+<form action="">
+		<table border="0" bgcolor="#c0c0c0" width="185" cellspacing="0" align="center">
+		    <tr>
+		        <td bgcolor="#000080" colspan="3"><span style="font-size:16px; font-family:verdana, arial, helvetica, sans-serif; color:#ffffff">
+                        <b>Convertitore</b></span>
+
+                        </td>
+		    </tr>
+		    <tr>
+		        <td><span style="font-size:12px; font-family:verdana, arial, helvetica"><b>Centrigradi</b></span></td>
+		        <td rowspan="2" align="center"><span style="font-size:12px; font-family:verdana, arial, helvetica"><b>:</b></span></td>
+		        <td align="right"><span style="font-size:12px; font-family:verdana, arial, helvetica"><b>Fahrenheit</b></span></td>
+		    </tr>
+
+		    <tr>
+        		<td align="left">
+        		    <p>&nbsp;<input type="text" size="6" id="celsius" value="00" onChange="celsconv()" onClick="this.select()" /></p>
+		        </td>
+		        <td align="right">
+            		    <p><input type="text" size="6" id="fahreneit" value="00" onChange="fahrconv()" onClick="this.select()" /></p>
+        		</td>
+		    </tr>
+		</table>
+    </form>
+
+
+	<p>L'interfaccia &eacute; realizzata mediante un form in html nel seguente modo:</p>
+        <div class="code">
+			&lt;form action=&quot;&quot;&gt;<br />
+			&lt;table border=&quot;0&quot; bgcolor=&quot;#c0c0c0&quot; width=&quot;185&quot; cellspacing=&quot;0&quot; 
+			align=&quot;center&quot;&gt;<br />
+			&lt;tr&gt;<br />
+			&lt;td bgcolor=&quot;#000080&quot; colspan=&quot;3&quot;&gt;&lt;span style=&quot;font-size:16px; 
+			font-family:verdana, arial, helvetica, sans-serif; color:#ffffff&quot;&gt;<br />
+			&lt;b&gt;Convertitore&lt;/b&gt;&lt;/span&gt;<br />
+			<br />
+			&lt;/td&gt;<br />
+			&lt;/tr&gt;<br />
+			&lt;tr&gt;<br />
+			&lt;td&gt;&lt;span style=&quot;font-size:12px; font-family:verdana, arial, 
+			helvetica&quot;&gt;&lt;b&gt;Centrigradi&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;<br />
+			&lt;td rowspan=&quot;2&quot; align=&quot;center&quot;&gt;&lt;span style=&quot;font-size:12px; 
+			font-family:verdana, arial, helvetica&quot;&gt;&lt;b&gt;:&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;<br />
+			&lt;td align=&quot;right&quot;&gt;&lt;span style=&quot;font-size:12px; font-family:verdana, 
+			arial, helvetica&quot;&gt;&lt;b&gt;Fahrenheit&lt;/b&gt;&lt;/span&gt;&lt;/td&gt;<br />
+			&lt;/tr&gt;<br />
+			<br />
+			&lt;tr&gt;<br />
+			&lt;td align=&quot;left&quot;&gt;<br />
+			&lt;p&gt;&amp;nbsp;&lt;input type=&quot;text&quot; size=&quot;6&quot; id=&quot;celsius&quot; value=&quot;00&quot; 
+			onChange=&quot;celsconv()&quot; onClick=&quot;this.select()&quot; &gt;&lt;/p&gt;<br />
+			&lt;/td&gt;<br />
+			&lt;td align=&quot;right&quot;&gt;<br />
+			&lt;p&gt;&lt;input type=&quot;text&quot; size=&quot;6&quot; id=&quot;fahreneit&quot; value=&quot;00&quot; onChange=&quot;fahrconv()&quot; 
+			onClick=&quot;this.select()&quot; &gt;&lt;/p&gt;<br />
+			&lt;/td&gt;<br />
+			&lt;/tr&gt;<br />
+			&lt;/table&gt;<br />
+			&lt;/form&gt;</div>
+	<p>Notiamo in questo caso l'uso di due diversi gestori di eventi:</p>
+	<ol>
+					<li>onChange: invocato quando il contenuto di una casella di 
+					testo viene modificato;</li>
+					<li>onClick: si attiva quando si clicca su una casella di 
+					testo;</li>
+	</ol>
+	<p>Le corrispondenti funzioni associate agli eventi precedenti sono le 
+	seguenti:</p>
+        <div class="code">
+			&lt;script&gt; <br />
+			function celsconv() <br />
+			{ <br />
+			document.getElementById(&quot;fahreneit&quot;).value = Math.round(((document.getElementById(&quot;celsius&quot;).value) 
+			* 9/5 + 32) * 10) / 10; <br />
+			}<br />
+			<br />
+			function fahrconv() <br />
+			{<br />
+			document.getElementById(&quot;celsius&quot;).value = Math.round(((((document.getElementById(&quot;fahreneit&quot;).value)- 
+			32) * 5)/9) * 10) / 10; <br />
+			}<br />
+			&lt;/script&gt;<br />
+	</div>
+	<p>La funzione <em>celsconv</em> viene attivata (in termine tecnico si dice
+	<em>chiamata</em>) quando viene modificato il contenuto della casella di 
+	testo celsius, contenente la temperatura in gradi celsius (evento <em>
+	onChange</em>). In modo perfettamente simmetrico <em>fahrconv</em> viene chiamata&nbsp; 
+	quando viene modificato il contenuto della casella di testo <em>fahreneit</em>, 
+	contenente la temperatura in gradi fahreneit. Si noti che l'evento onChange 
+	viene &quot;registrato&quot; da JS solo quando si abbandona la casella (facendo click 
+	per esempio da qualche altra parte).</p>
+        <div class="titolo">Gestori di eventi </div>
+        <p>L'elenco dei gestori di eventi disponibili &egrave; vasto. Vediamo i principali 
+		(un
+		<a target="_blank" href="http://www.w3schools.com/jsref/dom_obj_event.asp">
+		elenco pi&eacute; esaustivo</a> pu&eacute; essere trovato su W3school):</p>
+        
+          <ul>
+            <li>onClick: attivato quando si clicca su un oggetto;</li>
+            <li>onDblClick: attivato con un doppio click;</li>
+            <li>onMouseDown: attivato quando si schiaccia il tasto sinistro del mouse;</li>
+            <li>onMouseUp: attivato quando si alza il tasto sinistro del mouse precedentemente schiacciato;</li>
+            <li>onMouseOver: attivato quando il mouse si muove su un oggetto;</li>
+            <li>onMouseOut: attivato quando il mouse si sposta da un oggetto;</li>
+            <li>onDragDrop: evento attivato quando un utente trascina un oggetto  sulla finestra del browser o quando rilascia un file sulla stessa;</li>
+            <li>onMove: attivato quando un oggetto muove una finestra o un frame;</li>
+            <li>onDragStart: evento attivato appena l'utente inizia a trascinare un oggetto;</li>
+            <li>onDrag: attivato quando il mouse trascina un oggetto o una  selezione di testo nella finestra dello stesso browser o anche di un  altro o anche sul Desktop;</li>
+            <li>onDragEnter: attivato appena l'utente trascina un oggetto su un obiettivo valido dello stesso o di un altro browser;</li>
+            <li>onDragOver: attivato quando l'utente trascina un oggetto su un  obiettivo valido ad ospitarlo, ed &egrave; simile all'evento precedente, ma  viene attivato dopo quello;</li>
+            <li>onDragLeave: attivato quando l'utente trascina un oggetto su un obiettivo adatto per ospitarlo, ma non vi viene rilasciato;</li>
+            <li>onDragEnd: attivato quando l'utente rilascia l'oggetto al termine del trascinamento.</li>
+            <li>onDrop: attivato quando il mouse si alza il tasto del mouse in seguito ad un'operazione di trascinamento;</li>
+            <li>onKeyPress: evento attivato quando un utente preme e rilascia un tasto o anche quando lo tiene premuto;</li>
+            <li>onKeyDown: attivato quando viene premuto il tasto;</li>
+            <li>onKeyUp: evento attivato quando un tasto, che era stato premuto, viene rilasciato;</li>
+            <li>onHelp: attivato quando un utente preme il tasto F1;</li>
+            <li>onChange: attivato quando il contenuto di un campo di un form o modulo &egrave; modificato;</li>
+            <li>onPropertyChange: attivato quando cambia la propriet&agrave; di un elemento;</li>
+            <li>onFocus: attivato quando un elemento si attiva (riceve il focus);</li>
+            <li>onBlur: &egrave; l'opposto di onFocus - si attiva quando un elemento perde il focus</li>
+            <li>onSelect: attivato quando si seleziona del testo all'interno di una casella di testo;</li>
+            <li>onLoad: attivato al caricamento di un elemento sulla pagina;</li>
+            <li>onUnload: contrario del precedente, &egrave; attivato quando un elemento viene scaricato;</li>
+            <li>onResize:  si attiva quando l'utente rimpicciolisce o ingrandisce una finestra o un frame;</li>
+            <li>onScroll: attivato quando si effettua lo scrolling della pagina;</li>
+            <li>onSubmit: attivato dal click su tasto di Invio di un form;</li>
+            <li>onReset: attivato dal click su tasto di Annulla di un form.</li>
+          </ul>
+
+        
+        <p>Alcuni di questi gestori di eventi sono universali, nel senso che possono essere applicati praticamente a qualsiasi elemento di una pagina; altri invece sono specifici di un certo elemento.</p>
+        <p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

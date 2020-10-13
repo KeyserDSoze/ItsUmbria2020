@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				border-left-style: solid;
+				border-left-color: #FF0000;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Modificare gli attributi di un elemento</div>
+
+	<p>Supponiamo di voler modificare l'attributo <em>src</em> di un'immagine in risposta 
+	a un evento click su un pulsante. Per ottenere questo in jQuery dobbiamo 
+	usare il metodo <em>attr</em> in questo modo:</p>
+        <div class="code">
+          $(&quot;#bottone&quot;).click(function(){
+          $(&quot;#omino&quot;).attr(&quot;src&quot;,&quot;../img/omino2.jpg&quot;); 
+			}); </div>
+	<p>La parte dell'istruzione precedente che modifica il valore dell'attributo 
+	&eacute; questa:</p>
+        <div class="code">
+          $(&quot;#omino&quot;).attr(&quot;src&quot;,&quot;../img/omino2.jpg&quot;);</div>
+	<p>La sintassi segue la regola generale di jQuery:</p>
+	<p><img alt="Anatomia istruzione jQuery" src="../img/jqimg5.gif" /></p>
+	<p>In questo caso l'azione si chiama <em>attr</em> e ha due parametri: il primo 
+	indica il nome dell'attributo fra apici (doppi o singoli), mentre il secondo 
+	(separato da virgola) indica il nuovo valore da assegnare all'attributo 
+	stesso (sempre fra apici).</p>
+	<p>E' possibile anche modificare pi&eacute; di un attributo per lo stesso elemento (o 
+	gruppo di elementi) selezionato. In questo caso l'elenco di attributi e 
+	relativi valori deve essere racchiuso fra parentesi graffe (una lista di 
+	questo genere viene chiamata <em>object literal</em>). Per esempio:</p>
+        <div class="code">
+          $(&quot;#omino&quot;).attr({<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;src&quot; 
+			: &quot;../img/omino2.jpg&quot;,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&quot;width&quot; : &quot;100px&quot;<br />
+			});</div>
+	<p class="style1">Si presti attenzione a una possibile fonte di confusione. Quando si vuole 
+	modificare un solo attributo, si usa la virgola per separare il nome dal 
+	valore dell'attributo; quando invece si vuole fornire una lista di attributi 
+	da modificare, occorre usare i due punti per separare nome e valore, mentre 
+	la virgola serve per separare le coppie una dall'altra.</p>
+	<p>Un'altra possibile fonte di confusione e di errore &eacute; l'uso degli apici 
+	(singoli o doppi non fa differenza) per delimitare i nomi degli attributi. 
+	In realt&eacute; gli apici si possono omettere sulle parole chiavi (e molti 
+	programmatori lo fanno) quando queste sono costituite da un'unica parola, 
+	senza trattini di separazione. Per esempio sarebbe perfettamente corretto 
+	scrivere:</p>
+        <div class="code">
+          $(&quot;#omino&quot;).attr({<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; src 
+			: &quot;../img/omino2.jpg&quot;,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			width : &quot;100px&quot;<br />
+			});</div>
+	<p>Siccome tuttavia ci possono essere parole chiave contenenti il trattino 
+	(es. background-color) che devono essere obbligatoriamente chiuse fra apici, 
+	conviene usare gli apici sempre in tutti i casi.</p>
+
+<div class="titolo">Recuperare il valore di un attributo</div>
+
+	<p>Il metodo <em>attr</em> pu&eacute; anche essere usato per recuperare il valore 
+	di un attributo, cio&eacute; per usarne il valore, invece di modificarlo.</p>
+	<p>Si consideri questo semplice esempio:</p>
+        <div class="code">
+          &nbsp;$(&quot;#immagine&quot;).click(function(){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			alert(&quot;Width: &quot; + $(this).attr(&quot;width&quot;));<br />
+			});</div>
+	<p>Si osservi come in questo caso fra le parentesi di <em>attr</em> viene 
+	scritto solo il nome dell'attributo di cui si vuole recuperare il valore. </p>
+	<p>Si osservi che nel caso che la selezione comprenda pi&eacute; di un elemento, il 
+	metodo <em>attr</em> usato in questo modo (per recuperare il valore di un attributo) 
+	torna solo il primo elemento presente nel DOM.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

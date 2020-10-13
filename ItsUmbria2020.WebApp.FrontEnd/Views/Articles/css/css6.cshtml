@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Selettore contestuale</div>
+	<p>Un <strong>selettore contestuale </strong>&eacute; un selettore il cui 
+	valore cambia a seconda del contesto in cui viene applicato. </p>
+	<p>Si consideri 
+	l'esempio seguente:</p>
+<div class="code">
+  h1 { color: red } <br />
+	em { color: red } <br />
+	h1 em { color: blue }
+</div>
+	<p>La prima regola <em>h1 { color: red }</em> indica che tutti i titoli h1 
+	devono essere in rosso. La seconda regola <em>em { color: red }</em> 
+	specifica che anche gli elementi em devono essere in rosso. Questo tipo di 
+	selettore contestuale viene detto anche <em>selettore di discendente</em> (o
+	<em>descendant selector</em>). </p>
+	<p>In questo modo 
+	tuttavia il codice seguente non produrrebbe nessuna &quot;enfasi&quot; poich&eacute; non si 
+	riuscirebbe a distinguere l'elemento &lt;em&gt; (in rosso su un titolo rosso):</p>
+<div class="code">
+  &lt;h1&gt; Questo titolo &eacute; &lt;em&gt; molto importante! &lt;/em&gt; &lt;/h1&gt;</div>
+	<p>E' qui che interviene l'ultima regola <em>h1 em { color: blue }</em>&nbsp; 
+	che definisce appunto un selettore contestuale. Questa regola indica che gli 
+	elementi em contenuti all'interno di elementi h1 devono essere formattati in 
+	blu (cio&eacute; in modo diverso rispetto agli altri elementi em della pagina).</p>
+	<p>Come ulteriore esempio, la seguente dichiarazione di stile elimina la 
+	sottolineatura a tutti i link contenuti all'interno in un elemento di lista 
+	li (ma non ai link esterni alle liste):</p>
+<div class="code">
+  li a {<br />
+	<br />
+	text-decoration: none;<br />
+	<br />
+	}</div>
+	<p>L'esempio qui sopra seleziona tutte le a che si trovano in una lista li, 
+	come mostra l'esempio qui sotto:</p>
+<div class="code">
+  &lt;ol&gt;<br />
+	&lt;li&gt; &lt;a href=&quot;...&quot;&gt;Questo link&lt;/a&gt; viene selezionato e non ha 
+	decorazione&lt;/li&gt;<br />
+	&lt;li&gt; &lt;strong&gt;&lt;a href=&quot;...&quot;&gt;Anche questo link&lt;/a&gt; viene 
+	selezionato&lt;/strong&gt;&lt;/li&gt;<br />
+	&lt;/ol&gt;</div>
+	<p>Ci sono tuttavia dei casi in cui si desidera selezionare solo gli 
+	elementi che sono direttamente contenuti in un altro (si dice anche che sono 
+	elementi figli o child di un altro elemento). In questo caso si pu&eacute; usare un 
+	altro selettore contestuale detto child selector:</p>
+<div class="code">
+  li &gt; a {<br />
+	<br />
+	text-decoration: none;<br />
+	<br />
+	}</div>
+	<p>Si noti il simbolo &gt; fra i due tag nella regola di selezione. Qui invece 
+	vediamo l'applicazione del precedente selettore (si noti la diversa 
+	visualizzazione del secondo a rispetto al caso precedente):</p>
+<div class="code">
+  &lt;ol&gt;<br />
+	&lt;li&gt; &lt;a href=&quot;...&quot;&gt;Questo link&lt;/a&gt; viene selezionato e non ha 
+	decorazione&lt;/li&gt;<br />
+	&lt;li&gt; &lt;strong&gt;&lt;a href=&quot;...&quot;&gt;Questo link&lt;/a&gt; NON viene 
+	selezionato&lt;/strong&gt;&lt;/li&gt;<br />
+	&lt;/ol&gt;</div>
+	<p>Infatti, nell'esempio qui sopra, &lt;a&gt; non &eacute; figlio diretto di &lt;li&gt;, poich&eacute; 
+	&eacute; a sua volta contenuto in un elemento &lt;strong&gt;.</p>
+	<p> &nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

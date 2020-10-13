@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Modificare gli stili di un elemento</div>
+        <p>Oltre a consentire di accedere agli attributi di un elemento, 
+		l'istruzione <em>document.getElementById('nomeoggetto')</em> permette 
+		anche di accedere agli stili CSS dell'elemento stesso. La sintassi &eacute; la 
+		seguente:</p>
+	<div class="code">
+			document.getElementById(&quot;<em>nomeoggetto</em>&quot;).style.<em>nomestile</em></div>
+	<p>per esempio:</p>
+        <div class="code">
+			document.getElementById(&quot;titolo_pagina&quot;).style.color = &quot;red&quot;; </div>
+	<p>fa diventare rosso il colore del testo dell'elemento di nome (id) <em>
+	titolo_pagina</em>.</p>
+	<p>La sintassi non presenta particolari difficolt&eacute;. Si osservi il seguente 
+	ulteriore esempio che allinea al centro il testo di un paragrafo:</p>
+        <div class="code">
+			document.getElementById(&quot;paragrafo&quot;).style.textAlign = &quot;center&quot;; </div>
+	<p>L'unico piccolo problema &eacute; che i nomi degli stili utilizzati dalla <em>document.getElementById
+	</em>non coincidono sempre con i nomi usati negli stili CSS. Per esempio lo 
+	stile per allineare al centro il contenuto di un paragrafo si chiama <em>
+	text-align</em> (col trattino in mezzo), come in</p>
+	 <div class="code">
+       &lt;p style=&quot;text-align:right&quot;&gt; Testo allineato a destra &lt;/p&gt;</div>
+	 <p>Invece il nome usato dalla <em>document.getElementById&nbsp; </em>&eacute; 
+		textAlign (senza trattino e con la maiuscola iniziale in mezzo al nome).</p>
+	<p>Vi sono molti casi simili che possono creare qualche problema al 
+	programmatore distratto. Per esempio lo stile per il colore di sfondo si 
+	chiama background-color come in:</p>
+<div class="code">
+  &lt;p style=&quot;background-color:black;&quot; id=&quot;testo&quot;&gt; Testo su sfondo nero &lt;/p&gt;</div>
+	<p>mentre usando la <em>document.getElementById </em>bisogna scrivere:</p>
+<div class="code">
+  document.getElementById(&quot;testo&quot;).style.backgroundColor = &quot;black&quot;;
+</div>
+	<p>Il lettore pu&eacute; trovare su W3school un utile
+	<a target="_blank" href="http://www.w3schools.com/jsref/dom_obj_style.asp">
+	elenco di tutti i nomi di stile</a> che possono essere utilizzati con 
+	relativi esempi.</p>
+	<p><strong>ATTENZIONE:</strong></p>
+	<p>Mediante document.getElementById(&quot;nomeoggetto&quot;).style.nomestile &egrave; possibile accedere solo agli stili inline degli elementi (cio&egrave; quelli definiti tramite l'attributo style). Non &egrave; invece possibile usare questa istruzione per modificare gli stili definiti per mezzo di un foglio stile (esterno o incorporato). </p>
+	<div class="titolo">
+
+	  Accedere al contenuto di un elemento contenitore: innerHTML </div>
+        <p>Il JS permette anche di accedere e di modificare il contenuto di un 
+		elemento contenitore (per esempio un paragrafo). Consideriamo l'esempio 
+		seguente:</p>
+<div class="code">
+  &lt;p id=&quot;myP&quot; onclick=&quot;cambia()&quot;&gt;Sono un paragrafo. Cliccami sopra!&lt;/p&gt;
+</div>
+	<p>e la seguente funzione JS di nome cambia:</p>
+<div class="code">
+  function myFunction() <br />
+	{ <br />
+	document.getElementById(&quot;myP&quot;).innerHTML = &quot;Sorpresa! Il testo del paragrafo 
+	&eacute; cambiato!&quot;;<br />
+	}
+</div>
+	<p>Facendo click sul paragrafo il suo contenuto (il testo visualizzato) 
+	cambia. L'utente pu&eacute; provare da s&eacute; il funzionamento facendo click col mouse 
+	sulla scritta qui sotto:</p>
+	<p id="myP" onclick='document.getElementById("myP").innerHTML = "Sorpresa! Il testo del paragrafo &eacute; cambiato!"' class="style1">Sono un paragrafo. Cliccami sopra!</p> 
+        <p>La sintassi generale per accedere al contenuto di un qualsiasi 
+		elemento contenitore &eacute; la seguente:</p>
+<div class="code">
+	document.getElementById(&quot;nome_elemento&quot;).innerHTML</div>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

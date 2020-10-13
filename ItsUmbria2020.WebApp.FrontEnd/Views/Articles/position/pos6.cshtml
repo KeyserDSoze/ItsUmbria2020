@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Il problema della centratura</div>
+	 <p>Uno dei problemi con cui si scontra spesso il progettista di una pagina 
+		web &eacute; quello di centrare un elemento: per esempio centrare 
+		orizzontalmente una tabella in una pagina. Un tempo questo problema 
+		veniva affrontato con l'uso del tag &lt;center&gt; il quale per&eacute; &eacute; attualmente 
+		deprecato. Ci sono soluzioni alternative che prevedono l'uso dei fogli 
+		stile e che esamineremo brevemente qui nel seguito.</p>
+	 <div class="titolo">Centrare orizzontalmente rispetto al contenitore</div>
+	 <p>Supponiamo di voler centrare una tabella orizzontalmente. Abbiamo dunque 
+		un elemento &lt;table&gt; il quale dev'essere centrato orizzontalmente 
+		rispetto all'elemento che lo contiene (es. un &lt;div&gt; oppure il &lt;body&gt; 
+		della pagina). La centratura avviene infatti sempre rispetto 
+		all'elemento contenitore: in altre parole se il contenitore &eacute; un box per 
+		esempio allineato a sinistra, la centratura verr&eacute; fatta all'interno di 
+		tale box e non con riferimento a tutta la pagina.</p>
+	<p>Tornando al nostro esempio, la centratura orizzontale pu&eacute; essere 
+	effettuata molto semplicemente applicando lo stile seguente all'elemento da 
+	centrare:</p>
+
+<div class="code">
+  &lt;table border=&quot;1&quot; style=&quot;margin: 0 auto; width: 60%&quot;&gt; <br />
+	...<br />
+	&lt;/table&gt;</div>
+	<p>I margini sinistro e destro vengono specificati come <em>auto</em> (automatic): 
+	ci&eacute; significa che il browser imposta automaticamente i loro valori uguali e 
+	pari al 50% dell'elemento contenitore. In pratica ci&eacute; fa centrare 
+	orizzontalmente l'elemento rispetto al suo contenitore.</p>
+	<p>Si faccia attenzione alla necessit&agrave; di specificare l'attributo width (in percentuale o in assoluto) per l'elemento da centrare: in caso contrario infatti spesso le dimensioni di default dell'elemento sono pari all'intero contenitore (100%) e dunque la centratura risulta impossibile. </p>
+	<p>&nbsp;</p>
+	<div class="titolo">Centrare orizzontalmente le immagini e gli altri 
+					elementi inline</div>
+	<p>Centrare un'immagine &eacute; leggermente pi&eacute; difficile in quanto essa &eacute; un 
+	elemento inline e non un elemento di blocco. Ci&eacute; significa che non pu&eacute; 
+	essere centrata autonomamente, perch&eacute; gli elementi inline non possono essere 
+	posizionati liberamente.</p>
+	<p>Il trucco &eacute; quello di trasformare l'immagine in un elemento di blocco 
+	(con <em>display:block</em>) e quindi centrarla con la tecnica vista 
+	precedentemente:</p>
+
+<div class="code">
+  &lt;img src=&quot;pippo.jpg&quot; alt=&quot;Pippo&quot; style=&quot;display: block;margin:0 auto&quot;&gt; </div>
+	<p>Un'altra possibilit&eacute; per centrare gli elementi inline &eacute; quella di 
+	applicare lo stile text-align:center all'elemento contenitore:</p>
+
+<div class="code">
+  &lt;div style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;pippo.jpg&quot; alt=&quot;Pippo&quot;&gt; &lt;/div&gt;</div>
+	<p>&nbsp;</p>
+	 <div class="titolo">Centrare verticalmente</div>
+	 <p>La centratura verticale di un elemento <em>child</em> rispetto al suo 
+		contenitore <em>parent</em> pu&eacute; essere ottenuta con l'applicazione degli 
+		stili nel modo seguente:</p>
+
+<div class="code">
+  .parent { position: relative; } <br />
+	.child { position: absolute; top: 50%; transform: translateY(-50%); } </div>
+	<p>Nello specifico:</p>
+	<ul>
+					<li><em>top: 50%</em> significa che l'elemento deve essere 
+					spinto del 50% (rispetto alle dimensioni del contenitore) 
+					verso il basso;</li>
+					<li><em>translateY(-50%)</em> muove l'elemento in verticale 
+					(asse Y) del 50% delle sue dimensioni verso l'alto.</li>
+	</ul>
+	<p>Per comprendere come queste due indicazioni centrino un elemento in 
+	verticale, si osservi l'esempio seguente. Dapprima applichiamo solo <em>
+	top:50%</em> e otteniamo il seguente risultato:</p>
+	<p class="style1"><img src="../img/img13aaa.jpg" alt=" " width="556" height="429" /></p>
+	<p>Ora invece osserviamo cosa succede quando applichiamo anche <em>transform: 
+	translateY(-50%)</em>:</p>
+	<p class="style1">
+	<img alt="Centratura verticale" src="../img/img13.jpg" /></p>
+	<div class="titolo">In alternativa: display flex </div>
+	<p>Un modo alternativo per centrare verticalmente un elemento di blocco rispetto al suo contenitore (funziona solo con gli elementi di blocco, non con quelli inline) consiste nell'applicare lo stile seguente al blocco contenitore:</p>
+	<div class="code"> .parent { display:flex; }	</div>
+	<p>Per maggiori dettagli, vedi <a href="https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/" target="_blank">Vertical Centering </a></p>
+	<p>&nbsp; </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

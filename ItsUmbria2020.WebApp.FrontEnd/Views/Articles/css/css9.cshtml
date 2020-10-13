@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style2 {
+				text-align: center;
+}
+.style3 {
+				text-align: left;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Pagine multiple e fogli stile multipli</div>
+	 <p>E' interessante osservare che &eacute; possibile applicare uno stesso foglio 
+		stile a pi&eacute; pagine html. In tale modo si pu&eacute; formattare allo stesso modo 
+		un gruppo di pagine o, addirittura, un intero sito. </p>
+	<p class="style2"><img src="../img/cs_CSS_04.png" /></p>
+	<p class="style3">Analogamente con questa tecnica si pu&eacute; cambiare la 
+	formattazione di tutto un sito (esempio il tipo di font usato per i 
+	caratteri) semplicemente modificando poche righe di codice in un foglio 
+	stile).</p>
+	<p class="style2"><img src="../img/figure003.it.png" /></p>
+	<p class="style3">Un'altra possibilit&eacute; &eacute; quella di usare pi&eacute; di un foglio 
+	stile per la stessa pagina, in modo da formattare la pagina diversamente a 
+	seconda del dispositivo su cui verr&eacute; visualizzata o a seconda che debba 
+	essere visualizzata su uno schermo o stampata su carta. Ci&eacute; pu&eacute; essere 
+	ottenuto con l'attributo media usato nel seguente modo:</p>
+	 <div class="code">
+       &lt;head&gt;<br />
+<br />
+         ...<p>&lt;link rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;stile_schermo.css&quot;&gt;
+       </p>
+		<p>&lt;link rel=&quot;stylesheet&quot; media=&quot;print&quot; href=&quot;stile_stampa.css&quot;&gt;
+       </p>
+		<p>&lt;/head&gt;<br />
+       </p>
+    </div>
+	 <p class="style3">Si osservi che, nell'esempio precedente, vengono 
+		specificati due fogli stile per la stessa pagina: uno che contiene le 
+		regole da applicare per la visualizzazione su schermo (media=&quot;screen&quot;) e 
+		l'altro con quelle per la stampa su carta (media=&quot;print&quot;).</p>
+	<p class="style3"><img src="../img/7-1-700.jpg" /></p>
+	<p class="style3">Il dispositivo che utilizza la pagina (tecnicamente si 
+	chiama &quot;user agent&quot;, per esempio il nostro browser su un PC desktop) 
+	sceglier&eacute; quale foglio stile applicare a seconda dei casi.</p>
+	<p>I valori possibili dell'attributo media sono mostrati nella tabella 
+	seguente:</p>
+	<table class="tabella_htmlit" style="border-collapse: collapse; border-spacing: 0px; width: 585px; margin: 30px 0px; color: rgb(51, 51, 51); font-family: Arial, Helvetica, Verdana, sans-serif; font-size: 15px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(249, 249, 249);">
+					<tr style="border: 1px solid rgb(204, 204, 204); background-color: rgb(244, 244, 244);">
+									<th style="text-align: left; padding: 0.75em 0.5em; border: 1px solid rgb(204, 204, 204); background-color: rgb(234, 234, 234);">
+									Valore</th>
+									<th style="text-align: left; padding: 0.75em 0.5em; border: 1px solid rgb(204, 204, 204); background-color: rgb(234, 234, 234);">
+									Descrizione</th>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									all</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									valore di default (il foglio stile si 
+									applica in tutti i casi)</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204); background-color: rgb(244, 244, 244);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									screen</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									schermo di computer</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									print</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									pagina stampata</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204); background-color: rgb(244, 244, 244);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									projection</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									presentazioni e proiezioni</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									speech</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									dispositivi a sintesi vocale</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204); background-color: rgb(244, 244, 244);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									braille</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									supporti basati sull&#8217;uso del braille</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									embossed</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									stampanti braille</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204); background-color: rgb(244, 244, 244);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									handheld</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									dispositivi mobili con schermo piccolo e in 
+									genere dotati di browser con limitate 
+									capacit&eacute; grafiche</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									tty</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									dispositivi a carattere fisso come i 
+									terminali</td>
+					</tr>
+					<tr style="border: 1px solid rgb(204, 204, 204); background-color: rgb(244, 244, 244);">
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									<code style="font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1.4; font-family: Consolas, 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; font-size: 1.3rem;">
+									tv</code></td>
+									<td style="vertical-align: top; padding: 0.5em; border: 1px solid rgb(204, 204, 204);">
+									visualizzazione su schermi televisivi</td>
+					</tr>
+	</table>
+	<p>E' anche interessante la possibilit&eacute; di fornire pi&eacute; <strong>fogli stile 
+	alternativi</strong> per la stessa pagina, permettendo all'utente di 
+	scegliere quello che preferisce. Per ottenere questo risultato si fa cos&eacute;:</p>
+	 <div class="code">
+       <p>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://example.com/css/blue.css&quot; 
+		title=&quot;blue&quot;&gt;
+       </p>
+		<p>&lt;link rel=&quot;alternate stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://example.com/css/pink.css&quot; 
+		title=&quot;pink&quot;&gt;
+<br />
+       </p>
+    </div>
+	 <p>Si noti il nome attribuito ai due fogli stile con l'attributo title. Il 
+		primo foglio stile &eacute; quello di default, cio&eacute; usato in automatico. Il 
+		secondo (indicato con <em>alternate stylesheet</em>) pu&eacute; essere 
+		selezionato dall'utente in alternativa al primo. Occorre dire per&eacute; che 
+		al momento attuale non tutti i browser offrono la possibilit&eacute; di 
+		cambiare il foglio stile in modo semplice. Spesso &eacute; necessario 
+		utilizzare a questo scopo delle estensioni esterne.</p>
+	<p>In Firefox la scelta di fogli stile alternativi (se disponibili per una 
+	data pagina) &eacute; particolarmente semplice: basta scegliere il fogli stile 
+	desiderato da un elenco che si trova in Visualizza/Stile pagina (se la barra 
+	dei menu non viene visualizzata, premere prima F10):</p>
+	<p class="style2">
+	<img alt="Fogli stile alternativi in Firefox" src="../img/img6.jpg" /></p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Fogli stile in cascata (Cascading Style Sheet)</div>
+	 <p> Nella stessa pagina web &eacute; possibile usare insieme: stili inline, stili 
+		incorporati e fogli stile. Nel caso che ci siano pi&eacute; regole per uno 
+		stesso elemento, gli stili inline prevalgono sugli stili incorporati e 
+		questi ultimi prevalgono sui fogli stile. </p>
+	<p> Inoltre esiste anche la possibilit&eacute; da parte dell'utente di sostituire i 
+	fogli stile con stili da lui definiti (anche in questo caso &eacute; probabilmente 
+	necessario ricorrere ad apposite estensioni dei browser principali). Questa 
+	possibilit&eacute; &eacute; molto utile per utenti con esigenze particolari (esempio 
+	ipovedenti, che necessitano di dimensioni, colori e font particolari).</p>
+	<p class="style2"> <img src="../img/cascade.jpg" /></p>
+	<p> Questa successione gerarchica di stili e di fogli stile &eacute; ci&eacute; che viene 
+	propriamente definito come <strong>cascading style sheet</strong> (fogli 
+	stile in cascata o <strong>CSS</strong>). Si noti che, in ultima analisi, 
+	l'utente pu&eacute; decidere di applicare i propri file stile alla pagina, 
+	modificandone a piacere l'aspetto grafico (CSS applied by the user). Questo 
+	risultato, molto utile per coloro che hanno particolari disabilit&eacute; o 
+	problemi visivi, pu&eacute; essere ottenuto con particolari estensioni presenti per 
+	i maggiori browser.</p>
+	<p> Vediamo ora un semplice esempio di fogli stile in cascata: </p>
+	 <div class="code">
+       &lt;!DOCTYPE html&gt;<p>&lt;html&gt;<br />
+  		&lt;head&gt;</p>
+		<p>&lt;meta charset=&quot;utf-8&quot;&gt; <br />
+		<br />
+         &lt;title&gt;Pagina con foglio stile esterno e incorporati&lt;/title&gt;</p>
+		<p>&lt;link href=&quot;fogliostile.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</p>
+       <p>&lt;style type=&quot;text/css&quot;&gt;<br />
+ 		h1 { font-size:24px; font-family:arial; color:blue }<br />
+ 		&lt;/style&gt;</p>
+       <p> &lt;/head&gt;<br />
+  		&lt;body&gt;<br />
+         <br />
+  		&lt;h1&gt;TITOLO UNO &lt;/h1&gt;<br />
+  		&lt;p&gt; Paragrafo uno &lt;/p&gt;</p>
+       <p>&lt;h1 style=&quot;font-size:20px; font-family:helvetica; color:red&quot;&gt; TITOLO 
+		DUE &lt;/h1&gt; <br />
+         &lt;p class=&quot;piccolo&quot;&gt; Paragrafo due &lt;/p&gt; <br />
+           <br />
+  		&lt;/body&gt;<br />
+  <br />
+  		&lt;/html&gt; </p>
+    </div>
+	 <p>Supponiamo che <em>fogliostile.css</em> contenga le regole viste prima:</p>
+	 <div class="code">
+       h1 { font-size:20px; font-family:verdana; color:green }<br />
+		p { font-size:16px; font-family:arial; color:red }<br />
+       .piccolo { font-size:12px; font-family:arial; color:red }</div>
+	 <p>In questo caso:</p>
+	 <ul>
+	   <li><em>TITOLO UNO</em> viene formattato secondo le regole definite nel 
+		foglio stile incorporato nella pagina (le regole definite nel foglio 
+		stile esterno vengono ignorate)</li>
+       <li><em>Paragrafo uno</em> viene formattato secondo le regole definite 
+		nel foglio stile css</li>
+       <li><em>TITOLO DUE</em> viene formattato secondo le regole definite dallo 
+		stile inline (le regole definite nel foglio stile esterno e in quello 
+		incorporato vengono ignorate)</li>
+       <li><em>Paragrafo due</em> viene formattato secondo le regole della 
+		classe <em>piccolo</em> definita nel foglio stile css </li>
+    </ul>
+	 <p>Segnaliamo anche il
+		<a target="_blank" href="https://jigsaw.w3.org/css-validator/#validate_by_uri">
+		validatore di fogli stile CSS</a> online, molto utile per controllare 
+		gli errori presenti nei fogli stile.</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

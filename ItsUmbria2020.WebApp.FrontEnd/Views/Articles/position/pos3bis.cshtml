@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Posizionamento &quot;naturale&quot; dei blocchi su una pagina</div>
+	 <p>Sappiamo che ogni elemento di blocco (come &lt;p&gt;, &lt;div&gt; etc.) viene 
+		visualizzato sulla pagina separatamente dagli altri blocchi. Se ci sono 
+		elementi di blocco successivi, questi vengono semplicemente visualizzati 
+		uno sotto l'altro (seguendo il flusso &quot;naturale&quot; di visualizzazione 
+		della pagina). Per esempio dichiarando tre blocchi in questo modo:</p>
+<div class="code">
+  &lt;div id=&quot;blocco1&quot; style=&quot;background-color:LightYellow&quot;&gt;blocco 1 inserito nel 
+	normale flusso &lt;/div&gt; <br />
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan&quot;&gt;blocco 2 inserito 
+	subito dopo l'istruzione per il blocco 1&lt;/div&gt; <br />
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose&quot;&gt;blocco 3 inserito 
+	subito dopo l'istruzione per il blocco 2&lt;/div&gt; </div>
+	<p>si ottiene la seguente visualizzazione:</p>
+<div style="background-color:LightYellow">blocco 1 inserito nel normale flusso </div> 
+<div style="background-color:LightCyan">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div style="background-color:MistyRose">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>   	
+<p>
+					Si noti che non vi sono bordi (per default i blocchi non ne 
+					hanno), che non c'&eacute; separazione fra un blocco e l'altro (a 
+					meno di non definire uno stile margin i blocchi sono &quot;a 
+					contatto&quot; fra loro) e ogni blocco viene visualizzato 
+					semplicemente sotto a quello precedente.</p>
+	<p>Chiaramente in questo modo non &eacute; possibile definire layout di pagina 
+	complessi. Per fortuna gli stili offrono gli strumenti per posizionare 
+	liberamente i blocchi su una pagina.</p>
+	 <div class="titolo">Float</div>
+	 <p>Uno dei modi pi&eacute; semplici ed efficaci per posizionare i blocchi su una 
+		pagina &eacute; usare la propriet&eacute; <strong>float</strong>. La prima regola 
+		essenziale da seguire per poter utilizzare questo metodo &eacute; che ogni 
+		elemento a cui viene applicata deve avere una larghezza width 
+		specificata. Vedremo pi&eacute; avanti il perch&eacute;. Per adesso, sempre con 
+		riferimento all'esempio dei tre blocchi precedenti, attribuiamo una 
+		larghezza ai tre blocchi e, gi&eacute; che ci siamo, mettiamo anche un bordo in 
+		modo da poterli distinguere chiaramente.</p>
+<div class="code">
+  &lt;div id=&quot;blocco1&quot; style=&quot;background-color:LightYellow; width:150px; 
+	border-style:dashed; border-color: yellow&quot;&gt;blocco 1 inserito nel normale 
+	flusso &lt;/div&gt; <br />
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan; width:150px; 
+	border-style:dashed; border-color: blue&quot;&gt;blocco 2 inserito subito dopo 
+	l'istruzione per il blocco 1&lt;/div&gt; <br />
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose; width:300px; 
+	border-style:dashed; border-color: red&quot;&gt;blocco 3 inserito subito dopo 
+	l'istruzione per il blocco 2&lt;/div&gt;&nbsp; </div>
+	<p>L'effetto &eacute; il seguente:</p>
+<div  style="background-color:LightYellow; width:150px; border-style:dashed; border-color: yellow">blocco 1 inserito nel normale flusso </div> 
+<div style="background-color:LightCyan; width:150px; border-style:dashed; border-color: blue">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div style="background-color:MistyRose; width:300px; border-style:dashed; border-color: red">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div> 
+   
+
+	<p>Ora applichiamo la propriet&eacute; <em>float</em>. Essa pu&eacute; assumere due valori: 
+	<em>left</em> 
+	oppure <em>right</em>. In pratica con <em>float: left </em>l'elemento viene spostato 
+	sul lato sinistro del blocco che lo contiene (l'intera finestra del browser 
+	se non c'&eacute; nessun contenitore). In pratica il blocco si muove verso sinistra 
+	finch&eacute; i suoi bordi toccano quelli del blocco contenitore esterno.</p>
+	<p>Vediamo cosa succede in pratica applicando la propriet&eacute; float:left al 
+	blocco 2 nel nostro esempio, in questo modo:</p>
+<div class="code">
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan; width:150px; 
+	border-style:dashed; border-color: blue; float: left&quot;&gt;blocco 2 inserito subito dopo 
+	l'istruzione per il blocco 1&lt;/div&gt; </div>
+	<p>Il risultato che si ottiene &eacute; questo:</p>
+<div style="background-color:LightYellow; width:150px; border-style:dashed; border-color: yellow">blocco 1 inserito nel normale flusso </div> 
+<div  style="background-color:LightCyan; width:150px; border-style:dashed; border-color: blue; float:left">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div  style="background-color:MistyRose; width:300px; border-style:dashed; border-color: red">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>&eacute;   
+
+	<p>&nbsp;</p>
+	<p>Osserviamo con attenzione che cosa &eacute; successo:</p>
+	<ul>
+					<li>il blocco 1 &eacute; rimasto nella propria posizione;</li>
+					<li>il blocco 2 si &eacute; spostato a sinistra;</li>
+					<li>il blocco 3 si avvolge (<em>wrap</em>) intorno al blocco 2.</li>
+	</ul>
+	<p>L'effetto di avvolgimento risulta pi&eacute; evidente se modifichiamo le 
+	dimensioni del blocco 2 aumentandole a 200px:</p>
+<div style="background-color:LightYellow; width:150px; border-style:dashed; border-color: yellow">blocco 1 inserito nel normale flusso </div> 
+<div  style="background-color:LightCyan; width:200px; border-style:dashed; border-color: blue; float:left">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div  style="background-color:MistyRose; width:300px; border-style:dashed; border-color: red">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>&eacute;   
+
+	<p>In pratica la regola &eacute; che:</p>
+	<ul>
+					<li>la posizione dei blocchi definiti sopra a quello a cui &eacute; 
+					applicata la propriet&eacute; float (nel nostro caso il blocco 1) 
+					non viene modificata;</li>
+					<li>i blocchi che si trovano sotto il blocco float (il 
+					blocco 3 nel nostro caso) si avvolgono intorno al blocco 
+					spostato; in pratica &eacute; come se il blocco spostato 
+					costringesse il blocco sottostante a fargli spazio nel 
+					flusso della pagina.</li>
+	</ul>
+	 <p>Il motivo per cui i blocchi a cui applichiamo la propriet&eacute; float devono 
+		avere una dimensione width indicata &eacute; che, altrimenti, il browser non 
+		saprebbe dove terminano (se occupassero l'intera finestra in orizzontale 
+		non avrebbe alcun senso spostarli a sinistra o a destra).</p>
+	<p><span class="style1"><strong>ATTENZIONE</strong></span>:</p>
+	<p>Per ottenere un posizionamento ordinato e funzionale dei box su una 
+	pagina, la regola principale da seguire sempre e comunque &eacute;: applicare il 
+	posizionamento float a tutti i box, anche a quelli che non devono 
+	affiancarsi a nessun altro (per esempio &eacute; possibile posizionare questi box 
+	con float:left in ogni caso). Questo semplice accorgimento assicura una 
+	corretta disposizione dei box nella pagina.</p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Un semplice layout a tre colonne usando la propriet&eacute; 
+					float</div>
+	 <p>Posizionare con i fogli stile &eacute; un'arte che si apprende solo con molti 
+		tentativi ed errori e non basterebbe un intero libro a spiegarne tutti i 
+		dettagli.</p>
+	<p>Limitiamoci qui, come semplice esempio di applicazione della propriet&eacute; float, 
+	a vedere 
+		come si potrebbe realizzare un layout di pagina suddiviso su tre 
+		colonne, corrispondenti ai tre blocchi dei nostri esempi precedenti. Un 
+	esempio del genere &eacute; abbastanza realistico, poich&eacute; in molti casi le pagine 
+	sono suddivise in tre colonne, delle quali la centrale contiene il testo e 
+	le laterali servono per i menu di navigazione o per altri scopi accessori.</p>
+	<p>La prima cosa da fare per potere ottenere questo risultato &eacute; usare un 
+	blocco esterno contenitore che racchiuda tutti e tre i nostri blocchi. 
+	Abbiamo detto che in assenza di un contenitore esterno, tale ruolo viene 
+	assunto dal body della pagina html. Tuttavia, per poter realizzare il nostro 
+	semplice layout, noi abbiamo bisogno di un contenitore di larghezza 
+	uguale o maggiore alla somma delle larghezze delle nostre tre colonne. 
+	Possiamo facilmente ottenerlo aggiungendo un blocco esterno contenitore come 
+	nell'esempio qui sotto:</p>
+<div class="code">
+  &lt;div id=&quot;container&quot; style=&quot;width:600px;border-style:dotted; 
+	border-color: grey&quot;&gt;<br />
+  &lt;div id=&quot;blocco1&quot; style=&quot;background-color:LightYellow; width:150px; 
+	border-style:dashed; border-color: yellow&quot;&gt;blocco 1 inserito nel normale 
+	flusso &lt;/div&gt; <br />
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan; width:150px; 
+	border-style:dashed; border-color: blue&quot;&gt;blocco 2 inserito subito dopo 
+	l'istruzione per il blocco 1&lt;/div&gt; <br />
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose; width:300px; 
+	border-style:dashed; border-color: red&quot;&gt;blocco 3 inserito subito dopo 
+	l'istruzione per il blocco 2&lt;/div&gt;&nbsp; <br />
+	&lt;/div&gt;</div>
+	<p>Si noti che le dimensioni width:600px del contenitore esterno sono state 
+	ottenute sommando le width dei tre blocchi interni (come si &eacute; detto tale 
+	dimensione potrebbe anche essere maggiore della somma e in ogni caso deve 
+	tener conto anche degli eventuali padding e margin presenti fra i blocchi - 
+	in questo nostro semplice esempio non ce ne sono)</p>
+	<p>L'effetto &eacute; il seguente:</p>
+<div  style="width:600px;border-style:dotted; border-color: grey">
+<div  style="background-color:LightYellow; width:150px; border-style:dashed; border-color: yellow">blocco 1 inserito nel normale flusso </div> 
+<div style="background-color:LightCyan; width:150px; border-style:dashed; border-color: blue">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div style="background-color:MistyRose; width:300px; border-style:dashed; border-color: red">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>&eacute; 
+</div>
+	<p>Inoltre occorre che i tre blocchi interni abbiano tutti e tre la stessa 
+	altezza. Possiamo facilmente ottenere questo risultato cos&eacute;:</p>
+<div class="code">
+  &lt;div id=&quot;container&quot; style=&quot;width:600px; border-style:dotted; 
+	border-color: grey&quot;&gt;<br />
+  &lt;div id=&quot;blocco1&quot; style=&quot;background-color:LightYellow; width:150px; 
+	height:200px; border-style:dashed; border-color: yellow&quot;&gt;blocco 1 inserito nel normale 
+	flusso &lt;/div&gt; <br />
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan; width:150px; 
+	height:200px; border-style:dashed; border-color: blue&quot;&gt;blocco 2 inserito subito dopo 
+	l'istruzione per il blocco 1&lt;/div&gt; <br />
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose; width:300px; 
+	height:200px; border-style:dashed; border-color: red&quot;&gt;blocco 3 inserito subito dopo 
+	l'istruzione per il blocco 2&lt;/div&gt;&nbsp; <br />
+	&lt;/div&gt;</div>
+	
+
+<p>A questo punto applichiamo la propriet&eacute; float:left al blocco 1 e la propriet&eacute; 
+float:right al blocco 2:</p>
+<div class="code">
+  &lt;div id=&quot;container&quot; style=&quot;width:600px; border-style:dotted; 
+	border-color: grey&quot;&gt;<br />
+  &lt;div id=&quot;blocco1&quot; style=&quot;background-color:LightYellow; width:150px; 
+	height:200px; border-style:dashed; border-color: yellow; float:left&quot;&gt;blocco 1 inserito nel normale 
+	flusso &lt;/div&gt; <br />
+	&lt;div id=&quot;blocco2&quot; style=&quot;background-color:LightCyan; width:150px; 
+	height:200px; border-style:dashed; border-color: blue; float: right&quot;&gt;blocco 2 inserito subito dopo 
+	l'istruzione per il blocco 1&lt;/div&gt; <br />
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose; width:300px; 
+	height:200px; border-style:dashed; border-color: red&quot;&gt;blocco 3 inserito subito dopo 
+	l'istruzione per il blocco 2&lt;/div&gt;&nbsp; <br />
+	&lt;/div&gt;</div>
+	<p>e otteniamo questo effetto:</p>
+	
+<div id="container" style="width:600px; border-style:dotted; border-color: grey">
+<div id="blocco1" style="background-color:LightYellow; width:150px; height:200px; border-style:dashed; border-color: yellow; float:left">blocco 1 inserito nel normale flusso </div> 
+<div id="blocco2" style="background-color:LightCyan; width:150px; height:200px; border-style:dashed; border-color: blue; float: right">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div id="blocco3" style="background-color:MistyRose; width:300px; height:200px; border-style:dashed; border-color: red">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>&eacute; 
+</div>
+
+	<p>Osserviamo che il blocco 3 sembra essere pi&eacute; piccolo delle sue dimensioni 
+	dichiarate (300px). La ragione &eacute; che il blocco 3 risulta in realt&eacute; 
+	parzialmente sovrapposto al blocco1 (in realt&eacute; si avvolge attorno al blocco 
+	1, come visto precedentemente).</p>
+	<p>Per fare in modo che il blocco 3 si disponga al centro dobbiamo 
+	impostarne la propriet&eacute; margin al valore auto, in questo modo:</p>
+<div class="code">
+	&lt;div id=&quot;blocco3&quot; style=&quot;background-color:MistyRose; width:300px; 
+	height:200px; border-style:dashed; border-color: red; margin:auto&quot;&gt;blocco 3 inserito subito dopo 
+	l'istruzione per il blocco 2&lt;/div&gt;&nbsp;</div>
+	<p>Ottenendo infine questo risultato:</p>
+<div id="container" style="width:600px; border-style:dotted; border-color: grey">
+<div id="blocco1" style="background-color:LightYellow; width:150px; height:200px; border-style:dashed; border-color: yellow; float:left">blocco 1 inserito nel normale flusso </div> 
+<div id="blocco2" style="background-color:LightCyan; width:150px; height:200px; border-style:dashed; border-color: blue; float: right">blocco 2 inserito subito dopo l'istruzione per il blocco 1</div> 
+<div id="blocco3" style="background-color:MistyRose; width:300px; height:200px; border-style:dashed; border-color: red; margin:auto">blocco 3 inserito subito dopo l'istruzione per il blocco 2</div>&eacute; 
+</div>
+	<p>Occorre osservare che questo metodo funziona correttamente poich&eacute; le due 
+	colonne laterali hanno le stesse dimensioni. Infatti <em>margin:auto</em> ha 
+	l'effetto di centrare il blocco 3 rispetto al contenitore pi&eacute; esterno e in 
+	tale modo lo mette esattamente in mezzo alle due colonne laterali.</p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Clear</div>
+	 <p>La presenza di elementi float, come si &eacute; visto, modifica la disposizione 
+		degli altri elementi presenti nella pagina, in particolare di quelli che 
+		li seguono. Vi sono dei casi in cui si desidera disporre un elemento 
+		senza che questo subisca l'effetto della propriet&eacute; float applicata 
+		all'elemento precedente. In questo caso si usa la propriet&eacute; clear che 
+		pu&eacute; avere tre valori (left, right, both) a seconda che si voglia 
+		azzerare tale effetto (sul lato sinistro, su quello destro o su 
+		entrambi).</p>
+	<p>&nbsp;</p>
+	<p><img alt="" src="../img/indice.gif" width="42" height="36" />Video 
+	Lezione:
+	<a target="_blank" href="https://www.youtube.com/watch?v=pZqYJdzuyVk&amp;feature=youtu.be">
+	Creare il layout di pagina con gli stili CSS</a></p>
+
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

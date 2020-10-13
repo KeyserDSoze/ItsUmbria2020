@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	
+
+		<div class="titolo">
+L'elemento form
+	</div>
+        <p>Esaminiamo ora in maggiore dettaglio la struttura di un form, rifacendoci all'esempio della lezione precedente:</p>
+        <div class="code">
+          &lt;form action=&quot;mailto:pinco.pallino@libero.it&quot; method=&quot;post&quot; name = &quot;utente&quot; 
+enctype=&quot;text/plain&quot;&gt; 
+			<p>&lt;p&gt; <br />
+			&lt;strong&gt;Nome:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;nome&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;strong&gt;Mail:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;mail&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;strong&gt;Commento:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;commento&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;input type=&quot;submit&quot; value=&quot;Invia&quot;&gt; <br />
+			&lt;input type=&quot;reset&quot; value=&quot;Annulla&quot;&gt; <br />
+			&lt;/p&gt; </p>
+			<p>&lt;/form&gt; </p>
+    </div>
+        <p><em>Form</em> &egrave; un elemento contenitore, all'interno del quale bisogna disporre pulsanti, caselle di testo, eccetera. Di per s&eacute; l'elemento <em>form</em> non produce nessuna visualizzazione sullo schermo. 
+		E' tuttavia possibile applicare uno stile al form in modo da renderlo 
+		&quot;visibile&quot;, come nel seguente esempio:</p>
+        <div class="code">
+          &lt;form action=&quot;mailto:pinco.pallino@libero.it&quot; method=&quot;post&quot; name = &quot;utente&quot; 
+enctype=&quot;text/plain&quot; style=&quot;border: solid 1px&quot;&gt; 
+    </div>
+        <p>All'interno del form possono stare vari elementi, come paragrafi, tabelle, immagini, oltre all'elemento input. Gli attributi principali del tag form sono:</p>
+        <ul>
+          <li><strong>action</strong>: specifica quale azione dev'essere compiuta quando viene premuto il pulsante <em>submit</em> del form. Nell'esempio precedente, l'azione &egrave; inviare una mail contenente i dati del form all'indirizzo <em>pinco.pallino@libero.it<br />
+			</em></li>
+		  <li><strong>method</strong>: pu&ograve; assumere due valori, <em>get</em> oppure <em>post</em>; specifica il modo con cui i dati del form verranno inviati al server (torneremo in seguito anche su questo punto)<br />
+			<br />
+			</li>
+		  <li><strong>name</strong>: questo &egrave; un attributo universale che pu&ograve; essere assegnato a qualsiasi elemento di una pagina html 
+			(dunque non solo a un form). Serve a identificare univocamente il form (vedremo nella <a href=" ../js/funz/funz4.html">in seguito </a> a cosa serve esattamente). Per adesso pu&ograve; anche essere omesso, senza che questo pregiudichi il funzionamento della pagina.<br />
+&nbsp;<br />
+			</li>
+		  <li><strong>enctype</strong>:specifica in quale modo devono essere codificati i dati contenuti nel form (text/plain significa che i dati devono essere interpretati come semplice testo). 
+			<br />
+			Omettendo questo attributo, i valori dei campi potrebbero non essere trasmessi correttamente nel messaggio mail prodotto (per esempio il simbolo @@ usato negli indirizzi mail, se non viene specificato enctype=&quot;text/plain&quot;, viene codificato con i caratteri %40).
+			<br />
+			Semplificando molto, per ora basti dire che se il form serve per 
+			raccogliere dati testuali, la specifica corretta &eacute;, come nel nostro 
+			caso, enctype=&quot;text/plain&quot;. Se invece il form viene usato per 
+			permettere all'utente di inviare un file al server remoto (upload), 
+			la specifica corretta &eacute; enctype=&quot;multipart/form-data&quot;.</li>
+        </ul>
+        <p>&nbsp; &nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

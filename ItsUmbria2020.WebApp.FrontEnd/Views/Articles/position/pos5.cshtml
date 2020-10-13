@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+	 <div class="titolo">Z-index</div>
+	 <p>Usando il posizionamento relativo o quello assoluto &eacute; possibile che due 
+		blocchi vengano ad essere sovrapposti. Si consideri il codice seguente:</p>
+<div class="code">
+  &lt;p style = &quot;width:300px; height:100px; background:#ACFA58; padding:10px;&quot;&gt;<br />
+	Il &lt;strong&gt;BOX 1&lt;/strong&gt; sta sotto il box 2.&lt;br/&gt;<br />
+	Abbiamo posizionato il box 2 in modo che si sovrapponesse al box 1.<br />
+	&lt;/p&gt;<br />
+	<br />
+	&lt;p style = &quot; width:300px; height:100px; background:#ffe7bc; padding:10px; 
+	position:relative; top:-80px; left:150px;&quot;&gt;<br />
+	Come puoi notare il &lt;strong&gt;BOX 2&lt;/strong&gt; si trova sopra il box 1.<br />
+	&lt;/p&gt;</div>
+	<p>che produce la seguente visualizzazione:</p>
+<p style = "width:300px; height:100px; background:#ACFA58; padding:10px;">
+    Il <strong>BOX 1</strong> sta sotto il box 2.<br/>
+    Abbiamo posizionato il box 2 in modo che si sovrapponesse al box 1.
+</p>
+ 
+<p style = " width:300px; height:100px; background:#ffe7bc; padding:10px; position:relative; top:-80px; left:150px;">
+    Come puoi notare il <strong>BOX 2</strong> si trova sopra il box 1.
+</p>	
+<p>In assenza di altre indicazioni, l'elemento che viene dopo nel flusso della 
+pagina (in questo caso il secondo) si sovrappone sempre a quello precedente 
+(cio&eacute; il primo blocco nel nostro esempio).</p>
+	<p>Tuttavia questo comportamento pu&eacute; essere modificato agendo sulla 
+	propriet&eacute; z-index. Tale propriet&eacute; pu&eacute; assumere solo valori interi positivi o 
+	negativi: per default il valore di z-index &eacute; zero per tutti gli elementi. Se 
+	viene specificato z-index, l'elemento con z-index maggiore passa davanti a 
+	quello con z-index minore. Si consideri la seguente piccola modifica al 
+	codice precedente:</p>
+<div class="code">
+  &lt;p style = &quot;width:300px; height:100px; background:#ACFA58; padding:10px;&quot;&gt;<br />
+	Il &lt;strong&gt;BOX 1&lt;/strong&gt; adesso sta sopra il box 2.&lt;br/&gt;<br />
+	Abbiamo modificato z-index di box 1 in modo che si venga a sovrapporre a box 
+	2.<br />
+	&lt;/p&gt;<br />
+	<br />
+	&lt;p style = &quot; width:300px; height:100px; background:#ffe7bc; padding:10px; 
+	position:relative; top:-80px; left:150px; z-index:-1&quot;&gt;<br />
+	Come puoi notare il &lt;strong&gt;BOX 2&lt;/strong&gt; si trova sopra il box 1.<br />
+	&lt;/p&gt;</div>
+	<p>Come si vede abbiamo messo z-index del secondo blocco a -1. Ricordiamo 
+	che 0 &eacute; il valore di default, perci&eacute; -1 significa &quot;spingere&quot; il blocco verso 
+	lo sfondo. Ecco infatti il risultato che si ottiene:</p>
+<p style = "width:300px; height:100px; background:#ACFA58; padding:10px;">
+Il <strong>BOX 1</strong> adesso sta sopra il box 2.<br/>
+Abbiamo modificato z-index di box 1 in modo che si venga a sovrapporre a box 2.</p>
+
+<p style = " width:300px; height:100px; background:#ffe7bc; padding:10px; position:relative; top:-80px; left:150px; z-index:-1">
+Come puoi notare il <strong>BOX 2</strong> si trova sopra il box 1.
+</p>
+	<p>Non c'&eacute; limite al numero di blocchi che si possono impilare usando la 
+	propriet&eacute; z-index, come mostra l'esempio seguente:</p>
+
+<p style = "width:300px; height:100px; background:#ACFA58; padding:10px;">
+Il <strong>BOX 1</strong> sta sotto il box 2.<br/>
+Abbiamo posizionato il box 2 in modo che si sovrapponesse al box 1.
+</p>
+
+<p style = " width:300px; height:100px; background:#ffe7bc; padding:10px; position:relative; top:-80px; left:150px; z-index:-1">
+Come puoi notare il <strong>BOX 2</strong> si trova sopra il box 1.
+</p>
+<p style = " width:300px; height:100px; background:yellow; padding:10px; position:relative; top:-170px; left:200px; z-index:-2">
+Come puoi notare il <strong>BOX 3</strong> si trova sotto gli altri due box.</p>
+
+<div style="clear:both; position:relative; top:-150px">
+<p>Il codice corrispondente &eacute; questo:</p>
+
+<div class="code">
+  &lt;p style = &quot;width:300px; height:100px; background:#ACFA58; padding:10px;&quot;&gt;<br />
+	Il &lt;strong&gt;BOX 1&lt;/strong&gt; adesso sta sopra il box 2.&lt;br/&gt;<br />
+	Abbiamo modificato z-index di box 1 in modo che si venga a sovrapporre a box 
+	2.<br />
+	&lt;/p&gt;<br />
+	<br />
+	&lt;p style = &quot; width:300px; height:100px; background:#ffe7bc; padding:10px; 
+	position:relative; top:-80px; left:150px; z-index:-1&quot;&gt;<br />
+	Come puoi notare il &lt;strong&gt;BOX 2&lt;/strong&gt; si trova sopra il box 1.<br />
+	&lt;/p&gt;<br />
+	<br />
+	&lt;p style = &quot; width:300px; height:100px; background:yellow; padding:10px; 
+	position:relative; top:-170px; left:200px; z-index:-2&quot;&gt;<br />
+	Come puoi notare il &lt;strong&gt;BOX 3&lt;/strong&gt; si trova sotto gli altri due box.<br />
+	&lt;/p&gt;</div>
+	<p>&nbsp;</p>
+	<p><span class="style1"><strong>ATTENZIONE</strong></span>:</p>
+	<p>La propriet&eacute; z-index pu&eacute; essere applicata solo ai blocchi per cui &eacute; stata 
+	indicata una propriet&eacute; position (diversa da static). Nel nostro caso usare 
+	la propriet&eacute; z-index sul blocco 1 non avrebbe funzionato, dal momento che 
+	questo non &eacute; stato posizionato.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

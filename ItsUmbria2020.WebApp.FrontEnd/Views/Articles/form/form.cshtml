@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Form usati per raccolta dati utente e invio mail </p>
+	</div>
+        <p>Consideriamo un semplice esempio di form per la raccolta di dati dai visitatori del nostro sito:</p>
+
+        <form action="" method="post" >
+
+<strong>Nome:</strong><br>
+<input type="text" name="name" />
+<br>
+<strong>Mail:</strong><br>
+<input type="text" name="mail" />
+<br>
+<strong>Commento:</strong><br>
+<input type="text" name="comment" />
+<br>
+<br>
+<input type="submit" value="Invia">
+<input type="reset" value="Annulla">
+
+</form>
+<p> Il codice HTML che produce il precedente form &egrave;:
+</p>
+        <div class="code">
+          &lt;form action=&quot;mailto:pinco.pallino@libero.it&quot; method=&quot;post&quot; name = &quot;utente&quot; 
+enctype=&quot;text/plain&quot;&gt; 
+			<p>&lt;p&gt; <br />
+			&lt;strong&gt;Nome:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;nome&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;strong&gt;Mail:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;mail&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;strong&gt;Commento:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;commento&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;input type=&quot;submit&quot; value=&quot;Invia&quot;&gt; <br />
+			&lt;input type=&quot;reset&quot; value=&quot;Annulla&quot;&gt; <br />
+			&lt;/p&gt; </p>
+			<p>&lt;/form&gt; </p>
+    </div>
+        <p>Si osservi che l'elemento &lt;form&gt; &eacute; un <strong>contenitore</strong> che pu&eacute; contenere 
+		al proprio interno alcuni elementi generici (es. &lt;p&gt; e &lt;strong&gt;) e altri 
+		elementi specifici, che cio&eacute; possono stare solo dentro a un elemento &lt;form&gt; 
+		(es. &lt;input&gt;).</p>
+	<p>Si noti anche che l'elemento &lt;input&gt; &eacute; un elemento inline e 
+	<span class="style2">non pu&eacute; 
+	essere messo direttamente</span> in un form. Occorre che ci sia un elemento di 
+	blocco (come &lt;p&gt; nel nostro caso, ma andrebbe anche bene &lt;div&gt;) che lo 
+	contenga. In caso contrario, il form non viene validato correttamente da molti validatori (anche se viene visualizzato senza errori dal browser). </p>
+		<div class="titolo"> Invio mail da pagina HTML </div>
+		<p>Supponiamo ora di realizzare una pagina HTML contenente il form precedente e di riempire tutti i campi con i seguenti dati:</p>
+		<form action="" method="post" enctype="text/plain">
+          <div class="style1">
+          <strong>Nome:</strong><br />
+          <input type="text" name="name2" value="Giancarlo Perlo"/>
+          <br />
+          <strong>Mail:</strong><br />
+          <input type="text" name="mail2" value="g.perlo@tin.it"/>
+          <br />
+          <strong>Commento:</strong><br />
+          <input type="text" name="comment2"  value="Ciao" />
+          <br />
+          <br />
+          <input name="submit" type="submit" value="Invia" />
+          <input name="reset" type="reset" value="Annulla" />
+        </div>
+        </form>
+		<p>Se adesso premiamo il bottone Invia, viene mandato automaticamente in esecuzione il programma di posta elettronica 
+		di default installato sul nostro computer (se ce n'&egrave; uno) e viene generato un messaggio col seguente aspetto:</p>
+		<p class="style1"><img src="../img/mail1.jpg" alt="" width="421" height="388" /></p>
+		<p>Si osservi che:</p>
+		<ul>
+		  <li>l'indirizzo contenuto nel campo   <em>Da:</em> del messaggio (g.perlo@tin.it) &egrave; quello del computer dal quale viene inviato il messaggio di posta elettronica (cio&egrave; il computer dell'utente che sta visualizzando la pagina internet e che ha compilato il form)
+			<br />
+			<br />
+			</li>
+          <li>l'indirizzo contenuto nel campo <em>A:</em> (pinco.pallino@libero.it) &egrave; invece quello specificato nell'attributo action del form (mailto:pinco.pallino@libero.it); questo &egrave; presumibilmente l'indirizzo dell'autore del sito, ovvero di colui che raccoglier&agrave; i dati provenienti dal form<br />
+			<br />
+			</li>
+	      <li>il contenuto del messaggio (<em></em>nome=Giancarlo Perlo mail=g.perlo@tin.it commento=Ciao)  corrisponde invece al contenuto dei campi del modulo, cos&igrave; come sono stati compilati dall'utente</li>
+    </ul>
+		<p><img src="../img/mail3.jpg" alt="" width="786" height="407" /></p>
+		<p>Si tratta di un sistema, non molto elegante n&eacute; efficiente, per raccogliere dati dall'utente. I principali problemi di questo metodo sono che l'utente conosce l'indirizzo del destinatario (cosa non desiderabile in generale, poich&eacute; espone al rischio di spamming) e che, se l'utente non ha installato nessun programma di posta elettronica sul PC in uso, l'invio non &egrave; possibile. 
+		Se si intende utilizzarlo nel proprio sito, raccomandiamo di non 
+		utilizzare il proprio indirizzo mail personale, ma di crearne uno 
+		apposito.</p>
+	<p><a href="form5b.html">Vedremo in seguito</a> soluzioni migliori per la raccolta dei dati utente tramite form senza l'invio diretto di mail dal computer dell'utente.</p>
+		<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Pseudoclassi</div>
+	<p>Una <strong>pseudoclasse</strong> consente di definire uno stato 
+	particolare di un elemento. Si consideri l'esempio seguente di definizione 
+	di una pseudoclasse in un foglio stile:</p>
+<div class="code">
+  a:link {color: magenta;} <br />
+	a:visited {color: red;} <br />
+	a:hover {color: yellow;} <br />
+	a:active {color: brown;}&nbsp;
+</div>
+	<p>In questo modo vengono specificati stili diversi a seconda che l'elemento 
+	a sia stato gi&eacute; cliccato (<em>visited</em>), nel caso in cui ci si passi il mouse 
+	sopra (<em>hover</em>), nel caso sia attivo (<em>active</em>, nel momento in 
+	cui viene cliccato col mouse) etc. </p>
+	<p><strong>ATTENZIONE</strong>: a:hover deve essere messo dopo di a:link e 
+	di a:visited. Inoltre a:active deve venire dopo a:hover nella definizione 
+	degli stili, altrimenti non funziona. </p>
+	<p>La sintassi delle pseudoclassi &eacute; la seguente:</p>
+<div class="code">
+  <em>selettore:pseudoclasse { <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... 
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+		</em>
+</div>
+	<p>Si notino i due punti che separano il nome del selettore dal nome della 
+	pseudoclasse.</p>
+	<p>Un altro classico esempio di uso delle pseudoclassi &eacute; il seguente, che 
+	realizza una tabella con righe alternate di colori differenti (per 
+	semplicit&eacute; abbiamo qui usato gli stili incorporati nella pagina):</p>
+<div class="code">
+  &lt;!DOCTYPE html&gt;<br />
+	<br />
+	&lt;html&gt;<br />
+	<br />
+	&lt;head&gt;<br />
+	&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+	<br />
+	&lt;style&gt;<br />
+	<br />
+	.righealterne{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	width:50%; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	border-collapse:collapse; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	}<br />
+	<br />
+	.righealterne td{ <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	padding:7px; border:#4e95f4 1px solid;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	}<br />
+	<br />
+	/* Definisce il colore di sfondo per le righe pari */<br />
+	.righealterne tr:nth-child(odd){ <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	background: #b8d1f3;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	}<br />
+	/* Definisce il colore di sfondo per le righe dispari */<br />
+	.righealterne tr:nth-child(even){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: 
+	#dae5f4;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	}<br />
+	<br />
+	&lt;/style&gt;<br />
+	<br />
+	&lt;/head&gt;<br />
+	&lt;body&gt;<br />
+	&lt;table class=&quot;righealterne&quot;&gt;<br />
+	&lt;tr&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;/tr&gt;<br />
+	&lt;tr&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;/tr&gt;<br />
+	&lt;tr&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;/tr&gt;<br />
+	&lt;tr&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;td&gt;Text&lt;/td&gt;&lt;/tr&gt;<br />
+	&lt;/table&gt;<br />
+	&lt;/body&gt;<br />
+	<br />
+	&lt;/html&gt;</div>
+	<p>In questo caso abbiamo due pseudoclassi, :nth-child(odd) e :nth-child(odd), 
+	che permettono rispettivamente di selezionare tutte le righe pari e tutte le 
+	righe dispari.</p>
+	<p>Per ulteriori approfondimenti sull'uso delle pseudoclassi, rimandiamo 
+	all'<a target="_blank" href="http://www.w3schools.com/css/css_pseudo_classes.asp">elenco 
+	e alla trattazione completa di W3C Schools</a>.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-align: left;
+}
+.style3 {
+				text-decoration: underline;
+}
+</style>
+
+<script type="text/JavaScript"> 
+var ind=1;
+function muovi()
+{ 
+if (ind%2)
+    {
+    document.getElementById('omino').src='../img/omino2.jpg'
+    }
+else
+    {
+    document.getElementById('omino').src='../img/omino1.jpg'
+    }
+ind= ind + 1;
+} 
+</script>
+
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Un semplice script di esempio</div>
+        <p>Consideriamo la seguente pagina HTML contenente un brevissimo script 
+		(cio&eacute; in pratica, come si &eacute; detto, un programma) in JavaScript:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Semplice esempio in Javascript&lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			var ind=1;<br />
+			function muovi()<br />
+			&nbsp;&nbsp;&nbsp;
+			{ <br />
+			&nbsp;&nbsp;&nbsp;
+			if (ind%2)<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino2.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			else<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			document.getElementById('omino').src='../img/omino1.jpg'<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			}<br />
+			&nbsp;&nbsp;&nbsp;
+			ind= ind + 1;<br />
+			&nbsp;&nbsp;&nbsp;
+			} <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			<br />
+			&lt;p&gt;<br />
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;<br />
+			&lt;/p&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>In realt&eacute; lo script vero e proprio, come vedremo meglio fra poco, &eacute; 
+		solo quella parte scritta in alto fra i tag
+			&lt;script&gt;&nbsp; e &lt;/script&gt;. 
+		Il resto &eacute; una normale pagina html.</p>
+		<div style="border-left: thin solid red">
+	<p>La precedente versione 4.01 di HTML richiede di specificare nel tag 
+	script anche l'attributo type in questo modo:</p>
+	<p class="style1">&lt;script type=&quot;text/JavaScript&quot;&gt;</p>
+	<p>A partire da HTML 5 l'attributo type non &eacute; pi&eacute; richiesto.</p>
+	</div>
+	    <p>La pagina contiene semplicemente la visualizzazione della seguente 
+		immagine:</p>
+	<p class="style1">
+	<img alt="animazione" id="omino" src="../img/omino1.jpg" width="209" height="396" onclick="muovi()"/></p>
+	<p>Ora, se si prova a fare click sull'immagine dell'omino, l'immagine viene 
+	sostituita con un'altra realizzando una rudimentale animazione.</p>
+	<p class="style2">Per quanto poco entusiasmante, questo &eacute; il primo esempio 
+	di pagina dinamica, in grado cio&eacute; di modificarsi e di rispondere ai comandi 
+	(input) dell'utente.</p>
+	<p class="style2">&nbsp;</p>
+
+	<div class="titolo">
+
+	  Anatomia della nostra prima pagina dinamica in JS</div>
+        <p class="style2">Osserviamo anzitutto che lo script in JS viene scritto 
+		all'interno di una normale pagina HTML (con estensione .html). Lo 
+		script, nel nostro caso, si trova nell'head della pagina ed &eacute; costituito 
+		da una funzione di nome <em>muovi</em> (nome scelto liberamente). Si 
+		noti l'elemento &lt;script&gt; che racchiude il codice:</p>
+        <div class="code">
+			&lt;script&gt; <br />
+			<br />
+			var ind=1;<br />
+			function muovi()<br />
+&nbsp;&nbsp;&nbsp; { <br />
+&nbsp;&nbsp;&nbsp; if (ind%2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('omino').src='../img/omino2.jpg' 
+			;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; else<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('omino').src='../img/omino1.jpg' 
+			;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; ind= ind + 1;<br />
+			} <br />
+			<br />
+			&lt;/script&gt;</div>
+        <p class="style2">In generale la sintassi per inserire uno script in JS 
+		&eacute; la seguente</p>
+        <div class="code">
+			&lt;script&gt; <br />
+			...<br />
+			&lt;/script&gt;</div>
+	<p class="style2">All'interno dell'elemento <strong>&lt;script&gt;</strong> 
+		(elemento contenitore) si trova il codice (lo <em>script</em>) che deve essere 
+		eseguito. Il codice &eacute; costituito da una serie di istruzioni (per esempio
+		<em>if... else...</em>) le quali specificano le &quot;azioni&quot; da compiere. Il codice &eacute; quasi interamente contenuto (vedremo pi&eacute; avanti le 
+		ragioni) dentro una <strong>funzione</strong> (<em>function</em>) di 
+		nome <em>muovi</em> (nome scelto liberamente).</p>
+	<p class="style2">Osserviamo poi l'elemento &lt;img&gt; che contiene l'immagine da 
+	visualizzare:</p>
+        <div class="code">
+			&lt;img alt=&quot;animazione&quot; id=&quot;omino&quot; src=&quot;../img/omino1.jpg&quot; width=&quot;209&quot; height=&quot;396&quot; onclick=&quot;muovi()&quot;&gt;</div>
+	<p class="style2">Notiamo particolare l'attributo <strong>onclick</strong> 
+	il cui significato &eacute; in sintesi il seguente: quando l'utente fa click 
+	sull'immagine, dev'essere eseguita la funzione <em>muovi</em> vista 
+	precedentemente, la quale in pratica sostituisce alternativamente l'immagine 
+	visualizzata con un'altra (omino1.jpg e omino2.jpg).</p>
+	<p class="style2">Si noti inoltre l'identificatore<em> id=&quot;omino&quot; </em>
+	attribuito all'elemento immagine e utilizzato all'interno della funziona per 
+	fare riferimento all'immagine stessa (<em>document.getElementById('omino').src</em>).</p>
+	<p class="style2">Non ci preoccupiamo troppo per adesso della sintassi (per 
+	esempio le parentesi tonde, graffe e dei punti e virgola), ma concentriamoci invece sul 
+	funzionamento della nostra pagina dinamica, che a questo punto si spera sia 
+	un po' pi&eacute; chiaro.</p>
+	<p class="style2"><span class="style3"><strong>ATTENZIONE</strong></span>: 
+	Il JavaScript &eacute; case sensitive, cio&eacute; distingue fra le lettere maiuscole e 
+	quelle minuscole. Perci&eacute; bisogna fare molta attenzione quando si scrivono le 
+	istruzioni. Per esempio <em>document.getElementById </em>&eacute; corretto mentre <em>document.getelementbyid</em> 
+	sarebbe sbagliato. Conviene, soprattutto agli inizi, copiare e incollare il 
+	codice corretto per evitare di doverlo imparare a memoria.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

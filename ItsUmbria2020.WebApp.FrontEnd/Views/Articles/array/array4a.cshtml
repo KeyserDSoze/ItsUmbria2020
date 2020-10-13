@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Array associativi</div>
+        <p>Un array associativo &eacute; un vettore che come indice usa una chiave 
+		ovvero un nome letterale, al posto di un indice numerico. Facciamo un 
+		esempio per chiarire il concetto. Supponiamo di voler memorizzare la 
+		traduzione in inglese di una serie di parole in italiano. A tale scopo 
+		possiamo usare un array associativo cos&eacute; definito:</p>
+        <div class="code">
+          var parole = [];<br />
+			parole[&quot;casa&quot;] = &quot;house&quot;;<br />
+			parole[&quot;porta&quot;] = &quot;door&quot;;<br />
+			parole[&quot;cane&quot;] = &quot;dog&quot;;<br />
+			parole[&quot;finestra&quot;] = &quot;window&quot;;<br />
+			...</div>
+        <p>Si noti come al posto di parole[0], parole[1] etc. in questo caso 
+		abbiamo usato come indice del vettore una stringa (&quot;casa&quot;, &quot;porta&quot; 
+		eccetera).</p>
+	<p>Qual &eacute; il vantaggio? Supponiamo di voler creare un semplice dizionario 
+	tramite un form in cui bisogna inserire una parola in italiano e premere un 
+	pulsante TRADUCI per avere la traduzione in inglese. Supponendo che la input 
+	text contenente la parola da tradurre si chiami &quot;italiano&quot; e che la funzione 
+	traduci() sia chiamata sul click sul pulsante TRADUCI, il codice JS per 
+	trovare la traduzione in inglese &eacute; semplicemente questo:</p>
+        <div class="code">
+          function traduci()<br />
+			{<br />
+			var parola_ita, parola_ing;<br />
+			<br />
+			parola_ita = document.getElementById(&quot;italiano&quot;).value;<br />
+			parola_ing = parole[parola_ita];<br />
+			<br />
+			alert(parola_ing);<br />
+			}</div>
+        <p>Si osservi come la parola letta dalla input text (<em>parola_ita</em>) 
+		viene usata come indice nel vettore <em>parole</em> per ottenere la 
+		traduzione in inglese. Naturalmente se la corrispondente traduzione non 
+		esiste si ottiene il valore <em>undefined</em>.</p>
+	<p>Se si vogliono visualizzare tutti gli elementi di un vettore associativo 
+	bisogna usare un ciclo di questo tipo:</p>
+        <div class="code">
+          for (i in parole)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(parole[i]);</div>
+        <p>Abbiamo gi&eacute; incontrato questa sintassi nella lezione precedente. In 
+		questo caso il suo uso &eacute; pressoch&eacute; obbligato poich&eacute; per i vettori 
+		associativi la propriet&eacute; <em>length</em> vale sempre zero e dunque non &eacute; 
+		possibile utilizzarla per sapere quanti elementi contiene il vettore.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

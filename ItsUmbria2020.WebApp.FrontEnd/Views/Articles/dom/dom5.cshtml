@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Accedere agli attributi</div>
+
+<p>Una volta che un elemento o un gruppo di elementi di una pagina sono stati 
+selezionati con <em>document.getElementById</em>, <em>document.getElementsByTagName</em>, 
+<em>document.getElementsByClassName</em>, <em>document.querySelectorAll</em> o 
+<em>document.querySelector</em>, &eacute; possibile accedere agli attributi degli elementi 
+selezionati (per usarli o modificarli) in modo molto semplice.</p>
+	<p>Il meccanismo ci &eacute; gi&eacute; noto da tempo, per cui ci limitiamo a fare un 
+	semplice esempio riassuntivo:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Modifica degli attributi di un elemento &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function scambia()<br />
+			&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; var immagini = document.getElementsByTagName(&quot;img&quot;);<br />
+&nbsp;&nbsp;&nbsp; var tmp1,tmp2;<br />
+&nbsp;&nbsp;&nbsp; tmp1 = immagini[0].src;<br />
+&nbsp;&nbsp;&nbsp; tmp2 = immagini[0].alt;<br />
+&nbsp;&nbsp;&nbsp; immagini[0].src = immagini[1].src;<br />
+&nbsp;&nbsp;&nbsp; immagini[0].alt = immagini[1].alt;<br />
+&nbsp;&nbsp;&nbsp; immagini[1].src = tmp1; <br />
+&nbsp;&nbsp;&nbsp; immagini[1].alt = tmp2<br />
+			&nbsp;&nbsp;&nbsp; } <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;p&gt;Passa col mouse sulle immagini per scambiarle: &lt;/p&gt;<br />
+			&lt;p&gt;&lt;img src=&quot;pippo.gif&quot; onmouseover=&quot;scambia()&quot; alt=&quot;pippo&quot; &gt;&lt;/p&gt;<br />
+			&lt;p&gt;&lt;img src=&quot;pluto.gif&quot; onmouseover=&quot;scambia()&quot; alt=&quot;pluto&quot; &gt;&lt;/p&gt;<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+	<p>La funzione <em>scambia() </em>viene invocata quando si passa il mouse 
+	(evento <em>onmouseover</em>) su una delle due immagini ed effettua lo 
+	scambio delle due immagini. Lo scambio avviene scambiando i valori degli 
+	attributi <em>src</em> e <em>alt </em>delle due immagini (attraverso le variabili 
+	temporanee <em>tmp1 e tmp2</em>).</p>
+	<p><strong>ATTENZIONE</strong>: l'attributo a cui si accede deve essere un 
+	attributo valido per quel dato elemento. Non &eacute; possibile aggiungere 
+	attributi &quot;inventati&quot; a un elemento usando questo metodo.</p>
+
+<div class="titolo">Accedere agli stili</div>
+
+	<p>In modo analogo &eacute; possibile accedere e modificare lo stile di un 
+	elemento. L'argomento &eacute; stato <a href=" Generali/def6.html">gi&eacute; trattato 
+	in precedenza</a>, per cui ci limitiamo qui ad un semplice esempio:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Modificare gli stili di un elemento &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			var a = 255;<br />
+			var b = 0;<br />
+			var c = 0;<br />
+			var tmp;<br />
+			function scambia()<br />
+			&nbsp;&nbsp;&nbsp; { <br />
+&nbsp;&nbsp;&nbsp; document.getElementById(&quot;sfondo&quot;).style.backgroundColor = 'rgb(' 
+			+ a + ',' + b + ',' + c + ')';<br />
+&nbsp;&nbsp;&nbsp; document.getElementById(&quot;sfondo&quot;).style.color = 'rgb(' + b + 
+			',' + c + ',' + a + ')';<br />
+&nbsp;&nbsp;&nbsp; tmp = a;<br />
+&nbsp;&nbsp;&nbsp; a = b;<br />
+&nbsp;&nbsp;&nbsp; b = c;<br />
+&nbsp;&nbsp;&nbsp; c = tmp;<br />
+			&nbsp;&nbsp;&nbsp; } <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			<br />
+			&lt;body onmouseover=&quot;scambia()&quot; id = &quot;sfondo&quot;&gt;<br />
+			&lt;p&gt;Passando col mouse, cambia il colore di sfondo e del primo 
+			piano&lt;/p&gt;<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>La funzione <em>scambia</em> viene invocata sul body passandoci sopra 
+		il mouse. Essa modifica gli stili del colore di sfondo <em>
+		style.backgroundColor </em>e del colore di primo piano <em>style.color</em> 
+		scambiando i valori della terna <em>rgb</em> (rosso, verde, blu).</p>
+	<p>Si noti che sia <em>style.backgroundColor </em>che <em>style.color </em>
+	richiedono il passaggio di una stringa e questo spiega l'uso degli apici 
+	nell'uso di rgb.</p>
+
+<div class="titolo">Accedere alle classi</div>
+
+	<p>Nonostante <em>class</em> sia un attributo universale, non &eacute; possibile 
+	accedervi con la seguente sintassi (sbagliata!!):</p>
+	<p class="style1">document.getElementById(&quot;<em>nome_id</em>&quot;).class = &quot;<em>nome_classe</em>&quot;</p>
+	<p>Bisogna invece usare className, come nell'esempio seguente</p>
+	<p class="style1">document.getElementById(&quot;<em>nome_id</em>&quot;).className = &quot;<em>nome_classe</em>&quot;</p>
+	<p>Per esempio il ciclo seguente assegna la classe di nome &quot;bordo&quot; a tutte 
+	le celle td di una tabella:</p>
+        <div class="code">
+          &nbsp;for (i=0;i &lt; document.getElementsByTagName(&quot;td&quot;).length; i=i+1)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementsByTagName(&quot;td&quot;)[i].className=&quot;bordo&quot;;</div>
+        <p>Osserviamo di passaggio che, in modo abbastanza sorprendente, &eacute; 
+		invece possibile accedere e modificare l'attributo <em>id</em> di un 
+		elemento come un normale attributo:</p>
+	<p class="style1">document.getElementById(&quot;<em>nome_id</em>&quot;).id = &quot;<em>nuovo_nome_id</em>&quot;</p>
+	<p class="style1">&nbsp;</p>
+
+<div class="titolo">Accedere al contenuto di un elemento contenitore</div>
+
+	<p>Anche la possibilit&eacute; di modificare il testo contenuto in un elemento 
+	contenitore (es. un paragrafo) <a href=" Generali/def6.html">&eacute; gi&eacute; stata 
+	discussa</a>, per cui ci limitiamo a fornire un semplice esempio:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Modificare il contenuto degli elementi &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function scambia()<br />
+			&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; lista = document.getElementsByTagName(&quot;li&quot;);<br />
+			<br />
+&nbsp;&nbsp;&nbsp; tmp = lista[0].innerHTML;<br />
+			&nbsp;&nbsp;&nbsp; for (i=0;i&lt;lista.length-1;i++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lista[i].innerHTML = lista[i+1].innerHTML;
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; lista[i].innerHTML = tmp;<br />
+			&nbsp;&nbsp;&nbsp; } <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;p&gt;Passando col mouse cambia la lista&lt;/p&gt;<br />
+			&lt;ol onmouseover=&quot;scambia()&quot;&gt;<br />
+			&lt;li&gt;Primo&lt;/li&gt;<br />
+			&lt;li&gt;Secondo&lt;/li&gt;<br />
+			&lt;li&gt;Terzo&lt;/li&gt;<br />
+			&lt;li&gt;Quarto&lt;/li&gt;<br />
+			&lt;/ol&gt;<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>Passando col mouse sulla lista &lt;ol&gt; il contenuto degli elementi &lt;li&gt; 
+		(cio&eacute; i valori Primo, Secondo, Terzo e Quarto) vengono scambiati 
+		ciclicamente. </p>
+	<p>&nbsp;</p>
+
+<div class="titolo">Accedere al nome di un nodo</div>
+
+	<p>Il metodo nodeName consente di accedere al nome di un nodo. Per esempio 
+	se &quot;para&quot; &eacute; l'identificatore di un paragrafo P, il codice seguente 
+	visualizza &quot;P&quot; (maiuscolo):</p>
+        <div class="code">
+          &nbsp;var paragrafo = document.getElementById(&quot;para&quot;); <br />
+			alert(paragrafo.nodeName)</div>
+        <p>Se il nodo &eacute; un nodo di testo viene restituito il valore #text; se si 
+		tratta di un commento, il valore &eacute; #comment; per i nodi di tipo 
+		attributo, viene restituito il valore dell'attributo.</p>
+	<p>&nbsp;</p>
+
+<div class="titolo">Usare in maniera combinata i diversi metodi</div>
+
+	<p>E' interessante notare che &eacute; possibile usare i diversi metodi per 
+	selezionare gli elementi in modo combinato. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Uso combinato di due selettori &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function bordo()<br />
+			&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; var tabella = document.getElementById(&quot;tab1&quot;);<br />
+&nbsp;&nbsp;&nbsp; var celle = tabella.getElementsByTagName(&quot;td&quot;);<br />
+&nbsp;&nbsp;&nbsp; for (i=0; i &lt; celle.length; i++)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; celle[i].style.borderStyle = &quot;dotted&quot;<br />
+			&nbsp;&nbsp;&nbsp; } <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			<br />
+			&lt;body onclick = &quot;bordo()&quot;&gt;<br />
+			<br />
+			&lt;p&gt;Tabella 1&lt;/p&gt;<br />
+			&lt;table style=&quot;border-collapse: collapse&quot; id = &quot;tab1&quot;&gt;<br />
+			&lt;tr&gt; &lt;!-- INIZIO PRIMA RIGA --&gt; <br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Prima cella della prima riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Seconda cella della prima riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Terza cella della prima riga &lt;/td&gt;<br />
+			&lt;/tr&gt; &lt;!-- FINE PRIMA RIGA --&gt; <br />
+			&lt;tr&gt; &lt;!-- INIZIO SECONDA RIGA --&gt; <br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Prima cella della seconda riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Seconda cella della seconda riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Terza cella della terza riga &lt;/td&gt;<br />
+			&lt;/tr&gt; &lt;!-- FINE SECONDA RIGA --&gt; <br />
+			&lt;/table&gt;<br />
+			<br />
+			&lt;p&gt;Tabella 2&lt;/p&gt;<br />
+			&lt;table style=&quot;border-collapse: collapse&quot; id = &quot;tab2&quot;&gt;<br />
+			&lt;tr&gt; &lt;!-- INIZIO PRIMA RIGA --&gt; <br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Prima cella della prima riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Seconda cella della prima riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Terza cella della prima riga &lt;/td&gt;<br />
+			&lt;/tr&gt; &lt;!-- FINE PRIMA RIGA --&gt; <br />
+			&lt;tr&gt; &lt;!-- INIZIO SECONDA RIGA --&gt; <br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Prima cella della seconda riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Seconda cella della seconda riga &lt;/td&gt;<br />
+			&lt;td style=&quot;border: 1px solid&quot;&gt; Terza cella della terza riga &lt;/td&gt;<br />
+			&lt;/tr&gt; &lt;!-- FINE SECONDA RIGA --&gt; <br />
+			&lt;/table&gt;<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>Nella pagina sono presenti due tabelle, contrassegnate con due 
+		diversi id: <em>tab1</em> e <em>tab2</em>.</p>
+	<p>Cliccando col mouse sul body viene attivata la funzione bordo(), la quale 
+	per prima cosa seleziona la tabella <em>tab1</em>:</p>
+        <div class="code">
+          &nbsp;var tabella = document.getElementById(&quot;tab1&quot;);</div>
+	<p>Quindi vengono selezionate tutte le celle (elementi &lt;td&gt;) della tabella 
+	tab1:</p>
+        <div class="code">
+          &nbsp;var celle = tabella.getElementsByTagName(&quot;td&quot;);</div>
+	<p>Si noti che il metodo <em>getElementsByTagName(&quot;td&quot;)</em> non viene in 
+	questo caso applicato all'oggetto <em>document</em>, ma all'oggetto <em>
+	tabella</em>. In questo modo vengono selezionate le sole celle di <em>tab1</em>, 
+	mentre le celle di <em>tab2</em> non vengono selezionate.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				margin-left: 40px;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Layout della pagina e blocchi</div>
+	 <p>Mediante gli stili e i fogli stile &eacute; possibile controllare con grande 
+		precisione l'aspetto di una pagina web, non solo per ci&eacute; che riguarda i 
+		colori, font etc. ma anche per la disposizione (<em>positioning</em>) 
+		dei diversi elementi. Tale disposizione prende generalmente il nome di
+		<strong>layout</strong> della pagina. Il layout in pratica specifica 
+		come devono disporsi sulla pagina i diversi blocchi.</p>
+	<p>Abbiamo visto che gli elementi di blocco sono numerosi, ma studiando il 
+	posizionamento conviene fare riferimento al blocco generico &lt;div&gt;, anche se 
+	molte delle cose che diremo nel seguito valgono ugualmente per ogni altro 
+	elemento di blocco (paragrafi, tabelle etc).</p>
+	<p>Il box model di una pagina pu&eacute; dunque essere pensato come un'insieme di 
+	elementi &lt;div&gt;, strutturati gerarchicamente (alcuni blocchi ne possono 
+	contenere altri) e disposti in modo da formare la pagina stessa. Si 
+	consideri per esempio il semplice layout mostrato nella figura seguente:</p>
+	<p class="style1"><img alt="" src="../img/img8.jpg" /></p>
+	<p>Ogni blocco (Header, Content, Sidebar, Footer) corrisponde a un diverso 
+	elemento &lt;div&gt;.</p>
+	 <div class="titolo">Selettore id</div>
+	 <p>Volendo applicare uno stile diverso a ciascuno dei blocchi che compone 
+		la pagina &eacute; possibile, <a href=" css/css1.html">come gi&eacute; visto</a>, 
+		seguire tre strade diverse:</p>
+	<ol>
+					<li>si specifica lo stile di ogni blocco mediante gli stili 
+					inline, usando l'attributo style (per esempio
+       &lt;div style=&quot;border-style:solid&quot;&gt;);<br />
+					</li>
+					<li>si usano gli stili incorporati, scrivendo le regole di 
+					stile nell'head della pagina;<br />
+					</li>
+					<li>si usano i fogli stile CSS, usando un file di stile 
+					separato e linkato alla pagina.</li>
+	</ol>
+	<p>La prima soluzione, quella che si basa sugli stili inline, non viene 
+	molto usata per definire il layout della pagina in quanto &eacute; difficile da 
+	modificare (bisogna editare uno per uno i singoli attributi style) e non &eacute; 
+	semplice da comprendere e da utilizzare per il progetto di una pagina. Di 
+	solito dunque si ricorre agli stili incorporati o a un fogli stile esterno.</p>
+	<p>Usando stili non inline sorge ovviamente il problema di come identificare 
+	i diversi blocchi che compongono la pagina. Nell'esempio della figura 
+	precedente abbiamo quattro blocchi che corrispondono a quattro diversi 
+	elementi div, a ciascuno dei quali bisogna applicare uno stile diverso.</p>
+	<p>Parlando di stili incorporati abbiamo visto come si possano usare le 
+	classi per assegnare uno stesso stile a pi&eacute; elementi di una pagina, per 
+	esempio in questo modo:</p>
+<div class="code">
+       <p> &lt;!DOCTYPE html&gt;</p>
+       <p>&lt;html&gt;<br />
+  &lt;head&gt;</p>
+		<p>&lt;meta charset=&quot;utf-8&quot;&gt; <br />
+		<br />
+         &lt;title&gt;Pagina con foglio stile incorporato&lt;/title&gt;</p>
+	<p>
+    &lt;style&gt;<br />
+    <br />
+    .piccolo { font-size:12px; font-family:arial; color:red }<br />
+    <br />
+    &lt;/style&gt;<br />
+    <br />
+    &lt;/head&gt;<br />
+    &lt;body&gt;<br />
+    <br />
+    &lt;div class=&quot;piccolo&quot;&gt; Primo blocco &lt;/div&gt;</p>
+  <p>&lt;div class=&quot;piccolo&quot;&gt; Secondo blocco &lt;/div&gt; <br />
+      <br />
+    &lt;/body&gt;<br />
+    <br />
+    &lt;/html&gt; </p>
+</div>
+	<p>Le classi per&eacute; non identificano in modo univoco un singolo blocco nella 
+	pagina, ma piuttosto forniscono delle regole comuni da applicare 
+	contemporaneamente a pi&eacute; blocchi (nell'esempio precedente la classe .piccolo 
+	viene applicata sia a h1 che a p). Se per&eacute; vogliamo posizionare 
+	separatamente ciascun blocco di una pagina, ci serve un modo per dargli un 
+	nome univoco in modo da potergli applicare una regola univoca.</p>
+	<p>A questo scopo i fogli stile prevedono un <strong>selettore di id</strong> 
+	che si usa in modo simile alle classi, ma che, a differenza di queste, si 
+	applica a un solo elemento della pagina. Consideriamo di nuovo la pagina di 
+	esempio, suddivisa in Header, Content, Sidebar e Footer vista prima. Ecco 
+	come potremmo assegnare a ogni blocco un identificatore id diverso:</p>
+<div class="code">
+       <p> &lt;body&gt;</p>
+		<p> &lt;div id=&quot;contenitore&quot;&gt;</p>
+		<p class="style2"> &lt;div id=&quot;header&quot;&gt;</p>
+		<p class="style2"> ...</p>
+		<p class="style2"> &lt;/div&gt;</p>
+		<p class="style2"> &lt;div id=&quot;content&quot;&gt;</p>
+		<p class="style2"> ...</p>
+		<p class="style2"> &lt;/div&gt;</p>
+		<p class="style2"> &lt;div id=&quot;sidebar&quot;&gt;</p>
+		<p class="style2"> ...</p>
+		<p class="style2"> &lt;/div&gt;</p>
+		<p class="style2"> &lt;div id=&quot;footer&quot;&gt;</p>
+		<p class="style2"> ...</p>
+		<p class="style2"> &lt;/div&gt;</p>
+		<p> &lt;div&gt;</p>
+		<p> &lt;/body&gt;</p>
+</div>
+	<p>Osserviamo che abbiamo un blocco, di nome contenitore, che racchiude gli 
+	altri quattro blocchi. A ciascun elemento di blocco viene assegnato un nome 
+	(pi&eacute; precisamente un identificatore) con la sintassi:</p>
+<div class="code">
+  &lt;div id=&quot;<em>nome_id</em>&quot;&gt; 
+    <br />
+</div>
+	<p>dove il nome_id pu&eacute; essere scelto a piacere, ma deve corrispondere con il 
+	nome usato nel foglio stile (o nello stile incorporato) per definire la 
+	regola associata a quel blocco.</p>
+	<p>Cercando di essere pi&eacute; precisi, considerando per esempio il blocco di 
+	nome footer, la sua regola di stile potrebbe essere la seguente (non ci 
+	preoccupiamo per il momento di capire i dettagli):</p>
+<div class="code">
+  #footer<br />
+	{<br />
+	clear: both;<br />
+	background: #ccc;<br />
+	text-align: right;<br />
+	padding: 20px;<br />
+	height: 1%;<br />
+	}</div>
+	<p>Si noti la sintassi molto semplice per definire una serie di stili 
+	associati con un id:</p>
+<div class="code">
+  #<em>nome_id</em>
+    <em>{ propriet&agrave;:valore; propriet&agrave;:valore; ... }</em><br />
+</div>
+	<p>Tale sintassi &eacute; molto simile a quella usata per dichiarare una
+	<a href=" css/css1.html">classe universale</a>:</p>
+<div class="code">
+    <em>.nome_classe { propriet&agrave;:valore; propriet&agrave;:valore; ... }</em></div>
+	<p>Come si pu&eacute; notare in pratica l'unica differenza &eacute; la presenza del 
+	simbolo del cancelletto # invece del punto usato per le classi.</p>
+	 <div class="titolo">Id e classi</div>
+	 <p>Vale la pena di tornare ancora sulla differenza fra id e classi. Si 
+		consideri il seguente esempio:</p>
+<div class="code">
+       <p> &lt;!DOCTYPE html&gt;</p>
+       <p>&lt;html&gt;<br />
+  &lt;head&gt;</p>
+		<p>&lt;meta charset=&quot;utf-8&quot;&gt; <br />
+		<br />
+         &lt;title&gt;Pagina con foglio stile incorporato&lt;/title&gt;</p>
+	<p>
+    &lt;style type=&quot;text/css&quot;&gt;<br />
+    <br />
+    .piccolo { font-size:12px; font-family:arial; color:red }</p>
+		<p>
+    #uno {position: relative; top: 12px; left: 20px; width: 450px; height: 20px; 
+	border: solid 1px; margin: 5px;}</p>
+		<p>
+    #due {position: relative; top: 100px; left: 200px; width: 100px; height: 
+	40px; border: solid 1px; margin: 5px;}</p>
+		<p>
+    <br />
+    &lt;/style&gt;<br />
+    <br />
+    &lt;/head&gt;<br />
+    &lt;body&gt;<br />
+    <br />
+    &lt;div class=&quot;piccolo&quot; id=&quot;uno&quot;&gt; Primo blocco &lt;/div&gt;</p>
+  <p>&lt;div class=&quot;piccolo&quot; id=&quot;due&quot;&gt; Secondo blocco &lt;/div&gt; <br />
+      <br />
+    &lt;/body&gt;<br />
+    <br />
+    &lt;/html&gt; </p>
+</div>
+	<p>Senza entrare per ora nei dettagli delle regole di posizionamento, si 
+	osservi che:</p>
+	<ul>
+					<li>classi e id vengono spesso usati insieme;<br />
+					</li>
+					<li>ogni classe generalmente si applica a pi&eacute; di un elemento 
+					e serve per formattare allo stesso modo pi&eacute; elementi;<br />
+					</li>
+					<li>ogni id si applica invece ad un solo elemento e serve 
+					per specificare le caratteristiche uniche di quello stesso 
+					elemento (ad esempio la sua posizione).</li>
+	</ul>
+	<p>L'argomento &eacute; in effetti abbastanza complesso e lo &eacute; ancora di pi&eacute; per il 
+	fatto che nulla vieta di usare classi separate per identificare elementi 
+	diversi, come se fossero id (mentre &eacute; errore usare due volte lo stesso id 
+	per due elementi diversi). In generale per&eacute; un buon programmatore user&eacute; le 
+	classi per le regole comuni e gli id per le regole specifiche di un singolo 
+	elemento.</p>
+	<p>&nbsp;</p>
+
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

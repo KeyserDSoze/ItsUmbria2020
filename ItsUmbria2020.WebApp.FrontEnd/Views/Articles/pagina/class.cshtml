@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Un esempio di pagina </div>
+     <p>Per chiarire meglio i termini usati nel seguito consideriamo nuovamente il seguente semplice esempio di pagina html:</p>
+        <div class="code">
+          <table>
+            <tbody>
+              <tr>
+                <td width="571">&lt;!DOCTYPE html&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;html&gt;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;head&gt;<br />
+				&lt;meta charset=&quot;utf-8&quot;&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;title&gt; La mia prima pagina in HTML &lt;/title&gt;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;/head&gt;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;body&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;p&gt;Ecco la mia &lt;strong&gt; prima pagina!!!! &lt;/strong&gt; in HTML &lt;/p&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;p&gt; Visita &lt;a href = &quot;  http://www.programmiamo.altervista.org/index.html&quot;&gt; Programmiamo&lt;/a&gt;:&lt;br&gt; potrai imparare <br />
+                  tutti i segreti dell'HTML! &lt;/p&gt;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;/body&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;/html&gt;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+     <p>&nbsp;</p>
+     <div class="titolo">Elementi contenitori ed elementi vuoti </div>
+    <p>Un <strong>elemento</strong> pu&ograve; essere:<br />
+	<br />
+-&nbsp;un <strong>elemento contenitore</strong>:  una porzione di codice HTML compresa fra un tag di apertura e il corrispondente tag di chiusura (es.  l'elemento body inizia con &lt;body&gt; e termina con &lt;/body&gt;)<br />
+	<br />
+-&nbsp;un <strong>elemento vuoto</strong>:  &egrave; costituito da un singolo tag di apertura/chiusura (es. &lt;br&gt;, 
+	che serve per introdurre un'andata a capo nel testo). </p>
+    <p>&nbsp;</p>
+    <div class="titolo">
+
+Elementi di blocco ed elementi inline </div>
+    <p>Gli elementi del body (cio&eacute; in pratica tutti gli elementi che servono per 
+	visualizzare una pagina) si dividono in due grandi categorie: elementi di 
+	blocco ed elementi inline.</p>
+	<p>Si dicono di tipo&nbsp;<strong>blocco</strong>&nbsp;quegli elementi che vengono  visualizzati per mezzo di un &quot;blocco&quot; autonomo all'interno della  pagina, isolato dal resto della pagina con un'andata a capo e una riga vuota.  Per esempio &lt;p&gt; &egrave; un elemento di tipo blocco, perch&eacute; isola una porzione  di testo, creando un paragrafo separato.</p>
+	<p>Un elenco incompleto di elementi di blocco (che studieremo nelle prossime 
+	lezioni) &eacute; il seguente:</p>
+	<ul>
+					<li>paragrafo: &lt;p&gt; ... &lt;/p&gt;</li>
+					<li>titolo: &lt;h1&gt; ... &lt;/h1&gt;, &lt;h2&gt; ... &lt;/h2&gt; etc.</li>
+					<li>liste: &lt;ul&gt; ... &lt;/ul&gt;, &lt;ol&gt; ... &lt;/ol&gt;</li>
+					<li>tabelle: &lt;table&gt; .... &lt;/table&gt;</li>
+					<li>form: &lt;form&gt; ... &lt;/form&gt;</li>
+					<li>div: &lt;div&gt; ... &lt;/div&gt;</li>
+	</ul>
+	<p> Si noti che tutti gli elementi di blocco sono di tipo contenitore (cio&eacute; 
+	hanno un tag di chiusura e uno di apertura).</p>
+	<p> Gli elementi&nbsp;<strong>inline</strong>&nbsp;sono invece quelli che vengono  visualizzati all'interno della pagina senza separazioni, cio&egrave; senza  interrompere il flusso con un'andata a capo. Per esempio &lt;strong&gt; (che evidenza una porzione di testo in grassetto) &egrave; un  elemento inline, perch&eacute; non separa il testo evidenziato dal resto della frase. </p>
+	<p> Un elenco incompleto di elementi inline &eacute; il seguente</p>
+	<ul>
+					<li>link o ancora: &lt;a&gt;</li>
+					<li>grassetto: &lt;strong&gt; ... &lt;/strong&gt;</li>
+					<li>enfasi o corsivo: &lt;em&gt; ... &lt;/em&gt;</li>
+					<li>immagine &lt;img&gt;</li>
+	</ul>
+	<p>Si noti che alcuni elementi inline sono di tipo contenitore (es. strong e 
+	em), mentre altri sono di tipo vuoto (es.  img).</p>
+	<p>&nbsp; </p>
+        <div class="titolo">
+          Annidamento degli elementi </div>
+        <p>All'interno di una pagina gli  elementi contenitori (cio&egrave; quelli che hanno un tag di apertura e uno di  chiusura) possono essere annidati (cio&egrave; &quot;racchiusi&quot;) uno dentro  l'altro. Bisogna sempre che l'elemento esterno venga chiuso dopo la chiusura  dell'elemento interno. Per esempio nel paragrafo seguente &lt;strong&gt; &egrave;  annidato correttamente dentro il paragrafo &lt;p&gt; (infatti &lt;strong&gt;  viene chiuso prima dell'elemento &lt;p&gt; che lo contiene):</p>
+        <div class="code">
+          &lt;p&gt;Ecco la mia &lt;strong&gt; prima pagina!!!! &lt;/strong&gt; in HTML &lt;/p&gt;</div>
+        <p>Tuttavia non tutti gli elementi possono stare  dentro tutti gli altri. La regola base &egrave; che un elemento di blocco pu&ograve; contenere  al proprio interno un elemento inline, ma non &egrave; mai possibile il viceversa (es.  &lt;strong&gt; non pu&ograve; contenere un paragrafo &lt;p&gt;). Inoltre alcuni  elementi possono stare solo dentro ad altri (es. &lt;p&gt; pu&ograve; stare dentro  &lt;body&gt; ma non dentro &lt;head&gt;; invece &lt;title&gt; pu&ograve; stare solo in  &lt;head&gt; e mai in &lt;body&gt;).</p>
+        <p>Una semplice metafora per comprendere meglio la differenza fra 
+		elementi di blocco ed elementi inline consiste nel pensare agli elementi 
+		di blocco come a delle scatole, mentre gli elementi inline sono il 
+		contenuto che pu&eacute; essere messo dentro a tali scatole. Alcune scatole 
+		(elementi di blocco) possono essere racchiuse dentro a scatole pi&eacute; 
+		grandi, ma non potr&eacute; mai succedere che il contenuto racchiuda una 
+		scatola.</p>
+	<p>Le regole generali possono cos&eacute; essere sintetizzate:</p>
+	<ul>
+					<li>Un elemento di blocco pu&eacute; contenere altri elementi di 
+					blocco oppure elementi inline. Non tutti gli elementi di 
+					blocco possono essere contenuti all'interno di altri 
+					elementi di blocco (per esempio il paragrafo &lt;p&gt; non pu&eacute; 
+					stare dentro al titolo &lt;h1&gt;).<br />
+					</li>
+					<li>Un elemento inline pu&eacute; contenere solo altri elementi 
+					inline, ma non elementi di blocco. Per esempio &lt;strong&gt;&lt;em&gt;...&lt;/em&gt;&lt;/strong&gt; 
+					&eacute; corretto (si tratta di tutti elementi inline), mentre 
+					&lt;strong&gt;&lt;p&gt;...&lt;/p&gt;&lt;/strong&gt; &eacute; sbagliato (&lt;p&gt;, elemento di 
+					blocco, non pu&eacute; stare dentro &lt;strong&gt;, elemento inline).<br />
+					</li>
+					<li>Un elemento inline deve trovarsi sempre all'interno di 
+					un elemento di blocco.<br />
+					Per esempio un immagine (o una scritta in grassetto) deve 
+					sempre essere contenuta in un paragrafo (o in un div o altri elementi simili). In altre parole sarebbe sbagliato 
+		mettere un elemento inline direttamente nel body senza nessun elemento 
+		di blocco che lo contenga.</li>
+	</ul>
+	<p>&nbsp;</p>
+        <div class="titolo">
+          Omettere il tag di chiusura</div>
+        <p>In alcuni elementi contenitori il tag di chiusura pu&eacute; essere omesso, 
+		senza che questo provochi errori. La lista completa degli elementi per 
+		cui il tag di chiusura &eacute; opzionale &eacute; la seguente:</p>
+	<p>&lt;body&gt;, &lt;colgroup&gt;, &lt;dd&gt;, &lt;dt&gt;, &lt;head&gt;, &lt;html&gt;, &lt;li&gt;, &lt;optgroup&gt;, &lt;option&gt;, 
+	&lt;p&gt;, &lt;tbody&gt;, &lt;td&gt;, &lt;tfoot&gt;, &lt;th&gt;, &lt;thead&gt;, &lt;tr&gt; </p>
+	<p>Per fare subito un semplice esempio, la pagina seguente &eacute; considerata 
+	corretta secondo la sintassi dell'HTML:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt; <br />
+			&lt;html&gt; <br />
+			&lt;head&gt;<br />
+				&lt;meta charset=&quot;utf-8&quot;&gt; <br />
+			&lt;title&gt;Una semplice pagina senza tag di chiusura&lt;/title&gt; <br />
+			&lt;body&gt; <br />
+			&lt;p&gt; Ciao a tutti
+    </div>
+        <p>Nell'esempio qui sopra notiamo che i tag &lt;html&gt;, &lt;head&gt;, &lt;body&gt; e &lt;p&gt; 
+		non sono stati chiusi. La ragione per cui &eacute; possibile tralasciare il tag 
+		di chiusura in questi casi &eacute; che la chiusura dell'elemento &eacute; implicita 
+		dall'apertura di un altro elemento di blocco o dalla fine della pagina 
+		html. Per esempio &lt;head&gt; deve chiudersi per forza subito prima 
+		dell'apertura di &lt;body&gt; e dunque non &eacute; strettamente necessario indicarlo 
+		esplicitamente. Si noti per&eacute; che, sempre nell'esempio qui sopra, non si 
+		pu&eacute; omettere la chiusura di &lt;title&gt; perch&eacute; questa non pu&eacute; essere 
+		ricavata dalla struttura del documento.</p>
+	<p>Il principale vantaggio di omettere i tag di chiusura &eacute; quella di ridurre 
+	le dimensioni della pagina e di velocizzarne il download e la 
+	visualizzazione sul browser. Questo &eacute; valido in particolare per pagine 
+	complesse, per esempio con molte tabelle annidate.</p>
+	<p>Tuttavia l'uso dei tag di chiusura in tutti gli elementi contenitori &eacute; 
+	fortemente consigliato, in particolare per chi inizia a studiare il 
+	linguaggio html, perch&eacute; produce un codice pi&eacute; chiaro, pi&eacute; leggibile e pi&eacute; 
+	facile per la correzione di eventuali errori. Per tutte le precedenti 
+	ragioni, nel seguito delle nostre lezioni useremo sempre i tag di chiusura 
+	per tutti gli elementi di blocco in html e suggeriamo caldamente al lettore 
+	di abituarsi a fare lo stesso.</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

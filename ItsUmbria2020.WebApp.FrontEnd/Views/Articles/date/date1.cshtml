@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Creare un oggetto Date</div>
+        <p>Come suggerisce il nome, gli oggetti <em>Date</em> servono per 
+		effettuate operazioni sulla data (giorno, mese e anno). Creare un nuovo 
+		oggetto Date &eacute; molto semplice:</p>
+	<div class="code">
+          var oggi = new Date();</div>
+        <p>Nel nostro caso <em>oggi</em> (nome scelto 
+		a piacere) si dice che &eacute; una nuova <em>istanza</em> della classe <em>Date</em>. In 
+		particolare Date() con le parentesi tonde, si dice <strong>costruttore</strong>: 
+		si tratta di un particolare metodo che, come dice il nome, serve per 
+		costruire un nuovo oggetto appartenente a una certa classe.</p>
+	<p>Abbiamo gi&eacute; visto come la parola chiave <em>new</em> unita a una funzione 
+	costruttore (in questo caso Date) sia uno dei modi per definire un oggetto. 
+	In questo caso si tratta di un oggetto predefinito e dunque Date &eacute; una 
+	parola riservata del linguaggio JS.</p>
+	<p>Usare le date &eacute; piuttosto semplice come mostra l'esempio seguente:</p>
+	<div class="code">
+          <pre>&lt;script&gt;
+  var data = new Date();
+  var Hh, Mm, Ss, mm;
+  Hh = data.getHours() + &quot;:&quot;;
+  Mm = data.getMinutes() + &quot;:&quot;;
+  Ss = data.getSeconds() + &quot;:&quot;;
+  mm = data.getMilliseconds() ;
+  gg = data.getDate();
+  me = data.getMonth()+1;
+  aa = data.getFullYear();
+  alert(&quot;Sono le ore &quot; + Hh + Mm + Ss + mm + &quot; del giorno &quot;+gg+&quot;/&quot;+me+&quot;/&quot;+aa);
+&lt;/script&gt;</pre>
+	</div>
+        <p>il quale visualizza:</p>
+	<p class="style1">
+	<img alt="Ora e data corrente" src="../img/img9.jpg" /></p>
+	<p>Si osservi che bisogna aggiungere 1 al mese, poich&eacute; JS numera i mesi 
+	dell'anno da 0 (gennaio) a 11 (dicembre).</p>
+        <p>Occorre sottolineare che la data e l'ora visualizzate sono quelle del 
+		computer su cui viene eseguito lo script: se tali informazioni non sono 
+		corrette, anche la data usata da JS sar&eacute; sbagliata.</p>
+
+        <div class="titolo"> I metodi dell'oggetto Date</div>
+        <p>Nell'esempio precedente abbiamo gi&eacute; fatto ampio uso dei principali 
+		metodi dell'oggetto Date. Qui diamo una rapida tabella riassuntiva di 
+		tutti i metodi:</p>
+
+
+<table border="1">
+<tbody><tr><th style="width: 215px">Metodo</th><th>Descrizione</th></tr>
+<tr><td style="width: 215px"><strong>getDate()</strong></td><td>numero del <strong>giorno del mese</strong> corrente</td></tr>
+<tr><td style="width: 215px"><strong>getDay()</strong></td><td>numero del<strong>giorno della settimana</strong> corrente, ad esempio 
+				0 = domenica, 1=luned&eacute;, 5=Venerd&eacute;&#8230;</td></tr>
+<tr><td style="width: 215px"><strong>getMonth()</strong></td><td>numeri di <strong>mese</strong> 
+				corrente, numerati da 0 a 11</td></tr>
+
+<tr><td style="width: 215px"><strong>getFullYear()</strong></td><td><strong>anno</strong> corrente</td></tr>
+<tr><td style="width: 215px"><strong>getHours()</strong></td><td><strong>ora</strong> corrente</td></tr>
+<tr><td style="width: 215px"><strong>getMinutes()</strong></td><td><strong>minuti</strong> dell&#8217;ora corrente</td></tr>
+<tr><td style="width: 215px"><strong>getSeconds()</strong></td><td><strong>secondi</strong> dell&#8217;ora corrente</td></tr>
+<tr><td style="width: 215px"><strong>getMilliseconds()</strong></td><td><strong>millisecondi</strong> dell&#8217;ora corrente</td></tr>
+<tr>
+  <td style="width: 215px"><strong>getTime()</strong></td>
+  <td>torna il numero di 
+		millisecondi trascorsi dal 1 gennaio 1970 rispetto alla data corrente </td>
+</tr>
+<tr><td style="width: 215px"><strong>getTimezoneOffset() </strong></td><td>
+				differenza in minuti fra l'ora del PC e l'ora di riferimento (<strong>UTC</strong> 
+				= tempo coordinato universale, corrispondente all'ora di 
+				Greenwich)</td></tr>
+<tr><td style="width: 215px"><strong>UTC() </strong></td>
+<td>torna il numero di 
+				millisecondi trascorsi dal 1 gennaio 1970 secondo il tempo UTC rispetto a una data specificata </td>
+</tr>
+<tr><td style="width: 215px"><strong>getUTCDate(), <br />
+				getUTCDay(), <br />
+				getUTCFullYear(), getUTCHours(), getUTCMilliseconds(), 
+				getUTCMinutes(), getUTCMonth(), getUTCSeconds() </strong></td><td>
+				forniscono la date e l'ora di riferimento (UTC)</td></tr>
+<tr><td style="width: 215px"><strong>parse() </strong></td><td>converte una data 
+				in numero di millisecondi trascorsi dal 1 gennaio 1970</td></tr>
+<tr><td style="width: 215px"><strong>setDate(),<br />
+				</strong><strong>setFullYear(), </strong><strong><br />
+				setHours(), <br />
+				</strong><strong>setMilliseconds(), <br />
+				</strong><strong>setMinutes(), </strong><strong><br />
+				setMonth(), <br />
+				</strong><strong>setSeconds(), <br />
+				</strong><strong>setTime(), </strong><strong>setUTCDate(),
+				</strong><strong>setUTCFullYear(), </strong><strong>setUTCHours(),
+				</strong><strong>setUTCMilliseconds(), </strong><strong>
+				setUTCMinutes(), </strong><strong>setUTCMonth(), </strong>
+				<strong>setUTCSeconds() </strong></td><td>permettono di cambiare 
+				il valore di un oggetto Date</td></tr>
+<tr><td style="width: 215px"><strong>toDateString(), <br />
+				toGMTString(), <br />
+				toISOString(),<br />
+				</strong><strong>toJSON(), </strong><strong><br />
+				toLocaleDateString(), </strong><strong>toLocaleTimeString(),
+				</strong><strong>toLocaleString(), <br />
+				</strong><strong>toString(), <br />
+				</strong><strong>toTimeString(), <br />
+				</strong><strong>toUTCString()</strong></td><td>convertono una 
+				data o un orario in stringa</td></tr>
+<tr><td style="width: 215px"><strong>valueOf() </strong></td><td>torna il valore 
+				primitivo di un oggetto Date</td></tr>
+</tbody></table>
+
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

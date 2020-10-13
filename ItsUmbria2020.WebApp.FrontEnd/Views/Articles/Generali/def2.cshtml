@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+
+
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Struttura generale di un programma: interfaccia e codice</div>
+        <p>In generale un programma per un computer, qualunque programma (da 
+		Internet Explorer a Angry Birds), pu&eacute; essere pensato come costituito da 
+		due parti ben distinte:</p>
+	<ol>
+					<li>un'interfaccia</li>
+					<li>il codice del programma</li>
+	</ol>
+	<p>L'<strong>interfaccia</strong> &eacute; quella parte del programma con cui 
+	l'utente interagisce direttamente. Potremmo paragonarla al pannello di 
+	controllo di un macchinario. Usando l'interfaccia (tipicamente attraverso la 
+	tastiera e il mouse) l'utente pu&eacute; inserire dati, scegliere opzioni, ricevere 
+	risultati eccetera.</p>
+	<p>Il <strong>codice</strong> &eacute; invece la parte nascosta del programma, quella che si occupa 
+	di eseguire i comandi forniti attraverso l'interfaccia. Possiamo paragonarla 
+	al motore di una macchina. Senza il codice nessun programma pu&eacute; funzionare, 
+	ma senza un'interfaccia un programma non pu&eacute; comunicare con l'esterno.</p>
+	<p class="style1">
+	<img alt="Interfaccia e codice di un programma" src="../img/img10.jpg" /></p>
+
+	<div class="titolo">
+
+	  Interfaccia e codice nei programmi in JS</div>
+        <p>Quando si scrivono dei programmi in JavaScript, l'interfaccia &eacute; 
+		tipicamente costituita da una <em>pagina html</em>. L'utente interagisce 
+		con gli elementi della pagina stessa (immagini, div, paragrafi etc.) e 
+		il codice risponde a sua volta modificando tali elementi.</p>
+	<p>Un semplice esempio &eacute; quello del programma di animazione visto nella 
+	lezione precedente. In questo caso l'interfaccia era costituita da una 
+	pagina con un'immagine di un omino stilizzato. L'utente interagisce con 
+	l'interfaccia cliccando col mouse sull'immagine e il codice risponde 
+	modificando l'immagine stessa.</p>
+	<p>Il codice nascosto &eacute; la <strong>funzione</strong> JS di nome <em>muovi</em> 
+	che si occupa appunto di animare l'immagine.&nbsp;</p>
+	<p>Sebbene, come vedremo pi&eacute; avanti, esistano anche altri modi per inserire 
+	in una pagina il codice JS, per adesso consideriamo questa sola possibilit&eacute;: 
+	il codice va inserito all'interno di una funzione (<em>function</em>) con nome scelto 
+	a piacere dal programmatore. La funzione si trova nell'head (pi&eacute; avanti 
+	rimuoveremo anche questa limitazione) e rispetta la seguente struttura 
+	generale:</p>
+        <div class="code">
+			&lt;script&gt; <br />
+			<br />
+			function <em>nome_della_funzione</em>()<br />
+&nbsp;&nbsp;&nbsp; { <br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ....<br />
+			&nbsp;&nbsp;&nbsp;
+			} <br />
+			<br />
+			&lt;/script&gt;</div>
+        <p>Si osservi nuovamente che la <em>function</em> dev'essere chiusa in un 
+		elemento &lt;script&gt;. Si notino le parentesi tonde (aperta e chiusa) che 
+		seguono obbligatoriamente il nome della funzione e la coppia di graffe 
+		(aperta e chiusa) che racchiudono il codice della funzione. Pi&eacute; avanti 
+		studieremo meglio nel dettaglio il funzionamento di questo meccanismo e 
+		il suo significato. Per adesso non preoccupiamocene troppo.</p>
+	<p>Sebbene qualsiasi elemento html (img, a, div etc.) si presti a essere 
+	utilizzato per realizzare un'interfaccia, uno degli elementi sicuramente pi&eacute; 
+	utili &eacute; il form. Mediante un <strong>form</strong> si pu&eacute; infatti realizzare facilmente 
+	un'interfaccia dotata di caselle di testo, pulsanti, etc. Si consideri a 
+	titolo di esempio la seguente calcolatrice realizzata in JS:</p>
+<form name="calc">
+<table border="4" align="center">
+<tr>
+<td>
+<input type="text" name="numero" size="16">
+<br>
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" name="one"   value="  1  " onclick="calc.numero.value += '1'">
+<input type="button" name="two"   value="  2  " onclick="calc.numero.value += '2'">
+<input type="button" name="three" value="  3  " onclick="calc.numero.value += '3'">
+<input type="button" name="plus"  value="  +  " onclick="calc.numero.value += ' + '">
+<br>
+<input type="button" name="four"  value="  4  " onclick="calc.numero.value += '4'">
+<input type="button" name="five"  value="  5  " onclick="calc.numero.value += '5'">
+<input type="button" name="six"   value="  6  " onclick="calc.numero.value += '6'">
+<input type="button" name="minus" value="  -  " onclick="calc.numero.value += ' - '">
+<br>
+<input type="button" name="seven" value="  7  " onclick="calc.numero.value += '7'">
+<input type="button" name="eight" value="  8  " onclick="calc.numero.value += '8'">
+<input type="button" name="nine"  value="  9  " onclick="calc.numero.value += '9'">
+<input type="button" name="times" value="  x  " onclick="calc.numero.value += ' * '">
+<br>
+<input type="button" name="clear" value="  c  " onclick="calc.numero.value = ''">
+<input type="button" name="zero"  value="  0  " onclick="calc.numero.value += '0'">
+<input type="button" name="doit"  value="  =  " onclick="calc.numero.value = eval(calc.numero.value)">
+<input type="button" name="div"   value="  /  " onclick="calc.numero.value += ' / '">
+<br>
+</td>
+</tr>
+</table>
+</form>
+
+	<p>Senza preoccuparci troppo per ora dei dettagli del suo funzionamento, 
+	diamo un'occhiata a come &eacute; stata realizzata l'interfaccia:</p>
+        <div class="code">
+			&lt;form name=&quot;calc&quot;&gt;<br />
+			&lt;table border=&quot;4&quot; align=&quot;center&quot;&gt;<br />
+			&lt;tr&gt;<br />
+			&lt;td&gt;<br />
+			&lt;input type=&quot;text&quot; name=&quot;numero&quot; size=&quot;16&quot;&gt;<br />
+			&lt;br&gt;<br />
+			&lt;/td&gt;<br />
+			&lt;/tr&gt;<br />
+			&lt;tr&gt;<br />
+			&lt;td&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;one&quot; value=&quot; 1 &quot; onclick=&quot;calc.numero.value 
+			+= '1'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;two&quot; value=&quot; 2 &quot; onclick=&quot;calc.numero.value 
+			+= '2'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;three&quot; value=&quot; 3 &quot; onclick=&quot;calc.numero.value 
+			+= '3'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;plus&quot; value=&quot; + &quot; onclick=&quot;calc.numero.value 
+			+= ' + '&quot;&gt;<br />
+			&lt;br&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;four&quot; value=&quot; 4 &quot; onclick=&quot;calc.numero.value 
+			+= '4'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;five&quot; value=&quot; 5 &quot; onclick=&quot;calc.numero.value 
+			+= '5'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;six&quot; value=&quot; 6 &quot; onclick=&quot;calc.numero.value 
+			+= '6'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;minus&quot; value=&quot; - &quot; onclick=&quot;calc.numero.value 
+			+= ' - '&quot;&gt;<br />
+			&lt;br&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;seven&quot; value=&quot; 7 &quot; onclick=&quot;calc.numero.value 
+			+= '7'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;eight&quot; value=&quot; 8 &quot; onclick=&quot;calc.numero.value 
+			+= '8'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;nine&quot; value=&quot; 9 &quot; onclick=&quot;calc.numero.value 
+			+= '9'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;times&quot; value=&quot; x &quot; onclick=&quot;calc.numero.value 
+			+= ' * '&quot;&gt;<br />
+			&lt;br&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;clear&quot; value=&quot; c &quot; onclick=&quot;calc.numero.value 
+			= ''&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;zero&quot; value=&quot; 0 &quot; onclick=&quot;calc.numero.value 
+			+= '0'&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;doit&quot; value=&quot; = &quot; onclick=&quot;calc.numero.value 
+			= eval(calc.numero.value)&quot;&gt;<br />
+			&lt;input type=&quot;button&quot; name=&quot;div&quot; value=&quot; / &quot; onclick=&quot;calc.numero.value 
+			+= ' / '&quot;&gt;<br />
+			&lt;br&gt;<br />
+			&lt;/td&gt;<br />
+			&lt;/tr&gt;<br />
+			&lt;/table&gt;<br />
+			&lt;/form&gt;</div>
+	<p>Si osservi come sia stato appunto usato un form. Un elemento input di 
+	tipo text &eacute; stato usato per la casella di inserimento dati e una serie di 
+	bottoni (<em>button</em>) sono stati usati per realizzare i tasti della 
+	calcolatrice. Notiamo di passaggio che in questo esempio il codice JS non &eacute; 
+	contenuto in una funzione: vedremo pi&eacute; avanti meglio questi casi 
+	particolari.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

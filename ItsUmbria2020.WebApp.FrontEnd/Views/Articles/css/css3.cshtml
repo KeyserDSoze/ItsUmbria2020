@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Sintassi del foglio stile</div>
+	 <p>La sintassi usata nei fogli &eacute; piuttosto semplice e consistente:</p>
+
+	 <div class="code">
+       <p><em>selettore { <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+		</em>
+       </p>
+    </div>
+	 <p>dove il <strong>selettore</strong> consente di selezionare uno o pi&eacute; 
+		elementi ai quali applicare le regole di stile indicate nel seguito. Si 
+		osservi ancora una volta che il foglio stile NON contiene codice html: 
+		si tratta di un altro linguaggio!</p>
+	<p>Si osservino con attenzione:</p>
+	<ul>
+					<li>le parentesi graffe aperte e chiuse che delimitano le 
+					regole definite;</li>
+					<li>i due punti che separano la propriet&eacute; dal suo valore;</li>
+					<li>il punto e virgola alla fine di ogni singola regola (il 
+					punto e virgola finale, volendo, pu&eacute; essere omesso)</li>
+	</ul>
+	<p>Per adesso l'unico tipo di selettore che abbiamo visto &eacute; il cosiddetto 
+	selettore di elemento, cio&eacute; in pratica il nome di un tag che seleziona tutti 
+	gli elementi di quel certo tipo.</p>
+	<p>Si consideri ancora l'esempio qui sotto:</p>
+
+	 <div class="code">
+       <p>/* Formatta tutti i paragrafi in rosso giustificato */<br />
+         p { <br />
+&nbsp;&nbsp; color: red;<br />
+&nbsp;&nbsp; text-align:justify; <br />
+&nbsp;&nbsp; }</p>
+		<p>/* Assegna un colore di sfondo alla pagina */<br />
+		body { background-color: lightblue; } <em><br />
+		</em>
+       </p>
+    </div>
+	 <p>Osserviamo in questo esempio la sintassi necessaria per inserire <strong>
+		commenti</strong> in un foglio stile. Notiamo inoltre che si pu&eacute; andare 
+		a capo liberamente e inserire spazi a piacere: come al solito il modo di 
+		scrittura &eacute; una questione di gusti e di abitudini personali.</p>
+	<p>Infine &eacute; possibile raggruppare insieme pi&eacute; stili uguali in questo modo:</p>
+
+	 <div class="code">
+       <p>/* Formatta tutti gli header h1, h2 e h3 in verde centrato */<br />
+		h1,h2,h3 { <br />
+&nbsp;&nbsp; color: green;<br />
+&nbsp;&nbsp; text-align:center; <br />
+&nbsp;&nbsp; }</p>
+    </div>
+	 <p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

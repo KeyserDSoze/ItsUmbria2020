@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Speed e easing</div>
+
+	<p>Per fortuna i successivi due parametri <em>speed</em> e <em>easing</em> 
+	(entrambi opzionali) sono un po' pi&eacute; semplici e seguono le stesse regole 
+	sintattiche viste per i metodi <em>hide, show, toggle</em> etc.</p>
+	<p>Come in quei casi, speed pu&eacute; assumere i valori:</p>
+	<ul>
+					<li>&quot;slow&quot;</li>
+					<li>&quot;fast&quot;</li>
+					<li>millisecondi</li>
+	</ul>
+	<p>Si faccia attenzione agli apici (singoli o doppi) intorno alle parole 
+	chiave &quot;slow&quot; e &quot;fast&quot; (obbligatori). In alternativa si pu&eacute; esprimere la 
+	durata dell'animazione in millisecondi:</p>
+        <div class="code">
+          $(&quot;p&quot;).animate({fontSize: &quot;50px&quot;}, 2000);&nbsp;&nbsp; // L'animazione dura due 
+			secondi&nbsp; </div>
+	<p>Il parametro easing, <a href="jquery12.html">come gi&eacute; si &eacute; detto</a>, 
+	permette di variare l'andamento nel tempo della velocit&eacute; dell'animazione. I 
+	valori possibili sono soltanto due:</p>
+	<ul>
+					<li>&quot;linear&quot;</li>
+					<li>&quot;swing&quot; (il valore di default)</li>
+	</ul>
+	<p>La differenza fra i due valori &eacute; che con &quot;linear&quot; la velocit&eacute; 
+	dell'animazione &eacute; costante, mentre usando &quot;swing&quot; la velocit&eacute; prima aumenta 
+	gradualmente partendo da zero e alla fine diminuisce sempre gradualmente per 
+	tornare a zero.</p>
+
+<div class="titolo">Usare un plugin esterno per easing</div>
+
+	<p>Oltre a questi due valori presenti di default, sono disponibili plug in 
+	di jQuery che consentono di avere a disposizione molte pi&eacute; possibilit&eacute;. 
+	Includere questi plugin &eacute; piuttosto semplice: basta scaricare il file .js 
+	dal repository e inserirlo nella propria pagina. La pagina seguente mostra 
+	un esempio di uso di
+	<a target="_blank" href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery 
+	easing plugin</a>:</p>
+        <div class="code">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</pre>
+			<pre>&lt;script src=&quot;jquery.easing.1.3.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+$(document).ready(function(){
+    $(&quot;#btn1&quot;).click(function(){
+        $(&quot;#animato&quot;).animate({fontSize: &quot;50px&quot;}, {easing: &quot;easeOutBounce&quot;}); 
+    });
+    
+    $(&quot;#btn2&quot;).click(function(){
+        $(&quot;#animato&quot;).animate({fontSize: &quot;50px&quot;}, {easing: &quot;easeInElastic&quot;}); 
+    });
+
+    $(&quot;#btn3&quot;).click(function(){
+        $(&quot;#animato&quot;).animate({fontSize: &quot;50px&quot;}, {easing: &quot;easeInCubic&quot;}); 
+    });    
+    
+});
+
+
+
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Titolo animato&lt;/h1&gt;
+&lt;p id=&quot;animato&quot;&gt;Clicca su uno dei bottoni qui sotto:&lt;/p&gt;
+
+&lt;button id=&quot;btn1&quot;&gt;easeOutBounce&lt;/button&gt;
+&lt;button id=&quot;btn2&quot;&gt;easeInElastic&lt;/button&gt;
+&lt;button id=&quot;btn3&quot;&gt;easeInCubic&lt;/button&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+	</div>
+	<p>Si noti l'inclusione del file di plugin <em>jquery.easing.1.3.js</em> 
+	(che deve essere prima scaricato dal repository) con l'istruzione:</p>
+        <div class="code">
+          &nbsp;&lt;script src=&quot;jquery.easing.1.3.js&quot;&gt;&lt;/script&gt;</div>
+	<p>Si osservi anche che per questo particolare plugin &eacute; obbligatorio usare 
+	la seconda versione della sintassi di animate.</p>
+	<p>easeOutBounce, easeInElastic, easeInCubic sono tre esempi fra le molte 
+	possibilit&eacute; aggiuntive di easing che &eacute; possibile usare dopo aver aggiunto il 
+	plugin.</p>
+
+<div class="titolo">Funzione di callback</div>
+
+	<p>Abbiamo gi&eacute; incontrato l'uso di questo tipo di funzione: si tratta di una 
+	funzione (solitamente) anonima che viene eseguita al termine 
+	dell'animazione.</p>
+	<p>Si consideri l'esempio seguente:</p>
+        <div class="code">
+          &nbsp;$('p').animate({ top: '+=200px', left: '+=200px'}, <br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function() {<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $(&quot;p&quot;).hide()<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ); </div>
+	<p>In questo caso al termine dell'animazione l'elemento p viene nascosto 
+	(scompare dalla pagina).</p>
+	<div class="titolo">Fermare un'animazione: metodo stop() </div>
+	<p>Una animazione pu&ograve; essere interrotta prima della fine usando il metodo <em>stop</em>, come mostrato nel seguente esempio:</p>
+	<div class="code"> &nbsp;$(&quot;#stop&quot;).click(function(){     $(&quot;#panel&quot;).stop(); });</div>
+	<p>In questo caso cliccando sull'elemento #stop viene eseguito:</p>
+	<div class="code"> $(&quot;#panel&quot;).stop();</div>
+	<p>che ferma l'animazione dell'elemento #panel.   </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

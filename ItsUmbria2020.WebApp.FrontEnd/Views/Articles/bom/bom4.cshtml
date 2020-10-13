@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+<!--
+.style1 {				text-align: center;
+}
+-->
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+    <div class="titolo">Le istruzioni di input/output</div>
+    <p>Le istruzioni di input servono per acquisire valori dalla tastiera, 
+	mentre le istruzioni di output consentono di visualizzare valori sullo 
+	schermo.</p>
+	<p>In JS le istruzioni di input/output sono realizzate mediante metodi 
+	dell'oggetto window.</p>
+    <div class="titolo">Alert</div>
+    <p>Abbiamo gi&eacute; incontrato <em>alert</em>, metodo dell'oggetto <em>window</em>, che apre una casella di messaggio visualizzando una stringa. Ecco come potrebbe essere usato:</p>
+    <p align="center">window.alert('Ecco un esempio di messaggio idiota'); </p>
+    <p>L'esempio di codice completo &egrave; questo:</p>
+    <div class="code"> &lt;p onclick=&quot;window.alert('Ecco un esempio di messaggio idiota')&quot;&gt; Cliccando qui 
+      viene visualizzato un messaggio idiota&lt;/p&gt; </div>
+    <p>L'utente pu&ograve; verificare da solo il funzionamento di questo metodo 
+      cliccando sul paragrafo qui sotto:</p>
+    <p onclick="window.alert('Ecco un esempio di messaggio idiota')" class="style1"> Cliccando qui viene visualizzato un messaggio idiota</p>
+    <p>Anche in questo caso, volendo, &egrave; possibile omettere l'indicazione di <em>window </em> e quindi scrivere semplicemente alert('Ecco un esempio di messaggio 
+      idiota').</p>
+    <div class="titolo"> Confirm </div>
+        <p>E' molto simile ad <em>alert</em>, ma acquisisce anche la risposta dell'utente, che pu&ograve; essere Ok oppure Cancel. Nel primo caso 
+		il metodo torna il valore true, mentre nel secondo caso torna il valore false. 
+		Vedremo meglio nel seguito questi dettagli. Si consideri per il momento 
+		il seguente esempio:  </p>
+
+    <div class="code">
+      var answer = window.confirm(&quot;Vuoi andartene da questo sito?&quot;) 	<br />
+      <br />
+      if (answer == true)<br />
+      &nbsp;&nbsp;&nbsp;
+      { 		<br />
+      &nbsp;&nbsp;&nbsp;
+      window.alert(&quot;Bye bye!&quot;);<br /> 		
+      &nbsp;&nbsp;&nbsp; 		
+      window.location = &quot;<a href="http://www.altrosito.com/">http://www.altrosito.com/</a>&quot;;<br />
+      &nbsp;&nbsp;&nbsp;
+      } 	<br />
+      else<br />
+      &nbsp;&nbsp;&nbsp;
+      { 		<br />
+      &nbsp;&nbsp;&nbsp;
+      window.alert(&quot;Grazie per essere rimasto!&quot;); 	<br />
+      &nbsp;&nbsp;&nbsp;
+      } 
+    </div>
+        <p>che produce la seguente visualizzazione:</p>
+        <p><img src="../img/confirm.jpg" alt="" width="347" height="146" /></p>
+        <p>Il significato &eacute;: se la risposta alla domanda &eacute; OK (true) viene 
+		visualizzata la scritta &quot;Bye bye&quot; e si viene reindirizzati a un altro 
+		sito; viceversa se si preme Annulla (false) viene visualizzata la 
+		scritta &quot;Grazie per essere rimasto!&quot;.    </p>
+        <div class="titolo"> Prompt </div>
+        <p>Il metodo prompt permette di acquisire un valore dall'utente. Per esempio il codice seguente: </p>
+        <div class="code">
+          g = window.prompt (&quot;Scrivi qui il tuo nome: &quot;);</div>
+        <p>produce la seguente visualizzazione</p>
+        <p><img src="../img/prompt.jpg" alt="" width="353" height="173" /> </p>
+        <p>L'utente digita il proprio nome nella casella di testo e, dopo che ha premuto OK, il testo introdotto passa nella variabile g. Se l'utente preme Annulla, la variabile g assume il valore <em>null</em>. 
+		Vedremo meglio nel seguito i dettagli di questo funzionamento.</p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

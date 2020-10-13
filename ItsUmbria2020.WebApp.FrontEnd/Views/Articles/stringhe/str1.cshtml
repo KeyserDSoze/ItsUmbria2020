@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style4 {
+				text-align: left;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+        <div class="titolo"> Stringhe di caratteri</div>
+	<p>In informatica si dice <strong>stringa</strong> (<em>string</em>) una 
+		sequenza di caratteri. Una singola parola, una frase o il codice fiscale 
+		sono tre semplici esempi di stringhe. Sono anche stringhe (se non 
+		vengono convertiti in valori numerici) i contenuti delle caselle di 
+		input o delle aree di testo in un form.</p>
+	<p>In JS le stringhe non sono tecnicamente degli oggetti (per esempio non 
+	vengono create per mezzo di costruttori, come gi� accennato), ma vengono rappresentate come 
+	tali e dunque possiedono propriet� e metodi, come vedremo fra breve. Si consideri il seguente semplice esempio:</p>
+	<div class="code">
+          <pre>&lt;head&gt;
+
+&lt;meta charset=&quot;utf-8&quot;&gt;
+
+&lt;title&gt; Semplice esempio in Javascript&lt;/title&gt;
+
+&lt;script&gt; 
+
+function visualizza()
+{
+    var contenuto =  document.getElementById('testo').value;
+    window.alert(contenuto);
+}
+&lt;/script&gt;
+ 
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+
+&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;
+  &lt;textarea id=&quot;testo&quot; rows=&quot;10&quot; cols=&quot;30&quot;&gt;&lt;/textarea&gt;&lt;br&gt;
+  &lt;input type=&quot;button&quot; value=&quot;Mostra&quot; onClick=&quot;visualizza()&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;
+
+
+&lt;/body&gt;</pre>
+	</div>
+        <p>Il funzionamento � molto semplice: cliccando sul pulsante Mostra, si 
+		apre una finestra di alert nella quale viene visualizzato ci� che � 
+		stato scritto all'interno della casella di testo.</p>
+	<form action="">
+<p>
+  <textarea id="testo" rows="10" cols="30"></textarea><br />
+  <input type="button" value="Mostra" onClick="alert(document.getElementById('testo').value)" />
+</p>
+</form>	<p>&nbsp;</p>
+
+        <div class="titolo"> La propriet� length</div>
+	<p>Una delle propriet� pi� interessanti delle stringhe � la <strong>propriet�</strong>
+	<em>length,</em> per mezzo della quale � possibile conoscere la 
+	lunghezza di una stringa (ovvero il numero di caratteri che la compongono) 
+	utilizzando la propriet� <em>length</em>. A tale scopo � sufficiente introdurre una 
+	semplicissima modifica nella funzione visualizza() del nostro precedente 
+	script:</p>
+	<div class="code">
+          <pre>&lt;head&gt;
+
+&lt;meta charset=&quot;utf-8&quot;&gt;
+
+&lt;title&gt; Semplice esempio in Javascript&lt;/title&gt;
+
+&lt;script&gt; 
+
+function visualizza()
+{
+    var contenuto =  document.getElementById('testo').value;
+    window.alert(contenuto.length);
+}
+&lt;/script&gt;
+ 
+
+&lt;/head&gt;
+
+</pre>
+	</div>
+        <p>Il lettore pu� facilmente verificare il funzionamento dello script 
+		qui sotto:</p>
+<form action="">
+<p>
+  <textarea id="testo2" rows="10" cols="30"></textarea><br />
+  <input type="button" value="Mostra" onClick="alert(document.getElementById('testo2').value.length)" />
+</p>
+</form>	
+	<p>La propriet� <em>length</em>&nbsp; pu� essere usata (per esempio 
+	visualizzata), ma non � possibile modificarne il valore attraverso una 
+	assegnazione diretta. Non avrebbe infatti senso scrivere</p>
+	<p class="style1">stringa.length = <em>valore</em>;</p>
+	<p class="style4">Infatti la lunghezza di una stringa dipende dalla stringa 
+	contenuta e non pu� essere cambiata con una assegnazione.</p>
+	<p>E' interessante osservare come � possibile applicare la 
+					propriet� length anche direttamente al contenuto di una 
+					input text, come nell'esempio qui sotto:</p>
+	<p class="style1">lunghezza = document.getElementById('n').value.length;</p>
+	<p class="style4">Si osservi che <em>value</em> � evidentemente una 
+	propriet� dell'oggetto <em>document.getElementById('n')</em>. A sua volta
+	<em>length</em> � una propriet� di <em>document.getElementById('n').value</em>. 
+	Ci� indica, evidentemente, che <em>document.getElementById('n').value</em> � 
+	un oggetto di tipo String.</p>
+	<p class="style4">Come abbiamo detto, gli oggetti in 
+	JS sono spesso organizzati in una gerarchia nella quale gli oggetti genitori 
+	(<em>parent</em>) danno luogo a oggetti figli (<em>son</em>), come mostra la 
+	tabella seguente:</p>
+	<table style="MARGIN-TOP: 1em" cellspacing="0" cellpadding="2" width="80%" border="1" align="center">
+      <tbody><tr>
+        <td bgcolor="#D8EA99" style="width: 301px"><strong>Oggetto</strong></td>
+        <td bgcolor="#D8EA99" style="width: 138px"><strong>Tipo di oggetto</strong></td>
+        <td bgcolor="#D8EA99"><strong>Posizione Gerarchica</strong></td>
+      </tr>
+      <tr>
+        <td style="width: 301px">document.getElementById('n')</td>
+        <td style="width: 138px">&quot;object&quot;</td>
+        <td>grandparent</td>
+      </tr>
+      <tr>
+        <td style="width: 301px">document.getElementById('n').value</td>
+        <td style="width: 138px">&quot;string&quot;</td>
+        <td>parent</td>
+      </tr>
+      <tr>
+        <td style="width: 301px">document.getElementById('n').value.length</td>
+        <td style="width: 138px">&quot;number&quot;</td>
+        <td>son</td>
+      </tr>
+    </tbody></table>
+
+	<p class="style4">&nbsp;</p>
+
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Aggiungere ed eliminare una classe: addClass, removeClass, 
+				toggleClass</div>
+
+	<p>Con il metodo css &eacute; possibile, come visto, aggiungere o modificare gli 
+	stili di un elemento. Ci&eacute; viene realizzato mediante
+	<a href=" ../HTML/css/css1.html">stili inline</a>, che vengono aggiunti al 
+	DOM in corrispondenza dell'elemento modificato. In pratica agli elementi 
+	corrispondenti viene aggiunto nel DOM un attributo <em>style</em> col valore 
+	del nuovo stile.</p>
+	<p>Un modo alternativo (e pi&eacute; elegante) consiste nel definire 
+	preventivamente una classe di stili nel foglio stile e quindi di aggiungerla 
+	dinamicamente a un elemento, come mostra l'esempio seguente:</p>
+        <div class="code">
+          $(&quot;#bottone&quot;).click(function(){ $(&quot;#ele&quot;).addClass(&quot;blu&quot;); }); </div>
+	<p>Nell'esempio qui sopra facendo click sul bottone <em>#bottone</em>, viene 
+	aggiunta una classe di nome <em>blu</em> all'elemento di <em>#ele</em>. Il 
+	metodo utilizzato ha un nome esplicativo, <em>addClass</em>:</p>
+        <div class="code">
+          $(&quot;#ele&quot;).addClass(&quot;blu&quot;);</div>
+	<p>L'unica cosa significativa da notare in questo caso &eacute; che il nome della 
+	classe non comprende il punto, che invece dovr&eacute; essere usato nel 
+	corrispondente foglio stile linkato alla pagina:</p>
+        <div class="code">
+          .blu { color: blue; } </div>
+	<p>Il metodo <em>removeClass</em> consente in modo simile di rimuovere una classe da 
+	un elemento:</p>
+        <div class="code">
+          &nbsp;$(&quot;#ele&quot;).removeClass(&quot;blu&quot;);</div>
+	<p>Infine pu&eacute; essere talvolta utile il metodo <em>toggleClass</em> il quale aggiunge 
+	e alternativamente rimuove una classe da un elemento:</p>
+        <div class="code">
+          $(&quot;#bottone&quot;).click(function(){ $(&quot;#ele&quot;).toggleClass(&quot;blu&quot;); }); </div>
+	<p>In quest'ultimo esempio, ad ogni click sul bottone la classe viene 
+	aggiunta e poi tolta e poi nuovamente aggiunta... e cos&eacute; via.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

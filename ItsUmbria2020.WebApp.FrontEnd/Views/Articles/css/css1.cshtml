@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Dagli stili inline ai fogli stile incorporati</div>
+	 <p>Abbiamo gi&eacute; ampiamente discusso l'introduzione dell'<a href=" stili/stili2.html">attributo 
+		universale style</a> per realizzare una chiara separazione all'interno 
+		della pagina web fra semantica (gli elementi della pagina) e 
+		presentazione (gli stili), eliminando in tale modo tutti
+		<a href=" stili/stili2.html">i tag e gli attributi deprecati</a>.</p>
+	<p>Cos&eacute; ad esempio invece di scrivere, come si faceva nel primo html:</p>
+	 <div class="code">
+       &lt;center&gt;&lt;font color=&quot;red&quot;&gt;&lt;p&gt; Paragrafo rosso e centrato &lt;/p&gt; 
+		&lt;/font&gt; &lt;/center&gt; 
+    </div>
+	 <p>possiamo usare gli stili per ottenere in modo pi&eacute; elegante e funzionale 
+		lo stesso risultato:</p>
+	 <div class="code">
+       &lt;p style=&quot;color: red; text-align:center&quot;&gt; Paragrafo rosso 
+		e centrato &lt;/p&gt;</div>
+	 <p>Tuttavia &eacute; evidente che l'attributo style, sebbene metta ordine nel caos 
+		dei tag e degli attributi di presentazione del primo html, non realizza 
+		una vera separazione fra semantica della pagina e presentazione della 
+		stessa, in quanto gli stili sono inseriti all'interno della pagina, 
+		insieme con gli elementi logici che strutturano la pagina stessa. Si 
+		parla in questo caso di stili inline o in linea.</p>
+	<p>Un modo pi&eacute; elegante ed efficace per ottenere il medesimo risultato 
+	dell'esempio precedente &eacute; questo (detto <strong>foglio stile incorporato</strong> 
+	nella pagina):</p>
+	 <div class="code">
+       <p> &lt;!DOCTYPE html&gt;</p>
+       <p>&lt;html&gt;<br />
+  &lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt; </p>
+		<p>&lt;title&gt;Pagina con foglio stile incorporato&lt;/title&gt;<br />
+         <br />
+  &lt;style&gt;<br />
+         <br />
+         p { <br />
+&nbsp;&nbsp; color: red;<br />
+&nbsp;&nbsp; text-align:center; <br />
+&nbsp;&nbsp; }<br />
+         <br />
+  &lt;/style&gt;<br />
+         <br />
+  &lt;/head&gt;<br />
+  &lt;body&gt;<br />
+         <br />
+  &lt;h1&gt;ESEMPIO DI FOGLIO STILE INCORPORATO &lt;/h1&gt;</p>
+		<p>&lt;p&gt; Paragrafo rosso e centrato&lt;/p&gt;<br />
+		&lt;p&gt; Un altro paragrafo rosso e centrato&lt;/p&gt;</p>
+       <p>&lt;/body&gt;<br />
+         <br />
+  &lt;/html&gt; </p>
+    </div>
+	 <p>Si noti che i due paragrafi vengono formattati allo stesso modo, in base alle regole indicate in testa alla pagina 
+		(cio&eacute; vengono entrambi centrati). La sintassi per usare i fogli stile incorporati &egrave; la seguente:</p>
+
+	 <div class="code">
+       <p>...</p>
+       <p>&lt;head&gt;<br />
+		<br />
+		...<br />
+         <br />
+&lt;style&gt;<br />
+<br />
+<em>selettore { <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+		</em><br />
+...<br />
+		<br />
+&lt;/style&gt;<br />
+<br />
+&lt;/head&gt;<br />
+<br />
+       </p>
+    </div>
+	 <p>dove</p>
+	<ul>
+					<li>il&nbsp;<em>selettore</em> &egrave; il nome di un tag (es. 
+					p)</li>
+					<li>l'elenco <em>{ propriet&agrave;:valore; propriet&agrave;:valore; ... } </em>si 
+					dice<em> </em><strong>regola</strong><em> dello stile;</em></li>
+					<li><em>propriet&agrave;</em> e <em>valore</em> seguono la normale sintassi degli stili, vista nelle lezioni precedenti.</li>
+	</ul>
+	 <p>Come gi&eacute; detto, in questo semplice esempio tutti i paragrafi vengono 
+		formattati allo stesso modo, cio&eacute; centrati e colorati di rosso. Vedremo 
+		fra breve che &eacute; possibile fare molto di pi&eacute; usando i fogli stile.</p>
+	<p>Per adesso ci limitiamo a notare come, usando un foglio stile incorporato 
+	nella pagina, la parte di presentazione (il foglio stile), viene separata 
+	dalla parte semantica (gli elementi html della pagina).</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+.style2 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Border-style</div>
+    <p> <strong>sintassi:</strong>&nbsp;border-style: hidden | dotted | dashed | 
+	solid | groove | ridge | inset | outset | double | none</p>
+	<p> Questo stile definisce se e come viene disegnato il contorno (bordo) di 
+	un elemento (es. un paragrafo). Per default il suo valore &eacute; none, 
+	cio&eacute; non viene visualizzato nessun bordo. Vediamo qui un esempio di 
+	paragrafo con bordo:</p>
+	 <div class="code">
+       &lt;p style=&quot;border-style:solid&quot;&gt;Questo &eacute; un esempio di paragrafo con <br />
+		border-style solid. Osservate il riquadro nero intorno al bordo del
+		<br />
+		paragrafo.&lt;/p&gt;</div>
+	<p> e questo &eacute; il risultato della visualizzazione:</p>
+	<p style="border-style:solid">Questo &eacute; un esempio di paragrafo con 
+	border-style solid. Osservate il riquadro nero intorno al bordo del 
+	paragrafo.</p>
+	<p>Con gli stili &eacute; anche possibile definire separatamente l'aspetto del 
+	bordo superiore, inferiore, destro e sinistro, specificando border-top-style, 
+	border-bottom-style, border-left-style, border-right-style. Si osservi a 
+	questo proposito l'esempio seguente:</p>
+	<p style="border-top-style:solid;border-bottom-style:dashed;border-left-style:dotted;border-right-style:double
+">Questo &eacute; un esempio di paragrafo con border-style definito in maniera diversa 
+	per ciascuno dei quattro lati del bordo.</p>
+	<p>che &eacute; stato realizzato nel seguente modo:</p>
+	 <div class="code">
+       &lt;p style=&quot;border-top-style:solid;border-right-style:double;border-bottom-style:dashed;border-left-style:dotted;&quot;&gt;Questo 
+		&eacute; un esempio di paragrafo con border-style definito in maniera diversa
+		<br />
+		per ciascuno dei quattro lati del bordo.&lt;/p&gt;</div>
+	<p>Un modo pi&eacute; sintetico per ottenere lo stesso risultato &eacute; il seguente:</p>
+	 <div class="code">
+       &lt;p style=&quot;border-style:solid double dashed dotted;&quot;&gt;Questo &eacute; un esempio 
+		di paragrafo con border-style definito in maniera diversa per ciascuno 
+		dei quattro lati del bordo.&lt;/p&gt;</div>
+	<p>Si osservi che i valori del bordo dei quattro lati sono indicati in senso 
+	orario partendo dal lato superiore del contenitore.</p>
+	<p><span class="style1"><strong>ATTENZIONE</strong></span>:</p>
+	<p>Se non viene specificato lo stile del bordo, il suo valore di default &eacute;
+	<em>none</em>, cio&eacute; non viene visualizzato nessun bordo e gli altri stili (border-width, 
+	border-color) non hanno nessun effetto.</p>
+	 <div class="titolo">Border-width</div>
+    <p> <strong>sintassi:</strong>&nbsp;border-width: thin | medium | thick | 
+	<em>lenght</em></p>
+	<p> Con questo stile si pu&eacute; definire lo spessore del bordo, mediante parole 
+	chiave (thin, medium o thick) oppure fornendo la lunghezza lenght (in varie 
+	unit&eacute; di misura: px (pixel), mm (millimetri), percentuale etc.). Si 
+	consideri l'esempio seguente:</p>
+		<p style="border-style:solid;border-width:1px">Questo &eacute; un esempio di 
+		paragrafo con border-style solid e spessore del bordo 1 pixel</p>
+
+	<p> realizzato nel seguente modo:</p>
+	 <div class="code">
+       &lt;p style=&quot;border-style:solid;border-width:1px&quot;&gt;Questo &eacute; un esempio di 
+		paragrafo con border-style solid e spessore del bordo 1 pixel&lt;/p&gt;</div>
+	<p> Anche in questo caso &eacute; possibile specificare separatamente gli spessori 
+	dei diversi bordi (con border-top-width, border-right-width etc.) oppure 
+	usare la notazione sintetica, come mostrato nell'esempio seguente:</p>
+	<p style="border-style:solid;border-width:1px 2px 3px 4px">Questo &eacute; un esempio di 
+		paragrafo con border-style solid e spessore dei bordi 1, 2, 3 e 4 pixel</p>
+
+	 <p>realizzato nel seguente modo:</p>
+	 <div class="code">
+       &lt;p style=&quot;border-style:solid;border-width:1px 2px 3px 4px&quot;&gt;Questo &eacute; un 
+		esempio di <br />
+		paragrafo con border-style solid e spessore dei bordi 1, 2, 3 e 4 
+		pixel&lt;/p&gt;</div>
+	<p>&nbsp;</p>
+	 <div class="titolo">Border-color</div>
+    <p> <strong>sintassi:</strong>&nbsp;border-color: <em>colore</em></p>
+	<p> Con questo stile &eacute; possibile specificare il colore dei bordi (con le 
+	stesse regole viste in generale per gli <a href="stili4.html">stili colore</a>):</p>
+	<p style="border-style:solid;border-top-color:red; border-bottom-color:green; border-right-color:fuchsia;border-left-color:orange">
+	Questo &eacute; un esempio di paragrafo con i bordi colorati con colori diversi</p>
+
+		<p>realizzato nel seguente modo:</p>
+	 <div class="code">
+       &lt;p style=&quot;border-style:solid;border-top-color:red; border-bottom-color:green; 
+		border-right-color:fuchsia;border-left-color:orange&quot;&gt; Questo &eacute; un 
+		esempio di paragrafo con i bordi colorati con colori diversi&lt;/p&gt;</div>
+	<p>&nbsp;</p>
+	 <div class="titolo">Gli stili per i bordi e le tabelle, border-collapse</div>
+	<p>Mediante gli stili &eacute; possibile controllare con grande precisione la 
+	visualizzazione delle tabelle. Per quanto riguarda in particolare i bordi 
+	della tabelle e delle singole celle, si consideri l'esempio seguente:</p>
+	 <div class="code">
+       &lt;table style=&quot;border-style:solid;border-width:2px;border-color:red;background-color:aqua;&quot;&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td style=&quot;border-style:solid;border-width:1px;border-color:black;&quot;&gt;UNO&lt;/td&gt;<br />
+		&lt;td&gt;DUE&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td&gt;QUATTRO&lt;/td&gt; <br />
+		&lt;td style=&quot;border-style:dashed;border-width:2px;border-color:orange;&quot;&gt;TRE&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/table&gt;</div>
+	<p>che viene visualizzato nel seguente modo:</p>
+	<table style="border-style:solid;border-width:2px;border-color:red;background-color:aqua;" align="center">
+	<tr><td style="border-style:solid;border-width:1px;border-color:black;">UNO</td><td>
+					DUE</td></tr>
+	<tr><td>QUATTRO</td> 
+					<td style="border-style:dashed;border-width:2px;border-color:orange;" class="style2">
+					TRE</td></tr>
+	</table>
+	<p>Si noti che lo stile del bordo applicato all'elemento table si riferisce 
+	al bordo di contorno della tabella (nel nostro esempio colorato in rosso). 
+	Le singole celle per default non hanno bordo, a meno che non venga 
+	specificato uno stile sull'elemento td.</p>
+	<p>In generale affinch&eacute; la tabella venga visualizzata come una griglia con 
+	tutti gli elementi racchiusi da un bordo, occorre applicare il bordo agli 
+	elementi &lt;table&gt;, &lt;tr&gt; e &lt;td&gt; come nell'esempio qui sotto:</p>
+	 <div class="code">
+       &lt;table style=&quot;border: thin solid&quot;&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;UNO&lt;/td&gt;<br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;DUE&lt;/td&gt;<br />
+		&lt;/tr &gt;<br />
+		&lt;tr style=&quot;border: thin solid&quot;&gt;<br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;QUATTRO&lt;/td&gt; <br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;TRE&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/table&gt;</div>
+	<p>Il risultato &eacute; il seguente:</p>
+<table style="border: thin solid" align="center">
+<tr>
+<td style="border: thin solid">UNO</td>
+<td style="border: thin solid">DUE</td>
+</tr >
+<tr style="border: thin solid">
+<td style="border: thin solid">QUATTRO</td> 
+<td style="border: thin solid">TRE</td>
+</tr>
+</table>
+	<p>Si noti per&eacute; che in questo modo tutti i bordi risultano raddoppiati 
+	(infatti vengono visualizzati i bordi di ogni cella, di ogni riga e di tutta 
+	la tabella). Per evitare questo bisogna usare lo stile <em>border-collapse: 
+	collapse</em> in questo modo:</p>
+	 <div class="code">
+       &lt;table style=&quot;border: thin solid; border-collapse: collapse &quot;&gt;<br />
+		&lt;tr&gt;<br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;UNO&lt;/td&gt;<br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;DUE&lt;/td&gt;<br />
+		&lt;/tr &gt;<br />
+		&lt;tr style=&quot;border: thin solid&quot;&gt;<br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;QUATTRO&lt;/td&gt; <br />
+		&lt;td style=&quot;border: thin solid&quot;&gt;TRE&lt;/td&gt;<br />
+		&lt;/tr&gt;<br />
+		&lt;/table&gt;</div>
+	<p>Il risultato &eacute; il seguente:</p>
+	<table style="border: thin solid; border-collapse: collapse" align="center">
+<tr>
+<td style="border: thin solid">UNO</td>
+<td style="border: thin solid">DUE</td>
+</tr >
+<tr style="border: thin solid">
+<td style="border: thin solid">QUATTRO</td> 
+<td style="border: thin solid">TRE</td>
+</tr>
+</table>
+
+	<p>&nbsp;</p>
+	<div class="titolo">Shorthand (abbreviazioni) </div>
+	<p>E' possibile specificare diversi stili di tipo font con un'unica istruzione (si parla in questo caso di <strong>shorthand</strong> o abbreviazione). Per esempio:</p>
+	<div class="code">
+      <p>border:1px solid #000;<br />
+      border-width:1px 2px 3px 4px;</p>
+    </div>
+	<p>equivale a:</p>
+	<div class="code">
+      <p>border-width:1px;<br />
+      border-style:solid;<br />
+      border-color:#000;<br />
+      border-top-width:1px; <br />
+      border-right-width:2px; <br />
+      border-bottom-width:3px; <br />
+      border-left-width:4px;</p>
+    </div>
+	<p>Per quanto riguarda l'ordine con cui devono essere specificati i diversi stili, il W3C raccomanda di seguire l'ordine precedente. E' possibile omettere qualsiasi valore. Se un valore viene omesso, viene utilizzato il corrispondente valore di default. </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

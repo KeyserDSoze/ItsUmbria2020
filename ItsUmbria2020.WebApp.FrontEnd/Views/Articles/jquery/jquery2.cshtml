@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">La struttura di un'istruzione</div>
+
+	<p>Diamo di nuovo un'occhiata alla prima (e unica, finora) istruzione jQuery 
+	che abbiamo incontrato:</p>
+        <div class="code">
+          $(&quot;#omino&quot;).attr(&quot;src&quot;,&quot;../img/omino2.jpg&quot;)</div>
+        <p>La struttura di tutte le istruzioni jQuery &eacute; piuttosto semplice e 
+		la sua forma &eacute; valida in generale. Gli elementi principali sono ben visibili gi&eacute; dal 
+		nostro primo esempio:</p>
+	<p><img alt="Anatomia istruzione jQuery" src="../img/jqimg5.gif" /></p>
+	<p>Come si vede dalla figura precedente possiamo in generale 
+	individuare quattro parti, separate l'una dall'altra da un punto, che 
+	compongono l'istruzione:</p>
+	<ul>
+					<li>la <strong>funzione jQuery</strong>: sempre presente 
+					all'inizio e indicata col simbolo $;</li>
+					<li>il <strong>selettore</strong>, che permette di 
+					selezionare un elemento del DOM della pagina;</li>
+					<li>un'<strong>azione</strong> che deve essere compiuta 
+					sull'elemento selezionato;</li>
+					<li>i <strong>parametri</strong>, cio&eacute; le ulteriore 
+					specifiche per l'azione da compiere.</li>
+	</ul>
+	<p>Anche senza aver mai programmato in jQuery non &eacute; difficile comprendere il 
+	significato della precedente istruzione: viene selezionato l'elemento con
+	<em>id = &quot;omino&quot;</em> (presumibilmente un elemento img) e ne viene 
+	modificato l'attributo <em>src</em>.</p>
+	<p>Questa semplice struttura &eacute; usata in modo consistente in praticamente 
+	tutte le istruzioni jQuery. Per esempio:</p>
+        <div class="code">
+          $('p.articolo').html('Nuovo testo inserito'); </div>
+	<p>seleziona tutti i paragrafi appartenenti alla classe <em>articolo</em> e 
+	sostituisce il testo html contenuto al loro interno con quello indicato fra 
+	parentesi.</p>
+	<p>Come si pu&eacute; notare gi&eacute; da questi primi esempi, il selettore pu&eacute; essere 
+	qualsiasi selettore CSS valido, ovvero per selezionare in jQuery si possono 
+	usare tutte le regole usate per selezionare gli&nbsp; elementi in un foglio 
+	stile. In particolare jQuery sfrutta tutta la potenza dei nuovi selettori 
+	messi a disposizione dall'ultima versione CSS3 dei fogli stile.</p>
+	<p>Notiamo anche che l'uso dei singoli e dei doppi apici &eacute; assolutamente 
+	libero (l'unico caso in cui bisogna scegliere con attenzione &eacute; quando si 
+	vuole racchiudere fra apici una stringa che gi&eacute; contiene al proprio interno 
+	apici: in questo caso occorre alternare il tipo di apici usato).</p>
+	<p>Si osservi infine la potenza e sinteticit&eacute; del selettore jQuery: <em>$('p.articolo')
+	</em>seleziona in un colpo solo tutti i paragrafi di classe <em>articolo</em> 
+	presenti nel documento e applica a tutti l'azione indicata.</p>
+	<p>Consideriamo un ultimo esempio:</p>
+        <div class="code">
+          alert( $(&quot;#uno&quot;).html() ); </div>
+	<p>Questa istruzione visualizza con un alert il contenuto html dell'elemento 
+	con <em>id = 'uno'</em>. Possiamo osservare qui due cose interessanti:</p>
+	<ul>
+					<li>l'azione html pu&eacute; essere usata sia per modificare il 
+					contenuto di un elemento sia per recuperare questo contenuto 
+					(come nell'esempio qui sopra) - questo doppio comportamento 
+					(per modificare o per recuperare) &eacute; tipico di molte azioni 
+					usate in jQuery;</li>
+					<li>alert &eacute; un'istruzione di javascript: l'esempio mostra 
+					come jQuery si usa insieme a javascript, &eacute; un'estensione del 
+					linguaggio, ma non sostituisce le istruzioni del linguaggio 
+					stesso.</li>
+	</ul>
+	<p>Bene, dopo questa brevissima carrellata, siamo ora in grado di 
+	approfondire maggiormente il funzionamento di questo potente e semplice 
+	strumento di programmazione.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

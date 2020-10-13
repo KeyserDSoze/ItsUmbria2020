@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/JavaScript"> 
+
+var ind=1;
+function cambia()
+&eacute;&eacute;&eacute; { 
+&eacute;&eacute;&eacute; if (ind%2)
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; document.getElementById("corpo").style.backgroundColor= "beige"  ;
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+&eacute;&eacute;&eacute; else
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; {
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; document.getElementById("corpo").style.backgroundColor= "white";
+&eacute;&eacute;&eacute;&eacute;&eacute;&eacute;&eacute; }
+&eacute;&eacute;&eacute; ind= ind + 1;
+&eacute;&eacute;&eacute; } 
+
+</script>
+
+<style type="text/css">
+.style1 {
+				background-color: #FFFF00;
+}
+.style2 {
+				text-align: center;
+}
+</style>
+
+</head>
+<body id="corpo">
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+
+
+
+
+    <div id="toppage">
+	    <div id="topp">
+		<div id="titolo">
+		  <div style=" font-size:2.5em; color:#FFFFFF; font-weight:bold;">PROGRAMMIAMO</div>
+		  <div style=" font-size:1.5em; color:#FFFFFF; font-weight:bold; text-align:right">
+						JS - Parametri e valori di ritorno </div>
+		</div>
+	    </div>
+	    <div id="barra">
+	    	<div style="position:absolute; left:40px; top:2px; width:580px; text-align:right;" class="tmenu">
+				<a href=" js.html" title="link">JS</a> |<a href=" ../index.html" title="link">Home</a> |<a href=" ../contatto.php" title="link">Contatti</a>	    	</div>
+	    </div>
+    </div>
+
+	<div class="titolo">	  Usare una funzione gi&eacute; scritta</div>
+
+
+
+<p>Abbiamo detto che le funzioni mostrano tutta la loro utilit&eacute; quando si vuole 
+riusare il codice scritto da altri. In rete esistono molti siti che offrono 
+intere librerie di funzioni da scaricare. Un buon punto di partenza &eacute; il sito
+<a target="_blank" href="http://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>, 
+dove si trovano funzioni e programmi gi&eacute; scritti in tutti i principali linguaggi 
+di programmazione. Il sito &eacute; diviso in base al compito da risolvere (task) e per 
+ogni task viene offerto il codice nei vari linguaggi (da qui il nome Rosetta 
+Code che richiama la famosa Stele di Rosetta, originariamente usata per tradurre 
+i geroglifici dell'antico egizio).</p>
+	<p>Consideriamo un compito abbastanza semplice e frequente: determinare se 
+	un numero &eacute; primo oppure no. Questo task in inglese si chiama <em>Primality 
+	by trial division</em> e spostandosi alla pagina corrispondente nella
+	<a target="_blank" href="http://rosettacode.org/wiki/Primality_by_trial_division#JavaScript">
+	sezione dedicata al JavaScript</a> troviamo:</p>
+        <div class="code">
+          <pre>function isPrime(n) {
+  if (n == 2) {
+    return true;
+  } else if ((n &lt; 2) || (n % 2 == 0)) {
+    return false;
+  } else {
+    for (var i = 3; i &lt;= Math.sqrt(n); i += 2) {
+      if (n % i == 0)
+        return false;
+    }
+    return true;
+  }
+}</pre>
+	</div>
+        <p>Si tratta di una funzione di nome isPrime, il cui scopo &eacute; appunto 
+		determinare se un dato numero &eacute; primo oppure no. Come si pu&eacute; osservare, 
+		il codice della function &eacute; gi&eacute; scritto e si suppone funzionante. Tutto 
+		ci&eacute; che dobbiamo imparare a fare noi &eacute; usare tale funzione all'interno 
+		della nostra pagina html.</p>
+
+
+
+	<div class="titolo">
+
+	  Parametri</div>
+
+
+
+	<p>La prima cosa da osservare nella nostra funzione sono i suoi parametri. I
+	<strong>parametri</strong> sono quelle variabili che sono scritte fra 
+	parentesi nella definizione della funzione stessa. Nel nostro caso l'unico 
+	parametro si chiama <em>n</em> ed &eacute;, ragionevolmente, il numero di cui 
+	vogliamo sapere se &eacute; primo oppure no.</p>
+	<p>I parametri sono, in un certo senso, i valori di ingresso (input) sui 
+	quali la funzione effettua i propri calcoli. In questo caso c'&eacute; un solo 
+	parametro, ma ce ne possono essere molti. Il lettore pu&eacute; trovare un esempio 
+	di funzione con pi&eacute; parametri visitando la pagina di Rosetta Code dedicata 
+	al calcolo del coefficiente binomiale di una coppia di numeri (<a href="http://rosettacode.org/wiki/Evaluate_binomial_coefficients#JavaScript">Evaluate 
+	Binomial Coefficient</a>). Qui troviamo la seguente funzione:</p>
+        <div class="code">
+          <pre>function binom(n, k) {
+    var coeff = 1;
+    for (var i = n-k+1; i &lt;= n; i++) coeff *= i;
+    for (var i = 1;     i &lt;= k; i++) coeff /= i;
+    return coeff;
+}</pre>
+	</div>
+        <p>Il coefficiente binomiale &eacute; un'operazione che si usa in statistica 
+		per il calcolo delle combinazioni e permutazioni:</p>
+	<p class="style2">
+	<img src="../img/binomiale.png" alt="\binom{n}{k} = \frac{n!}{(n-k)!k!} = \frac{n(n-1)(n-2)\ldots(n-k+1)}{k(k-1)(k-2)\ldots 1}" /></p>
+	<p>In questo contesto non ci interessa particolarmente il calcolo o il 
+	significato del risultato. Ci interessa invece notare come questa funzione 
+	ha due parametri, indicati con <em>n</em> e <em>k</em>.</p>
+
+
+
+	<div class="titolo">
+
+	  Valore di ritorno</div>
+
+
+
+	<p>Se i parametri di una funzione possono essere molti (in linea di 
+	principio quanti si vuole), il valore di ritorno &eacute; sempre uno solo (oppure, 
+	in alcuni casi, nessuno). Il valore di ritorno &eacute; il risultato fornito dalla 
+	funzione, cio&eacute; la sua uscita (output). Per esempio, nella funzione per il 
+	calcolo della radice <em>digitalRootBase</em>, il risultato &eacute; il valore 
+	della radice del numero.</p>
+	<p>Per capire come si usa il valore di ritorno di una funzione, bisogna 
+	andare a cercare, all'interno della funzione, l'istruzione <em>return</em>. 
+	Per esempio, tornando alla nostra funzione per determinare se un numero &eacute; 
+	primo oppure no, troviamo:</p>
+        <div class="code">
+          <pre>function isPrime(n) {
+  if (n == 2) {
+    <span class="style1">return true</span>;
+  } else if ((n &lt; 2) || (n % 2 == 0)) {
+    <span class="style1">return false</span>;
+  } else {
+    for (var i = 3; i &lt;= Math.sqrt(n); i += 2) {
+      if (n % i == 0)
+        <span class="style1">return false</span>;
+    }
+    <span class="style1">return true</span>;
+  }
+}</pre>
+	</div>
+        <p>Notiamo che ci sono pi&eacute; <em>return</em> nella nostra function. Questo 
+		non contraddice la nostra affermazione precedente che il valore di 
+		ritorno &eacute; sempre uno solo. Infatti ad ogni calcolo della funzione, uno 
+		solo fra i <em>return</em> viene eseguito e dunque il valore di ritorno 
+		&eacute; unico.</p>
+	<p>Qui ci interessa piuttosto vedere che, in questo caso, il valore di 
+	ritorno pu&eacute; essere <em>true</em> oppure <em>false</em>. Si tratta di un 
+	valore booleano, cio&eacute; di un valore di tipo logico. Il suo significato &eacute; 
+	abbastanza semplice da capire: se il numero fornito &eacute; primo, il valore di 
+	ritorno &eacute; <em>true</em>; se non &eacute; primo, il valore di ritorno &eacute; <em>false</em>.</p>
+	<p>Adesso non ci resta altro da fare che imparare a usare la nostra 
+	funzione.</p>
+	<p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

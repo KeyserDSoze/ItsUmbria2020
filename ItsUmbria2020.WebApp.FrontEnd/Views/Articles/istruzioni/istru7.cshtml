@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> L'operatore typeof</div>
+        <p>Creare una stringa &eacute; semplicissimo: basta assegnare a una variabile 
+		un contenuto di tipo stringa, come negli esempi qui sotto.</p>
+	<div class="code">
+          var parola=&quot;ciao&quot;;<br />
+			var contenuto = document.getElementById('n').value;</div>
+        <p>Per verificare che un oggetto &eacute; una stringa basta usare l'operatore
+		<em>typeof</em> che fornisce come risultato il tipo dell'oggetto:</p>
+	<div class="code">
+          var parola=&quot;ciao&quot;;<br />
+			alert(typeof parola);</div>
+        <p>Il codice precedente produce questa visualizzazione:</p>
+	<p class="style1"><img alt="alert" src="../img/imgE.jpg" /></p>
+	<p>Osserviamo che, se avessimo assegnato un valore numerico alla variabile 
+	parola, avremmo ottenuto il seguente risultato:</p>
+	<div class="code">
+          var parola= 123;<br />
+			alert(typeof parola);</div>
+        <p class="style1"><img alt="typeof" src="../img/imgF.jpg" /></p>
+	<p>I valori possibili forniti dall'operatore typeof sono riepilogati in 
+	tabella:</p>
+
+<table style="MARGIN-TOP: 1em" cellspacing="0" cellpadding="2" width="300" border="1" align="center">
+      <tbody><tr>
+        <td bgcolor="#D8EA99"><strong>Valore</strong></td>
+        <td bgcolor="#D8EA99"><strong>Significato</strong></td>
+      </tr>
+      <tr>
+        <td>"number"</td>
+        <td>L'operando &eacute; un numero</td>
+      </tr>
+      <tr>
+        <td>"string"</td>
+        <td>L'operando &eacute; una stringa</td>
+      </tr>
+      <tr>
+        <td>"boolean"</td>
+        <td>L'operando &eacute; booleano</td>
+      </tr>
+      <tr>
+        <td>"object"</td>
+        <td>L'operando &eacute; un oggetto</td>
+      </tr>
+      <tr>
+        <td>&quot;function&quot;</td>
+        <td>L'operando &eacute; una funzione.</td>
+      </tr>
+      <tr>
+        <td>null</td>
+        <td>L'operando &eacute; null.</td>
+      </tr>
+      <tr>
+        <td>"undefined"</td>
+        <td>L'operando non &eacute; definito.</td>
+      </tr>
+    </tbody></table>
+
+	<p>Osserviamo che typeof produce esso stesso come risultato una stringa (si 
+	notino i doppi apici).</p>
+
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

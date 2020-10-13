@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Width</div>
+    <p> <strong>sintassi:</strong>&nbsp;width:   <em>percentuale</em> | <em>
+	misura</em></p>
+	<p>La propriet� width consente di specificare le dimensioni di un elemento. 
+	Abbiamo gi� incontrato l'uso di questa propriet� parlando di tabelle, come 
+	per esempio in:</p>
+	 <div class="code">
+       &lt;table style=&quot;width: 60%&quot; border=&quot;1&quot;&gt;</div>
+	 <p>La percentuale si riferisce all'elemento che contiene l'elemento 
+		corrente: in altre parole, se la tabella si trova dentro un'altra 
+		tabella, la percentuale � relativa alle dimensioni della tabella 
+		contenitore. Se la tabella si trova nel body, la percentuale si 
+		riferisce a tutto il documento.</p>
+	<p>Oltrech� tramite un valore percentuale, width pu� anche essere 
+		specificato con una precisa unit� di misura. Le unit� di misura 
+		normalmente usate sono px (numero di pixel) e em (multipli dell'attuale 
+		dimensione dei font: per esempio 2em significa il doppio delle 
+		dimensioni dei font. Se non viene indicata nessuna unit� di misura, i 
+	valori si intendono sempre espressi in pixel.</p>
+	<p>Qui sotto viene mostrato un esempio di tabella 
+		dimensionata in pixel:</p>
+	 <div class="code">
+       &lt;table style=&quot;width: 800px&quot; border=&quot;1&quot;&gt;</div>
+	 <p>La propriet� width non si applica solo alle tabelle, ma a qualsiasi 
+		elemento. Per esempio, si consideri il seguente paragrafo</p>
+	 <div class="code">
+       &lt;p style=&quot;width: 25%&quot;&gt;<br />
+		Nel mezzo del cammin di nostra vita, mi ritrovai per una selva oscura<br />
+&lt;/p&gt;<br />
+    </div>
+    <p>che viene visualizzato nel seguente modo:</p>
+<p style="width: 25%">
+Nel mezzo del cammin di nostra vita, mi ritrovai per una selva oscura
+</p>
+	 <div class="titolo">Height</div>
+	<p> <strong>sintassi:</strong>&nbsp;height:   <em>percentuale</em> | <em>
+	misura</em></p>
+	<p>La propriet� height viene usata per specificare l'altezza di un elemento, 
+	con le stesse regole viste sopra per width.</p>
+	<p>La combinazione di height e width insieme � utile per specificare per 
+	esempio le dimensioni di un'immagine:</p>
+	 <div class="code">
+       &lt;img src=&quot;smiley.gif&quot; alt=&quot;Smiley face&quot; style=&quot;height=42; width=50&quot;&gt;</div>
+	 <p>L'immagine precedente verr� visualizzata con dimensioni 42px di altezza 
+		e 50px di larghezza (l'indicazione dell'unit� di misura px � opzionale).</p>
+	<p>Height e width usati insieme forniscono dunque un modo rapido per 
+	ridimensionare la visualizzazione di una immagine. Si osservi per� che non 
+	viene ridimensionato il file immagine, ma solo come l'immagine stessa viene 
+	visualizzata. In altre parole, se ho un'immagine 1024x1024 e la visualizzo 
+	come 512x512, le dimensioni (in byte) del file immagine che viene scaricato 
+	dal browser restano invariate. Perci� in generale � preferibile 
+	ridimensionare il file, invece che ridimensionare la visualizzazione 
+	dell'immagine.</p>
+	<p>In assenza di indicazione di dimensioni (senza usare height e width) 
+	l'immagine viene visualizzata con le dimensioni specificate nel file. 
+	Tuttavia anche in questi casi si raccomanda di usare comunque height e width 
+	per informare il browser della dimensione dell'immagine che dovr� scaricare. 
+	Se lo scaricamento � lento (oppure se l'immagine non pu� essere scaricata) e 
+	le dimensioni sono state indicate, il browser sar� comunque in grado di 
+	impaginare la pagina (lasciando un rettangolo vuoto di dimensioni opportune 
+	al posto della immagine).</p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Pagine liquide e pagine solide </div>
+	 <p>In generale una pagina in cui la disposizione dei vari elementi (layout) 
+		� rigidamente specificata, viene detta <strong>solida</strong>. 
+		Viceversa una pagina in cui gli elementi vengono specificati in 
+		proporzione agli altri, generalmente usando misure percentuali, viene 
+		detta <strong>liquida</strong>. </p>
+	<p>In una 
+		pagina solida, per esempio, le dimensioni delle tabelle non sono 
+		specificate in percentuale, ma in pixel. Si consideri dapprima la 
+		seguente tabella</p>
+	 <div class="code">
+       &lt;table style=&quot;width: 60%&quot; border=&quot;1&quot;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;prima cella &lt;/td&gt;<br />
+&lt;td&gt;seconda cella &lt;/td&gt;<br />
+&lt;td&gt;terza cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;quarta cella &lt;/td&gt;<br />
+&lt;td&gt;quinta cella &lt;/td&gt;<br />
+&lt;td&gt;sesta cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+    </div>
+	 <p>che viene visualizzata nel seguente modo</p>
+<table style="width: 60%" border="1">
+<tr>
+<td>prima cella </td>
+<td>seconda cella </td>
+<td>terza cella </td>
+</tr>
+<tr>
+<td>quarta cella </td>
+<td>quinta cella </td>
+<td>sesta cella </td>
+</tr>
+</table>
+	<p>Ora si consideri quest'altra tabella</p>
+	 <div class="code">
+       &lt;table style=&quot;width: 800px&quot; border=&quot;1&quot;&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;prima cella &lt;/td&gt;<br />
+&lt;td&gt;seconda cella &lt;/td&gt;<br />
+&lt;td&gt;terza cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;quarta cella &lt;/td&gt;<br />
+&lt;td&gt;quinta cella &lt;/td&gt;<br />
+&lt;td&gt;sesta cella &lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt;<br />
+    </div>
+	 <p>che viene visualizzata cos�:</p>
+<table style="width: 800px" border="1">
+<tr>
+<td>prima cella </td>
+<td>seconda cella </td>
+<td>terza cella </td>
+</tr>
+<tr>
+<td>quarta cella </td>
+<td>quinta cella </td>
+<td>sesta cella </td>
+</tr>
+</table>
+	<p>Qual � la differenza sostanziale fra le due tabelle? Nel primo caso 
+	l'ampiezza (width) viene indicata come percentuale della pagina, mentre nel 
+	secondo caso viene fornita in pixel. Ci� significa che la prima soluzione si 
+	adatter� dinamicamente alle dimensioni dello schermo del dispositivo usato, 
+	mentre la seconda sar� pi� rigida, in quanto impone dimensioni fisse. Per 
+	esempio sul piccolo schermo di uno smartphone la seconda tabella potrebbe 
+	obbligare l'utente a uno scrolling orizzontale per visualizzarne l'intero 
+	contenuto (anche se i browser degli smartphone moderni sono spesso cos� 
+	&quot;intelligenti&quot; da convertire prima della visualizzazione le dimensioni fisse 
+	in dimensioni percentuali, in modo tale da riuscire a trattare anche questi 
+	casi). </p>
+	<p>I termini solido e liquido sono stati scelti per analogia con gli stati 
+	della materia: un layout liquido si adatter� alla forma (dimensioni) del 
+	contenitore (schermo), mentre un layout solido imporr� le proprie misure 
+	allo schermo che lo visualizza. In generale un layout liquido � pi� 
+	flessibile e si presta maggiormente a una buona accessibilit� e usabilit� 
+	del sito e perci� � da considerarsi preferibile. Viceversa un layour solido 
+	offre al web master un maggior controllo sull'aspetto della pagina web, a 
+	scapito per� della possibilit� di visualizzare correttamente la pagina su 
+	dispositivi diversi.</p>
+	 <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Tabelle annidate </div>
+	 <p>E' interessante infine osservare la possibilit&agrave; di inserire (annidare) una tabella all'interno di un'altra tabella. Si consideri l'esempio seguente: </p>
+	 <div class="code">
+       <p>&lt;table style = &quot;width=80%&quot; border=&quot;1&quot;&gt; &lt;!-- INIZIO TABELLA ESTERNA --&gt; <br />
+&lt;tr&gt;<br />
+&lt;td style = &quot;width=50%&quot;&gt;1&lt;/td&gt;<br />
+&lt;td&gt;</p>
+       <p>&lt;table style = &quot;width=100%&quot; border=&quot;1&quot;&gt; &lt;!-- INIZIO TABELLA INTERNA --&gt; <br />
+&lt;tr&gt;<br />
+&lt;td&gt;2.1&lt;/td&gt;<br />
+&lt;td&gt;2.2&lt;/td&gt;<br />
+&lt;td&gt;2.3&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;2.4&lt;/td&gt;<br />
+&lt;td&gt;2.5&lt;/td&gt;<br />
+&lt;td&gt;2.6&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;2.7&lt;/td&gt;<br />
+&lt;td&gt;2.8&lt;/td&gt;<br />
+&lt;td&gt;2.9&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/table&gt; &lt;!-- FINE TABELLA INTERNA --&gt; </p>
+       <p>&lt;/td&gt;<br />
+  &lt;/tr&gt;<br />
+  &lt;tr&gt;<br />
+  &lt;td&gt;3&lt;/td&gt;<br />
+  &lt;td&gt;4&lt;/td&gt;<br />
+  &lt;/tr&gt;<br />
+  &lt;/table&gt; &lt;!-- FINE TABELLA ESTERNA --&gt; <br />
+       </p>
+    </div>
+	 <p>che produce la seguente visualizzazione: </p>
+	 <table width="80%" border="1" align="center">
+       <tr>
+         <td width="50%">1</td>
+         <td><table width="100%" border="1">
+           <tr>
+             <td>2.1</td>
+             <td>2.2</td>
+             <td>2.3</td>
+           </tr>
+           <tr>
+             <td>2.4</td>
+             <td>2.5</td>
+             <td>2.6</td>
+           </tr>
+           <tr>
+             <td>2.7</td>
+             <td>2.8</td>
+             <td>2.9</td>
+           </tr>
+         </table></td>
+       </tr>
+       <tr>
+         <td>3</td>
+         <td>4</td>
+       </tr>
+     </table>
+	 <p>Si osservi la tabella interna annidata dentro la seconda cella della tabella principale esterna. </p>
+	 <p>Rendendo invisibili le tabelle annidate l'una dentro l'altra &egrave; possibile creare disposizioni anche molto complesse su una pagina web. </p>
+	 <p>&nbsp;</p>
+	 <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

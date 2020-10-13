@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo"> Assegnazioni </div>
+        <p>Il modo pi&ugrave; semplice per attribuire un valore a una variabile consiste nell'eseguire un'istruzione di <strong>assegnazione</strong>, come la seguente:</p>
+        <div class="code">
+          pippo = -5 ;
+        </div>
+        <p>Il simbolo di uguaglianza (=) indica appunto l'<em>operatore di assegnazione</em>. La destinazione dell'assegnazione sta a sinistra dell'uguale mentre la sorgente sta a destra e l'istruzione &egrave; terminata dal solito punto e virgola. Il valore numerico presente in una assegnazione viene anche detto <em>costante numerica</em> (per distinguerlo appunto dalle <em>variabili</em>). </p>
+        <p>Il seguente &egrave; invece un esempio di assegnazione di un valore decimale:</p>
+        <div class="code">
+          pi_greco = 3.14 ;
+        </div>
+        <p>Si noti che il JS usa il punto decimale (e non la virgola), secondo la notazione anglosassone.</p>
+        <p>Un altro esempio di assegnazione &egrave; il seguente, che fa uso della cosiddetta <em>notazione esponenziale</em>:</p>
+        <div class="code">
+          numero = 17.88e-4 ; 
+        </div>
+        <p>In questo ultimo esempio il valore assegnato &egrave; 17,88 x 10 <sup>-4</sup></p>
+        <p><span class="titolo">Assegnazione di una variabile a un'altra </span></p>
+        <p>Oltre che usando costanti numeriche, &egrave; possibile assegnare a una variabile il valore di un'altra variabile come nel seguente esempio:</p>
+        <div class="code">
+          num1 = num2;</div>
+        <p>Nell'interpretare questa istruzione bisogna prestare molta attenzione al verso implicito dell'assegnazione, che avviene sempre da destra verso sinistra. In altre parole, il valore di <em>num2</em> viene assegnato a <em>num1</em> e non viceversa! </p>
+        <p><span class="titolo">Inizializzazioni </span></p>
+        <p>Quando si assegna un valore ad una variabile per la prima volta in un 
+		programma si parla di <strong>inizializzazione</strong> della variabile. 
+		Per esempio l'istruzione:</p>
+        <div class="code">
+          potenza=1;</div>
+        <p>&egrave; l'inizializzazione della variabile potenza:</p>
+        <p>Utilizzando la dichiarazione esplicita delle variabili, 
+		l'inizializzazione pu&eacute; essere fatta insieme alla dichiarazione nel 
+		seguente modo:</p>
+        <div class="code">
+          var potenza=1 ;</div>
+        <p>L'istruzione precedente &egrave; equivalente alla seguente coppia di istruzioni: </p>
+        <div class="code">
+          var potenza ; <br />
+            potenza =1
+        </div>
+		<p>Una cosa molto importante da ribadire &egrave; che <em>in JS una variabile non inizializzata o non acquisita da tastiera non ha nessun valore</em>. In altre parole, dichiarando una variabile e non assegnandole in modo esplicito un valore, il contenuto della variabile stessa &egrave; imprevedibile: potrebbe valere zero ma potrebbe anche contenere un valore pressoch&eacute; casuale. Per evitare questo errore, fonte di possibili gravi mal funzionamenti del programma, il programmatore deve accertarsi sempre che tutte le variabili abbiano un valore prima di essere usate.</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

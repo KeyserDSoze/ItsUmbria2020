@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<script type="text/JavaScript">
+function startTime() {
+    var t = setInterval(Time, 500);
+    }
+
+function Time() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('orologio').innerHTML =
+    h + ":" + m + ":" + s;
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}</script>
+</head>
+<body onload="startTime()">
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  La temporizzazione 
+	</div>
+        <p>La realizzazione di pagine dinamiche presenta spesso la necessit&eacute; di 
+		gestire problemi di temporizzazione. In sostanza si tratta di eseguire 
+		determinate funzioni in corrispondenza di determinati istanti temporali 
+		o dopo un certo ritardo. Si pensi per esempio alla realizzazione di un 
+		orologio in JS come nell'esempio qui sotto:</p>
+	
+<div id="orologio" style="text-align:center"></div>
+
+	<p>Il codice corrispondente &eacute; questo:</p>
+        <div class="code">
+          // Intervallo di 500ms per essere sicuri che i secondi si aggiornino 
+			abbastanza frequentemente<br />
+          function startTime() <br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; var t = setInterval(Time, 500);<br />
+&nbsp;&nbsp;&nbsp; }<br />
+			<br />
+			function Time() <br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; // Crea un oggetto Date<br />
+&nbsp;&nbsp;&nbsp; var today = new Date();<br />
+			<br />
+&nbsp;&nbsp;&nbsp; // Legge ora, minuti e secondi<br />
+&nbsp;&nbsp;&nbsp; var h = today.getHours();<br />
+&nbsp;&nbsp;&nbsp; var m = today.getMinutes();<br />
+&nbsp;&nbsp;&nbsp; var s = today.getSeconds();<br />
+			<br />
+&nbsp;&nbsp;&nbsp; // Formatta i valori numerici<br />
+&nbsp;&nbsp;&nbsp; m = checkTime(m);<br />
+&nbsp;&nbsp;&nbsp; s = checkTime(s);<br />
+			<br />
+&nbsp;&nbsp;&nbsp; // Scrive la data all'interno dell'elemento di id = orologio<br />
+&nbsp;&nbsp;&nbsp; document.getElementById('orologio').innerHTML =<br />
+&nbsp;&nbsp;&nbsp; h + &quot;:&quot; + m + &quot;:&quot; + s;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+			<br />
+			// Funzione di servizio per formattare i numeri minori di 10<br />
+			function checkTime(i) <br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; if (i &lt; 10) {i = &quot;0&quot; + i}; // aggiunge uno zero 
+			davanti ai numeri &lt; 10<br />
+&nbsp;&nbsp;&nbsp; return i;<br />
+&nbsp;&nbsp;&nbsp; }</div>
+	<p>La funzione startTime viene chiamata al caricamento della pagina (evento 
+	onload sull'elemento body) e serve, come suggerisce il nome, per avviare il 
+	timer. Il metodo setInterval &eacute; un metodo dell'oggetto window che stabilisce 
+	l'esecuzione di una funzione a intervalli di tempo predeterminati (in questo 
+	caso ogni 500 millisecondi). Si noti la notazione abbreviata <em>setInterval
+	</em>al posto di <em>window.setInterval</em>.</p>
+	<p>La funzione Time (chiamata ogni 500 ms - e non ogni 1000 ms - per essere 
+	sicuri di aggiornare il calcolo dei secondi in sincronia con l'orologio del 
+	PC) usa alcuni metodi dell'<a href=" date/date1.html">oggetto 
+	Date </a>per ricavare l'ora, i minuti e i secondi dall'orologio interno del 
+	PC e per visualizzarli all'interno di un elemento &lt;div&gt; con identificatore 
+	id=&quot;orologio&quot;.</p>
+
+	<div class="titolo">
+
+	  Il metodo setInterval 
+	</div>
+	<p>Il metodo setInterval visto nell'esempio precedente ha una sintassi 
+	piuttosto semplice:</p>
+        <div class="code">
+          window.setInterval(funz, milli); </div>
+	<p>ovvero in notazione abbreviata (omettendo il primo oggetto della catena):</p>
+        <div class="code">
+          setInterval(funz, milli); </div>
+	<p>Il metodo attiva la funzione di nome <em>funz</em> ogni <em>milli</em> 
+	millisecondi.</p>
+	<p>Si noti che non sono necessarie le parentesi tonde accanto al nome della 
+	funzione. Le parentesi devono per&eacute; essere indicate nel caso in cui la 
+	funzione che deve essere attivata ha bisogno di parametri. In questo caso la 
+	funzione dev'essere racchiusa fra doppi apici, come nell'esempio seguente:</p>
+        <div class="code">
+          setInterval(&quot;funz(2,3,4)&quot;, 500); </div>
+	<p>Se la funzione deve ricevere come parametro una stringa, sar&eacute; necessario 
+	alternare doppi e singoli apici, come in questo esempio:</p>
+        <div class="code">
+          setInterval(&quot;funz('ciao a tutti')&quot;, 500); </div>
+	<p>&nbsp;</p>
+
+	<div class="titolo">
+
+	  Il metodo clearInterval 
+	</div>
+        <p>Se si vuole interrompere l'esecuzione di un timer avviato 
+		precedentemente, occorre usare una variabile in cui memorizzare il timer 
+		al momento dell'avvio:</p>
+        <div class="code">
+          memTimer = setInterval(funz, milli); // avvia l'esecuzione e memorizza 
+			in memTimer</div>
+	<p>Tale variabile potr&eacute; poi essere usata per interrompere il timer usando il 
+	metodo clearInterval come nell'esempio seguente:</p>
+        <div class="code">
+          clearInterval (memTimer);&nbsp; //interrompe l'esecuzione di 
+			setInterval</div>
+	<p>ovvero:</p>
+        <div class="code">
+          window.clearInterval (memTimer);&nbsp; //interrompe l'esecuzione di 
+			setInterval</div>
+	    <p>ATTENZIONE: la variabile <em>memTimer</em> deve essere dichiarata globale (fuori dalle funzioni) in modo da poter essere condivisa da tutte le funzioni. </p>
+	    <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

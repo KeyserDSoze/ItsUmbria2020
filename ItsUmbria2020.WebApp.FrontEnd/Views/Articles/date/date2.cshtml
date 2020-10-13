@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style3 {
+				border-style: solid;
+				border-width: 1px;
+}
+</style>
+
+<script type="text/javascript">
+
+function calcola()
+{
+var giorno = document.getElementById("giorno").value;
+var mese = document.getElementById("mese").value - 1;
+var anno = document.getElementById("anno").value;
+var data = new Date(anno,mese,giorno);
+
+switch (data.getDay())
+{
+case 0:
+  alert("domenica");
+  break;
+case 1:
+  alert("luned&eacute;");
+  break;
+case 2:
+  alert("marted&eacute;");
+  break;
+case 3:
+  alert("mercoled&eacute;");
+  break;
+case 4:
+  alert("gioved&eacute;");
+  break;
+case 5:
+  alert("venerd&eacute;");
+  break;
+case 6:
+  alert("sabato");
+  break;
+
+}
+}
+</script>
+
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Costruttore con parametri</div>
+        <p>Nella lezione precedente abbiamo visto come si pu&eacute; usare il 
+		<strong>costruttore</strong> Date() per creare una nuova istanza (cio&eacute; in pratica un 
+		nuovo oggetto) della classe Date:</p>
+	<div class="code">
+          var oggi = new Date();</div>
+        <p>In alcuni casi non si vuole usare la data del sistema (il proprio 
+		PC), ma si vuole dichiarare un oggetto Date inizializzando con un data 
+		diversa. Questo pu&eacute; essere fatto usando il <strong>costruttore con 
+		parametri</strong>: in pratica basta mettere fra le parentesi tonde di 
+		Date() i valori iniziali che si desiderano usare. Si consideri l'esempio 
+		seguente:</p>
+	<div class="code">
+          var ieri = new Date(2012,2, 27);</div>
+        <p>In questo caso la variabile ieri viene inizializzata con la data 27 
+		marzo (si ricordi che 2 indica il terzo mese) dell'anno 2012.</p>
+	<p>Il costruttore con parametri consente di specificare anche l'ora, i 
+	minuti etc. secondo la seguente sintassi:</p>
+	<p class="style1">new Date(year, month, <em>day, hour, minutes, seconds, 
+	milliseconds</em>); </p>
+	<p>Si osservi l'ordine dei parametri: l'anno e il mese devono essere sempre 
+	indicati, mentre il giorno, l'ora, i minuti etc. sono opzionali.</p>
+	<p>&nbsp;</p>
+
+        <div class="titolo"> Esempio: calcolo giorno della settimana</div>
+        			<p>Come semplice esempio di uso del costruttore con 
+					parametri consideriamo il seguente form:</p>
+
+<form action="" class="style3">
+<p>
+giorno:
+<select id="giorno">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+mese:
+<select id="mese" >
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+anno:
+<input type="text" id="anno" size="5">
+<input type="button" value="Calcola" onclick="calcola()">
+</p>
+</form>
+					<p>Il codice corrispondente &eacute; questo</p>
+	<div class="code">
+          <pre>&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;
+giorno:
+&lt;select id=&quot;giorno&quot;&gt;
+&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;
+&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;
+&lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;
+&lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;
+&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;
+&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;
+&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;
+&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;
+&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;
+&lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;
+&lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;
+&lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;
+&lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;
+&lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;
+&lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;
+&lt;option value=&quot;30&quot;&gt;30&lt;/option&gt;
+&lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;
+&lt;/select&gt;
+mese:
+&lt;select id=&quot;mese&quot; &gt;
+&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+&lt;/select&gt;
+anno:
+&lt;input type=&quot;text&quot; id=&quot;anno&quot; size=&quot;5&quot;&gt;
+&lt;input type=&quot;button&quot; value=&quot;Calcola&quot; onclick=&quot;calcola()&quot;&gt;
+&lt;/p&gt;
+&lt;/form&gt;</pre>
+	</div>
+        <p>Inserendo una data e cliccando su Calcola viene visualizzato il 
+		giorno della settimana corrispondente. Lo script associato &eacute; questo:</p>
+	<div class="code">
+          <pre>&lt;script type=&quot;text/javascript&quot;&gt;</pre>
+			<pre>function calcola()
+{
+var giorno = document.getElementById(&quot;giorno&quot;).value;
+var mese = document.getElementById(&quot;mese&quot;).value - 1;
+var anno = document.getElementById(&quot;anno&quot;).value;
+var data = new Date(anno,mese,giorno);</pre>
+			<pre>switch (data.getDay())
+{
+case 0:
+  alert(&quot;domenica&quot;);
+  break;
+case 1:
+  alert(&quot;luned&eacute;&quot;);
+  break;
+case 2:
+  alert(&quot;marted&eacute;&quot;);
+  break;
+case 3:
+  alert(&quot;mercoled&eacute;&quot;);
+  break;
+case 4:
+  alert(&quot;gioved&eacute;&quot;);
+  break;
+case 5:
+  alert(&quot;venerd&eacute;&quot;);
+  break;
+case 6:
+  alert(&quot;sabato&quot;);
+  break;</pre>
+			<pre>}
+}
+&lt;/script&gt;</pre>
+	</div>
+        <p>Si osservi come il costruttore con parametri sia stato usato per 
+		definire un nuovo oggetto <em>Date</em> (di nome <em>data</em>) e 
+		inizializzarlo con la data (<em>anno, mese, giorno</em>) acquisita dal 
+		form.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+p.speciale { font-size: 12pt; line-height: 12pt } 
+p.speciale::first-letter { font-size: 200%; font-style: italic; font-weight: bold; float: left } 
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Pseudoelementi</div>
+	<p>Uno <strong>pseudoelemento</strong> &eacute; usato per definire lo stile di una 
+	parte specifica di un dato elemento. A differenza di una pseudoclasse, che 
+	si applica all'intero elemento, quando questo si trova in uno stato 
+	particolare, uno pseudoelemento invece si applica solo una parte di un dato 
+	elemento.</p>
+	<p>Un esempio aiuter&eacute; a capire meglio il 
+	concetto:</p>
+<div class="code">
+  .speciale { font-size: 12pt; line-height: 12pt } <br />
+	.speciale::first-letter { font-size: 200%; font-style: italic; font-weight: bold; 
+	float: left }
+</div>
+	<p>Supponiamo dunque di avere il seguente paragrafo all'interno della 
+	pagina:</p>
+<div class="code">
+  &lt;p class=&quot;speciale&quot;&gt;C'era una volta, in un paese lontano lontano...&lt;/p&gt;
+</div>
+	<p>Questo verrebbe formattato nel seguente modo:</p>
+	<p class="speciale" style="text-align: center">C'era una volta, in un paese 
+	lontano lontano...</p>
+	<p>Si osservi come la prima lettera del paragrafo venga formattata con 
+	dimensioni maggiori rispetto alle altre lettere.</p>
+	<p>La sintassi per l'utilizzo di uno pseudoelemento &eacute; la seguente:</p>
+<div class="code">
+  <em>selettore::pseudoelemento { <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propriet&agrave;:valore; 
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ... 
+	<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+		</em>
+</div>
+	<p>Si notino i doppi due punti :: che separano il selettore dal nome dello 
+	pseudoelemento. Questo permette di distinguere le <a href="css7.html">
+	pseudoclassi</a> (separate da un singolo :) dagli pseudoelementi. Questa 
+	distinzione fra pseudoclassi e pseudoelementi &eacute; stata introdotta con 
+	l'ultima versione dei fogli stile (CSS3) e potrebbe non funzionare 
+	correttamente sui browser pi&eacute; datati.</p>
+	<p>Rimandiamo a
+	<a target="_blank" href="http://www.w3schools.com/css/css_pseudo_elements.asp">
+	W3C Schools</a> per un elenco e una trattazione pi&eacute; approfondita 
+	dell'argomento.</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

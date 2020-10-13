@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: left;
+}
+.style2 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+     <div class="titolo">Caratteri speciali e charset</div>
+    <p>I caratteri che non fanno parte dell'alfabeto inglese (come per esempio 
+	le lettere accentate dell'alfabeto italiano) possono creare problemi, in 
+	quanto spesso non vengono visualizzati correttamente. Per esempio la frase:</p>
+	<p class="style2">Questo &eacute; il sito pi&eacute; bello del mondo</p>
+	<p>potrebbe essere visualizzata dal browser cos&eacute;:</p>
+	<p class="style2">Questo è il sito più bello del mondo </p>
+	<p>Questo problema &eacute; legato alla codifica usata dal browser per interpretare i caratteri contenuti nella pagina. Infatti ogni carattere viene rappresentato secondo un codice binario e gli stessi codici binari sono utilizzati per rappresentare diversi caratteri, a seconda della codifica scelta. </p>
+	<p>In pratica il problema si presenta solo quando vengono utilizzati caratteri che non fanno parte del codice ASCII originario. Questo &egrave; il caso appunto delle lettere accentate italiane (come anche dei caratteri  specifici delle altre lingue diverse dall'inglese). </p>
+	<p>Di solito la pagina viene visualizzata correttamente specificando il set di caratteri utf-8 nell'intestazione della pagina, in questo modo:</p>
+	<div class="code"> &lt;!DOCTYPE html&gt;<br />
+        <br />
+  &lt;html&gt;<br />
+  <br />
+  &lt;head&gt;<br />
+  &lt;meta charset=&quot;utf-8&quot; &gt;
+  <p>&lt;/head&gt;</p>
+    </div>
+	<p>Questa &egrave; anche la scelta raccomandata in generale e quella che garantisce la massima compatibilit&agrave; della pagina (anche nei confronti di browser non impostati sulla lingua italiana). </p>
+	<p><strong>ATTENZIONE</strong></p>
+	<p>La visualizzazione &egrave; corretta se la pagina &egrave; stata creata con un editor di testo che utilizza la stessa opzione di codifica dichiarata nel codice HTML (nel nostro caso, UTF-8). Alcuni editor (per esempio il Blocco Note di Windows), usano la vecchia codifica ANSI. In questi casi occorre usare il charset=&quot;utf-8&quot;, in questo modo: </p>
+	<div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+				&lt;meta charset=&quot;utf-8&quot;&gt;<p>&lt;/head&gt;</p>
+    </div>
+	<p>Se si vogliono risolvere alla radice i problemi di codifica &egrave; tuttavia meglio  usare le entit&agrave; html, come spiegato qui sotto. </p>
+	<div class="titolo">Entit&eacute; html</div>
+	<p>Una <strong>entit&eacute; html</strong> (<em>html entity</em>) &eacute; una codifica 
+	speciale con la quale &eacute; possibile rappresentare in una pagina qualsiasi 
+	carattere, indipendentemente dalla dichiarazione charset, dalle impostazioni 
+	del server o del browser utente. Si tratta in pratica di codici html da 
+	usare per i caratteri speciali che non fanno parte dell'alfabeto inglese. </p>
+	<p>Le entit&eacute; html consentono 
+	anche di inserire alcuni caratteri come &lt; e &gt; all'interno di un testo (cosa 
+	che altrimenti non sarebbe possibile, poich&eacute; i simboli &lt; e &gt; sono usati in 
+	html come delimitatori di tag).</p>
+	<p>Le entit&eacute; in generale possono essere scritte in due modi diversi:</p>
+	<p class="style2">&amp;<em>nome</em>; oppure &amp;#<em>numero</em>;</p>
+	<p>La tabella seguente riporta la codifica dei caratteri speciali pi&eacute; usati: </p>
+    <table border="1" summary="lista entit&agrave; html">
+      <tbody>
+        <tr>
+          <th>Carattere</th>
+          <th>&amp;<em>nome</em></th>
+          <th>&amp;#<em>numero</em></th>
+          <th>note</th>
+        </tr>
+        <tr>
+          <td>&amp;</td>
+          <td>&amp;amp;</td>
+          <td class="style2">&amp;#38; </td>
+          <td>e commerciale o ampersand</td>
+        </tr>
+        <tr>
+          <td>&copy;</td>
+          <td>&amp;copy;</td>
+          <td class="style2">&amp;#169; </td>
+          <td>copyright</td>
+        </tr>
+        <tr>
+          <td>&lt;</td>
+          <td>&amp;lt;</td>
+          <td class="style2">&amp;#60; </td>
+          <td>minore</td>
+        </tr>
+        <tr>
+          <td>&gt;</td>
+          <td>&amp;gt; </td>
+          <td class="style2">&amp;#62; </td>
+          <td>maggiore</td>
+        </tr>
+        <tr>
+          <td>&reg;</td>
+          <td>&amp;reg; </td>
+          <td class="style2">&amp;#174; </td>
+          <td>marchio registrato o trade mark</td>
+        </tr>
+        <tr>
+          <td>&quot;</td>
+          <td>&amp;quot;</td>
+          <td class="style2">
+			<span style="color: rgb(0, 0, 0); font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.3333px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+			&amp;#34;</span></td>
+          <td>doppie virgolette</td>
+        </tr>
+        <tr>
+          <td>&agrave;</td>
+          <td>&amp;agrave;</td>
+          <td class="style2">
+			<span style="color: rgb(0, 0, 0); font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.3333px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+			&amp;#224;</span></td>
+          <td>accento grave su 'a'. Per tutte le altre vocali &eacute; sufficiente 
+			sostituire la lettera 'a' prima di 'grave' (es &amp;egrave).</td>
+        </tr>
+        <tr>
+          <td>&Agrave;</td>
+          <td>&amp;Agrave;</td>
+          <td class="style2">
+			<span style="color: rgb(0, 0, 0); font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.3333px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+			&amp;#192;</span></td>
+          <td>accento grave su A (anche le maiuscole hanno l'accento!)</td>
+        </tr>
+        <tr>
+          <td>&eacute;</td>
+          <td>&amp;eacute;</td>
+          <td class="style2">
+			<span style="color: rgb(0, 0, 0); font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.3333px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+			&amp;#233;</span></td>
+          <td>accento acuto su 'e'. Per tutte le altre vocali &egrave; sufficiente sostituire la lettera 'e' prima di 'acute' 
+			(es. &amp;eacute).</td>
+        </tr>
+        <tr>
+          <td>spazio</td>
+          <td><em>&amp;nbsp;</em></td>
+          <td class="style2">
+			<span style="color: rgb(0, 0, 0); font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 17.3333px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: rgb(255, 255, 255);">
+			&amp;#160;</span></td>
+          <td>serve per inserire uno spazio vuoto </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Per esempio la frase seguente (che usa i caratteri speciali) </p>
+    <div class="code">
+          &lt;p&gt;Se A &amp;lt; B &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; allora &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; D &amp;gt; E&lt;/p&gt;</div>
+        <p>viene visualizzata dal browser in questo modo:</p>
+<p style="border-style:inset" class="style1"> Se A &lt; B &nbsp;&nbsp;&nbsp;&nbsp; allora &nbsp;&nbsp;&nbsp;&nbsp; D &gt; E</p>
+        <p>Per un elenco completo delle entit&eacute; utilizzabili in HTML, <a href="http://it.wikipedia.org/wiki/Aiuto:Caratteri_speciali" target="_blank">vedi qui</a>. </p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

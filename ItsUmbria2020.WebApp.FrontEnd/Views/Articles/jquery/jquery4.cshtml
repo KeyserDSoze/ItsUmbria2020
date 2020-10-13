@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Una prima pagina di esempio in jQuery</div>
+
+	<p>Dopo aver sommariamente esaminato le principali caratteristiche del 
+	linguaggio, vediamo finalmente la nostra prima pagina in jQuery:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Semplice esempio di jQuery&lt;/title&gt;<br />
+			<br />
+			&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			$( document ).ready(function() {<br />
+			var paragrafi;<br />
+			paragrafi = $('p').length;<br />
+			alert(paragrafi);<br />
+			});<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;p&gt;Nel mezzo del cammin di nostra vita&lt;/p&gt;<br />
+			&lt;p&gt;mi ritrovai per una selva oscura&lt;/p&gt;<br />
+			&lt;p&gt;ch&eacute; la diritta via era smarrita.&lt;/p&gt;<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+	<p>Se proviamo a copiare e a incollare questa pagina in file di testo con 
+	estensione .html e a visualizzarla nel browser, appare una finestrella di 
+	pop up (prodotta dall'istruzione alert) che visualizza il numero 3. Questo 
+	valore rappresenta il numero di paragrafi p presenti nella pagina.</p>
+
+<div class="titolo">Ottenere jQuery</div>
+
+	<p>Avremo modo di approfondire meglio i dettagli del funzionamento di questa 
+	prima pagina. Qui ci interessa invece concentrarci sul comando:</p>
+        <div class="code">
+          &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</div>
+	<p>Come abbiamo gi&eacute; visto, questo comando serve per<a href=" Generali/def10.html"> 
+	linkare la pagina con un file javascript</a> esterno. Nel nostro caso il 
+	file si chiama <em>jquery.min.js</em>, si trova sui server di Google e 
+	contiene il codice di jQuery.</p>
+	<p>Come abbiamo gi&eacute; pi&eacute; volte accennato, jQuery &eacute; costruito su javascript. I 
+	comandi di jQuery non sono in realt&eacute; delle nuove istruzioni di linguaggio, 
+	poich&eacute; sono internamente realizzati usando istruzioni javascript. Diciamo 
+	che jQuery rappresenta un modo elegante ed efficace per nascondere al 
+	programmatore parte della complessit&eacute; di javascript. Comunque, nella sua 
+	essenza, jQuery non &eacute; altro che javascript.</p>
+	<p>Pertanto, come &eacute; possibile in generale includere codice javascript 
+	contenuto in un file esterno alla pagina, cos&eacute; possiamo allo stesso modo 
+	includere jQuery. A questo proposito, esistono molti modi per realizzare 
+	questo, ma i due principali sono:</p>
+	<ul>
+					<li>usare il file jQuery ospitato su qualche server esterno 
+					(questa &eacute; la soluzione adottata nel nostro esempio);</li>
+					<li>scaricare il file jQuery sul nostro computer (e poi 
+					caricarlo sul server web che ospita la nostra pagina) e mettere 
+					un link a questo file.</li>
+	</ul>
+	<p>Entrambe le soluzioni hanno i loro pro e contro. Se scegliamo, come 
+	abbiamo fatto )e faremo sempre nelle prossime lezioni) di appoggiarci a un 
+	server esterno (tecnicamente si chiamano <em>Content Delivery Network, CDN</em>) 
+	come quello di Google, non dobbiamo fare altro che copiare e incollare 
+	all'inizio del documento il link con l'url completa del file jQuery e non 
+	abbiamo bisogno di preoccuparci di altro.</p>
+	<p>Per avere l'indirizzo dell'ultima versione di jQuery presente sui server 
+	Google basta
+	<a target="_blank" href="https://developers.google.com/speed/libraries/#jquery">
+	visitare questa pagina</a>. Fra l'altro possiamo trovare jQuery non solo 
+	sui server Google, ma anche su quelli Microsoft e su altri vari siti (un 
+	elenco incompleto pu&eacute; essere
+	<a target="_blank" href="https://www.maxcdn.com/blog/free-open-source-cdns/">
+	trovato qui</a>).</p>
+	<p>Come abbiamo detto, se scegliamo questa alternativa, non dobbiamo 
+	scaricare nulla, n&eacute; preoccuparci di niente: per usare jQuery basta copiare e 
+	incollare nell'head del documento la semplice riga di codice che abbiamo 
+	visto sopra:</p>
+        <div class="code">
+          &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</div>
+	<p>Questa soluzione ha anche il vantaggio che, se l'utente (colui 
+	che visualizzer&eacute; la nostra pagina) ha gi&eacute; visitato in precedenza altre 
+	pagine che usano jQuery ospitata sullo stesso server, probabilmente il suo 
+	browser gi&eacute; ne possiede una copia nella memoria cache e non &eacute; necessario 
+	scaricarla nuovamente.</p>
+	<p>D'altra parte la soluzione di appoggiarsi al server remoto presenta anche 
+	qualche piccolo svantaggio. Anzitutto non c'&eacute; la garanzia che il server sia 
+	funzionante e attivo sempre. Questo significa che, per esempio, se il server 
+	di Google in quel momento non &eacute; raggiungibile, la nostra pagina non 
+	funzioner&eacute;. Si tratta di un'eventualit&eacute; abbastanza rara, ma pu&eacute; succedere.</p>
+	<p>Inoltre in questo modo il programmatore non ha il completo controllo 
+	dell'intera operazione. Una soluzione alternativa &eacute; scaricare l'ultima 
+	versione di jQuery dal <a target="_blank" href="http://jquery.com/download/">
+	sito ufficiale</a> e usare quella nel nostro link. In questo caso si vedr&eacute; 
+	che sul sito vengono proposte due diversi file per ogni versione: quello 
+	compresso (<em>compressed</em>) e quello senza compressione (<em>uncompressed</em>).
+	</p>
+	<p>Il primo (detto anche <em>minified</em> e riconoscibile per la presenza 
+	di <em>min</em> nel nome) &eacute; quello da usare nelle nostre pagine. Si tratta di una 
+	versione pi&eacute; piccola del file <em>uncompressed</em>, nella quale sono stati eliminati 
+	tutti i caratteri inutili (per il computer) come spazi, commenti, andate a 
+	capo. E' praticamente illeggibile, ma se tutto quello che vogliamo &eacute; 
+	utilizzarlo senza cercare di capire cosa c'&eacute; scritto, va benissimo. La 
+	versione <em>uncompressed</em> viene invece usata dagli sviluppatori del codice 
+	jQuery ed &eacute; utile se si vuole andare a capire come funziona jQuery &quot;sotto al 
+	cofano&quot;.</p>
+	<p>Come si &eacute; detto nei nostri esempi nel seguito noi ci appoggeremo sempre 
+	ai server esterni di Google, soluzione che risulta senz'altro pi&eacute; semplice e 
+	immediata per chi inizia a programmare.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

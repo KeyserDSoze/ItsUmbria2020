@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Selettore di classe</div>
+	 <p> Il selettore elemento, visto nelle precedenti lezioni, consente di 
+		selezionare solo un intero gruppo di elementi (per esempio tutti i 
+		paragrafi o tutti gli header h1). Vi sono molti casi in cui per&eacute; si 
+		vuole poter effettuare una selezione pi&eacute; precisa degli elementi.</p>
+	<p> Una soluzione semplice a questo problema &eacute; rappresentata dalle 
+	cosiddette <strong>classi universali</strong>. Vediamo subito un esempio:</p>
+	 <div class="code">
+       .grande { font-size:24px; font-family:arial; color:green }<br />
+         .piccolo { font-size:12px; font-family:arial; color:red }<br />
+    </div>
+	 <p> In questo modo vengono definite due <strong>classi</strong> di nome 
+		grande e piccolo (i nomi sono scelti liberamente dal programmatore e, 
+		nel foglio stile, devono essere preceduti dal punto).</p>
+	<p> All'interno della pagina, per formattare degli elementi in base alle 
+	classi precedenti, basta scrivere:</p>
+	 <div class="code">
+       <p>&lt;h1 class=&quot;grande&quot;&gt; Titolo h1 grande &lt;/h1&gt;<br />
+		&lt;h1 class=&quot;piccolo&quot;&gt; Titolo h1 piccolo &lt;/h1&gt;<br />
+		&lt;h1&gt; Questo titolo viene formattato normalmente (senza stili)&lt;/h1&gt;</p>
+		<p>&lt;p class=&quot;grande&quot;&gt; Paragrafo grande &lt;/p&gt;<br />
+		&lt;p class=&quot;piccolo&quot;&gt; Paragrafo piccolo &lt;/p&gt; <br />
+		&lt;p&gt; Questo paragrafo viene formattato normalmente (senza stili)&lt;/p&gt;<br />
+  <br />
+  		</p>
+    </div>
+	 <p>La visualizzazione prodotta &eacute; di questo tipo:</p>
+<p style="font-size:24px; font-family:arial; color:green"> Paragrafo grande </p>
+
+<p style="font-size:12px; font-family:arial; color:red"> Paragrafo piccolo </p>
+<p><em>grande</em> e <em>piccolo</em>, nell'esempio precedente, sono due <strong>classi</strong>. 
+</p>
+	<p>Una classe di stile &eacute; dunque un modo per assegnare un nome a una regola di stile 
+e poterla applicare selettivamente ad un gruppo di elementi e non ad altri.</p>
+	<p>Si osservi che <em>class</em> &egrave; un <em>attributo universale</em> (applicabile a qualsiasi elemento), per mezzo del quale &egrave; possibile specificare la classe di appartenenza di un certo elemento.</p>
+<p>E' possibile usare pi&eacute; 
+classi per lo stesso elemento. A tale scopo &eacute; sufficiente inserire all'interno 
+dell'attributo class i nomi delle classi separandoli da uno spazio vuoto:</p>
+<div class="code">
+  &lt;p class=&quot;destro grassetto&quot;&gt;
+</div>
+	<p>Si noti che non &eacute; necessario ripetere l'attributo class.</p>
+<p>E' anche possibile definire una classe specifica, che pu&eacute; essere applicata a 
+un solo elemento. Si consideri l'esempio seguente:</p>
+	 <div class="code">
+       p.grande { font-size:24px; font-family:arial; color:green; }<br />
+         h1.grande { font-size:36px; font-family:arial; color:red; text-align: 
+		center; }<br />
+    </div>
+	<p>Le classi specifiche vengono utilizzate 
+	soprattutto quando si vuole usare una classe con lo stesso nome ma con 
+	propriet&eacute; diverse a seconda dell'elemento a cui la si applica (es. p.piccolo 
+	e h1.piccolo).</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

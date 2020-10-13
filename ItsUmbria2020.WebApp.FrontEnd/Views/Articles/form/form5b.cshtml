@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	
+
+        <div class="titolo"> Form per l'invio dati via mail</div>
+        <p>Affronteremo in maggiore dettaglio l'argomento dei linguaggi di 
+		scripting nelle sezioni dedicate al linguaggio
+		<a href=" ../js/js.html">javascript</a> e al
+		<a href=" ../php/php.html">php</a>. Si veda in particolare la lezione 
+		dedicata proprio al <a href=" ../php/pag/mail.html">problema 
+		dell'invio dei dati di un form</a> usando una pagina php.</p>
+	<p>Vogliamo qui semplicemente fornire 
+		un esempio di utilizzo di questi linguaggi per affrontare il problema 
+		dell'invio di dati utente attraverso un form.</p>
+        <p>A tale scopo consideriamo nuovamente un semplice form
+		<a href="form.html">gi&eacute; visto in precedenza</a>:</p>
+
+        <form action="" method="post" >
+
+<strong>Nome:</strong><br>
+<input type="text" name="name" />
+<br>
+<strong>Mail:</strong><br>
+<input type="text" name="mail" />
+<br>
+<strong>Commento:</strong><br>
+<input type="text" name="comment" />
+<br>
+<br>
+<input type="submit" value="Invia">
+<input type="reset" value="Annulla">
+
+</form>
+<p> il cui codice html &eacute; il seguente:</p>
+        <div class="code">
+          &lt;form action=&quot;mailto:pinco.pallino@libero.it&quot; method=&quot;post&quot; name = &quot;utente&quot; 
+enctype=&quot;text/plain&quot;&gt; 
+			<p>&lt;p&gt; <br />
+			&lt;strong&gt;Nome:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;nome&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;strong&gt;Mail:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;mail&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;strong&gt;Commento:&lt;/strong&gt;&lt;br&gt; <br />
+			&lt;input type=&quot;text&quot; name=&quot;commento&quot;&gt; <br />
+			&lt;/p&gt; <br />
+			&lt;p&gt; <br />
+			&lt;input type=&quot;submit&quot; value=&quot;Invia&quot;&gt; <br />
+			&lt;input type=&quot;reset&quot; value=&quot;Annulla&quot;&gt; <br />
+			&lt;/p&gt; </p>
+			<p>&lt;/form&gt; </p>
+    </div>
+        <p>L'attributo action indicato nel tag form (action=&quot;mailto:pinco.pallino@libero.it&quot;) 
+		serve per fornire l'indirizzo mail al quale dovr&eacute; essere inviato il form 
+		stesso. Abbiamo tuttavia gi&eacute; detto che non &eacute; una buona idea esporre in 
+		chiaro il proprio indirizzo mail in un form, perch&eacute; tale indirizzo 
+		diventa immediatamente visibile e disponibile a tutti in rete.</p>
+	<p>Una soluzione senz'altro migliore &eacute; quella di affidare al server che 
+	ospita il nostro sito il compito di elaborare il form e di inviarci via mail 
+	i risultati.</p>
+	<div class="titolo"> Invio automatico mail dal server 
+</div>
+	<p>Per ottenere l'elaborazione della mail da parte del server, dobbiamo 
+	scrivere una semplice pagina in PHP. Il PHP &eacute; un linguaggio di 
+	programmazione lato server, cio&eacute; &eacute; un linguaggio per scrivere programmi da 
+	fare eseguire al server. Nel nostro caso dobbiamo per prima cosa modificare 
+	il form nel seguente modo:</p>
+        <div class="code">
+          &lt;form action=&quot;elabora.php&quot; method=&quot;post&quot; name = &quot;utente&quot; enctype=&quot;multipart/form-data&quot;&gt;&nbsp;
+    </div>
+        <p>Notiamo anzitutto che l'attributo enctype &eacute; stato modificato. Ora non 
+		&eacute; pi&eacute; &quot;text/plain&quot; ma &eacute; diventato &quot;multipart/form-data&quot;.</p>
+	<p>Il nome e<em>labora.php</em> pu&eacute; essere cambiato a piacere. L'essenziale 
+	&eacute; che si tratti di un file con estensione php (e non html come al solito). 
+	In pratica elabora.php &eacute; il nome di una pagina alla quale viene passato il 
+	contenuto del form (cio&eacute; i dati inseriti dall'utente) e che si occupa di 
+	elaborarlo.</p>
+	<p>Come mostra la figura seguente l'elaborazione dei dati e l'invio del form 
+	non vengono effettuati sul computer dove viene eseguito il browser 
+	dell'utente (computer client), ma sul server remoto che ospita la nostra 
+	pagina (computer server):</p>
+	<p><img src="../img/mail.jpg" alt="" width="590" height="404" /></p>
+	<p>Per quanto riguarda la pagina elabora.php, essa pu&eacute; essere scritta con un 
+	normale editor di testo e salvata con estensione php. Il suo contenuto 
+	potrebbe essere quello mostrato qui di seguito:</p>
+        <div class="code">
+        <pre>
+&lt;!DOCTYPE html&gt; <br />&lt;html lang=&quot;it&quot;&gt; <br />&lt;head&gt; <br />
+&lt;meta charset=&quot;utf-8&quot;&gt;</pre>
+			<pre>&lt;title&gt;Pagina php per l'elaborazione di un form e l'invio di mail lato server&lt;/title&gt;</pre>
+			<pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;stili.css&quot;&gt;</pre>
+			<pre>&lt;/head&gt;</pre>
+			<pre>&lt;body&gt;
+&lt;?php</pre>
+			<pre># Inserite al posto di pippo@pluto.it il vostro indirizzo mail</pre>
+			<pre>$mail_to = &quot;pippo@pluto.it&quot;;</pre>
+			<pre># Questo &eacute; il campo oggetto della mail</pre>
+			<pre>$mail_subject = &quot;Messaggio da&quot;.$_POST['nome'];</pre>
+			<pre># Acquisizione dei dati utente dal form</pre>
+			<pre>$mail_body  = &quot;\n Nome: &quot; .$_POST['nome']. &quot; \n&quot;;
+$mail_body .= &quot;\n Email: &quot; .$_POST['mail']. &quot; \n&quot;;
+$mail_body .= &quot;\n Messaggio: &quot; .$_POST['commento']. &quot; \n&quot;;
+$mittente = &quot;From: &lt;&quot;.$_POST['mail'].&quot;&gt;\n&quot;;
+</pre>
+			<pre># Invio del messaggio via mail</pre>
+			<pre>$mail_body = stripslashes($mail_body);
+mail($mail_to, $mail_subject, $mail_body,$mittente);</pre>
+			<pre>?&gt;</pre>
+			<pre>&lt;p&gt;La mail &eacute; stata inviata correttamente!&lt;/p&gt;</pre>
+			<pre>&lt;/body&gt;</pre>
+			<pre>&lt;/html&gt;</pre>
+    </div>
+        <p>Senza entrare qui nei dettagli del significato delle istruzioni 
+		usate, si osservi che la pagina <em>elabora.php</em> si presenta come 
+		una normale pagina html a parte una serie di istruzioni, racchiuse fra 
+		&lt;?php e ?&gt;, che costituiscono il codice php della pagina. Questa &eacute; in 
+		effetti la parte che dovr&eacute; essere elaborata dal computer server per 
+		l'invio del form via mail.</p>
+	<p>Dal momento che la pagina <em>elabora.php </em>contiene codice php, essa 
+	non pu&eacute; essere visualizzata sul computer utente (a meno che su questo 
+	computer non venga installato un server php). Per poterla visualizzare 
+	occorre caricarla sul server remoto (quello che ospita il nostro sito).</p>
+	<p>&nbsp;</p>
+	<div class="titolo"> Corrispondenza fra l'attributo name e il codice PHP 
+</div>
+	<p>Affinch&eacute; l'invio funzioni correttamente, &eacute; importante che l'attributo 
+	name di ogni campo del form corrisponda col codice scritto in PHP. La figura 
+	seguente dovrebbe chiarire un po' meglio il concetto:</p>
+	<p>
+	<img alt="Corrispondenza attributo name nel form e php" src="../img/formphp.jpg" /></p>
+	<p>I nomi usati possono ovviamente essere scelti liberamente. Se si 
+	desiderano aggiungere altri campi al form, bisogna naturalmente aggiungere 
+	nella pagina php la corrispondente elaborazione (come l'esempio precedente).</p>
+	<p>Per aggiungere l'elaborazione e l'invio via mail di altri tipi campi (option, 
+	radio etc), vedere
+	<a target="_blank" href="http://www.phpnews.it/corsi/corso-php-base/i-form-e-larray-$_post/">
+	questo esempio</a>.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

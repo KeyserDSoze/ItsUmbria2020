@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+    
+	<div class="titolo">
+
+	  Passare un vettore a una funzione</div>
+        <p>In JS &eacute; possibile passare un vettore a una funzione usando il nome 
+		del vettore stesso. Si consideri l'esempio seguente:</p>
+        <div class="code">
+      function&nbsp;media(numeri) <br />
+		{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;i, somma=0;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i =&nbsp;0; i &lt; numeri.length; i++) 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; somma = somma + numeri[i];<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;somma/i;<br />
+}</div>
+    
+    <p>La funzione pu&eacute; essere chiamata passandole un vettore come mostra 
+	l'esempio qui soto:</p>
+        <div class="code">
+      var prova = [13,20,11,88];<br />
+		alert(media(prova));</div>
+	<p>&nbsp;</p>
+
+	<div class="titolo">
+
+	  L'oggetto arguments</div>
+        <p>In JS &eacute; possibile scrivere funzioni che ricevono un numero di 
+		parametri variabile usando gli array. In realt&eacute; ogni funzione JS 
+		possiede un oggetto predefinito di nome <em>arguments</em> il quale 
+		contiene i valori di tutti i parametri della funzione. Si consideri 
+		l'esempio seguente di una funzione per la ricerca del massimo fra un 
+		numero variabile di valori:</p>
+        <div class="code">
+      function&nbsp;findMax() <br />
+		{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;i;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;max =&nbsp;-Infinity;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i =&nbsp;0; i &lt; arguments.length; i++) 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(arguments[i] &gt; max) 
+		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max = 
+arguments[i];<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;max;<br />
+}</div>
+        <p>Notiamo anzitutto l'uso della costante <em>Infinity</em> che 
+		rappresenta un numero che eccede il massimo valore rappresentabile. In 
+		pratica in questo modo la variabile <em>max</em> viene inizializzata con 
+		un valore che &eacute; certamente pi&eacute; basso di tutti i valori possibili.</p>
+	<p>Osservate che la funzione non presenta parametri dichiarati 
+	esplicitamente fra le parentesi. Al suo posto utilizza il vettore <em>
+	arguments</em> con la sua propriet&eacute; <em>length</em> che contiene il numero 
+	di elementi del vettore. Al momento della chiamata alla funzione, arguments 
+	viene inizializzato con la lista dei valori passati alla funzione. Si 
+	considerino per esempio le seguenti chiamate alla precedente funzione:</p>
+        <div class="code">
+      x = findMax(1, 123, 500, 115, 44, 88);&nbsp; // x vale 500<br />
+		y = findMax(7, -15, 22, 9);&nbsp; // y vale 22<br />
+		z = findMax(0,-12);&nbsp; // z vale 0</div>
+	<p>Si osservi come il numero di argomenti (cio&eacute; i valori passati alla 
+	funzione) sia diverso da una chiamata all'altra. Questo &eacute; appunto possibile 
+	usando l'oggetto <em>arguments</em>.</p>
+
+	<div class="titolo">
+
+	  Funzioni che tornano un array</div>
+        <p>Oltre a ricevere un vettore come parametro, una funzione in JS pu&eacute; 
+		anche tornare un vettore come valore di ritorno. Per esempio la seguente 
+		funzione <em>dividi</em> riceve una <em>frase</em> composta da pi&eacute; 
+		parole e la divide cercando come separatore lo spazio (blank) fra una 
+		parola e l'altra:</p>
+        <div class="code">
+      function dividi(frase) <br />
+		{<br />
+		var res = frase.split(&quot; &quot;);<br />
+		return res;<br />
+		}</div>
+    
+    <p>Il valore di ritorno res &eacute; un vettore che contiene le singole parole che 
+	compongono la frase. Per esempio nel caso qui sotto, verranno visualizzate 
+	separatamente le parole &quot;Ciao&quot;, &quot;a&quot;, &quot;tutti&quot;:</p>
+        <div class="code">
+      parole = dividi(&quot;ciao a tutti&quot;)<br />
+		for (i=0;i&lt;parole.length;i++)<br />
+&nbsp;&nbsp;&nbsp; alert(parole[i]);</div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

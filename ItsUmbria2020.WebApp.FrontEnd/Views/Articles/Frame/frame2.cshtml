@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">L'elemento iframe</div>
+	 <p>L'elemento <strong>iframe</strong> &eacute; la soluzione moderna e non 
+		deprecata all'utilizzo dei frame. Il nome deriva da <em>inline frame</em> 
+		(frame in linea) e si riferisce al fatto che, per mezzo di questo 
+		elemento, &eacute; possibile creare un frame all'interno di una pagina html, un 
+		po' come se ci si aprisse una specie di finestra su un'altra pagina. Un 
+		semplice esempio dovrebbe chiarire il concetto. Si consideri la pagina 
+		seguente (chiamiamola pagina2.html):</p>
+	 <div class="code">
+       <pre>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt; 
+
+&lt;title&gt;Pagina secondaria&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p style = &quot;background-color: pink&quot;&gt;Questo &eacute; il testo contenuto nella pagina secondaria &lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;<br /></pre>
+    </div>
+	 <p>Si tratta di una semplicissima pagina html che produce nel browser la 
+		seguente visualizzazione:</p>
+	<p class="style1"><img alt="" src="../img/img17.jpg" /></p>
+	<p>Ora consideriamo quest'altra pagina (chiamata pagina1.html) che fa 
+	riferimento alla pagina precedente:</p>
+	 <div class="code">
+       <pre>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt; 
+
+&lt;title&gt;Pagina con un frame inline&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;</pre>
+		<pre>&lt;iframe src=&quot;pagina2.html&quot;&gt;&lt;/iframe&gt;
+
+&lt;p style = &quot;background-color: yellow&quot;&gt;Questo &eacute; il contenuto di pagina1.html &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;<br /></pre>
+    </div>
+	 <p>Si noti la dichiarazione DOCTYPE Transitional necessaria per poter usare 
+		i frame inline. Visualizzando pagina1.html nel browser si ottiene il 
+		seguente risultato:</p>
+	<p class="style1"><img alt="" src="../img/img1C1.jpg" /></p>
+	<p>Si osservi che, prima del paragrafo in giallo, &eacute; stato visualizzato un 
+	riquadro (il frame inlinea) che mostra il contenuto di pagina2.html.</p>
+	<p>Si noti che iframe &eacute; un elemento contenitore, cio&eacute; dotato di un tag di 
+	apertura e di uno di chiusura. Di solito, come nell'esempio precedente, il 
+	contenuto dell'elemento viene lasciato vuoto. Tuttavia &eacute; possibile inserire 
+	all'interno dell'elemento un testo da visualizzare per quei browser che non 
+	dovessero supportare gli iframe. Attualmente per&eacute; gli iframe sono 
+	visualizzati correttamente da tutti i browser moderni, perci&eacute; tale contenuto 
+	&eacute; abbastanza inutile.</p>
+	 <div class="titolo">Attributi di iframe</div>
+	 <p>L'elemento iframe ha diversi attributi. I principali sono i seguenti:</p>
+	<ul>
+					<li>src - specifica il file html che deve essere 
+					visualizzato nell'iframe; <br />
+					</li>
+					<li>name - assegna un nome all'iframe; <br />
+					</li>
+					<li>width - imposta la larghezza dell'iframe; <br />
+					</li>
+					<li>height - imposta l'altezza dell'iframe; <br />
+					</li>
+					<li>marginwidth - imposta i margini orizzontali dell'iframe;
+					<br />
+					</li>
+					<li>marginheight - imposta i margini verticali dell'iframe;
+					<br />
+					</li>
+					<li>scrolling - imposta lo stato della barra di scorrimento; 
+					pu&eacute; assumere i valori &quot;yes&quot;, &quot;no&quot; e &quot;auto&quot; che, 
+					rispettivamente, visualizzano, non visualizzano, 
+					visualizzano solo se necessario, le barre di scorrimento.
+					<br />
+					</li>
+					<li>frameborder - serve per mostrare (1) o nascondere (0) il 
+					bordo dell'iframe.</li>
+	</ul>
+	 <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

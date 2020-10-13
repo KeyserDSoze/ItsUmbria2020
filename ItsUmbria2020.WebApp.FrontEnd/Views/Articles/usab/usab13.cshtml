@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Un buon sito � un sito leggero</div>
+	 <p>La velocit� di connessione � in continuo aumento e molti utenti sono 
+		ormai collegati in banda larga. Ci� potrebbe portare a sottovalutare 
+		l'importanza di usare pagine &quot;leggere&quot;, che occupano poco spazio.</p>
+	<p>Bisogna tuttavia considerare che in generale:</p>
+	<ul>
+					<li>maggiore � la dimensione (in Byte) di una pagina, 
+					maggiore � il tempo necessario per il suo caricamento;<br />
+					</li>
+					<li>gli utenti che navigano con tariffe a consumo (es. da 
+					cellulare) o in condizioni di banda non ottimali, sono 
+					penalizzati da pagine pesanti;<br />
+					</li>
+					<li>in generale gli utenti abbandonano facilmente un sito 
+					lento a caricarsi</li>
+	</ul>
+	<p>Per tutte queste ragioni � importante cercare di mantenere leggere le 
+	proprie pagine, soprattutto per quanto riguarda le dimensioni dei file 
+	multimediali (immagini, musica, video).</p>
+	 <div class="titolo">Dimensioni delle immagini</div>
+	 <p>Per quanto riguarda le immagini, � importante che le dimensioni reali 
+		siano indicate attraverso gli attributi width e height:</p>
+	 <div class="code">
+       &lt;img src=&quot;cane.png&quot; width=&quot;740&quot; height=&quot;382&quot; alt=&quot;pastore tedesco&quot;&gt; </div>
+	<p>o meglio ancora con gli stili:</p>
+	 <div class="code">
+       &lt;img src=&quot;cane.png&quot; style=&quot;width:740px; height:382px;&quot; alt=&quot;pastore 
+		tedesco&quot;&gt; </div>
+	<p>Indicando le dimensioni, il browser non deve aspettare il caricamento 
+	completo dell'immagine per poter disporre gli altri elementi sulla pagina e 
+	l'utente che naviga con banda ridotta pu� decidere di interrompere il 
+	caricamento, senza compromettere il resto della pagina.</p>
+	<p>E' anche importante che, quando si desidera ridimensionare un'immagine, 
+	questo venga fatto agendo sul file originale e non riducendo le dimensioni 
+	nel tag img. Infatti in quest'ultimo modo il tempo di caricamento sarebbe 
+	sempre uguale, dal momento che l'immagine verrebbe mostrata ridimensionata, 
+	ma sarebbe comunque caricata per intero.</p>
+	<p>In caso di gallerie di immagini, � importante usare <em>thumbnail</em>, 
+	cio� piccole anteprime cliccabili, che consentano all'utente di decidere se 
+	vuole visualizzare un'immagine a dimensione piena oppure no.</p>
+	<p class="style1"><img alt="thumnails" src="../img/img34.jpg" /></p>
+	<p>&nbsp;</p>
+	 <div class="titolo">Dimensioni dei file da scaricare</div>
+	 <p>Quando nel sito � presente un link per scaricare un file (es. un pdf), � 
+		importante indicare nel link anche le dimensioni del file in modo che 
+		l'utente possa decidere se procedere al download oppure no:</p>
+	<p class="style1"><img alt="" src="../img/img35.jpg" /></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

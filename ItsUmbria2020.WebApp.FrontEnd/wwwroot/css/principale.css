@@ -1,0 +1,110 @@
+﻿img {
+	border: none
+}
+
+#contenitore {
+	width: 660px;
+	height: 100%;
+	background: url(../interfaccia/sfondo.gif);
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	margin: 0px auto;
+}
+
+#contenitore2 {
+	width: 660px;
+	height: 100%;
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	margin: 0px auto;
+}
+
+hr {
+	display: none
+}
+
+#topp {
+	width: 660px;
+	height: 128px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	background: url(../interfaccia/top.gif) no-repeat top left;
+}
+
+#barra {
+	width: 660px;
+	height: 17px;
+	top: 123px;
+	left: 0px;
+	position: absolute;
+	background: url(../interfaccia/barra.gif) no-repeat top left;
+}
+
+#piepag {
+	width: 660px;
+	height: 26px;
+	left: 0px;
+	position: relative;
+	background: url(../interfaccia/piepag.gif) no-repeat top left;
+}
+
+#titolo {
+	width: 511px;
+	height: 47px;
+	top: 50px;
+	left: 59px;
+	position: absolute;
+}
+
+#toppage {
+	position: relative;
+	top: 0px;
+	right: 0;
+	width: 660px;
+	height: 145px;
+	left: 0px;
+}
+
+#contenuti {
+	position: relative;
+	left: 192px;
+	width: 430px;
+	text-align: left;
+}
+
+#chiusura {
+	position: relative;
+	left: 35px;
+	width: 610px;
+	height: 60px;
+}
+
+
+#menusx {
+	position: absolute;
+	top: 145px;
+	left: 35px;
+	width: 145px;
+}
+
+blockquote {
+	border-left: 0.5em solid #DDD;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid;
+}
+
+.definizione {
+	border-left: solid 5px #FF0000;
+	padding-left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+}

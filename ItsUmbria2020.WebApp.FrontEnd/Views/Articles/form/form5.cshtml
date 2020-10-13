@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	
+
+        <div class="titolo"> Textarea </div>
+        <p>L'elemento <strong>textarea</strong> viene usato per acquisire in un form testi piuttosto lunghi, in genere che occupano pi&ugrave; righe e che dunque non possono stare in una semplice casella di testo. Esempio:</p>
+        <div class="code">
+          &lt;textarea name=&quot;messaggio&quot; rows=&quot;5&quot; cols=&quot;40&quot;&gt;&lt;/textarea&gt;</div>
+        <p>visualizzato nel seguente modo:</p>
+        <form>
+          <textarea name="textarea" rows="5" cols="40"></textarea>
+        </form>
+
+<p>Si noti che, a differenza dell'elemento input, si tratta di un elemento contenitore, cio&egrave; dotato di un tag di apertura e uno di chiusura. Nella maggior parte dei casi, come nell'esempio precedente, non si inserisce nulla fra il tag di apertura e quello di chiusura (<strong>ATTENZIONE</strong>: se si lascia uno spazio vuoto fra i tag, questo viene visualizzato nella text area). Si consideri per&ograve; il caso seguente:</p>
+<div class="code"> &lt;textarea name=&quot;messaggio&quot; rows=&quot;5&quot; cols=&quot;40&quot;&gt;Scrivete qui il vostro messaggio &lt;/textarea&gt;</div>
+<p>visualizzato nel seguente modo:</p>
+<form>
+ <textarea name="messaggio" rows="5" cols="40">Scrivete qui il vostro messaggio </textarea>
+</form>
+<p>Si noti che il testo inserito fra i due tag viene visualizzato nell'area di testo.</p>
+<p>Gli attributi <strong>rows</strong> e <strong>cols</strong> (opzionali) permettono di specificare le dimensioni dell'area di testo in numero di caratteri, rispettivamente il numero di righe e il numero di colonne.  </p>
+<p>&nbsp;</p>
+<div class="titolo">Select - Option </div>
+<p>Permette di realizzare una casella a discesa con un elenco di scelte multiple. Esempio:</p>
+<div class="code">&lt;select name=&quot;nazione&quot;&gt;<br />
+  &lt;option selected=&quot;selected&quot; value=&quot;Italia&quot;&gt;Italiano&lt;/option&gt;<br />
+  &lt;option value=&quot;Francia&quot;&gt;Francese&lt;/option&gt;<br />
+  &lt;option value=&quot;Germania&quot;&gt;Tedesco&lt;/option&gt;<br />
+  &lt;option value=&quot;Gran Bretagna&quot;&gt;Inglese&lt;/option&gt;<br />
+  &lt;option value=&quot;Usa&quot;&gt;Statunitense&lt;/option&gt;<br />
+&lt;/select&gt;</div>
+<p>visualizzato nel seguente modo:</p>
+<form>
+<select name="nazione">
+<option selected="selected" value="Italia">Italiano</option>
+<option value="Francia">Francese</option>
+<option value="Germania">Tedesco</option>
+<option value="Gran Bretagna">Inglese</option>
+<option value="Usa">Statunitense</option>
+</select></form>
+<p>E' composto  di due elementi contenitori, select e option, con il secondo annidato obbligatoriamente dentro il primo. </p>
+<p>L'attributo <strong>name</strong> identifica il gruppo di scelte, mentre l'attributo <strong>value</strong> (differente per ogni scelta) permette di identificare la scelta effettuata dall'utente. </p>
+<p>L'attributo <strong>selected</strong> (opzionale) permette di specificare quale fra le scelte alternative deve eventualmente essere attivata in automatico. </p>
+<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

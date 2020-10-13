@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-align: left;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">Il BOM</div>
+        <p>Come abbiamo avuto modo di vedere ampiamente, il linguaggio 
+		Javascript &eacute; fortemente integrato con il browser in cui viene eseguito e 
+		con le pagine web in cui &eacute; inserito. Sebbene esistano differenti 
+		ambienti in cui &eacute; possibile l'esecuzione di script JS, possiamo 
+		senz'altro affermare che nella stragrande maggioranza dei casi JS viene 
+		eseguito in un browser ed &eacute; collegato con una pagina html.</p>
+	<p>Per tali ragioni gli script JS devono essere in grado di interagire sia 
+	con il browser (es. aprendo finestre secondarie, leggendo la cronologia di 
+	navigazione etc.) sia con gli elementi html presenti su una pagina (es. 
+	rispondendo alla pressione di un pulsante, visualizzando un risultato in una 
+	casella di testo etc.). In realt&eacute; nelle precedenti lezioni abbiamo 
+	ampiamente gi&eacute; utilizzato queste due caratteristiche (interazione col 
+	browser e interazione con la pagina html) usate dal JS.</p>
+	<p>Si noti che abbiamo scritto &quot;caratteristiche usate dal JS&quot; e non 
+	&quot;caratteristiche del JS&quot; in quanto non si tratta qui propriamente di 
+	istruzioni del linguaggio, ma di &quot;elementi&quot; esterni che JS utilizza e su cui 
+	si appoggia. </p>
+	<p>Infatti per interfacciarsi col funzionamento del browser e con gli 
+	elementi html della pagina, il JS usa, come si &eacute; detto, delle API messe a disposizione del 
+	browser stesso.</p>
+	<p>L'insieme delle API che consentono l'interazione col browser su cui viene 
+	visualizzata la pagina prendono il nome di <strong>BOM</strong> o <strong>
+	Browswer Object Module o Browser Object Map</strong>. Viceversa l'interazione con gli elementi 
+	della pagina web (il documento) vengono gestiti tramite il DOM (Document 
+	Object Map) di cui parleremo pi&eacute; avannti. </p>
+	<p>Il BOM &eacute; in sostanza un modo per rappresentare il browser come un 
+	insieme di oggetti legati fra loro da una relazione genitore-figlio (parent-child) 
+	che pu&eacute; essere schematizzata nel seguente modo (struttura ad albero):</p>
+	<p class="style1">
+	<img src="../img/bom.jpg" alt="javascript object model" /></p>
+	<p class="style2">Si noti che document, history, screen, navigator e 
+	location sono tutte propriet&eacute; dell'oggetto window. Tali propriet&eacute; sono a 
+	loro volta degli oggetti (dotati quindi di propriet&eacute;/metodi), creando in 
+	tale modo una <a href=" obj/obj2.html">gerarchia di oggetti nested</a>.</p>
+	<p class="style2">In generale si usa la 
+	notazione col punto per separare i diversi elementi di una catena di oggetti 
+	in un albero, per esempio:</p>
+	<p class="style1">window.location</p>
+	<p>Si osservi in particolare l'oggetto document, il quale rappresenta il 
+	documento (pagina html) correntemente caricato nella finestra del browser. 
+	Tale oggetto &eacute; importante in quanto costituisce la radice del DOM (Document 
+	Object Module) di cui parleremo ampiamente pi&eacute; avanti.</p>
+
+        <div class="titolo">I limiti del BOM: problemi di standardizzazione</div>
+        <p>Il BOM &eacute; stato sviluppato fin dalla nascita di JS per fornire un 
+		collegamento fra il codice JS e il browser. Infatti la prima versione 
+		del BOM nasce addirittura con Netscape 2, il primo browser ad offrire un 
+		linguaggio di scripting (allora chiamato LiveScript) nel 1995.</p>
+	<p>Da allora il BOM ha naturalmente subito numerose evoluzioni, 
+	miglioramenti e modifiche. Il principale problema del BOM &eacute; la sua scarsa 
+	standardizzazione: non esiste nessuno standard riconosciuto 
+	internazionalmente per tutte le sue caratteristiche, le quali dipendono dal 
+	browser su cui sono implementate.</p>
+	<p>Nel seguito esamineremo alcune caratteristiche pi&eacute; usate del BOM (e 
+	sufficientemente standardizzate su browser diversi), in particolare per quanto riguarda la gestione di finestre di 
+	input/output e la temporizzazione.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				background-color: #DDDDDD;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Gli elementi del form</div>
+        <p>Nelle lezioni precedenti abbiamo visto come &eacute; possibile usare un form 
+		per costruire l'interfaccia di uno script in JS. In particolare abbiamo 
+		esaminato la funzione dei seguenti elementi:</p>
+	<ul>
+					<li><strong>input di tipo text</strong>:<br />
+					per inserire dati o visualizzare risultati<br />
+					</li>
+					<li><strong>input di tipo button</strong><br />
+					per eseguire una funzione cliccandoci sopra</li>
+	</ul>
+	<p>Tuttavia, come abbiamo avuto modo di spiegare nelle
+	<a href=" ../HTML/form/form.html">apposite lezioni</a>, gli elementi che &eacute; 
+	possibile inserire in un form sono molti di pi&eacute; (text area, select option, 
+	checkbox etc.). Da uno script in JS &eacute; possibile accedere a ciascuno di 
+	questi elementi attraverso il metodo <em>document.getElementById</em>. 
+	Vediamo ora rapidamente come.</p>
+
+	<div class="titolo">
+
+	  Textarea</div>
+        <p>L'elemento <a href=" ../HTML/form/form5.html">textarea</a> viene 
+		usato per testi di una certa lunghezza. Per esempio:</p>
+        <div class="code">
+          &lt;textarea name=&quot;messaggio&quot; rows=&quot;5&quot; cols=&quot;40&quot; 
+			id=&quot;messaggio&quot;&gt; &lt;/textarea&gt;</div>
+        <p>visualizzato nel seguente modo:</p>
+        <form>
+          <textarea name="textarea" rows="5" cols="40"></textarea>
+        </form>
+
+	<p>Accedere a una textarea da JS &eacute; molto semplice. In pratica si usa <em>
+	document.getElementById </em>esattamente come visto per le caselle di testo 
+	(input text):</p>
+        <div class="code">
+          <pre>&lt;script&gt;</pre>
+			<pre>function visualizza()
+{          
+var messaggio = document.getElementById(&quot;messaggio&quot;);
+alert(messaggio.value);
+}
+&lt;/script&gt;</pre>
+	</div>
+        <p>Ovviamente, in modo simile, le textarea possono anche essere usate 
+		per visualizzare il risultato di una elaborazione (nel caso in cui non 
+		sia sufficiente lo spazio di una semplice input text).</p>
+        <div class="titolo">Checkbox</div>
+        <p>La <a href=" ../HTML/form/form3.html">checkbox</a> permette di realizzare scelte multiple. Esempio:</p>
+    <div class="code"> &lt;textarea name=&quot;messaggio&quot; rows=&quot;5&quot; cols=&quot;40&quot; id=&quot;messaggio&quot;&gt; 
+					&lt;/textarea&gt;<br />
+					&lt;input type=&quot;checkbox&quot; id=&quot;sport&quot; checked=&quot;checked&quot;&gt; Fare 
+					sport &lt;br&gt; <br />
+					&lt;input type=&quot;checkbox&quot; id=&quot;cinema&quot;&gt; Andare al cinema &lt;br&gt;
+					<br />
+					&lt;input type=&quot;checkbox&quot; id=&quot;gioco&quot;&gt; Giocare &lt;br&gt;</div>
+        <p>visualizzata nel seguente modo:</p>
+        <form>
+<input type="checkbox" name="hobby1" value="sport" checked="checked"> Fare sport <br /> 
+<input type="checkbox" name="hobby2" value="cinema"> Andare al cinema <br / > 
+<input type="checkbox" name="hobby" value="gioco"> Giocare        </form>
+        <p>Ogni checkbox assume un valore true oppure false a seconda che sia 
+		selezionata oppure no. Tale valore pu&eacute; essere controllato per mezzo 
+		della propriet&eacute; checked, come mostra l'esempio seguente:</p>
+        <div class="code">
+          &lt;script&gt;<br />
+			<br />
+			function visualizza()<br />
+			{ <br />
+			if (document.getElementById(&quot;sport&quot;).checked)<br />
+			alert(&quot;sport&quot;);<br />
+			if (document.getElementById(&quot;cinema&quot;).checked)<br />
+			alert(&quot;cinema&quot;);<br />
+			if (document.getElementById(&quot;gioco&quot;).checked)<br />
+			alert(&quot;gioco&quot;);<br />
+			<br />
+			}<br />
+			&lt;/script&gt;</div>
+        <p>&nbsp;</p>
+        <div class="titolo">Radio</div>
+        <p>L'elemento <a href=" ../HTML/form/form3.html">radio</a> permette di realizzare scelte mutuamente esclusive. Esempio:</p>
+    <div class="code"> &lt;input type=&quot;radio&quot; name =&quot;sesso&quot; id=&quot;M&quot;  checked=&quot;checked&quot;&gt; Maschio         &lt;br&gt; <br />
+  &lt;input type=&quot;radio&quot; name=&quot;sesso&quot; id=&quot;F&quot;&gt; Femmina    </div>
+        <p>visualizzata nel seguente modo:</p>
+        <form>
+
+<input type="radio" name="sesso" value="M" checked="checked"> Maschio <br /> 
+<input type="radio" name="sesso" value="F">
+ Femmina
+        </form>
+        <p>Si osservi che le scelte in questo caso, a differenza delle checkbox, sono mutuamente esclusive, nel senso che non &egrave; possibile cliccare su pi&ugrave; caselle. 
+		Si noti anche l'attributo name, indispensabile in questo caso per 
+		raggruppare insieme le diverse caselle.</p>
+        <p>Per verificare il valore selezionato si pu&eacute; usare il seguente codice:</p>
+        <div class="code">
+          &lt;script&gt;<br />
+			<br />
+			function visualizza()<br />
+			{ <br />
+			if (document.getElementById(&quot;M&quot;).checked)<br />
+			alert(&quot;Maschio&quot;);<br />
+			else<br />
+			alert(&quot;Femmina&quot;);<br />
+			<br />
+			}<br />
+			&lt;/script&gt;</div>
+        <p>&nbsp;</p>
+<div class="titolo">Select - Option </div>
+<p>L'elemento <a href=" ../HTML/form/form5.html">select-option</a> permette di realizzare una casella a discesa con un elenco di scelte multiple. Esempio:</p>
+<div class="code">&lt;select i<span class="style1">d</span>=&quot;nazione&quot;&gt;<br />
+  &lt;option selected=&quot;selected&quot; v<span class="style1">alue</span>=&quot;Italia&quot;&gt;Italiano&lt;/option&gt;<br />
+  &lt;option v<span class="style1">alue</span>=&quot;Francia&quot;&gt;Francese&lt;/option&gt;<br />
+  &lt;option v<span class="style1">alue</span>=&quot;Germania&quot;&gt;Tedesco&lt;/option&gt;<br />
+  &lt;option v<span class="style1">alue</span>=&quot;Gran Bretagna&quot;&gt;Inglese&lt;/option&gt;<br />
+  &lt;option v<span class="style1">alue</span>=&quot;Usa&quot;&gt;Statunitense&lt;/option&gt;<br />
+&lt;/select&gt;</div>
+<p>visualizzato nel seguente modo:</p>
+<form>
+<select id="nazione">
+<option selected="selected" value="Italia">Italiano</option>
+<option value="Francia">Francese</option>
+<option value="Germania">Tedesco</option>
+<option value="Gran Bretagna">Inglese</option>
+<option value="Usa">Statunitense</option>
+</select></form>
+	<p>Accedere al valore selezionato attraverso document.getElementById &eacute; molto 
+	semplice, come mostra l'esempio qui sotto:</p>
+<div class="code">&lt;script&gt;<br />
+				<br />
+				function visualizza()<br />
+				{ <br />
+				alert(&quot;La nazione selezionata &eacute; 
+				&quot;+document.getElementById(&quot;nazione&quot;).value)<br />
+				}<br />
+				&lt;/script&gt;</div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

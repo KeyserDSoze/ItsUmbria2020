@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Modificare o aggiungere gli stili di un elemento</div>
+
+	<p>Supponiamo di avere una pagina in cui, passando col mouse sopra la pagina 
+	stessa, si voglia cambiare il colore di sfondo. Possiamo realizzarla in 
+	questo modo:</p>
+        <div class="code">
+          $(&quot;body&quot;).mouseover(function(){
+          $(this).css(&quot;background-color&quot;,&quot;gray&quot;); }); </div>
+	<p>La parte dell'istruzione precedente che modifica (o aggiunge, se non 
+	presente) lo stile &eacute; questa:</p>
+        <div class="code">
+          $(this).css(&quot;background-color&quot;,&quot;gray&quot;); </div>
+	<p>Come si vede la sintassi &eacute; sostanzialmente la stessa usata per modificare 
+	gli attributi, salvo il nome del metodo che in questo caso &eacute; <strong>css</strong>.</p>
+	<p>E' anche interessante, per inciso, sfruttare l'evento <strong>hover</strong>, 
+	non presente come evento nativo in javascript, che consente di catturare sia 
+	il <em>mouseover</em> che il <em>mouseout</em>, nel seguente modo:</p>
+        <div class="code">
+          $(&quot;body&quot;).hover(<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; function(){
+          $(this).css(&quot;background-color&quot;,&quot;gray&quot;); } , <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			function(){ $(this).css(&quot;background-color&quot;, &quot;white&quot;); }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ); </div>
+	<p>Come si pu&eacute; notare, usando hover occorre specificare due funzioni: la 
+	prima indica ci&eacute; che accade quando il mouse passa sull'oggetto e la seconda 
+	ci&eacute; che accade quando il mouse lascia l'oggetto. Nell'esempio qui sopra lo sfondo diventa grigio quando il mouse passa 
+	sull'elemento body e torna bianco quando se ne allontana (bisogna specificare due funzioni, perch&eacute; in realt&eacute; si tratta 
+	di due eventi in uno).</p>
+	<p>Anche nel caso di <em>css</em> &eacute; possibile modificare pi&eacute; stili insieme usando un
+	<em>object literal</em>, cio&eacute; una sequenza racchiusa fra graffe, come mostra 
+	l'esempio seguente che modifica gli stili di tutti i paragrafi del 
+	documento:</p>
+        <div class="code">
+          $('p').css({ 'background-color': '#dddddd', 'color': '#666666', 'font-size': 
+			'11pt', 'line-height': '2.5em' }); </div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Recuperare il valore di uno stile</div>
+
+	<p>Esattamente come il metodo <em>attr</em>, anche <em>css</em> pu&eacute; essere usato &quot;al 
+	contrario&quot;, cio&eacute; per recuperare il valore di uno stile (invece di 
+	modificarlo), come mostra l'esempio seguente:</p>
+        <div class="code">
+          &nbsp;$(&quot;<em>.colorato</em>&quot;).click(function(){<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			alert(&quot;Colore sfondo: &quot; + $(this).css('background-color'));<br />
+			});</div>
+	<p>Anche in questo caso, se esistono pi&eacute; elementi corrispondenti al 
+	selettore usato (.colorato nel nostro esempio), il metodo css torna il 
+	valore solo del primo.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

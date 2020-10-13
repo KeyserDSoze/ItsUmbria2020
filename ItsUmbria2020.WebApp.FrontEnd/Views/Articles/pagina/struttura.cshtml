@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  <p>Struttura pagina HTML </p>
+	</div>
+        <p>La struttura base di un documento HTML &egrave; molto semplice e pu&ograve; essere riassunta cos&igrave;:</p>
+        <div class="code">
+          <table>
+            <tbody>
+              <tr>
+                <td width="624" style="color:#0066CC">&lt;!DOCTYPE HTML&gt; </td>
+              </tr>
+              <tr>
+                <td style="color:#FF0000">&lt;html&gt;</td>
+              </tr>
+              <tr>
+                <td style="color:#00FF00">&nbsp;&nbsp;&lt;head&gt;</td>
+              </tr>
+              <tr>
+                <td>....</td>
+              </tr>
+              <tr>
+                <td style="color:#00FF00">&nbsp;&nbsp;&lt;/head&gt;</td>
+              </tr>
+              <tr>
+                <td style="color:#000066">&nbsp;&nbsp;&lt;body&gt;</td>
+              </tr>
+              <tr>
+                <td>....</td>
+              </tr>
+              <tr>
+                <td style="color:#000066">&nbsp;&nbsp;&lt;/body&gt;</td>
+              </tr>
+              <tr>
+                <td style="color:#FF0000">&lt;/html&gt;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>I puntini di sospensione indicano la presenza di codice HTML (questo &egrave; un esempio di pagina vuota, che non produce nessuna visualizzazione). </p>
+        <p>La pagina si compone di alcune &quot;parti&quot; predefinite, indicate sopra con colori diversi. Esaminiamole ora brevemente una per una. Per comodit&agrave;, facciamo anche riferimento alla pagina di esempio gi&agrave; vista nella <a href=" intro/strumenti.html">lezione sugli Strumenti</a>, che riportiamo qui sotto: </p>
+        <div class="code">
+          <table>
+            <tbody>
+              <tr>
+                <td width="571">&lt;!DOCTYPE html&gt; </td>
+              </tr>
+              <tr>
+                <td>&lt;html&gt; </td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;head&gt;<br />
+				&lt;meta charset=&quot;utf-8&quot;&gt; </td>
+              </tr>
+              <tr>
+                <td>&lt;title&gt; La mia prima pagina in HTML &lt;/title&gt; </td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;/head&gt;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;body&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;p&gt;Ecco la mia &lt;strong&gt; prima pagina!!!! &lt;/strong&gt; in HTML &lt;/p&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;p&gt; Visita &lt;a href = &quot;  http://www.programmiamo.altervista.org/index.html&quot;&gt; Programmiamo&lt;/a&gt;:&lt;br /&gt; potrai imparare <br />
+                  tutti i segreti dell'HTML! &lt;/p&gt;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&lt;/body&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;/html&gt;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>&nbsp;</p>
+        <div class="titolo">Tag e elementi </div>
+        <p>Ci occuperemo nella <a href="validazione.html">prossima lezione</a> 
+		della dichiarazione DOCTYPE che sta all'inizio della pagina. Per adesso 
+		diciamo solo che non si tratta di un tag, ma di un tipo diverso di 
+		dichiarazione.</p>
+	<p>Nel resto della pagina possiamo individuare una serie di &quot;istruzioni&quot; in linguaggio HTML, dette pi&ugrave; precisamente <strong>tag</strong>. Questi sono facilmente riconoscibili perch&eacute; sono tutti racchiusi fra i simboli di &quot;&lt;&quot; e di &quot;&gt;&quot; (per esempio &lt;body&gt;, &lt;/head&gt;, &lt;p&gt;...).</p>
+        <p>Fra i tag ve ne sono alcuni detti &quot;di apertura&quot; e altri detti &quot;di chiusura&quot;. I tag di chiusura si distinguono per la presenza del simbolo di divisione (in inglese <em>slash</em>, /) a inizio tag. Cos&igrave; per esempio &lt;body&gt; &egrave; un tag di apertura e il suo corrispondente tag di chiusura &egrave; &lt;/body&gt;.</p>
+        <p>I tag di apertura sono &quot;accoppiati&quot; con i corrispondenti tag di chiusura un po' come le parentesi aperte e chiuse in una espressione matematica. Una coppia di tag di apertura e di chiusura delimita quello che si chiama <strong>elemento</strong> (alcuni elementi sono costituiti da un unico tag di apertura/chiusura e si dicono <a href="class.html">elementi vuoti</a>). </p>
+        <p>In una qualsiasi pagina HTML &egrave; generalmente sempre possibile individuare gli elementi mostrati in figura:</p>
+        <p><img src="../img/struttura.jpg" alt="" width="764" height="254" /> </p>
+        <div class="titolo">Attributi</div>
+        <p>In HTML la maggior parte degli elementi possiede anche un certo numero di attributi, mediante i quali &egrave; possibile specificare pi&ugrave; dettagliatamente il comportamento dell'elemento stesso.</p>
+        <p>Per esempio si consideri </p>
+        <p align="center">&lt;a href = &quot; http://www.programmiamo.altervista.org/index.html&quot;&gt; Programmiamo &lt;/a&gt; </p>
+        <p>Il tag in questo caso &egrave; <em>&lt;a&gt; </em>e serve per creare un link su una parola (<em>Programmiamo</em>, nel nostro esempio). <em>href</em> &egrave; un <strong>attributo</strong> del tag &lt;a&gt; e serve per specificare l'indirizzo della pagina internet che dovr&agrave; essere aperta cliccando sul link. L'indirizzo della pagina <em>http://www.programmiamo.altervista.org/index.html</em> si chiama <strong>valore</strong> dell'attributo. </p>
+        <p>In generale un tag pu&ograve; avere pi&ugrave; di un attributo e la sintassi per l'uso degli attributi e dei relativi valori &egrave; la seguente:</p>
+        <p align="center">&lt;<em>tag attributo1 = &quot;valore1&quot; attributo2 = &quot;valore2&quot;</em> .... &gt; </p>
+        <p>&nbsp;</p>
+        <div class="titolo">Elementi di struttura, elementi dell'head ed 
+						elementi del body</div>
+        <p>Possiamo suddividere tutti gli elementi che compongono una pagina 
+		HTML in tre categorie:</p>
+	<ol>
+					<li>Elementi di struttura: definiscono la struttura della 
+					pagina e sono sempre presenti in ogni pagina HTML. Essi sono 
+					&lt;html&gt;, &lt;head&gt; e &lt;body&gt;.<br />
+					</li>
+					<li>Elementi dell'head: sono quegli elementi che possono 
+					trovarsi solo all'interno dell'elemento &lt;head&gt;. Fra questi 
+					per ora vediamo solo l'elemento &lt;title&gt;. Altri elementi di 
+					questo tipo sono &lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;style&gt; e &lt;script&gt;.<br />
+					</li>
+					<li>Elementi del body: sono gli elementi che possono 
+					trovarsi solo all'interno del body. Si tratta del gruppo pi&eacute; 
+					numeroso, quello che contiene tutti gli elementi usati per 
+					controllare la visualizzazione di una pagina. Fra questi per 
+					ora ricordiamo &lt;p&gt;, &lt;img&gt;, &lt;a&gt;, &lt;strong&gt; e molti altri.
+					<a href="class.html">Come vedremo in seguito</a>, gli 
+					elementi del body si suddividono a loro volta in elementi di 
+					blocco ed elementi inline.</li>
+	</ol>
+	<p>Si osservi che:</p>
+	<ul>
+					<li>nessun elemento pu&eacute; trovarsi mai al di fuori degli 
+					elementi di struttura e in particolare nessun elemento pu&eacute; 
+					mai trovarsi fuori dall'elemento &lt;head&gt; o dall'elemento 
+					&lt;body&gt;;<br />
+					</li>
+					<li>nessun elemento dell'head pu&eacute; trovarsi nel &lt;body&gt; e 
+					nessun elemento del body pu&eacute; essere messo nell'&lt;head&gt; (per 
+					esempio non si pu&eacute; usare l'elemento &lt;p&gt; del body dentro 
+					l'elemento &lt;head&gt;.</li>
+	</ul>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

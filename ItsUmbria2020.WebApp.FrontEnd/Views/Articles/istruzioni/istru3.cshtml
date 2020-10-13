@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+.style2 {
+				font-family: Verdana;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Dichiarazione esplicita e dichiarazione implicita</div>
+	<p>In molti linguaggi di programmazione (es. il C++) prima di poter usare 
+	una variabile &eacute; necessario <em>dichiararla</em>, cio&eacute; usare un'apposita 
+	istruzione (<strong>dichiarazione</strong>) per definire la variabile stessa dandole un nome 
+	e un tipo. In JS non &egrave; invece necessario dichiarare una variabile: &egrave; sufficiente assegnarle un valore e la dichiarazione &egrave; automatica (<strong>dichiarazione implicita</strong>). </p>
+	<p>In parole povere, &eacute; sufficiente usare una variabile perch&eacute; questa venga 
+	creata automaticamente. Per esempio la seguente istruzione</p>
+        <div class="code">
+          risultato = 1 + 2; 
+    </div>
+        <p>crea automaticamente una variabile di nome <em>risultato</em> e le 
+		assegna il valore 3.</p>
+	<p>E' tuttavia possibile dichiarare le variabili con l'istruzione var (<strong>dichiarazione esplicita</strong>) con la seguente semplice sintassi:</p>
+        <div class="code">
+          var risultato;<br />
+			risultato = 1 + 2;</div>
+        <p>o anche in modo equivalente:</p>
+        <div class="code">
+          var risultato = 1 + 2;</div>
+	<p class="style2">&eacute; anche possibile dichiarare pi&eacute; variabili con un'unica 
+	istruzione var nel seguente modo:</p>
+        <div class="code">
+          var risultato, numero, pippo;</div>
+	<p class="style1"><strong>ATTENZIONE:</strong></p>
+	<p>Si presti attenzione al fatto che in JS una variabile non esiste se prima non &egrave; stata inizializzata (cio&egrave; dichiarata implicitamente tramite una assegnazione) oppure dichiarata esplicitamente con una istruzione var. Per esempio il seguente ciclo che acquisisce una serie di valori e ne calcola la somma non funzionerebbe 
+		perch&eacute; all'inizio del ciclo la variabile <em>ris</em> non esiste:</p>
+        <div class="code">
+          function sommatoria() { 
+          <p align="left">tot=0;</p>
+          <p align="left">//bisogna aggiungere qui una dichiarazione esplicita: var ris<br />
+            //oppure una assegnazione con lo scopo di dichiarare ris: ris=0</p>
+          <p align="left"> while (ris!=&quot;stop&quot;)<br />
+  &nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;ris = prompt(&quot;Scrivi un numero (stop per terminare):&quot;,&quot;&quot;);<br />
+  &nbsp;&nbsp;&nbsp;if (ris!=&quot;stop&quot;)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tot = tot + parseFloat(ris);<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+  &nbsp;&nbsp;&nbsp;}<br />
+            alert(&quot;La sommatoria di tutti i numeri inseriti vale &quot; + tot);          </p>
+          <p align="left"> } </p>
+        </div>
+        <p>&nbsp;</p>
+	<div class="titolo">
+
+	  Utilit&eacute; di dichiarare le variabili in JavaScript</div>
+        <p>Abbiamo visto come in JS non sia necessario dichiarare una variabile 
+		prima di usarla. Tuttavia la dichiarazione esplicita &eacute; possibile tramite 
+		l'istruzione <em>var</em>. Qual &eacute; dunque l'utilit&eacute; di dichiarare 
+		esplicitamente una variabile?</p>
+	<p>La prima ragione per cui &eacute; utile (anzi, addirittura consigliato) 
+	dichiarare esplicitamente le variabili &eacute; il fatto che, in questo modo, &egrave; 
+	possibile verificare se una variabile &egrave; stata inizializzata (cio&egrave; se le &egrave; stato assegnato qualche valore) oppure no. In JS infatti le variabili dichiarate ma non assegnate 
+	(cio&eacute; senza un valore) hanno per default il valore <em>undefined </em>(in 
+	realt&eacute; si tratta non di un <em>valore</em> ma piuttosto di un <em>tipo</em>, 
+	ma queste sottigliezze esulano dagli scopi della nostra trattazione). Si 
+	consideri l'esempio seguente il quale verifica se una variabile di nome 
+	pippo &eacute; stata definita oppure no:</p>
+        <div class="code">
+          if (variabile == undefined)<br />
+          {<br />
+          alert(&quot;Variabile non inizializzata!&quot;);<br />
+          }</div>
+        <p>Si presti attenzione al fatto che le istruzioni di verifica 
+		dell'esempio qui sopra non funzionano se la variabile non &eacute; stata 
+		dichiarata esplicitamente con un'istruzione <em>var</em>. Se la 
+		variabile non &eacute; stata dichiarata esplicitamente, &eacute; possibile controllare 
+		se esiste attraverso la funzione typeof (la quale in realt&eacute; verifica 
+		qual &eacute; il tipo della variabile e torna &quot;undefined&quot; se tale tipo non &eacute; 
+		stato definito - attenzione in questo caso all'uso degli apici attorno a 
+		undefined!):</p>
+        <div class="code">
+          if (typeof(abc) == &quot;undefined&quot;)<br />
+          {<br />
+          alert(&quot;Variabile non inizializzata!&quot;);<br />
+          }</div>
+        <p class="style1"><strong>ATTENZIONE:</strong></p>
+	<p>La programmazione in JS &eacute; particolarmente soggetta a errori quando si 
+	sbaglia a scrivere il nome di una variabile. Dato che le variabili non 
+	devono essere dichiarate esplicitamente, se nel programma un nome di 
+	variabile viene scritto in modo errato, JS interpreta questo nome come una 
+	nuova variabile. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          var numero = 12;<br />
+			numro = 3;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// Il nome della variabile &eacute; stato scritto in modo sbagliato<br />
+			<br />
+			alert(numero);</div>
+        <p>Siccome l'assegnazione <em>numro = 3</em> contiene un errore nel nome 
+		della variabile, l'istruzione <em>alert</em> visualizzer&eacute; il valore 12 
+		(e non 3, che invece viene assegnato a una nuova variabile di nome <em>
+		numro</em>).</p>
+	<p>La dichiarazione esplicita delle variabili con l'istruzione var &eacute; molto 
+	utile quando si usano <a href=" Generali/def9.html">strumenti di debugging</a> 
+	per verificare gli errori sintattici presenti in una pagina. Infatti questi 
+	strumenti segnalano spesso un avvertimento (warning) quando si utilizza una 
+	variabile che non &eacute; stata dichiarata. Se si prende l'abitudine di dichiarare 
+	sempre le variabili, &eacute; in questo modo possibile individuare un errore di 
+	battitura nel nome di una variabile (es. scrivendo una variabile di nome <em>
+	numero</em> erroneamente <em>numro</em>, si riceve un warning dal validatore).&nbsp;</p>
+	<p>Infine la dichiarazione <em>var</em> &egrave; inoltre necessaria se si vogliono dichiarare <strong>variabili locali </strong> (infatti omettendo la dichiarazione, le variabili sono automaticamente considerate sempre globali). Le 
+		<strong>variabili globali </strong>mantengono il proprio valore su tutto il documento html che contiene lo script; le variabili locali invece hanno valore solo all'interno della funzione che le ha dichiarate. 
+		Vedremo meglio nel seguito parlando di funzioni la differenza fra 
+		variabili locali e globali. Per adesso basti sapere che se una variabile 
+		non &eacute; dichiarata con var essa &eacute; disponibile e utilizzabile in tutta la 
+		pagina html e da tutte le funzioni presenti nella pagina. In alcuni casi 
+		invece si vuole restringere la utilizzabilit&eacute; di una variabile e in 
+		questi casi si ricorre all'uso di variabili locali.</p>
+	<p><span class="style1"><strong>ATTENZIONE</strong></span>:</p>
+	<p>Le dichiarazioni delle variabili possono essere inserite in ogni punto 
+	del codice ma sono implicitamente innalzate (<em>hoisted</em>) come se 
+	fossero state dichiarate allo inizio dello script (o della funzione in caso 
+	di variabili locali): &eacute; quindi corretto assegnare un valore ad una variabile 
+	prima di averla dichiarata. </p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

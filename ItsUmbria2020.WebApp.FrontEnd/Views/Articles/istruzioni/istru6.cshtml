@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-align: left;
+}
+.style3 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Variabili non tipizzate </div>
+        <p>In JS le variabili non hanno tipo. Possono cio&egrave; contenere indifferentemente:</p>
+        <ul>
+		<li><strong>numeri</strong> (interi	o con la virgola)</li>
+		<li><strong>stringhe</strong>	(racchiuse fra doppi o singoli apici)</li>
+        <li>valori <strong>boolean</strong> (true o false)</li>
+        </ul>
+        <p>Qui sotto vengono forniti alcuni esempi: </p>
+        <div class="code">
+          var num = - 20, num2 = 3.14;<p>nome = &quot;mario&quot;; //oppure nome = 'mario';</p>
+          <p>//in questo caso &egrave; obbligatorio usare i doppi apici (perch&eacute;?) <br />
+          paese = &quot;Stati Uniti d'America&quot;; </p>
+          <p>completato = true;   </p>
+    </div>
+        <p>Non essendo tipizzate, in un certo senso il tipo di una variabile viene determinato al momento dell'assegnazione (si dice che JS &egrave; un linguaggio <em>tipizzato dinamicamente</em>): </p>
+        <div class="code">
+          var anno = 2004; //in questo caso anno &egrave; un numero<br />
+            anno = &quot;2004&quot;; //qui invece anno &egrave; una stringa
+    </div>
+        <p>Come si pu&ograve; vedere dall'esempio precedente, la stessa variabile pu&ograve; contenere dati di tipo differente nello stesso programma, sebbene questo stile di programmazione sia fortemente sconsigliato.  </p>
+        <div class="titolo">Conversione esplicita a intero </div>
+        <p>Dal momento che le variabili in JS non hanno tipo, le operazioni matematiche con decimali non vengono mai approssimate. Per esempio:</p>
+        <div class="code"> var numero = 7; <br />
+    mezzo = numero/2; </div>
+        <p>Il valore di mezzo al termine del precedente calcolo &egrave; 3.5</p>
+        <p>Vi sono per&ograve; casi in cui si desidera operare esplicitamente con valori interi. In questi casi sono utili le tre seguenti funzioni:</p>
+        <ul>
+          <li>Math.round: arrotonda all'intero pi&ugrave; vicino</li>
+          <li>Math.ceil: arrotonda per eccesso all'intero superiore</li>
+          <li>Math.floor: arrotonda per difetto (tronca) all'intero inferiore</li>
+        </ul>
+        <p>Per esempio:</p>
+        <div class="code"> 
+          <p>numero = 10/3; // vale 3.33333 <br />
+          arrotonda = Math.round(numero); // vale 3 <br />
+          difetto = Math.floor(numero); // vale 3<br />
+            eccesso = Math.ceil(numero);  // vale 4
+</p>
+    </div>
+        <p>&nbsp;</p>
+        <div class="titolo"> Operatori ambigui e conversioni implicite </div>
+        <p>Il problema dell'uso di variabili non tipizzate nasce dalla presenza 
+		di alcuni operatori che sono ambigui, in quanto hanno un significato 
+		diverso a seconda del tipo di oggetto a cui sono applicati. Si consideri 
+		a questo proposito la tabella seguente:</p>
+	<table style="width: 100%" border="1">
+					<tr>
+									<td class="style1"><strong>Operatore</strong></td>
+									<td class="style1"><strong>Significato con 
+									le stringhe</strong></td>
+									<td class="style1"><strong>Significato con i 
+									valori numerici</strong></td>
+					</tr>
+					<tr>
+									<td class="style1">+</td>
+									<td class="style2">Concatena (unisce) due 
+									stringhe fra loro</td>
+									<td class="style2">Somma due numeri</td>
+					</tr>
+					<tr>
+									<td class="style1">&lt;</td>
+									<td class="style2">Minore: confronta 
+									l'ordine alfabetico</td>
+									<td class="style2">Minore: confronta i 
+									valori numerici</td>
+					</tr>
+					<tr>
+									<td class="style1">&gt;</td>
+									<td class="style2">Maggiore: confronta 
+									l'ordine alfabetico</td>
+									<td class="style2">Maggiore: confronta i 
+									valori numerici</td>
+					</tr>
+	</table>
+	<p>Si confronti per esempio il funzionamento dell'operatore + nei due casi 
+	seguenti:</p>
+        <div class="code">
+          var1 = 12;<br />
+			var2 = 3;<br />
+			alert(var1 + var2);<br />
+			<br />
+			var1 = &quot;12&quot;;<br />
+			var2 = &quot;3&quot;;<br />
+			alert(var1 + var2);</div>
+        <p>Nel primo caso viene effettuata la somma dei due numeri e dunque il 
+		risultato mostrato &eacute; 15. Nel secondo caso invece, vengono concatenate 
+		insieme le due stringhe e il risultato mostrato &eacute; 123.</p>
+	<p>In modo analogo si comportano gli operatori di confronto:</p>
+        <div class="code">
+          var1 = 12;<br />
+			var2 = 3;<br />
+			if (var1&lt;var2)<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;var1 &eacute; minore di var2&quot;);<br />
+			else<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;var1 &eacute; maggiore uguale a var2&quot;);<br />
+			<br />
+			var1 = &quot;12&quot;;<br />
+			var2 = &quot;3&quot;;<br />
+			if (var1&lt;var2)<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;var1 &eacute; minore di var2&quot;);<br />
+			else<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;var1 &eacute; maggiore uguale a var2&quot;);</div>
+        <p>Nel secondo caso, contrariamente a quanto forse ci si potrebbe 
+		attendere, viene visualizzata la frase &quot;var1 &eacute; minore di var2&quot;. Infatti 
+		se var1 e var2 contengono stringhe, il confronto avviene in base 
+		all'ordine alfabetico e 12 viene prima in ordine alfabetico di 3.</p>
+	<p>Quando in una stessa espressione sono presenti variabili di tipo stringa 
+	e di tipo numerico, il JS si comporta in modo abbastanza schizofrenico. Nel 
+	caso dell'operatore +, se uno degli operandi &eacute; un numero e l'altro &eacute; una 
+	stringa, il JS converte il numero in una stringa e concatena tutto. Dunque:</p>
+        <div class="code">
+          var1 = &quot;12&quot;;<br />
+			var2 = 3;<br />
+			alert(var1 + var2);</div>
+        <p>produce come risultato 123.</p>
+	<p>Invece con gli operatori di confronto, se sono presenti un numero e una 
+	stringa, il JS converte la stringa in un valore numerico. Pertanto:</p>
+        <div class="code">
+          var1 = &quot;12&quot;;<br />
+			var2 = 3;<br />
+			if (var1&lt;var2)<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;var1 &eacute; minore di var2&quot;);<br />
+			else<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;var1 &eacute; maggiore uguale a var2&quot;);</div>
+        <p>visualizza che var1 &eacute; maggiore o uguale a var2.</p>
+	<p>La morale &eacute; che non conviene fidarsi di queste conversioni esplicite, 
+	poich&eacute; possono condurre facilmente ad errori e malfunzionamenti.</p>
+	<p>Un caso particolarmente rischioso &eacute; quello di un valore numerico 
+	acquisito tramite una casella di testo in un form. In questo caso il valore 
+	viene acquisito sempre come stringa. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          var num1 = document.getElementById(&quot;val1&quot;).value;<br />
+			var num2 = document.getElementById(&quot;val2&quot;).value;<br />
+			alert(num1+num2)</div>
+        <p>In questo caso il risultato &eacute; la concatenazione dei due valori (anche 
+		se vengono inseriti valori numerici) e non la somma, poich&eacute; i valori 
+		vengono letti come stringhe dalle rispettive caselle di testo.</p>
+	<p>&nbsp;</p>
+        <div class="titolo"> Conversione da stringa a numero: Number, parseFloat, parseInt</div>
+        <p>Ci sono molti casi in cui si vuole convertire una stringa in un 
+		valore numerico. Un caso molto frequente &eacute; quello appena discusso, in 
+		cui una casella di testo contiene dei valori numerici.</p>
+	<p>Ci sono tre funzioni per effettuare la conversione da stringa a numero. 
+	La pi&eacute; semplice &eacute; la funzione Number() che si usa in questo modo:</p>
+        <div class="code">
+          var num1 = document.getElementById(&quot;val1&quot;).value;<br />
+			var num1_convertito = Number(num1);</div>
+        <p>o anche semplicemente cos&eacute;:</p>
+        <div class="code">
+          var num1 = Number(document.getElementById(&quot;val1&quot;).value);</div>
+        <p>Il significato dovrebbe essere abbastanza semplice: la stringa (o 
+		l'elemento contenente una stringa) posto fra le parentesi della 
+		funzione, viene trasformata in un valore numerico.</p>
+	<p>La funzione <em>Number</em> funziona bene nella maggior parte dei casi, 
+	convertendo sia valori interi sia valori decimali (col punto decimale). Esso 
+	gestisce anche il segno, convertendo dunque anche valori negativi.</p>
+	<p>Un metodo alternativo (scarsamente documentato) per effettuare la conversione da stringa a numero consiste nell'uso dell'operatore unario + prefisso alla stringa da convertire, per esempio:</p>
+	<div class="code"> var num1 = +document.getElementById(&quot;val1&quot;).value;</div>
+	<p><span class="style3"><strong>ATTENZIONE</strong></span>:</p>
+	<p>La cosa migliore da fare &eacute; convertire subito in valore numerico il 
+	contenuto delle caselle di testo e assegnarlo a una variabile (come mostrato 
+	negli esempi qui sopra). Da quel momento in poi il valore della variabile 
+	sar&eacute; trattato come numerico dal JS in tutte le espressioni in cui la 
+	variabile stessa &eacute; usata.</p>
+	<p>Ci sono alcuni casi particolari (stringhe contenenti caratteri oltre ai 
+	numeri o stringhe con valori numerici non in base 10) in cui la funzione 
+	<em>Number</em> non fornisce risultati corretti. In questi casi ci sono due altre 
+	funzioni pi&eacute; potenti e specifiche:</p>
+	<ul>
+					<li><em>parseInt()</em>: converte in numero intero la stringa fra 
+					parentesi</li>
+					<li><em>parseFloat()</em>: converte in numero decimale (<em>float</em>) la 
+					stringa fra parentesi</li>
+	</ul>
+	<p>Normalmente l'uso di queste due funzioni non &eacute; necessario, dal momento 
+	che basta usare la funzione <em>Number()</em>. L'esempio che segue mostra un caso in 
+	cui <em>parseInt() </em>riesce ad effettuare la conversione, mentre <em>Number()</em> 
+	fallisce:</p>
+        <div class="code">
+          var trentini = &quot;33 trentini entrarono a Trento&quot;;<br />
+			var num = parseInt(trentini);<br />
+			alert(num);</div>
+        <p><em>Alert</em> visualizza in questo caso il valore numerico 33 (il resto della 
+		stringa, che contiene caratteri, non viene convertito). Come si vede si 
+		tratta di casi abbastanza particolari.</p>
+	<p>&nbsp;</p>
+        <div class="titolo"> Conversione da numero a stringa</div>
+        <p>Meno frequente &eacute; il caso in cui si abbia un valore numerico e lo si 
+		voglia convertire esplicitamente in una stringa. In questo caso la 
+		funzione da usare si chiama <em>String()</em>:</p>
+        <div class="code">
+          var anno = 2015;<br />
+			var anno2 = String(anno);</div>
+        <p>In questo esempio la variabile anno2 contiene anno convertito in 
+		stringa di caratteri (&quot;2015&quot;).</p>
+        <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

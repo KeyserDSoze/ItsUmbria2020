@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Funzioni anonime</div>
+
+	<p>Abbiamo detto che <em>ready</em> serve per eseguire una porzione di codice al 
+	caricamento della pagina. Il codice da eseguire viene indicato con una 
+	notazione a noi poco familiare, che mostriamo nel dettaglio qui sotto:</p>
+        <div class="code">
+          $(document).ready(<br />
+			<br />
+&nbsp;&nbsp;&nbsp; function() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			var paragrafi;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			paragrafi = $('p').length;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			alert(paragrafi);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+			<br />
+			);</div>
+	<p>Scritto in questo modo (totalmente equivalente ma pi&eacute; chiaro) si vede che 
+	il parametro posto fra le parentesi tonde &eacute; in realt&eacute; una funzione. Si 
+	tratta per&eacute; di una funzione un po' strana, in quanto &eacute; una funzione senza 
+	nome ovvero una <strong>funzione anonima</strong>. Le funzioni anonime non 
+	fanno parte di jQuery ma sono un costrutto tipico di javascript. Tuttavia 
+	programmando in jQuery esse vengono usate molto frequentemente ed &eacute; questo 
+	il motivo per cui ce ne occupiamo ora.</p>
+	<p>Normalmente le funzioni che siamo abituati a usare noi hanno una 
+	struttura di questo tipo:</p>
+        <div class="code">
+          function ciao() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			alert(&quot;Ciao mondo!&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}</div>
+	<p>Dove <em>ciao()</em>, nel nostro caso, &eacute; il nome della funzione. Una funzione 
+	anonima invece si dichiara cos&eacute;:</p>
+        <div class="code">
+          function() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			alert(&quot;Ciao mondo!&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}</div>
+	<p>Ma a cosa serve una funzione senza nome? Le funzioni anonime si usano in 
+	javascript ogni volta che si vuole usare una funzione una sola volta, senza 
+	poi doverla pi&eacute; richiamare ulteriormente. In questo caso l'utilit&eacute; di 
+	definire una funzione con nome viene meno, in quanto non si avr&eacute; mai bisogno 
+	di usarla nuovamente.</p>
+	<p>Per essere ancora pi&eacute; chiari, il codice</p>
+        <div class="code">
+          $(document).ready(<br />
+			<br />
+&nbsp;&nbsp;&nbsp; function() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			var paragrafi;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			paragrafi = $('p').length;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			alert(paragrafi);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+			<br />
+			);</div>
+	<p>potrebbe anche essere scritto in questo modo:</p>
+        <div class="code">
+          $( document ).ready(fuori);<br />
+			<br />
+			function fuori()<br />
+&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp; var paragrafi;<br />
+&nbsp;&nbsp;&nbsp; paragrafi = $('p').length;<br />
+&nbsp;&nbsp;&nbsp; alert(paragrafi);<br />
+&nbsp;&nbsp;&nbsp; }</div>
+	<p>Si osservi come adesso il parametro di <em>ready</em> &eacute; il nome di una 
+	funzione, <em>fuori</em> (senza parentesi tonde!). La funzione <em>fuori</em> 
+	&eacute; una normale funzione con nome, definita esternamente.</p>
+	<p>Qual &eacute; dunque il vantaggio di &quot;complicarsi la vita&quot; e di usare funzioni 
+	anonime invece delle normali funzioni con nome? La prima ragione &eacute; che in 
+	questo modo si semplifica il codice (anche se magari adesso non sembra!). 
+	Infatti si evita di definire una funzione con nome esterna e si scrive il 
+	codice direttamente dentro il metodo <em>ready</em>: questo migliora la leggibilit&eacute; 
+	e tracciabilit&eacute; del codice, in quanto il codice della 
+	funzione &eacute; immediatamente presente dentro <em>ready</em> e non deve essere 
+	cercato in una funzione esterna (che potrebbe trovarsi ovunque).</p>
+	<p>La ragione per&eacute; pi&eacute; importante, che fa preferire in generale l'uso delle funzioni anonime, &eacute; il 
+	fatto che la funzione anonima &eacute; un oggetto child dell'oggetto in cui &eacute; 
+	stata dichiarata. Per esempio nel nostro caso, l'oggetto genitore &eacute; <em>document</em> 
+	e la funzione &eacute; un <em>child</em> di <em>document</em>. In questo modo la funzione pu&eacute; 
+	accedere direttamente alle propriet&eacute; del genitore, per esempio con la parola 
+	chiave <strong>this</strong> (che abbiamo gi&eacute; incontrato in javascript) e di 
+	cui parleremo ancora fra breve.</p>
+	<p>Viceversa se si usano funzioni esterne con nome, queste sono per default 
+	oggetti <em>child</em> di <em>windows</em>, cio&eacute; della finestra del browser 
+	(in pratica sono esterne al DOM) e dunque non hanno 
+	accesso alle propriet&eacute; dell'elemento su cui sono state invocate. Torneremo 
+	in seguito su questa distinzione molto importante (che ora, necessariamente, 
+	non pu&eacute; essere molto chiara).</p>
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

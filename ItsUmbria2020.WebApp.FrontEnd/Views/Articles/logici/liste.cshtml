@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Liste ordinate e non ordinate </div>
+	 <p>&nbsp;</p>
+	 
+	 <table border="1" width="100%">
+       <tbody>
+         <tr>
+           <td><strong>Descrizione</strong></td>
+           <td>permette di creare un elenco di voci, numerate oppure no </td>
+         </tr>
+         <tr>
+           <td><strong>Tipo</strong></td>
+           <td>elemento contenitore di blocco</td>
+         </tr>
+       </tbody>
+     </table>
+     
+     <p>Una lista &egrave; un elenco di voci. Ci sono due tipi di liste in html: le liste numerate (ordered) </p>
+     <ol>
+       <li>primo elemento</li>
+       <li>secondo elemento</li>
+       <li>terzo elemento</li>
+     </ol>
+     <p>e le liste non numerate (unordered)</p>
+     <ul>
+       <li>primo elemento</li>
+       <li>secondo elemento</li>
+       <li>terzo elemento</li>
+     </ul>
+     <p>Per creare una lista numerata bisogna usare l'elemento contenitore &lt;ol&gt;. Le singole voci della lista sono invece racchiuse in altrettanti elementi &lt;li&gt;. Ecco un esempio: </p>
+     <div class="code">
+       &lt;ol&gt;<br />
+&lt;li&gt;primo elemento&lt;/li&gt;<br />
+&lt;li&gt;secondo elemento&lt;/li&gt;<br />
+&lt;li&gt;terzo elemento&lt;/li&gt;<br />
+&lt;/ol&gt; 
+    </div>
+     <p>Una lista non numerata invece si realizza nello stesso modo, salvo il fatto che viene usato l'elemento &lt;ul&gt; al posto di &lt;ol&gt;:</p>
+     <div class="code">
+       &lt;ul&gt;<br />
+         &lt;li&gt;primo elemento&lt;/li&gt;<br />
+         &lt;li&gt;secondo elemento&lt;/li&gt;<br />
+         &lt;li&gt;terzo elemento&lt;/li&gt;<br />
+         &lt;/ul&gt; 
+     </div>
+     <p>Si noti che l'elemento &lt;li&gt; pu&ograve; trovarsi solo all'interno di un elemento &lt;ol&gt; o &lt;ul&gt;: ogni altro uso sarebbe errato. </p>
+     <div class="titolo">Liste annidate </div>
+	 <p>E' possibile annidare una lista dentro un'altra, come mostra l'esempio seguente</p>
+	 <div class="code">
+	   <p>&lt;ul&gt;<br />
+  &lt;li&gt;Maschi<br />
+  &lt;ul&gt;<br />
+  &lt;li&gt;Andrea&lt;/li&gt;<br />
+  &lt;li&gt;Filippo&lt;/li&gt;<br />
+  &lt;li&gt;Tommaso&lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li&gt;Femmine<br />
+  &lt;ul&gt;<br />
+  &lt;li&gt;Anna&lt;/li&gt;<br />
+  &lt;li&gt;Chiara&lt;/li&gt;<br />
+  &lt;li&gt;Giulia&lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;/ul&gt;</p>
+	   </div>
+	 <p>L'effetto &egrave; il seguente</p>
+<ul>
+<li>Maschi
+<ul>
+<li>Andrea</li>
+<li>Filippo</li>
+<li>Tommaso</li>
+</ul>
+</li>
+<li>Femmine
+<ul>
+<li>Anna</li>
+<li>Chiara</li>
+<li>Giulia</li>
+</ul>
+</li>
+</ul>
+	 <p>Si noti come gli elementi delle liste annidate sono contrassegnati in modo diverso e sono visualizzati a rientrare.  </p>
+	 <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

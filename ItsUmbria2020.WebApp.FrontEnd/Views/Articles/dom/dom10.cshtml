@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Creare una struttura di nodi: una tabella</div>
+
+	<p>Supponiamo di voler creare una tabella con una riga e due celle fatta in 
+	questo modo (per il momento non ci occupiamo del contenuto delle celle, che 
+	rimangono vuote):</p>
+        <div class="code">
+			&lt;table&gt;<br />
+			&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;<br />
+			&lt;/table&gt;</div>
+        <p>La figura seguente mostra la struttura ad albero corrispondente al 
+		nodo table e ai suoi discendenti:</p>
+	<p><img alt="" src="../img/img1F.gif" /></p>
+	<p>Per creare una struttura di questo tipo possiamo fare cos&eacute;:</p>
+        <div class="code">
+			var tabella = document.createElement(&quot;table&quot;);<br />
+			var riga = document.createElement(&quot;tr&quot;);<br />
+			var cella1 = document.createElement(&quot;td&quot;);<br />
+			var cella2 = document.createElement(&quot;td&quot;);<br />
+			tabella.appendChild(riga);<br />
+			riga.appendChild(cella1);<br />
+			riga.appendChild(cella2);</div>
+        <p>Si noti come le celle siano state create vuote. Per riempirle, 
+		occorre aggiungere alla struttura nodi testuali (vedi sotto).</p>
+
+<div class="titolo">Aggiungere contenuto testuale a un elemento</div>
+
+	<p>Molti elementi (per esempio i paragrafi, le intestazioni, le celle di una 
+	tabella etc.) non sono completi senza un contenuto testuale.</p>
+	<p>Per esempio, creando un nuovo paragrafo in questo modo:</p>
+        <div class="code">
+			var paragrafo = document.createElement(&quot;p&quot;);</div>
+        <p>esso viene creato vuoto, senza contenuto (&lt;p&gt;&lt;/p&gt;).</p>
+	<p>Per aggiungere contenuto testuale a un nodo contenitore (come il 
+	paragrafo) occorre creare un nodo di tipo testo, figlio del nodo 
+	contenitore. Infatti, come abbiamo gi&eacute; osservato parlando della struttura 
+	del DOM, i testi sono considerati a tutti gli effetti dei nodi.</p>
+	<p>Dunque la sequenza di operazioni necessarie &eacute; la seguente:</p>
+        <div class="code">
+			var paragrafo = document.createElement(&quot;p&quot;);<br />
+			var testo = document.createTextNode(&quot;Ciao a tutti&quot;); <br />
+			paragrafo.appendChild(testo);</div>
+        <p>Naturalmente il nodo paragrafo e il nodo di testo cos&eacute; creato devono 
+		infine essere appesi al DOM (con il metodo <em>appendChild</em> o <em>
+		insertBefore</em>).</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

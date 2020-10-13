@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				list-style-type: lower-alpha;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">Come una pagina web viene scaricata e visualizzata 
+						dal browser</div>
+        <p>Esamineremo adesso in dettaglio le operazioni che il browser compie 
+		per ottenere una pagina web e per visualizzarla. Per sommi capi queste 
+		operazioni possono essere suddivise in 4 fasi:</p>
+	<ol>
+					<li>viene effettuata una richiesta per la pagina al web 
+					server che la ospita, per esempio quando l'utente fa clic su 
+					un link (<strong>fase di request</strong>)</li>
+					<li>la pagina e le risorse ad essa collegate (file css, file 
+					javascript, immagini, etc) vengono scaricate (<strong>fase 
+					di response</strong>)</li>
+					<li>il browser analizza la pagina e le relative risorse (<strong>fase 
+					di build</strong>)</li>
+					<li>la pagina e il suo contenuto vengono visualizzati (<strong>fase 
+					di render</strong>)</li>
+	</ol>
+	<p>Analizziamo ora in maggior dettaglio ciascuna delle fasi precedenti.</p>
+
+        <div class="titolo">Fase di request</div>
+        <p>La <strong>fase di request</strong> viene avviata quando l'utente fa 
+		clic su un link oppure scrive un indirizzo (URL) nella barra degli 
+		indirizzi del browser.</p>
+	<p><img alt="Fase di request" src="../img/rendimg7.jpg" /></p>
+
+        <div class="titolo">Fase di response</div>
+        <p>La richiesta viene inviata al web server remoto che ospita la pagina 
+		e questi risponde inviando al computer dell'utente un file di testo 
+		(normalmente un documento con estensione .html, ma questo non &eacute; 
+		essenziale):</p>
+	<p><img alt="Response" src="../img/resimgB.jpg" /></p>
+	<p>Se la pagina &eacute; composta da un unico file html, la fase di response si 
+	conclude rapidamente. Tuttavia la maggior parte delle pagine moderne &eacute; 
+	costituita da molti file (file css, file javascript, immagini etc.) che 
+	devono essere scaricati per ricostruire la pagina stessa.</p>
+	<p>Dunque per prima cosa il browser analizza il documento html ricevuto 
+	(questa analisi in termine tecnico viene detta <strong>parsing</strong>) al 
+	fine di determinare quali altre risorse (ovvero file) devono essere 
+	scaricate. </p>
+	<p>Per ognuno di questi file si procede a una nuova richiesta al server 
+	remoto e quindi le fasi di request e di response vengono ripetute pi&eacute; volte 
+	(una per ciascuna risorsa da scaricare).</p>
+
+        <div class="titolo">Fase di build</div>
+        <p>Una volta che il browser ha ottenuto tutte le risorse (file) 
+		necessari, esso pu&eacute; passare a ricostruire la pagina, combinando le 
+		informazioni contenuto nel file html con gli altri file.</p>
+	<p>La fase di build &eacute; piuttosto complessa e si compone a sua volta di due 
+	fasi:</p>
+	<ol class="style1">
+					<li>costruzione del DOM</li>
+					<li>costruzione del CSSOM</li>
+	</ol>
+	<p>Come abbiamo gi&eacute; detto il DOM &eacute; una mappa ad albero che descrive la 
+	struttura del documento. La fase di costruzione del DOM implica il parsing 
+	(analisi) del codice html al fine di costruire una mappa ad albero del 
+	documento stesso (il DOM, appunto):</p>
+	<p><img alt="DOM" src="../img/domimgE1.jpg" /></p>
+	<p>Una volta costruito il DOM, il browser passa ad analizzare i fogli stile 
+	CSS associati alla pagina e ad aggiungere al DOM le informazioni di stile. 
+	Il DOM arricchito degli stili prende il nome di CSSOM (CSS Object Map):</p>
+	<p><img alt="CSSOM" src="../img/cssimg13.jpg" /></p>
+
+        <div class="titolo">Fase di render: layout e paint</div>
+        <p>In informatica col termine <strong>rendering</strong> si indica il 
+		processo attraverso il quale un programma genera un'informazione visiva 
+		a partire dai dati ricevuti. Nel caso dei browser, il rendering &eacute; il 
+		processo che porta dal DOM e CSSOM alla visualizzazione della pagina.</p>
+	<p>Nella fase di render il browser deve calcolare la dimensione dei singoli 
+	elementi che compongono la pagina e la loro posizione sulla pagina stessa (<strong>layout</strong>). 
+	Infine la pagina pu&eacute; essere visualizzata nella finestra del browser (<strong>paint</strong>).</p>
+
+        <div class="titolo">Reflow e repaint</div>
+        <p>Se la pagina comprende codice javascript, il browser lo esegue 
+		durante la fase di build (nel caso di codice incorporato direttamente) 
+		oppure in risposta ad eventi o azioni dell'utente (es. clic su un 
+		elemento).</p>
+	<p>E' importante osservare che l'esecuzione del codice JS pu&eacute; comportare a 
+	seconda dei casi:</p>
+	<ul>
+					<li>una modifica delle propriet&eacute; di visualizzazione di un 
+					elemento della pagina (es. il colore di sfondo);</li>
+					<li>un cambiamento nella posizione di un elemento nella 
+					pagina o anche la creazione ed aggiunta di nuovi elementi 
+					alla pagina.</li>
+	</ul>
+	<p>Nel caso che vengano modificate solo le propriet&eacute; di visualizzazione di 
+	un elemento, il browser procede a un repaint, cio&eacute; a ridisegnare l'elemento 
+	(si parla in questo caso di repaint) che &eacute; stato modificato. Maggiori 
+	problemi causa lo spostamento o l'aggiunta di un elemento, poich&eacute; in questo 
+	caso il browser deve aggiornare dinamicamente il DOM e quindi procedere 
+	nuovamente al rendering della porzione di pagina modificata (reflow).</p>
+	<p>Reflow e repaint possono essere scatenati, oltrech&eacute; da javascript, anche 
+	dall'uso di effetti dinamici con i fogli stile o da azioni dell'utente sulla 
+	finestra del browser (per esempio ridimensionamento della finestra stessa). 
+	Si tratta in generale di operazioni che rallentano la visualizzazione della 
+	pagina e che dunque possono essere critiche nel caso in cui il caricamento 
+	veloce di una pagina sia particolarmente importante.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

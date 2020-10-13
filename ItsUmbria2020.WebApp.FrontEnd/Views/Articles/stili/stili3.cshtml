@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Font-family</div>
+	 <p> <strong>sintassi:</strong>&nbsp;font-family: &lt;nome font&gt;</p>
+	 <p>Permette di scegliere il tipo di font da applicare a un certo elemento. Esempio: </p>
+	 <div class="code">
+       <p>&lt;p style=&quot;font-family:Arial&quot;&gt; Paragrafo in Arial &lt;/p&gt;</p>
+    </div>
+	 <p>Siccome non si pu&ograve; avere la certezza che un dato tipo di font sia installato sul computer dell'utente, spesso non viene specificato un solo font, ma una lista. Per esempio:</p>
+	 <div class="code">
+       <p>&lt;p style=&quot;font-family:Arial, Helvetica, sans-serif&quot;&gt;Paragrafo in Arial o altri font alternativi &lt;/p&gt;</p>
+    </div>
+	 <p>In questo caso se il font Arial non &egrave; disponibile, viene usato l'Helvetica o in alternativa ancora qualsiasi font sans-serif installato sul computer. </p>
+	 <div class="titolo">Font-style</div>
+	 <p> <strong>sintassi:</strong>&nbsp;font-style: normal | italic | oblique</p>
+	 <p>Serve per visualizzare una porzione di testo in corsivo (italic), in obliquo o senza nessuno stile particolare. Esempio: </p>
+	 <div class="code">
+       <p>&lt;p&gt; &lt;span style=&quot;font-style:italic&quot;&gt; Corsivo &lt;/span&gt; e &lt;span style=&quot;font-style:oblique&quot;&gt; obliquo&lt;/span&gt; &lt;/p&gt;</p>
+    </div>
+	 <p>che produce la seguente visualizzazione: </p>
+<p align="center"> <span style="font-style:italic"> Corsivo </span> e <span style="font-style:oblique"> obliquo</span> </p>	 
+<div class="titolo">Font-weight</div>
+<p> <strong>sintassi:</strong>&nbsp;font-weight: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 </p>
+<p>Permette di realizzare il grassetto o di decidere con precisione lo spessore dei caratteri. Esempio:</p>
+<div class="code">
+  <p>&lt;p&gt; &lt;span style=&quot;font-weight:bold&quot;&gt; Bold &lt;/span&gt; e &lt;span style=&quot;font-weight:bolder&quot;&gt; bolder &lt;/span&gt; &lt;/p&gt;</p>
+</div>
+<p>che viene visualizzato cos&igrave;:</p>
+<p align="center"> <span style="font-weight:bold"> Bold </span> e <span style="font-weight:bolder"> bolder</span></p>
+<div class="titolo">Font-size</div>
+<p> <strong>sintassi:</strong>&nbsp;font-size: &lt;dimensione assoluta&gt; | &lt;dimensione relativa&gt; | &lt;lunghezza&gt; | &lt;percentuale&gt; </p>
+<p>Permette di scegliere la dimensione dei caratteri. La dimensione assoluta pu&ograve; essere:</p>
+<p> xx-small | x-small | small | medium | large | x-large | xx-large </p>
+<p>La dimensione relativa viene specificata con</p>
+<p> larger | smaller</p>
+<p>La lunghezza pu&ograve; essere specificata in pixel (px) o in em. Esempi: </p>
+<div class="code">
+  <p>&lt;p&gt; &lt;span style=&quot;font-size:xx-small&quot;&gt;A&lt;/span&gt; &lt;span style=&quot;font-size:xx-large&quot;&gt; B &lt;/span&gt; &lt;span style=&quot;font-size:19px&quot;&gt;C&lt;/span&gt; &lt;/p&gt;</p>
+</div>
+<p>che viene visualizzato cos&igrave;:</p>
+<p align="center"> <span style="font-size:xx-small">A</span> <span style="font-size:xx-large"> B </span> <span style="font-size:19px">C</span> </p>
+<div class="titolo">Shorthand (abbreviazioni) </div>
+<p>E' possibile specificare diversi stili di tipo font con un'unica istruzione (si parla in questo caso di <strong>shorthand</strong> o abbreviazione). Per esempio:</p>
+<div class="code">
+  <p>font:italic small-caps bold 1em/140% &quot;Lucida Grande&quot;, sans-serif;</p>
+</div>
+<p>equivale a:</p>
+<div class="code">
+  <p>font-style:italic; <br />
+    font-variant:small-caps; <br />
+    font-weight:bold; <br />
+    font-size:1em; <br />
+    line-height:140%; <br />
+    font-family:&quot;Lucida Grande&quot;,sans-serif;</p>
+</div>
+<p>Per quanto riguarda l'ordine con cui devono essere specificati i diversi stili, il W3C raccomanda di seguire l'ordine precedente (prima font-style, poi font-variant etc.). E' possibile omettere qualsiasi valore tranne il font-size e il font-family: &egrave; sempre necessario attribuire dei valori per questi ultimi e in quest'ordine. </p>
+<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

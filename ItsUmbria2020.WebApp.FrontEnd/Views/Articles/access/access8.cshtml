@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">L'elemento title</div>
+    <p>Ogni pagina web dovrebbe contenere un elemento &lt;title&gt; nell'head e il 
+	contenuto di tale elemento dovrebbe essere unico e diverso su ogni pagina 
+	del sito. Se i title di pagine diverse sono uguali, un lettore vocale (per 
+	persone con disabilit&eacute; visive) potrebbe non essere in grado di distinguere 
+	correttamente una pagina da un'altra.</p>
+        <div class="code">
+          <p>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</p>
+			<p>&lt;html&gt;</p>
+			<p>&lt;head&gt;</p>
+			<p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;</p>
+			<p>&lt;title&gt;&nbsp; Accessibilit&eacute; e progettazione delle pagine web &lt;/title&gt; </p>
+			<p>&lt;/head&gt; </p>
+			<p>&lt;body&gt; </p>
+			<p>...</p>
+			<p>&lt;/body&gt; </p>
+			<p>&lt;/html&gt; </p>
+        </div>
+	<p>&nbsp;</p>
+	 <div class="titolo">L'attributo lang</div>
+	 <p>L'attributo <strong>lang</strong> serve per indicare il linguaggio in 
+		cui &eacute; stata scritta una certa pagina. Si consideri l'esempio seguente:</p>
+        <div class="code">
+          &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;<p>&lt;html lang=&quot;it&quot;&gt;</p>
+			<p>&lt;head&gt;</p>
+			<p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;</p>
+			<p>&lt;title&gt;&nbsp; Pagina in italiano &lt;/title&gt; </p>
+			<p>&lt;/head&gt; </p>
+			<p>&lt;body&gt; </p>
+			<p>...</p>
+			<p>&lt;/body&gt; </p>
+			<p>&lt;/html&gt; </p>
+        </div>
+	<p>L'attributo lang=&quot;it&quot; applicato all'elemento &lt;html&gt; della pagina, indica 
+	che la pagina &eacute; scritta in lingua italiana (it). Esistono codici letterali 
+	per indicare tutte le lingue del mondo: per esempio inglese &eacute; en, francese 
+	fr, spagnolo es eccetera (vedi una
+	<a target="_blank" href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">
+	lista completa dei codici</a>).</p>
+	<p>Perch&eacute; &eacute; importante indicare il linguaggio di una pagina? In generale 
+	questa informazione &eacute; utile per i motori di ricerca (es. Google) quando 
+	indicizzano le pagine, in modo da riconoscere correttamente a quale 
+	linguaggio appartiene la pagina stessa. Inoltre l'indicazione del linguaggio 
+	&eacute; richiesta esplicitamente per l'accessibilit&eacute; del sito, in quanto viene 
+	utilizzata dai lettori vocali (utilizzati per esempio dalle persone con 
+	problemi alla vista) per pronunciare correttamente il testo letto.</p>
+	 <div class="titolo">Dove si usa l'attributo lang</div>
+	<p>In HTML 5 l'attributo lang &eacute; universale e dunque pu&eacute; essere applicato a 
+	tutti gli elementi di una pagina.</p>
+	<p>In generale si usa nell'elemento &lt;html&gt; (come nel nostro esempio 
+	precedente) o, in modo equivalente, nell'elemento &lt;body&gt; per indicare il 
+	linguaggio dell'intera pagina. Per esempio:</p>
+        <div class="code">
+          &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;<p>&lt;html&gt;</p>
+			<p>&lt;head&gt;</p>
+			<p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;</p>
+			<p>&lt;title&gt;&nbsp; Pagina in italiano &lt;/title&gt; </p>
+			<p>&lt;/head&gt; </p>
+			<p>&lt;body lang=&quot;it&quot;&gt; </p>
+			<p>...</p>
+			<p>&lt;/body&gt; </p>
+			<p>&lt;/html&gt; </p>
+        </div>
+	<p>Quando la pagina contiene parti scritte in lingue diverse, l'attributo 
+	lang deve essere utilizzato per indicare il passaggio a un'altra lingua. Si 
+	consideri l'esempio seguente:</p>
+        <div class="code">
+          &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;<p>&lt;html lang=&quot;it&quot;&gt;</p>
+			<p>&lt;head&gt;</p>
+			<p>&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=ISO-8859-1&quot;&gt;</p>
+			<p>&lt;title&gt;&nbsp; Pagina in italiano &lt;/title&gt; </p>
+			<p>&lt;/head&gt; </p>
+			<p>&lt;body&gt; </p>
+			<p>&lt;p&gt; Benvenuti nel nostro sito!&lt;/p&gt;</p>
+			<p>&lt;p lang=&quot;en&quot;&gt; Welcome to our site! &lt;/p&gt;</p>
+			<p>&lt;p lang=&quot;es&quot;&gt; Bienvenido a nuestro sitio! &lt;/p&gt;</p>
+			<p>&lt;p&gt; Qui c'&eacute; il resto della pagina....&lt;/p&gt;</p>
+			<p>&lt;/body&gt; </p>
+			<p>&lt;/html&gt; </p>
+        </div>
+	<p>Il paragrafo <em>Welcome to our site!</em> &eacute; in inglese, <em>Bienvenido a 
+	nuestro sitio!</em> &eacute; in spagnolo, mentre il resto della pagina &eacute; in 
+	italiano (come indicato all'inizio nell'elemento &lt;html&gt;).</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

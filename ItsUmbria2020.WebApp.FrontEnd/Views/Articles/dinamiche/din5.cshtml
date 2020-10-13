@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	
+
+        <div class="titolo"> Testare il design responsive</div>
+        <p>Per testare un sito responsive &eacute; necessario disporre di diversi 
+		dispositivi su cui fare le prove. Per esempio sarebbe consigliabile 
+		provare la pagina su almeno uno smartphone, un tablet e uno schermo di 
+		PC. A seconda del numero e dei valori dei breakpoint introdotti, il 
+		numero dei dispositivi di test ovviamente aumenter&eacute;.</p>
+	<p>In mancanza di dispositivi fisici su cui fare il test, si potr&eacute; ricorrere 
+	a emulatori, cio&eacute; a software che simula schermi di diverse dimensioni. Un 
+	buon emulatore online &eacute;
+	<a target="_blank" href="http://cybercrab.com/screencheck/">Cybercrab</a>.</p>
+
+	
+
+        <div class="titolo"> Un semplice esempio completo di design responsive</div>
+        <p>Vogliamo qui offrire un semplice esempio di design responsive, basato 
+		sull'individuazione di due breakpoint, uno per i dispositivi con 
+		ampiezza dello schermo inferiore ai 768px e l'altro per quelli con 
+		ampiezza superiore ai 1024px.</p>
+	<p>La pagina &eacute; suddivisa in sei blocchi, indicati con header, footer, colsin, 
+	colcen1, colcen2, coldes e footer e un blocco container che contiene tutta 
+	la pagina:</p>
+	<div class="code">
+          <pre>#header {
+background-color: yellow;
+padding: 5px;
+float: left;
+}
+
+#coldes {
+background-color: AliceBlue;
+padding: 5px; 
+}
+
+#colcen1 {
+background-color: LightYellow; 
+padding: 5px;
+}
+
+#colcen2 {
+background-color: LightGreen; 
+padding: 5px;
+}
+
+#colsin {
+background-color: LightPink; 
+padding: 5px; 
+}
+
+#footer {
+background-color: PowderBlue;
+padding: 5px;
+float: left;
+}
+
+@@media screen and (min-width: 768px) and (max-width: 1023px) {
+	#container
+		{
+		width: 768px;
+		}
+	#colsin
+		{
+		float: left;
+		width: 374px;
+		}
+	#colcen1
+		{
+		width: 374px;
+		float: left;
+		}
+	#colcen2
+		{
+		clear: both;
+		float: left;
+		width: 374px;
+		}
+	#coldes
+		{
+		width: 374px;
+		float: left;
+		}
+	}
+
+@@media screen and (min-width: 1024px) {
+	#container
+		{
+		width: 1024px;
+		}
+	#colsin
+		{ 
+		float:left;
+		width: 246px;
+		}
+	#colcen1
+		{
+		float:left;
+		width: 246px;
+		}
+	#colcen2
+		{
+		float:left;
+		width: 246px;
+		}
+	#coldes
+		{
+		float:left;
+		width: 246px;
+		}
+	}</pre>
+    </div>
+	<p>Con schermi di larghezza inferiore ai 768px non viene posizionato nessuno 
+	dei blocchi e dunque essi si dispongono uno sotto l'altro nell'ordine con 
+	cui compaiono nella pagina:</p>
+	<p class="style1">
+	<img alt="Visualizzazione su smartphone" src="../img/img2A1.jpg" /></p>
+	<p>Su schermi di larghezze intermedie (comprese fra 768 e 1023 pixel), i 
+	blocchi si dispongono su due colonne, come mostrato in figura:</p>
+	<p><img alt="" src="../img/img2B1.jpg" /></p>
+	<p>Infine con schermi di larghezza superiore ai 1024 px il testo centrale si 
+	dispone su quattro colonne:</p>
+	<p><img alt="" src="../img/img2C2.jpg" /></p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

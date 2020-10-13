@@ -1,0 +1,141 @@
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Variabili e array</div>
+        <p>In generale una variabile pu&ograve; essere paragonata a un contenitore nel quale &egrave; possibile memorizzare un singolo valore (numero, stringa di caratteri o altro). Per esempio in JS: </p>
+        <div class="code">
+      numero = 23; <br />
+      parola = &quot;pippo&quot;; 
+    </div>
+        <p>assegna alla variabile <em>numero</em> il valore numerico 23 e alla variabile <em>parola</em> la stringa di caratteri &quot;pippo&quot;. E' importante sottolineare che una variabile pu&ograve; contenere solo un valore alla volta: ogni nuovo valore inserito cancella il precedente. Cos&igrave; ad esempio</p>
+        <div class="code">
+          a = 129;<br />
+            a = 3.14<br />
+            a = -2
+            <br />
+          window.alert(&quot;Il valore della variabile a &egrave;: &quot; + a); 
+        </div>
+        <p>visualizzer&agrave; l'ultimo valore assegnato, cio&egrave; -2. Se si vogliono memorizzare pi&ugrave; valori contemporaneamente, occorre dunque usare pi&ugrave; variabili.</p>
+        <p>Vi sono tuttavia casi in cui si desidera effettivamente memorizzare pi&ugrave; valori nello stesso &quot;contenitore&quot;. In questi casi bisogna ricorrere agli 
+		<em>array</em>. </p>
+        <p>&nbsp;</p>
+        <div class="titolo"> Array (o vettori): creazione</div>
+        <p>In generale un <strong>array</strong> (o in italiano <em>vettore</em>) 
+		non &eacute; altro che un insieme di variabili tutte con lo stesso nome. 
+		L'istruzione per creare un nuovo array in JS &egrave;: </p>
+
+        <div class="code">
+      var esempio = [] ;</div>
+        <p>In questo caso <em>esempio</em> &egrave; il nome del nuovo array 
+		(ovviamente il nome pu&eacute; essere scelto a piacere, con le stesse regole 
+		che valgono per la scelta dei nomi di variabili). Si noti l'uso della 
+		parola chiave var (la stessa usata per dichiarare le variabili) e le 
+		parentesi quadre aperte e chiuse (che indicano che si tratta di un array).</p>
+	<p>Come nel caso delle variabili, la parola chiave var pu&eacute; essere omessa, 
+	scrivendo anche semplicemente:</p>
+
+        <div class="code">
+      esempio = [] ;</div>
+        <p>In questo caso per&eacute;, a differenza di quanto visto per le variabili, 
+		non &eacute; possibile omettere la dichiarazione di un array (cio&eacute;, prima di 
+		usare un array, bisogna crearlo esplicitamente).</p>
+	<p>Un modo alternativo (meno usato) per dichiarare un vettore fa uso 
+	dell'operatore new: </p>
+
+        <div class="code">
+      esempio = new Array();</div>
+        <p>In questo caso Array() &eacute; il costruttore della classe e new &eacute; 
+		l'operatore che consente di creare una nuova istanza della classe (cio&eacute; 
+		un nuovo vettore): dunque gli array (come quasi ogni altra cosa in JS!) 
+		sono degli oggetti.</p>
+	<p>&nbsp;</p>
+        <div class="titolo"> Elementi e indice</div>
+        <p>Dopo che un vettore &egrave; stato creato, &egrave; possibile assegnargli dei valori. Ecco come si fa: </p>
+        <div class="code">
+          var numeri = [];<br />
+          numeri[0] = 34;<br />
+          numeri[1] = 12;<br />
+            numeri[2] = 87;
+    </div>
+        <p>In questo modo abbiamo memorizzato tre valori numerici (34, 12 e 87) nell'array di nome <em>numeri</em>. Si osservi la sintassi usata nelle assegnazioni:</p>
+        <p class="style1"><img src="../img/array1.jpg" alt="" width="292" height="208" /></p>
+        <p>Il vettore si compone di elementi. Ogni <strong>elemento</strong> equivale in pratica a una singola variabile, cio&egrave; pu&ograve; contenere un solo valore. Gli elementi del vettore sono numerati mediante un <strong>indice</strong>, cio&egrave; un valore numerico intero progressivo indicato fra parentesi quadre. L'indice del primo elemento del vettore vale sempre zero. </p>
+        <p>In pratica, se una variabile singola pu&ograve; essere paragonata a un singolo cassetto, un vettore &egrave; un  mobile con molti cassetti (gli <em>elementi</em>), numerati in ordine da zero (il primo elemento) in avanti (0, 1, 2...).</p>
+        <p><img src="../img/array2.jpg" alt="" width="617" height="404" /> </p>
+        <p>Gli elementi di un vettore possono essere usati esattamente come le normali variabili, cio&egrave; su di essi possono essere eseguite operazioni, possono essere acquisiti e visualizzati. Si osservi a questo proposito l'esempio seguente:</p>
+        <div class="code">
+          var prova = [];<br />
+            prova[0] = 10;<br />
+            prova[1] = prova[0]*2;<br />
+            prova[2] = 28-prova[1];<br />
+            window.alert(prova[2]);
+        </div>
+        <p>L'istruzione finale visualizzer&agrave; il valore 8 contenuto nell'elemento 2 del vettore prova.</p>
+	<p>&nbsp;</p>
+        <div class="titolo"> Inizializzazione </div>
+        <p>Per assegnare i valori agli elementi di un vettore, oltre a scrivere 
+		una sequenza di istruzioni di assegnazione, come visto prima, &eacute; 
+		possibile usare anche questo metodo alternativo:</p>
+
+        <div class="code">
+      var vocali = [&quot;A&quot;, &quot;E&quot;, &quot;I&quot;, &quot;O&quot;, &quot;U&quot;]; //crea un array contente le vocali
+		<br />
+		var pari = [2,4,6,8]; //crea un array contente alcuni numeri pari
+    </div>
+        <p>La sintassi &eacute; la seguente:</p>
+        <p><img src="../img/array6.jpg" alt="" width="494" height="150" /> </p>
+        <p>Un modo alternativo per creare e inizializzare un array &eacute; il 
+		seguente:</p>
+        <div class="code">
+          var vocali = new Array (&quot;A&quot;, &quot;E&quot;, &quot;I&quot;, &quot;O&quot;, &quot;U&quot;); //crea un array 
+			contente le vocali <br />
+			var pari = new Array (2,4,6,8); //crea un array contente alcuni 
+			numeri pari
+        </div>
+        <p>In questo caso viene fatto uso dell'operatore new e del costruttore 
+		con parametri.</p>
+        <p>&nbsp;</p>
+
+	<div class="titolo">
+
+	  <p>Vettori non tipizzati </p>
+	</div>
+        <p>Esattamente come le variabili, anche gli array in JS non sono tipizzati. Ci&ograve; significa che in un 
+		array &egrave; possibile memorizzare qualsiasi tipo di valore, numerico, stringa o booleano. Di pi&ugrave;: elementi diversi dello stesso vettore possono contenere valori di tipo differente, come nell'esempio che segue: </p>
+        <div class="code">
+      var vettore = []; <br />
+      vettore[0] = &quot;pippo&quot;; <br />
+      vettore[1] = 23;<br />
+      vettore[2] = -78.09;<br />
+      vettore[3] = true; 
+    </div>
+        <p>Il fatto che sia possibile mescolare valori di tipo differente nello stesso vettore, non significa che questo sia un buon stile di programmazione. Nella maggior parte dei casi un vettore rappresenta un gruppo di valori omogenei (es. una serie di temperature, un elenco di nomi, una sequenza di voti scolastici...) e dunque non ha senso inserire al suo interno valori di tipo diverso. </p>
+        <p>&nbsp;</p>
+        <div class="titolo"> Sequenza dei valori inseriti </div>
+        <p>Negli esempi precedenti, l'inserimento dei valori all'interno di un vettore &egrave; sempre stato fatto in sequenza, partendo dal primo elemento (l'elemento zero) e andando avanti. Tuttavia in JS non &egrave; obbligatorio seguire quest'ordine. Gli elementi possono essere riempiti in un ordine qualsiasi ed &egrave; anche possibile riempire solo alcuni elementi del vettore, lasciando gli altri vuoti. Si consideri a tale proposito l'esempio seguente: </p>
+
+        <div class="code">
+      var anno_bisestile = [];<br />
+      anno_bisestile[2000] = true; <br />
+      anno_bisestile[2001] = false;<br />
+      anno_bisestile[2002] = false;<br />
+      anno_bisestile[2003] = false;<br />
+      anno_bisestile[2004] = true;</div>
+        <p>In questo caso sono stati riempiti solo cinque elementi del vettore, a partire dall'elemento di numero 2000. Ci&ograve; non comporta uno spreco di spazio, dal momento che il JS memorizza solo i cinque elementi che sono stati usati, mentre gli elementi da 0 a 1999 restano <em>undefined</em> (in pratica &egrave; come se non esistessero). </p>
+        <p>&nbsp;</p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

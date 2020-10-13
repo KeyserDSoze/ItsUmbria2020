@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+<div class="titolo">Operatori di confronto</div>
+<p>Gli operatori di confronto che &egrave; possibile usare nella condizione dell'if sono:</p>
+<ul>
+  <li><strong>==</strong> uguale </li>
+	<li>=== strettamente uguale</li>
+  <li><strong>!=</strong> diverso</li>
+  <li><strong>&lt;</strong> minore</li>
+  <li><strong>&gt;</strong> maggiore</li>
+  <li><strong>&lt;=</strong> minore o uguale</li>
+  <li><strong>&gt;=</strong> maggiore o uguale</li>
+</ul>
+<p>Si noti che in JS (come in C) l'operatore di uguaglianza (==) &egrave; indicato diversamente dall'operatore di assegnazione (=). Essi hanno infatti due significati completamente differenti. Si consideri il seguente esempio:</p>
+<div class="code">
+  if (<em>a==b</em>) 
+  <br />
+    &nbsp;&nbsp;&nbsp;b=a+1;<br />
+</div>
+<p>Il significato dell'esempio, tradotto a parole, &egrave;: se il valore di <em>a</em> &egrave; uguale al valore di <em>b</em>, assegna a <em>b</em> il valore di <em>a + 1</em>.  </p>
+<p>Il fatto che l'assegnazione (=) non &egrave; un'uguaglianza (==) emerge con chiarezza da istruzioni del tipo:</p>
+<p align="center"> var = var + 1;</p>
+<p> L'espressione precedente infatti ha senso solo in un'assegnazione, poich&eacute; dal punto di vista matematico l'uguaglianza di var e di var + 1 sarebbe ovviamente impossibile. </p>
+	<p> Si noti che esistono due operatori di uguaglianza:</p>
+<ul>
+  <li><strong>==</strong> uguale </li>
+	<li>=== strettamente uguale</li>
+</ul>
+	<p>La differenza fra i due &eacute; che == effettua, se necessario, una conversione 
+	di tipo, prima di fare il confronto. Invece === non converte i tipi. Si 
+	consideri il caso seguente:</p>
+<div class="code">
+  var numero = 123;<br />
+	var stringa = &quot;123&quot;;<br />
+	<br />
+	if (numero==stringa)<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;Sono uguali&quot;);<br />
+	<br />
+	if (numero===stringa)<br />
+&nbsp;&nbsp;&nbsp; alert(&quot;Sono strettamente uguali&quot;);</div>
+	<p>In questo caso il primo if viene verificato (e produce la visualizzazione 
+	&quot;Sono uguali&quot;): infatti l'operatore == effettua la conversione fra numero e 
+	stringa prima di fare il confronto. Il secondo if invece non &eacute; verificato, 
+	poich&eacute; === non effettua nessuna conversione di tipo.</p>
+	<p>&nbsp; </p>
+<p>&nbsp;</p>
+<div class="titolo"> Operatori logici </div>
+<p>Gli operatori logici, usati per concatenare pi&ugrave; condizioni in un if, sono: </p>
+<ul>
+  <li><strong>||</strong> operatore or (vero se &egrave; vera almeno una delle condizioni) </li>
+  <li><strong>&amp;&amp;</strong> operatore and (vero se sono vere tutte le condizioni) </li>
+  <li><strong>!</strong> operatore not (vero se la condizione &egrave; falsa) </li>
+</ul>
+<p>Ecco un esempio di concatenazione di due condizioni che verifica se num &egrave; compreso fra 0 e 10 e, in caso affermativo, lo incrementa di una unit&agrave;: </p>
+<div class="code">
+  if (num &gt;= 0 &amp;&amp; num &lt;=10)<br />
+    &nbsp;&nbsp;&nbsp;{<br />
+    &nbsp;&nbsp;&nbsp;num = num + 1; <br />
+    &nbsp;&nbsp;&nbsp;} 
+</div>
+		<p>Si presti attenzione al fatto che, se i valori da confrontare sono 
+		valori numerici, &eacute; opportuno convertirli prima (con la funzione
+		<a href="istru2.html">Number</a>): in caso 
+		contrario gli operatori di confronto confrontano l'ordine alfabetico 
+		delle stringhe e non i valori numerici, fornendo risultati errati.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

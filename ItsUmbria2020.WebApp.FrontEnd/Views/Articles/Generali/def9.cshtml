@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				text-align: left;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+					Il problema degli errori: errori sintattici e logici</div>
+	<p>Il JS &eacute; un linguaggio interpretato. Ci&eacute; significa che la traduzione del 
+	linguaggio e la sua esecuzione sono realizzate istruzione per istruzione, in 
+	modo sequenziale. In altre parole, se c'&eacute; un errore negli script (es. manca 
+	una parentesi), tale errore viene individuato solo al momento 
+	dell'esecuzione dello script stesso. Invece nei linguaggi compilati (come 
+	es. il C), gli eventuali errori sintattici vengono individuati in fase di 
+	compilazione e impediscono la successiva esecuzione del programma.</p>
+	<p>Invece in JS gli errori non vengono neppure segnalati dal browser, il 
+	quale visualizza comunque la pagina e cerca di eseguire il codice, anche se 
+	questo contiene un errore. Tutto ci&eacute; causa numerosi problemi al 
+	programmatore, poich&eacute; spesso risulta molto difficile individuare e 
+	correggere errori anche banali.</p>
+	<p>Per comprendere la correzione degli errori in JS (e in generale in 
+	qualsiasi linguaggio di programmazione) &eacute; bene aver presente la distinzione 
+	fra <strong>errori sintattici</strong> (cio&eacute; quelli che riguardano la 
+	grammatica del linguaggio) ed <strong>errori logici</strong> (che invece 
+	concernono la correttezza logica del codice scritto).</p>
+	<div class="titolo">
+					Errori sintattici: validare il codice online</div>
+	<p>Un metodo per verificare che non ci siano errori sintattici (cio&eacute; errori 
+	grammaticali) nei propri script, consiste nel validare il codice usando un 
+	validatore online. Si tratta di strumenti abbastanza semplici da usare, 
+	poich&eacute; basta in genere copiare e incollare il codice da validare in 
+	un'apposita finestra e poi il validatore segnala gli errori individuati.</p>
+	<p>Fra i migliori validatori online disponibili segnaliamo:</p>
+	<ul>
+					<li>
+					<a target="_blank" href="http://esprima.org/demo/validate.html">
+					Esprima</a></li>
+					<li>
+					<a target="_blank" href="http://www.javascriptlint.com/online_lint.php">
+					JavaScript Lint</a></li>
+					<li>
+					<a target="_blank" href="http://jshint.com/">JsHint</a></li>
+	</ul>
+	<p>Questi strumenti non sono perfetti, in quanto non individuano tutti gli 
+	errori, ma almeno possono aiutare a individuare e correggere quelli pi&eacute; 
+	gravi.</p>
+	<div class="titolo">
+					Errori logici: usare &quot;alert&quot;</div>
+	<p>L'individuazione e correzione degli errori logici viene detta <strong>
+	debug</strong> (o <em>debugging</em>) del programma.</p>
+	<p>Per individuare gli errori logici, &eacute; spesso utile inserire all'interno 
+	dei propri script delle chiamate al metodo <em>window.alert </em>(oppure 
+	semplicemente <em>alert</em>) per visualizzare durante l'esecuzione lo stato 
+	del programma e il contenuto delle variabili. Si consideri per esempio 
+	questo caso:</p>
+	<div class="code">
+					function down(){<br />
+					count--;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(count);&nbsp;&nbsp;&nbsp;&nbsp; // Visualizza il 
+					valore di count<br />
+					return count;<br />
+					}</div>
+	<p>Si osservi come <em>alert</em> sia stato scritto con una indentazione 
+	maggiore rispetto al resto del codice. Questo accorgimento consente di 
+	individuare e successivamente rimuovere rapidamente dal codice gli alert 
+	inseriti a scopo di debug.</p>
+	<p>Ogni volta che viene eseguito l'alert viene aperta una mini finestra di 
+	pop up che visualizza il contenuto della variabile count, in questo modo:</p>
+	<p class="style1"><img alt="alert javascript" src="../img/imgA.jpg" /></p>
+	<div class="titolo">
+					Debugging con gli Strumenti per gli sviluppatori</div>
+	<p class="style2">Tutti i browser moderni offrono ormai integrati strumenti 
+	raffinati per il debugging di script in JS e in altri linguaggi. Per 
+	accedere a questi strumenti bisogna generalmente usare il tasto F12 (oppure 
+	cercare il menu corrispondente Strumenti Sviluppatore). Questi strumenti 
+	consentono di individuare errori sintattici e di eseguire il programma passo 
+	passo per trovare errori logici.</p>
+	<p class="style2">Qui nel seguito ci limiteremo a considerare un semplice 
+	esempio di uso di questi strumenti di sviluppo, presentando l'uso della 
+	console degli errori.</p>
+	<p class="style2">&nbsp;</p>
+	<div class="titolo">
+					Errori logici: usare la console</div>
+	<p>L'uso di alert &eacute; abbastanza efficace per script brevi e quando non ci 
+	sono troppi alert: in caso contrario la continua interruzione 
+	nell'esecuzione del codice e la conseguente visualizzazione di finestre di 
+	pop up, rendono talvolta difficile comprendere con chiarezza ci&eacute; che avviene 
+	nel programma.</p>
+	<p>Un'alternativa pi&eacute; sofisticata consiste nell'uso di <em>console.log</em>. 
+	Si tratta di un metodo che, senza interrompere l'esecuzione del programma e 
+	senza visualizzare fastidiosi pop up, permette di tenere traccia di ci&eacute; che 
+	avviene durante l'esecuzione. Facendo riferimento di nuovo all'esempio 
+	precedente, abbiamo:</p>
+	<div class="code">
+					function down(){<br />
+					count--;<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(count);&nbsp;&nbsp;&nbsp; // Visualizza 
+					il valore di count<br />
+					return count;<br />
+					}</div>
+	<p>Si osservi che l'uso e la disposizione di <em>console.log</em> &eacute; la 
+	stessa di <em>alert</em> nell'esempio precedente. Tuttavia <em>console.log</em>, 
+	come abbiamo detto, non interrompe l'esecuzione, ma i messaggi vengono 
+	dirottati verso la console di debugging del programma.</p>
+	<p>Per visualizzare la console di debugging nel proprio browser in genere &eacute; 
+	sufficiente premere il tasto F12 (o andare sul meno Strumenti Sviluppatore). 
+	Per esempio nel caso di Firefox, premendo F12 viene visualizzata una 
+	finestra sotto alla propria pagina dove vengono visualizzati i messaggi di 
+	console:</p>
+	<p><img alt="" src="../img/imgC.jpg" /></p>
+	<p>In modo abbastanza simile in Chrome con F12 viene aperta una finestra 
+	secondaria, dove si possono trovare i messaggi di console:</p>
+	<p><img alt="" src="../img/imgD.jpg" /></p>
+        <p>Per imparare a usare gli altri strumenti di debugging offerti da 
+		Chrome, raccomandiamo di vedere la video lezione linkata qui sotto.</p>
+	<p>&nbsp;</p>
+	<p><img alt="" src="../img/indice.gif" width="42" height="36" /><a target="_blank" href="https://www.youtube.com/watch?v=Kv9qvKizD-4">Debugging 
+	semplice in Javascript</a>: una videolezione</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

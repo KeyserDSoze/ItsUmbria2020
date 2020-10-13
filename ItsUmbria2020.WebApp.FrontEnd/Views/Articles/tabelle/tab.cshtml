@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Tabelle</div>
+	 <p>In HTML una tabella &egrave; formata da una serie di <strong>celle</strong> suddivise in <strong>righe</strong> e in <strong>colonne</strong>: </p>
+	
+	 
+	 <table width="60%" border="1" align="center">
+       <tr>
+         <td>prima cella </td>
+         <td>seconda cella </td>
+         <td>terza cella </td>
+       </tr>
+       <tr>
+         <td>quarta cella </td>
+         <td>quinta cella </td>
+         <td>sesta cella </td>
+       </tr>
+       <tr>
+         <td>settima cella </td>
+         <td>ottava cella </td>
+         <td>nona cella </td>
+       </tr>
+       <tr>
+         <td>decima cella </td>
+         <td>undicesima cella </td>
+         <td>dodicesima cella </td>
+       </tr>
+     </table>
+	 <p>Le celle possono contenere qualsiasi cosa: testo, liste, immagini e persino altre tabelle. </p>
+	 <p>Le tabelle sono state create per visualizzare dati in forma tabellare, come per esempio una tabella che riporti la popolazione italiana censita in diversi anni. Tuttavia il loro uso si &egrave; diffuso anche allo scopo di 
+		disporre ordinatamente il testo e le immagini su una pagina web. Tale risultato si ottiene mediante l'uso di tabelle nascoste, invisibili all'utente. 
+		Attualmente la disposizione degli elementi della pagina per mezzo delle 
+		tabelle nascoste � deprecato, in quanto � stato sostituito dal 
+		posizionamento con i fogli stile.</p>
+	 <div class="titolo">Creare una tabella </div>
+	 <p>Una tabella &egrave; delimitata da un tag &lt;table&gt; di apertura e un tag &lt;/table&gt; di chiusura. All'interno di tali tag, si trovano le righe &lt;tr&gt; e le celle &lt;td&gt; che compongono la tabella.</p>
+	 <p>Si consideri l'esempio seguente:</p>
+	 <div class="code">
+       &lt;table border=&quot;1&quot;&gt;<p>&lt;tr&gt; &lt;!-- INIZIO PRIMA RIGA --&gt; <br />
+         &lt;td&gt; Prima cella della prima riga &lt;/td&gt;<br />
+         &lt;td&gt; Seconda cella della prima riga &lt;/td&gt;<br />
+         &lt;td&gt; Terza cella
+         della prima riga &lt;/td&gt;<br />
+         &lt;/tr&gt; &lt;!-- FINE PRIMA RIGA --&gt; </p>
+       <p>&lt;tr&gt; &lt;!-- INIZIO SECONDA RIGA --&gt; <br />
+         &lt;td&gt; Prima cella della seconda riga &lt;/td&gt;<br />
+&lt;td&gt; Seconda cella della seconda riga &lt;/td&gt;<br />
+&lt;td&gt; Terza cella
+         della terza riga &lt;/td&gt;<br />
+       &lt;/tr&gt; &lt;!-- FINE SECONDA RIGA --&gt; </p>
+       <p>&lt;/table&gt;</p>
+	 </div>
+	 <p>che produce la seguente visualizzazione nel browser</p>
+<table border="1">
+
+<tr>
+<td> Prima cella della prima riga </td>
+<td> Seconda cella della prima riga </td>
+<td> Terza cella della prima riga </td>
+</tr>
+
+<tr>
+<td> Prima cella della seconda riga </td>
+<td> Seconda cella della seconda riga </td>
+<td> Terza cella della terza riga </td>
+</tr>
+
+</table>
+	 <p>L'attributo border=&quot;1&quot; serve per visualizzare il bordo della tabella. 
+		Gli unici valori possibili per questo attributo sono 1 (presenza di 
+		bordo) oppure 0 (nessun bordo - equivale ad omettere l'attributo border).</p>
+	<p>Attualmente in HTML 5 l'attributo border � deprecato e deve essere
+	<a href="tab1.html">sostituito con gli stili</a>. Tuttavia per i nostri 
+	semplici esempi il suo uso � comodo, in quanto non ci obbliga a specificare 
+	nel dettaglio il bordo di ogni singola cella della tabella.</p>
+	 <p>Si osservi che</p>
+	 <ul>
+	   <li>l'elemento &lt;table&gt; contiene una serie di elementi &lt;tr&gt; (righe) </li>
+       <li>gli elementi &lt;tr&gt; contengono una serie di elementi &lt;td&gt; (celle) </li>
+       <li>gli elementi &lt;td&gt; contengono il contenuto delle celle (testo, immagini etc.)</li>
+       <li>l'elemento &lt;tr&gt; pu&ograve; stare solo dentro a &lt;table&gt; e l'elemento &lt;td&gt; pu&ograve; stare solo dentro &lt;tr&gt;</li>
+       <li>il numero di celle su ogni riga &egrave; uguale</li>
+    </ul>
+	 <p>&nbsp;</p>
+	 <div class="titolo">Centrare il testo di una cella</div>
+     <p>Per centrare il testo all'interno di una cella bisogna usare l'attributo style=&quot;text-align:center&quot; 
+		che abbiamo gi� incontrato per centrare i <a href=" logici/p.html">
+		paragrafi</a> e le <a href=" logici/img.html">immagini</a>. </p>
+	<p>Si osservi questo esempio (in cui, per comodit�, abbiamo usato 
+	l'attributo border attualmente deprecato):</p>
+	 <div class="code">
+       <p>&lt;table border=&quot;1&quot;&gt;</p>
+       <p>&lt;tr&gt; &lt;!-- INIZIO PRIMA RIGA --&gt; <br />
+         &lt;td style=&quot;text-align:center&quot; &gt; Al centro! &lt;/td&gt;<br />
+         &lt;td&gt; Seconda cella della prima riga &lt;/td&gt;<br />
+         &lt;td&gt; Terza cella
+         della prima riga &lt;/td&gt;<br />
+         &lt;/tr&gt; &lt;!-- FINE PRIMA RIGA --&gt; </p>
+       <p>&lt;tr&gt; &lt;!-- INIZIO SECONDA RIGA --&gt; <br />
+         &lt;td&gt; Prima cella della seconda riga &lt;/td&gt;<br />
+		&lt;td&gt; Seconda cella della seconda riga &lt;/td&gt;<br />
+		&lt;td&gt; Terza cella della terza riga &lt;/td&gt;<br />
+       &lt;/tr&gt; &lt;!-- FINE SECONDA RIGA --&gt; </p>
+       <p>&lt;/table&gt;</p>
+	 </div>
+	 <p>che produce la seguente visualizzazione:</p>
+	 <table border="1" align="center">
+<tr> <!-- INIZIO PRIMA RIGA --> 
+<td style="text-align:center" > Al centro! </td>
+<td> Seconda cella della prima riga </td>
+<td> Terza cella della prima riga </td>
+</tr> <!-- FINE PRIMA RIGA --> 
+<tr> <!-- INIZIO SECONDA RIGA --> 
+<td> Prima cella della seconda riga </td>
+<td> Seconda cella della seconda riga </td>
+<td> Terza cella della terza riga </td>
+</tr> <!-- FINE SECONDA RIGA --> 
+</table>
+
+     <p>&nbsp;</p>
+	<p><img alt="" src="../img/indice.gif" width="42" height="36" />VIDEO 
+	LEZIONE:
+	<a target="_blank" href="https://www.youtube.com/watch?v=u4wmx97-B64&amp;feature=youtu.be">
+	Creare tabelle in HTML</a></p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

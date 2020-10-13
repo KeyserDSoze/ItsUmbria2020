@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				border-left-style: solid;
+				border-left-color: #FF0000;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">Il Document Object Model (DOM)</div>
+        <p>Il Javascript &eacute; un linguaggio profondamente integrato col browser e 
+		con la struttura html delle pagine web. Come abbiamo avuto modo di 
+		vedere pi&eacute; volte, l'html fornisce l'interfaccia su cui il codice JS pu&eacute; 
+		agire.</p>
+	<p>In questo gruppo di lezioni cercheremo di analizzare pi&eacute; 
+	approfonditamente i meccanismi con cui avviene tale interazione. Quando una 
+	pagina html viene visualizzata in un browser, il browser analizza la pagina 
+	stessa e costruisce automaticamente un modello della struttura del documento 
+	aperto, detto <strong>Document Object Model o Document Object Map (DOM)</strong>.</p>
+	<p>Il DOM costituisce una evoluzione e standardizzazione del BOM (Browser 
+	Object Map), di cui abbiamo parlato nelle precedenti lezioni. E' 
+	importante notare che l'uso del DOM non si limita ai browser web e al JS, 
+	dal momento che esso costituisce lo standard per la rappresentazione pi&eacute; 
+	generale dei documenti in formato XML.</p>
+	<p>Definito rigorosamente il DOM &eacute; un insieme di API, cio&eacute; un'interfaccia generale e indipendente 
+	dal linguaggio che permette a programmi e script di accedere e di modificare 
+	dinamicamente la struttura, il contenuto e lo stile di un documento. Si 
+	tratta in sostanza di uno standard non specifico di Javascript o del 
+	linguaggio html, ma di un modello di rappresentazione generale valido per 
+	tutti i documenti scritti secondo la sintassi XML. Senza voler approfondire 
+	qui l'argomento, possiamo dire che il DOM &eacute; un modo generico e 
+	standardizzato per la descrizione e la rappresentazione di un documento 
+	strutturato. Tale generalit&eacute; del DOM ne costituisce anche forse uno dei suoi 
+	maggiori limiti, in quanto non tutte le sue caratteristiche risultano 
+	adeguatamente ottimizzate e adattate all'uso del Javascript.</p>
+	<p>Il DOM non &eacute; un linguaggio di programmazione, ma senza di esso, il 
+	linguaggio Javascript non avrebbe alcun modello o alcuna nozione di una 
+	pagina web, n&eacute;, tantomeno, degli elementi di cui usualmente si occupa. Ogni 
+	elemento, all'interno di un documento - il documento stesso, nel suo 
+	insieme, l'intestazione (head), le tabelle, gli header delle tabelle, i 
+	testi inseriti nelle celle delle tabelle - &eacute; parte del modello DOM creato 
+	per quel documento e pu&eacute;, quindi, essere raggiunto e manipolato, utilizzando 
+	DOM ed un linguaggio di programmazione (come Javascript). </p>
+	<p>Per cercare di fare un paragone che pu&eacute; aiutare forse a capire meglio, il 
+	browser, nel realizzare il DOM, si comporta come un geografo che, nell'analizzare un territorio, ne 
+	ricostruisce le caratteristiche essenziali (linee costiere, catene montuose, 
+	strade, citt&eacute;, fiumi, etc.) e le mostra su una carta geografica. Il DOM &eacute; 
+	una sorta di mappa del documento aperto che il browser mette automaticamente 
+	a disposizione del codice Javascript. A differenza per&eacute; di una carta 
+	geografica, che si limita a rappresentare un territorio, il DOM consente al 
+	JS di agire sul codice html, modificando a piacere la struttura e l'aspetto 
+	della pagina visualizzata.</p>
+
+        <div class="titolo">La struttura ad 
+						albero di una pagina</div>
+	<p>Il DOM rappresenta il documento Html per mezzo di una struttura detta &quot;ad 
+	albero&quot;. Per capire meglio di cosa si tratta, consideriamo la seguente 
+	semplice pagina di esempio:</p>
+        <div class="code">
+          &lt;!doctype html&gt;<br />
+			&lt;html&gt;<br />
+			&lt;head&gt; <br />
+			&lt;title&gt;My home page&lt;/title&gt; <br />
+			&lt;/head&gt; <br />
+			&lt;body&gt; <br />
+			&lt;h1&gt;My home page&lt;/h1&gt; <br />
+			&lt;p&gt;Hello, I am Giancarlo and this is my home page.&lt;/p&gt; <br />
+			&lt;p&gt;I also wrote another site <br />
+			&lt;a href=&quot;http://www.elemania.altervista.org&quot;&gt;here&lt;/a&gt;.<br />
+			&lt;/p&gt; <br />
+			&lt;/body&gt; <br />
+			&lt;/html&gt; </div>
+	<p>Possiamo rappresentare la nostra pagina per mezzo della seguente 
+	struttura ad albero:</p>
+	<p>
+	<img alt="Struttura ad albero di una pagina html" src="../img/dom1.gif" /></p>
+	<p>Gli elementi della pagina (html, head, body, title, etc.) si dicono
+	<strong>nodi</strong> dell'albero e sono collegati fra di loro da frecce 
+	dette <strong>rami</strong>. Se un elemento &eacute; contenuto in un altro 
+	elemento, si dice che &eacute; <strong>figlio</strong> (<em>child</em>) di questo 
+	elemento, il quale a sua volta &eacute; <strong>genitore</strong> (<em>parent</em>) 
+	dell'elemento figlio. Per esempio head &eacute; genitore di title e title &eacute; figlio 
+	di head. Gli elementi che hanno uno stesso genitore (come per esempio head e 
+	body) si dicono <strong>sibling</strong> (fratelli).</p>
+	<p>Il nodo a cui fanno capo tutti gli altri (l'unico che non ha genitore) si 
+	chiama <strong>radice</strong> (<em>root</em>) dell'albero. Nel nostro caso 
+	la radice &eacute; l'elemento html. Per convenzione si fa riferimento alla radice 
+	dell'albero col nome <em>document</em>.</p>
+	<p>Infine i nodi che non hanno figli (rappresentati in colore grigio nella 
+	figura precedente) si chiamano <strong>nodi terminali</strong> o <strong>
+	foglie</strong> dell'albero.</p>
+	<p class="style1">Una cosa importante da notare che i nodi non sono solo gli 
+	elementi della pagina html ma anche i testi (contenuti in un elemento) e gli 
+	eventuali attributi di un elemento. Questi nodi (testi e attributi) sono 
+	evidentemente nodi terminali di un albero, in quanto non possono essere 
+	genitori di altri nodi.</p>
+	<p>In pratica ogni nodo della pagina costituisce un oggetto, potenzialmente 
+	dotato di metodi e di propriet&eacute;. Osserviamo che fra le propriet&eacute; di un nodo 
+	ci sono tutti gli oggetti child del nodo stesso (abbiamo qui in sostanza una
+	<a href=" obj/obj2.html">gerarchia di oggetti</a>).</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

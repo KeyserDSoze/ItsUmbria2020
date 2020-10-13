@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Creare tabelle con i div</div>
+	 <p>Un tempo i web designer facevano largo uso di tabelle (spesso nascoste e 
+		annidate una dentro l'altra) per posizionare gli elementi sulla pagina. 
+		Come abbiamo visto tale uso &eacute; ormai fortemente deprecato ed &eacute; stato 
+		sostituito dal posizionamento con i fogli stile.</p>
+	<p>Vi sono per&eacute; molti casi in cui la costruzione di una tabella sembra 
+	ancora la soluzione pi&eacute; rapida e indolore. Prendiamo come esempio il 
+	classico <strong>gioco del tris</strong>, dove occorre una griglia di gioco 
+	composta da 9 celle.</p>
+	<p>Una soluzione veloce con le tabelle &eacute; la seguente:</p>
+     <div class="code">
+       <pre>&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</pre>
+    </div>
+     <p>da formattare con gli stili in questo modo:</p>
+     <div class="code">
+       <pre>table
+{
+border-collapse: collapse;
+}
+
+tr
+{
+height: 60px;
+}
+
+td
+{
+width: 60px;
+border: 1px solid;
+text-align:center;
+}</pre>
+    </div>
+     <p>Tuttavia sempre pi&eacute; spesso i programmatori preferiscono evitare l'uso 
+		delle tabelle in tutti i casi, tranne quando si voglia veramente 
+		presentare dei dati in forma tabellare (es. la classifica del campionato 
+		di calcio). In tutti gli altri casi le tabelle, sebbene non formalmente 
+		deprecate, sono comunque sconsigliate.</p>
+	<p>Si pone dunque per&eacute; il problema di come e con cosa sostituire le tabelle. 
+	La soluzione &eacute; piuttosto semplice ed elegante e fa uso del solo elemento &lt;div&gt;. 
+	Qui sotto &eacute; mostrato per esempio il codice per realizzare una griglia 3x3, 
+	come quella per il gioco del tris, usando solo div:</p>
+     <div class="code">
+       <pre>&lt;div class=&quot;tabella&quot;&gt;
+&lt;div class=&quot;riga&quot;&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;riga&quot;&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;riga&quot;&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;cella&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+     <p>Gli stili associati sono i seguenti:</p>
+     <div class="code">
+       <pre>.tabella
+{
+display: table;
+}</pre>
+		<pre>.riga
+{
+display: table-row;
+}</pre>
+		<pre>.cella
+{
+width: 60px;
+height: 60px;
+line-height: 60px;
+border: 1px solid;
+text-align:center;
+display: table-cell;
+}</pre>
+    </div>
+     <p>Qui &eacute; interessante osservare l'uso dello stile <em>display</em>, il 
+		quale consente di formattare un elemento (nel nostro caso un elemento 
+		div) in modo tale che si comporti come il corrispondente elemento di una 
+		tabella.</p>
+	<p>Consigliamo questo
+	<a target="_blank" href="http://divtable.com/generator/">utile sito online</a> 
+	che consente rapidamente di generare il codice di qualsiasi tabella per 
+	mezzo di elementi div.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

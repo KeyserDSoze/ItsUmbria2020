@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Metodi degli array 
+	</div>
+        <p>In JS gli array sono oggetti e possiedono una serie di <strong>metodi</strong> 
+		predefiniti per mezzo dei quali &eacute; possibile eseguire rapidamente una 
+		serie di operazioni su tutti gli elementi di un vettore. Come sappiamo i 
+		metodi di un oggetto sono azioni che &eacute; possibile compiere sull'oggetto 
+		stesso e, dal punto di vista della sintassi, si utilizzano in pratica 
+		come delle funzioni.</p>
+        <p>Diamo dunque un'occhiata ai principali metodi degli array in Javascript.</p>
+        <p>&nbsp;</p>
+        <div class="titolo">Reverse</div>
+        <p>Il metodo <strong>reverse</strong> consente di invertire l'ordine degli elementi di un vettore. Si consideri l'esempio seguente:  </p>
+
+        <div class="code">
+      var vocali = [&quot;A&quot;, &quot;E&quot;, &quot;I&quot;, &quot;O&quot;, &quot;U&quot;]; //crea un array contente le vocali <br />
+        vocali.reverse(); //ora il vettore vocali contiene U O I E A 
+    </div>
+        <p>Si noti la sintassi di uso del metodo:</p>
+        <p><img src="../img/array3.jpg" alt="" width="350" height="255" /></p>
+        <p>A differenza dell'esempio visto nella lezione precedente, il metodo <em>reverse</em> non visualizza gli elementi del vettore in ordine inverso, ma li inverte effettivamente. Qual'&egrave; la differenza? Nel primo caso il vettore non veniva modificato, ma cambiava solo l'ordine con cui veniva visualizzato il suo contenuto. Col metodo <em>reverse</em> invece, l'elemento zero conterr&agrave; il valore dell'ultimo elemento, l'elemento 1 quello del penultimo e cos&igrave; via. </p>
+        <div class="titolo">Sort</div>
+        <p>Il metodo <strong>sort</strong> ordina il contenuto di un vettore secondo l'ordine alfabetico. Esempio: </p>
+        <div class="code">
+          var parole = [&quot;oh&quot;, &quot;che&quot;, &quot;bel&quot;, &quot;metodo&quot;, &quot;questo&quot;];<br />
+            parole.sort(); <br />
+            //ora il vettore contiene: bel che metodo oh questo 
+        </div>
+        <p>Si presti attenzione al fatto che in JS le lettere minuscole seguono alfabeticamente le maiuscole. Perci&ograve; per esempio <em>Zebra</em> viene prima di <em>airone</em> in ordine alfabetico! </p>
+        <div class="titolo">Concat</div>
+        <p>Il metodo <strong>concat</strong> concatena due vettori in modo da crearne un terzo che contiene tutti gli elementi del primo seguiti da tutti gli elementi del secondo: </p>
+        <div class="code">
+          var primo = [&quot;alfa&quot;, &quot;beta&quot;, &quot;gamma&quot;];<br />
+            var
+          secondo = [&quot;delta&quot;, &quot;epsilon&quot;];<br />
+          var
+          terzo = primo.concat(secondo);<br />
+          //terzo contiene: alfa beta gamma delta epsilon 
+    </div>
+        <p>Si presti attenzione alla sintassi del metodo:</p>
+        <p class="style1"><img src="../img/array4.jpg" alt="" width="373" height="262" /> </p>
+        <div class="titolo">Push</div>
+        <p>Il metodo <strong>push</strong> aggiunge un elemento in fondo al vettore (dopo l'ultimo inserito). Esempio: </p>
+        <div class="code">
+          var primo = [];<br />
+            primo[0]=&quot;alfa&quot;;<br />
+            primo[1]=&quot;beta&quot;;<br />
+            primo.push(&quot;gamma&quot;);<br />
+          //equivale a scrivere: primo[2] = &quot;gamma&quot; 
+    </div>
+        <p>Se interessa, il metodo push restituisce la nuova lunghezza del vettore. Esempio:</p>
+        <div class="code">
+          var primo = [];<br />
+            primo[0]=&quot;alfa&quot;;<br />
+            primo[1]=&quot;beta&quot;;<br />
+            nuova = primo.push(&quot;gamma&quot;);<br />
+            alert(nuova);
+            //visualizza il valore 3 
+        </div>
+        <p>&nbsp; </p>
+        <div class="titolo">Pop</div>
+        <p>Il metodo <strong>pop</strong> elimina un elemento dal fondo del vettore. Esempio: </p>
+        <div class="code">
+          var vettore = [];<br />
+            vettore[0]=&quot;alfa&quot;;<br />
+            vettore[1]=&quot;beta&quot;;<br />
+            vettore[2] = &quot;gamma&quot;;<br />
+            vettore.pop();</div>
+        <p>Il metodo pop cancella l'ultimo elemento del vettore (l'elemento 3 contenente &quot;gamma&quot; nell'esempio precedente) e decrementa la lunghezza <em>length</em> di uno.</p>
+        <p>Volendo pop restituisce il valore dell'elemento cancellato come 
+		valore di ritorno:</p>
+        <div class="code">
+          var vettore = [];<br />
+            vettore[0]=&quot;alfa&quot;;<br />
+            vettore[1]=&quot;beta&quot;;<br />
+            vettore[2] = &quot;gamma&quot;;<br />
+            ultimo = vettore.pop();<br />
+          alert(ultimo); //visualizza il valore &quot;gamma&quot; 
+        </div>
+        <p>&nbsp; </p>
+        <div class="titolo">Shift</div>
+        <p>Il metodo <strong>shift</strong> &egrave; identico al metodo pop, solo che elimina (e restituisce) il primo elemento del vettore: </p>
+        <div class="code">
+          var vettore = [];<br />
+            vettore[0]=&quot;alfa&quot;;<br />
+            vettore[1]=&quot;beta&quot;;<br />
+            vettore[2] = &quot;gamma&quot;;<br />
+            vettore.shift(); 
+        </div>
+        <p>Il risultato del programma precedente &egrave; che l'elemento zero (&quot;alfa&quot;) viene eliminato e il nuovo elemento zero diventa &quot;beta&quot;. La lunghezza length del vettore viene decrementata di uno. </p>
+        <div class="titolo">Unshift</div>
+        <p>Il metod <strong>unshift</strong> &egrave; identico a push, ma inserisce un elemento all'inizio del vettore:</p>
+        <div class="code"> var primo = [];<br />
+          primo[0]=&quot;beta&quot;;<br />
+          primo[1]=&quot;gamma&quot;;<br />
+          primo.unshift(&quot;alfa&quot;);<br />
+          // aggiunge &quot;alfa&quot; nell'elemento 0 e sposta in avanti di uno gli altri elementi </div>
+        <p>&nbsp; </p>
+        <div class="titolo">Slice</div>
+        <p>Il metodo <strong>slice</strong> serve per copiare una porzione di array in un altro array. Esempio: </p>
+        <div class="code">
+          var vocali = [&quot;A&quot;, &quot;E&quot;, &quot;I&quot;, &quot;O&quot;, &quot;U&quot;];<br />
+            var
+            centrali = vocali.slice(1,4); //ora centrali contiene E I O 
+        </div>
+        <p>Si noti che il metodo <em>slice</em> copia a partire dall'elemento specificato per primo (E, elemento numero 1, nell'esempio precedente) fino all'elemento specificato per secondo <strong>escluso</strong> (cio&egrave; fino a O, elemento numero 3, nel precedente esempio - l'elemento 4 non viene copiato). </p>
+        <p>Il metodo slice pu&ograve; anche essere usato per copiare un intero array su un altro. In questo caso bisogna usarlo senza nessun parametro fra parentesi:</p>
+        <div class="code">
+          var vettore = [];<br />
+vettore[0]=&quot;alfa&quot;;<br />
+vettore[1]=&quot;beta&quot;;<br />
+vettore[2] = &quot;gamma&quot;;<br />
+            var
+            copia = vettore.slice(); //copia contiene gli stessi elementi di vettore 
+    </div>
+        <p>&nbsp;</p>
+        <div class="titolo">IndexOf</div>
+        <p>Il metodo <strong>indexOf</strong> serve per cercare un elemento in un array. Esempio: </p>
+        <div class="code"> var frutta = [&quot;Banana&quot;, &quot;Arancia&quot;, &quot;Mela&quot;, &quot;Mango&quot;]; <br />
+        var ris = frutta.indexOf(&quot;Mela&quot;);</div>
+        <p>La variabile ris alla fine dell'esempio precedente contiene la posizione di Mela all'interno del vettore (nel nostro caso il valore &egrave; 2, perch&eacute; Mela ha indice 2, cio&egrave; occupa la terza posizione nel vettore).</p>
+        <p>Se il valore cercato non &egrave; presente nel vettore, indexOf torna il valore -1. Nel caso ci siano pi&ugrave; valori uguali nel vettore, indexOf torna la posizione solo del primo valore incontrato. </p>
+        <p>Il metodo indexOf possiede un secondo parametro opzionale in cui &egrave; possibile specificare l'indice a partire dal quale bisogna effettuare la ricerca (se si indica il valore 0 la ricerca viene effettuata a partire dal primo elemento). In questo modo &egrave; possibile ricercare tutte le occorrenze di un dato valore in un vettore (e non solo la prima), come mostra l'esempio seguente:</p>
+        <div class="code"> var frutta = [&quot;Banana&quot;, &quot;Arancia&quot;, &quot;Mela&quot;, &quot;Mango&quot;,&quot;Mela&quot;]; <br />
+var indice = -1;<br />
+do<br />
+{<br />
+indice = frutta.indexOf(&quot;Mela&quot;, indice+1);<br />
+alert(indice);<br />
+}<br />
+while (indice!=-1);</div>
+        <p>In questo esempio l'alert visualizza prima il valore 2 (prima posizione di &quot;Mela&quot; nel vettore), quindi il valore 4 (seconda posizione di &quot;Mela&quot; nel vettore) e infine il valore -1 (che termina il ciclo).  </p>
+        <p>&nbsp;</p>
+        <div class="titolo">Cancellare un elemento: delete e splice</div>
+        <p>L'operatore <strong>delete</strong>, come suggerisce il nome, serve 
+		per cancellare un elemento da un array:</p>
+        <div class="code">
+          var frutta = [&quot;Banana&quot;, &quot;Arancia&quot;, &quot;Mela&quot;, &quot;Mango&quot;]; <br />
+			delete frutta[0]; // rimuove il primo elemento di frutta</div>
+        <p>Si osservi che delete non &eacute; un metodo, ma un operatore. Occorre anche 
+		notare che <em>delete</em> non elimina davvero l'elemento cancellato, ma 
+		lascia al suo posto una sorta di elemento vuoto, di valore <em>undefined</em>.</p>
+	<p>Per cancellare davvero un elemento (spostando tutti gli elementi 
+	successivi all'indietro di una posizione) si pu&eacute; usare il metodo <strong>
+	splice</strong> (da non confondere con <em>slice</em> visto sopra) nel 
+	seguente modo:</p>
+        <div class="code">
+          var frutta = [&quot;Banana&quot;, &quot;Arancia&quot;, &quot;Mela&quot;, &quot;Mango&quot;]; <br />
+			frutta.splice(0, 1);&nbsp; // rimuove il primo elemento di frutta</div>
+        <p>Il primo parametro 0 indica l'elemento da eliminare; il secondo 
+		parametro 1 indica quanti elementi devono essere eliminati.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Modificare dinamicamente il DOM</div>
+
+<p>Oltre a modificare il contenuto HTML e gli attributi di un elemento, il DOM 
+ci consente di modificare dinamicamente la struttura di un documento. Possiamo ad esempio 
+creare elementi ed attributi e aggiungerli al DOM avendo un effetto immediato 
+sulla pagina HTML. </p>
+	<p>Si consideri l'esempio seguente:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Aggiungere un elemento img alla pagina &lt;/title&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			<br />
+			function aggiungi()<br />
+			{<br />
+			// Crea un elemento img<br />
+			var immagine = document.createElement(&quot;img&quot;);<br />
+			<br />
+			// Crea un attributo src, gli assegna un valore e lo assegna 
+			all'elemento<br />
+			var srcAttr = document.createAttribute(&quot;src&quot;);<br />
+			srcAttr.value = &quot;next.gif&quot;;<br />
+			immagine.setAttributeNode(srcAttr);<br />
+			<br />
+			// Aggiunge un nodo al DOM<br />
+			var corpo = document.body;<br />
+			corpo.appendChild(immagine); <br />
+			} <br />
+			<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			<br />
+			&lt;body&gt;<br />
+			<br />
+			&lt;p onclick=&quot;aggiungi()&quot;&gt;Clicca e sar&eacute; aggiunta una immagine&lt;/p&gt;<br />
+			<br />
+			<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+        <p>Analizzeremo fra poco le istruzioni che compaiono nella pagina. Per 
+		ora, facendo riferimento alla struttura ad albero del DOM, la pagina 
+		inizialmente presenta la seguente struttura:</p>
+	<p><img alt="" src="../img/img1A.gif" /></p>
+	<p>Per semplicit&eacute; la struttura dell'HEAD non viene rappresentata 
+	completamente nella figura qui sopra. Si noti che anche il contenuto del 
+	paragrafo &quot;Clicca e sar&eacute; aggiunta una immagine&quot; costituisce un nodo (di tipo 
+	testo) del DOM.</p>
+	<p>Dopo che si fa click sul paragrafo e viene chiamata la funzione aggiungi, 
+	il DOM della pagina viene modificato in questo modo:</p>
+	<p><img alt="" src="../img/img1D.gif" /></p>
+	<p>Si noti che &eacute; stato aggiunto un elemento IMG in fondo al BODY. Abbiamo 
+	aggiunto un nodo IMG child di BODY.</p>
+	<p>Visualizzando la pagina nel browser la modifica nella struttura viene 
+	immediatamente renderizzata nella finestra del browser (appena si clicca sul 
+	paragrafo viene aggiunta l'immagine):</p>
+	<p class="style1"><img alt="" src="../img/img21.jpg" /></p>
+	<p>Tuttavia se nella finestra del browser visualizziamo il codice HTML 
+	(scegliendo Visualizza sorgente o Visualizza html, a seconda dei browser), 
+	esso appare invariato. La modifica del DOM viene invece visualizzata 
+	scegliendo Strumenti Sviluppatore e visualizzando il codice generato 
+	dinamicamente per la pagina:</p>
+	<p class="style1"><img alt="" src="../img/img23.jpg" /></p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Usabilit� e utente</div>
+	 <p>Torniamo ora alla definizione generale di usabilit� fornita nella 
+		lezione precedente. Si dice usabilit�: </p>
+	 <blockquote>l'efficacia, l'efficienza e la soddisfazione con le quali determinati 
+	utenti raggiungono determinati obiettivi in determinati contesti. </blockquote>
+	<p>Prestiamo attenzione alla ripetizione della parola <em>determinati</em>: 
+	determinati utenti, determinati obiettivi, determinati contesti.</p>
+	<p>Infatti l'usabilit� non � una propriet� di un oggetto, ma dell'interazione 
+	fra l'oggetto e colui che lo utilizza. Per esempio il pannello di controllo 
+	di un aereo non � certamente <em>usabile</em> per un utente inesperto, ma 
+	dovrebbe esserlo per il pilota:</p>
+	<p class="style1"><img src="../img/image028.jpg" /></p>
+	<p>&nbsp;</p>
+	<p>In pratica ogni oggetto dovrebbe essere progettato tenendo presente a 
+	quali utenti si rivolge, quali sono le condizioni di uso abituali e a che 
+	scopo viene usato. Una normale penna biro � perfettamente usabile per chi sa 
+	scrivere, ma probabilmente risulta un oggetto dagli scopi misteriosi per chi 
+	non ne � capace.</p>
+	<p>Dunque la progettazione di un oggetto usabile non pu� prescindere in 
+	generale dalla conoscenza delle caratteristiche di coloro che useranno 
+	l'oggetto stesso. L'usabilit� � una propriet� dell'interazione fra oggetto e 
+	utilizzatore. In un certo senso non esistono oggetti usabili (o non usabili) 
+	in assoluto, ma solo oggetti che sono usabili da determinati utenti in 
+	determinati contesti...</p>
+	 <div class="titolo">Usabilit� e modelli concettuali</div>
+	 <p>L'usabilit� � un concetto che si situa a cavallo di numerose discipline: 
+		psicologia cognitiva e sperimentale, design, progettazione etc. </p>
+	<p>In generale il problema dell'usabilit� si pone quando il <em>modello del 
+	progettista</em> (ovvero le idee di questi riguardo al funzionamento del 
+	prodotto, che trasferisce sul design del prodotto stesso) non coincide con 
+	il <em>modello dell'utente finale</em> (ovvero l'idea che l'utente concepisce del 
+	prodotto e del suo funzionamento). Il grado di usabilit� aumenta 
+	proporzionalmente all'avvicinamento dei due modelli (modello del 
+	progettista e modello dell'utente). </p>
+	<p>Facciamo un semplice esempio. Vogliamo riscaldare un forno elettrico 
+	(come i forni normalmente usati nelle cucine) e possiamo a tale scopo agire 
+	su una manopola graduata con diverse temperature:</p>
+	<p class="style1"><img src="../img/manopola-del-forno-17034701.jpg" /></p>
+	<p>Supponiamo che il nostro scopo sia riscaldare il forno il pi� rapidamente 
+	possibile a 200 �C. Come regoleremo la manopola della temperatura?</p>
+	<p>Molti penseranno che conviene regolare la manopola alla temperatura 
+	massima possibile (275 �C nella nostra figura) in modo di rendere pi� rapido 
+	il processo di riscaldamento. Questa deduzione si basa su un modello mentale 
+	(da parte dell'utente) di come dovrebbe funzionare il forno. Tale modello 
+	mentale suppone che la potenza riscaldante del forno sia tanto maggiore 
+	quanto pi� alta � la temperatura impostata: di conseguenza, impostando una 
+	temperatura pi� alta, il forno dovrebbe riscaldarsi con una potenza maggiore 
+	e dunque pi� rapidamente.</p>
+	<p>In realt� normalmente i forni elettrici non funzionano in questo modo. In 
+	essi c'� una resistenza di riscaldamento che pu� funzionare solo in due 
+	modi: accesa oppure spenta. Quando accendiamo il forno (con qualsiasi 
+	temperatura impostata) la resistenza viene accesa alla potenza massima. 
+	Quando viene raggiunta la temperatura impostata con la manopola, la 
+	resistenza viene spenta. Di conseguenza la velocit� con cui il forno si 
+	riscalda � indipendente dalla temperatura finale impostata con la manopola.</p>
+	<p>Possiamo osservare come in questo caso il modello mentale dell'utente non 
+	coincide col modello usato dal progettista e, di conseguenza, l'uso 
+	dell'oggetto potrebbe essere scorretto.</p>
+	<p>Per fare un altro esempio, se su una pagina web trovo una parola 
+	sottolineata in colore violetto, di solito suppongo che si tratti di un link 
+	e dunque immagino che, cliccandoci sopra col mouse, si venga indirizzati a 
+	un'altra pagina. Ora provate a <span style="text-decoration:underline; color: purple">cliccare su questa scritta</span> e osserverete che 
+	non accade nulla. Infatti il codice html associato � il seguente:</p>
+        <div class="code">
+          Ora provate a &lt;span style=&quot;text-decoration:underline; color: purple&quot;&gt;cliccare 
+			su questa scritta&lt;/span&gt; e osserverete che non accade nulla.</div>
+	<p>Notiamo che il link � stato &quot;simulato&quot; con un elemento span e opportuni 
+	stili. L'utente per� ha un modello mentale per cui le parole sottolineate in 
+	violetto sono link e dunque rimane spiazzato da un codice di questo genere.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

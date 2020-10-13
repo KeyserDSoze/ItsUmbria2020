@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo">Legacy DOM</div>
+        <p>Con legacy DOM si intende quella parte del DOM introdotta con i primi 
+		browser in grado di eseguire script (prima in LiveScript e poi in 
+		Javascript). Si tratta di una serie di API che consentono di accedere ad 
+		alcuni (non a tutti) gli elementi di una pagina di un certo tipo. In pratica il legacy DOM consentiva di eseguire alcune semplici ed operazioni e controlli, per esempio validando gli elementi di un form (es. indirizzo mail scritto correttamente). </p>
+        <p>Nel legacy DOM gli  
+          elementi dello stesso tipo vengono raggruppati in array, come mostra la 
+          figura seguente:</p>
+        <p class="style1"><img alt="Legacy DOM" src="../img/img22.jpg" /></p>
+	<p>In pratica per esempio per accedere all'indirizzo della prima immagine (tag 
+	&lt;img&gt;) di una pagina si pu&eacute; scrivere:</p>
+        <div class="code">
+          var x = document.images[0].src; </div>
+        <p>In modo analogo lo script seguente scrive in una stringa tutti i 
+		valori degli attributi src di tutte le immagini presenti:</p>
+        <div class="code">
+          var x = document.images; <br />
+			var txt = &quot;&quot;; <br />
+			var i; <br />
+			for (i = 0; i &lt; x.length; i++) <br />
+&nbsp;&nbsp;&nbsp; { <br />
+&nbsp;&nbsp;&nbsp; txt = txt + x[i].src + &quot;&lt;br&gt;&quot;; <br />
+&nbsp;&nbsp;&nbsp; } </div>
+        <p>Come possiamo notare document.images &eacute; un array, dotato di una 
+		propriet&eacute; length che ne contiene il numero di elementi (cio&eacute; il numero 
+		di immagini presenti nel documento).</p>
+	<p>Il legacy DOM fa parte del Document Object Model attuale per garantirne 
+	la compatibilit&eacute; all'indietro con gli script sviluppati in passato. Il suo 
+	uso &eacute; tuttavia deprecato, in quanto pu&eacute; essere sostituito in modo pi&eacute; 
+	efficace con i metodi per accedere direttamente a tutti gli elementi del 
+	documento di cui parleremo nella prossima lezione. Ne facciamo qui 
+	brevemente cenno, in quanto molti programmatori lo usano ancora oggi.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Citazioni: blockquote, q e cite</div>
+	 <p>
+	 L'elemento <strong>blockquote</strong> serve per riportare una citazione da un'altra 
+		fonte. Un esempio di uso &eacute; mostrato qui sotto:</p>
+     <div class="code">
+       &lt;p&gt;Come recita lo Statuto del WWF:&lt;/p&gt;<br />
+		&lt;blockquote&gt;<br />
+		La Missione del WWF Internazionale &eacute; costruire un futuro in cui 
+		l'umanit&eacute; possa vivere in armonia con la natura.<br />
+		&lt;/blockquote&gt;</div>
+     <p>L'effetto &eacute; mostrato qui sotto (la citazione viene visualizzata con un 
+		blocco a rientrare):</p>
+		<div style="border: solid thin">
+	<p>Come recita lo Statuto del WWF:</p>
+<blockquote>
+La Missione del WWF Internazionale &eacute; costruire un futuro in cui l'umanit&eacute; possa vivere in armonia con la natura.
+</blockquote>	
+</div>
+<p>Per una breve citazione, contenuta all'interno di un paragrafo pi&eacute; ampio, si 
+pu&eacute; anche usare l'elemento <strong>q</strong>, che, a differenza di blockquote, 
+&eacute; un elemento inline:</p>
+     <div class="code">
+       &lt;p&gt;Come dice Dante Alighieri: &quot;&lt;q&gt;Fatti non foste a viver come 
+		bruti&lt;/q&gt;&quot;.&lt;/p&gt; </div>
+     <p>I browser non differenziano in alcun modo la visualizzazione 
+		dell'elemento q, il quale pertanto &eacute; puramente semantico.</p>
+	<p>L'elemento <strong>cite</strong> serve invece per citare il titolo di 
+	un'opera, come nell'esempio qui sotto:</p>
+     <div class="code">
+       &lt;p&gt;&lt;cite&gt;L'urlo&lt;/cite&gt; di Edward Munch. Dipinto nel 1893.&lt;/p&gt; </div>
+     <p>&nbsp;Nei browser normalmente &lt;cite&gt; (che &eacute; un elemento inline) viene 
+		visualizzato in corsivo.</p>
+	 <div class="titolo">Acronimi e definizioni</div>
+	 <p>L'elemento <strong>abbr</strong> consente di definire un acronimo 
+		(sigla) fornendone anche la versione estesa, come mostra l'esempio qui 
+		sotto (si noti l'uso dell'attributo titile):</p>
+     <div class="code">
+       &lt;p&gt;In questa guida approfondiamo l'&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; 
+		e ne esploriamo i tag e le potenzialit&eacute; espressive.&lt;/p&gt;&nbsp; </div>
+     <p>Di solito questo tag viene visualizzato come un tooltip (suggerimento) 
+		che il browser mostra passando col mouse sull'elemento.</p>
+	<p>Nel caso si voglia definire un termine (non un acronimo) si pu&eacute; usare il 
+	tag <strong>dfn</strong> in questo modo:</p>
+     <div class="code">
+       &lt;dfn title=&quot;Insieme di componenti software, che rende operativi computer, 
+		apparati e dispositivi informatici&quot;&gt;Sistema Operativo&lt;/dfn&gt; </div>
+     <p>Anche in questo caso la definizione viene visualizzata tramite un 
+		tooltip.</p>
+	 <div class="titolo">Apici e pedici</div>
+<p>Gli elementi inline <strong>sup</strong> e <strong>sub</strong> consentono di definire rispettivamente un apice 
+e un pedice. Si consideri l'esempio seguente:</p>
+     <div class="code">
+       &lt;p&gt; La formula di Einstein &eacute;: E = m c&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt; </div>
+	<p>L'effetto &eacute; il seguente:</p>
+<p class="style1"> La formula di Einstein &eacute;: E = m c<sup>2</sup></p> 
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

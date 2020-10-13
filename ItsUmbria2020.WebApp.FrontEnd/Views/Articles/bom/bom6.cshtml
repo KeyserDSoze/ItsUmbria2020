@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+	<div class="titolo">
+
+	  Scrittura &quot;al volo&quot; su un documento 
+	</div>
+        <p>La scrittura su un documento utilizza l'oggetto <em>document</em> 
+		che, a rigori, fa parte del DOM di cui parleremo pi&eacute; avanti. Tuttavia, 
+		visto che spesso viene usato in abbinamento con l'apertura di una 
+		finestra secondaria con <em>windows.open</em>, riteniamo pi&eacute; opportuno 
+		trattarlo in questa sede.</p>
+	<p>Supponiamo di voler inserire all'interno di un documento html l'ora corrente (quella del PC dell'utente che sta visualizzando la pagina). 
+		Per una discussione pi&eacute; approfondita sull'oggetto Date vedi le
+		<a href=" date/date1.html">apposite lezioni</a>.</p>
+	<p>A tale scopo possiamo inserire il seguente codice JS:</p>
+        <div class="code">
+          &lt;html&gt;<br />
+&lt;head&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&lt;script type=&quot;text/javascript&quot;&gt; <br />
+Oggi = new Date();<br />
+Ora = Oggi.getHours();<br />
+document.write(&quot;&lt;p align='center'&gt; &lt;strong&gt;Sono le ore &lt;/strong&gt;&quot; + Ora + &quot; &lt;/p&gt;&quot;);<br />
+  &lt;/script&gt;<br />
+  &lt;/body&gt;<br />
+  &lt;/html&gt;</div>
+        <p>L'effetto prodotto sulla pagina &egrave;:</p>
+        <p align="center" ><strong>Sono le ore </strong>16 </p>
+        <p >Questo effetto viene generato <em>al volo</em> (o <em>on flight</em>, come si dice in inglese) al momento della visualizzazione della pagina sul browser dell'utente. </p>
+        <p >Si noti come scrivendo il <a href=" Generali/def10.html">codice 
+		direttamente nel body</a> della pagina (e non in una funzione nell'head, 
+		come facciamo di solito), esso venga eseguito direttamente al momento 
+		del caricamento della pagina stessa.</p>
+        <div class="titolo">
+
+	  Il metodo write </div>
+        <p><em>Write</em> &egrave; un metodo dell'oggetto <em>document</em> (il 
+		quale &eacute; child di window e di cui parleremo ampiamente a proposito del 
+		DOM), mediante il quale &egrave; possibile scrivere codice html direttamente sulla pagina. Il meccanismo &egrave; abbastanza semplice: eseguendo il metodo <em>write</em>, la stringa che viene passata come argomento (quella fra le parentesi tonde) viene scritta sulla pagina html, direttamente nel punto in cui &egrave; stato eseguito <em>write</em>. La scrittura avviene prima che il browser visualizzi la pagina. </p>
+	<p>La scrittura sulla pagina mediante il metodo write pu&eacute; essere fatta cos&eacute;:</p>
+        <div class="code">
+          window.document.write(&quot;&lt;p align='center'&gt; &lt;strong&gt;Sono le ore &lt;/strong&gt;&quot; + Ora + &quot; &lt;/p&gt;&quot;);</div>
+        <p>oppure omettendo il primo oggetto della sequenza, in modo abbreviato:</p>
+        <div class="code">
+          document.write(&quot;&lt;p align='center'&gt; &lt;strong&gt;Sono le ore &lt;/strong&gt;&quot; + Ora + &quot; &lt;/p&gt;&quot;);</div>
+        <p>Sul documento html verr&agrave; scritta la seguente porzione di codice:</p>
+        <div class="code">
+          &lt;p align='center'&gt; &lt;strong&gt;Sono le ore &lt;/strong&gt; 16 &lt;/p&gt; 
+    </div>
+        <p>Si osservi come il codice prodotto corrisponda alla stringa contenuta fra le parentesi di write, dove 16 (nel nostro esempio) &egrave; l'ora fornita dal metodo <em>getHours</em> e contenuta nella variabile <em>Ora</em> . </p>
+        <p>&nbsp; </p>
+        <div class="titolo"> Un altro esempio di uso del metodo write </div>
+        <p>Vediamo adesso come &egrave; possibile scrivere su una pagina il nome del browser che sta utilizzando l'utente. A questo scopo usiamo le propriet&agrave; <em>appName</em> e <em>appVersion</em> dell'oggetto <em>navigator</em> nel seguente modo: </p>
+        <div class="code">
+          &lt;html&gt;<br />
+			&lt;head&gt;<br />
+			&lt;/head&gt;<br />
+			&lt;body&gt;<br />
+			&lt;script type=&quot;text/javascript&quot;&gt; <br />
+			<br />
+			document.write(&quot;&lt;table border='1' width='50%'&gt;&lt;tr&gt;&quot;); <br />
+			document.write(&quot;&lt;td&gt;&lt;p&gt; Il tuo browser &eacute; &quot; + navigator.appName + 
+			&quot;&lt;/p&gt;&lt;/td&gt;&quot;);<br />
+			document.write(&quot;&lt;td&gt;&lt;p&gt; La versione &eacute; &quot; + navigator.appVersion + 
+			&quot;&lt;/p&gt;&lt;/td&gt;&quot;);<br />
+			document.write(&quot;&lt;/tr&gt;&lt;/table&gt;&quot;);<br />
+			<br />
+&lt;/script&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</div>
+        <p>L'effetto prodotto sulla pagina &egrave; il seguente:</p>
+
+<table width="50%" border="1"><tr><td>Il tuo browser &egrave; Netscape</td>
+<td>La versione &egrave; 5.0 (Windows; it)</td>
+</tr></table>
+        <p>Si tratta di una tabella realizzata in HTML mediante le 4 successive chiamate di <em>write</em>.</p>
+        <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

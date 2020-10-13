@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">L'attributo alt</div>
+	 <p>Ovviamente le immagini costituiscono uno degli elementi pi&eacute; critici per 
+		gli utenti con disabilit&eacute; visive, in quanto non possono essere 
+		facilmente tradotte in modo vocale dai lettori automatici. Per 
+		consentire una corretta identificazione del contenuto di un'immagine 
+		bisogna usare l'attributo <strong>alt</strong>, come nel seguente 
+		esempio:</p>
+        <div class="code">
+          &lt;img src=&quot;eclissi.jpg&quot; alt=&quot;Eclissi totale di sole&quot;&gt;</div>
+        <p>Come si vede l'attributo alt fornisce una breve descrizione del 
+		contenuto dell'immagine. Tale descrizione viene letta dai lettori vocali 
+		e sostituisce, per chi non &eacute; in grado di vedere l'immagine stessa. Ci&eacute; &eacute; 
+		naturalmente di grande aiuto per le persone con disabilit&eacute; visive, ma &eacute; 
+		anche utile per il corretto riconoscimento e indicizzazione 
+		dell'immagine da parte dei motori di ricerca. Come spesso accade, un 
+		sito progettato bene, avendo in mente l'accessibilit&eacute;, &eacute; anche un sito 
+		che viene riconosciuto e indicizzato correttamente dai motori di ricerca 
+		(come per esempio Google).</p>
+	<p>In generale l'attributo alt dovrebbe contenere solo una breve descrizione 
+	dell'immagine, evitando frasi lunghe o inutili precisazioni. Per esempio:</p>
+        <div class="code">
+          &lt;img src=&quot;cane.jpg&quot; alt=&quot;foto di un cane di razza pastore tedesco&quot;&gt;</div>
+        <p>&eacute; sostituibile, in modo pi&eacute; efficace, con:</p>
+        <div class="code">
+          &lt;img src=&quot;cane.jpg&quot; alt=&quot;pastore tedesco&quot;&gt;</div>
+        <p>Quando l'immagine viene usata per realizzare un link (immagini 
+		cliccabili), l'attributo alt dovrebbe descrivere il link e non il 
+		contenuto dell'immagine. Per esempio questa soluzione non &eacute; corretta:</p>
+        <div class="code">
+          &lt;a href=&quot;http://www.miosito.it&quot;&gt; &lt;img src=&quot;casetta.gif&quot; alt=&quot;piccola 
+			casa&quot;&gt; &lt;/a&gt; </div>
+        <p>mentre &eacute; senz'altro meglio scrivere cos&eacute;:</p>
+        <div class="code">
+          &lt;a href=&quot;http://www.miosito.it&quot;&gt; &lt;img src=&quot;casetta.gif&quot; alt=&quot;Pagina 
+			principale&quot;&gt; &lt;/a&gt; </div>
+        <p>Una breve nota va anche dedicata a quelle immagini usate con puro 
+		scopo decorativo (come linee di separazione, immagini vuote segnaposto, 
+		etc.) senza nessun significato o contenuto. In questo caso la soluzione 
+		corretta &eacute; utilizzare un attributo alt vuoto, come nel seguente esempio:</p>
+        <div class="code">
+          &lt;img src=&quot;barra.gif&quot; alt=&quot; &quot; &gt; </div>
+        <p>In questo modo il lettore vocale non legger&eacute; nulla in corrispondenza 
+		della immagine (che, essendo un puro elemento decorativo, non avrebbe 
+		comunque nessun significato per una persona non vedente).</p>
+	 <div class="titolo">L'attributo title</div>
+	 <p>In alcuni browser l'attributo alt viene visualizzato come un breve 
+		suggerimento (<em>tooltip</em>) al momento del caricamento 
+		dell'immagine. Questa visualizzazione non &eacute; per&eacute; standard e non viene 
+		fatta da tutti browser. Se si vuole inserire un testo da visualizzare 
+		come tooltip, occorre usare l'attributo <strong>title</strong>, come nel 
+		seguente esempio:</p>
+        <div class="code">
+          &lt;img src=&quot;bluemark.gif&quot; alt=&quot;Penn State University&quot; title=&quot;Founded in 
+			1855&quot; &gt; </div>
+        <p>In questo caso, passando il mouse sopra l'immagine, si ottiene il 
+		seguente risultato:</p>
+	<p class="style1"><img alt="Attrbuto title" src="../img/img12.gif" /></p>
+	<p>Si osservi che nell'elemento &lt;img&gt; sono stati usati sia l'attributo alt 
+	(usato dai lettori vocali) che l'attributo title (usato per fornire un 
+	tooltip).</p>
+	 <div class="titolo">L'attributo longdesc</div>
+	 <p>Il testo alternativo dell'attributo alt dovrebbe essere sempre piuttosto 
+		breve (poche parole). In alcuni casi, quando l'immagine &eacute; 
+		particolarmente importante e/o il suo contenuto &eacute; complesso, pu&eacute; essere 
+		necessario ricorrere a una descrizione pi&eacute; lunga. In queste situazioni 
+		si pu&eacute; usare l'attributo <strong>longdesc</strong> come nell'esempio 
+		seguente:</p>
+        <div class="code">
+          &lt;img src=&quot;gatto.jpg&quot; alt=&quot;Gatto dell'isola di Man&quot; longdesc=&quot;gattoman.html&quot; 
+			&gt; </div>
+        <p>Si noti che longdesc rimanda a una pagina html la quale contiene una 
+		descrizione pi&eacute; lunga e dettagliata dell'immagine stessa. Occorre 
+		tuttavia notare che longdesc non viene supportato correttamente da tutti 
+		i lettori vocali e inoltre &eacute; deprecato in HTML 5.</p>
+	<p>Una soluzione pi&eacute; semplice, e probabilmente migliore, consiste nel 
+	fornire direttamente un link con la descrizione sotto l'immagine stessa, 
+	come nell'esempio qui sotto:</p>
+	<p>
+	<img src="../img/260px-Manx_breed_cat_named_Inkku.jpg" alt="Manx breed cat named Inkku.jpg" /><br />
+	<a target="_blank" href="http://it.wikipedia.org/wiki/Gatto_dell'Isola_di_Man">
+	Visualizzare la descrizione estesa</a></p>
+	 <div class="titolo">Captcha</div>
+	 <p>Un particolare problema di accessibilit&eacute; presentano anche le cosiddette
+	<strong>captcha</strong>, cio&eacute; quelle immagini che l'utente deve riconoscere 
+	per poter dimostrare di essere un umano e non un computer:</p>
+	<p class="style1"><img alt="captcha" src="../img/img32.gif" /></p>
+	<p>In generale un captcha ben progettato dovrebbe offrire sempre 
+	un'alternativa audio alla semplice immagine visiva.</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				border-left-style: solid;
+				border-left-color: #FF0000;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Il codice eseguito al caricamento della pagina: ready</div>
+
+	<p>Riprendiamo nuovamente il semplice esempio di script jQuery visto nella 
+	precedente lezione:</p>
+        <div class="code">
+          &lt;!DOCTYPE html&gt;<br />
+			<br />
+			&lt;html&gt;<br />
+			<br />
+			&lt;head&gt;<br />
+			&lt;meta charset=&quot;utf-8&quot;&gt;<br />
+			<br />
+			<br />
+			&lt;title&gt; Semplice esempio di jQuery&lt;/title&gt;<br />
+			<br />
+			&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;<br />
+			<br />
+			&lt;script&gt; <br />
+			$(document).ready(function() {<br />
+			var paragrafi;<br />
+			paragrafi = $('p').length;<br />
+			alert(paragrafi);<br />
+			});<br />
+			&lt;/script&gt;<br />
+			<br />
+			&lt;/head&gt;<br />
+			<br />
+			&lt;body&gt;<br />
+			&lt;p&gt;Nel mezzo del cammin di nostra vita&lt;/p&gt;<br />
+			&lt;p&gt;mi ritrovai per una selva oscura&lt;/p&gt;<br />
+			&lt;p&gt;ch&eacute; la diritta via era smarrita.&lt;/p&gt;<br />
+			&lt;/body&gt;<br />
+			<br />
+			&lt;/html&gt;</div>
+	<p>e ora esaminiamo nel dettagli l'istruzione:</p>
+        <div class="code">
+          $(document).ready(function() {<br />
+			var paragrafi;<br />
+			paragrafi = $('p').length;<br />
+			alert(paragrafi);<br />
+			});</div>
+	<p>Questa istruzione serve per eseguire una porzione di codice al 
+	caricamento della pagina ed &eacute; in qualche modo simile all'evento <em>onload</em> che
+	<a href=" Generali/def7.html">abbiamo in passato utilizzato</a> per 
+	eseguire codice javascript al caricamento.</p>
+	<p>La sintassi di questa istruzione sembra complicata, ma in realt&eacute; segue le<a href="jquery2.html"> 
+	regole generali della sintassi</a> delle istruzioni jQuery:</p>
+	<p class="style1">
+	<img alt="Sintassi istruzione ready" src="../img/jqimg24.gif" /></p>
+	<p>In questo caso il <strong>selettore</strong> &eacute; <strong>document</strong>, 
+	per indicare che l'azione si riferisce al documento, cio&eacute; all'intera pagina 
+	corrente.</p>
+	<p class="style2">In realt&eacute; il metodo <em>ready</em> pu&eacute; essere applicato allo stesso 
+	modo a qualsiasi elemento della pagina. Per esempio pu&eacute; essere usato per 
+	eseguire una certa porzione di codice al caricamento di un'immagine o di un 
+	div.</p>
+	<p>L'azione<strong> ready</strong>, come gi&eacute; accennato, 
+	indica il fatto che ci&eacute; che segue (i <em>parametri</em>) deve essere eseguito quando 
+	l'oggetto (in questo caso <em>document</em>, cio&eacute; la pagina) &eacute; <em>ready</em>, 
+	cio&eacute; &eacute; stata caricata.</p>
+	<p>Occorre qui una breve precisazione, relativa al confronto fra <em>ready</em> di 
+	<em>jQuery</em> e 
+	l'analogo gestore di eventi <em>onload</em> usato da <em>javscript</em>. Mentre <strong>onload</strong> 
+	attende che l'elemento su cui &eacute; applicato (es. il <em>body</em>) sia stato 
+	interamente caricato per poter essere eseguito, <strong>ready</strong> 
+	invece viene eseguito non appena il DOM dell'elemento &eacute; stato completato. La 
+	differenza &eacute; significativa per pagine contenenti molte risorse, ad esempio 
+	immagini che devono essere caricate: <em>onload</em> non viene eseguito fino al 
+	completo caricamento di tutta la pagina, mentre <em>ready</em> viene eseguito subito, 
+	non appena &eacute; stato costruito il DOM, senza attendere il caricamento completo 
+	di tutte le risorse: &eacute; dunque indubbiamente pi&eacute; veloce.&nbsp;</p>
+
+<div class="titolo"><br />
+				Importanza di $( document ).ready e semplice template copia 
+				e incolla</div>
+
+	<p>In jQuery la funzione <em>$(document).ready(...) </em>&eacute; usata praticamente in ogni 
+	programma e serve per inizializzare le variabili, generare in automatico 
+	elementi del DOM, appendere eventi al DOM e per mille altre ragioni che si 
+	vedranno in seguito.</p>
+	<p>La sua importanza &eacute; fondamentale e si pu&eacute; affermare che non esiste nessun 
+	programma in cui non ci sia questa funzione. Anzi spesso l'intero codice 
+	<strong>jQuery</strong> &eacute; contenuto nella funzione anonima eseguita in risposta all'evento 
+	<em>ready</em>.</p>
+	<p>Per queste ragioni &eacute; bene abituarsi subito alla sua sintassi, che 
+	all'inizio pu&eacute; risultare un po' ostica, specie per tutte quelle parentesi 
+	tonde e graffe che &eacute; facile dimenticarsi. Suggeriamo dunque al 
+	programmatore, soprattutto se alle prime armi, di usare questo semplice <em>template</em> 
+	da copiare e incollare nel codice dei propri programmi:</p>
+        <div class="code">
+          $(document).ready(<br />
+			<br />
+&nbsp;&nbsp;&nbsp; function() {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// Qui bisogna scrivere il codice da eseguire all'avvio<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+			<br />
+			);</div>
+	<p>In questo modo non si rischieranno errori sintattici, poi davvero molto 
+	difficili da individuare e da correggere.</p>
+	<p><strong>ATTENZIONE</strong>: la funzione <em>$()</em> di jQuery pu&eacute; 
+	essere usata solo dopo il caricamento del DOM. Dunque &eacute; buona norma 
+	utilizzarla solo all'interno di <em>$(document).ready</em> o in funzioni 
+	chiamate dalla precedente.</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

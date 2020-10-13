@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#avviso").html("Hide iniziato, velocit&eacute; 2000 ms, swing");
+        $("#gioco").hide(2000,"swing", function(){$("#avviso").html("Hide terminato");} );
+    });
+    $("#btn2").click(function(){
+        $("#avviso").html("Show iniziato, velocit&eacute; 4000 ms, linear");
+        $("#gioco").show(4000,"linear", function(){$("#avviso").html("Show terminato");} );
+    });
+    $("#btn3").click(function(){
+        $("#avviso").html("Toggle iniziato, parametri di default");
+        $("h1").toggle(function(){$("#avviso").html("Toggle terminato");} );
+    });
+
+
+});
+</script>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Hide</div>
+
+	<p>Una delle cose che <em>jQuery</em> riesce a realizzare meglio sono 
+	le animazioni. In queste prime lezioni affronteremo alcune funzioni di base, 
+	mentre tratteremo dopo le animazioni pi&eacute; complesse.</p>
+	<p>Cominciamo con un metodo che abbiamo gi&eacute; visto in azione: </p>
+        <div class="code">
+          $(&quot;#blocco&quot;).hide();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+			nasconde l'elemento con id #blocco </div>
+	<p>Nella sua forma pi&eacute; semplice l'uso del metodo <em>hide</em> &eacute; immediato: non 
+	occorrono parametri e l'elemento corrispondente viene nascosto.</p>
+	<p><strong>ATTENZIONE</strong>: l'elemento viene nascosto (diminuiscono le 
+	sue dimensioni e la sua opacit&eacute;) e alla fine la pagina viene 
+	ridisegnata come se l'elemento stesso non fosse presente. Non rimane nessuno 
+	spazio vuoto al posto dell'elemento. Tutti gli elementi adiacenti vengono 
+	riposizionati di conseguenza. Il metodo equivale all'applicazione dello 
+	stile <em>display:none</em> all'elemento.</p>
+	<p>In realt&eacute; il metodo <em>hide</em> pu&eacute; essere usato anche in modo pi&eacute; complesso. La 
+	sua sintassi generale &eacute; la seguente:</p>
+        <div class="code">
+          $(<em>selettore</em>).hide(<em>speed</em>,<em>easing</em>,<em>callback</em>) </div>
+	<p>Il primo parametro, <strong>speed</strong>, indica la velocit&eacute; con la 
+	quale l'elemento deve scomparire dalla pagina. Esso pu&eacute; assumere i seguenti 
+	valori:</p>
+	<ul>
+					<li>&quot;slow&quot;</li>
+					<li>&quot;fast&quot;</li>
+					<li>millisecondi</li>
+	</ul>
+	<p>Scegliendo &quot;fast&quot; (o non scrivendo nulla, poich&eacute; questa &eacute; l'opzione di 
+	default) l'elemento scompare immediatamente. Con &quot;slow&quot; invece si ha una 
+	transizione pi&eacute; lenta. Infine &eacute; possibile indicare il numero di millisecondi 
+	di durata dell'animazione (cio&eacute; il numero di millisecondi che impiega 
+	l'elemento a scomparire).</p>
+	<p>Il parametro <strong>easing</strong> si riferisce all'accelerazione 
+	dell'animazione e ha due possibili valori:</p>
+	<ul>
+					<li>&quot;linear&quot;</li>
+					<li>&quot;swing&quot;</li>
+	</ul>
+	<p>Scegliendo &quot;linear&quot; l'animazione avviene a velocit&eacute; costante: l'oggetto 
+	svanisce con progressione costante. Scegliendo invece &quot;swing&quot; 
+	(l'opzione di default) l'animazione &eacute; 
+	pi&eacute; naturale: all'inizio la velocit&eacute; &eacute; lenta, poi accelera e infine rallenta 
+	di nuovo verso la fine. Oltre a queste due modalit&eacute; base, nel repository dei 
+	plugin di jQuery &eacute; possibile scaricare molte altre possibilit&eacute; di 
+	animazione, in grado di soddisfare qualsiasi esigenza (vedremo un esempio un 
+	po' pi&eacute; completo <a href="jquery15.html">trattando del metodo animate</a>).</p>
+	<p>L'ultimo parametro &eacute; una <strong>funzione di callback</strong>, cio&eacute; una 
+	funzione che deve essere chiamata al termine dell'animazione, cio&eacute; quando 
+	l'oggetto &eacute; completamente scomparso. La funzione di <em>callback</em> pu&eacute; essere una 
+	funzione esterna (e in questo caso, come abbiamo gi&eacute; visto in precedenza, 
+	bisogna inserirne il nome senza parentesi tonde) oppure, pi&eacute; frequentemente, 
+	una <em>funzione anonima</em> definita all'interno del metodo stesso, come 
+	mostra l'esempio qui sotto:</p>
+        <div class="code">
+          $( &quot;#book&quot; ).hide( <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&quot;slow&quot;, function() <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{ alert( &quot;Animazione terminata!&quot; ); }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			); </div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Show</div>
+
+	<p>Il metodo <strong>show</strong>, come suggerisce il nome, fa l'azione 
+	contraria di <em>hide</em>: cio&eacute; rende nuovamente visibile un oggetto che in 
+	precedenza non lo era. I suoi parametri sono gli stessi del metodo <em>hide</em> e 
+	hanno il medesimo significato:</p>
+        <div class="code">
+          $(<em>selettore</em>).show(<em>speed</em>,<em>easing</em>,<em>callback</em>) </div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Toggle</div>
+
+	<p>Il metodo <strong>toggle</strong> alterna la visibilit&eacute; e invisibilit&eacute; di 
+	un oggetto. In pratica il suo funzionamento &eacute; lo stesso di <em>hide</em> se l'oggetto 
+	&eacute; visibile (lo rende cio&eacute; invisibile) e di <em>show</em> se l'oggetto &eacute; invisibile 
+	(lo rende visibile).</p>
+	<p>I suoi parametri sono gli stessi dei metodi <em>hide</em> e <em>show</em> e 
+	hanno il medesimo significato:</p>
+        <div class="code">
+          $(<em>selettore</em>).toggle(<em>speed</em>,<em>easing</em>,<em>callback</em>) </div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Esempio finale</div>
+
+	<p>Per vedere in azione i metodi e i parametri precedenti, 
+	consideriamo ora questo esempio di script completo:</p>
+        <div class="code">
+          <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $(&quot;#btn1&quot;).click(function(){
+        $(&quot;#avviso&quot;).html(&quot;Hide iniziato, velocit&eacute; 2000 ms, swing&quot;);
+        $(&quot;h1&quot;).hide(2000,&quot;swing&quot;, function(){$(&quot;#avviso&quot;).html(&quot;Hide terminato&quot;);} );
+    });
+    $(&quot;#btn2&quot;).click(function(){
+        $(&quot;#avviso&quot;).html(&quot;Show iniziato, velocit&eacute; 4000 ms, linear&quot;);
+        $(&quot;h1&quot;).show(4000,&quot;linear&quot;, function(){$(&quot;#avviso&quot;).html(&quot;Show terminato&quot;);} );
+    });
+    $(&quot;#btn3&quot;).click(function(){
+        $(&quot;#avviso&quot;).html(&quot;Toggle iniziato, parametri di default&quot;);
+        $(&quot;h1&quot;).toggle(function(){$(&quot;#avviso&quot;).html(&quot;Toggle terminato&quot;);} );
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;</pre>
+			<pre>&lt;h1&gt;Mostra e nascondi&lt;/h1&gt;
+&lt;p&gt;Clicca su uno dei bottoni qui sotto:&lt;/p&gt;
+&lt;p id=&quot;avviso&quot;&gt;&lt;/p&gt;</pre>
+			<pre>&lt;button id=&quot;btn1&quot;&gt;Hide&lt;/button&gt;
+&lt;button id=&quot;btn2&quot;&gt;Show&lt;/button&gt;
+&lt;button id=&quot;btn3&quot;&gt;Toggle&lt;/button&gt;</pre>
+			<pre>&lt;/body&gt;
+&lt;/html&gt;</pre>
+	</div>
+	<p>Il lettore pu&eacute; provarne l'effetto qui sotto:</p>
+
+<div style="border: solid thin black">
+<h1 id="gioco">Mostra e nascondi</h1>
+<p>Clicca su uno dei bottoni qui sotto:</p>
+<p id="avviso"></p>
+
+<button id="btn1">Hide</button>
+<button id="btn2">Show</button>
+<button id="btn3">Toggle</button>
+</div>
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

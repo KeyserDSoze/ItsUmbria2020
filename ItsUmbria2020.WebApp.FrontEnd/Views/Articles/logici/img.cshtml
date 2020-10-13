@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">Immagini &lt;img&gt; </div>
+	 <p>&nbsp;</p>
+	
+	 
+	 <table border="1" width="100%">
+       <tbody>
+         <tr>
+           <td><strong>Descrizione</strong></td>
+           <td>identifica un file immagine che il browser visualizzer&agrave; al          posto dell'elemento </td>
+         </tr>
+         <tr>
+           <td><strong>Tipo</strong></td>
+           <td>elemento vuoto inline </td>
+         </tr>
+         <tr>
+           <td><strong>Attributi</strong></td>
+           <td>src,  alt, height,  width</td>
+         </tr>
+       </tbody>
+     </table>
+     
+     <p>Il tag &lt;img&gt; permette di inserire immagini nei documenti HTML.      Questo tag non introduce un'interruzione di riga (elemento inline). Inserendo quindi il tag      in una riga di testo, l'immagine sar&agrave; visualizzata insieme al      testo.</p>
+	<p><span class="style1">ATTENZIONE</span>: essendo un elemento inline, il 
+	tag &lt;img&gt; deve sempre essere racchiuso all'interno di un elemento di blocco 
+	(come &lt;p&gt; o &lt;div&gt;) e non deve mai essere scritto direttamente nel body.</p>
+	 	 <div class="titolo">Attributo src </div>
+     <p>L'attributo <strong>src</strong> (source) specifica l'indirizzo dell'immagine da visualizzare e deve essere indicato obbligatoriamente. Come nel caso dell'<a href="a.html">attributo href del tag &lt;a&gt;</a>, &egrave; possibile indicare un indirizzo relativo o assoluto per l'immagine. Per esempio in </p>
+     <div class="code">
+       &lt;img src=&quot;foto.jpg&quot;&gt;
+     </div>
+     <p>il file contenente l'immagine (foto.jpg) si trova nella cartella corrente. </p>
+	<p><span class="style1">ATTENZIONE</span>: anche l'indirizzo dell'immagine 
+	fornito in src pu&eacute; essere assoluto o relativo, <a href="a.html">come gi&eacute; 
+	abbiamo visto parlando del tag &lt;a&gt;</a>. In particolare, se l'immagine si 
+	trova sul server che ospita il sito e nella stessa cartella della pagina 
+	html, &eacute; sufficiente scrivere il nome del file senza indicare nessun 
+	percorso. Se invece l'immagine si trova in rete (su un altro sito), dovremmo 
+	fornire come indirizzo l'intera url dell'immagine, per esempio: </p>
+     <div class="code">
+       &lt;img src=&quot;www.programmiamo.altervista/digitale/immagini/foto.jpg&quot;&gt;
+     </div>
+     <p>&nbsp;</p>
+
+     <div class="titolo">Allineare un'immagine</div>
+     <p>Per centrare un'immagine in una pagina, occorre creare un      paragrafo (o un elemento div) centrato ed inserire l'immagine all'interno del paragrafo (o del div). Ecco un esempio di centratura di un'immagine con un paragrafo 
+		(vedremo pi&eacute; avanti nel dettaglio l'<a href=" stili/stili6.html">uso degli stili
+		</a>per questo e per 
+		altri scopi):</p>
+     <div class="code">&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../img/problema.gif&quot;&gt;&lt;/p&gt;</div>
+     <p>il cui risultato &egrave; il seguente:</p>
+<p style="text-align: center"><img src="../img/problema.gif" /></p>
+<p>Se il metodo precedente non funziona, un'altra soluzione &egrave; la seguente:</p>
+<div class="code">&lt;div&gt;&lt;img style = &quot;display: block;  margin: 0 auto;&quot; src=&quot;../../img/problema.gif&quot;&gt;&lt;/div&gt;</div>
+<div><img style = "display: block; margin: 0 auto;" src="../img/problema.gif"></div>
+<p>Un altro problema comune &egrave; quello di allineare un'immagine a sinistra di un paragrafo come nell'esempio mostrato qui sotto:</p>
+<p style="border: 1px solid"><img src="../img/problema.gif" alt="immagine" style="float:left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere pretium viverra. Aliquam sit amet lobortis lectus, nec sollicitudin neque. Ut tortor turpis, placerat eget velit a, aliquam lacinia metus. Quisque consectetur turpis erat, ac egestas eros tristique sit amet. Aenean interdum nunc vel congue fringilla. Integer porta diam dui, scelerisque rutrum ex molestie vitae. Cras pretium, tellus commodo dictum malesuada, magna magna elementum tortor, blandit egestas tellus mauris eu ante.Phasellus a urna lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin eget nulla mauris. Ut dapibus ullamcorper nisl dictum pharetra. Quisque accumsan convallis pulvinar. Nullam sodales placerat diam sed consequat. Nam leo orci, sodales sed dolor dapibus, tristique ultricies ex. Cras libero ante, ornare et rhoncus a, aliquam commodo ipsum.</p>
+<p>Per ottenere il risultato precedente, il codice da usare &egrave; questo:</p>
+<div class="code">&lt;div&gt;&lt;img style = &quot;style=float:left&quot; src=&quot;../../img/problema.gif&quot;&gt;&lt;/div&gt;</div>
+<p>&nbsp; </p>
+<div class="titolo">Attributo alt </div>
+     <p>L'attributo alt <em>(alternate</em> o alternativo) in Html 5 &egrave; obbligatorio. Questo attributo contiene un testo che viene      visualizzato quando l'utente posiziona il      puntatore del mouse sull'immagine o al posto dell'immagine se questa non      &egrave; disponibile o quando il browser non carica le immagini. La      stringa di descrizione pu&ograve; contenere fino a 1024 caratteri.</p>
+     <div class="code">&lt;img src=&quot;../../img/problema.gif&quot; alt=&quot;Punto interrogativo&quot;&gt;</div>
+     <p>L'attributo 'alt' &egrave; un ottimo sistema per fornire le      informazioni agli utenti che non possono vedere le immagini. Una buona      descrizione dell'immagine aiuta a intuire cosa contiene/rappresenta      l'immagine a chi non ha la possibilit&agrave; di vederle (es. persone con problemi di vista).</p>
+	<p><span class="style1">ATTENZIONE</span>: l'uso dell'attributo alt per le 
+	immagini &eacute; obbligatorio a partire da HTML 4.0</p>
+	<p>&nbsp;</p>
+     <div class="titolo">Attributi height e width </div>
+     <p>Gli attributi height e width permettono di specificare la dimensione      che l'immagine dovr&agrave; occupare all'interno della pagina. In questo      modo si accelera la visualizzazione del documento in quanto il browser non      deve attendere di scaricare il file immagine prima di iniziare a visualizzare il      documento. L'altezza ('height') e la larghezza ('width') devono essere      espresse in pixel. Per esempio:</p>
+     <div class="code">&lt;img src=&quot;../../img/problema.gif&quot; width=&quot;38&quot; height=&quot;54&quot; 
+					alt=&quot;Punto interrogativo&quot;&gt;</div>
+     <p>Variando i valori degli attributi 'height' e 'width' &egrave; anche possibile creare      una miniatura o ridimensionare un'immagine. Si noti per&ograve; che in questo modo si riducono le dimensioni dell'immagine visualizzata, non quelle del file che la contiene: se si vuole ricavare una piccola      immagine da una grande, conviene perci&ograve; ridimensionare il file con un programma di      grafica. </p>
+     <p>&nbsp;&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

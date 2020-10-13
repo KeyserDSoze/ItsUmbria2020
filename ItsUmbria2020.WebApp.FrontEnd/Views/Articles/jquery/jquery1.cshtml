@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Javascript: i problemi di una crescita troppo impetuosa</div>
+
+	<p>Javascript, nato come semplice linguaggio di scripting per aggiungere 
+	effetti dinamici a una pagina html, si &eacute; negli anni evoluto fino a diventare 
+	un vero e proprio linguaggio di programmazione, molto potente, complesso e 
+	ricco di funzionalit&eacute;. Questa sua &quot;ricchezza&quot;, spesso frutto di 
+	successivi &quot;miglioramenti&quot; e aggiunte (piuttosto che di un piano sistematico 
+	e organico di sviluppo del linguaggio stesso) costituiscono per&eacute; anche un 
+	formidabile ostacolo e una grande difficolt&eacute;, specie per lo sviluppatore 
+	alle prime armi. Di fatto la complessit&eacute; del linguaggio rispecchia la 
+	complessit&eacute; delle applicazioni di JS: 
+	oggigiorno le pagine realizzate in questo linguaggio offrono all'utente un'esperienza di 
+	utilizzo ormai alla pari con quella di una vera e propria applicazione 
+	dedicata (come per esempio un normale programma in esecuzione sul PC).</p>
+	<p>Come se non bastasse, le potenzialit&eacute; (e la complessit&eacute;) del linguaggio 
+	vengono ulteriormente accresciute dall'interazione con i fogli stile CSS, a loro volta evolutisi nel 
+	corso degli anni fino a incorporare essi stessi un proprio &quot;linguaggio di scripting&quot;, in grado di produrre nelle pagine effetti dinamici, animazioni, 
+	etc. (fogli stile CSS3).</p>
+	<p>Un ulteriore fattore di complicazione &eacute; infine la grande diversit&eacute; dei dispositivi 
+	hardware e delle piattaforme software (i browser) su cui il linguaggio JS 
+	viene eseguito. Tale diversit&eacute; impone allo sviluppatore uno studio attento 
+	di tutti i possibili problemi di compatibilit&eacute;, con il risultato che il 
+	codice prodotto diventa spesso molto intricato e difficile da mantenere (bisogna infatti 
+	prevedere tutti i casi possibili e fornire alternative di codice che 
+	funzionino su tutti i browser, compresi quelli pi&eacute; datati ma ancora in 
+	circolazione - cio&eacute; effettuare quella che 
+	viene chiamata <strong>codifica cross-browser</strong>).</p>
+
+<div class="titolo">Cos'&eacute; un framework</div>
+
+	<p>Per cercare di affrontare, semplificare e risolvere tutti i numerosi 
+	problemi di mantenimento e sviluppo del codice e di compatibilit&eacute; 
+	cross-browser, sono stati sviluppati, a partire dagli anni 2000, numerosi 
+	framework.</p>
+	<p>Col termine <strong>framework</strong> (termine della lingua inglese che 
+	pu&eacute; essere tradotto come <em>intelaiatura</em> o <em>struttura</em>) in informatica si intende 
+	un'architettura logica di supporto, su cui un software pu&eacute; essere progettato 
+	e realizzato. Lo scopo &eacute; quello di facilitare lo sviluppo di nuovi programmi da parte del programmatore. 
+	In pratica un framework si presenta, attraverso l'uso massiccio della 
+	definizione di nuovi prototipi e oggetti, come una estensione, 
+	semplificazione e adattamento delle regole di scrittura di un particolare 
+	linguaggio.</p>
+	<p>Facciamo subito un esempio, per evitare che questo discorso rimanga 
+	troppo astratto e fumoso. Sappiamo da tempo che in JS esiste un metodo <em>document.getElementById
+	</em>che permette di accedere agli attributi di un oggetto, per esempio:</p>
+        <div class="code">
+          &nbsp;document.getElementById('omino').src='../img/omino2.jpg'</div>
+	<p>Usando il framework <strong>jQuery</strong>, che andremo a studiare in 
+	maggiore dettaglio nelle prossime lezioni, la stessa &quot;istruzione&quot; pu&eacute; essere 
+	scritta come:</p>
+        <div class="code">
+          $(&quot;#omino&quot;).attr(&quot;src&quot;,&quot;../img/omino2.jpg&quot;)</div>
+	<p>Come si pu&eacute; notare, il framework arricchisce in un certo senso il 
+	linguaggio di nuove &quot;istruzioni&quot;. In JS infatti non esiste l'operatore $ 
+	usato come nell'esempio qui sopra, n&eacute; tanto meno esiste un metodo <em>attr</em>. 
+	</p>
+	<p>In realt&eacute; non si tratta di nuove istruzioni, ma di nuovi oggetti, propriet&eacute; 
+	e metodi definiti usando la sintassi base del JS. Tuttavia il programmatore 
+	pu&eacute; tranquillamente far finta, quando utilizza un particolare framework, di 
+	avere a disposizione nuove istruzioni e che la sintassi del linguaggio di 
+	partenza sia stata arricchita (il framework estende infatti la sintassi 
+	originaria, non abolisce 
+	le vecchie istruzioni e metodi, che possono comunque essere sempre 
+	utilizzati).</p>
+
+<div class="titolo">jQuery</div>
+
+	<p>Il concetto di framework non &eacute; specifico di JS, ma esistono framework 
+	scritti appositamente per molti linguaggi di programmazione, dal C, al PHP, 
+	al Phython etc.</p>
+	<p>Nel corso degli anni sono stati sviluppati numerosi framework per 
+	semplificare la scrittura di programmi in JS. Fra i principali ricordiamo 
+	qui Angular, React, Ember, Aurelia, Meteor, Backbone e molti altri dai nomi 
+	esotici e misteriosi. Ognuno di essi offre vantaggi e svantaggi rispetto 
+	agli altri, &eacute; conveniente per una particolare categoria di programmi o per 
+	una particolare tipologia di programmatori. Alcuni dei framework sono 
+	opensource, altri semplicemente freeware e altri ancora vengono distribuiti 
+	commercialmente.</p>
+	<p>Qui nel seguito vogliamo presentare rapidamente uno dei framework pi&eacute; 
+	usati e diffusi, forse quello pi&eacute; popolare anche se non necessariamente il 
+	pi&eacute; performante o potente: <strong>jQuery</strong>. Pubblicato per la prima 
+	volta nel gennaio 2006 da John Resig, &eacute; un progetto tuttora attivo e in 
+	evoluzione, gestito da un gruppo di sviluppatori guidato da Dave Methvin. 
+	Attualmente, anche Microsoft e Nokia forniscono di serie jQuery sulle 
+	proprie piattaforme.</p>
+	<p>jQuery fornisce metodi e funzioni per gestire al meglio aspetti grafici e 
+	strutturali come posizione di elementi, animazioni, 
+	manipolazione del DOM e altro ancora, mantenendo la compatibilit&eacute; tra 
+	browser diversi e standardizzando gli oggetti messi a disposizione 
+	dall'interprete JavaScript del browser. </p>
+	<p>Inoltre &eacute; possibile espandere ulteriormente l'ambito di applicazione di 
+	jQuery usando i cosiddetti plugin, cio&eacute; delle estensioni di jQuery che possono essere 
+	scaricate dal <a target="_blank" href="https://plugins.jquery.com/">jQuery 
+	plugin repository</a> e che aumentano ulteriormente le potenzialit&eacute; del 
+	framework. Per esempio nel repository si trovano plugin per animare i colori 
+	di un oggetto, per modificare il modo in cui vengono realizzate le 
+	animazioni (easing), per creare complesse finestre di dialogo, per gestire 
+	calendari e letteralmente per centinaia di altre possibili applicazioni.</p>
+	<p>Il modo in cui jQuery ha rivoluzionato lo sviluppo web grazie alla sua 
+	semplicit&eacute; di utilizzo ha portato alla creazione del seguente modo di dire: 
+	&#8220;Io non sviluppo scrivendo JavaScript, sviluppo scrivendo jQuery&#8221;. </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

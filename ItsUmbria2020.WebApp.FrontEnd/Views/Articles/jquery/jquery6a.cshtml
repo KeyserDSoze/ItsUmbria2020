@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2" style="left: 0px; top: 0px">
+    <!-- Contneuti -->
+
+<div class="titolo">Filtrare gli elementi</div>
+
+	<p>E' possibile restringere la selezione usando i cosiddetti filtri. 
+	Osserviamo l'esempio seguente:</p>
+        <div class="code">
+          $('p').filter(':first').hide();&nbsp;&nbsp;&nbsp;&nbsp; // nasconde il 
+			primo paragrafo nel documento</div>
+        <p>Si osservi qui l'uso del metodo <em>filter</em> che viene <strong>concatenato</strong> 
+		(<em>chained</em>), tramite il punto, alla selezione effettuata 
+		precedentemente. In questo semplice esempio abbiamo il concatenamento di 
+		tre metodi diversi:</p>
+	<p class="style1">
+	<img alt="Concatenamento di metodi" src="../img/jqimg35.gif" /></p>
+	<p>Questo concatenamento di oggetti e sotto-oggetti &eacute; una struttura tipica 
+	che abbiamo gi&eacute; incontrato per esempio parlando di DOM. In <em>jQuery</em> viene 
+	usata molto spesso. Il punto importante da comprendere bene che ogni metodo 
+	concatenato modifica il risultato del metodo precedente. Per esempio nel 
+	nostro caso:</p>
+	<ul>
+					<li>$('p') seleziona tutti i paragrafi</li>
+					<li>filter(':first') filtra il primo elemento della 
+					selezione precedente (cio&eacute; solo il primo paragrafo)</li>
+					<li>hide() nasconde il risultato del filtraggio</li>
+	</ul>
+	<p>Tornando ai filtri, jQuery dispone di molti filtri diversi (si 
+	distinguono tutti dai due punti prima del nome del filtro), che sono 
+	sostanzialmente gli stessi usati nei fogli stile CSS3 (per cui rimandiamo a 
+	questo <a target="_blank" href="http://api.jquery.com/category/selectors/">elenco completo</a>).</p>
+	<p>Osserviamo che &eacute; possibile applicare il filtro anche direttamente nella 
+	definizione del selettore, in questo modo (alternativo al precedente):</p>
+        <div class="code">
+          $('p:first').hide();&nbsp;&nbsp;&nbsp;&nbsp; // nasconde il 
+			primo paragrafo nel documento</div>
+	<p>&nbsp;</p>
+
+<div class="titolo">Il metodo eq</div>
+
+	<p>Se la selezione comprende pi&eacute; di un elemento, &eacute; anche possibile filtrarne 
+	uno in base al suo indice usando il metodo <em>eq</em>, nel seguente modo:</p>
+        <div class="code">
+          $('p').eq(2).hide();&nbsp;&nbsp;&nbsp;&nbsp; // nasconde il terzo paragrafo nel documento</div>
+	<p>Gli elementi sono numerati come gli indice di un vettore, a partire da 0 
+	(il primo elemento presente nella pagina).</p>
+	<p>Anche in questo caso si pu&eacute; applicare il filtro direttamente nella 
+	definizione del selettore:</p>
+        <div class="code">
+          $('p:eq(2)').hide();&nbsp;&nbsp;&nbsp;&nbsp; // nasconde il terzo paragrafo nel documento</div>
+	<p>L'uso del metodo <em>eq</em> in combinazione con la propriet&eacute; <em>length</em> 
+	(che fornisce la lunghezza della selezione) permette di realizzare cicli 
+	sugli elementi selezionati. Per esempio questo ciclo nasconde i paragrafi di 
+	posizione pari nella pagina:</p>
+        <div class="code">
+          // nasconde tutti i paragrafi pari<br />
+			for (i=0;i&lt; $('p').length;i=i+2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			$('p').eq(i).hide(); </div>
+	<p>L'esempio viene fornito per mostrare le potenzialit&eacute; del metodo eq e la 
+	possibilit&eacute; di usare tutte le istruzioni javascript (come in questo caso il 
+	ciclo for) anche quando si programma in jQuery.</p>
+	<p>Tuttavia raramente in jQuery si ha la necessit&eacute; di effettuare cicli per 
+	le selezioni. Per esempio nel nostro caso una soluzione indubbiamente pi&eacute; 
+	elegante &eacute; questa:</p>
+        <div class="code">
+          $('p').filter(':even').hide();&nbsp;&nbsp;&nbsp; // nasconde tutti i 
+			paragrafi pari </div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

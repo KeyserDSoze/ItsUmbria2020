@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+	 <div class="titolo">List-style-type</div>
+    <p> <strong>per le liste non ordinate (ul):</strong>&nbsp;list-style-type: 
+	none | disc | circle | square<br />
+	<strong>per le liste ordinate (ol):</strong>&nbsp;list-style-type: decimal | 
+	leading-zero | lower-alpha | lower-latin | upper-alpha | upper-latin</p>
+	<p> Questo stile permette di definire l'aspetto dei diversi elementi di una
+	<a href=" logici/liste.html">lista</a>. Si consideri l'esempio seguente:</p>
+     <div class="code">
+       &lt;ul style = &quot;list-style-type:square&quot;&gt;<br />
+&lt;li&gt;primo elemento&lt;/li&gt;<br />
+&lt;li&gt;secondo elemento&lt;/li&gt;<br />
+&lt;li&gt;terzo elemento&lt;/li&gt;<br />
+&lt;/ul&gt; 
+    </div>
+     <p> &nbsp;che viene visualizzato nel seguente modo:</p>
+<ul style = "list-style-type:square">
+<li>primo elemento</li>
+<li>secondo elemento</li>
+<li>terzo elemento</li>
+</ul> 
+	<p> Si osservi come ulteriore esempio il seguente:</p>
+     <div class="code">
+       &lt;ol style = &quot;list-style-type:upper-alpha&quot;&gt;<br />
+&lt;li&gt;primo elemento&lt;/li&gt;<br />
+&lt;li&gt;secondo elemento&lt;/li&gt;<br />
+&lt;li&gt;terzo elemento&lt;/li&gt;<br />
+&lt;/ol&gt; 
+    </div>
+     <p> che produce la seguente visualizzazione:</p>
+<ol style = "list-style-type:upper-alpha">
+<li>primo elemento</li>
+<li>secondo elemento</li>
+<li>terzo elemento</li>
+</ol> 
+	<p>&nbsp; </p>
+	 <div class="titolo">List-style-image</div>
+    <p> <strong>sintassi:</strong>&nbsp;list-style-image: 
+	url(<em>'immagine'</em>)</p>
+	<p> Consente di usare un'immagine (una piccola icona) per personalizzare i 
+	diversi elementi di una lista non ordinala (ul). Si consideri l'esempio 
+	seguente:</p>
+	<ul>
+	<li style="list-style-image:url('../../img/next.gif')">primo elemento</li>
+		<li style="list-style-image:url('../../img/prev.gif')">secondo 
+		elemento&nbsp;&nbsp;&nbsp; </li>
+	</ul>
+	<p> realizzato nel seguente modo:</p>
+     <div class="code">
+       &lt;ul&gt;<br />
+		&lt;li style=&quot;list-style-image:url('../../img/next.gif')&quot;&gt;primo 
+		elemento&lt;/li&gt;<br />
+		&lt;li style=&quot;list-style-image:url('../../img/prev.gif')&quot;&gt;secondo 
+		elemento&lt;/li&gt;<br />
+		&lt;/ul&gt;</div>
+     <p>&nbsp; </p>
+	 <div class="titolo">Shorthand (abbreviazioni) </div>
+	 <p>E' possibile specificare diversi stili di tipo font con un'unica istruzione (si parla in questo caso di <strong>shorthand</strong> o abbreviazione). Per esempio:</p>
+	 <div class="code">
+       <p>list-style:square inside url(image.gif);</p>
+    </div>
+	 <p>equivale a:</p>
+	 <div class="code">
+       <p>list-style-type:square;<br />
+       list-style-position:inside;<br />
+       list-style-image:url(image.gif);</p>
+    </div>
+	 <p>Per quanto riguarda l'ordine con cui devono essere specificati i diversi stili, il W3C raccomanda di seguire l'ordine precedente. E' possibile omettere qualsiasi valore. Se un valore viene omesso, viene utilizzato il corrispondente valore di default. </p>
+    <p>&nbsp; </p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+
