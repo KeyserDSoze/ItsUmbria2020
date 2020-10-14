@@ -2,4 +2,70 @@
     ViewData["Title"] = "Exercise";
 }
 
-Write here your code to test !!!
+<h3>Esercizio 1: HTML</h3>
+<form action="/login.aspx">
+
+    <table border="1" style="width:400px;height:auto;">
+        @*Prima Riga*@
+        <tr>
+            <td>
+                <strong>Nome:</strong>
+            </td>
+            <td>
+                <input type="text" />
+            </td>
+        </tr>
+
+        @*Seconda Riga*@
+        <tr>
+            <td><strong>Cognome:</strong></td>
+            <td><input type="text" /></td>
+        </tr>
+
+        @*Terza Riga*@
+        <tr>
+            <td><strong>Indirizzo mail:</strong></td>
+            <td><input type="email" /></td>
+        </tr>
+
+        @*  4 *@
+        <tr>
+            <td><strong>Sesso:</strong></td>
+            <td>
+                <input type="radio" id="male" name="gender" value="male" />
+                <label>Maschio</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label>Femmina</label>
+            </td>
+        </tr>
+
+        @*5*@
+        <tr>
+            <td><strong>Nazionalità:</strong></td>
+            <td>
+                <select name="country" id="country">
+                    <option value="italy">Italiana</option>
+                    <option value="spain">Spagnola</option>
+                </select>
+            </td>
+        </tr>
+
+        @* 6 *@
+        <tr>
+            <td><strong>Messaggio:</strong></td>
+            <td>
+                <textarea></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Invia" />
+                <input type="button" value="Azzera" />
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+
