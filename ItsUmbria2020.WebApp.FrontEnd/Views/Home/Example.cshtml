@@ -1,0 +1,425 @@
+﻿@{
+    ViewData["Title"] = "That's me";
+}
+
+<ul>
+
+    <li>
+        <h3>Animazione 1</h3>
+        <p>Vengono creati 100 elementi div con la stessa animazione che prevede il cambio di 4 colori.</p>
+        <p>Notare che ricaricando la pagina gli elementi cambiano posizione.</p>
+        <div id="animId1"></div>
+        <style>
+            .animClass1 {
+                width: 5px;
+                height: 5px;
+                background: red;
+                position: absolute;
+                animation: animation1 5s infinite normal;
+                -webkit-animation: animation1 5s infinite normal; /* Safari and Chrome */
+            }
+
+            @@keyframes animation1 {
+                0% {
+                    background: red;
+                }
+
+                25% {
+                    background: yellow;
+                }
+
+                50% {
+                    background: blue;
+                }
+
+                75% {
+                    background: green;
+                }
+
+                100% {
+                    background: red;
+                }
+            }
+
+            @@-webkit-keyframes animation1 /* Safari and Chrome */ {
+                0% {
+                    background: red;
+                }
+
+                25% {
+                    background: yellow;
+                }
+
+                50% {
+                    background: blue;
+                }
+
+                75% {
+                    background: green;
+                }
+
+                100% {
+                    background: red;
+                }
+            }
+        </style>
+        <script>
+            for (i = 0; i < 100; i++) {
+                var iDiv = document.createElement('div');
+                iDiv.className = 'animClass1';
+                iDiv.style.top = (Math.floor(Math.random() * 100) + 1) + "%";
+                iDiv.style.left = (Math.floor(Math.random() * 100) + 1) + "%";
+                document.getElementById('animId1').appendChild(iDiv);
+            }
+        </script>
+    </li>
+
+    <li>
+        <h3>Animazione 2</h3>
+        <p>Ad un div viene assegnata un'animazione che prevede lo spostamento orizzontale con un ritardo di 2 secondi</p>
+        <div id="animId2" class="animClass3" onclick="toggleAnimation()"></div>
+        <p>Provare a cliccare sul quadrato.</p>
+        <style>
+            #animId2 {
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: relative;
+                background-color: blueviolet;
+            }
+
+            .animClass3 {
+                animation: animation2 5s linear 2s infinite alternate;
+                /* Firefox: */
+                -moz-animation: animation2 5s linear 2s infinite alternate;
+                /* Safari and Chrome: */
+                -webkit-animation: animation2 5s linear 2s infinite alternate;
+                /* Opera: */
+                -o-animation: animation2 5s linear 2s infinite alternate;
+            }
+
+            @@keyframes animation2 {
+                0% {
+                    left: 0px;
+                    top: 0px;
+                }
+
+                50% {
+                    left: 700px;
+                    top: 0px;
+                }
+
+                100% {
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+
+            @@-moz-keyframes animation2 /* Firefox */ {
+                0% {
+                    left: 0px;
+                    top: 0px;
+                }
+
+                50% {
+                    left: 700px;
+                    top: 0px;
+                }
+
+                100% {
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+
+            @@-webkit-keyframes animation2 /* Safari and Chrome */ {
+                0% {
+                    left: 0px;
+                    top: 0px;
+                }
+
+                50% {
+                    left: 700px;
+                    top: 0px;
+                }
+
+                100% {
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+
+            @@-o-keyframes animation2 /* Opera */ {
+                0% {
+                    left: 0px;
+                    top: 0px;
+                }
+
+                50% {
+                    left: 700px;
+                    top: 0px;
+                }
+
+                100% {
+                    left: 0px;
+                    top: 0px;
+                }
+            }
+        </style>
+        <script>
+            function toggleAnimation() {
+                $("#animId2").toggleClass("animClass3");
+            }
+        </script>
+    </li>
+
+    <li>
+        <h3>Transizione 1</h3>
+        <p>Rotazione ed aumento delle dimensioni.</p>
+        <div id="animId3">Posiziona il mouse su questo elemento</div>
+        <style>
+            #animId3 {
+                width: 100px;
+                height: 100px;
+                background: yellow;
+                -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* For Safari 3.1 to 6.0 */
+                transition: width 2s, height 2s, transform 2s;
+            }
+
+                #animId3:hover {
+                    width: 200px;
+                    height: 200px;
+                    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+                    transform: rotate(180deg);
+                }
+        </style>
+    </li>
+
+    <li>
+        <h3>Transizione 2</h3>
+        <p>Aumento della larghezza dell'elemento.</p>
+        <div id="animId4">Posiziona il mouse su questo elemento e mantienilo sopra per più di due secondi.</div>
+        <p>Tornerà alla sua dimensione di partenza dopo aver tolto il mouse ed aspettato 2 secondi.</p>
+        <style>
+            #animId4 {
+                width: 200px;
+                height: 100px;
+                background: red;
+                transition-property: width;
+                transition-duration: 3s;
+                transition-timing-function: linear;
+                transition-delay: 2s;
+                /* Safari */
+                -webkit-transition-property: width;
+                -webkit-transition-duration: 1s;
+                -webkit-transition-timing-function: linear;
+                -webkit-transition-delay: 2s;
+            }
+
+                #animId4:hover {
+                    width: 500px;
+                }
+        </style>
+
+
+
+        <h4>Cambiamento 2D 1</h4>
+        <p>Al div che contiene l'immagine possono essere assegnate i seguenti cambiamenti: translate, rotate, scale, skew, matrix</p>
+        <p>Viene mostrato l'effetto del matrix, ma è presente il codice per le altre, basta abilitare quello che si vuole visualizzare.</p>
+        <div id="animId5" class="animClass2">
+            <img src="~/img/libri.jpg" />
+        </div>
+        <style>
+            .animClass2 {
+                width: 150px;
+                height: 112px;
+                border: 1px solid green;
+            }
+
+            #animId5 {
+                /*transform: translate(50px,20px);
+                -ms-transform: translate(50px,20px);
+                -webkit-transform: translate(50px,20px);
+                transform: rotate(30deg);
+                -ms-transform: rotate(30deg);
+                -webkit-transform: rotate(30deg);
+                -ms-transform: scale(1.5,2);
+                -webkit-transform: scale(1.5,2);
+                transform: scale(1.5,2);
+                -ms-transform: skew(20deg,10deg);
+                transform: skew(20deg,10deg);*/
+                -ms-transform: matrix(1, 0, 0.5, 1, 150, 0);
+                transform: matrix(1, 0, 0.5, 1, 150, 0);
+            }
+        </style>
+
+    </li>
+
+    <li>
+        <h3>Bottoni</h3>
+        <p>L'interazioni con il bottone farà apparire un div con effetto slide</p>
+        <style type="text/css">
+            #elemento, #toggleButton {
+                background-color: black;
+                color: white;
+                font: normal 12px tahoma, arial;
+                margin: 0;
+                padding: 0;
+            }
+
+            #elemento {
+                text-align: center;
+            }
+
+            #toggleButton {
+                padding: 1% 3%;
+            }
+
+            .slideup, .slidedown {
+                overflow: hidden;
+                height: 0;
+                transition: height 0.5s;
+            }
+
+            .slidedown {
+                height: 100px;
+            }
+        </style>
+        <script type="text/javascript">
+            function slide() {
+                var e = document.getElementById("elemento");
+                e.className == "slideup" ? e.className = "slidedown" : e.className = "slideup";
+                var tb = $("#toggleButton");
+                if (tb.val() == "Mostra") tb.val("Nascondi");
+                else tb.val("Mostra");
+            }
+        </script>
+
+        <input id="toggleButton" type="button" onclick="slide()" value="Mostra" />
+        <div id="elemento" class="slideup"><spam>Contenuto che appare</spam></div>
+
+    </li>
+
+    <li>
+        <h3>Animazione 3</h3>
+        <p>Rotate X</p>
+        <div class="rotateX">
+            <img src="~/img/chisono.jpg" />
+        </div>
+        <style>
+            .rotateX {
+                animation: rotationX 3s infinite alternate;
+            }
+
+            @@keyframes rotationX {
+                from {
+                    transform: rotateX(0deg);
+                }
+
+                to {
+                    transform: rotateX(359deg);
+                }
+            }
+        </style>
+    </li>
+
+    <li>
+        <h3>Animazione 4</h3>
+        <p>Rotate Y</p>
+        <div class="rotateY">
+            <img src="~/img/cycle.jpg" />
+        </div>
+        <style>
+            .rotateY {
+                animation: rotationY 3s infinite alternate;
+                width: 200px;
+            }
+
+            @@keyframes rotationY {
+                from {
+                    transform: rotateY(0deg);
+                }
+
+                to {
+                    transform: rotateY(359deg);
+                }
+            }
+        </style>
+    </li>
+
+    <li>
+        <h3>Animazione 5</h3>
+        <p>Scale</p>
+        <div class="scalate">
+            <img src="~/img/chisono.jpg" />
+        </div>
+        <style>
+            .scalate {
+                animation: scalation 1s infinite alternate;
+            }
+
+            @@keyframes scalation {
+                from {
+                    transform: scale(1);
+                }
+
+                to {
+                    transform: scale(1.1);
+                }
+            }
+        </style>
+    </li>
+    <li>
+        <h3>Animazione 6</h3>
+        <p>Skew X</p>
+        <div class="skewableX">
+            <img src="~/img/durolavoro.jpg" />
+        </div>
+        <style>
+            .skewableX {
+                animation: skewX 3s infinite;
+                transform: skew(20deg);
+                animation-direction: alternate;
+            }
+
+            @@keyframes skewX {
+                0% {
+                    transform: skewX(20deg);
+                }
+
+                100% {
+                    transform: skewX(-20deg);
+                }
+            }
+        </style>
+    </li>
+    <li>
+        <h3>Animazione 7</h3>
+        <p>Skew Y</p>
+        <div class="skewableY">
+            <img src="~/img/home.png" />
+        </div>
+        <style>
+            .skewableY img {
+                width: 100%;
+            }
+
+            .skewableY {
+                width: 500px;
+                animation: skewY 3s infinite;
+                transform: skew(20deg);
+                animation-direction: alternate;
+            }
+
+            @@keyframes skewY {
+                0% {
+                    transform: skewY(20deg);
+                }
+
+                100% {
+                    transform: skewY(-20deg);
+                }
+            }
+        </style>
+    </li>
+</ul>

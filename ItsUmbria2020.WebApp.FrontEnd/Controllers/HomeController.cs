@@ -34,7 +34,7 @@ namespace ItsUmbria2020.WebApp.FrontEnd.Controllers
         {
             return View();
         }
-        
+
         public IActionResult Html()
         {
             return View("_Page", pages.FirstOrDefault(x => x.Name == "Html"));
@@ -55,7 +55,10 @@ namespace ItsUmbria2020.WebApp.FrontEnd.Controllers
         {
             return View();
         }
-        
+        public IActionResult Example()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult GetPage(string name)
         {
