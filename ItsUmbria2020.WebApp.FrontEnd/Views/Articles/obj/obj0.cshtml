@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Definizione di oggetto</div>
+        <p>Oggi si parla spesso di <strong>Programmazione Orientata agli Oggetti</strong> 
+		(<strong>OOP</strong>, <em>Object Oriented Programming</em>)&nbsp; come 
+		della tecnica pi&eacute; moderna e attuale per programmare, ma il concetto 
+		rimane abbastanza misterioso e nascosto dietro un complicato gergo da 
+		informatici.</p>
+	<p>Cos'&eacute; in effetti un oggetto (nel senso informatico del termine)? In realt&eacute; il programmatore (particolarmente quello alle prime armi) 
+	spesso usa gli oggetti senza neppure rendersene conto. Per esempio, quando 
+	scriviamo:</p>
+	<p class="style1">document.getElementById(&quot;pippo&quot;).value</p>
+	<p>stiamo facendo riferimento a un oggetto (quello con id=&quot;pippo&quot;) e a una 
+	sua propriet&eacute; (value). Allo stesso modo quando scriviamo:</p>
+	<p class="style1">window.alert(&quot;Ciao!&quot;)</p>
+	<p>stiamo usando l'oggetto window e il suo metodo alert (spesso, come 
+	abbiamo visto, si omette il nome dell'oggetto parent window e si scrive solo 
+	alert: quando non ci sono ambiguit&eacute; nei nomi il JS consente di fare queste 
+	semplificazioni).</p>
+	<p>In modo molto semplice e generale possiamo definire un <strong>oggetto</strong> 
+	come qualcosa (un'entit&eacute;) dotata di propriet&eacute; (ovvero di valori) e di metodi (ovvero 
+	di azioni). 
+	Il concetto &eacute; ripreso per analogia con gli oggetti della vita quotidiana. 
+	Per esempio un'automobile &eacute; un oggetto che ha diverse propriet&eacute; (cilindrata, 
+	colore, marca, modello, peso etc.): le <strong>propriet&eacute;</strong> sono 
+	evidentemente valori caratteristici dell'oggetto. I <strong>metodi</strong> 
+	sono invece le azioni che &eacute; possibile compiere sull'oggetto. Per esempio nel 
+	caso dell'automobile i metodi potrebbero essere: avvia(), spegni(), frena() 
+	eccetera.</p>
+	<p>Le propriet&eacute; sono come le variabili, cio&eacute; ad esse &eacute; possibile assegnare 
+	dei valori. I metodi sono invece delle funzioni (da qui l'uso delle 
+	parentesi tonde accanto al nome), cio&eacute; eseguono delle azioni (sono dei sottoprogrammi). 
+	Per esempio window.alert() &eacute; un metodo appartenente all'oggetto window, 
+	mentre window.location &eacute; una propriet&eacute; dello stesso oggetto. Si noti il 
+	punto che separa il nome dell'oggetto dalla sua propriet&eacute; o metodo:</p>
+	<p class="style1"><em>oggetto.propriet&eacute;</em></p>
+	<p class="style1"><em>oggetto.metodo()</em></p>
+	<p>Dunque, riassumendo, un oggetto &eacute; una collezione di variabili (propriet&eacute;) e 
+	di metodi (funzioni), che si riferiscono tutti alla stessa cosa (l'oggetto 
+	stesso, appunto!).</p>
+
+        <div class="titolo"> Perch&eacute; complicarsi la vita? A cosa servono gli 
+						ogggetti</div>
+        <p>Gli informatici dicono che la programmazione ad oggetti &eacute; un 
+		paradigma di programmazione. In parole povere paradiga significa 
+		&quot;tecnica, metodo&quot;: cio&eacute; la programmazione ad oggetti &eacute; una tecnica per 
+		scrivere i programmi. Un po' come l'uso delle funzioni, per dividere il 
+		codice in tante parti pi&eacute; piccole e pi&eacute; facilmente gestibili: anche 
+		questo &eacute; un paradigma (=tecnica) di programmazione (si parla infatti a 
+		questo proposito di <em>programmazione procedurale</em>).</p>
+	<p>Come tutte le tecniche, anche la programmazione ad oggetti &eacute; utile se 
+	riesce a semplificare e a rendere pi&eacute; efficiente il lavoro del 
+	programmatore. Facciamo di nuovo riferimento alla programmazione 
+	procedurale, cio&eacute; all'uso delle funzioni: questa tecnica &eacute; utile perch&eacute; 
+	permette di scomporre il codice in porzioni pi&eacute; piccole e riutilizzabili.</p>
+	<p>Fino agli anni '80 del secolo scorso quasi nessuno aveva sentito parlare 
+	di programmazione ad oggetti. Erano pochissimi i linguaggi di programmazione 
+	che implementavano questa tecnica e per lo pi&eacute; erano utilizzati solo da 
+	pochi specialisti per ricerche e lavori sperimentali. Negli anni '80 e ancor 
+	pi&eacute; nei decenni successivi invece la programmazione ad oggetti ha conosciuto 
+	un vero e proprio boom. Era diventata di moda e quelli che continuavano a 
+	programmare alla vecchia maniera erano considerati conservatori e antiquati.</p>
+	<p>Parte della ragione di questo improvviso successo &eacute; stato lo sviluppo del 
+	linguaggio C++ (1985), una evoluzione del linguaggio C, creata apposta per 
+	includere gli oggetti. All'epoca il C (senza oggetti) era gi&eacute; un linguaggio 
+	di programmazione molto diffuso in svariati ambiti (dalla didattica, alla 
+	ricerca, alla programmazione in ambito industriale) e la sua evoluzione in 
+	un linguaggio ad oggetti (il C++ appunto) port&eacute; alla conversione di molti 
+	programmatori al nuovo paradigma di programmazione.</p>
+	<p>Un'altra ragione del successo dei linguaggi di programmazione ad oggetto 
+	&eacute; stata lo sviluppo delle interfacce grafiche, cio&eacute; di programmi con i quali 
+	l'utente poteva interagire cliccando su pulsanti o icone etc. Non a caso i 
+	primi sistemi operativi che utilizzano il mouse nascono alla met&eacute; degli anni 
+	'80 (Apple 1984). Una diffusione ancora maggiore delle interfacce grafiche 
+	si ha con l'avvento di internet, dei browser e dei linguaggi di scripting 
+	(come il javascript). Cosa c'entrano le interfacce grafiche con gli oggetti? 
+	La risposta &eacute; che, usando il concetto di oggetto, &eacute; molto facile e naturale 
+	descrivere gli &quot;oggetti&quot; di una interfaccia grafica: un pulsante, una 
+	casella di testo, un menu a discesa diventano tutti altrettanti oggetti.</p>
+	<p>In realt&eacute;, come mostrano i semplici esempi che abbiamo proposto prima, &eacute; 
+	praticamente impossibile usare il Javascript senza utilizzare gli oggetti. 
+	Gli elementi html di una pagina, le finestre del browser, gli array, le 
+	date, le istruzioni di input output, le funzioni matematiche fanno tutti 
+	riferimento a una struttura ad oggetti. </p>
+	<p>Per queste ragioni il programmatore JS, anche se non utilizza tutte le 
+	potenzialit&eacute; offerte dalla programmazione ad oggetti, non pu&eacute; ignorarne il 
+	significato e la struttura generale. Ed &eacute; proprio lo scopo di queste 
+	prossime lezioni: quello di offrire un'introduzione generale che permetta di 
+	usare in modo consapevole gli oggetti del JS, senza entrare nei dettagli ed 
+	approfondire i tecnicismi di questo argomento in realt&eacute; piuttosto complesso.</p>
+
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

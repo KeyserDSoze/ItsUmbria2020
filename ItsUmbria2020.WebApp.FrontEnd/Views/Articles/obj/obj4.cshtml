@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Un archivio anagrafico con gli oggetti</div>
+        <p>Vediamo ora un altro esempio nel quale l'uso degli oggetti presenta 
+		vantaggi. Supponiamo di voler costruire un archivio contenente i dati 
+		anagrafici di persone (nome, cognome, residenza, etc).</p>
+	<p>Chiaramente definire tutte queste informazioni come variabili singole 
+	produrrebbe una programmazione piuttosto confusa. Molto meglio raggruppare 
+	tutto quanto nella definizione di un oggetto. Supponiamo dapprima di voler 
+	registrare solo nome, cognome, sesso e recapito telefonico della persona. A 
+	questo scopo potremmo dichiarare un oggetto come nell'esempio qui sotto:</p>
+        <div class="code">
+          <pre>var persona = { 
+    nome: &quot;&quot;,
+    cognome: &quot;&quot;,
+    sesso: &quot;&quot;,
+    telefono: &quot;&quot;,
+};</pre>
+	</div>
+        <p>Tutte le propriet&eacute; dell'oggetto sono state inizializzate con stringhe 
+		vuote. Ci&eacute; ha semplicemente lo scopo di fornire un valore iniziale 
+		valido alle propriet&eacute; stesse. Poi i valori effettivi potranno essere 
+		assegnati da programma, come per esempio:</p>
+        <div class="code">
+          persona.nome = &quot;Mario&quot;;
+<br />
+persona.cognome = &quot;Rossi&quot;;
+<br />
+persona.sesso = &quot;M&quot;;
+<br />
+persona.telefono = &quot;02778800&quot;;</div>
+	<p>Se vogliamo arricchire i nostri dati anagrafici possiamo aggiungere per 
+	esempio l'indirizzo di residenza e la data e il luogo di nascita. Per questi 
+	dati possiamo usare due oggetti nested, annidati gerarchicamente 
+	nell'oggetto principale <em>persona</em>, come mostra l'esempio:</p>
+        <div class="code">
+          <pre>var persona = { 
+    nome: &quot;&quot;,
+    cognome: &quot;&quot;,
+    sesso: &quot;&quot;,
+    telefono: &quot;&quot;,
+    indirizzo: {
+        via: &quot;&quot;,
+        numero: &quot;&quot;,
+        CAP: &quot;&quot;
+    	},
+    nascita: {
+    	mese: &quot;&quot;,
+	giorno: &quot;&quot;,
+    	anno: &quot;&quot;,
+    	CAP: &quot;&quot;
+    	},
+};</pre>
+	</div>
+        <p>Anche in questo caso i valori sono stati inizializzati con stringhe 
+		vuote. L'inizializzazione con i valori effettivi avviene da programma, 
+		per esempio:</p>
+        <div class="code">
+          persona.indirizzo.via = &quot;Corso Italia&quot;;
+<br />
+persona.indirizzo.numero = 22;
+<br />
+persona.indirizzo.CAP = 16100;
+<br />
+persona.nascita.giorno = 4;
+<br />
+persona.nascita.mese = 10;
+<br />
+persona.nascita.anno = 1995;
+<br />
+persona.nascita.CAP = 18038;
+</div>
+	<p>Si noti che alcune propriet&eacute; sono state inizializzate con valori 
+	numerici, invece che con stringhe. Ci&eacute; &eacute; corretto, dal momento che, come 
+	sappiamo, le variabili in JS non sono tipizzate. Inoltre si osservi che 
+	persona.indirizzo.CAP e persona.nascita.CAP sono due propriet&eacute; omonime che 
+	per&eacute; si riferiscono ad oggetti diversi e dunque possono assumere valori 
+	diversi.</p>
+
+        <div class="titolo"> Aggiungiamo i metodi</div>
+	<p>Oltre alle propriet&eacute; al nostro oggetto possono essere aggiunti dei 
+	metodi. A titolo di esempio ne vediamo due: uno che calcola il codice 
+	fiscale e l'altro che calcola l'et&eacute; in anni della persona:</p>
+        <div class="code">
+          <pre>var persona = { 
+    nome: &quot;&quot;,
+    cognome: &quot;&quot;,
+    sesso: &quot;&quot;,
+    telefono: &quot;&quot;,
+    indirizzo: {
+        via: &quot;&quot;,
+        numero: &quot;&quot;,
+        CAP: &quot;&quot;
+    	},
+    nascita: {
+    	mese: &quot;&quot;,
+	giorno: &quot;&quot;,
+    	anno: &quot;&quot;,
+    	CAP: &quot;&quot;
+    	},
+  &nbsp;codiceFiscale: function()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+      // istruzioni per il calcolo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+  &nbsp;calcolaAnni: function()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+      // istruzioni per il calcolo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+};</pre>
+	</div>
+        <p>Questi metodi potranno essere quindi utilizzati per ricavare ad 
+		esempio il codice fiscale in questo modo:</p>
+        <div class="code">
+          Codice = persona.codiceFiscale();</div>
+	<p>Possiamo utilizzare i metodi per l'inserimento dei dati, aggiungendo per 
+	esempio un metodo di nome input al nostro oggetto (sono stati usati i nomi 
+	inglesi per i parametri per evitare confusione, ma avremmo potuto benissimo 
+	chiamarli nome, cognome etc come le corrispondenti propriet&eacute; dell'oggetto):</p>
+        <div class="code">
+          <pre>var persona = { 
+    nome: &quot;&quot;,
+    cognome: &quot;&quot;,
+    sesso: &quot;&quot;,
+    telefono: &quot;&quot;,
+    indirizzo: {
+        via: &quot;&quot;,
+        numero: &quot;&quot;,
+        CAP: &quot;&quot;
+    	},
+    nascita: {
+    	mese: &quot;&quot;,
+	giorno: &quot;&quot;,
+    	anno: &quot;&quot;,
+    	CAP: &quot;&quot;
+    	},
+  &nbsp;codiceFiscale: function()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+      // istruzioni per il calcolo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+  &nbsp;calcolaAnni: function()&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+      // istruzioni per il calcolo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},  
+  input: function(name,surname,sex,street,number,CAP1,day,month,year,CAP2)
+      {
+      // istruzioni
+      }
+};</pre>
+	</div>
+        <p>Il metodo input potr&eacute; essere usato per esempio nel seguente modo; </p>
+        <div class="code">
+          persona.input(&quot;Mario&quot;,&quot;Rossi&quot;,&quot;M&quot;,&quot;Corso Italia&quot;,22,16100,4,10,1995,18038);</div>
+	<p>Qual &eacute; il vantaggio rispetto all'inserimento diretto dei valori? Per 
+	esempio il metodo input potrebbe controllare la correttezza formale dei dati 
+	inseriti (es. che il mese non sia maggiore di 12) o implementare altri 
+	meccanismi per la protezione dei dati dell'oggetto.</p>
+
+        <div class="titolo"> Dichiariamo una classe e poi un vettore di oggetti</div>
+	<p>Infine possiamo trasformare il nostro oggetto nella dichiarazione di una Class:</p>
+	<div class="code">
+      <pre>class Persone { 
+		constructor() 
+			{ 
+			this.nome = &quot;&quot;; 
+			this.cognome = &quot;&quot;; 
+			this.sesso = &quot;&quot;; 
+			this.telefono = &quot;&quot;; 
+			this.indirizzo = { via: &quot;&quot;; numero: &quot;&quot;; CAP: &quot;&quot; }; 	
+			this.nascita = { mese: &quot;&quot;; giorno: &quot;&quot;; anno: &quot;&quot;; CAP: &quot;&quot; }; 
+			} 
+		codiceFiscale() { // istruzioni per il calcolo } 
+		calcolaAnni() { // istruzioni per il calcolo } 
+		input(name, surname, sex, street, number, CAP1, day, month, year, CAP2) 
+			{ 
+			// istruzioni } 
+			} 
+		}</pre>
+    </div>
+	<p>In questo modo posso dichiarare un array di oggetti del tipo Persone:</p>
+        <div class="code">
+          var archivio = new Array();&nbsp;&nbsp;&nbsp;&nbsp; //dichiara l'array<br />
+			archivio.push(new Persone()); // crea un nuovo elemento (da ripetere 
+			per tutti gli elementi) </div>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

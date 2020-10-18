@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Costruttori di oggetti (prototipi)</div>
+        <p>Abbiamo gi&eacute; accennato al fatto che JS prevede molti modi diversi per 
+		creare un oggetto. Sempre con riferimento a un oggetto che rappresenta 
+		un punto sul piano, si consideri l'esempio seguente:</p>
+        <div class="code">
+          function Punto ()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.x = 0;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.y = 0;<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.distanza = function()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dist = 
+			Math.sqrt(this.x*this.x + this.y*this.y)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return dist;
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+			<br />
+			var punto = new Punto();</div>
+        <p>In questo caso la dichiarazione dell'oggetto viene divisa in due 
+		parti. Prima viene definita una funzione <em>Punto()</em> detta <strong>
+		costruttore o prototipo</strong> dell'oggetto.</p>
+	<p>L'oggetto vero e proprio viene creato con la parola chiave <em>new</em> 
+	nell'istruzione:</p>
+        <div class="code">
+          var punto = new Punto();</div>
+        <p>Possiamo considerare la funzione costruttore <em>Punto()</em> come 
+		una sorta di modello in base al quale viene poi creato l'oggetto stesso. 
+		Per esempio potremmo creare due oggetti con la stessa struttura 
+		semplicemente ripetendo:</p>
+        <div class="code">
+          var punto1 = new Punto();<br />
+			var punto2 = new Punto();</div>
+        <p>In questo modo <em>punto1</em> e <em>punto2</em> sono due oggetti 
+		fatti nella stessa maniera, cio&eacute; contenenti le stesse propriet&eacute; e gli 
+		stessi metodi.</p>
+	<p>E' anche interessante osservare come viene definito il metodo <em>
+	distanza</em> all'interno del costruttore <em>Punto()</em>:</p>
+        <div class="code">
+          &nbsp;this.distanza = function()<br />
+&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp; var dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp; dist = Math.sqrt(this.x*this.x + this.y*this.y)<br />
+&nbsp;&nbsp;&nbsp;&nbsp; return dist; <br />
+&nbsp;&nbsp;&nbsp;&nbsp; }</div>
+	<p>Si noti l'uso singolare della parola chiave <em>function() </em>usata a 
+	destra di un uguale di assegnazione, allo scopo di assegnare a <em>
+	this.distanza</em> il codice del metodo da eseguire.</p>
+	<p>Si osservi come questo modo di dichiarare una funzione, sia
+	<a href="obj1.html">quello gi&eacute; visto in generale</a>, che tratta le funzioni 
+	&quot;come se fossero delle variabili&quot;:</p>
+        <div class="code">
+          var quadrato = function(x)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x*x;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</div>
+	<p>Infine consideriamo il seguente ultimo esempio, il quale fa uso di un 
+	costruttore con parametri, cio&eacute; di un costruttore mediante il quale &eacute; 
+	possibile assegnare valori iniziali alle propriet&eacute; x e y dell'oggetto:</p>
+        <div class="code">
+          function Punto (xx,yy)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.x = xx;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.y = yy;<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.distanza = function()<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dist = 
+			Math.sqrt(this.x*this.x + this.y*this.y)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return dist;
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+			<br />
+			var punto = new Punto(2,3);</div>
+        <p>Vedremo fra poco come questa modalit&eacute; di creazione di un oggetto 
+		attraverso una funzione costruttore e la parola chiave new sia molto 
+		utile per comprendere gli oggetti predefiniti in JS.</p>
+	    <div class="titolo"> Classi in Javascript E6 e E7 </div>
+    <p>Le nuove versioni del linguaggio JS (ECMAScript6 del 2015 e ECMAScript7 del 2016) hanno introdotto anche in JS (come in C++ e linguaggi simili) l'operatore Class per la definizione di classi. Per esempio con la nuova sintassi il prototipo della classe Punto diventerebbe:</p>
+    <div class="code"> Class Punto<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; constructor() {<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.x = 0;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.y = 0;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distanza()<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var dist;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dist = 
+      Math.sqrt(this.x*this.x + this.y*this.y)<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return dist; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+  <br />
+    var punto = new Punto();</div>
+    <p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+

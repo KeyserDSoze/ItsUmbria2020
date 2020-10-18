@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<title>Programmiamo</title>
+<meta name="keywords" content="programmiamo, programmi, linguaggi, javascript, visual basic"/>
+<meta name="description" content="linguaggi di programmazione"/>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<link href=" ../css/principale.css" rel="stylesheet" type="text/css"/>
+<link href=" ../css/classi.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.style1 {
+				text-align: center;
+}
+.style2 {
+				background-color: #DDDDDD;
+}
+.style3 {
+				margin-left: 160px;
+}
+</style>
+</head>
+<body>
+  <div id="contenitore2">
+    <!-- Contneuti -->
+
+        <div class="titolo"> Creare un oggetto</div>
+        <p>Di solito i testi di informatica introducono il concetto di oggetto 
+		facendo riferimento ad esempi concreti, presi dalla nostra realt&eacute; 
+		quotidiana. Per esempio un oggetto viene paragonato a un'automobile, che 
+		ha certe propriet&eacute; (es. il colore, la cilindrata, il costo etc.) e certi 
+		metodi che possono essere eseguiti sull'automobile stessa (es. riempire 
+		il serbatoio, lavare la macchina, etc.). Sebbene questi esempi abbiano 
+		indubbiamente una validit&eacute; didattica generale, a mio avviso sono troppo 
+		distanti dalla pratica della programmazione per offrire un appiglio 
+		concreto a chi si avvicina per la prima volta a questa tecnica di 
+		programmazione.</p>
+	<p>Noi vogliamo invece partire da un esempio semplice ma attinente alla 
+	programmazione. Consideriamo un punto sul piano di coordinate X e Y e il 
+		calcolo della sua distanza dall'origine:</p>
+	<p class="style1"><img alt="" src="../img/punto.jpg" /></p>
+	<p>Esso pu&eacute; essere rappresentato in un programma con due variabili x e y, 
+	contenenti le coordinate, e con una funzione distanza() per calcolarne la 
+	distanza dall'origine.</p>
+	<p>Un modo diverso e forse pi&eacute; efficace &eacute; quello di &quot;incorporare&quot; tutte le 
+	caratteristiche del nostro punto (ovvero le coordinate e la funzione) in un 
+	unico oggetto cos&eacute; definito:</p>
+        <div class="code">
+          var punto = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			x:0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // propriet&eacute; 'x' dell'oggetto 'punto'<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			y:0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // propriet&eacute; 'y' dell'oggetto 'punto' <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			distanza: function()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // m<span class="style2">etodo 
+			'distanza()' </span>dell'oggetto 'punto'<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			var dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			dist = Math.sqrt(this.x*this.x + this.y*this.y)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			return dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}</div>
+        <p>Chi ha qualche esperienza con linguaggi di programmazione non ad 
+		oggetti, come per esempio il C classico, riconoscer&eacute; molte somiglianze 
+		fra un oggetto e una struttura. Come la struttura (struct) possiamo 
+		definire un oggetto come un tipo aggregato, al cui interno si possono 
+		trovare pi&eacute; variabili di tipi diversi (le <strong>propriet&eacute;</strong>) e 
+		anche delle funzioni (i <strong>metodi</strong>).</p>
+	<p>Nel nostro caso l'oggetto punto contiene due propriet&eacute; ('x' e 'y') e un metodo 
+		('distanza'). La sintassi generale per la creazione di un oggetto in JS &eacute; (abbastanza) semplice ed &eacute; qui riepilogata:</p>
+        <div class="code">
+          var <em>nome_ogg</em> = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<em>propriet&eacute;1</em> : valore_iniziale,&nbsp; // attenzione ai due 
+			punti e alla virgola<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<em>propriet&eacute;2</em> : valore iniziale,<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<em>metodo: function</em>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 
+			attenzione alle tonde <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// e alle graffe<br />
+			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}</div>
+        <p>Esistono molti altri modi per dichiarare un oggetto in JS (<a href="obj3.html">ne 
+		vedremo un altro</a> fra breve), ma questo 
+		&eacute; forse uno dei pi&eacute; intuitivi. </p>
+	<p>Come si vede l'oggetto pu&eacute; contenere 
+		quante propriet&eacute; (cio&eacute; valori variabili) si vuole separati da virgola (e 
+		ciascuno accompagnato da un valore iniziale) e quanti metodi si vuole 
+		(ciascuno con le proprie parentesi tonde e graffe). I valori indicati 
+		dopo i due punti sono i valori che le corrispondenti propriet&eacute; e metodi 
+		assumono all'atto della creazione dell'oggetto.</p>
+	<p>Si osservi che la parola chiave <strong>function</strong> &eacute; usata in modo 
+	un po' diverso da come siamo stati abituati finora. Noi infatti scrivevamo 
+	per esempio:</p>
+        <div class="code">
+          function quadrato (x)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x*x;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</div>
+        <p>In questo caso la parola <em>function</em> precede il nome della 
+		funzione (<em>quadrato</em>). In realt&eacute; esiste un modo alternativo per 
+		dichiarare una funzione:</p>
+        <div class="code">
+          var quadrato = function(x)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return x*x;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</div>
+        <p>Si osservi che qui la funzione quadrato viene dichiarata come una 
+		variabile, usando invece la parola function in modo diverso dal solito. 
+		Le due dichiarazioni sono equivalenti e <a href="obj3.html">torneremo 
+		pi&eacute; avanti</a> sul loro significato.</p>
+        <p>Si osservi dall'ultimo esempio come &egrave; possibile dichiarare una funzione con un parametro (in questo caso 'x') usando la nuova notazione. Per esempio volendo aggiungere al nostro oggetto un metodo per assegnare un nuovo valore alla x e alla y, potremmo scrivere:</p>
+        <div class="code"> 
+          <p>var punto = {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          x:0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // propriet&agrave; 'x' dell'oggetto 'punto'<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          y:0,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // propriet&agrave; 'y' dell'oggetto 'punto' <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          distanza: function()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // m<span class="style2">etodo 
+            'distanza()' </span>dell'oggetto 'punto'<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          var dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          dist = Math.sqrt(this.x*this.x + this.y*this.y)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          return dist;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          }</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assegna: function(A,B)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.x = A;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.y = B;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          }</p>
+        </div>
+        <p>In questo caso il metodo assegna contiene anche due parametri A e B, mediante i quali &egrave; possibile passare valori al metodo stesso:  </p>
+        <p>Si noti infine la parola chiave <strong>this</strong> usata in questo 
+	modo:</p>
+        <div class="code">
+          dist = Math.sqrt(this.x*this.x + this.y*this.y)</div>
+	<p>La parola <em>this</em> serve per accedere alle propriet&eacute; interne dello 
+	stesso oggetto in cui si trova il metodo (nel nostro caso il metodo <em>
+	distanza</em>). Ricordiamo che <a href=" funz/funz4.html">avevamo gi&eacute; 
+	incontrato i</a>n precedenza l'uso di <em>this</em> per fare riferimento 
+	all'oggetto corrente. Qui si tratta in sostanza dello stesso scopo: <em>this</em> 
+	rappresenta sinteticamente l'oggetto cui appartiene un certo metodo (ovvero 
+	l'oggetto proprietario del metodo stesso).</p>
+	<p>Possiamo schematizzare il nostro oggetto punto come una scatola 
+	contenente al proprio interno due variabili <em>x</em> e <em>y</em> 
+	(propriet&eacute;) e una funzione <em>distanza</em> (metodo):</p>
+	<p class="style1"><img alt="" src="../img/img17.gif" /></p>
+
+        <div class="titolo"> Usare l'oggetto: la notazione col punto decimale 
+						(dot)</div>
+        <p>Vediamo adesso un semplice esempio di come si possa usare l'oggetto 
+		appena creato all'interno di un codice JS:</p>
+        <div class="code">
+          punto.x = document.getElementById(&quot;x&quot;).value;<br />
+			punto.y = document.getElementById(&quot;y&quot;).value;<br />
+			document.getElementById(&quot;ris&quot;).value = punto.distanza();</div>
+        <p>Con le prime due istruzioni si assegnano alle propriet&eacute; punto.x e 
+		punto.y i valori letti da due caselle di input. La terza istruzione 
+		calcola la distanza del punto dall'origine e la visualizza in un'altra 
+		casella di testo.</p>
+	<p>Si osservi la notazione col punto (dot) usata per accedere alle propriet&eacute; e ai 
+	metodi di un oggetto:</p>
+	<p class="style3"><em>nome_oggetto.propriet&eacute;<br />
+	nome_oggetto.metodo()</em></p>
+	<p>Osserviamo di passaggio che anche l'istruzione <em>document.getElementById(&quot;x&quot;).value</em> 
+	fa evidentemente riferimento alla propriet&eacute; <em>value</em> di un oggetto (un 
+	oggetto predefinito del JS, di cui parleremo pi&eacute; avanti).</p>
+	<p>Usando invece il metodo assegna per assegnare i valori delle propriet&agrave; dell'oggetto, potremmo scrivere:</p>
+	<div class="code"> num1 = document.getElementById(&quot;x&quot;).value;<br />
+	  num2 = document.getElementById(&quot;y&quot;).value;<br />
+	  punto.assegna(num1,num2);<br />
+	  document.getElementById(&quot;ris&quot;).value = punto.distanza();</div>
+	<p>Questo tipo di notazione pu&ograve; sembrare inutilmente complicato e in effetti, in questo caso elementare, probabilmente &egrave; cos&igrave;. In casi pi&ugrave; complessi si preferisce spesso per&ograve; accedere alle propriet&agrave; interne di un oggetto non direttamente, ma usando metodi appositi (come il metodo <em>assegna</em> nel nostro esempio qui sopra). Questo consente di proteggere i dati interni all'oggetto da accessi non desiderati o eseguiti in modo non corretto (dal momento che l'accesso viene fatto tramite un metodo, &egrave; possibile per esempio verificare preliminarmente che i dati assegnati siano compatibili, che abbiano il formato o i valori adeguati). </p>
+	<div class="titolo"> Usare l'oggetto: la notazione con le parentesi 
+						quadre</div>
+        <p>Un modo alternativo, su cui torneremo pi&eacute; avanti, per accedere alle 
+		propriet&eacute; e ai metodi dell'oggetto &eacute; l'uso di parentesi quadre, come 
+		nell'esempio seguente:</p>
+        <div class="code">
+          punto[&quot;x&quot;] = document.getElementById(&quot;x&quot;).value;<br />
+			punto[&quot;y&quot;] = document.getElementById(&quot;y&quot;).value;<br />
+			document.getElementById(&quot;ris&quot;).value = punto[&quot;distanza&quot;]();</div>
+        <p>E naturalmente avremmo anche potuto scrivere (dal momento che anche
+		<em>value</em> &eacute; una propriet&eacute; di un oggetto):</p>
+        <div class="code">
+          punto[&quot;x&quot;] = document.getElementById(&quot;x&quot;)[&quot;value&quot;];<br />
+			punto[&quot;y&quot;] = document.getElementById(&quot;y&quot;)[&quot;value&quot;];<br />
+			document.getElementById(&quot;ris&quot;)[&quot;value&quot;] = punto[&quot;distanza&quot;]();</div>
+        <p>&nbsp;</p>
+	<p>&nbsp;</p>
+</div>
+    <!-- Fine Contenuti -->
+</body>
+</html>
+
+
+
